@@ -1,0 +1,53 @@
+#if !defined(FLEX11_6_FLASH_DISPLAY_STAGE3D_AS)
+#define FLEX11_6_FLASH_DISPLAY_STAGE3D_AS
+#if defined(__cplusplus)
+
+
+#include "flash/events/EventDispatcher.h"
+namespace flash
+{
+    namespace display3D
+    {
+        class Context3D;
+    }
+}
+
+using namespace flash::events;
+using namespace flash::display3D;
+
+namespace flash
+{
+    namespace display
+    {
+        class Stage3D: public EventDispatcher
+        {
+        public:
+            Context3D   *context3D();
+
+        public:
+            float        x();
+        public:
+            void         x(float value);
+
+        public:
+            float        y();
+        public:
+            void         y(float value);
+
+        public:
+            bool         visible();
+        public:
+            void         visible(bool value);
+
+        public:
+            void     requestContext3D(std::string context3DRenderMode, std::string profile);
+
+        public:
+            Stage3D();
+        };
+    }
+}
+
+#endif // FLEX11_6_FLASH_DISPLAY_STAGE3D_AS
+#endif // __cplusplus
+
