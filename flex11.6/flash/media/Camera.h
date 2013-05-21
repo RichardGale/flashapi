@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 namespace flash
@@ -39,81 +40,8 @@ namespace flash
  */
 //[Event(name="activity",type="flash.events.ActivityEvent")]
 
-/**
- * Use the Camera class to capture video from the client system's camera.
- * Use the Video class to monitor the video locally.
- * Use the NetConnection and NetStream classes to transmit the video to Flash Media Server.
- * Flash Media Server can send the video stream to other servers and broadcast it to other clients running Flash Player.
- *
- *   <p class="- topic/p ">A Camera instance captures video in landscape aspect ratio. On devices that can change the screen orientation,
- * such as mobile phones, a Video object attached to the camera will only show upright video in a landscape-aspect orientation.
- * Thus, mobile apps should use a landscape orientation when displaying video and should not auto-rotate.</p><p class="- topic/p ">As of AIR 2.6, autofocus is enabled automatically on mobile devices with an autofocus camera. If the camera does not support continuous autofocus,
- * and many mobile device cameras do not, then the camera is focused when the Camera object is attached to a video stream and whenever
- * the <codeph class="+ topic/ph pr-d/codeph ">setMode()</codeph> method is called. On desktop computers, autofocus behavior is dependent on the camera driver and settings.</p><p class="- topic/p ">In an AIR application on Android and iOS, the camera does not capture video while an AIR app is not the active, foreground application.
- * In addition, streaming connections can be lost when the application is in the background. On iOS, the camera video cannot be
- * displayed when an application uses the GPU rendering mode. The camera video can still be streamed to a server.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Mobile Browser Support:</b> This class is not supported in mobile browsers.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
- * on desktop operating systems, but it is not supported on all mobile devices. It is not
- * supported on AIR for TV devices. See
- * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
- * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p><p class="- topic/p ">You can test
- * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">Camera.isSupported</codeph> property.
- * Note that for AIR for TV devices, <codeph class="+ topic/ph pr-d/codeph ">Camera.isSupported</codeph> is <codeph class="+ topic/ph pr-d/codeph ">true</codeph> but
- * <codeph class="+ topic/ph pr-d/codeph ">Camera.getCamera()</codeph> always returns <codeph class="+ topic/ph pr-d/codeph ">null</codeph>.</p><p class="- topic/p ">
- * For information about capturing audio, see the Microphone class.
- * </p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Important: </b>Flash Player displays a Privacy dialog box that lets the user choose whether
- * to allow or deny access to the camera. Make sure your application window size is at least 215 x 138 pixels;
- * this is the minimum size required to display the dialog box.
- * </p><p class="- topic/p ">To create or reference a Camera object, use the <codeph class="+ topic/ph pr-d/codeph ">getCamera()</codeph> method.</p>
- *
- *   EXAMPLE:
- *
- *   The following example shows the image from a camera after acknowledging the
- * security warning.  The Stage is set such that it cannot be scaled and is aligned to the
- * top-left of the player window.  The <codeph class="+ topic/ph pr-d/codeph ">activity</codeph> event is dispatched at the
- * start and end (if any) of the session and is captured by the <codeph class="+ topic/ph pr-d/codeph ">activityHandler()</codeph>
- * method, which prints out information about the event.
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> A camera must be attached to your computer for this example
- * to work correctly.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.display.StageAlign;
- * import flash.display.StageScaleMode;
- * import flash.events.*;
- * import flash.media.Camera;
- * import flash.media.Video;
- *
- *   public class CameraExample extends Sprite {
- * private var video:Video;
- *
- *   public function CameraExample() {
- * stage.scaleMode = StageScaleMode.NO_SCALE;
- * stage.align = StageAlign.TOP_LEFT;
- *
- *   var camera:Camera = Camera.getCamera();
- *
- *   if (camera != null) {
- * camera.addEventListener(ActivityEvent.ACTIVITY, activityHandler);
- * video = new Video(camera.width * 2, camera.height * 2);
- * video.attachCamera(camera);
- * addChild(video);
- * } else {
- * trace("You need a camera.");
- * }
- * }
- *
- *   private function activityHandler(event:ActivityEvent):void {
- * trace("activityHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- */
-using namespace flash::events;
 using namespace flash::display;
+using namespace flash::events;
 using namespace flash::geom;
 using namespace flash::utils;
 
@@ -121,7 +49,80 @@ namespace flash
 {
     namespace media
     {
-        class Camera: public EventDispatcher
+        /**
+         * Use the Camera class to capture video from the client system's camera.
+         * Use the Video class to monitor the video locally.
+         * Use the NetConnection and NetStream classes to transmit the video to Flash Media Server.
+         * Flash Media Server can send the video stream to other servers and broadcast it to other clients running Flash Player.
+         *
+         *   <p class="- topic/p ">A Camera instance captures video in landscape aspect ratio. On devices that can change the screen orientation,
+         * such as mobile phones, a Video object attached to the camera will only show upright video in a landscape-aspect orientation.
+         * Thus, mobile apps should use a landscape orientation when displaying video and should not auto-rotate.</p><p class="- topic/p ">As of AIR 2.6, autofocus is enabled automatically on mobile devices with an autofocus camera. If the camera does not support continuous autofocus,
+         * and many mobile device cameras do not, then the camera is focused when the Camera object is attached to a video stream and whenever
+         * the <codeph class="+ topic/ph pr-d/codeph ">setMode()</codeph> method is called. On desktop computers, autofocus behavior is dependent on the camera driver and settings.</p><p class="- topic/p ">In an AIR application on Android and iOS, the camera does not capture video while an AIR app is not the active, foreground application.
+         * In addition, streaming connections can be lost when the application is in the background. On iOS, the camera video cannot be
+         * displayed when an application uses the GPU rendering mode. The camera video can still be streamed to a server.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Mobile Browser Support:</b> This class is not supported in mobile browsers.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
+         * on desktop operating systems, but it is not supported on all mobile devices. It is not
+         * supported on AIR for TV devices. See
+         * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
+         * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p><p class="- topic/p ">You can test
+         * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">Camera.isSupported</codeph> property.
+         * Note that for AIR for TV devices, <codeph class="+ topic/ph pr-d/codeph ">Camera.isSupported</codeph> is <codeph class="+ topic/ph pr-d/codeph ">true</codeph> but
+         * <codeph class="+ topic/ph pr-d/codeph ">Camera.getCamera()</codeph> always returns <codeph class="+ topic/ph pr-d/codeph ">null</codeph>.</p><p class="- topic/p ">
+         * For information about capturing audio, see the Microphone class.
+         * </p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Important: </b>Flash Player displays a Privacy dialog box that lets the user choose whether
+         * to allow or deny access to the camera. Make sure your application window size is at least 215 x 138 pixels;
+         * this is the minimum size required to display the dialog box.
+         * </p><p class="- topic/p ">To create or reference a Camera object, use the <codeph class="+ topic/ph pr-d/codeph ">getCamera()</codeph> method.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows the image from a camera after acknowledging the
+         * security warning.  The Stage is set such that it cannot be scaled and is aligned to the
+         * top-left of the player window.  The <codeph class="+ topic/ph pr-d/codeph ">activity</codeph> event is dispatched at the
+         * start and end (if any) of the session and is captured by the <codeph class="+ topic/ph pr-d/codeph ">activityHandler()</codeph>
+         * method, which prints out information about the event.
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> A camera must be attached to your computer for this example
+         * to work correctly.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.display.StageAlign;
+         * import flash.display.StageScaleMode;
+         * import flash.events.*;
+         * import flash.media.Camera;
+         * import flash.media.Video;
+         *
+         *   public class CameraExample extends Sprite {
+         * private var video:Video;
+         *
+         *   public function CameraExample() {
+         * stage.scaleMode = StageScaleMode.NO_SCALE;
+         * stage.align = StageAlign.TOP_LEFT;
+         *
+         *   var camera:Camera = Camera.getCamera();
+         *
+         *   if (camera != null) {
+         * camera.addEventListener(ActivityEvent.ACTIVITY, activityHandler);
+         * video = new Video(camera.width * 2, camera.height * 2);
+         * video.attachCamera(camera);
+         * addChild(video);
+         * } else {
+         * trace("You need a camera.");
+         * }
+         * }
+         *
+         *   private function activityHandler(event:ActivityEvent):void {
+         * trace("activityHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         */
+        class Camera : public flash::events::EventDispatcher
         {
             /**
              * An array of strings indicating the names of all available cameras
@@ -370,7 +371,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static flash::media::Camera *getCamera(std::string name);
+            static flash::media::Camera *getCamera(std::string name="");
 
         public:
             void     setCursor(bool value);
@@ -422,7 +423,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     setLoopback(bool compress);
+            void     setLoopback(bool compress   =false);
 
             /**
              * Sets the camera capture mode to the native mode that best meets the specified requirements.
@@ -456,7 +457,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     setMode(int width, int height, float fps, bool favorArea);
+            void     setMode(int width, int height, float fps, bool favorArea   =true);
 
             /**
              * Specifies how much motion is required to dispatch the activity event.
@@ -495,7 +496,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     setMotionLevel(int motionLevel, int timeout);
+            void     setMotionLevel(int motionLevel, int timeout=2000);
 
             /**
              * Sets the maximum amount of bandwidth per second or the required picture quality
@@ -537,7 +538,7 @@ namespace flash
             void     copyToByteArray(Rectangle *rect, ByteArray *destination);
 
         public:
-            void     copyToVector(Rectangle *rect, std::vector<unsigned int> *destination);
+            void     copyToVector(Rectangle *rect, std::vector<unsigned int> destination);
         };
     }
 }

@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class FontStyle: public Object
+        class FontStyle : public Object
         {
             /**
              * Defines the plain style of a font for the fontStyle parameter in the setAdvancedAntiAliasingTable() method. Use the syntax FontStyle.REGULAR.

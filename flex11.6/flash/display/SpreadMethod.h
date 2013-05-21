@@ -12,11 +12,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class SpreadMethod: public Object
+        class SpreadMethod : public Object
         {
             /**
              * Specifies that the gradient use the pad spread method.

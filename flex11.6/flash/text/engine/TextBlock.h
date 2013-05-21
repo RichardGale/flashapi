@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -250,10 +251,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
-using namespace flash::text::engine;
-using namespace flash::text::engine;
-using namespace flash::text::engine;
+
 using namespace flash::text::engine;
 
 namespace flash
@@ -262,7 +260,7 @@ namespace flash
     {
         namespace engine
         {
-            class TextBlock: public Object
+            class TextBlock : public Object
             {
                 /**
                  * Provides a way for the application to associate arbitrary data with the text block. The data could be information that refers to the content,
@@ -492,9 +490,9 @@ namespace flash
                  * @throws  ArgumentError The tabStops specified are not sorted by increasing position.
                  */
             public:
-                std::vector<flash::text::engine::TabStop *> *tabStops();
+                std::vector<flash::text::engine::TabStop *> tabStops();
             public:
-                void         tabStops(std::vector<TabStop *> *value);
+                void         tabStops(std::vector<TabStop *> value);
 
                 /**
                  * Creates a TextBlock object
@@ -523,7 +521,7 @@ namespace flash
                  * @throws  ArgumentError The baselineFontSize specified is less than 0.
                  */
             public:
-                TextBlock(ContentElement *content, std::vector<flash::text::engine::TabStop *> *tabStops, TextJustifier *textJustifier, std::string lineRotation, std::string baselineZero, int bidiLevel, bool applyNonLinearFontScaling, FontDescription *baselineFontDescription, float baselineFontSize);
+                TextBlock(ContentElement *content=NULL, std::vector<flash::text::engine::TabStop *> tabStops=std::vector<void *>(), TextJustifier *textJustifier=NULL, std::string lineRotation="rotate0", std::string baselineZero="roman", int bidiLevel=0, bool applyNonLinearFontScaling   =true, FontDescription *baselineFontDescription=NULL, float baselineFontSize =12);
 
                 /**
                  * Finds the index of the next atom boundary from the specified character index, not including the character at the specified index.
@@ -638,7 +636,7 @@ namespace flash
                  * @throws  IllegalOperationError If one or more elements in the content of the text block has a null ElementFormat.
                  */
             public:
-                flash::text::engine::TextLine *createTextLine(TextLine *previousLine, float width, float lineOffset, bool fitSomething);
+                flash::text::engine::TextLine *createTextLine(TextLine *previousLine=NULL, float width =1000000, float lineOffset =0, bool fitSomething   =false);
 
                 /**
                  * Instructs the text block to re-use an existing text line to create a line of text from its content, beginning at the point
@@ -687,7 +685,7 @@ namespace flash
                  * @throws  IllegalOperationError If one or more elements in the content of the text block has a null ElementFormat.
                  */
             public:
-                flash::text::engine::TextLine *recreateTextLine(TextLine *textLine, TextLine *previousLine, float width, float lineOffset, bool fitSomething);
+                flash::text::engine::TextLine *recreateTextLine(TextLine *textLine, TextLine *previousLine=NULL, float width =1000000, float lineOffset =0, bool fitSomething   =false);
 
                 /**
                  * Instructs the text block to release all the temporary data associated with the creation of text lines.

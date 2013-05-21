@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/display/DisplayObject.h"
 namespace flash
 {
@@ -136,15 +137,16 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
-using namespace flash::net;
 using namespace flash::media;
+using namespace flash::net;
 
 namespace flash
 {
     namespace media
     {
-        class Video: public DisplayObject
+        class Video : public flash::display::DisplayObject
         {
             /**
              * Indicates the type of filter applied to decoded video as part of post-processing.
@@ -234,7 +236,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            Video(int width, int height);
+            Video(int width=320, int height=240);
 
             /**
              * Clears the image currently displayed in the Video object (not the video stream). This method is useful for

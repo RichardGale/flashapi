@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -90,11 +91,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace xml
     {
-        class XMLNode: public Object
+        class XMLNode : public Object
         {
             /**
              * A nodeType constant value, either XMLNodeType.ELEMENT_NODE for an XML element or

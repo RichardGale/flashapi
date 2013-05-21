@@ -11,11 +11,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetGroupReceiveMode: public Object
+        class NetGroupReceiveMode : public Object
         {
             /**
              * Specifies that this node accepts local messages from neighbors only if the address the neighbor uses

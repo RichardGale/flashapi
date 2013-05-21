@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -30,8 +31,9 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
+
 using namespace flash::events;
+using namespace flash::text::engine;
 
 namespace flash
 {
@@ -39,7 +41,7 @@ namespace flash
     {
         namespace engine
         {
-            class TextElement: public ContentElement
+            class TextElement : public ContentElement
             {
                 /**
                  * Receives the text that is the content of the element.
@@ -86,7 +88,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                TextElement(std::string text, ElementFormat *elementFormat, EventDispatcher *eventMirror, std::string textRotation);
+                TextElement(std::string text="", ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
             };
         }
     }

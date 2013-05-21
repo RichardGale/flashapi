@@ -57,7 +57,8 @@
  * @playerversion   Lite 4
  */
 
-class int: public Object
+
+class int : public Object
 {
     /**
      * The smallest representable 32-bit signed integer, which is -2,147,483,648.
@@ -87,7 +88,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    int(void *value);
+    int(void *value=0);
 
     /**
      * Returns the string representation of an int object.
@@ -97,7 +98,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string toString(void *radix);
+    std::string toString(void *radix=10);
 
     /**
      * Returns the primitive value of the specified int object.
@@ -119,7 +120,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toExponential(void *p);
+    std::string toExponential(void *p=0);
 
     /**
      * Returns a string representation of the number either in exponential notation or in
@@ -132,7 +133,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the precision argument is outside the range 1 to 21.
      */
-    std::string toPrecision(void *p);
+    std::string toPrecision(void *p=0);
 
     /**
      * Returns a string representation of the number in fixed-point notation.
@@ -147,7 +148,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toFixed(void *p);
+    std::string toFixed(void *p=0);
 };
 
 #endif // FLEX11_6_INT_AS

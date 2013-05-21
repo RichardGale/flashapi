@@ -12,11 +12,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class LastOperationStatus: public Object
+        class LastOperationStatus : public Object
         {
             /**
              * Indicates that the last operation succeeded without any errors. This status can be returned

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -65,103 +66,6 @@ namespace flash
  */
 //[Event(name="complete",type="flash.events.Event")]
 
-/**
- * The URLStream class provides low-level access to
- * downloading URLs. Data is made available to application code
- * immediately as it is downloaded, instead of waiting until
- * the entire file is complete as with URLLoader.
- * The URLStream class also lets you close a stream
- * before it finishes downloading.
- * The contents of the downloaded file are made available as raw binary data.
- *
- *   <p class="- topic/p ">The read operations in URLStream are nonblocking.
- * This means that you must use the <codeph class="+ topic/ph pr-d/codeph ">bytesAvailable</codeph> property to determine
- * whether sufficient data is available before reading it.  An
- * <codeph class="+ topic/ph pr-d/codeph ">EOFError</codeph> exception is thrown if insufficient
- * data is available.</p><p class="- topic/p ">All binary data is encoded by default in big-endian format, with the
- * most significant byte first.</p><p class="- topic/p ">The security rules that apply to URL downloading with the URLStream class are identical
- * to the rules applied to URLLoader objects.
- * Policy files may be downloaded as needed. Local file security rules are enforced,
- * and security warnings are raised as needed.</p>
- *
- *   EXAMPLE:
- *
- *   The following example loads a SWF file and parses the beginning of its header to indicate
- * compression and version number information.
- * <p class="- topic/p ">To run the example, place a file named URLStreamExample.swf in the same directory as your SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.errors.*;
- * import flash.events.*;
- * import flash.net.URLRequest;
- * import flash.net.URLStream;
- *
- *   public class URLStreamExample extends Sprite {
- * private static const ZLIB_CODE:String = "CWS";
- * private var stream:URLStream;
- *
- *   public function URLStreamExample() {
- * stream = new URLStream();
- * var request:URLRequest = new URLRequest("URLStreamExample.swf");
- * configureListeners(stream);
- * try {
- * stream.load(request);
- * } catch (error:Error) {
- * trace("Unable to load requested URL.");
- * }
- * }
- *
- *   private function configureListeners(dispatcher:EventDispatcher):void {
- * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
- * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
- * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * dispatcher.addEventListener(Event.OPEN, openHandler);
- * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
- * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * }
- *
- *   private function parseHeader():void {
- * trace("parseHeader");
- * trace("isCompressed: " + isCompressed());
- * trace("version: " + stream.readByte());
- * }
- *
- *   private function isCompressed():Boolean {
- * return (stream.readUTFBytes(3) == ZLIB_CODE);
- * }
- *
- *   private function completeHandler(event:Event):void {
- * trace("completeHandler: " + event);
- * parseHeader();
- * }
- *
- *   private function openHandler(event:Event):void {
- * trace("openHandler: " + event);
- * }
- *
- *   private function progressHandler(event:Event):void {
- * trace("progressHandler: " + event);
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function httpStatusHandler(event:HTTPStatusEvent):void {
- * trace("httpStatusHandler: " + event);
- * }
- *
- *   private function ioErrorHandler(event:IOErrorEvent):void {
- * trace("ioErrorHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 using namespace flash::net;
 using namespace flash::utils;
@@ -170,7 +74,104 @@ namespace flash
 {
     namespace net
     {
-        class URLStream: public EventDispatcher, public IDataInput
+        /**
+         * The URLStream class provides low-level access to
+         * downloading URLs. Data is made available to application code
+         * immediately as it is downloaded, instead of waiting until
+         * the entire file is complete as with URLLoader.
+         * The URLStream class also lets you close a stream
+         * before it finishes downloading.
+         * The contents of the downloaded file are made available as raw binary data.
+         *
+         *   <p class="- topic/p ">The read operations in URLStream are nonblocking.
+         * This means that you must use the <codeph class="+ topic/ph pr-d/codeph ">bytesAvailable</codeph> property to determine
+         * whether sufficient data is available before reading it.  An
+         * <codeph class="+ topic/ph pr-d/codeph ">EOFError</codeph> exception is thrown if insufficient
+         * data is available.</p><p class="- topic/p ">All binary data is encoded by default in big-endian format, with the
+         * most significant byte first.</p><p class="- topic/p ">The security rules that apply to URL downloading with the URLStream class are identical
+         * to the rules applied to URLLoader objects.
+         * Policy files may be downloaded as needed. Local file security rules are enforced,
+         * and security warnings are raised as needed.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example loads a SWF file and parses the beginning of its header to indicate
+         * compression and version number information.
+         * <p class="- topic/p ">To run the example, place a file named URLStreamExample.swf in the same directory as your SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.errors.*;
+         * import flash.events.*;
+         * import flash.net.URLRequest;
+         * import flash.net.URLStream;
+         *
+         *   public class URLStreamExample extends Sprite {
+         * private static const ZLIB_CODE:String = "CWS";
+         * private var stream:URLStream;
+         *
+         *   public function URLStreamExample() {
+         * stream = new URLStream();
+         * var request:URLRequest = new URLRequest("URLStreamExample.swf");
+         * configureListeners(stream);
+         * try {
+         * stream.load(request);
+         * } catch (error:Error) {
+         * trace("Unable to load requested URL.");
+         * }
+         * }
+         *
+         *   private function configureListeners(dispatcher:EventDispatcher):void {
+         * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
+         * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
+         * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * dispatcher.addEventListener(Event.OPEN, openHandler);
+         * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+         * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * }
+         *
+         *   private function parseHeader():void {
+         * trace("parseHeader");
+         * trace("isCompressed: " + isCompressed());
+         * trace("version: " + stream.readByte());
+         * }
+         *
+         *   private function isCompressed():Boolean {
+         * return (stream.readUTFBytes(3) == ZLIB_CODE);
+         * }
+         *
+         *   private function completeHandler(event:Event):void {
+         * trace("completeHandler: " + event);
+         * parseHeader();
+         * }
+         *
+         *   private function openHandler(event:Event):void {
+         * trace("openHandler: " + event);
+         * }
+         *
+         *   private function progressHandler(event:Event):void {
+         * trace("progressHandler: " + event);
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function httpStatusHandler(event:HTTPStatusEvent):void {
+         * trace("httpStatusHandler: " + event);
+         * }
+         *
+         *   private function ioErrorHandler(event:IOErrorEvent):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class URLStream : public flash::events::EventDispatcher, public IDataInput
         {
             /**
              * Indicates whether this URLStream object is
@@ -318,7 +319,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the stream, or the stream is not open.
              */
         public:
-            void     readBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
             /**
              * Reads a Boolean value from the stream. A single byte is read,

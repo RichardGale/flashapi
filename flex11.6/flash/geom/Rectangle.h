@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -66,13 +67,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace geom
     {
-        class Rectangle: public Object
+        class Rectangle : public Object
         {
             /**
              * The x coordinate of the top-left corner of the rectangle. Changing
@@ -376,7 +378,7 @@ namespace flash
              *   </listing>
              */
         public:
-            Rectangle(float x, float y, float width, float height);
+            Rectangle(float x =0, float y =0, float width =0, float height =0);
 
             /**
              * Returns a new Rectangle object with the same values for the x, y,

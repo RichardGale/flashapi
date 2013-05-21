@@ -25,11 +25,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class TriangleCulling: public Object
+        class TriangleCulling : public Object
         {
             /// Specifies no culling. All triangles in the path are rendered.
         public:

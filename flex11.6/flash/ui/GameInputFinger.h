@@ -8,7 +8,7 @@ namespace flash
 {
     namespace ui
     {
-        class GameInputFinger: public Object
+        class GameInputFinger : public Object
         {
         public:
             static const std::string THUMB;

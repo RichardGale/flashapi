@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -19,45 +20,45 @@ namespace flash
  */
 //[Event(name="complete",type="flash.events.ShaderEvent")]
 
-/**
- * A ShaderJob instance is used to execute a shader operation in stand-alone mode.
- * The shader operation executes and returns its result data. It is up to the
- * developer to determine how to use the result.
- *
- *   <p class="- topic/p ">There are two primary reasons for using a shader in stand-alone mode:</p><ul class="- topic/ul "><li class="- topic/li ">Processing non-image data: Using a ShaderJob instance you have control
- * over input values and over how the shader result is used. The shader can
- * return the result as binary data or number data instead of image data.</li><li class="- topic/li ">Background processing: Some shaders are complex and require a notable
- * amount of time to execute. Executing a complex shader in the main
- * execution of an application could slow down other parts of the application
- * such as user interaction or updating the screen. Using a ShaderJob instance,
- * you can execute the shader in the background.
- * When the shader is executed in this way, the shader operation runs separate
- * from the main execution of the application.</li></ul><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">shader</codeph> property (or constructor parameter) specifies the
- * Shader instance representing the shader that is used for the operation. You
- * provide any parameter or input that the shader expects using the
- * associated ShaderParameter or ShaderInput instance.</p><p class="- topic/p ">Before execution a ShaderJob operation, you provide an object into which the
- * result is written, by setting it as the value of the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> property.
- * When the shader operation completes the result is written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object.</p><p class="- topic/p ">To begin a background shader operation,
- * call the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method. When the operation finishes the result is
- * written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object. At that point the ShaderJob
- * instance dispatches a <codeph class="+ topic/ph pr-d/codeph ">complete</codeph>
- * event, notifying listeners that the result is available.</p><p class="- topic/p ">To execute a shader synchronously (that is, not running in the background), call
- * the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method and pass <codeph class="+ topic/ph pr-d/codeph ">true</codeph> as an argument. The shader
- * runs in the main execution thread and your code pauses until the operation completes. When
- * it finishes the result is written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object. At that point
- * the application continues running at the next line of code.</p>
- * @langversion 3.0
- * @playerversion   Flash 10
- * @playerversion   AIR 1.5
- */
-using namespace flash::events;
 using namespace flash::display;
+using namespace flash::events;
 
 namespace flash
 {
     namespace display
     {
-        class ShaderJob: public EventDispatcher
+        /**
+         * A ShaderJob instance is used to execute a shader operation in stand-alone mode.
+         * The shader operation executes and returns its result data. It is up to the
+         * developer to determine how to use the result.
+         *
+         *   <p class="- topic/p ">There are two primary reasons for using a shader in stand-alone mode:</p><ul class="- topic/ul "><li class="- topic/li ">Processing non-image data: Using a ShaderJob instance you have control
+         * over input values and over how the shader result is used. The shader can
+         * return the result as binary data or number data instead of image data.</li><li class="- topic/li ">Background processing: Some shaders are complex and require a notable
+         * amount of time to execute. Executing a complex shader in the main
+         * execution of an application could slow down other parts of the application
+         * such as user interaction or updating the screen. Using a ShaderJob instance,
+         * you can execute the shader in the background.
+         * When the shader is executed in this way, the shader operation runs separate
+         * from the main execution of the application.</li></ul><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">shader</codeph> property (or constructor parameter) specifies the
+         * Shader instance representing the shader that is used for the operation. You
+         * provide any parameter or input that the shader expects using the
+         * associated ShaderParameter or ShaderInput instance.</p><p class="- topic/p ">Before execution a ShaderJob operation, you provide an object into which the
+         * result is written, by setting it as the value of the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> property.
+         * When the shader operation completes the result is written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object.</p><p class="- topic/p ">To begin a background shader operation,
+         * call the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method. When the operation finishes the result is
+         * written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object. At that point the ShaderJob
+         * instance dispatches a <codeph class="+ topic/ph pr-d/codeph ">complete</codeph>
+         * event, notifying listeners that the result is available.</p><p class="- topic/p ">To execute a shader synchronously (that is, not running in the background), call
+         * the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method and pass <codeph class="+ topic/ph pr-d/codeph ">true</codeph> as an argument. The shader
+         * runs in the main execution thread and your code pauses until the operation completes. When
+         * it finishes the result is written into the <codeph class="+ topic/ph pr-d/codeph ">target</codeph> object. At that point
+         * the application continues running at the next line of code.</p>
+         * @langversion 3.0
+         * @playerversion   Flash 10
+         * @playerversion   AIR 1.5
+         */
+        class ShaderJob : public flash::events::EventDispatcher
         {
             /**
              * The shader that's used for the operation. Any input or parameter that the
@@ -154,7 +155,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            ShaderJob(Shader *shader, Object *target, int width, int height);
+            ShaderJob(Shader *shader=NULL, Object *target=NULL, int width=0, int height=0);
 
             /**
              * Starts a shader operation in synchronous or asynchronous mode, according to the
@@ -205,7 +206,7 @@ namespace flash
              *   property for more information.
              */
         public:
-            void     start(bool waitForCompletion);
+            void     start(bool waitForCompletion   =false);
 
             /**
              * Cancels the currently running shader operation. Any result data that is already

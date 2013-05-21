@@ -9,11 +9,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class DRMManagerError: public Error
+        class DRMManagerError : public Error
         {
             /**
              * The specific error number.

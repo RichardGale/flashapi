@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -34,6 +35,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Flash 10.1
  */
+
 using namespace flash::net::drm;
 using namespace flash::utils;
 
@@ -43,7 +45,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMVoucher: public Object
+            class DRMVoucher : public Object
             {
                 /**
                  * The beginning of this voucher's validity period.

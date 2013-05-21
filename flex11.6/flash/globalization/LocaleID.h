@@ -61,11 +61,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class LocaleID: public Object
+        class LocaleID : public Object
         {
             /**
              * Indicates that the user's default linguistic preferences should be used, as specified in the user's operating system settings.
@@ -126,7 +127,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *determinePreferredLocales(std::vector<std::string> *want, std::vector<std::string> *have, std::string keyword);
+            static std::vector<std::string> determinePreferredLocales(std::vector<std::string> want, std::vector<std::string> have, std::string keyword="userinterface");
 
             /**
              * Returns the language code specified by the locale ID name.

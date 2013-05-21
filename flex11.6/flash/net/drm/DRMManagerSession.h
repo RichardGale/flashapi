@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -41,9 +42,7 @@ namespace flash
 
 using namespace flash::events;
 using namespace flash::net::drm;
-using namespace flash::events;
 using namespace flash::utils;
-using namespace flash::net::drm;
 
 namespace flash
 {
@@ -51,7 +50,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMManagerSession: public EventDispatcher
+            class DRMManagerSession : public flash::events::EventDispatcher
             {
                 static const unsigned int STATUS_READY;
                 static const unsigned int STATUS_NOTREADY;
@@ -90,7 +89,7 @@ namespace flash
                 void    *issueDRMStatusEvent(DRMContentData *inMetadata, DRMVoucher *voucher);
 
             public:
-                void     issueDRMErrorEvent(DRMContentData *metadata, int errorID, int subErrorID, std::string eventType);
+                void     issueDRMErrorEvent(DRMContentData *metadata, int errorID, int subErrorID, std::string eventType="");
 
             public:
                 void     errorCodeToThrow(unsigned int errorCode);

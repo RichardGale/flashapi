@@ -15,11 +15,12 @@
  * @internal    Clipboard, ClipboardFormats and ClipboardTransferMode were all added to AIR 1.0. These are also being added, with some exceptions listed in this file, to FP10.
  */
 
+
 namespace flash
 {
     namespace desktop
     {
-        class ClipboardTransferMode: public Object
+        class ClipboardTransferMode : public Object
         {
             /**
              * The Clipboard object should return a reference if available and a copy if not.

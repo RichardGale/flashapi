@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -17,58 +18,58 @@
  */
 //[Event(name="timer",type="flash.events.TimerEvent")]
 
-/**
- * The Timer class is the interface to timers, which let you
- * run code on a specified time sequence. Use the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method to start a timer.
- * Add an event listener for the <codeph class="+ topic/ph pr-d/codeph ">timer</codeph> event to set up code to be run on the timer interval.
- *
- *   <p class="- topic/p ">You can create Timer objects to run once or repeat at specified intervals to execute code on a schedule.
- *
- *   <ph class="- topic/ph ">Depending on the SWF file's framerate or the runtime environment (available
- * memory and other factors), the runtime may dispatch events at slightly
- * offset intervals. For example, if a SWF file is set to play at 10 frames per second (fps), which is 100 millisecond
- * intervals, but your timer is set to fire an event at 80 milliseconds, the event will be dispatched close to the
- * 100 millisecond interval.</ph>
- *
- *   Memory-intensive scripts may also offset the events.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the class <codeph class="+ topic/ph pr-d/codeph ">TimerExample</codeph> to show how a
- * listener method <codeph class="+ topic/ph pr-d/codeph ">timerHandler()</codeph> can be set to listen for a new TimerEvent
- * to be dispatched. The timer is started when <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> is called, and after that point,
- * the timer events are dispatched.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.utils.Timer;
- * import flash.events.TimerEvent;
- * import flash.display.Sprite;
- *
- *   public class TimerExample extends Sprite {
- *
- *   public function TimerExample() {
- * var myTimer:Timer = new Timer(1000, 2);
- * myTimer.addEventListener("timer", timerHandler);
- * myTimer.start();
- * }
- *
- *   public function timerHandler(event:TimerEvent):void {
- * trace("timerHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace utils
     {
-        class Timer: public EventDispatcher
+        /**
+         * The Timer class is the interface to timers, which let you
+         * run code on a specified time sequence. Use the <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method to start a timer.
+         * Add an event listener for the <codeph class="+ topic/ph pr-d/codeph ">timer</codeph> event to set up code to be run on the timer interval.
+         *
+         *   <p class="- topic/p ">You can create Timer objects to run once or repeat at specified intervals to execute code on a schedule.
+         *
+         *   <ph class="- topic/ph ">Depending on the SWF file's framerate or the runtime environment (available
+         * memory and other factors), the runtime may dispatch events at slightly
+         * offset intervals. For example, if a SWF file is set to play at 10 frames per second (fps), which is 100 millisecond
+         * intervals, but your timer is set to fire an event at 80 milliseconds, the event will be dispatched close to the
+         * 100 millisecond interval.</ph>
+         *
+         *   Memory-intensive scripts may also offset the events.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the class <codeph class="+ topic/ph pr-d/codeph ">TimerExample</codeph> to show how a
+         * listener method <codeph class="+ topic/ph pr-d/codeph ">timerHandler()</codeph> can be set to listen for a new TimerEvent
+         * to be dispatched. The timer is started when <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> is called, and after that point,
+         * the timer events are dispatched.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.utils.Timer;
+         * import flash.events.TimerEvent;
+         * import flash.display.Sprite;
+         *
+         *   public class TimerExample extends Sprite {
+         *
+         *   public function TimerExample() {
+         * var myTimer:Timer = new Timer(1000, 2);
+         * myTimer.addEventListener("timer", timerHandler);
+         * myTimer.start();
+         * }
+         *
+         *   public function timerHandler(event:TimerEvent):void {
+         * trace("timerHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class Timer : public flash::events::EventDispatcher
         {
             /**
              * The delay, in milliseconds, between timer
@@ -172,7 +173,7 @@ namespace flash
              * @throws  Error if the delay specified is negative or not a finite number
              */
         public:
-            Timer(float delay, int repeatCount);
+            Timer(float delay, int repeatCount=0);
         };
     }
 }

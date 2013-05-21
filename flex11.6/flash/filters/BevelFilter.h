@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -106,13 +107,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class BevelFilter: public BitmapFilter
+        class BevelFilter : public flash::filters::BitmapFilter
         {
             /**
              * The offset distance of the bevel. Valid values are in pixels (floating point). The default is 4.
@@ -706,7 +708,7 @@ namespace flash
              *   </listing>
              */
         public:
-            BevelFilter(float distance, float angle, unsigned int highlightColor, float highlightAlpha, unsigned int shadowColor, float shadowAlpha, float blurX, float blurY, float strength, int quality, std::string type, bool knockout);
+            BevelFilter(float distance =4, float angle =45, unsigned int highlightColor=16777215, float highlightAlpha =1, unsigned int shadowColor=0, float shadowAlpha =1, float blurX =4, float blurY =4, float strength =1, int quality=1, std::string type="inner", bool knockout   =false);
 
             /**
              * Returns a copy of this filter object.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -16,111 +17,8 @@ namespace flash
 //[Event(name="menuItemSelect",type="flash.events.ContextMenuEvent")]
 
 
-//[Event(name="menuSelect",type="flash.events.ContextMenuEvent")]/// @eventType  flash.events.ContextMenuEvent.MENU_SELECT
+//[Event(name="menuSelect",type="flash.events.ContextMenuEvent")]
 
-/**
- * An InteractiveObject dispatches a ContextMenuEvent object when the user opens or interacts with
- * the context menu. There are two types of
- * ContextMenuEvent objects:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">ContextMenuEvent.MENU_ITEM_SELECT</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">ContextMenuEvent.MENU_SELECT</codeph></li></ul>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">ContextMenuEventExample</codeph> class
- * to remove the default context menu items from the Stage and add a new menu item that changes
- * the color of a square on the Stage. The example carries out the following
- * tasks:
- *
- *   <ol class="- topic/ol "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">myContextMenu</codeph> property is declared and then assigned to a new ContextMenu
- * object and the <codeph class="+ topic/ph pr-d/codeph ">redRectangle</codeph> property  (of type Sprite) is declared.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">removeDefaultItems()</codeph> method is called. This method removes all built-in context
- * menu items except Print.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">addCustomMenuItems()</codeph> method is called. This method places a
- * <codeph class="+ topic/ph pr-d/codeph ">Reverse Colors</codeph> menu item in the <codeph class="+ topic/ph pr-d/codeph ">defaultItems</codeph> array by using the
- * <codeph class="+ topic/ph pr-d/codeph ">push()</codeph> method of Array. A <codeph class="+ topic/ph pr-d/codeph ">menuItemSelect</codeph> event listener is added to the
- * ContextMenuItem object and the associated method is called <codeph class="+ topic/ph pr-d/codeph ">menuItemSelectHandler()</codeph>.
- * This method prints some <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statements whenever the user
- * selects Reverse Colors from the context menu. In addition the red square
- * becomes black and the black text becomes red.</li><li class="- topic/li ">Back in the constructor, a <codeph class="+ topic/ph pr-d/codeph ">menuSelect</codeph> event listener is added, along with
- * the associated method <codeph class="+ topic/ph pr-d/codeph ">menuSelectHandler()</codeph>, which simply prints out three <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statements
- * every time an item in the context menu is selected.</li><li class="- topic/li ">The constructor calls <codeph class="+ topic/ph pr-d/codeph ">addChildren()</codeph>, which draws a red square and adds it
- * to the display list, which immediately displays the square.</li><li class="- topic/li ">Finally, <codeph class="+ topic/ph pr-d/codeph ">myContextMenu</codeph> is assigned to the context menu of the <codeph class="+ topic/ph pr-d/codeph ">redRectangle</codeph> property,
- * so that the custom context menu is displayed only when the mouse pointer is over the square.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.ui.ContextMenu;
- * import flash.ui.ContextMenuItem;
- * import flash.ui.ContextMenuBuiltInItems;
- * import flash.events.ContextMenuEvent;
- * import flash.display.Sprite;
- * import flash.display.Shape;
- * import flash.text.TextField;
- *
- *   public class ContextMenuEventExample extends Sprite {
- * private var myContextMenu:ContextMenu;
- * private var menuLabel:String = "Reverse Colors";
- * private var textLabel:String = "Right Click";
- * private var redRectangle:Sprite;
- * private var label:TextField;
- * private var size:uint = 100;
- * private var black:uint = 0x000000;
- * private var red:uint = 0xFF0000;
- *
- *   public function ContextMenuEventExample() {
- * myContextMenu = new ContextMenu();
- * removeDefaultItems();
- * addCustomMenuItems();
- * myContextMenu.addEventListener(ContextMenuEvent.MENU_SELECT, menuSelectHandler);
- *
- *   addChildren();
- * redRectangle.contextMenu = myContextMenu;
- * }
- *
- *   private function addChildren():void {
- * redRectangle = new Sprite();
- * redRectangle.graphics.beginFill(red);
- * redRectangle.graphics.drawRect(0, 0, size, size);
- * addChild(redRectangle);
- * redRectangle.x = size;
- * redRectangle.y = size;
- * label = createLabel();
- * redRectangle.addChild(label);
- * }
- *
- *   private function removeDefaultItems():void {
- * myContextMenu.hideBuiltInItems();
- * var defaultItems:ContextMenuBuiltInItems = myContextMenu.builtInItems;
- * defaultItems.print = true;
- * }
- *
- *   private function addCustomMenuItems():void {
- * var item:ContextMenuItem = new ContextMenuItem(menuLabel);
- * myContextMenu.customItems.push(item);
- * item.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, menuItemSelectHandler);
- * }
- *
- *   private function menuSelectHandler(event:ContextMenuEvent):void {
- * trace("menuSelectHandler: " + event);
- * }
- *
- *   private function menuItemSelectHandler(event:ContextMenuEvent):void {
- * trace("menuItemSelectHandler: " + event);
- * var textColor:uint = (label.textColor == black) ? red : black;
- * var bgColor:uint = (label.textColor == black) ? black : red;
- * redRectangle.graphics.clear();
- * redRectangle.graphics.beginFill(bgColor);
- * redRectangle.graphics.drawRect(0, 0, size, size);
- * label.textColor = textColor;
- * }
- *
- *   private function createLabel():TextField {
- * var txtField:TextField = new TextField();
- * txtField.text = textLabel;
- * return txtField;
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- */
 using namespace flash::display;
 using namespace flash::events;
 
@@ -128,7 +26,113 @@ namespace flash
 {
     namespace events
     {
-        class ContextMenuEvent: public Event
+        /// @eventType  flash.events.ContextMenuEvent.MENU_SELECT
+
+
+        /**
+         * An InteractiveObject dispatches a ContextMenuEvent object when the user opens or interacts with
+         * the context menu. There are two types of
+         * ContextMenuEvent objects:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">ContextMenuEvent.MENU_ITEM_SELECT</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">ContextMenuEvent.MENU_SELECT</codeph></li></ul>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">ContextMenuEventExample</codeph> class
+         * to remove the default context menu items from the Stage and add a new menu item that changes
+         * the color of a square on the Stage. The example carries out the following
+         * tasks:
+         *
+         *   <ol class="- topic/ol "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">myContextMenu</codeph> property is declared and then assigned to a new ContextMenu
+         * object and the <codeph class="+ topic/ph pr-d/codeph ">redRectangle</codeph> property  (of type Sprite) is declared.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">removeDefaultItems()</codeph> method is called. This method removes all built-in context
+         * menu items except Print.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">addCustomMenuItems()</codeph> method is called. This method places a
+         * <codeph class="+ topic/ph pr-d/codeph ">Reverse Colors</codeph> menu item in the <codeph class="+ topic/ph pr-d/codeph ">defaultItems</codeph> array by using the
+         * <codeph class="+ topic/ph pr-d/codeph ">push()</codeph> method of Array. A <codeph class="+ topic/ph pr-d/codeph ">menuItemSelect</codeph> event listener is added to the
+         * ContextMenuItem object and the associated method is called <codeph class="+ topic/ph pr-d/codeph ">menuItemSelectHandler()</codeph>.
+         * This method prints some <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statements whenever the user
+         * selects Reverse Colors from the context menu. In addition the red square
+         * becomes black and the black text becomes red.</li><li class="- topic/li ">Back in the constructor, a <codeph class="+ topic/ph pr-d/codeph ">menuSelect</codeph> event listener is added, along with
+         * the associated method <codeph class="+ topic/ph pr-d/codeph ">menuSelectHandler()</codeph>, which simply prints out three <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statements
+         * every time an item in the context menu is selected.</li><li class="- topic/li ">The constructor calls <codeph class="+ topic/ph pr-d/codeph ">addChildren()</codeph>, which draws a red square and adds it
+         * to the display list, which immediately displays the square.</li><li class="- topic/li ">Finally, <codeph class="+ topic/ph pr-d/codeph ">myContextMenu</codeph> is assigned to the context menu of the <codeph class="+ topic/ph pr-d/codeph ">redRectangle</codeph> property,
+         * so that the custom context menu is displayed only when the mouse pointer is over the square.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.ui.ContextMenu;
+         * import flash.ui.ContextMenuItem;
+         * import flash.ui.ContextMenuBuiltInItems;
+         * import flash.events.ContextMenuEvent;
+         * import flash.display.Sprite;
+         * import flash.display.Shape;
+         * import flash.text.TextField;
+         *
+         *   public class ContextMenuEventExample extends Sprite {
+         * private var myContextMenu:ContextMenu;
+         * private var menuLabel:String = "Reverse Colors";
+         * private var textLabel:String = "Right Click";
+         * private var redRectangle:Sprite;
+         * private var label:TextField;
+         * private var size:uint = 100;
+         * private var black:uint = 0x000000;
+         * private var red:uint = 0xFF0000;
+         *
+         *   public function ContextMenuEventExample() {
+         * myContextMenu = new ContextMenu();
+         * removeDefaultItems();
+         * addCustomMenuItems();
+         * myContextMenu.addEventListener(ContextMenuEvent.MENU_SELECT, menuSelectHandler);
+         *
+         *   addChildren();
+         * redRectangle.contextMenu = myContextMenu;
+         * }
+         *
+         *   private function addChildren():void {
+         * redRectangle = new Sprite();
+         * redRectangle.graphics.beginFill(red);
+         * redRectangle.graphics.drawRect(0, 0, size, size);
+         * addChild(redRectangle);
+         * redRectangle.x = size;
+         * redRectangle.y = size;
+         * label = createLabel();
+         * redRectangle.addChild(label);
+         * }
+         *
+         *   private function removeDefaultItems():void {
+         * myContextMenu.hideBuiltInItems();
+         * var defaultItems:ContextMenuBuiltInItems = myContextMenu.builtInItems;
+         * defaultItems.print = true;
+         * }
+         *
+         *   private function addCustomMenuItems():void {
+         * var item:ContextMenuItem = new ContextMenuItem(menuLabel);
+         * myContextMenu.customItems.push(item);
+         * item.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, menuItemSelectHandler);
+         * }
+         *
+         *   private function menuSelectHandler(event:ContextMenuEvent):void {
+         * trace("menuSelectHandler: " + event);
+         * }
+         *
+         *   private function menuItemSelectHandler(event:ContextMenuEvent):void {
+         * trace("menuItemSelectHandler: " + event);
+         * var textColor:uint = (label.textColor == black) ? red : black;
+         * var bgColor:uint = (label.textColor == black) ? black : red;
+         * redRectangle.graphics.clear();
+         * redRectangle.graphics.beginFill(bgColor);
+         * redRectangle.graphics.drawRect(0, 0, size, size);
+         * label.textColor = textColor;
+         * }
+         *
+         *   private function createLabel():TextField {
+         * var txtField:TextField = new TextField();
+         * txtField.text = textLabel;
+         * return txtField;
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         */
+        class ContextMenuEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a menuItemSelect event object.
@@ -210,7 +214,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ContextMenuEvent(std::string type, bool bubbles, bool cancelable, InteractiveObject *mouseTarget, InteractiveObject *contextMenuOwner);
+            ContextMenuEvent(std::string type, bool bubbles   =false, bool cancelable   =false, InteractiveObject *mouseTarget=NULL, InteractiveObject *contextMenuOwner=NULL);
 
             /**
              * Creates a copy of the ContextMenuEvent object and sets the value of each property to match that of the original.

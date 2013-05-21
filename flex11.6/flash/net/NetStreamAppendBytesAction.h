@@ -14,11 +14,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetStreamAppendBytesAction: public Object
+        class NetStreamAppendBytesAction : public Object
         {
             /**
              * Indicates a timescale discontinuity. Flushes the FIFO (composed of an incomplete FLV tag) and resets the timescale to begin at the timestamp of the next appended message.

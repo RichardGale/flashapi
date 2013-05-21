@@ -17,11 +17,12 @@
  * @playerversion   AIR 2.7
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class MicrophoneEnhancedOptions: public Object
+        class MicrophoneEnhancedOptions : public Object
         {
             /**
              * Controls enhanced microphone mode. The default value is FULL_DUPLEX for all microphones that aren't USB.

@@ -73,11 +73,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace filters
     {
-        class BitmapFilterQuality: public Object
+        class BitmapFilterQuality : public Object
         {
             /**
              * Defines the low quality filter setting.

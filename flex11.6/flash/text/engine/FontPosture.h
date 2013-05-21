@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class FontPosture: public Object
+            class FontPosture : public Object
             {
                 /**
                  * Used to indicate normal font posture.

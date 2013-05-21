@@ -107,7 +107,8 @@
  * @playerversion   Lite 4
  */
 
-class QName: public Object
+
+class QName : public Object
 {
 public:
     static const void *length;
@@ -129,7 +130,7 @@ public:
     std::string  uri();
 
 public:
-    QName(void *namespace, void *name);
+    QName(void *namespace=NULL, void *name=NULL);
 
     /**
      * Returns the QName object.

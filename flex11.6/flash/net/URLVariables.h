@@ -48,11 +48,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class URLVariables: public Object
+        class URLVariables : public Object
         {
             /**
              * Converts the variable string to properties of the specified URLVariables object.
@@ -92,7 +93,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            URLVariables(std::string source);
+            URLVariables(std::string source="");
         };
     }
 }

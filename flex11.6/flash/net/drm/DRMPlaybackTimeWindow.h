@@ -14,13 +14,14 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace net
     {
         namespace drm
         {
-            class DRMPlaybackTimeWindow: public Object
+            class DRMPlaybackTimeWindow : public Object
             {
                 /**
                  * The period of time during which a DRM voucher is valid

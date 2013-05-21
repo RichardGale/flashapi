@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace automation
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace automation
     {
-        class ActionGenerator: public Object
+        class ActionGenerator : public Object
         {
         public:
             ActionGenerator();

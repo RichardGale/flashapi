@@ -11,11 +11,12 @@
  * @playerversion   AIR 2.7
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class MicrophoneEnhancedMode: public Object
+        class MicrophoneEnhancedMode : public Object
         {
             /**
              * Use this mode to allow both parties to talk at the same time. Acoustic echo cancellation operates in full-duplex mode.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -366,16 +367,17 @@ namespace flash
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
+using namespace flash::display;
 using namespace flash::events;
 using namespace flash::geom;
-using namespace flash::display;
 using namespace flash::printing;
 
 namespace flash
 {
     namespace printing
     {
-        class PrintJob: public EventDispatcher
+        class PrintJob : public flash::events::EventDispatcher
         {
             /**
              * Indicates whether the PrintJob class is supported on the current platform (true)
@@ -650,7 +652,7 @@ namespace flash
              *   user cancels the print job
              */
         public:
-            void     addPage(Sprite *sprite, Rectangle *printArea, PrintJobOptions *options, int frameNum);
+            void     addPage(Sprite *sprite, Rectangle *printArea=NULL, PrintJobOptions *options=NULL, int frameNum=0);
         };
     }
 }

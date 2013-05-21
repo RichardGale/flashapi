@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TypographicCase: public Object
+            class TypographicCase : public Object
             {
                 /**
                  * Specifies default typographic case. The results are font-dependent; characters use the settings specified by the font designer

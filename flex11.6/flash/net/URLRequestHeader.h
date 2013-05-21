@@ -125,11 +125,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class URLRequestHeader: public Object
+        class URLRequestHeader : public Object
         {
             /**
              * An HTTP request header name (such as Content-Type or SOAPAction).
@@ -162,7 +163,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            URLRequestHeader(std::string name, std::string value);
+            URLRequestHeader(std::string name="", std::string value="");
         };
     }
 }

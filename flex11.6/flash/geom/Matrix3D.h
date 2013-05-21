@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 namespace flash
 {
@@ -48,13 +49,14 @@ namespace flash
  *   display object, the Matrix3D object of the camera class can be set to the inverse of the <code>root</code>
  *   display object. Another option is to have the display objects as children of a camera object.</p>
  */
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace geom
     {
-        class Matrix3D: public Object
+        class Matrix3D : public Object
         {
             /**
              * A Vector of 16 Numbers, where every four elements can be a row or
@@ -68,9 +70,9 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<float> *rawData();
+            std::vector<float> rawData();
         public:
-            void         rawData(std::vector<float> *v);
+            void         rawData(std::vector<float> v);
 
             /**
              * A Vector3D object that holds the position, the 3D coordinate (x,y,z) of a display object
@@ -170,7 +172,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            Matrix3D(std::vector<float> *v);
+            Matrix3D(std::vector<float> v=std::vector<float>());
 
             /**
              * Appends the matrix by multiplying another Matrix3D object by the current Matrix3D object.
@@ -297,7 +299,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<flash::geom::Vector3D *> *decompose(std::string orientationStyle);
+            std::vector<flash::geom::Vector3D *> decompose(std::string orientationStyle="eulerAngles");
 
             /**
              * Sets the transformation matrix's translation, rotation, and scale settings.
@@ -334,7 +336,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     recompose(std::vector<flash::geom::Vector3D *> *components, std::string orientationStyle);
+            bool     recompose(std::vector<flash::geom::Vector3D *> components, std::string orientationStyle="eulerAngles");
 
             /**
              * Appends an incremental translation, a repositioning along the x, y, and z axes,
@@ -402,7 +404,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     appendRotation(float degrees, Vector3D *axis, Vector3D *pivotPoint);
+            void     appendRotation(float degrees, Vector3D *axis, Vector3D *pivotPoint=NULL);
 
             /**
              * Appends an incremental scale change along the x, y, and z axes
@@ -498,7 +500,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     prependRotation(float degrees, Vector3D *axis, Vector3D *pivotPoint);
+            void     prependRotation(float degrees, Vector3D *axis, Vector3D *pivotPoint=NULL);
 
             /**
              * Prepends an incremental scale change along the x, y, and z axes to a Matrix3D object.
@@ -591,7 +593,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     transformVectors(std::vector<float> *vin, std::vector<float> *vout);
+            void     transformVectors(std::vector<float> vin, std::vector<float> vout);
 
             /**
              * Converts the current Matrix3D object to a matrix where the rows and columns
@@ -641,7 +643,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     pointAt(Vector3D *pos, Vector3D *at, Vector3D *up);
+            void     pointAt(Vector3D *pos, Vector3D *at=NULL, Vector3D *up=NULL);
 
             /**
              * Interpolates the display object's matrix a percent closer to a target's matrix. All the elements for
@@ -677,10 +679,10 @@ namespace flash
             void     copyFrom(Matrix3D *sourceMatrix3D);
 
         public:
-            void     copyRawDataTo(std::vector<float> *vector, unsigned int index, bool transpose);
+            void     copyRawDataTo(std::vector<float> vector, unsigned int index=0, bool transpose   =false);
 
         public:
-            void     copyRawDataFrom(std::vector<float> *vector, unsigned int index, bool transpose);
+            void     copyRawDataFrom(std::vector<float> vector, unsigned int index=0, bool transpose   =false);
 
         public:
             void     copyRowTo(unsigned int row, Vector3D *vector3D);

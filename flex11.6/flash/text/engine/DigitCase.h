@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class DigitCase: public Object
+            class DigitCase : public Object
             {
                 /**
                  * Used to specify default digit case. The results are font-dependent; characters use the settings specified by the font designer

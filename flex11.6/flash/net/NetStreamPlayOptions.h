@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -17,13 +18,14 @@
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::events;
 
 namespace flash
 {
     namespace net
     {
-        class NetStreamPlayOptions: public EventDispatcher
+        class NetStreamPlayOptions : public flash::events::EventDispatcher
         {
             /**
              * The name of the new stream to transition to or to play. When oldStreamName is null or undefined, calling

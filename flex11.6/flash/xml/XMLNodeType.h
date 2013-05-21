@@ -14,11 +14,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace xml
     {
-        class XMLNodeType: public Object
+        class XMLNodeType : public Object
         {
             /**
              * Specifies that the node is an element.

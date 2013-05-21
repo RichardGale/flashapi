@@ -11,11 +11,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetGroupReplicationStrategy: public Object
+        class NetGroupReplicationStrategy : public Object
         {
             /**
              * Specifies that when fetching objects from a neighbor to satisfy a want, the objects with

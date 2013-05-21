@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 namespace flash
 {
@@ -22,22 +23,22 @@ namespace flash
 /// @eventType  flash.events.ShaderEvent.COMPLETE
 //[Event(name="complete",type="flash.events.ShaderEvent")]
 
-/**
- * A ShaderEvent is dispatched when a shader operation launched from
- * a ShaderJob finishes.
- * @langversion 3.0
- * @playerversion   Flash 10
- * @playerversion   AIR 1.5
- */
-using namespace flash::events;
 using namespace flash::display;
+using namespace flash::events;
 using namespace flash::utils;
 
 namespace flash
 {
     namespace events
     {
-        class ShaderEvent: public Event
+        /**
+         * A ShaderEvent is dispatched when a shader operation launched from
+         * a ShaderJob finishes.
+         * @langversion 3.0
+         * @playerversion   Flash 10
+         * @playerversion   AIR 1.5
+         */
+        class ShaderEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a complete event object.
@@ -93,9 +94,9 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<float> *vector();
+            std::vector<float> vector();
         public:
-            void         vector(std::vector<float> *v);
+            void         vector(std::vector<float> v);
 
             /**
              * Creates a copy of the ShaderEvent object and sets the value of each property
@@ -132,7 +133,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            ShaderEvent(std::string type, bool bubbles, bool cancelable, BitmapData *bitmap, ByteArray *array, std::vector<float> *vector);
+            ShaderEvent(std::string type, bool bubbles   =false, bool cancelable   =false, BitmapData *bitmap=NULL, ByteArray *array=NULL, std::vector<float> vector=std::vector<float>());
 
             /**
              * Returns a string that contains all the properties of the ShaderEvent object.

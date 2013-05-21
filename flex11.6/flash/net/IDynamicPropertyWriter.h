@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -20,6 +21,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::net;
 
 namespace flash
@@ -38,8 +40,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual void writeDynamicProperties(Object *obj, IDynamicPropertyOutput *output) = 0;
+             */virtual
+            void     writeDynamicProperties(Object *obj, IDynamicPropertyOutput *output) = 0;
         };
     }
 }

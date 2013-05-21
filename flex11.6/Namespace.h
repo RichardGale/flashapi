@@ -264,7 +264,8 @@
  * @playerversion   Lite 4
  */
 
-class Namespace: public Object
+
+class Namespace : public Object
 {
 public:
     static const void *length;
@@ -286,7 +287,7 @@ public:
     std::string  uri();
 
 public:
-    Namespace(void *prefix, void *uri);
+    Namespace(void *prefix=NULL, void *uri=NULL);
 
     /**
      * Returns the URI value of the specified object.

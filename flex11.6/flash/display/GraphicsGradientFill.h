@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsFill.h"
 #include "IGraphicsData.h"
 namespace flash
@@ -24,15 +25,14 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace display
     {
-        class GraphicsGradientFill: public Object, public IGraphicsFill,, public IGraphicsData
+        class GraphicsGradientFill : public Object, public private::IGraphicsFill, public private::IGraphicsData
         {
             /**
              * An array of RGB hexadecimal color values to use in the gradient. For example,
@@ -198,7 +198,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsGradientFill(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, void *matrix, void *spreadMethod, std::string interpolationMethod, float focalPointRatio);
+            GraphicsGradientFill(std::string type="linear", std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), void *matrix=NULL, void *spreadMethod=(void *)"pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
         };
     }
 }

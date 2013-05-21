@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DTextureFormat: public Object
+        class Context3DTextureFormat : public Object
         {
         public:
             static const std::string BGRA;

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -35,13 +36,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   AIR 2
  */
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace accessibility
     {
-        class AccessibilityImplementation: public Object
+        class AccessibilityImplementation : public Object
         {
             /**
              * Used to create a component accessibility stub.

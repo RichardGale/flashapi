@@ -42,14 +42,15 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class IllegalOperationError: public Error
+        class IllegalOperationError : public Error
         {
         public:
-            IllegalOperationError(std::string message, int id);
+            IllegalOperationError(std::string message="", int id=0);
         };
     }
 }

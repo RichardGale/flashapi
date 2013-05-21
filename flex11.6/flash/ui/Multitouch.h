@@ -60,11 +60,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class Multitouch: public Object
+        class Multitouch : public Object
         {
             /**
              * Identifies the multi-touch mode for touch and gesture event handling. Use this property to manage
@@ -119,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::vector<std::string> *supportedGestures();
+            static std::vector<std::string> supportedGestures();
 
             /**
              * The maximum number of concurrent touch points supported by the current environment.

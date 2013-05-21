@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -19,15 +20,15 @@ namespace flash
     }
 }
 
+using namespace flash::display;
 using namespace flash::events;
 using namespace flash::geom;
-using namespace flash::display;
 
 namespace flash
 {
     namespace automation
     {
-        class StageCapture: public EventDispatcher
+        class StageCapture : public flash::events::EventDispatcher
         {
         public:
             static const std::string CURRENT;

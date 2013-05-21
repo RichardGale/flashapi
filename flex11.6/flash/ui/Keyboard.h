@@ -13,11 +13,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class Keyboard: public Object
+        class Keyboard : public Object
         {
             /**
              * The up arrow

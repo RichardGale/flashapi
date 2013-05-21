@@ -18,11 +18,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetStreamMulticastInfo: public Object
+        class NetStreamMulticastInfo : public Object
         {
             /**
              * Specifies the rate at which media data is being sent by the local node to peers, in bytes per second.

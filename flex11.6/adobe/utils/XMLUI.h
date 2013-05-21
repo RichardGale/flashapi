@@ -19,11 +19,12 @@
  * @productversion  Flash CS3
  */
 
+
 namespace adobe
 {
     namespace utils
     {
-        class XMLUI: public Object
+        class XMLUI : public Object
         {
             /**
              * Retrieves the value of the specified property of the current XMLUI dialog box.

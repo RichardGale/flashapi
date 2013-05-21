@@ -3,12 +3,15 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
+#include "IDataOutput.h"
+
 
 namespace flash
 {
     namespace utils
     {
-        class IDataOutput2: public IDataOutput
+        class IDataOutput2 : public IDataOutput
     {   };
     }
 }

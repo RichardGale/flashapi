@@ -15,11 +15,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class DateTimeNameStyle: public Object
+        class DateTimeNameStyle : public Object
         {
             /**
              * Specifies the full form or full name style for month names and weekday names.

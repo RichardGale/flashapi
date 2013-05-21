@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class LineJustification: public Object
+            class LineJustification : public Object
             {
                 /**
                  * Do not justify lines.

@@ -11,11 +11,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextFieldType: public Object
+        class TextFieldType : public Object
         {
             /**
              * Used to specify an input TextField.

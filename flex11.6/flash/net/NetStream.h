@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -160,147 +161,175 @@ namespace flash
  * by invoking the NetStream.play() method.
  * @eventType   flash.events.StatusEvent.STATUS
  */
-//[Event(name="status",type="flash.events.StatusEvent")]/// Establishes a listener to respond when Flash Player receives descriptive information embedded in the video being played.
+//[Event(name="status",type="flash.events.StatusEvent")]
 
-/**
- * The NetStream class opens a one-way streaming channel over a NetConnection.
- *
- *   <p class="- topic/p "> Use the NetStream class to do the following:</p><ul class="- topic/ul "><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> to play a media file from a local disk, a web server, or Flash Media Server.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.publish()</codeph> to publish a video, audio, and data stream to Flash Media Server.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.send()</codeph> to send data messages to all subscribed clients.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.send()</codeph> to add metadata to a live stream.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.appendBytes()</codeph> to pass ByteArray data into the NetStream.</li></ul><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b>You cannot play and publish a stream over the same NetStream object.</p><p class="- topic/p ">Adobe AIR and Flash Player 9.0.115.0 and later versions
- * support files derived from the standard MPEG-4 container format. These files include F4V, MP4, M4A, MOV, MP4V, 3GP, and 3G2
- * if they contain H.264 video, HEAAC v2 encoded audio, or both. H.264 delivers higher quality video at lower bit rates
- * when compared to the same encoding profile in Sorenson or On2. AAC is a standard audio format defined in the MPEG-4 video standard.
- * HE-AAC v2 is an extension of AAC that uses Spectral Band Replication (SBR)
- * and Parametric Stereo (PS) techniques to increase coding efficiency at low bit rates.</p><p class="- topic/p ">For information about supported codecs and file formats, see the following:</p><ul class="- topic/ul "><li class="- topic/li "><xref href="http://www.adobe.com/go/learn_fms_fileformats_en" scope="external" class="- topic/xref ">Flash Media Server documentation</xref></li><li class="- topic/li "><xref href="http://www.adobe.com/go/hardware_scaling_en" scope="external" class="- topic/xref ">Exploring Flash Player support for high-definition H.264 video and AAC audio</xref></li><li class="- topic/li "><xref href="http://www.adobe.com/go/video_file_format" scope="external" class="- topic/xref ">FLV/F4V open specification documents</xref></li></ul><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Receiving data from a Flash Media Server stream, progressive F4V file, or progressive FLV file</b></p><p class="- topic/p ">Flash Media Server, F4V files, and FLV files can send event objects containing data at specific
- * data points during streaming or playback. You can handle data from a stream or FLV file during playback in two ways:</p><ul class="- topic/ul "><li class="- topic/li ">
- * Associate a client property with an event handler to receive the data object.
- * Use the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property to assign an object to call specific
- * data handling functions. The object assigned to the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property
- * can listen for the following data points: <codeph class="+ topic/ph pr-d/codeph ">onCuePoint()</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">onImageData()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onMetaData()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onPlayStatus()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onSeekPoint()</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">onTextData()</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">onXMPData()</codeph>. Write procedures within those functions
- * to handle the data object returned from the stream during playback.
- * See the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property for more information.
- * </li><li class="- topic/li ">
- * Associate a client property with a subclass of the NetStream class, then write
- * an event handler to receive the data object. NetStream is
- * a sealed class, which means that properties or methods cannot be added to a NetStream object
- * at runtime. However, you can create a subclass of NetStream and define your event handler
- * in the subclass. You can also make the subclass dynamic and add the event handler to an
- * instance of the subclass.
- * </li></ul><p class="- topic/p ">Wait to receive a <codeph class="+ topic/ph pr-d/codeph ">NetGroup.Neighbor.Connect</codeph> event before you use the object replication, direct routing, or posting APIs.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To send data through an audio file, like an mp3 file, use the Sound class
- * to associate the audio file with a Sound object. Then, use the <codeph class="+ topic/ph pr-d/codeph ">Sound.id3</codeph> property
- * to read metadata from the sound file.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses a Video object with the NetConnection and
- * NetStream classes to load and play an FLV file.
- * <p class="- topic/p ">In this example, the code that creates the Video and NetStream objects and calls the
- * <codeph class="+ topic/ph pr-d/codeph ">Video.attachNetStream()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> methods is placed
- * in a handler function. The handler is called only if the
- * attempt to connect to the NetConnection object is successful; that is,
- * when the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event returns an <codeph class="+ topic/ph pr-d/codeph ">info</codeph> object with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph>
- * property that indicates success.
- * It is recommended that you wait for a successful connection before you call
- * <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph>. </p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.NetStatusEvent;
- * import flash.events.SecurityErrorEvent;
- * import flash.media.Video;
- * import flash.net.NetConnection;
- * import flash.net.NetStream;
- * import flash.events.Event;
- *
- *   public class NetConnectionExample extends Sprite {
- * private var videoURL:String = "http://www.helpexamples.com/flash/video/cuepoints.flv";
- * private var connection:NetConnection;
- * private var stream:NetStream;
- * private var video:Video = new Video();
- *
- *   public function NetConnectionExample() {
- * connection = new NetConnection();
- * connection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * connection.connect(null);
- * }
- *
- *   private function netStatusHandler(event:NetStatusEvent):void {
- * switch (event.info.code) {
- * case "NetConnection.Connect.Success":
- * connectStream();
- * break;
- * case "NetStream.Play.StreamNotFound":
- * trace("Stream not found: " + videoURL);
- * break;
- * }
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function connectStream():void {
- * var stream:NetStream = new NetStream(connection);
- * stream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * stream.client = new CustomClient();
- * video.attachNetStream(stream);
- * stream.play(videoURL);
- * addChild(video);
- * }
- * }
- * }
- *
- *   class CustomClient {
- * public function onMetaData(info:Object):void {
- * trace("metadata: duration=" + info.duration + " width=" + info.width + " height=" + info.height + " framerate=" + info.framerate);
- * }
- * public function onCuePoint(info:Object):void {
- * trace("cuepoint: time=" + info.time + " name=" + info.name + " type=" + info.type);
- * }
- * }
- * </codeblock>
- *
- *   EXAMPLE:
- *
- *   You can get metadata using a function, instead of creating a custom class. The following suggestion,
- * provided by <xref href="http://www.sandlight.com" scope="external" class="- topic/xref ">Bill Sanders</xref>, shows how to edit the NetConnectionExample code above to call metadata within a function. In this case, the object
- * <codeph class="+ topic/ph pr-d/codeph ">mdata</codeph> is used to set up the width and height of a video instance <codeph class="+ topic/ph pr-d/codeph ">video</codeph>:
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * //Place the following in the connectStream() function
- * //in the NetConnectionExample code
- * var metaSniffer:Object=new Object();
- * stream.client=metaSniffer; //stream is the NetStream instance
- * metaSniffer.onMetaData=getMeta;
- *
- *   // Add the following function within the NetConnectionExample class
- * private function getMeta (mdata:Object):void
- * {
- * video.width=mdata.width/2;
- * video.height=mdata.height/2;
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
-using namespace flash::net;
-using namespace flash::media;
 using namespace flash::media;
 using namespace flash::net;
-using namespace flash::net;
-using namespace flash::net;
-using namespace flash::net;
-using namespace flash::media;
 using namespace flash::utils;
-using namespace flash::media;
 
 namespace flash
 {
     namespace net
     {
-        class NetStream: public EventDispatcher
+        /// Establishes a listener to respond when Flash Player receives descriptive information embedded in the video being played.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /**
+         * The NetStream class opens a one-way streaming channel over a NetConnection.
+         *
+         *   <p class="- topic/p "> Use the NetStream class to do the following:</p><ul class="- topic/ul "><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> to play a media file from a local disk, a web server, or Flash Media Server.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.publish()</codeph> to publish a video, audio, and data stream to Flash Media Server.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.send()</codeph> to send data messages to all subscribed clients.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.send()</codeph> to add metadata to a live stream.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">NetStream.appendBytes()</codeph> to pass ByteArray data into the NetStream.</li></ul><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b>You cannot play and publish a stream over the same NetStream object.</p><p class="- topic/p ">Adobe AIR and Flash Player 9.0.115.0 and later versions
+         * support files derived from the standard MPEG-4 container format. These files include F4V, MP4, M4A, MOV, MP4V, 3GP, and 3G2
+         * if they contain H.264 video, HEAAC v2 encoded audio, or both. H.264 delivers higher quality video at lower bit rates
+         * when compared to the same encoding profile in Sorenson or On2. AAC is a standard audio format defined in the MPEG-4 video standard.
+         * HE-AAC v2 is an extension of AAC that uses Spectral Band Replication (SBR)
+         * and Parametric Stereo (PS) techniques to increase coding efficiency at low bit rates.</p><p class="- topic/p ">For information about supported codecs and file formats, see the following:</p><ul class="- topic/ul "><li class="- topic/li "><xref href="http://www.adobe.com/go/learn_fms_fileformats_en" scope="external" class="- topic/xref ">Flash Media Server documentation</xref></li><li class="- topic/li "><xref href="http://www.adobe.com/go/hardware_scaling_en" scope="external" class="- topic/xref ">Exploring Flash Player support for high-definition H.264 video and AAC audio</xref></li><li class="- topic/li "><xref href="http://www.adobe.com/go/video_file_format" scope="external" class="- topic/xref ">FLV/F4V open specification documents</xref></li></ul><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Receiving data from a Flash Media Server stream, progressive F4V file, or progressive FLV file</b></p><p class="- topic/p ">Flash Media Server, F4V files, and FLV files can send event objects containing data at specific
+         * data points during streaming or playback. You can handle data from a stream or FLV file during playback in two ways:</p><ul class="- topic/ul "><li class="- topic/li ">
+         * Associate a client property with an event handler to receive the data object.
+         * Use the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property to assign an object to call specific
+         * data handling functions. The object assigned to the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property
+         * can listen for the following data points: <codeph class="+ topic/ph pr-d/codeph ">onCuePoint()</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">onImageData()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onMetaData()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onPlayStatus()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">onSeekPoint()</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">onTextData()</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">onXMPData()</codeph>. Write procedures within those functions
+         * to handle the data object returned from the stream during playback.
+         * See the <codeph class="+ topic/ph pr-d/codeph ">NetStream.client</codeph> property for more information.
+         * </li><li class="- topic/li ">
+         * Associate a client property with a subclass of the NetStream class, then write
+         * an event handler to receive the data object. NetStream is
+         * a sealed class, which means that properties or methods cannot be added to a NetStream object
+         * at runtime. However, you can create a subclass of NetStream and define your event handler
+         * in the subclass. You can also make the subclass dynamic and add the event handler to an
+         * instance of the subclass.
+         * </li></ul><p class="- topic/p ">Wait to receive a <codeph class="+ topic/ph pr-d/codeph ">NetGroup.Neighbor.Connect</codeph> event before you use the object replication, direct routing, or posting APIs.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To send data through an audio file, like an mp3 file, use the Sound class
+         * to associate the audio file with a Sound object. Then, use the <codeph class="+ topic/ph pr-d/codeph ">Sound.id3</codeph> property
+         * to read metadata from the sound file.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses a Video object with the NetConnection and
+         * NetStream classes to load and play an FLV file.
+         * <p class="- topic/p ">In this example, the code that creates the Video and NetStream objects and calls the
+         * <codeph class="+ topic/ph pr-d/codeph ">Video.attachNetStream()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> methods is placed
+         * in a handler function. The handler is called only if the
+         * attempt to connect to the NetConnection object is successful; that is,
+         * when the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event returns an <codeph class="+ topic/ph pr-d/codeph ">info</codeph> object with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph>
+         * property that indicates success.
+         * It is recommended that you wait for a successful connection before you call
+         * <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph>. </p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.NetStatusEvent;
+         * import flash.events.SecurityErrorEvent;
+         * import flash.media.Video;
+         * import flash.net.NetConnection;
+         * import flash.net.NetStream;
+         * import flash.events.Event;
+         *
+         *   public class NetConnectionExample extends Sprite {
+         * private var videoURL:String = "http://www.helpexamples.com/flash/video/cuepoints.flv";
+         * private var connection:NetConnection;
+         * private var stream:NetStream;
+         * private var video:Video = new Video();
+         *
+         *   public function NetConnectionExample() {
+         * connection = new NetConnection();
+         * connection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * connection.connect(null);
+         * }
+         *
+         *   private function netStatusHandler(event:NetStatusEvent):void {
+         * switch (event.info.code) {
+         * case "NetConnection.Connect.Success":
+         * connectStream();
+         * break;
+         * case "NetStream.Play.StreamNotFound":
+         * trace("Stream not found: " + videoURL);
+         * break;
+         * }
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function connectStream():void {
+         * var stream:NetStream = new NetStream(connection);
+         * stream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * stream.client = new CustomClient();
+         * video.attachNetStream(stream);
+         * stream.play(videoURL);
+         * addChild(video);
+         * }
+         * }
+         * }
+         *
+         *   class CustomClient {
+         * public function onMetaData(info:Object):void {
+         * trace("metadata: duration=" + info.duration + " width=" + info.width + " height=" + info.height + " framerate=" + info.framerate);
+         * }
+         * public function onCuePoint(info:Object):void {
+         * trace("cuepoint: time=" + info.time + " name=" + info.name + " type=" + info.type);
+         * }
+         * }
+         * </codeblock>
+         *
+         *   EXAMPLE:
+         *
+         *   You can get metadata using a function, instead of creating a custom class. The following suggestion,
+         * provided by <xref href="http://www.sandlight.com" scope="external" class="- topic/xref ">Bill Sanders</xref>, shows how to edit the NetConnectionExample code above to call metadata within a function. In this case, the object
+         * <codeph class="+ topic/ph pr-d/codeph ">mdata</codeph> is used to set up the width and height of a video instance <codeph class="+ topic/ph pr-d/codeph ">video</codeph>:
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * //Place the following in the connectStream() function
+         * //in the NetConnectionExample code
+         * var metaSniffer:Object=new Object();
+         * stream.client=metaSniffer; //stream is the NetStream instance
+         * metaSniffer.onMetaData=getMeta;
+         *
+         *   // Add the following function within the NetConnectionExample class
+         * private function getMeta (mdata:Object):void
+         * {
+         * video.width=mdata.width/2;
+         * video.height=mdata.height/2;
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class NetStream : public flash::events::EventDispatcher
         {
             /**
              * Creates a peer-to-peer publisher connection. Pass this string for the second (optional) parameter to
@@ -1077,7 +1106,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     attachCamera(Camera *theCamera, int snapshotMilliseconds);
+            void     attachCamera(Camera *theCamera, int snapshotMilliseconds=-1);
 
             /**
              * Creates a stream that you can use to play media files and send data over a NetConnection object.
@@ -1101,7 +1130,7 @@ namespace flash
              * @throws  ArgumentError The NetConnection instance is not connected.
              */
         public:
-            NetStream(NetConnection *connection, std::string peerID);
+            NetStream(NetConnection *connection, std::string peerID="connectToFMS");
 
             /**
              * Sends a message on a published stream to all subscribing clients.
@@ -1536,7 +1565,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     publish(std::string name, std::string type);
+            void     publish(std::string name="", std::string type="");
 
             /**
              * Invoked when a peer-publishing stream matches a peer-subscribing stream. Before the subscriber is

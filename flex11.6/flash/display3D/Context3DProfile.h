@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DProfile: public Object
+        class Context3DProfile : public Object
         {
         public:
             static const std::string BASELINE;

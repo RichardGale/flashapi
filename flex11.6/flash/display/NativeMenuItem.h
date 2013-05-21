@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -24,31 +25,31 @@
  */
 //[Event(name="select",type="flash.events.Event")]
 
-/**
- * The NativeMenuItem class represents a single item in a menu.
- *
- *   <p class="- topic/p ">A menu item can be a command, a submenu, or a separator line:</p><ul class="- topic/ul "><li class="- topic/li ">To create a command item, call the NativeMenuItem constructor, passing in a
- * string for the label and <codeph class="+ topic/ph pr-d/codeph ">false</codeph> for the <codeph class="+ topic/ph pr-d/codeph ">isSeparator</codeph>
- * parameter.</li><li class="- topic/li ">To create a submenu, create a command item for the parent menu and
- * assign the NativeMenu object of the submenu to the item's <codeph class="+ topic/ph pr-d/codeph ">submenu</codeph>
- * property. You can also call the <codeph class="+ topic/ph pr-d/codeph ">addSubmenu()</codeph> method of the
- * parent NativeMenu object to create the item and set the <codeph class="+ topic/ph pr-d/codeph ">submenu</codeph>
- * property at the same time.</li><li class="- topic/li ">To create a separator, call the NativeMenuItem constructor, passing in an empty
- * string for the label and <codeph class="+ topic/ph pr-d/codeph ">true</codeph> for the <codeph class="+ topic/ph pr-d/codeph ">isSeparator</codeph>
- * parameter.</li></ul><p class="- topic/p ">Listen for <codeph class="+ topic/ph pr-d/codeph ">select</codeph> events on an item or a parent menu to detect when a
- * menu command is selected. Neither submenus nor separators dispatch
- * select events. Listen for <codeph class="+ topic/ph pr-d/codeph ">preparing</codeph> events to determine when
- * a menu item is about to be displayed or activated through a key equivalent.</p>
- * @langversion 3.0
- * @playerversion   AIR 1.0
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace display
     {
-        class NativeMenuItem: public EventDispatcher
+        /**
+         * The NativeMenuItem class represents a single item in a menu.
+         *
+         *   <p class="- topic/p ">A menu item can be a command, a submenu, or a separator line:</p><ul class="- topic/ul "><li class="- topic/li ">To create a command item, call the NativeMenuItem constructor, passing in a
+         * string for the label and <codeph class="+ topic/ph pr-d/codeph ">false</codeph> for the <codeph class="+ topic/ph pr-d/codeph ">isSeparator</codeph>
+         * parameter.</li><li class="- topic/li ">To create a submenu, create a command item for the parent menu and
+         * assign the NativeMenu object of the submenu to the item's <codeph class="+ topic/ph pr-d/codeph ">submenu</codeph>
+         * property. You can also call the <codeph class="+ topic/ph pr-d/codeph ">addSubmenu()</codeph> method of the
+         * parent NativeMenu object to create the item and set the <codeph class="+ topic/ph pr-d/codeph ">submenu</codeph>
+         * property at the same time.</li><li class="- topic/li ">To create a separator, call the NativeMenuItem constructor, passing in an empty
+         * string for the label and <codeph class="+ topic/ph pr-d/codeph ">true</codeph> for the <codeph class="+ topic/ph pr-d/codeph ">isSeparator</codeph>
+         * parameter.</li></ul><p class="- topic/p ">Listen for <codeph class="+ topic/ph pr-d/codeph ">select</codeph> events on an item or a parent menu to detect when a
+         * menu command is selected. Neither submenus nor separators dispatch
+         * select events. Listen for <codeph class="+ topic/ph pr-d/codeph ">preparing</codeph> events to determine when
+         * a menu item is about to be displayed or activated through a key equivalent.</p>
+         * @langversion 3.0
+         * @playerversion   AIR 1.0
+         */
+        class NativeMenuItem : public flash::events::EventDispatcher
         {
             /**
              * Controls whether this menu item is enabled.

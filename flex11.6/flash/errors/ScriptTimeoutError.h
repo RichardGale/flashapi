@@ -52,14 +52,15 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class ScriptTimeoutError: public Error
+        class ScriptTimeoutError : public Error
         {
         public:
-            ScriptTimeoutError(std::string message, int id);
+            ScriptTimeoutError(std::string message="", int id=0);
         };
     }
 }

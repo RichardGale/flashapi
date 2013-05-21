@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DTextureFilter: public Object
+        class Context3DTextureFilter : public Object
         {
         public:
             static const std::string NEAREST;

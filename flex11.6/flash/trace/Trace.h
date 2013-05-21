@@ -8,7 +8,7 @@ namespace flash
 {
     namespace trace
     {
-        class Trace: public Object
+        class Trace : public Object
         {
         public:
             static const int OFF;
@@ -26,10 +26,10 @@ namespace flash
             static const void *LISTENER;
 
         public:
-            static void    *setLevel(int l, int target);
+            static void    *setLevel(int l, int target=2);
 
         public:
-            static int      getLevel(int target);
+            static int      getLevel(int target=2);
 
         public:
             static void    *setListener(Function *f);

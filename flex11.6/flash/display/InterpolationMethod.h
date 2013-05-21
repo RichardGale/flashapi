@@ -12,11 +12,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class InterpolationMethod: public Object
+        class InterpolationMethod : public Object
         {
             /**
              * Specifies that the RGB interpolation method should be used. This means that the gradient is rendered with

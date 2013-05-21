@@ -8,7 +8,7 @@ namespace flash
 {
     namespace xml
     {
-        class XMLTag: public Object
+        class XMLTag : public Object
         {
         public:
             unsigned int type();

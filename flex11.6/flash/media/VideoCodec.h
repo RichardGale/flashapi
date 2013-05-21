@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class VideoCodec: public Object
+        class VideoCodec : public Object
         {
         public:
             static const std::string H264AVC;

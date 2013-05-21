@@ -58,11 +58,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class Security: public Object
+        class Security : public Object
         {
             /**
              * The file is from an Internet URL and operates under domain-based sandbox rules.
@@ -509,7 +510,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static void     showSettings(std::string panel);
+            static void     showSettings(std::string panel="default");
         };
     }
 }

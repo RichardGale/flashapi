@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsFill.h"
 #include "IGraphicsData.h"
 
@@ -16,14 +17,13 @@
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 
 namespace flash
 {
     namespace display
     {
-        class GraphicsEndFill: public Object, public IGraphicsFill,, public IGraphicsData
+        class GraphicsEndFill : public Object, public private::IGraphicsFill, public private::IGraphicsData
         {
             /**
              * Creates an object to use with the Graphics.drawGraphicsData() method to end

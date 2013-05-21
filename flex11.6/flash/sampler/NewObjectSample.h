@@ -85,11 +85,12 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+
 namespace flash
 {
     namespace sampler
     {
-        class NewObjectSample: public Sample
+        class NewObjectSample : public Sample
         {
         public:
             const float id;

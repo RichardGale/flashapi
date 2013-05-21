@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsPath.h"
 #include "IGraphicsData.h"
 
@@ -22,14 +23,13 @@
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 
 namespace flash
 {
     namespace display
     {
-        class GraphicsTrianglePath: public Object, public IGraphicsPath,, public IGraphicsData
+        class GraphicsTrianglePath : public Object, public private::IGraphicsPath, public private::IGraphicsData
         {
             /**
              * A Vector of integers or indexes, where every three indexes define a triangle. If the indexes parameter
@@ -41,7 +41,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<int> *indices;
+            std::vector<int> indices;
 
             /**
              * A Vector of Numbers where each pair of numbers is treated as a point (an x, y pair).
@@ -50,7 +50,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<float> *vertices;
+            std::vector<float> vertices;
 
             /**
              * A Vector of normalized coordinates used to apply texture mapping.
@@ -70,7 +70,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<float> *uvtData;
+            std::vector<float> uvtData;
 
             /**
              * Specifies whether to render triangles that face in a given direction. Used to
@@ -99,7 +99,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsTrianglePath(std::vector<float> *vertices, std::vector<int> *indices, std::vector<float> *uvtData, std::string culling);
+            GraphicsTrianglePath(std::vector<float> vertices=std::vector<float>(), std::vector<int> indices=std::vector<int>(), std::vector<float> uvtData=std::vector<float>(), std::string culling="none");
         };
     }
 }

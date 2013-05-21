@@ -11,11 +11,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class SoundCodec: public Object
+        class SoundCodec : public Object
         {
             /**
              * Specifies that the Nellymoser codec be used for compressing audio.

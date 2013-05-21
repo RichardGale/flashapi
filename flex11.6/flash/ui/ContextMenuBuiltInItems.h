@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -65,11 +66,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class ContextMenuBuiltInItems: public Object
+        class ContextMenuBuiltInItems : public Object
         {
             /**
              * Lets the user with Shockmachine installed save a SWF file.

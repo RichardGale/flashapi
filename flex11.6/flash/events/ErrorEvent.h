@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -10,81 +11,82 @@ namespace flash
         class Event;
     }
 }
+#include "flash/events/TextEvent.h"
 
 /// @eventType  flash.events.ErrorEvent.ERROR
 //[Event(name="error",type="flash.events.ErrorEvent")]
 
-/**
- * An object dispatches an ErrorEvent object when an error causes an asynchronous operation
- * to fail.
- *
- *   <p class="- topic/p ">The ErrorEvent class defines only one type of <codeph class="+ topic/ph pr-d/codeph ">error</codeph> event:
- * <codeph class="+ topic/ph pr-d/codeph ">ErrorEvent.ERROR</codeph>. The ErrorEvent class also serves as the base class for
- * several other error event classes, including the AsyncErrorEvent, IOErrorEvent,
- * SecurityErrorEvent, SQLErrorEvent, and UncaughtErrorEvent classes.</p><p class="- topic/p ">You can check for <codeph class="+ topic/ph pr-d/codeph ">error</codeph> events that do not have any listeners by
- * registering a listener for the <codeph class="+ topic/ph pr-d/codeph ">uncaughtError</codeph> (UncaughtErrorEvent.UNCAUGHT_ERROR)
- * event.</p><p class="- topic/p ">An uncaught error also causes an error dialog box displaying the error event to appear
- * when content is running in the <ph class="- topic/ph ">debugger version of Flash
- * Player or the</ph> AIR Debug Launcher (ADL) application.</p>
- *
- *   EXAMPLE:
- *
- *   The following example demonstrates the use of a single error handler (<codeph class="+ topic/ph pr-d/codeph ">errorHandler()</codeph>)
- * that captures multiple types of error events. If there is an <codeph class="+ topic/ph pr-d/codeph ">ioError</codeph> event, the handler
- * attempts to load from the network, which then throws a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph>.
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note: </b> This example does not work if you have a file named
- * MissingFile.xml in the same directory as your SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.net.URLLoader;
- * import flash.net.URLRequest;
- * import flash.events.*;
- *
- *   public class ErrorEventExample extends Sprite {
- * private var loader:URLLoader;
- * private var request:URLRequest;
- *
- *   public function ErrorEventExample() {
- * loader = new URLLoader();
- * loader.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
- * loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, errorHandler);
- *
- *   request = new URLRequest();
- * loadFromFileSystem();
- * }
- *
- *   private function loadFromFileSystem():void {
- * request.url = "MissingFile.xml";
- * loader.load(request);
- * }
- *
- *   private function loadFromNetwork():void {
- * request.url = "http://www.[yourDomain].com/MissingFile.xml";
- * loader.load(request);
- * }
- *
- *   private function errorHandler(event:ErrorEvent):void {
- * trace("errorHandler: " + event);
- * if(event is IOErrorEvent) {
- * loadFromNetwork();
- * }
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   AIR 1.0
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class ErrorEvent: public TextEvent
+        /**
+         * An object dispatches an ErrorEvent object when an error causes an asynchronous operation
+         * to fail.
+         *
+         *   <p class="- topic/p ">The ErrorEvent class defines only one type of <codeph class="+ topic/ph pr-d/codeph ">error</codeph> event:
+         * <codeph class="+ topic/ph pr-d/codeph ">ErrorEvent.ERROR</codeph>. The ErrorEvent class also serves as the base class for
+         * several other error event classes, including the AsyncErrorEvent, IOErrorEvent,
+         * SecurityErrorEvent, SQLErrorEvent, and UncaughtErrorEvent classes.</p><p class="- topic/p ">You can check for <codeph class="+ topic/ph pr-d/codeph ">error</codeph> events that do not have any listeners by
+         * registering a listener for the <codeph class="+ topic/ph pr-d/codeph ">uncaughtError</codeph> (UncaughtErrorEvent.UNCAUGHT_ERROR)
+         * event.</p><p class="- topic/p ">An uncaught error also causes an error dialog box displaying the error event to appear
+         * when content is running in the <ph class="- topic/ph ">debugger version of Flash
+         * Player or the</ph> AIR Debug Launcher (ADL) application.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example demonstrates the use of a single error handler (<codeph class="+ topic/ph pr-d/codeph ">errorHandler()</codeph>)
+         * that captures multiple types of error events. If there is an <codeph class="+ topic/ph pr-d/codeph ">ioError</codeph> event, the handler
+         * attempts to load from the network, which then throws a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph>.
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note: </b> This example does not work if you have a file named
+         * MissingFile.xml in the same directory as your SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.net.URLLoader;
+         * import flash.net.URLRequest;
+         * import flash.events.*;
+         *
+         *   public class ErrorEventExample extends Sprite {
+         * private var loader:URLLoader;
+         * private var request:URLRequest;
+         *
+         *   public function ErrorEventExample() {
+         * loader = new URLLoader();
+         * loader.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
+         * loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, errorHandler);
+         *
+         *   request = new URLRequest();
+         * loadFromFileSystem();
+         * }
+         *
+         *   private function loadFromFileSystem():void {
+         * request.url = "MissingFile.xml";
+         * loader.load(request);
+         * }
+         *
+         *   private function loadFromNetwork():void {
+         * request.url = "http://www.[yourDomain].com/MissingFile.xml";
+         * loader.load(request);
+         * }
+         *
+         *   private function errorHandler(event:ErrorEvent):void {
+         * trace("errorHandler: " + event);
+         * if(event is IOErrorEvent) {
+         * loadFromNetwork();
+         * }
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   AIR 1.0
+         * @playerversion   Lite 4
+         */
+        class ErrorEvent : public flash::events::TextEvent
         {
             /**
              * Defines the value of the type property of an error event object.
@@ -123,7 +125,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ErrorEvent(std::string type, bool bubbles, bool cancelable, std::string text, int id);
+            ErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", int id=0);
 
             /**
              * Creates a copy of the ErrorEvent object and sets the value of each property to match that of the original.

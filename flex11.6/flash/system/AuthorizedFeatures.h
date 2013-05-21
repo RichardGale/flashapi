@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -25,15 +26,15 @@ namespace flash
     }
 }
 
+using namespace flash::net;
 using namespace flash::system;
 using namespace flash::utils;
-using namespace flash::net;
 
 namespace flash
 {
     namespace system
     {
-        class AuthorizedFeatures: public Object
+        class AuthorizedFeatures : public Object
         {
         public:
             AuthorizedFeatures();
@@ -44,7 +45,7 @@ namespace flash
         public:
             bool     enableDiskCache(URLStream *stream);
 
-            bool     isFeatureEnabled(std::string feature, std::string data);
+            bool     isFeatureEnabled(std::string feature, std::string data="");
 
             bool     isNegativeToken();
         };

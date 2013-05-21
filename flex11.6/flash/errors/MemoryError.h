@@ -45,14 +45,15 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class MemoryError: public Error
+        class MemoryError : public Error
         {
         public:
-            MemoryError(std::string message, int id);
+            MemoryError(std::string message="", int id=0);
         };
     }
 }

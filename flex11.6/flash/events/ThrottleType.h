@@ -8,7 +8,7 @@ namespace flash
 {
     namespace events
     {
-        class ThrottleType: public Object
+        class ThrottleType : public Object
         {
         public:
             static const std::string THROTTLE;

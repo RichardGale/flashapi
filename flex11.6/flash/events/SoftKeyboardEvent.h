@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 namespace flash
 {
@@ -21,14 +22,15 @@ namespace flash
  * @playerversion   Flash 10.2
  * @playerversion   AIR 2.6
  */
-using namespace flash::events;
+
 using namespace flash::display;
+using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class SoftKeyboardEvent: public Event
+        class SoftKeyboardEvent : public flash::events::Event
         {
             /**
              * The SoftKeyboardEvent.SOFT_KEYBOARD_ACTIVATE constant defines the value of the

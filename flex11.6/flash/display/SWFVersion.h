@@ -14,11 +14,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class SWFVersion: public Object
+        class SWFVersion : public Object
         {
             /**
              * SWF file format version 1.0.

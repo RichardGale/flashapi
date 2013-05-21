@@ -27,11 +27,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace utils
     {
-        class Dictionary: public Object
+        class Dictionary : public Object
         {
             /**
              * Creates a new Dictionary object. To remove a key from a Dictionary object, use the delete operator.
@@ -43,7 +44,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Dictionary(bool weakKeys);
+            Dictionary(bool weakKeys   =false);
         };
     }
 }

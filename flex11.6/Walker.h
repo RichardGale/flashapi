@@ -4,7 +4,7 @@
 
 
 
-class Walker: public Object
+class Walker : public Object
 {
 public:
     Function *reviver;

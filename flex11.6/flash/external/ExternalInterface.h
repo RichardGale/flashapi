@@ -185,11 +185,12 @@
  * @internal    Verify table is still correct and paragraph below the table still applies.
  */
 
+
 namespace flash
 {
     namespace external
     {
-        class ExternalInterface: public Object
+        class ExternalInterface : public Object
         {
             /**
              * Indicates whether the external interface should attempt to pass ActionScript exceptions to the

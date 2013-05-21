@@ -10,11 +10,12 @@
  * @playerversion   AIR (unsupported)
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class StageVideoAvailability: public Object
+        class StageVideoAvailability : public Object
         {
             /**
              * Stage video is currently available.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -83,97 +84,94 @@ namespace flash
  */
 //[Event(name="sampleData",type="flash.events.SampleDataEvent")]
 
-/**
- * The Sound class lets you work with sound in an application. The Sound class
- * lets you create a Sound object, load and play an external MP3 file into that object,
- * close the sound stream, and access
- * data about the sound, such as information about the number of bytes in the stream and
- * ID3 metadata. More detailed control of the sound is performed through the sound source
- * the SoundChannel or Microphone object for the sound     and through the properties
- * in the SoundTransform class that control the output of the sound to the computer's speakers.
- *
- *   <p class="- topic/p ">In Flash Player 10 and later and AIR 1.5 and later, you can also use this
- * class to work with sound that is generated dynamically.
- * In this case, the Sound object uses the function you assign to a <codeph class="+ topic/ph pr-d/codeph ">sampleData</codeph> event handler to
- * poll for sound data. The sound is played as it is retrieved from a ByteArray object that
- * you populate with sound data. You can use <codeph class="+ topic/ph pr-d/codeph ">Sound.extract()</codeph> to extract sound data from a
- * Sound object,
- * after which you can manipulate it before writing it back to the stream for playback.</p><p class="- topic/p ">To control sounds that are embedded in a SWF file, use the properties in the SoundMixer class.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: The ActionScript 3.0 Sound API differs from ActionScript 2.0.
- * In ActionScript 3.0, you cannot take sound objects and arrange them in a hierarchy
- * to control their properties.</p><p class="- topic/p ">When you use this class, consider the following security model: </p><ul class="- topic/ul "><li class="- topic/li ">Loading and playing a sound is not allowed if the calling file is in a network sandbox
- * and the sound file to be loaded is local.</li><li class="- topic/li ">By default, loading and playing a sound is not allowed if the calling file is local and
- * tries to load and play a remote sound. A user must grant explicit permission to allow this type of access.</li><li class="- topic/li ">Certain operations dealing with sound are restricted. The data in a loaded sound cannot
- * be accessed by a file in a different domain unless you implement a cross-domain policy file.
- * Sound-related APIs that fall under this restriction are <codeph class="+ topic/ph pr-d/codeph ">Sound.id3</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">SoundMixer.computeSpectrum()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">SoundMixer.bufferTime</codeph>,
- * and the <codeph class="+ topic/ph pr-d/codeph ">SoundTransform</codeph> class.</li></ul><p class="- topic/p ">However, in Adobe AIR, content in the <codeph class="+ topic/ph pr-d/codeph ">application</codeph> security sandbox (content
- * installed with the AIR application) are not restricted by these security limitations.</p><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
- * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref>.</p>
- *
- *   EXAMPLE:
- *
- *   The following example displays
- * information about sound events that take place as an MP3 file is opened and played. To run this example,
- * place a file named MySound.mp3 in the same directory as your SWF file.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.media.Sound;
- * import flash.media.SoundChannel;
- * import flash.net.URLRequest;
- *
- *   public class SoundExample extends Sprite {
- * private var url:String = "MySound.mp3";
- * private var song:SoundChannel;
- *
- *   public function SoundExample() {
- * var request:URLRequest = new URLRequest(url);
- * var soundFactory:Sound = new Sound();
- * soundFactory.addEventListener(Event.COMPLETE, completeHandler);
- * soundFactory.addEventListener(Event.ID3, id3Handler);
- * soundFactory.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * soundFactory.addEventListener(ProgressEvent.PROGRESS, progressHandler);
- * soundFactory.load(request);
- * song = soundFactory.play();
- * }
- *
- *   private function completeHandler(event:Event):void {
- * trace("completeHandler: " + event);
- * }
- *
- *   private function id3Handler(event:Event):void {
- * trace("id3Handler: " + event);
- * }
- *
- *   private function ioErrorHandler(event:Event):void {
- * trace("ioErrorHandler: " + event);
- * }
- *
- *   private function progressHandler(event:ProgressEvent):void {
- * trace("progressHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- * @refpath
- */
 using namespace flash::events;
+using namespace flash::media;
 using namespace flash::net;
-using namespace flash::media;
 using namespace flash::utils;
-using namespace flash::media;
-using namespace flash::media;
-using namespace flash::media;
 
 namespace flash
 {
     namespace media
     {
-        class Sound: public EventDispatcher
+        /**
+         * The Sound class lets you work with sound in an application. The Sound class
+         * lets you create a Sound object, load and play an external MP3 file into that object,
+         * close the sound stream, and access
+         * data about the sound, such as information about the number of bytes in the stream and
+         * ID3 metadata. More detailed control of the sound is performed through the sound source
+         * the SoundChannel or Microphone object for the sound     and through the properties
+         * in the SoundTransform class that control the output of the sound to the computer's speakers.
+         *
+         *   <p class="- topic/p ">In Flash Player 10 and later and AIR 1.5 and later, you can also use this
+         * class to work with sound that is generated dynamically.
+         * In this case, the Sound object uses the function you assign to a <codeph class="+ topic/ph pr-d/codeph ">sampleData</codeph> event handler to
+         * poll for sound data. The sound is played as it is retrieved from a ByteArray object that
+         * you populate with sound data. You can use <codeph class="+ topic/ph pr-d/codeph ">Sound.extract()</codeph> to extract sound data from a
+         * Sound object,
+         * after which you can manipulate it before writing it back to the stream for playback.</p><p class="- topic/p ">To control sounds that are embedded in a SWF file, use the properties in the SoundMixer class.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: The ActionScript 3.0 Sound API differs from ActionScript 2.0.
+         * In ActionScript 3.0, you cannot take sound objects and arrange them in a hierarchy
+         * to control their properties.</p><p class="- topic/p ">When you use this class, consider the following security model: </p><ul class="- topic/ul "><li class="- topic/li ">Loading and playing a sound is not allowed if the calling file is in a network sandbox
+         * and the sound file to be loaded is local.</li><li class="- topic/li ">By default, loading and playing a sound is not allowed if the calling file is local and
+         * tries to load and play a remote sound. A user must grant explicit permission to allow this type of access.</li><li class="- topic/li ">Certain operations dealing with sound are restricted. The data in a loaded sound cannot
+         * be accessed by a file in a different domain unless you implement a cross-domain policy file.
+         * Sound-related APIs that fall under this restriction are <codeph class="+ topic/ph pr-d/codeph ">Sound.id3</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">SoundMixer.computeSpectrum()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">SoundMixer.bufferTime</codeph>,
+         * and the <codeph class="+ topic/ph pr-d/codeph ">SoundTransform</codeph> class.</li></ul><p class="- topic/p ">However, in Adobe AIR, content in the <codeph class="+ topic/ph pr-d/codeph ">application</codeph> security sandbox (content
+         * installed with the AIR application) are not restricted by these security limitations.</p><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
+         * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref>.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example displays
+         * information about sound events that take place as an MP3 file is opened and played. To run this example,
+         * place a file named MySound.mp3 in the same directory as your SWF file.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.media.Sound;
+         * import flash.media.SoundChannel;
+         * import flash.net.URLRequest;
+         *
+         *   public class SoundExample extends Sprite {
+         * private var url:String = "MySound.mp3";
+         * private var song:SoundChannel;
+         *
+         *   public function SoundExample() {
+         * var request:URLRequest = new URLRequest(url);
+         * var soundFactory:Sound = new Sound();
+         * soundFactory.addEventListener(Event.COMPLETE, completeHandler);
+         * soundFactory.addEventListener(Event.ID3, id3Handler);
+         * soundFactory.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * soundFactory.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+         * soundFactory.load(request);
+         * song = soundFactory.play();
+         * }
+         *
+         *   private function completeHandler(event:Event):void {
+         * trace("completeHandler: " + event);
+         * }
+         *
+         *   private function id3Handler(event:Event):void {
+         * trace("id3Handler: " + event);
+         * }
+         *
+         *   private function ioErrorHandler(event:Event):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         *
+         *   private function progressHandler(event:ProgressEvent):void {
+         * trace("progressHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         * @refpath
+         */
+        class Sound : public flash::events::EventDispatcher
         {
             /**
              * The URL from which this sound was loaded. This property is applicable only to Sound
@@ -347,13 +345,13 @@ namespace flash
              *   platform component).
              */
         public:
-            void     load(URLRequest *stream, SoundLoaderContext *context);
+            void     load(URLRequest *stream, SoundLoaderContext *context=NULL);
 
         public:
             void     loadCompressedDataFromByteArray(ByteArray *bytes, unsigned int bytesLength);
 
         public:
-            void     loadPCMFromByteArray(ByteArray *bytes, unsigned int samples, std::string format, bool stereo, float sampleRate);
+            void     loadPCMFromByteArray(ByteArray *bytes, unsigned int samples, std::string format="float", bool stereo   =true, float sampleRate =44100);
 
             /**
              * Creates a new Sound object. If you pass a valid URLRequest object to the
@@ -380,7 +378,7 @@ namespace flash
              * @refpath
              */
         public:
-            Sound(URLRequest *stream, SoundLoaderContext *context);
+            Sound(URLRequest *stream=NULL, SoundLoaderContext *context=NULL);
 
             /**
              * Generates a new SoundChannel object to play back the sound. This method
@@ -402,7 +400,7 @@ namespace flash
              * @refpath
              */
         public:
-            flash::media::SoundChannel *play(float startTime, int loops, SoundTransform *sndTransform);
+            flash::media::SoundChannel *play(float startTime =0, int loops=0, SoundTransform *sndTransform=NULL);
 
             /**
              * Closes the stream, causing any download of data to cease.
@@ -443,7 +441,7 @@ namespace flash
              * @refpath
              */
         public:
-            float    extract(ByteArray *target, float length, float startPosition);
+            float    extract(ByteArray *target, float length, float startPosition =-1);
         };
     }
 }

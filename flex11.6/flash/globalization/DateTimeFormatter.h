@@ -144,11 +144,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class DateTimeFormatter: public Object
+        class DateTimeFormatter : public Object
         {
             /**
              * The status of previous operation that this DateTimeFormatter object performed.
@@ -248,7 +249,7 @@ namespace flash
              * @throws  TypeError if the dateStyle or timeStyle parameter is null.
              */
         public:
-            DateTimeFormatter(std::string requestedLocaleIDName, std::string dateStyle, std::string timeStyle);
+            DateTimeFormatter(std::string requestedLocaleIDName, std::string dateStyle="long", std::string timeStyle="long");
 
             /**
              * Lists all of the locale ID names supported by this class.
@@ -261,7 +262,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *getAvailableLocaleIDNames();
+            static std::vector<std::string> getAvailableLocaleIDNames();
 
             /**
              * Sets the date and time styles for this instance of the DateTimeFormatter. Date and time styles are used to set
@@ -381,7 +382,7 @@ namespace flash
              * @throws  TypeError if the nameStyle or context parameter is null.
              */
         public:
-            std::vector<std::string> *getMonthNames(std::string nameStyle, std::string context);
+            std::vector<std::string> getMonthNames(std::string nameStyle="full", std::string context="standalone");
 
             /**
              * Retrieves a list of localized strings containing the names of weekdays for the current calendar system.
@@ -405,7 +406,7 @@ namespace flash
              * @throws  TypeError if the nameStyle or context parameter is null.
              */
         public:
-            std::vector<std::string> *getWeekdayNames(std::string nameStyle, std::string context);
+            std::vector<std::string> getWeekdayNames(std::string nameStyle="full", std::string context="standalone");
 
             /**
              * Returns an integer corresponding to the first day of the week for this locale and calendar system.

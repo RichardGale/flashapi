@@ -98,6 +98,7 @@
  * @playerversion   Lite 4
  */
 
+
 class Object
 {
 public:
@@ -133,7 +134,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    bool     isPrototypeOf(void *V);
+    bool     isPrototypeOf(void *V=NULL);
 
     /**
      * Indicates whether an object has a specified property defined. This method returns true if the target object has
@@ -155,7 +156,7 @@ public:
      * @playerversion   Lite 4
      * @category    Method
      */
-    bool     hasOwnProperty(void *V);
+    bool     hasOwnProperty(void *V=NULL);
 
     /**
      * Creates an Object object and stores a reference to the object's constructor method in the object's constructor property.
@@ -188,7 +189,7 @@ public:
      *   trace(myArray.propertyIsEnumerable("length")); // false
      *   </listing>
      */
-    bool     propertyIsEnumerable(void *V);
+    bool     propertyIsEnumerable(void *V=NULL);
 };
 
 #endif // FLEX11_6_OBJECT_AS

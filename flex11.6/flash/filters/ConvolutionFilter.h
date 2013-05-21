@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -145,13 +146,14 @@
  * @playerversion   Flash 9
  * @internal    Do we allow anything other than 3x3 matrix convolution? Are default x y values correct?
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class ConvolutionFilter: public BitmapFilter
+        class ConvolutionFilter : public flash::filters::BitmapFilter
         {
             /**
              * An array of values used for matrix transformation. The number of items
@@ -487,7 +489,7 @@ namespace flash
              *   </listing>
              */
         public:
-            ConvolutionFilter(float matrixX, float matrixY, std::vector<void *> matrix, float divisor, float bias, bool preserveAlpha, bool clamp, unsigned int color, float alpha);
+            ConvolutionFilter(float matrixX =0, float matrixY =0, std::vector<void *> matrix=std::vector<void *>(), float divisor =1, float bias =0, bool preserveAlpha   =true, bool clamp   =true, unsigned int color=0, float alpha =0);
 
             /**
              * Returns a copy of this filter object.

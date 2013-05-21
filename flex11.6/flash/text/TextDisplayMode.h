@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextDisplayMode: public Object
+        class TextDisplayMode : public Object
         {
             /**
              * Forces Flash Player to use LCD subpixel anti-aliasing. Depending on the font and

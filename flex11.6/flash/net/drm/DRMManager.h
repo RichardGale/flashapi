@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 namespace flash
@@ -89,29 +90,9 @@ namespace flash
  */
 //[Event(name="authenticationComplete",type="flash.events.DRMAuthenticationCompleteEvent")]
 
-/**
- * The DRMManager manages the retrieval and storage of the vouchers needed to view
- * DRM-protected content. With the static <codeph class="+ topic/ph pr-d/codeph ">DRMManager.getDRMManager()</codeph> method, you can
- * access the existing DRMManager object to perform the following DRM-management tasks:
- *
- *   <ul class="- topic/ul "><li class="- topic/li ">Preload vouchers from a media rights server, using a DRMContentData object.</li><li class="- topic/li ">Query the local cache for an individual voucher, using a DRMContentData object.</li><li class="- topic/li ">Reset all vouchers (AIR only)</li></ul><p class="- topic/p ">No method is provided for enumerating all the vouchers in the local cache.</p><p class="- topic/p ">Do not create an instance of the DRMManager class. Use the static
- * <codeph class="+ topic/ph pr-d/codeph ">DRMManager.getDRMManager()</codeph> to access the existing DRMManager object.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
- * on all desktop operating systems and AIR for TV devices, but it is not supported on mobile devices. You can test
- * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">DRMManager.isSupported</codeph> property. See
- * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
- * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p>
- * @langversion 3.0
- * @playerversion   AIR 1.5
- * @playerversion   Flash 10.1
- */
 using namespace flash::events;
+using namespace flash::net::drm;
 using namespace flash::utils;
-using namespace flash::net::drm;
-using namespace flash::events;
-using namespace flash::events;
-using namespace flash::events;
-using namespace flash::events;
-using namespace flash::net::drm;
 
 namespace flash
 {
@@ -119,7 +100,22 @@ namespace flash
     {
         namespace drm
         {
-            class DRMManager: public EventDispatcher
+            /**
+             * The DRMManager manages the retrieval and storage of the vouchers needed to view
+             * DRM-protected content. With the static <codeph class="+ topic/ph pr-d/codeph ">DRMManager.getDRMManager()</codeph> method, you can
+             * access the existing DRMManager object to perform the following DRM-management tasks:
+             *
+             *   <ul class="- topic/ul "><li class="- topic/li ">Preload vouchers from a media rights server, using a DRMContentData object.</li><li class="- topic/li ">Query the local cache for an individual voucher, using a DRMContentData object.</li><li class="- topic/li ">Reset all vouchers (AIR only)</li></ul><p class="- topic/p ">No method is provided for enumerating all the vouchers in the local cache.</p><p class="- topic/p ">Do not create an instance of the DRMManager class. Use the static
+             * <codeph class="+ topic/ph pr-d/codeph ">DRMManager.getDRMManager()</codeph> to access the existing DRMManager object.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
+             * on all desktop operating systems and AIR for TV devices, but it is not supported on mobile devices. You can test
+             * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">DRMManager.isSupported</codeph> property. See
+             * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
+             * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p>
+             * @langversion 3.0
+             * @playerversion   AIR 1.5
+             * @playerversion   Flash 10.1
+             */
+            class DRMManager : public flash::events::EventDispatcher
             {
                 /**
                  * The isSupported property is set to true if the

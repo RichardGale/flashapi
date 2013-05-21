@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -133,13 +134,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace display
     {
-        class Bitmap: public DisplayObject
+        class Bitmap : public DisplayObject
         {
             /**
              * Controls whether or not the Bitmap object is snapped to the nearest pixel. The PixelSnapping
@@ -195,7 +197,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Bitmap(BitmapData *bitmapData, std::string pixelSnapping, bool smoothing);
+            Bitmap(BitmapData *bitmapData=NULL, std::string pixelSnapping="auto", bool smoothing   =false);
         };
     }
 }

@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class InvalidSWFError: public Error
+        class InvalidSWFError : public Error
         {
             /**
              * Creates a new InvalidSWFError object.
@@ -24,7 +25,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            InvalidSWFError(std::string message, int id);
+            InvalidSWFError(std::string message="", int id=0);
         };
     }
 }

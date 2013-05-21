@@ -11,13 +11,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class FontLookup: public Object
+            class FontLookup : public Object
             {
                 /**
                  * Used to indicate device font lookup.

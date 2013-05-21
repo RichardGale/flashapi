@@ -38,14 +38,15 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class IOError: public Error
+        class IOError : public Error
         {
         public:
-            IOError(std::string message, int id);
+            IOError(std::string message="", int id=0);
         };
     }
 }

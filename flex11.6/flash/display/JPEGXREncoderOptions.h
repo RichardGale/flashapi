@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display
     {
-        class JPEGXREncoderOptions: public Object
+        class JPEGXREncoderOptions : public Object
         {
         public:
             unsigned int quantization;
@@ -18,7 +18,7 @@ namespace flash
             unsigned int trimFlexBits;
 
         public:
-            JPEGXREncoderOptions(unsigned int quantization, std::string colorSpace, unsigned int trimFlexBits);
+            JPEGXREncoderOptions(unsigned int quantization=20, std::string colorSpace="auto", unsigned int trimFlexBits=0);
         };
     }
 }

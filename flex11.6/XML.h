@@ -96,7 +96,8 @@
  * @playerversion   Lite 4
  */
 
-class XML: public Object
+
+class XML : public Object
 {
 public:
     static const void *length;
@@ -206,7 +207,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    static void     setSettings(Object *o);
+    static void     setSettings(Object *o=NULL);
 
     /**
      * Returns an object with the following properties set to the default values: ignoreComments,
@@ -243,7 +244,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasOwnProperty(void *P);
+    bool     hasOwnProperty(void *P=NULL);
 
     /**
      * Checks whether the property p is in the set of properties that can be iterated in a
@@ -255,7 +256,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     propertyIsEnumerable(void *P);
+    bool     propertyIsEnumerable(void *P=NULL);
 
     /**
      * Adds a namespace to the set of in-scope namespaces for the XML object. If the namespace already
@@ -393,7 +394,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *descendants(void *name);
+    XMLList *descendants(void *name=(void *)"*");
 
     /**
      * Lists the elements of an XML object. An element consists of a start and an end tag;
@@ -415,7 +416,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *elements(void *name);
+    XMLList *elements(void *name=(void *)"*");
 
     /**
      * Checks to see whether the XML object contains complex content. An XML object contains complex content if
@@ -519,7 +520,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    void    *namespace(void *prefix);
+    void    *namespace(void *prefix=NULL);
 
     /**
      * Lists namespace declarations associated with the XML object in the context of its parent.
@@ -566,7 +567,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *processingInstructions(void *name);
+    XMLList *processingInstructions(void *name=(void *)"*");
 
     /**
      * Inserts a copy of the provided child object into the XML element before any existing XML
@@ -687,7 +688,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    XML(void *value);
+    XML(void *value=NULL);
 };
 
 #endif // FLEX11_6_XML_AS

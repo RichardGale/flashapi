@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -58,11 +59,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace geom
     {
-        class Point: public Object
+        class Point : public Object
         {
             /**
              * The horizontal coordinate of the point. The default value is 0.
@@ -184,7 +186,7 @@ namespace flash
              *   </listing>
              */
         public:
-            Point(float x, float y);
+            Point(float x =0, float y =0);
 
             /**
              * Converts a pair of polar coordinates to a Cartesian point coordinate.

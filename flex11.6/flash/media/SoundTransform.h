@@ -92,11 +92,12 @@
  * @refpath
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class SoundTransform: public Object
+        class SoundTransform : public Object
         {
             /**
              * The volume, ranging from 0 (silent) to 1 (full volume).
@@ -187,7 +188,7 @@ namespace flash
              * @refpath
              */
         public:
-            SoundTransform(float vol, float panning);
+            SoundTransform(float vol =1, float panning =0);
         };
     }
 }

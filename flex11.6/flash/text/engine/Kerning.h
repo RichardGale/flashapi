@@ -11,13 +11,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class Kerning: public Object
+            class Kerning : public Object
             {
                 /**
                  * Used to indicate kerning is enabled.

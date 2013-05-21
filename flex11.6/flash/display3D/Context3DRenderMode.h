@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DRenderMode: public Object
+        class Context3DRenderMode : public Object
         {
         public:
             static const std::string AUTO;

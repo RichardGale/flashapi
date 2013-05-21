@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -132,13 +133,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class ColorMatrixFilter: public BitmapFilter
+        class ColorMatrixFilter : public flash::filters::BitmapFilter
         {
             /**
              * An array of 20 items for 4 x 5 color transform. The matrix property cannot
@@ -206,7 +208,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ColorMatrixFilter(std::vector<void *> matrix);
+            ColorMatrixFilter(std::vector<void *> matrix=std::vector<void *>());
 
             /**
              * Returns a copy of this filter object.

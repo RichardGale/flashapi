@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -14,13 +15,14 @@
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::events;
 
 namespace flash
 {
     namespace display
     {
-        class FrameLabel: public EventDispatcher
+        class FrameLabel : public flash::events::EventDispatcher
         {
             /**
              * The name of the label.

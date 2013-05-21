@@ -11,11 +11,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class MouseCursor: public Object
+        class MouseCursor : public Object
         {
             /**
              * Used to specify that the cursor should be selected automatically based on the object under the mouse.

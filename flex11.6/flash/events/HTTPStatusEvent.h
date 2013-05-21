@@ -3,73 +3,77 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.HTTPStatusEvent.HTTP_RESPONSE_STATUS
 //[Event(name="httpResponseStatus",type="flash.events.HTTPStatusEvent")]
 
 
-//[Event(name="httpStatus",type="flash.events.HTTPStatusEvent")]/// @eventType  flash.events.HTTPStatusEvent.HTTP_STATUS
+//[Event(name="httpStatus",type="flash.events.HTTPStatusEvent")]
 
-/**
- * The application dispatches HTTPStatusEvent objects when a network request returns an HTTP
- * status code.
- *
- *   <p class="- topic/p ">HTTPStatusEvent objects are always sent before error or completion events. An
- * HTTPStatusEvent object does not necessarily indicate an error condition; it simply reflects
- * the HTTP status code (if any) that is provided by the networking stack. <ph class="- topic/ph ">Some Flash
- * Player environments may be unable to detect HTTP status codes; a status code of 0 is always
- * reported in these cases.</ph></p><p class="- topic/p "><ph class="- topic/ph ">In Flash Player, there is only one type of HTTPStatus event:
- * <codeph class="+ topic/ph pr-d/codeph ">httpStatus</codeph>.</ph> In the AIR runtime, a FileReference, URLLoader, or URLStream
- * can register to listen for an <codeph class="+ topic/ph pr-d/codeph ">httpResponseStatus</codeph>, which includes <codeph class="+ topic/ph pr-d/codeph ">responseURL</codeph>
- * and <codeph class="+ topic/ph pr-d/codeph ">responseHeaders</codeph> properties. These properties are undefined in a <codeph class="+ topic/ph pr-d/codeph ">httpStatus</codeph>
- * event.</p>
- *
- *   EXAMPLE:
- *
- *   The following example attempts to load a nonexistent file from the root web directory
- * at http://www.[yourDomain].com, which should dispatch an <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event with a status of 404, indicating that
- * the file was not found.  The <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event is handled by <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler()</codeph>,
- * which simply prints two lines of information about the event.
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Notes:</b><ol class="- topic/ol "><li class="- topic/li ">You need to compile the SWF file with "Local Playback Security" set
- * to "Access Network Only" to generate a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph> event in this example.</li><li class="- topic/li ">You need a server running on http://www.[yourDomain].com and listening on port 80 or you will receive
- * an <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event with status code 0 instead of 404.</li><li class="- topic/li ">You must not have a file named MissingFile.html at the root web directory
- * of http://www.[yourDomain].com or you will not receive the correct <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event.</li></ol></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.net.URLLoader;
- * import flash.net.URLRequest;
- * import flash.events.HTTPStatusEvent;
- *
- *   public class HTTPStatusEventExample extends Sprite {
- *
- *   public function HTTPStatusEventExample() {
- * var loader:URLLoader = new URLLoader();
- * loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
- *
- *   var request:URLRequest = new URLRequest("http://www.[yourDomain].com/MissingFile.html");
- * loader.load(request);
- * }
- *
- *   private function httpStatusHandler(event:HTTPStatusEvent):void {
- * trace("httpStatusHandler: " + event);
- * trace("status: " + event.status);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class HTTPStatusEvent: public Event
+        /// @eventType  flash.events.HTTPStatusEvent.HTTP_STATUS
+
+
+        /**
+         * The application dispatches HTTPStatusEvent objects when a network request returns an HTTP
+         * status code.
+         *
+         *   <p class="- topic/p ">HTTPStatusEvent objects are always sent before error or completion events. An
+         * HTTPStatusEvent object does not necessarily indicate an error condition; it simply reflects
+         * the HTTP status code (if any) that is provided by the networking stack. <ph class="- topic/ph ">Some Flash
+         * Player environments may be unable to detect HTTP status codes; a status code of 0 is always
+         * reported in these cases.</ph></p><p class="- topic/p "><ph class="- topic/ph ">In Flash Player, there is only one type of HTTPStatus event:
+         * <codeph class="+ topic/ph pr-d/codeph ">httpStatus</codeph>.</ph> In the AIR runtime, a FileReference, URLLoader, or URLStream
+         * can register to listen for an <codeph class="+ topic/ph pr-d/codeph ">httpResponseStatus</codeph>, which includes <codeph class="+ topic/ph pr-d/codeph ">responseURL</codeph>
+         * and <codeph class="+ topic/ph pr-d/codeph ">responseHeaders</codeph> properties. These properties are undefined in a <codeph class="+ topic/ph pr-d/codeph ">httpStatus</codeph>
+         * event.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example attempts to load a nonexistent file from the root web directory
+         * at http://www.[yourDomain].com, which should dispatch an <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event with a status of 404, indicating that
+         * the file was not found.  The <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event is handled by <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler()</codeph>,
+         * which simply prints two lines of information about the event.
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Notes:</b><ol class="- topic/ol "><li class="- topic/li ">You need to compile the SWF file with "Local Playback Security" set
+         * to "Access Network Only" to generate a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph> event in this example.</li><li class="- topic/li ">You need a server running on http://www.[yourDomain].com and listening on port 80 or you will receive
+         * an <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event with status code 0 instead of 404.</li><li class="- topic/li ">You must not have a file named MissingFile.html at the root web directory
+         * of http://www.[yourDomain].com or you will not receive the correct <codeph class="+ topic/ph pr-d/codeph ">httpStatusHandler</codeph> event.</li></ol></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.net.URLLoader;
+         * import flash.net.URLRequest;
+         * import flash.events.HTTPStatusEvent;
+         *
+         *   public class HTTPStatusEventExample extends Sprite {
+         *
+         *   public function HTTPStatusEventExample() {
+         * var loader:URLLoader = new URLLoader();
+         * loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
+         *
+         *   var request:URLRequest = new URLRequest("http://www.[yourDomain].com/MissingFile.html");
+         * loader.load(request);
+         * }
+         *
+         *   private function httpStatusHandler(event:HTTPStatusEvent):void {
+         * trace("httpStatusHandler: " + event);
+         * trace("status: " + event.status);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class HTTPStatusEvent : public flash::events::Event
         {
             /**
              * The HTTPStatusEvent.HTTP_STATUS constant defines the value of the
@@ -167,7 +171,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            HTTPStatusEvent(std::string type, bool bubbles, bool cancelable, int status);
+            HTTPStatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, int status=0);
 
             /**
              * Returns a string that contains all the properties of the HTTPStatusEvent object. The string is in the following format:

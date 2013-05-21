@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -17,183 +18,183 @@
  */
 //[Event(name="cancel",type="flash.events.Event")]
 
-/**
- * The FileReferenceList class provides a means to let users select one or more files for uploading.
- * A FileReferenceList object represents a group of one or more local files on the user's disk as
- * an array of FileReference objects. For detailed information and important considerations about
- * FileReference objects and the FileReference class, which you use with FileReferenceList,
- * see the FileReference class.
- *
- *   <p class="- topic/p ">To work with the FileReferenceList class:</p><ul class="- topic/ul "><li class="- topic/li ">Instantiate the class: <codeph class="+ topic/ph pr-d/codeph ">var myFileRef = new FileReferenceList();</codeph></li><li class="- topic/li ">Call the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method, which opens a dialog box that
- * lets the user select one or more files for upload: <codeph class="+ topic/ph pr-d/codeph ">myFileRef.browse();</codeph></li><li class="- topic/li ">After the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method is called successfully, the <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> property of
- * the FileReferenceList object is populated with an array of FileReference objects.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph> on each element in the
- * <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> array.</li></ul><p class="- topic/p ">The FileReferenceList class includes a <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method and a
- * <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> property for working with multiple files. While a call to <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph>
- * is executing, SWF file playback pauses in stand-alone and external versions of Flash Player
- * and in AIR for Linux and Mac OS X 10.1 and earlier.</p>
- *
- *   EXAMPLE:
- *
- *   The following example shows how you can use events to manage the upload of multiple files.
- * The CustomFileReferenceList class extends FileReferenceList and includes a <codeph class="+ topic/ph pr-d/codeph ">complete</codeph> event,
- * which is dispatched
- * when each individual file in the FileReferenceList object is uploaded. The <codeph class="+ topic/ph pr-d/codeph ">LIST_COMPLETE</codeph>
- * event in the FileReferenceListExample class is dispatched when all the files in the FileReferenceList
- * object have been uploaded.
- *
- *   <p class="- topic/p ">To run this example, place a script that is written to accept
- * a file upload at http://www.[yourDomain].com/yourUploadHandlerScript.cfm.
- * Based on the location of your SWF file and where you are uploading files to, you
- * also might need to compile the SWF file with Local Playback Security set to Access Network Only
- * or update Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player security settings to allow this file network access.
- * If your upload server is remote and you run this example from your desktop computer,
- * your server must have a crossdomain.xml file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.net.FileReference;
- * import flash.net.FileReferenceList;
- *
- *   public class FileReferenceListExample extends Sprite {
- * public static var LIST_COMPLETE:String = "listComplete";
- * public function FileReferenceListExample() {
- * initiateFileUpload();
- * }
- *
- *   private function initiateFileUpload():void {
- * var fileRef:CustomFileReferenceList = new CustomFileReferenceList();
- * fileRef.addEventListener(FileReferenceListExample.LIST_COMPLETE, listCompleteHandler);
- * fileRef.browse(fileRef.getTypes());
- * }
- *
- *   private function listCompleteHandler(event:Event):void {
- * trace("listCompleteHandler");
- * }
- * }
- * }
- *
- *   import flash.events.*;
- * import flash.net.FileReference;
- * import flash.net.FileReferenceList;
- * import flash.net.FileFilter;
- * import flash.net.URLRequest;
- *
- *   class CustomFileReferenceList extends FileReferenceList {
- * private var uploadURL:URLRequest;
- * private var pendingFiles:Array;
- *
- *   public function CustomFileReferenceList() {
- * uploadURL = new URLRequest();
- * uploadURL.url = "http://www.[yourDomain].com/yourUploadHandlerScript.cfm";
- * initializeListListeners();
- * }
- *
- *   private function initializeListListeners():void {
- * addEventListener(Event.SELECT, selectHandler);
- * addEventListener(Event.CANCEL, cancelHandler);
- * }
- *
- *   public function getTypes():Array {
- * var allTypes:Array = new Array();
- * allTypes.push(getImageTypeFilter());
- * allTypes.push(getTextTypeFilter());
- * return allTypes;
- * }
- *
- *   private function getImageTypeFilter():FileFilter {
- * return new FileFilter("Images (*.jpg, *.jpeg, *.gif, *.png)", "*.jpg;*.jpeg;*.gif;*.png");
- * }
- *
- *   private function getTextTypeFilter():FileFilter {
- * return new FileFilter("Text Files (*.txt, *.rtf)", "*.txt;*.rtf");
- * }
- *
- *   private function doOnComplete():void {
- * var event:Event = new Event(FileReferenceListExample.LIST_COMPLETE);
- * dispatchEvent(event);
- * }
- *
- *   private function addPendingFile(file:FileReference):void {
- * trace("addPendingFile: name=" + file.name);
- * pendingFiles.push(file);
- * file.addEventListener(Event.OPEN, openHandler);
- * file.addEventListener(Event.COMPLETE, completeHandler);
- * file.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * file.addEventListener(ProgressEvent.PROGRESS, progressHandler);
- * file.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * file.upload(uploadURL);
- * }
- *
- *   private function removePendingFile(file:FileReference):void {
- * for (var i:uint; i &lt; pendingFiles.length; i++) {
- * if (pendingFiles[i].name == file.name) {
- * pendingFiles.splice(i, 1);
- * if (pendingFiles.length == 0) {
- * doOnComplete();
- * }
- * return;
- * }
- * }
- * }
- *
- *   private function selectHandler(event:Event):void {
- * trace("selectHandler: " + fileList.length + " files");
- * pendingFiles = new Array();
- * var file:FileReference;
- * for (var i:uint = 0; i &lt; fileList.length; i++) {
- * file = FileReference(fileList[i]);
- * addPendingFile(file);
- * }
- * }
- *
- *   private function cancelHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("cancelHandler: name=" + file.name);
- * }
- *
- *   private function openHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("openHandler: name=" + file.name);
- * }
- *
- *   private function progressHandler(event:ProgressEvent):void {
- * var file:FileReference = FileReference(event.target);
- * trace("progressHandler: name=" + file.name + " bytesLoaded=" + event.bytesLoaded + " bytesTotal=" + event.bytesTotal);
- * }
- *
- *   private function completeHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("completeHandler: name=" + file.name);
- * removePendingFile(file);
- * }
- *
- *   private function httpErrorHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("httpErrorHandler: name=" + file.name);
- * }
- *
- *   private function ioErrorHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("ioErrorHandler: name=" + file.name);
- * }
- *
- *   private function securityErrorHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("securityErrorHandler: name=" + file.name + " event=" + event.toString());
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace net
     {
-        class FileReferenceList: public EventDispatcher
+        /**
+         * The FileReferenceList class provides a means to let users select one or more files for uploading.
+         * A FileReferenceList object represents a group of one or more local files on the user's disk as
+         * an array of FileReference objects. For detailed information and important considerations about
+         * FileReference objects and the FileReference class, which you use with FileReferenceList,
+         * see the FileReference class.
+         *
+         *   <p class="- topic/p ">To work with the FileReferenceList class:</p><ul class="- topic/ul "><li class="- topic/li ">Instantiate the class: <codeph class="+ topic/ph pr-d/codeph ">var myFileRef = new FileReferenceList();</codeph></li><li class="- topic/li ">Call the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method, which opens a dialog box that
+         * lets the user select one or more files for upload: <codeph class="+ topic/ph pr-d/codeph ">myFileRef.browse();</codeph></li><li class="- topic/li ">After the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method is called successfully, the <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> property of
+         * the FileReferenceList object is populated with an array of FileReference objects.</li><li class="- topic/li ">Call <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph> on each element in the
+         * <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> array.</li></ul><p class="- topic/p ">The FileReferenceList class includes a <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method and a
+         * <codeph class="+ topic/ph pr-d/codeph ">fileList</codeph> property for working with multiple files. While a call to <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph>
+         * is executing, SWF file playback pauses in stand-alone and external versions of Flash Player
+         * and in AIR for Linux and Mac OS X 10.1 and earlier.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows how you can use events to manage the upload of multiple files.
+         * The CustomFileReferenceList class extends FileReferenceList and includes a <codeph class="+ topic/ph pr-d/codeph ">complete</codeph> event,
+         * which is dispatched
+         * when each individual file in the FileReferenceList object is uploaded. The <codeph class="+ topic/ph pr-d/codeph ">LIST_COMPLETE</codeph>
+         * event in the FileReferenceListExample class is dispatched when all the files in the FileReferenceList
+         * object have been uploaded.
+         *
+         *   <p class="- topic/p ">To run this example, place a script that is written to accept
+         * a file upload at http://www.[yourDomain].com/yourUploadHandlerScript.cfm.
+         * Based on the location of your SWF file and where you are uploading files to, you
+         * also might need to compile the SWF file with Local Playback Security set to Access Network Only
+         * or update Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player security settings to allow this file network access.
+         * If your upload server is remote and you run this example from your desktop computer,
+         * your server must have a crossdomain.xml file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.net.FileReference;
+         * import flash.net.FileReferenceList;
+         *
+         *   public class FileReferenceListExample extends Sprite {
+         * public static var LIST_COMPLETE:String = "listComplete";
+         * public function FileReferenceListExample() {
+         * initiateFileUpload();
+         * }
+         *
+         *   private function initiateFileUpload():void {
+         * var fileRef:CustomFileReferenceList = new CustomFileReferenceList();
+         * fileRef.addEventListener(FileReferenceListExample.LIST_COMPLETE, listCompleteHandler);
+         * fileRef.browse(fileRef.getTypes());
+         * }
+         *
+         *   private function listCompleteHandler(event:Event):void {
+         * trace("listCompleteHandler");
+         * }
+         * }
+         * }
+         *
+         *   import flash.events.*;
+         * import flash.net.FileReference;
+         * import flash.net.FileReferenceList;
+         * import flash.net.FileFilter;
+         * import flash.net.URLRequest;
+         *
+         *   class CustomFileReferenceList extends FileReferenceList {
+         * private var uploadURL:URLRequest;
+         * private var pendingFiles:Array;
+         *
+         *   public function CustomFileReferenceList() {
+         * uploadURL = new URLRequest();
+         * uploadURL.url = "http://www.[yourDomain].com/yourUploadHandlerScript.cfm";
+         * initializeListListeners();
+         * }
+         *
+         *   private function initializeListListeners():void {
+         * addEventListener(Event.SELECT, selectHandler);
+         * addEventListener(Event.CANCEL, cancelHandler);
+         * }
+         *
+         *   public function getTypes():Array {
+         * var allTypes:Array = new Array();
+         * allTypes.push(getImageTypeFilter());
+         * allTypes.push(getTextTypeFilter());
+         * return allTypes;
+         * }
+         *
+         *   private function getImageTypeFilter():FileFilter {
+         * return new FileFilter("Images (*.jpg, *.jpeg, *.gif, *.png)", "*.jpg;*.jpeg;*.gif;*.png");
+         * }
+         *
+         *   private function getTextTypeFilter():FileFilter {
+         * return new FileFilter("Text Files (*.txt, *.rtf)", "*.txt;*.rtf");
+         * }
+         *
+         *   private function doOnComplete():void {
+         * var event:Event = new Event(FileReferenceListExample.LIST_COMPLETE);
+         * dispatchEvent(event);
+         * }
+         *
+         *   private function addPendingFile(file:FileReference):void {
+         * trace("addPendingFile: name=" + file.name);
+         * pendingFiles.push(file);
+         * file.addEventListener(Event.OPEN, openHandler);
+         * file.addEventListener(Event.COMPLETE, completeHandler);
+         * file.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * file.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+         * file.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * file.upload(uploadURL);
+         * }
+         *
+         *   private function removePendingFile(file:FileReference):void {
+         * for (var i:uint; i &lt; pendingFiles.length; i++) {
+         * if (pendingFiles[i].name == file.name) {
+         * pendingFiles.splice(i, 1);
+         * if (pendingFiles.length == 0) {
+         * doOnComplete();
+         * }
+         * return;
+         * }
+         * }
+         * }
+         *
+         *   private function selectHandler(event:Event):void {
+         * trace("selectHandler: " + fileList.length + " files");
+         * pendingFiles = new Array();
+         * var file:FileReference;
+         * for (var i:uint = 0; i &lt; fileList.length; i++) {
+         * file = FileReference(fileList[i]);
+         * addPendingFile(file);
+         * }
+         * }
+         *
+         *   private function cancelHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("cancelHandler: name=" + file.name);
+         * }
+         *
+         *   private function openHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("openHandler: name=" + file.name);
+         * }
+         *
+         *   private function progressHandler(event:ProgressEvent):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("progressHandler: name=" + file.name + " bytesLoaded=" + event.bytesLoaded + " bytesTotal=" + event.bytesTotal);
+         * }
+         *
+         *   private function completeHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("completeHandler: name=" + file.name);
+         * removePendingFile(file);
+         * }
+         *
+         *   private function httpErrorHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("httpErrorHandler: name=" + file.name);
+         * }
+         *
+         *   private function ioErrorHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("ioErrorHandler: name=" + file.name);
+         * }
+         *
+         *   private function securityErrorHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("securityErrorHandler: name=" + file.name + " event=" + event.toString());
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         */
+        class FileReferenceList : public flash::events::EventDispatcher
         {
             /**
              * An array of FileReference objects.
@@ -275,7 +276,7 @@ namespace flash
              *   event or keypress event.
              */
         public:
-            bool     browse(std::vector<void *> typeFilter);
+            bool     browse(std::vector<void *> typeFilter=std::vector<void *>());
 
             /**
              * Creates a new FileReferenceList object. A FileReferenceList object contains nothing

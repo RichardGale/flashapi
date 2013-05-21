@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class StageQuality: public Object
+        class StageQuality : public Object
         {
             /**
              * Specifies low rendering quality: graphics are not anti-aliased, and bitmaps are not smoothed.

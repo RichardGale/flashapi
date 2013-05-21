@@ -146,11 +146,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class Capabilities: public Object
+        class Capabilities : public Object
         {
             /**
              * Specifies whether the Flash runtime is embedded in a PDF file that is open in Acrobat 9.0 or higher

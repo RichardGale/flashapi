@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 using namespace flash::events;
@@ -13,7 +14,7 @@ namespace flash
     {
         namespace textures
         {
-            class TextureBase: public EventDispatcher
+            class TextureBase : public flash::events::EventDispatcher
             {
             public:
                 void     dispose();

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 namespace flash
 {
@@ -104,14 +105,14 @@ namespace flash
  * @playerversion   AIR 1.0
  * @internal    NativeDragManager is AIR only and is not in FP10.
  */
-using namespace flash::utils;
+
 using namespace flash::utils;
 
 namespace flash
 {
     namespace desktop
     {
-        class Clipboard: public Object
+        class Clipboard : public Object
         {
             /**
              * The operating system clipboard.
@@ -239,7 +240,7 @@ namespace flash
              * @throws  TypeError format or data is null.
              */
         public:
-            bool     setData(std::string format, Object *data, bool serializable);
+            bool     setData(std::string format, Object *data, bool serializable   =true);
 
             /**
              * Adds a reference to a handler function that produces the data to be transfered.
@@ -276,7 +277,7 @@ namespace flash
              *   application security sandbox.
              */
         public:
-            bool     setDataHandler(std::string format, Function *handler, bool serializable);
+            bool     setDataHandler(std::string format, Function *handler, bool serializable   =true);
 
             /**
              * Gets the clipboard data if data in the specified format is present.
@@ -307,7 +308,7 @@ namespace flash
              *   In AIR, this restriction only applies to content outside of the application security sandbox.
              */
         public:
-            Object  *getData(std::string format, std::string transferMode);
+            Object  *getData(std::string format, std::string transferMode="originalPreferred");
 
             /**
              * Checks whether data in the specified format exists in this Clipboard object.

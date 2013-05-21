@@ -28,6 +28,7 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace accessibility
@@ -39,8 +40,8 @@ namespace flash
              * If you want a component to support inline IME or accessibility, override this method.
              * @langversion 3.0
              * @playerversion   Flash 10.1
-             */
-            virtual int  selectionAnchorIndex() = 0;
+             */virtual
+            int          selectionAnchorIndex() = 0;
 
             /**
              * The zero-based character index value of the last character in the current selection.
@@ -48,7 +49,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 10.1
              */
-            virtual int  selectionActiveIndex() = 0;
+            virtual
+            int          selectionActiveIndex() = 0;
         };
     }
 }

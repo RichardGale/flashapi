@@ -3,63 +3,64 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.GestureEvent.GESTURE_TWO_FINGER_TAP
 //[Event(name="gestureTwoFingerTap",type="flash.events.GestureEvent")]
 
-/**
- * The GestureEvent class lets you handle multi-touch events on devices that detect complex user contact with
- * the device (such as pressing two fingers on a touch screen at the same time).
- * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
- * touches and moves across the screen with his or her fingers or a pointing device. You can develop applications that respond to
- * this user interaction with the GestureEvent and TransformGestureEvent classes. Create event listeners using the event types defined here, or in
- * the related TouchEvent and TransformGestureEvent classes. And, use the properties and methods of these classes
- * to construct event handlers that respond to the user touching the device.
- * <p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
- * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
- * nested object that is visible in the display list. This object is called the target node. To have a target node's
- * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
- * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
- * touch event you want to detect.</p>
- *
- *   EXAMPLE:
- *
- *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_TWO_FINGER_TAP</codeph> event.
- * While the user performs a two-finger tap gesture, mySprite rotates and myTextField populates with the phase <codeph class="+ topic/ph pr-d/codeph ">all</codeph>,
- * which is the only phase for two-finger tap events. Other gestures from the TransformGestureEvent class support begin, update,
- * and end phases.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * Multitouch.inputMode = MultitouchInputMode.GESTURE;
- *
- *   var mySprite = new Sprite();
- * mySprite.addEventListener(GestureEvent.GESTURE_TWO_FINGER_TAP , onTwoFingerTap );
- * mySprite.graphics.beginFill(0x336699);
- * mySprite.graphics.drawRect(0, 0, 100, 80);
- * var myTextField = new TextField();
- * myTextField.y = 200;
- * addChild(mySprite);
- * addChild(myTextField);
- *
- *   function onTwoFingerTap(evt:GestureEvent):void {
- *
- *   evt.target.rotation -= 45;
- * myTextField.text = evt.phase; //"all"
- *
- *   }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class GestureEvent: public Event
+        /**
+         * The GestureEvent class lets you handle multi-touch events on devices that detect complex user contact with
+         * the device (such as pressing two fingers on a touch screen at the same time).
+         * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
+         * touches and moves across the screen with his or her fingers or a pointing device. You can develop applications that respond to
+         * this user interaction with the GestureEvent and TransformGestureEvent classes. Create event listeners using the event types defined here, or in
+         * the related TouchEvent and TransformGestureEvent classes. And, use the properties and methods of these classes
+         * to construct event handlers that respond to the user touching the device.
+         * <p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
+         * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
+         * nested object that is visible in the display list. This object is called the target node. To have a target node's
+         * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
+         * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
+         * touch event you want to detect.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_TWO_FINGER_TAP</codeph> event.
+         * While the user performs a two-finger tap gesture, mySprite rotates and myTextField populates with the phase <codeph class="+ topic/ph pr-d/codeph ">all</codeph>,
+         * which is the only phase for two-finger tap events. Other gestures from the TransformGestureEvent class support begin, update,
+         * and end phases.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * Multitouch.inputMode = MultitouchInputMode.GESTURE;
+         *
+         *   var mySprite = new Sprite();
+         * mySprite.addEventListener(GestureEvent.GESTURE_TWO_FINGER_TAP , onTwoFingerTap );
+         * mySprite.graphics.beginFill(0x336699);
+         * mySprite.graphics.drawRect(0, 0, 100, 80);
+         * var myTextField = new TextField();
+         * myTextField.y = 200;
+         * addChild(mySprite);
+         * addChild(myTextField);
+         *
+         *   function onTwoFingerTap(evt:GestureEvent):void {
+         *
+         *   evt.target.rotation -= 45;
+         * myTextField.text = evt.phase; //"all"
+         *
+         *   }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 10.1
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class GestureEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a GESTURE_TWO_FINGER_TAP gesture event object.
@@ -212,7 +213,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            GestureEvent(std::string type, bool bubbles, bool cancelable, std::string phase, float localX, float localY, bool ctrlKey, bool altKey, bool shiftKey);
+            GestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
 
             /**
              * Returns a string that contains all the properties of the GestureEvent object. The string is in the following format:

@@ -17,11 +17,12 @@
  * @productversion  Flash CS3
  */
 
+
 namespace adobe
 {
     namespace utils
     {
-        class CustomActions: public Object
+        class CustomActions : public Object
         {
             /**
              * Returns an Array object containing the names of all the custom actions that are registered

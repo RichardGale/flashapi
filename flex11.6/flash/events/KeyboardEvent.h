@@ -3,84 +3,88 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.KeyboardEvent.KEY_DOWN
 //[Event(name="keyDown",type="flash.events.KeyboardEvent")]
 
 
-//[Event(name="keyUp",type="flash.events.KeyboardEvent")]/// @eventType  flash.events.KeyboardEvent.KEY_UP
+//[Event(name="keyUp",type="flash.events.KeyboardEvent")]
 
-/**
- * A KeyboardEvent object id dispatched in response to user input through a keyboard.
- * There are two types of keyboard events: <codeph class="+ topic/ph pr-d/codeph ">KeyboardEvent.KEY_DOWN</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">KeyboardEvent.KEY_UP</codeph><p class="- topic/p ">Because mappings between keys and specific characters vary by device
- * and operating system, use the TextEvent event type for processing character input.</p><p class="- topic/p ">To listen globally for key events, listen on the Stage for the capture and target
- * or bubble phase.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">KeyboardEventExample</codeph> class to show
- * keyboard events and their listener functions. The example carries out the following tasks:
- * <ol class="- topic/ol "><li class="- topic/li ">It creates a new Sprite instance named <codeph class="+ topic/ph pr-d/codeph ">child</codeph>.</li><li class="- topic/li ">It declares properties for later use in setting a square's background color and size.</li><li class="- topic/li ">Using methods of Sprite, it draws a light-blue square that it displays on the Stage
- * at default coordinates (0,0) by calling the <codeph class="+ topic/ph pr-d/codeph ">addChild()</codeph> method.</li><li class="- topic/li ">It adds one mouse event and two keyboard type event listeners:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">click</codeph>/<codeph class="+ topic/ph pr-d/codeph ">clickHandler</codeph> which is dispatched when you click on the square to set focus on the <codeph class="+ topic/ph pr-d/codeph ">child</codeph> sprite so it can listen for keyboard events.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyDown</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyDownHandler</codeph> which is dispatched whenever any key  is pressed. The subscriber method prints information about the event
- * using the <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statement.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyUp</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyUpHandler</codeph> which is dispatched when a key is
- * released.</li></ul></li></ol><p class="- topic/p ">When you test this example, you need to click the square first for the keyboard events to work.</p><p product="flash" class="- topic/p ">Also, if you are using the Test Movie command in Flash, the authoring
- * interface may respond to certain keys instead of the event listeners attached to
- * the child sprite.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.display.DisplayObject;
- * import flash.events.*;
- *
- *   public class KeyboardEventExample extends Sprite {
- * private var child:Sprite = new Sprite();
- * private var bgColor:uint = 0x00CCFF;
- * private var size:uint = 80;
- *
- *   public function KeyboardEventExample() {
- * child.graphics.beginFill(bgColor);
- * child.graphics.drawRect(0, 0, size, size);
- * child.graphics.endFill();
- * addChild(child);
- * child.addEventListener(MouseEvent.CLICK, clickHandler);
- * child.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
- * child.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
- *
- *   }
- *
- *   private function clickHandler(event:MouseEvent):void {
- * stage.focus = child;
- * }
- *
- *   private function keyDownHandler(event:KeyboardEvent):void {
- * trace("keyDownHandler: " + event.keyCode);
- * trace("ctrlKey: " + event.ctrlKey);
- * trace("keyLocation: " + event.keyLocation);
- * trace("shiftKey: " + event.shiftKey);
- * trace("altKey: " + event.altKey);
- *
- *   }
- *
- *   private function keyUpHandler(event:KeyboardEvent):void {
- * trace("keyUpHandler: " + event.keyCode);
- * }
- *
- *   }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class KeyboardEvent: public Event
+        /// @eventType  flash.events.KeyboardEvent.KEY_UP
+
+
+        /**
+         * A KeyboardEvent object id dispatched in response to user input through a keyboard.
+         * There are two types of keyboard events: <codeph class="+ topic/ph pr-d/codeph ">KeyboardEvent.KEY_DOWN</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">KeyboardEvent.KEY_UP</codeph><p class="- topic/p ">Because mappings between keys and specific characters vary by device
+         * and operating system, use the TextEvent event type for processing character input.</p><p class="- topic/p ">To listen globally for key events, listen on the Stage for the capture and target
+         * or bubble phase.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">KeyboardEventExample</codeph> class to show
+         * keyboard events and their listener functions. The example carries out the following tasks:
+         * <ol class="- topic/ol "><li class="- topic/li ">It creates a new Sprite instance named <codeph class="+ topic/ph pr-d/codeph ">child</codeph>.</li><li class="- topic/li ">It declares properties for later use in setting a square's background color and size.</li><li class="- topic/li ">Using methods of Sprite, it draws a light-blue square that it displays on the Stage
+         * at default coordinates (0,0) by calling the <codeph class="+ topic/ph pr-d/codeph ">addChild()</codeph> method.</li><li class="- topic/li ">It adds one mouse event and two keyboard type event listeners:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">click</codeph>/<codeph class="+ topic/ph pr-d/codeph ">clickHandler</codeph> which is dispatched when you click on the square to set focus on the <codeph class="+ topic/ph pr-d/codeph ">child</codeph> sprite so it can listen for keyboard events.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyDown</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyDownHandler</codeph> which is dispatched whenever any key  is pressed. The subscriber method prints information about the event
+         * using the <codeph class="+ topic/ph pr-d/codeph ">trace()</codeph> statement.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyUp</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyUpHandler</codeph> which is dispatched when a key is
+         * released.</li></ul></li></ol><p class="- topic/p ">When you test this example, you need to click the square first for the keyboard events to work.</p><p product="flash" class="- topic/p ">Also, if you are using the Test Movie command in Flash, the authoring
+         * interface may respond to certain keys instead of the event listeners attached to
+         * the child sprite.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.display.DisplayObject;
+         * import flash.events.*;
+         *
+         *   public class KeyboardEventExample extends Sprite {
+         * private var child:Sprite = new Sprite();
+         * private var bgColor:uint = 0x00CCFF;
+         * private var size:uint = 80;
+         *
+         *   public function KeyboardEventExample() {
+         * child.graphics.beginFill(bgColor);
+         * child.graphics.drawRect(0, 0, size, size);
+         * child.graphics.endFill();
+         * addChild(child);
+         * child.addEventListener(MouseEvent.CLICK, clickHandler);
+         * child.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
+         * child.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
+         *
+         *   }
+         *
+         *   private function clickHandler(event:MouseEvent):void {
+         * stage.focus = child;
+         * }
+         *
+         *   private function keyDownHandler(event:KeyboardEvent):void {
+         * trace("keyDownHandler: " + event.keyCode);
+         * trace("ctrlKey: " + event.ctrlKey);
+         * trace("keyLocation: " + event.keyLocation);
+         * trace("shiftKey: " + event.shiftKey);
+         * trace("altKey: " + event.altKey);
+         *
+         *   }
+         *
+         *   private function keyUpHandler(event:KeyboardEvent):void {
+         * trace("keyUpHandler: " + event.keyCode);
+         * }
+         *
+         *   }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class KeyboardEvent : public flash::events::Event
         {
             /**
              * The KeyboardEvent.KEY_DOWN constant defines the value of the type property of a keyDown event object.
@@ -220,7 +224,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            KeyboardEvent(std::string type, bool bubbles, bool cancelable, unsigned int charCodeValue, unsigned int keyCodeValue, unsigned int keyLocationValue, bool ctrlKeyValue, bool altKeyValue, bool shiftKeyValue);
+            KeyboardEvent(std::string type, bool bubbles   =true, bool cancelable   =false, unsigned int charCodeValue=0, unsigned int keyCodeValue=0, unsigned int keyLocationValue=0, bool ctrlKeyValue   =false, bool altKeyValue   =false, bool shiftKeyValue   =false);
 
             /**
              * Returns a string that contains all the properties of the KeyboardEvent object. The string

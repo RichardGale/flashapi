@@ -11,11 +11,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class KeyLocation: public Object
+        class KeyLocation : public Object
         {
             /**
              * Indicates the key activation is not distinguished as the left or right version of the key,

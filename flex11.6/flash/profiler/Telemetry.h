@@ -8,7 +8,7 @@ namespace flash
 {
     namespace profiler
     {
-        class Telemetry: public Object
+        class Telemetry : public Object
         {
         public:
             static float        spanMarker();
@@ -20,7 +20,7 @@ namespace flash
             static void     sendMetric(std::string metric, void *value);
 
         public:
-            static void     sendSpanMetric(std::string metric, float startSpanMarker, void *value);
+            static void     sendSpanMetric(std::string metric, float startSpanMarker, void *value=NULL);
 
         public:
             static bool     registerCommandHandler(std::string commandName, Function *handler);

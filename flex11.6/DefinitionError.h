@@ -14,7 +14,8 @@
  * @playerversion   Lite 4
  */
 
-class DefinitionError: public Error
+
+class DefinitionError : public Error
 {
 public:
     static const int length;
@@ -26,7 +27,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    DefinitionError(void *message, void *id);
+    DefinitionError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_DEFINITIONERROR_AS

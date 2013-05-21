@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsStroke.h"
 #include "IGraphicsData.h"
 namespace flash
@@ -27,15 +28,14 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace display
     {
-        class GraphicsStroke: public Object, public IGraphicsStroke,, public IGraphicsData
+        class GraphicsStroke : public Object, public private::IGraphicsStroke, public private::IGraphicsData
         {
             /**
              * Indicates the thickness of the line in
@@ -229,7 +229,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsStroke(float thickness, bool pixelHinting, std::string scaleMode, std::string caps, std::string joints, float miterLimit, IGraphicsFill *fill);
+            GraphicsStroke(float thickness =NaN, bool pixelHinting   =false, std::string scaleMode="normal", std::string caps="none", std::string joints="round", float miterLimit =3, IGraphicsFill *fill=NULL);
         };
     }
 }

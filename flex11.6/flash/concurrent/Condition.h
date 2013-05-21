@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace concurrent
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace concurrent
     {
-        class Condition: public Object
+        class Condition : public Object
         {
         public:
             static bool         isSupported();
@@ -29,7 +30,7 @@ namespace flash
             Condition(Mutex *mutex);
 
         public:
-            bool     wait(float timeout);
+            bool     wait(float timeout =-1);
 
         public:
             void     notify();

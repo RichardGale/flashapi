@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -14,55 +15,55 @@ namespace flash
 /// @eventType  flash.events.PressAndTapGestureEvent.GESTURE_PRESS_AND_TAP
 //[Event(name="gesturePressAndTap",type="flash.events.PressAndTapGestureEvent")]
 
-/**
- * The PressAndTapGestureEvent class lets you handle press-and-tap gesture on touch-enabled devices.
- * Objects that inherit properties from the InteractiveObject class capture the primary touch point
- * (press) and a secondary point (tap) in the dispatched event object.
- * The press-and-tap gesture is typically used to raise a context-sensitive popup menu.
- *
- *   EXAMPLE:
- *
- *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_PRESS_AND_TAP</codeph> event.
- * While the user performs a press-and-tap gesture, mySprite rotates and myTextField populates with the current phase.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * Multitouch.inputMode = MultitouchInputMode.GESTURE;
- *
- *   var mySprite = new Sprite();
- * mySprite.addEventListener(PressAndTapGestureEvent.GESTURE_PRESS_AND_TAP , onPressAndTap );
- * mySprite.graphics.beginFill(0x336699);
- * mySprite.graphics.drawRect(0, 0, 100, 80);
- * var myTextField = new TextField();
- * myTextField.y = 200;
- * addChild(mySprite);
- * addChild(myTextField);
- *
- *   function onPressAndTap(evt:PressAndTapGestureEvent):void {
- *
- *   evt.target.rotation -= 45;
- *
- *   if (evt.phase==GesturePhase.BEGIN) {
- * myTextField.text = "Begin";
- * }
- * if (evt.phase==GesturePhase.UPDATE) {
- * myTextField.text = "Update";
- * }
- * if (evt.phase==GesturePhase.END) {
- * myTextField.text = "End";
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class PressAndTapGestureEvent: public GestureEvent
+        /**
+         * The PressAndTapGestureEvent class lets you handle press-and-tap gesture on touch-enabled devices.
+         * Objects that inherit properties from the InteractiveObject class capture the primary touch point
+         * (press) and a secondary point (tap) in the dispatched event object.
+         * The press-and-tap gesture is typically used to raise a context-sensitive popup menu.
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_PRESS_AND_TAP</codeph> event.
+         * While the user performs a press-and-tap gesture, mySprite rotates and myTextField populates with the current phase.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * Multitouch.inputMode = MultitouchInputMode.GESTURE;
+         *
+         *   var mySprite = new Sprite();
+         * mySprite.addEventListener(PressAndTapGestureEvent.GESTURE_PRESS_AND_TAP , onPressAndTap );
+         * mySprite.graphics.beginFill(0x336699);
+         * mySprite.graphics.drawRect(0, 0, 100, 80);
+         * var myTextField = new TextField();
+         * myTextField.y = 200;
+         * addChild(mySprite);
+         * addChild(myTextField);
+         *
+         *   function onPressAndTap(evt:PressAndTapGestureEvent):void {
+         *
+         *   evt.target.rotation -= 45;
+         *
+         *   if (evt.phase==GesturePhase.BEGIN) {
+         * myTextField.text = "Begin";
+         * }
+         * if (evt.phase==GesturePhase.UPDATE) {
+         * myTextField.text = "Update";
+         * }
+         * if (evt.phase==GesturePhase.END) {
+         * myTextField.text = "End";
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 10.1
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class PressAndTapGestureEvent : public GestureEvent
         {
             /**
              * Defines the value of the type property of a GESTURE_PRESS_AND_TAP touch event object.
@@ -164,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            PressAndTapGestureEvent(std::string type, bool bubbles, bool cancelable, std::string phase, float localX, float localY, float tapLocalX, float tapLocalY, bool ctrlKey, bool altKey, bool shiftKey);
+            PressAndTapGestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, float tapLocalX =0, float tapLocalY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
 
             /**
              * Returns a string that contains all the properties of the PressAndTapGestureEvent object. The string is in the following format:

@@ -10,11 +10,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ColorCorrectionSupport: public Object
+        class ColorCorrectionSupport : public Object
         {
             /**
              * Color correction is not supported by the host environment.

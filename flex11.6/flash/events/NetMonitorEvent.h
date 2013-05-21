@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -15,20 +16,20 @@ namespace flash
 /// @eventType  flash.events.NetMonitorEvent.NET_STREAM_CREATE
 //[Event(name="netStreamCreate",type="flash.events.NetMonitorEvent")]
 
-/**
- * A NetMonitor object dispatches NetMonitorEvent objects when a NetStream object is created.
- * @langversion 3.0
- * @playerversion   Flash 10.3
- * @playerversion   AIR 2.7
- */
-using namespace flash::net;
 using namespace flash::events;
+using namespace flash::net;
 
 namespace flash
 {
     namespace events
     {
-        class NetMonitorEvent: public Event
+        /**
+         * A NetMonitor object dispatches NetMonitorEvent objects when a NetStream object is created.
+         * @langversion 3.0
+         * @playerversion   Flash 10.3
+         * @playerversion   AIR 2.7
+         */
+        class NetMonitorEvent : public flash::events::Event
         {
             /**
              * The NetMonitorEvent.NET_STREAM_CREATE constant defines the value of the type property of an netStreamCreate event object.
@@ -79,7 +80,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            NetMonitorEvent(std::string type, bool bubbles, bool cancelable, NetStream *netStream);
+            NetMonitorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, NetStream *netStream=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetMonitorEvent object. The following

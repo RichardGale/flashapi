@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class H264VideoStreamSettings: public VideoStreamSettings
+        class H264VideoStreamSettings : public VideoStreamSettings
         {
         public:
             std::string  codec();

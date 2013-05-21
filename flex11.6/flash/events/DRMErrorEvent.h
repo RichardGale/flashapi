@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -24,85 +25,6 @@ namespace flash
 /// @eventType  flash.events.DRMErrorEvent.DRM_ERROR
 //[Event(name="drmError",type="flash.events.DRMErrorEvent")]
 
-/**
- * The DRMErrorEvent class provides information about errors that occur when playing digital rights management (DRM)
- * encrypted files.
- *
- *   <p class="- topic/p ">The runtime dispatches a DRMErrorEvent object when a NetStream object, trying to play a digital rights management
- * (DRM) encrypted file, encounters a DRM-related error. For example, a DRMErrorEvent object is dispatched
- * when the content provider does not support the viewing application,
- * or when the user authorization fails, possibly because the user has not purchased the content.</p><p class="- topic/p ">
- * In the case of invalid user credentials, the DRMAuthenticateEvent object handles the error by repeatedly dispatching
- * until the user enters valid credentials, or the application denies further attempts. The application should listen
- * to any other DRM error events in order to detect, identify, and handle the DRM-related errors.
- * </p><p class="- topic/p ">
- * This class provides properties containing the object throwing the exception, the error code, and,
- * where applicable, a suberror code and text message containing information related to the error. For
- * a description of DRM-related error codes, see the <xref href="../../runtimeErrors.html" class="- topic/xref ">Runtime error codes</xref>.
- * The DRM-related error codes start at error 3300.
- * </p>
- *
- *   EXAMPLE:
- *
- *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">package
- * {
- * import flash.display.Sprite;
- * import flash.events.AsyncErrorEvent;
- * import flash.events.NetStatusEvent;
- * import flash.events.DRMErrorEvent;
- * import flash.media.Video;
- * import flash.net.NetConnection;
- * import flash.net.NetStream;
- *
- *   public class DRMVideoExample extends Sprite
- * {
- * var videoURL:String = "Video.flv";
- * var videoConnection:NetConnection;
- * var videoStream:NetStream;
- * var video:Video = new Video();
- *
- *   public function DRMVideoExample()
- * {
- * videoConnection = new NetConnection();
- * videoConnection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * videoConnection.connect(null);
- * }
- *
- *   private function connectStream():void {
- * videoStream = new NetStream(videoConnection);
- * videoStream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * videoStream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
- * videoStream.addEventListener(DRMErrorEvent.DRM_ERROR, drmErrorEventHandler);
- * video.attachNetStream(videoStream);
- * videoStream.play(videoURL);
- * addChild(video);
- * }
- *
- *   private function netStatusHandler(event:NetStatusEvent):void {
- * switch (event.info.code) {
- * case "NetConnection.Connect.Success":
- * connectStream();
- * break;
- * case "NetStream.Play.StreamNotFound":
- * trace("Unable to locate video: " + videoURL);
- * break;
- * }
- * }
- *
- *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
- * // ignore AsyncErrorEvent events.
- * }
- *
- *   private function drmErrorEventHandler(event:DRMErrorEvent):void {
- * trace(event.toString());
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   AIR 1.0
- * @playerversion   Flash 10.1
- */
 using namespace flash::events;
 using namespace flash::net::drm;
 
@@ -110,7 +32,86 @@ namespace flash
 {
     namespace events
     {
-        class DRMErrorEvent: public ErrorEvent
+        /**
+         * The DRMErrorEvent class provides information about errors that occur when playing digital rights management (DRM)
+         * encrypted files.
+         *
+         *   <p class="- topic/p ">The runtime dispatches a DRMErrorEvent object when a NetStream object, trying to play a digital rights management
+         * (DRM) encrypted file, encounters a DRM-related error. For example, a DRMErrorEvent object is dispatched
+         * when the content provider does not support the viewing application,
+         * or when the user authorization fails, possibly because the user has not purchased the content.</p><p class="- topic/p ">
+         * In the case of invalid user credentials, the DRMAuthenticateEvent object handles the error by repeatedly dispatching
+         * until the user enters valid credentials, or the application denies further attempts. The application should listen
+         * to any other DRM error events in order to detect, identify, and handle the DRM-related errors.
+         * </p><p class="- topic/p ">
+         * This class provides properties containing the object throwing the exception, the error code, and,
+         * where applicable, a suberror code and text message containing information related to the error. For
+         * a description of DRM-related error codes, see the <xref href="../../runtimeErrors.html" class="- topic/xref ">Runtime error codes</xref>.
+         * The DRM-related error codes start at error 3300.
+         * </p>
+         *
+         *   EXAMPLE:
+         *
+         *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">package
+         * {
+         * import flash.display.Sprite;
+         * import flash.events.AsyncErrorEvent;
+         * import flash.events.NetStatusEvent;
+         * import flash.events.DRMErrorEvent;
+         * import flash.media.Video;
+         * import flash.net.NetConnection;
+         * import flash.net.NetStream;
+         *
+         *   public class DRMVideoExample extends Sprite
+         * {
+         * var videoURL:String = "Video.flv";
+         * var videoConnection:NetConnection;
+         * var videoStream:NetStream;
+         * var video:Video = new Video();
+         *
+         *   public function DRMVideoExample()
+         * {
+         * videoConnection = new NetConnection();
+         * videoConnection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * videoConnection.connect(null);
+         * }
+         *
+         *   private function connectStream():void {
+         * videoStream = new NetStream(videoConnection);
+         * videoStream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * videoStream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
+         * videoStream.addEventListener(DRMErrorEvent.DRM_ERROR, drmErrorEventHandler);
+         * video.attachNetStream(videoStream);
+         * videoStream.play(videoURL);
+         * addChild(video);
+         * }
+         *
+         *   private function netStatusHandler(event:NetStatusEvent):void {
+         * switch (event.info.code) {
+         * case "NetConnection.Connect.Success":
+         * connectStream();
+         * break;
+         * case "NetStream.Play.StreamNotFound":
+         * trace("Unable to locate video: " + videoURL);
+         * break;
+         * }
+         * }
+         *
+         *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
+         * // ignore AsyncErrorEvent events.
+         * }
+         *
+         *   private function drmErrorEventHandler(event:DRMErrorEvent):void {
+         * trace(event.toString());
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   AIR 1.0
+         * @playerversion   Flash 10.1
+         */
+        class DRMErrorEvent : public ErrorEvent
         {
             /**
              * The DRMErrorEvent.DRM_ERROR constant defines the value of the
@@ -195,7 +196,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMErrorEvent(std::string type, bool bubbles, bool cancelable, std::string inErrorDetail, int inErrorCode, int insubErrorID, DRMContentData *inMetadata, bool inSystemUpdateNeeded, bool inDrmUpdateNeeded);
+            DRMErrorEvent(std::string type="drmError", bool bubbles   =false, bool cancelable   =false, std::string inErrorDetail="", int inErrorCode=0, int insubErrorID=0, DRMContentData *inMetadata=NULL, bool inSystemUpdateNeeded   =false, bool inDrmUpdateNeeded   =false);
 
             /**
              * Returns a string that contains all the properties of the DRMErrorEvent object.

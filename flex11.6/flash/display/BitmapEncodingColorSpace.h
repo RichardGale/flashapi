@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display
     {
-        class BitmapEncodingColorSpace: public Object
+        class BitmapEncodingColorSpace : public Object
         {
         public:
             static const std::string COLORSPACE_AUTO;

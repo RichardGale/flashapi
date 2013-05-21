@@ -13,11 +13,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetGroupInfo: public Object
+        class NetGroupInfo : public Object
         {
             /**
              * Specifies the rate at which the local node is sending posting data to

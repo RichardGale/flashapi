@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -19,6 +20,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::geom;
 
 namespace flash
@@ -27,7 +29,7 @@ namespace flash
     {
         namespace engine
         {
-            class FontMetrics: public Object
+            class FontMetrics : public Object
             {
                 /**
                  * The emBox value represents the design space of the font and is used to place Chinese,
@@ -168,7 +170,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                FontMetrics(Rectangle *emBox, float strikethroughOffset, float strikethroughThickness, float underlineOffset, float underlineThickness, float subscriptOffset, float subscriptScale, float superscriptOffset, float superscriptScale, float lineGap);
+                FontMetrics(Rectangle *emBox, float strikethroughOffset, float strikethroughThickness, float underlineOffset, float underlineThickness, float subscriptOffset, float subscriptScale, float superscriptOffset, float superscriptScale, float lineGap =0);
             };
         }
     }

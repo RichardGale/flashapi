@@ -12,11 +12,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class MorphShape: public DisplayObject
+        class MorphShape : public DisplayObject
         {
         public:
             MorphShape();

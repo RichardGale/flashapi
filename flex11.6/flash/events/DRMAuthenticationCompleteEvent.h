@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 namespace flash
 {
@@ -19,6 +20,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Flash 10.1
  */
+
 using namespace flash::events;
 using namespace flash::utils;
 
@@ -26,7 +28,7 @@ namespace flash
 {
     namespace events
     {
-        class DRMAuthenticationCompleteEvent: public Event
+        class DRMAuthenticationCompleteEvent : public flash::events::Event
         {
             /**
              * The string constant to use for the authentication complete event
@@ -117,7 +119,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMAuthenticationCompleteEvent(std::string type, bool bubbles, bool cancelable, std::string inServerURL, std::string inDomain, ByteArray *inToken);
+            DRMAuthenticationCompleteEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string inServerURL="", std::string inDomain="", ByteArray *inToken=NULL);
         };
     }
 }

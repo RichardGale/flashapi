@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -159,10 +160,10 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
+
 using namespace flash::events;
-using namespace flash::text::engine;
 using namespace flash::geom;
+using namespace flash::text::engine;
 
 namespace flash
 {
@@ -170,7 +171,7 @@ namespace flash
     {
         namespace engine
         {
-            class TextLineMirrorRegion: public Object
+            class TextLineMirrorRegion : public Object
             {
                 /**
                  * The TextLine containing this mirror region.

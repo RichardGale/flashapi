@@ -72,11 +72,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace filters
     {
-        class BitmapFilterType: public Object
+        class BitmapFilterType : public Object
         {
             /**
              * Defines the setting that applies a filter to the inner area of an object.

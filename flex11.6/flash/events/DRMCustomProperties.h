@@ -8,7 +8,7 @@ namespace flash
 {
     namespace events
     {
-        class DRMCustomProperties: public Object
+        class DRMCustomProperties : public Object
         {
         public:
             DRMCustomProperties();

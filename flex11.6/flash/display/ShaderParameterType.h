@@ -13,11 +13,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ShaderParameterType: public Object
+        class ShaderParameterType : public Object
         {
             /**
              * Indicates that the shader parameter is defined as a

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -41,13 +42,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::system;
 
 namespace flash
 {
     namespace system
     {
-        class System: public Object
+        class System : public Object
         {
             /**
              * The currently installed system IME.
@@ -226,7 +228,7 @@ namespace flash
             static void     gc();
 
         public:
-            static void     pauseForGCIfCollectionImminent(float imminence);
+            static void     pauseForGCIfCollectionImminent(float imminence =0.75);
 
             /**
              * Makes the specified XML object immediately available for garbage collection.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 namespace flash
 {
@@ -290,13 +291,14 @@ namespace flash
  * @internal    Security considerations for application domains are discussed in the
  *   applicationDomain property entries of URLRequest and LoaderInfo.
  */
+
 using namespace flash::utils;
 
 namespace flash
 {
     namespace system
     {
-        class ApplicationDomain: public Object
+        class ApplicationDomain : public Object
         {
             /**
              * Gets the current application domain in which your code is executing.
@@ -349,7 +351,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ApplicationDomain(ApplicationDomain *parentDomain);
+            ApplicationDomain(ApplicationDomain *parentDomain=NULL);
 
             /**
              * Gets a public definition from the specified application domain.
@@ -380,7 +382,7 @@ namespace flash
             bool     hasDefinition(std::string name);
 
         public:
-            std::vector<std::string> *getQualifiedDefinitionNames();
+            std::vector<std::string> getQualifiedDefinitionNames();
         };
     }
 }

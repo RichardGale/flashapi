@@ -13,13 +13,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class JustificationStyle: public Object
+            class JustificationStyle : public Object
             {
                 /**
                  * Bases justification on compressing kinsoku at the end of the line,

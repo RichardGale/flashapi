@@ -11,11 +11,12 @@
  * @playerversion   AIR 1.0
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class FocusDirection: public Object
+        class FocusDirection : public Object
         {
             /**
              * Indicates that focus should be given to the object at the beginning of the reading order.

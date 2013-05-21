@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -49,14 +50,14 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace flash::geom;
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace geom
     {
-        class PerspectiveProjection: public Object
+        class PerspectiveProjection : public Object
         {
             /**
              * Specifies an angle, as a degree between 0 and 180, for the field of view in three

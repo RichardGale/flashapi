@@ -8,7 +8,7 @@ namespace flash
 {
     namespace system
     {
-        class WorkerState: public Object
+        class WorkerState : public Object
         {
         public:
             static const std::string NEW;

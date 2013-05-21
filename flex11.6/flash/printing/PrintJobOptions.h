@@ -11,11 +11,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace printing
     {
-        class PrintJobOptions: public Object
+        class PrintJobOptions : public Object
         {
             /**
              * Specifies whether the content in the print job is printed as a bitmap or as a vector.
@@ -55,7 +56,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            PrintJobOptions(bool printAsBitmap);
+            PrintJobOptions(bool printAsBitmap   =false);
         };
     }
 }

@@ -85,11 +85,12 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+
 namespace flash
 {
     namespace sampler
     {
-        class DeleteObjectSample: public Sample
+        class DeleteObjectSample : public Sample
         {
             /**
              * The unique identification number that matches up with a NewObjectSample's identification number.

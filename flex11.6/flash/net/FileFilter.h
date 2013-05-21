@@ -35,11 +35,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class FileFilter: public Object
+        class FileFilter : public Object
         {
             /**
              * The description string for the filter. The description
@@ -102,7 +103,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            FileFilter(std::string description, std::string extension, std::string macType);
+            FileFilter(std::string description, std::string extension, std::string macType="");
         };
     }
 }

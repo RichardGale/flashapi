@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -25,7 +26,6 @@ namespace flash
 }
 
 using namespace flash::net::drm;
-using namespace flash::net::drm;
 
 namespace flash
 {
@@ -33,7 +33,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMVoucherStoreContext: public DRMManagerSession
+            class DRMVoucherStoreContext : public DRMManagerSession
             {
             public:
                 DRMVoucher  *voucher();

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /**
@@ -13,13 +14,14 @@
  * @playerversion   Flash 10.3
  * @playerversion   AIR 2.7
  */
+
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class NetDataEvent: public Event
+        class NetDataEvent : public flash::events::Event
         {
             /**
              * The NetDataEvent.MEDIA_TYPE_DATA constant defines the value of the type property of the NetDataEvent object
@@ -80,7 +82,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            NetDataEvent(std::string type, bool bubbles, bool cancelable, float timestamp, Object *info);
+            NetDataEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float timestamp =0, Object *info=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetDataEvent object. The following

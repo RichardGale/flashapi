@@ -12,13 +12,14 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace net
     {
         namespace drm
         {
-            class AuthenticationMethod: public Object
+            class AuthenticationMethod : public Object
             {
                 /**
                  * Indicates that no authentication is required.

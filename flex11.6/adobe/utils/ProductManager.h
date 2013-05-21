@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 using namespace flash::events;
@@ -11,7 +12,7 @@ namespace adobe
 {
     namespace utils
     {
-        class ProductManager: public EventDispatcher
+        class ProductManager : public flash::events::EventDispatcher
         {
         public:
             bool         running();
@@ -23,13 +24,13 @@ namespace adobe
             std::string  installedVersion();
 
         public:
-            ProductManager(std::string name, bool shared);
+            ProductManager(std::string name="", bool shared   =false);
 
         public:
-            bool     launch(std::string parameters);
+            bool     launch(std::string parameters="");
 
         public:
-            bool     download(std::string caption, std::string fileName, std::vector<void *> pathElements);
+            bool     download(std::string caption="", std::string fileName="", std::vector<void *> pathElements=std::vector<void *>());
 
         public:
             bool     doSelfUpgrade(std::string os);

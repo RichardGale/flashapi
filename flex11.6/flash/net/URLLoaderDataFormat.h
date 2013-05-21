@@ -99,11 +99,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class URLLoaderDataFormat: public Object
+        class URLLoaderDataFormat : public Object
         {
             /**
              * Specifies that downloaded data is received as text.

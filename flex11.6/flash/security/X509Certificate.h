@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -18,14 +19,14 @@ namespace flash
     }
 }
 
-using namespace flash::utils;
 using namespace flash::security;
+using namespace flash::utils;
 
 namespace flash
 {
     namespace security
     {
-        class X509Certificate: public Object
+        class X509Certificate : public Object
         {
         public:
             unsigned int version();

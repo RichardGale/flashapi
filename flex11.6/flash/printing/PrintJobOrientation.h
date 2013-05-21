@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace printing
     {
-        class PrintJobOrientation: public Object
+        class PrintJobOrientation : public Object
         {
             /**
              * The landscape (horizontal) image orientation for printing.

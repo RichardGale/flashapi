@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -27,7 +28,7 @@ namespace flash
 {
     namespace ui
     {
-        class GameInputDevice: public EventDispatcher
+        class GameInputDevice : public flash::events::EventDispatcher
         {
         public:
             static const int MAX_BUFFER_SIZE;
@@ -58,13 +59,13 @@ namespace flash
             GameInputControl *getControlAt(int i);
 
         public:
-            void     startCachingSamples(int numSamples, std::vector<int> *controls);
+            void     startCachingSamples(int numSamples, std::vector<int> controls);
 
         public:
             void     stopCachingSamples();
 
         public:
-            int      getCachedSamples(ByteArray *data, bool append);
+            int      getCachedSamples(ByteArray *data, bool append   =false);
         };
     }
 }

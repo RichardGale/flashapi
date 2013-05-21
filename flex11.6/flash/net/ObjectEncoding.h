@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -39,13 +40,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::net;
 
 namespace flash
 {
     namespace net
     {
-        class ObjectEncoding: public Object
+        class ObjectEncoding : public Object
         {
             /**
              * Specifies that objects are serialized using the Action Message Format for ActionScript 1.0 and 2.0.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/xml/XMLNode.h"
 
 /**
@@ -94,13 +95,14 @@
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::xml;
 
 namespace flash
 {
     namespace xml
     {
-        class XMLDocument: public XMLNode
+        class XMLDocument : public flash::xml::XMLNode
         {
             /**
              * A string that specifies information about a document's XML declaration.
@@ -441,7 +443,7 @@ namespace flash
              *   </listing>
              */
         public:
-            XMLDocument(std::string source);
+            XMLDocument(std::string source="");
         };
     }
 }

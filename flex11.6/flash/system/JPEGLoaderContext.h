@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -34,14 +35,14 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::system;
+
 using namespace flash::system;
 
 namespace flash
 {
     namespace system
     {
-        class JPEGLoaderContext: public LoaderContext
+        class JPEGLoaderContext : public LoaderContext
         {
             /**
              * Specifies the strength of the deblocking filter. A value of 1.0
@@ -68,7 +69,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            JPEGLoaderContext(float deblockingFilter, bool checkPolicyFile, ApplicationDomain *applicationDomain, SecurityDomain *securityDomain);
+            JPEGLoaderContext(float deblockingFilter =0, bool checkPolicyFile   =false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
         };
     }
 }

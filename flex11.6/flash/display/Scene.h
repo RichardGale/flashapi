@@ -18,11 +18,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class Scene: public Object
+        class Scene : public Object
         {
             /**
              * The name of the scene.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -19,7 +20,7 @@ namespace flash
 {
     namespace ui
     {
-        class GameInputControl: public EventDispatcher
+        class GameInputControl : public flash::events::EventDispatcher
         {
         public:
             int          numValues();
@@ -46,7 +47,7 @@ namespace flash
             GameInputControl();
 
         public:
-            float    getValueAt(int index);
+            float    getValueAt(int index=0);
         };
     }
 }

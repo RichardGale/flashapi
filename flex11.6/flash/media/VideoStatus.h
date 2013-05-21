@@ -10,11 +10,12 @@
  * @playerversion   AIR (unsupported)
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class VideoStatus: public Object
+        class VideoStatus : public Object
         {
             /**
              * Video decoding is not supported.

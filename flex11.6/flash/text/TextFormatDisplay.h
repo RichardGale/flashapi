@@ -8,7 +8,7 @@ namespace flash
 {
     namespace text
     {
-        class TextFormatDisplay: public Object
+        class TextFormatDisplay : public Object
         {
         public:
             static const std::string INLINE;

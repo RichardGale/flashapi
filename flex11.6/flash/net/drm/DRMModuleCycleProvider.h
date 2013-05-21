@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -27,7 +28,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMModuleCycleProvider: public Object
+            class DRMModuleCycleProvider : public Object
             {
             public:
                 DRMModuleCycleProvider();

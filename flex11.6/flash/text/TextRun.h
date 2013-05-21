@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace text
     {
-        class TextRun: public Object
+        class TextRun : public Object
         {
         public:
             int beginIndex;

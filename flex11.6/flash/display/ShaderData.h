@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -159,13 +160,14 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
+
 using namespace flash::utils;
 
 namespace flash
 {
     namespace display
     {
-        class ShaderData: public Object
+        class ShaderData : public Object
         {
             /**
              * Creates a ShaderData instance. Generally, developer code does not call

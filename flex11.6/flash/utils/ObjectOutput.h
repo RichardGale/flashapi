@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace utils
     {
-        class ObjectOutput: public Object, public IDataOutput
+        class ObjectOutput : public Object, public IDataOutput
         {
         public:
             unsigned int objectEncoding();
@@ -33,7 +34,7 @@ namespace flash
             ObjectOutput();
 
         public:
-            void     writeBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     writeBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
         public:
             void     writeBoolean(bool value);

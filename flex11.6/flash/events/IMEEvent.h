@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -25,26 +26,29 @@ namespace flash
 //[Event(name="imeComposition",type="flash.events.IMEEvent")]
 
 
-//[Event(name="imeComposition",type="flash.events.IMEEvent")]/// @eventType  flash.events.IMEEvent.IME_START_COMPOSITION
+//[Event(name="imeComposition",type="flash.events.IMEEvent")]
 
-/**
- * An IMEEvent object is dispatched when the user enters text using an input method editor
- * (IME). IMEs are generally used to enter text from languages that have ideographs instead of
- * letters, such as Japanese, Chinese, and Korean. There are two IME events:
- * <codeph class="+ topic/ph pr-d/codeph ">IMEEvent.IME_COMPOSITION</codeph> and <codeph class="+ topic/ph pr-d/codeph ">IMEEvent.IME_START_COMPOSITION</codeph>.
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- * @internal    includeExample examples\IMEEventExample.as -noswf
- */
-using namespace flash::text::ime;
 using namespace flash::events;
+using namespace flash::text::ime;
 
 namespace flash
 {
     namespace events
     {
-        class IMEEvent: public TextEvent
+        /// @eventType  flash.events.IMEEvent.IME_START_COMPOSITION
+
+
+        /**
+         * An IMEEvent object is dispatched when the user enters text using an input method editor
+         * (IME). IMEs are generally used to enter text from languages that have ideographs instead of
+         * letters, such as Japanese, Chinese, and Korean. There are two IME events:
+         * <codeph class="+ topic/ph pr-d/codeph ">IMEEvent.IME_COMPOSITION</codeph> and <codeph class="+ topic/ph pr-d/codeph ">IMEEvent.IME_START_COMPOSITION</codeph>.
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         * @internal    includeExample examples\IMEEventExample.as -noswf
+         */
+        class IMEEvent : public TextEvent
         {
             /**
              * Defines the value of the type property of an imeComposition event object.
@@ -105,7 +109,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            IMEEvent(std::string type, bool bubbles, bool cancelable, std::string text, IIMEClient *imeClient);
+            IMEEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", IIMEClient *imeClient=NULL);
 
             /**
              * Returns a string that contains all the properties of the IMEEvent object. The string is in the following format:

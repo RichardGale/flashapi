@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class H264Level: public Object
+        class H264Level : public Object
         {
         public:
             static const std::string LEVEL_1;

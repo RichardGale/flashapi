@@ -14,7 +14,8 @@
  * @playerversion   Lite 4
  */
 
-class EvalError: public Error
+
+class EvalError : public Error
 {
 public:
     static const int length;
@@ -27,7 +28,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    EvalError(void *message, void *id);
+    EvalError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_EVALERROR_AS

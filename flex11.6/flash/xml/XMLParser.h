@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace xml
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace xml
     {
-        class XMLParser: public Object
+        class XMLParser : public Object
         {
         public:
             void     startParse(std::string source, bool ignoreWhite);

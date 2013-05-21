@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 namespace flash
 {
@@ -28,27 +29,26 @@ namespace flash
 /// @eventType  flash.events.DRMStatusEvent.DRM_STATUS
 //[Event(name="drmStatus",type="flash.events.DRMStatusEvent")]
 
-/**
- * A NetStream object dispatches a DRMStatusEvent object when the content protected using
- * digital rights management (DRM) begins playing successfully (when the voucher is
- * verified, and when the user is authenticated and authorized to view the content).
- * The DRMStatusEvent object contains information related to the voucher, such as
- * whether the content can be made available offline or when the voucher will expire
- * and the content can no longer be viewed. The application can use this data to
- * inform the user of the status of her policy and permissions.
- * @langversion 3.0
- * @playerversion   AIR 1.0
- * @playerversion   Flash 10.1
- */
 using namespace flash::events;
-using namespace flash::net::drm;
 using namespace flash::net::drm;
 
 namespace flash
 {
     namespace events
     {
-        class DRMStatusEvent: public Event
+        /**
+         * A NetStream object dispatches a DRMStatusEvent object when the content protected using
+         * digital rights management (DRM) begins playing successfully (when the voucher is
+         * verified, and when the user is authenticated and authorized to view the content).
+         * The DRMStatusEvent object contains information related to the voucher, such as
+         * whether the content can be made available offline or when the voucher will expire
+         * and the content can no longer be viewed. The application can use this data to
+         * inform the user of the status of her policy and permissions.
+         * @langversion 3.0
+         * @playerversion   AIR 1.0
+         * @playerversion   Flash 10.1
+         */
+        class DRMStatusEvent : public flash::events::Event
         {
             /**
              * The DRMStatusEvent.DRM_STATUS constant defines the value of the
@@ -124,7 +124,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMStatusEvent(std::string type, bool bubbles, bool cancelable, DRMContentData *inMetadata, DRMVoucher *inVoucher, bool inLocal);
+            DRMStatusEvent(std::string type="drmStatus", bool bubbles   =false, bool cancelable   =false, DRMContentData *inMetadata=NULL, DRMVoucher *inVoucher=NULL, bool inLocal   =false);
 
             /**
              * Returns a string that contains all the properties of the DRMStatusEvent object.

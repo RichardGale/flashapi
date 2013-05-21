@@ -3,25 +3,26 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.AccelerometerEvent.UPDATE
 //[Event(name="update",type="flash.events.AccelerometerEvent")]
 
-/**
- * The Accelerometer class dispatches AccelerometerEvent objects when acceleration updates are obtained from the Accelerometer sensor installed on the device.
- * @langversion 3.0
- * @playerversion   AIR 2
- * @playerversion   Flash 10.1
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class AccelerometerEvent: public Event
+        /**
+         * The Accelerometer class dispatches AccelerometerEvent objects when acceleration updates are obtained from the Accelerometer sensor installed on the device.
+         * @langversion 3.0
+         * @playerversion   AIR 2
+         * @playerversion   Flash 10.1
+         * @playerversion   Lite 4
+         */
+        class AccelerometerEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a AccelerometerEvent event object.
@@ -106,7 +107,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            AccelerometerEvent(std::string type, bool bubbles, bool cancelable, float timestamp, float accelerationX, float accelerationY, float accelerationZ);
+            AccelerometerEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float timestamp =0, float accelerationX =0, float accelerationY =0, float accelerationZ =0);
 
             /**
              * Creates a copy of an AccelerometerEvent object and sets the value of each property to match that of

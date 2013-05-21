@@ -8,7 +8,7 @@ namespace flash
 {
     namespace system
     {
-        class ApplicationInstallerMode: public Object
+        class ApplicationInstallerMode : public Object
         {
         public:
             static const std::string INSTALL_ONLY;

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/text/engine/TextJustifier.h"
 
 
@@ -70,6 +71,7 @@
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::text::engine;
 
 namespace flash
@@ -78,7 +80,7 @@ namespace flash
     {
         namespace engine
         {
-            class SpaceJustifier: public TextJustifier
+            class SpaceJustifier : public flash::text::engine::TextJustifier
             {
                 /**
                  * Specifies whether to use letter spacing during justification.
@@ -178,7 +180,7 @@ namespace flash
                  * @throws  ArgumentError The lineJustification specified is not a member of LineJustification.
                  */
             public:
-                SpaceJustifier(std::string locale, std::string lineJustification, bool letterSpacing);
+                SpaceJustifier(std::string locale="en", std::string lineJustification="unjustified", bool letterSpacing   =false);
             };
         }
     }

@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class GridFitType: public Object
+        class GridFitType : public Object
         {
             /**
              * Doesn't set grid fitting. Horizontal and vertical lines

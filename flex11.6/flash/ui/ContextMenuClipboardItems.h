@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -18,11 +19,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class ContextMenuClipboardItems: public Object
+        class ContextMenuClipboardItems : public Object
         {
             /**
              * Enables or disables the 'Cut' item on the clipboard menu.

@@ -78,11 +78,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class URLRequestMethod: public Object
+        class URLRequestMethod : public Object
         {
             /**
              * Specifies that the URLRequest object is a POST.

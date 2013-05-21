@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -99,13 +100,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class DropShadowFilter: public BitmapFilter
+        class DropShadowFilter : public flash::filters::BitmapFilter
         {
             /**
              * The offset distance for the shadow, in pixels. The default
@@ -604,7 +606,7 @@ namespace flash
              *   </pre>
              */
         public:
-            DropShadowFilter(float distance, float angle, unsigned int color, float alpha, float blurX, float blurY, float strength, int quality, bool inner, bool knockout, bool hideObject);
+            DropShadowFilter(float distance =4, float angle =45, unsigned int color=0, float alpha =1, float blurX =4, float blurY =4, float strength =1, int quality=1, bool inner   =false, bool knockout   =false, bool hideObject   =false);
 
             /**
              * Returns a copy of this filter object.

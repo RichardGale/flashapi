@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -46,15 +47,15 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
-using namespace flash::system;
-using namespace flash::system;
+
 using namespace flash::display;
+using namespace flash::system;
 
 namespace flash
 {
     namespace system
     {
-        class LoaderContext: public Object
+        class LoaderContext : public Object
         {
             /**
              * Specifies whether the application should attempt to download a URL policy file from the
@@ -332,7 +333,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            LoaderContext(bool checkPolicyFile, ApplicationDomain *applicationDomain, SecurityDomain *securityDomain);
+            LoaderContext(bool checkPolicyFile   =false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
         };
     }
 }

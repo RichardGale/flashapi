@@ -3,50 +3,51 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.ActivityEvent.ACTIVITY
 //[Event(name="activity",type="flash.events.ActivityEvent")]
 
-/**
- * A Camera or Microphone object dispatches an ActivityEvent object whenever a camera or microphone reports that it has
- * become active or inactive. There is only one type of activity event: <codeph class="+ topic/ph pr-d/codeph ">ActivityEvent.ACTIVITY</codeph>.
- *
- *   EXAMPLE:
- *
- *   The following example demonstrates the use of the ActivityEvent class by
- * attaching an event listener method named <codeph class="+ topic/ph pr-d/codeph ">activityHandler()</codeph> to the microphone and
- * generating text information every time the microphone generates an <codeph class="+ topic/ph pr-d/codeph ">activity</codeph> event.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.events.ActivityEvent;
- * import flash.media.Microphone;
- *
- *   public class ActivityEventExample extends Sprite {
- * public function ActivityEventExample() {
- * var mic:Microphone = Microphone.getMicrophone();
- * mic.addEventListener(ActivityEvent.ACTIVITY, activityHandler);
- * }
- *
- *   private function activityHandler(event:ActivityEvent):void {
- * trace("event: " + event);
- * trace("event.activating: " + event.activating);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class ActivityEvent: public Event
+        /**
+         * A Camera or Microphone object dispatches an ActivityEvent object whenever a camera or microphone reports that it has
+         * become active or inactive. There is only one type of activity event: <codeph class="+ topic/ph pr-d/codeph ">ActivityEvent.ACTIVITY</codeph>.
+         *
+         *   EXAMPLE:
+         *
+         *   The following example demonstrates the use of the ActivityEvent class by
+         * attaching an event listener method named <codeph class="+ topic/ph pr-d/codeph ">activityHandler()</codeph> to the microphone and
+         * generating text information every time the microphone generates an <codeph class="+ topic/ph pr-d/codeph ">activity</codeph> event.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.events.ActivityEvent;
+         * import flash.media.Microphone;
+         *
+         *   public class ActivityEventExample extends Sprite {
+         * public function ActivityEventExample() {
+         * var mic:Microphone = Microphone.getMicrophone();
+         * mic.addEventListener(ActivityEvent.ACTIVITY, activityHandler);
+         * }
+         *
+         *   private function activityHandler(event:ActivityEvent):void {
+         * trace("event: " + event);
+         * trace("event.activating: " + event.activating);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         */
+        class ActivityEvent : public flash::events::Event
         {
             /**
              * The ActivityEvent.ACTIVITY constant defines the value of the type property of an activity event object.
@@ -88,7 +89,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ActivityEvent(std::string type, bool bubbles, bool cancelable, bool activating);
+            ActivityEvent(std::string type, bool bubbles   =false, bool cancelable   =false, bool activating   =false);
 
             /**
              * Creates a copy of an ActivityEvent object and sets the value of each property to match that of

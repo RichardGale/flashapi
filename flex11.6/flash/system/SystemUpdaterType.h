@@ -12,11 +12,12 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class SystemUpdaterType: public Object
+        class SystemUpdaterType : public Object
         {
             /**
              * Updates the player runtime itself.

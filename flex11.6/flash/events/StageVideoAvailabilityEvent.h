@@ -21,11 +21,12 @@
  * @playerversion   AIR (unsupported)
  */
 
+
 namespace flash
 {
     namespace events
     {
-        class StageVideoAvailabilityEvent: public Event
+        class StageVideoAvailabilityEvent : public Event
         {
             /**
              * Defines the value of the type property of a stageVideoAvailability event object.
@@ -57,7 +58,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            StageVideoAvailabilityEvent(std::string type, bool bubbles, bool cancelable, std::string availability);
+            StageVideoAvailabilityEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string availability="");
         };
     }
 }

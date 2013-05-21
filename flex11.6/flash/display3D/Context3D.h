@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -84,23 +85,18 @@ namespace flash
     }
 }
 
+using namespace flash::display;
+using namespace flash::display3D;
+using namespace flash::display3D::textures;
 using namespace flash::events;
-using namespace flash::display3D;
-using namespace flash::display3D;
 using namespace flash::geom;
 using namespace flash::utils;
-using namespace flash::display3D;
-using namespace flash::display3D::textures;
-using namespace flash::geom;
-using namespace flash::display3D::textures;
-using namespace flash::display3D::textures;
-using namespace flash::display;
 
 namespace flash
 {
     namespace display3D
     {
-        class Context3D: public EventDispatcher
+        class Context3D : public flash::events::EventDispatcher
         {
         public:
             std::string  driverInfo();
@@ -111,16 +107,16 @@ namespace flash
             void         enableErrorChecking(bool toggle);
 
         public:
-            void     clear(float red, float green, float blue, float alpha, float depth, unsigned int stencil, unsigned int mask);
+            void     clear(float red =0, float green =0, float blue =0, float alpha =1, float depth =1, unsigned int stencil=0, unsigned int mask=4294967295);
 
         public:
-            void     configureBackBuffer(int width, int height, int antiAlias, bool enableDepthAndStencil, bool wantsBestResolution);
+            void     configureBackBuffer(int width, int height, int antiAlias, bool enableDepthAndStencil   =true, bool wantsBestResolution   =false);
 
         public:
             Context3D();
 
         public:
-            CubeTexture *createCubeTexture(int size, std::string format, bool optimizeForRenderToTexture, int streamingLevels);
+            CubeTexture *createCubeTexture(int size, std::string format, bool optimizeForRenderToTexture, int streamingLevels=0);
 
         public:
             IndexBuffer3D *createIndexBuffer(int numIndices);
@@ -129,19 +125,19 @@ namespace flash
             Program3D *createProgram();
 
         public:
-            Texture *createTexture(int width, int height, std::string format, bool optimizeForRenderToTexture, int streamingLevels);
+            flash::display3D::textures::Texture *createTexture(int width, int height, std::string format, bool optimizeForRenderToTexture, int streamingLevels=0);
 
         public:
             VertexBuffer3D *createVertexBuffer(int numVertices, int data32PerVertex);
 
         public:
-            void     dispose(bool recreate);
+            void     dispose(bool recreate   =true);
 
         public:
             void     drawToBitmapData(BitmapData *destination);
 
         public:
-            void     drawTriangles(IndexBuffer3D *indexBuffer, int firstIndex, int numTriangles);
+            void     drawTriangles(IndexBuffer3D *indexBuffer, int firstIndex=0, int numTriangles=-1);
 
         public:
             void     present();
@@ -165,16 +161,16 @@ namespace flash
             void     setProgramConstantsFromByteArray(std::string programType, int firstRegister, int numRegisters, ByteArray *data, unsigned int byteArrayOffset);
 
         public:
-            void     setProgramConstantsFromMatrix(std::string programType, int firstRegister, Matrix3D *matrix, bool transposedMatrix);
+            void     setProgramConstantsFromMatrix(std::string programType, int firstRegister, Matrix3D *matrix, bool transposedMatrix   =false);
 
         public:
-            void     setProgramConstantsFromVector(std::string programType, int firstRegister, std::vector<float> *data, int numRegisters);
+            void     setProgramConstantsFromVector(std::string programType, int firstRegister, std::vector<float> data, int numRegisters=-1);
 
         public:
             void     setRenderToBackBuffer();
 
         public:
-            void     setRenderToTexture(TextureBase *texture, bool enableDepthAndStencil, int antiAlias, int surfaceSelector);
+            void     setRenderToTexture(TextureBase *texture, bool enableDepthAndStencil   =false, int antiAlias=0, int surfaceSelector=0);
 
         public:
             void     setSamplerStateAt(int sampler, std::string wrap, std::string filter, std::string mipfilter);
@@ -183,16 +179,16 @@ namespace flash
             void     setScissorRectangle(Rectangle *rectangle);
 
         public:
-            void     setStencilActions(std::string triangleFace, std::string compareMode, std::string actionOnBothPass, std::string actionOnDepthFail, std::string actionOnDepthPassStencilFail);
+            void     setStencilActions(std::string triangleFace="frontAndBack", std::string compareMode="always", std::string actionOnBothPass="keep", std::string actionOnDepthFail="keep", std::string actionOnDepthPassStencilFail="keep");
 
         public:
-            void     setStencilReferenceValue(unsigned int referenceValue, unsigned int readMask, unsigned int writeMask);
+            void     setStencilReferenceValue(unsigned int referenceValue, unsigned int readMask=255, unsigned int writeMask=255);
 
         public:
             void     setTextureAt(int sampler, TextureBase *texture);
 
         public:
-            void     setVertexBufferAt(int index, VertexBuffer3D *buffer, int bufferOffset, std::string format);
+            void     setVertexBufferAt(int index, VertexBuffer3D *buffer, int bufferOffset=0, std::string format="float4");
         };
     }
 }

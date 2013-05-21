@@ -94,11 +94,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class CapsStyle: public Object
+        class CapsStyle : public Object
         {
             /**
              * Used to specify round caps in the caps parameter of the

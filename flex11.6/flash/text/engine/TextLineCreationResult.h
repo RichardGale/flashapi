@@ -11,13 +11,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TextLineCreationResult: public Object
+            class TextLineCreationResult : public Object
             {
                 /**
                  * Indicates the line was successfully broken.

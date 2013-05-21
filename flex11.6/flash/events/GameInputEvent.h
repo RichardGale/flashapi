@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace ui
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace events
     {
-        class GameInputEvent: public Event
+        class GameInputEvent : public Event
         {
         public:
             static const std::string DEVICE_ADDED;
@@ -28,7 +29,7 @@ namespace flash
             GameInputDevice *device();
 
         public:
-            GameInputEvent(std::string type, bool bubbles, bool cancelable, GameInputDevice *device);
+            GameInputEvent(std::string type, bool bubbles   =false, bool cancelable   =false, GameInputDevice *device=NULL);
         };
     }
 }

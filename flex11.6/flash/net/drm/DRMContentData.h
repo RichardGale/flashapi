@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -36,8 +37,9 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Flash 10.1
  */
-using namespace flash::utils;
+
 using namespace flash::net::drm;
+using namespace flash::utils;
 
 namespace flash
 {
@@ -45,7 +47,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMContentData: public Object
+            class DRMContentData : public Object
             {
                 /**
                  * The URL of a media rights server that
@@ -103,7 +105,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                DRMContentData(ByteArray *rawData);
+                DRMContentData(ByteArray *rawData=NULL);
 
                 /**
                  * Retrieves an array of VoucherAccessInfo objects. The array contains at least 1
@@ -119,7 +121,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::vector<flash::net::drm::VoucherAccessInfo *> *getVoucherAccessInfo();
+                std::vector<flash::net::drm::VoucherAccessInfo *> getVoucherAccessInfo();
             };
         }
     }

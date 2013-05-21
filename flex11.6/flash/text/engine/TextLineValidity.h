@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TextLineValidity: public Object
+            class TextLineValidity : public Object
             {
                 /**
                  * Specifies that the text line is valid.

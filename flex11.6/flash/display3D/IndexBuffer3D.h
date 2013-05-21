@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -17,13 +18,13 @@ namespace flash
 {
     namespace display3D
     {
-        class IndexBuffer3D: public Object
+        class IndexBuffer3D : public Object
         {
         public:
             IndexBuffer3D();
 
         public:
-            void     uploadFromVector(std::vector<unsigned int> *data, int startOffset, int count);
+            void     uploadFromVector(std::vector<unsigned int> data, int startOffset, int count);
 
         public:
             void     uploadFromByteArray(ByteArray *data, int byteArrayOffset, int startOffset, int count);

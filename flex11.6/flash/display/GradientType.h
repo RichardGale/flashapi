@@ -11,11 +11,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class GradientType: public Object
+        class GradientType : public Object
         {
             /**
              * Value used to specify a linear gradient fill.

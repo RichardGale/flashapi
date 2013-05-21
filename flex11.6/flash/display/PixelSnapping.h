@@ -11,11 +11,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class PixelSnapping: public Object
+        class PixelSnapping : public Object
         {
             /**
              * A constant value used in the pixelSnapping property of a Bitmap object

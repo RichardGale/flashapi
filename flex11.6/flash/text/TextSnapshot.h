@@ -15,11 +15,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextSnapshot: public Object
+        class TextSnapshot : public Object
         {
             /**
              * The number of characters in a TextSnapshot object.
@@ -94,7 +95,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string getSelectedText(bool includeLineEndings);
+            std::string getSelectedText(bool includeLineEndings   =false);
 
             /**
              * Returns a string that contains all the characters specified by the beginIndex
@@ -126,7 +127,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string getText(int beginIndex, int endIndex, bool includeLineEndings);
+            std::string getText(int beginIndex, int endIndex, bool includeLineEndings   =false);
 
             /**
              * Returns an array of objects that contains information about a run of text. Each object corresponds
@@ -197,7 +198,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float    hitTestTextNearPos(float x, float y, float maxDistance);
+            float    hitTestTextNearPos(float x, float y, float maxDistance =0);
 
             /**
              * Specifies the color to use when highlighting characters that have been selected with the
@@ -220,7 +221,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     setSelectColor(unsigned int hexColor);
+            void     setSelectColor(unsigned int hexColor=16776960);
 
             /**
              * Specifies a range of characters in a TextSnapshot object to be selected or deselected.

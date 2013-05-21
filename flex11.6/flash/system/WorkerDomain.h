@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 namespace flash
 {
@@ -26,7 +27,7 @@ namespace flash
 {
     namespace system
     {
-        class WorkerDomain: public Object
+        class WorkerDomain : public Object
         {
         public:
             static bool         isSupported();
@@ -35,10 +36,10 @@ namespace flash
             static WorkerDomain *current();
 
         public:
-            Worker  *createWorker(ByteArray *swf, bool giveAppPrivileges);
+            Worker  *createWorker(ByteArray *swf, bool giveAppPrivileges   =false);
 
         public:
-            std::vector<Worker *> *listWorkers();
+            std::vector<Worker *> listWorkers();
 
         public:
             WorkerDomain();

@@ -17,11 +17,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class BitmapDataChannel: public Object
+        class BitmapDataChannel : public Object
         {
             /**
              * The red channel.

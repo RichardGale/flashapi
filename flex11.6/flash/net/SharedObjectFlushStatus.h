@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class SharedObjectFlushStatus: public Object
+        class SharedObjectFlushStatus : public Object
         {
             /**
              * Indicates that the flush completed successfully.

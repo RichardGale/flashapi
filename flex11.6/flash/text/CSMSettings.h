@@ -13,11 +13,12 @@
  * @internal    Not functioning correctly. Bug report 193833
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class CSMSettings: public Object
+        class CSMSettings : public Object
         {
             /**
              * The size, in pixels, for which the settings apply.

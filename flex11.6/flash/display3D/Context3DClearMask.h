@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DClearMask: public Object
+        class Context3DClearMask : public Object
         {
         public:
             static const int COLOR;

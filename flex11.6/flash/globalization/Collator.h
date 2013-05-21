@@ -157,11 +157,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class Collator: public Object
+        class Collator : public Object
         {
             /**
              * When this property is set to true, identical strings and strings that differ only in the case of the letters
@@ -437,7 +438,7 @@ namespace flash
              * @throws  ArgumentError when the requestedLocaleIDName parameter contains an invalid value.
              */
         public:
-            Collator(std::string requestedLocaleIDName, std::string initialMode);
+            Collator(std::string requestedLocaleIDName, std::string initialMode="sorting");
 
             /**
              * Lists all of the locale ID names supported by this class.
@@ -449,7 +450,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *getAvailableLocaleIDNames();
+            static std::vector<std::string> getAvailableLocaleIDNames();
 
             /**
              * Compares two strings and returns an integer value indicating whether the first string is

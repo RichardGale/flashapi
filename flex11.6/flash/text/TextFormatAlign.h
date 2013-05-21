@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextFormatAlign: public Object
+        class TextFormatAlign : public Object
         {
             /**
              * Constant; aligns text to the left within the text field.

@@ -36,11 +36,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ShaderInput: public Object
+        class ShaderInput : public Object
         {
             /**
              * The input data that is used when the shader executes. This property can be

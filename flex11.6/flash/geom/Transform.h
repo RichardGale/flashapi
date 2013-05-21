@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -141,18 +142,15 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
-using namespace flash::geom;
-using namespace flash::geom;
-using namespace flash::geom;
+
 using namespace flash::display;
-using namespace flash::geom;
 using namespace flash::geom;
 
 namespace flash
 {
     namespace geom
     {
-        class Transform: public Object
+        class Transform : public Object
         {
             /**
              * A Matrix object containing values that alter the scaling, rotation,

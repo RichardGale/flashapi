@@ -1,3 +1,4 @@
+#if 0
 #if !defined(FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS)
 #define FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS
 #if defined(__cplusplus)
@@ -14,11 +15,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetStreamPlayTransitions: public Object
+        class NetStreamPlayTransitions : public Object
         {
             /**
              * Adds the stream to a playlist and begins playback with the first stream. This mode does the same thing as the NetStream.play()
@@ -142,4 +144,5 @@ namespace flash
 
 #endif // FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS
 #endif // __cplusplus
+#endif
 

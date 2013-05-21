@@ -14,7 +14,8 @@
  * @playerversion   Lite 4
  */
 
-class URIError: public Error
+
+class URIError : public Error
 {
 public:
     static const int length;
@@ -27,7 +28,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    URIError(void *message, void *id);
+    URIError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_URIERROR_AS

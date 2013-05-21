@@ -15,13 +15,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class LigatureLevel: public Object
+            class LigatureLevel : public Object
             {
                 /**
                  * Used to specify no ligatures.

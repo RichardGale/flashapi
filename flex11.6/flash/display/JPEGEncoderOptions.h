@@ -8,13 +8,13 @@ namespace flash
 {
     namespace display
     {
-        class JPEGEncoderOptions: public Object
+        class JPEGEncoderOptions : public Object
         {
         public:
             unsigned int quality;
 
         public:
-            JPEGEncoderOptions(unsigned int quality);
+            JPEGEncoderOptions(unsigned int quality=80);
         };
     }
 }

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -17,10 +18,10 @@ namespace flash
 {
     namespace display3D
     {
-        class VertexBuffer3D: public Object
+        class VertexBuffer3D : public Object
         {
         public:
-            void     uploadFromVector(std::vector<float> *data, int startVertex, int numVertices);
+            void     uploadFromVector(std::vector<float> data, int startVertex, int numVertices);
 
         public:
             void     uploadFromByteArray(ByteArray *data, int byteArrayOffset, int startVertex, int numVertices);

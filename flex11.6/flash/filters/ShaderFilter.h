@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -129,6 +130,7 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
+
 using namespace flash::display;
 using namespace flash::geom;
 
@@ -136,7 +138,7 @@ namespace flash
 {
     namespace filters
     {
-        class ShaderFilter: public BitmapFilter
+        class ShaderFilter : public BitmapFilter
         {
             /**
              * The shader to use for this filter.
@@ -242,7 +244,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            ShaderFilter(Shader *shader);
+            ShaderFilter(Shader *shader=NULL);
         };
     }
 }

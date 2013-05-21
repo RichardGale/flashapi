@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -81,111 +82,108 @@ namespace flash
  */
 //[Event(name="open",type="flash.events.Event")]
 
-/**
- * The URLLoader class downloads data from a URL
- * as text, binary data, or URL-encoded variables. It is useful for downloading
- * text files, XML, or other information to be used in a
- * dynamic, data-driven application.
- *
- *   <p class="- topic/p ">A URLLoader object downloads all of the data from a URL before
- * making it available to code in the applications. It sends out
- * notifications about the progress of the download, which you can monitor
- * through the <codeph class="+ topic/ph pr-d/codeph ">bytesLoaded</codeph> and <codeph class="+ topic/ph pr-d/codeph ">bytesTotal</codeph> properties,
- * as well as through dispatched events.</p><p class="- topic/p ">When loading very large video files, such as FLV's, out-of-memory errors may occur.
- * </p><p class="- topic/p ">When you use this class <ph class="- topic/ph ">in Flash Player and</ph> in
- * AIR application content in security sandboxes other than then application security sandbox,
- * consider the following security model:</p><ul class="- topic/ul "><li class="- topic/li ">A SWF file in the local-with-filesystem sandbox may not load data from,
- * or provide data to, a resource that is in the network sandbox. </li><li class="- topic/li "> By default, the calling SWF file and the URL you load must be in exactly the same domain.
- * For example, a SWF file at www.adobe.com can load data only from sources that are also at www.adobe.com.
- * To load data from a different domain, place a URL policy file on the server hosting the data.</li></ul><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
- * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref>.</p>
- *
- *   EXAMPLE:
- *
- *   The following example loads and displays the
- * data found in a local text file. It also traces event handling information.
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run this example, put a file named urlLoaderExample.txt
- * in the same directory as your SWF file. That file should only contain the following line of text:
- * <codeph class="+ topic/ph pr-d/codeph ">answer=42&amp;question=unknown</codeph></p><p class="- topic/p ">The example code does the following:</p><ol class="- topic/ol "><li class="- topic/li ">The constructor function creates a URLLoader instance named <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> and a URLRequest
- * instance named <codeph class="+ topic/ph pr-d/codeph ">request</codeph>, which contains the location and name of the file to be loaded.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object is passed to the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method,
- * which adds listeners for each of the supported URLLoader events.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">request</codeph> object is then passed to <codeph class="+ topic/ph pr-d/codeph ">loader.load()</codeph>, which loads the text file.</li><li class="- topic/li ">When the URLLoader has finished loading the text file the <codeph class="+ topic/ph pr-d/codeph ">Event.COMPLETE event</codeph> fires,
- * triggering the <codeph class="+ topic/ph pr-d/codeph ">completeHandler()</codeph> method. The <codeph class="+ topic/ph pr-d/codeph ">completeHandler()</codeph> method creates a
- * URLVariables object from the text loaded from the file. The URLVariables object converts URL-encoded
- * name/value pairs into ActionScript properties to make it easier to manipulate the loaded data.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.net.*;
- *
- *   public class URLLoaderExample extends Sprite {
- * public function URLLoaderExample() {
- * var loader:URLLoader = new URLLoader();
- * configureListeners(loader);
- *
- *   var request:URLRequest = new URLRequest("urlLoaderExample.txt");
- * try {
- * loader.load(request);
- * } catch (error:Error) {
- * trace("Unable to load requested document.");
- * }
- * }
- *
- *   private function configureListeners(dispatcher:IEventDispatcher):void {
- * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
- * dispatcher.addEventListener(Event.OPEN, openHandler);
- * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
- * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
- * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * }
- *
- *   private function completeHandler(event:Event):void {
- * var loader:URLLoader = URLLoader(event.target);
- * trace("completeHandler: " + loader.data);
- *
- *   var vars:URLVariables = new URLVariables(loader.data);
- * trace("The answer is " + vars.answer);
- * }
- *
- *   private function openHandler(event:Event):void {
- * trace("openHandler: " + event);
- * }
- *
- *   private function progressHandler(event:ProgressEvent):void {
- * trace("progressHandler loaded:" + event.bytesLoaded + " total: " + event.bytesTotal);
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function httpStatusHandler(event:HTTPStatusEvent):void {
- * trace("httpStatusHandler: " + event);
- * }
- *
- *   private function ioErrorHandler(event:IOErrorEvent):void {
- * trace("ioErrorHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 using namespace flash::net;
-using namespace flash::net;
-using namespace flash::events;
-using namespace flash::events;
 
 namespace flash
 {
     namespace net
     {
-        class URLLoader: public EventDispatcher
+        /**
+         * The URLLoader class downloads data from a URL
+         * as text, binary data, or URL-encoded variables. It is useful for downloading
+         * text files, XML, or other information to be used in a
+         * dynamic, data-driven application.
+         *
+         *   <p class="- topic/p ">A URLLoader object downloads all of the data from a URL before
+         * making it available to code in the applications. It sends out
+         * notifications about the progress of the download, which you can monitor
+         * through the <codeph class="+ topic/ph pr-d/codeph ">bytesLoaded</codeph> and <codeph class="+ topic/ph pr-d/codeph ">bytesTotal</codeph> properties,
+         * as well as through dispatched events.</p><p class="- topic/p ">When loading very large video files, such as FLV's, out-of-memory errors may occur.
+         * </p><p class="- topic/p ">When you use this class <ph class="- topic/ph ">in Flash Player and</ph> in
+         * AIR application content in security sandboxes other than then application security sandbox,
+         * consider the following security model:</p><ul class="- topic/ul "><li class="- topic/li ">A SWF file in the local-with-filesystem sandbox may not load data from,
+         * or provide data to, a resource that is in the network sandbox. </li><li class="- topic/li "> By default, the calling SWF file and the URL you load must be in exactly the same domain.
+         * For example, a SWF file at www.adobe.com can load data only from sources that are also at www.adobe.com.
+         * To load data from a different domain, place a URL policy file on the server hosting the data.</li></ul><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
+         * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref>.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example loads and displays the
+         * data found in a local text file. It also traces event handling information.
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run this example, put a file named urlLoaderExample.txt
+         * in the same directory as your SWF file. That file should only contain the following line of text:
+         * <codeph class="+ topic/ph pr-d/codeph ">answer=42&amp;question=unknown</codeph></p><p class="- topic/p ">The example code does the following:</p><ol class="- topic/ol "><li class="- topic/li ">The constructor function creates a URLLoader instance named <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> and a URLRequest
+         * instance named <codeph class="+ topic/ph pr-d/codeph ">request</codeph>, which contains the location and name of the file to be loaded.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object is passed to the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method,
+         * which adds listeners for each of the supported URLLoader events.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">request</codeph> object is then passed to <codeph class="+ topic/ph pr-d/codeph ">loader.load()</codeph>, which loads the text file.</li><li class="- topic/li ">When the URLLoader has finished loading the text file the <codeph class="+ topic/ph pr-d/codeph ">Event.COMPLETE event</codeph> fires,
+         * triggering the <codeph class="+ topic/ph pr-d/codeph ">completeHandler()</codeph> method. The <codeph class="+ topic/ph pr-d/codeph ">completeHandler()</codeph> method creates a
+         * URLVariables object from the text loaded from the file. The URLVariables object converts URL-encoded
+         * name/value pairs into ActionScript properties to make it easier to manipulate the loaded data.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.net.*;
+         *
+         *   public class URLLoaderExample extends Sprite {
+         * public function URLLoaderExample() {
+         * var loader:URLLoader = new URLLoader();
+         * configureListeners(loader);
+         *
+         *   var request:URLRequest = new URLRequest("urlLoaderExample.txt");
+         * try {
+         * loader.load(request);
+         * } catch (error:Error) {
+         * trace("Unable to load requested document.");
+         * }
+         * }
+         *
+         *   private function configureListeners(dispatcher:IEventDispatcher):void {
+         * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
+         * dispatcher.addEventListener(Event.OPEN, openHandler);
+         * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+         * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
+         * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * }
+         *
+         *   private function completeHandler(event:Event):void {
+         * var loader:URLLoader = URLLoader(event.target);
+         * trace("completeHandler: " + loader.data);
+         *
+         *   var vars:URLVariables = new URLVariables(loader.data);
+         * trace("The answer is " + vars.answer);
+         * }
+         *
+         *   private function openHandler(event:Event):void {
+         * trace("openHandler: " + event);
+         * }
+         *
+         *   private function progressHandler(event:ProgressEvent):void {
+         * trace("progressHandler loaded:" + event.bytesLoaded + " total: " + event.bytesTotal);
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function httpStatusHandler(event:HTTPStatusEvent):void {
+         * trace("httpStatusHandler: " + event);
+         * }
+         *
+         *   private function ioErrorHandler(event:IOErrorEvent):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class URLLoader : public flash::events::EventDispatcher
         {
             /**
              * The data received from the load operation. This property
@@ -305,7 +303,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference);
+            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
 
             /**
              * Sends and loads data from the specified URL. The data can be received as
@@ -384,7 +382,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            URLLoader(URLRequest *request);
+            URLLoader(URLRequest *request=NULL);
         };
     }
 }

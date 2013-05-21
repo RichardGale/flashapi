@@ -8,7 +8,7 @@ namespace flash
 {
     namespace sampler
     {
-        class ClassFactory: public Object
+        class ClassFactory : public Object
         {
         public:
             static const Class *StackFrameClass;

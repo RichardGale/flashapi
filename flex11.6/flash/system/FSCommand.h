@@ -8,7 +8,7 @@ namespace flash
 {
     namespace system
     {
-        class FSCommand: public Object
+        class FSCommand : public Object
         {
         public:
             static void     _fscommand(std::string command, std::string args);

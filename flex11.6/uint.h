@@ -42,7 +42,8 @@
  * @playerversion   Lite 4
  */
 
-class uint: public Object
+
+class uint : public Object
 {
     /**
      * The smallest representable unsigned integer, which is 0.
@@ -74,7 +75,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string toString(void *radix);
+    std::string toString(void *radix=10);
 
     /**
      * Creates a new uint object. You can create a variable of uint type and assign it a literal value. The new uint() constructor is primarily used
@@ -88,7 +89,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    uint(void *value);
+    uint(void *value=0);
 
     /**
      * Returns the primitive uint type value of the specified
@@ -112,7 +113,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toExponential(void *p);
+    std::string toExponential(void *p=0);
 
     /**
      * Returns a string representation of the number either in exponential notation or in
@@ -125,7 +126,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the precision argument is outside the range 1 to 21.
      */
-    std::string toPrecision(void *p);
+    std::string toPrecision(void *p=0);
 
     /**
      * Returns a string representation of the number in fixed-point notation.
@@ -140,7 +141,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toFixed(void *p);
+    std::string toFixed(void *p=0);
 };
 
 #endif // FLEX11_6_UINT_AS

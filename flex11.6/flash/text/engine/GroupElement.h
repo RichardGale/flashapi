@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/text/engine/ContentElement.h"
 
 namespace flash
@@ -119,10 +120,9 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
-using namespace flash::text::engine;
-using namespace flash::text::engine;
+
 using namespace flash::events;
+using namespace flash::text::engine;
 
 namespace flash
 {
@@ -130,7 +130,7 @@ namespace flash
     {
         namespace engine
         {
-            class GroupElement: public ContentElement
+            class GroupElement : public flash::text::engine::ContentElement
             {
                 /**
                  * The number of elements in the group.
@@ -175,7 +175,7 @@ namespace flash
                  *   the elements.
                  */
             public:
-                GroupElement(std::vector<flash::text::engine::ContentElement *> *elements, ElementFormat *elementFormat, EventDispatcher *eventMirror, std::string textRotation);
+                GroupElement(std::vector<flash::text::engine::ContentElement *> elements=std::vector<void *>(), ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
 
                 /**
                  * Sets the elements in the group to the contents of the Vector.
@@ -192,7 +192,7 @@ namespace flash
                  * @throws  ArgumentError If the operation would result in nested rotations within the GroupElement.
                  */
             public:
-                void     setElements(std::vector<flash::text::engine::ContentElement *> *value);
+                void     setElements(std::vector<flash::text::engine::ContentElement *> value);
 
                 /**
                  * Replaces the range of elements that the beginIndex and endIndex
@@ -287,7 +287,7 @@ namespace flash
                  * @throws  ArgumentError If the operation would result in nested rotations within the GroupElement.
                  */
             public:
-                std::vector<flash::text::engine::ContentElement *> *replaceElements(int beginIndex, int endIndex, std::vector<flash::text::engine::ContentElement *> *newElements);
+                std::vector<flash::text::engine::ContentElement *> replaceElements(int beginIndex, int endIndex, std::vector<flash::text::engine::ContentElement *> newElements);
 
                 /**
                  * Returns the element containing the character specified by the charIndex parameter.

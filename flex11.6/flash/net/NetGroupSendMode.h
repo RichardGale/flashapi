@@ -11,11 +11,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetGroupSendMode: public Object
+        class NetGroupSendMode : public Object
         {
             /**
              * Specifies the neighbor with the nearest group address in the increasing direction.

@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class StageScaleMode: public Object
+        class StageScaleMode : public Object
         {
             /**
              * Specifies that the entire application be visible in the specified area without distortion while

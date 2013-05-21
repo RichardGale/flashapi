@@ -16,11 +16,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ShaderPrecision: public Object
+        class ShaderPrecision : public Object
         {
             /**
              * Represents full precision mode.

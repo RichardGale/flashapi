@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DStencilAction: public Object
+        class Context3DStencilAction : public Object
         {
         public:
             static const std::string KEEP;

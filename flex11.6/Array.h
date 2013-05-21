@@ -37,7 +37,8 @@
  * @playerversion   Lite 4
  */
 
-class Array: public Object
+
+class Array : public Object
 {
     /**
      * Specifies case-insensitive sorting for the Array class sorting methods. You can use this constant
@@ -137,7 +138,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string join(void *sep);
+    std::string join(void *sep=NULL);
 
     /**
      * Removes the last element from an array and returns the value of that element.
@@ -208,7 +209,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> slice(void *A, void *B);
+    std::vector<void *> slice(void *A=0, void *B=4294967295);
 
     /**
      * Adds one or more elements to the beginning of an array and returns the new length of the array. The other
@@ -301,7 +302,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> sortOn(void *names, void *options, ...);
+    std::vector<void *> sortOn(void *names, void *options=0, ...);
 
     /**
      * Searches for an item in an array by using strict equality (===) and returns the index
@@ -314,7 +315,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    int      indexOf(void *searchElement, void *fromIndex);
+    int      indexOf(void *searchElement, void *fromIndex=0);
 
     /**
      * Searches for an item in an array, working backward from the last item, and returns the index position of the matching item using strict equality (===).
@@ -328,7 +329,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    int      lastIndexOf(void *searchElement, void *fromIndex);
+    int      lastIndexOf(void *searchElement, void *fromIndex=2147483647);
 
     /**
      * Executes a test function on each item in the array until an item is reached that returns false for the
@@ -359,7 +360,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     every(Function *callback, void *thisObject);
+    bool     every(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a test function on each item in the array and constructs a new array for all items that return true for the specified function. If an item returns false, it is not included in the new array.
@@ -388,7 +389,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> filter(Function *callback, void *thisObject);
+    std::vector<void *> filter(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a function on each item in the array.
@@ -417,7 +418,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    void     forEach(Function *callback, void *thisObject);
+    void     forEach(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a function on each item in an array, and constructs a new array of items corresponding to the results of the function on
@@ -447,7 +448,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> map(Function *callback, void *thisObject);
+    std::vector<void *> map(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a test function on each item in the array until an item is reached that returns true. Use this method to determine whether any items in an array meet a criterion, such as having a value less than a particular number.
@@ -477,7 +478,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     some(Function *callback, void *thisObject);
+    bool     some(Function *callback, void *thisObject=NULL);
 };
 
 #endif // FLEX11_6_ARRAY_AS

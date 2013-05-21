@@ -10,6 +10,7 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace accessibility
@@ -20,8 +21,8 @@ namespace flash
              * Gets the search text from a component implementing ISearchableText.
              * @langversion 3.0
              * @playerversion   Flash 10.1
-             */
-            virtual std::string searchText() = 0;
+             */virtual
+            std::string  searchText() = 0;
         };
     }
 }

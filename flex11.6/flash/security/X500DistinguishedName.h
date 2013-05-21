@@ -8,7 +8,7 @@ namespace flash
 {
     namespace security
     {
-        class X500DistinguishedName: public Object
+        class X500DistinguishedName : public Object
         {
         public:
             std::string  commonName();

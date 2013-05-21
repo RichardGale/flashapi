@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextColorType: public Object
+        class TextColorType : public Object
         {
             /**
              * Used in the colorType parameter in the setAdvancedAntiAliasingTable() method.

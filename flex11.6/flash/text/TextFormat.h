@@ -76,11 +76,12 @@
  * @internal    Insure the above example is correct and meets example standards
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextFormat: public Object
+        class TextFormat : public Object
         {
             /**
              * Indicates the alignment of the paragraph. Valid values are TextFormatAlign constants.
@@ -362,7 +363,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TextFormat(std::string font, Object *size, Object *color, Object *bold, Object *italic, Object *underline, std::string url, std::string target, std::string align, Object *leftMargin, Object *rightMargin, Object *indent, Object *leading);
+            TextFormat(std::string font="", Object *size=NULL, Object *color=NULL, Object *bold=NULL, Object *italic=NULL, Object *underline=NULL, std::string url="", std::string target="", std::string align="", Object *leftMargin=NULL, Object *rightMargin=NULL, Object *indent=NULL, Object *leading=NULL);
         };
     }
 }

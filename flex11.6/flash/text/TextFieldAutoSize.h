@@ -11,11 +11,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextFieldAutoSize: public Object
+        class TextFieldAutoSize : public Object
         {
             /**
              * Specifies that no resizing is to occur.

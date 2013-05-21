@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -98,13 +99,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class GradientGlowFilter: public BitmapFilter
+        class GradientGlowFilter : public flash::filters::BitmapFilter
         {
             /**
              * The angle, in degrees. Valid values are 0 to 360. The default is 45.
@@ -695,7 +697,7 @@ namespace flash
              *   </listing>
              */
         public:
-            GradientGlowFilter(float distance, float angle, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, float blurX, float blurY, float strength, int quality, std::string type, bool knockout);
+            GradientGlowFilter(float distance =4, float angle =45, std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), float blurX =4, float blurY =4, float strength =1, int quality=1, std::string type="inner", bool knockout   =false);
 
             /**
              * Returns a copy of this filter object.

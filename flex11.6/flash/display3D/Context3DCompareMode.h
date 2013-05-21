@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DCompareMode: public Object
+        class Context3DCompareMode : public Object
         {
         public:
             static const std::string ALWAYS;

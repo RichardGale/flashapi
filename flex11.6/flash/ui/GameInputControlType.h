@@ -8,7 +8,7 @@ namespace flash
 {
     namespace ui
     {
-        class GameInputControlType: public Object
+        class GameInputControlType : public Object
         {
         public:
             static const std::string MOVEMENT;

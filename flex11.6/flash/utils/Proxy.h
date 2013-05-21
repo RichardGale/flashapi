@@ -117,11 +117,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace utils
     {
-        class Proxy: public Object
+        class Proxy : public Object
         {
             /**
              * Overrides any request for a property's value.  If the property can't be found, the method
@@ -133,7 +134,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy void    *getProperty(void *name);
+            void    *getProperty(void *name);
 
         public:
             Proxy();
@@ -147,7 +148,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy void     setProperty(void *name, void *value);
+            void     setProperty(void *name, void *value);
 
             /**
              * Overrides the behavior of an object property that can be called as a function. When a method of
@@ -161,7 +162,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy void    *callProperty(void *name, ...);
+            void    *callProperty(void *name, ...);
 
             /**
              * Overrides a request to check whether an object has a particular property by name.
@@ -171,7 +172,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy bool     hasProperty(void *name);
+            bool     hasProperty(void *name);
 
             /**
              * Overrides the request to delete a property. When a property is deleted
@@ -183,7 +184,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy bool     deleteProperty(void *name);
+            bool     deleteProperty(void *name);
 
             /**
              * Overrides the use of the descendant operator.
@@ -196,7 +197,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy void    *getDescendants(void *name);
+            void    *getDescendants(void *name);
 
             /**
              * Allows enumeration of the proxied object's properties by index number. However, you cannot
@@ -233,7 +234,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy int      nextNameIndex(int index);
+            int      nextNameIndex(int index);
 
             /**
              * Allows enumeration of the proxied object's properties by index number to
@@ -271,7 +272,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy std::string nextName(int index);
+            std::string nextName(int index);
 
             /**
              * Allows enumeration of the proxied object's properties by index number to
@@ -310,7 +311,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy void    *nextValue(int index);
+            void    *nextValue(int index);
 
             /**
              * Checks whether a supplied QName is also marked as an attribute.
@@ -321,7 +322,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            flash_proxy bool     isAttribute(void *name);
+            bool     isAttribute(void *name);
         };
     }
 }

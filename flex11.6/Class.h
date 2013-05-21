@@ -108,7 +108,8 @@
  * @playerversion   Lite 4
  */
 
-class Class: public Object
+
+class Class : public Object
 {
 public:
     static const int length;

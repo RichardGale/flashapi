@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/text/engine/TextJustifier.h"
 
 /**
@@ -87,6 +88,7 @@
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::text::engine;
 
 namespace flash
@@ -95,7 +97,7 @@ namespace flash
     {
         namespace engine
         {
-            class EastAsianJustifier: public TextJustifier
+            class EastAsianJustifier : public flash::text::engine::TextJustifier
             {
                 /**
                  * Specifies the justification style for the text in a text block.
@@ -136,7 +138,7 @@ namespace flash
                  * @throws  ArgumentError The justificationStyle specified is not a member of JustificationStyle.
                  */
             public:
-                EastAsianJustifier(std::string locale, std::string lineJustification, std::string justificationStyle);
+                EastAsianJustifier(std::string locale="ja", std::string lineJustification="allButLast", std::string justificationStyle="pushInKinsoku");
 
                 /**
                  * Constructs a cloned copy of the EastAsianJustifier.

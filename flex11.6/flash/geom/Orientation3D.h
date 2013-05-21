@@ -13,11 +13,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace geom
     {
-        class Orientation3D: public Object
+        class Orientation3D : public Object
         {
             /**
              * Euler angles, the default orientation for decompose() and recompose() methods,

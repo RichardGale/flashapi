@@ -12,7 +12,8 @@
  * @playerversion   Lite 4
  */
 
-class SyntaxError: public Error
+
+class SyntaxError : public Error
 {
 public:
     static const int length;
@@ -25,7 +26,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    SyntaxError(void *message, void *id);
+    SyntaxError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_SYNTAXERROR_AS

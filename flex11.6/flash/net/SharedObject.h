@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 namespace flash
@@ -32,253 +33,6 @@ namespace flash
  */
 //[Event(name="asyncError",type="flash.events.AsyncErrorEvent")]
 
-/**
- * The SharedObject class is used to read and store limited amounts of data on a user's computer
- * or on a server.
- * Shared objects offer real-time data sharing between multiple client SWF files and objects
- * that are persistent on the local computer or remote server. Local shared objects are similar
- * to browser cookies and remote shared objects are similar to real-time data transfer devices.
- * To use remote shared objects, you need Adobe Flash Media Server.
- *
- *   <p class="- topic/p ">Use shared objects to do the following:</p><ul class="- topic/ul "><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Maintain local persistence</b>.
- * This is the simplest way to use a shared object, and does not require Flash Media Server.
- * For example, you can call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph> to create a shared object in an
- * application, such as a calculator with memory. When the user closes the calculator,
- * Flash Player saves the last value in a shared object on the user's computer.
- * The next time the calculator is run, it contains the values it had previously.
- * Alternatively, if you set the shared object's properties to <codeph class="+ topic/ph pr-d/codeph ">null</codeph> before the
- * calculator application is closed,  the next time the
- * application runs, it opens without any values.
- *
- *   Another example of maintaining local persistence is tracking user preferences or
- * other data for a complex website, such as a record of which
- * articles a user read on a news site. Tracking this information allows you to display
- * articles that have already been read differently from new, unread articles.
- * Storing this information on the user's computer reduces server load.</li><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Store and share data on Flash Media Server</b>.
- * A shared object can store data on the server for other clients to retrieve.
- * For example, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getRemote()</codeph> to create a remote shared object,
- * such as a phone list, that is persistent on the server. Whenever a client makes changes
- * to the shared object, the revised data is available to all clients currently
- * connected to the object or who later connect to it. If the object is also persistent locally,
- * and a client changes data while not connected to the server, the data is copied to the remote shared
- * object the next time the client connects to the object.</li><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Share data in real time</b>.
- * A shared object can share data among multiple clients in real time.
- * For example, you can open a remote shared object that stores
- * a list of users connected to a chat room that is visible to all clients
- * connected to the object. When a user enters or leaves the chat room, the object
- * is updated and all clients that are connected to the object see the revised list
- * of chat room users.</li></ul><p class="- topic/p "> To create a local shared object, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph>. To create
- * a remote shared object, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getRemote()</codeph>.</p><p class="- topic/p "> When an application closes, shared objects are <i class="+ topic/ph hi-d/i ">flushed</i>, or written to a disk.
- * You can also call the <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> method to explicitly write data to a disk.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Local disk space considerations.</b> Local shared objects have some limitations
- * that are important to consider as you design your application.
- * Sometimes SWF files may not be allowed to write local shared objects, and sometimes the data
- * stored in local shared objects can be deleted without your knowledge. Flash Player users
- * can manage the disk space that is available to individual domains or
- * to all domains. When users decrease the amount of disk space available, some local shared
- * objects may be deleted. Flash Player users also have privacy controls that can prevent
- * third-party domains (domains other than the domain in the current browser address bar) from
- * reading or writing local shared objects.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: SWF files that are stored and run on a local computer, not from a remote server,
- * can always write third-party shared objects to disk.
- * For more information about third-party shared objects, see the
- * <xref href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager03.html" scope="external" class="- topic/xref ">Global Storage Settings panel</xref> in Flash Player Help.</p><p class="- topic/p ">It's a good idea to check for failures related to the amount of disk space and to
- * user privacy controls. Perform these checks when you call <codeph class="+ topic/ph pr-d/codeph ">getLocal()</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph>:
- *
- *   <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph>     Flash Player throws an exception when
- * a call to this method fails, such as when the user has disabled
- * third-party shared objects and the domain of your SWF file does not match the domain in the browser
- * address bar.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">SharedObject.flush()</codeph>     Flash Player throws an exception
- * when a call to this method fails. It returns <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushStatus.FLUSHED</codeph> when it succeeds.
- * It returns <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushStatus.PENDING</codeph>
- * when additional storage space is needed. Flash Player prompts the user to allow an increase
- * in storage space for locally saved information. Thereafter, the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event
- * is dispatched with an information object indicating whether the flush failed or succeeded.</li></ul></p><p class="- topic/p ">If your SWF file attempts to create or modify local shared objects, make sure
- * that your SWF file is at least 215 pixels wide and at least 138 pixels high (the
- * minimum dimensions for displaying the dialog box that prompts users to increase their
- * local shared object storage limit). If your SWF file is smaller than these dimensions and an
- * increase in the storage limit is required, <codeph class="+ topic/ph pr-d/codeph ">SharedObject.flush()</codeph> fails,
- * returning <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushedStatus.PENDING</codeph> and dispatching the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Remote shared objects.</b>
- * With Flash Media Server, you can create and use remote shared objects,
- * that are shared in real-time by all clients connected to your application.
- * When one client changes a property of a remote shared object, the property
- * is changed for all connected clients.
- * You can use remote shared objects to synchronize clients, for example, users
- * in a multi-player game.
- * </p><p class="- topic/p ">
- * Each remote shared object has a <codeph class="+ topic/ph pr-d/codeph ">data</codeph> property which is an Object with properties
- * that store data. Call <codeph class="+ topic/ph pr-d/codeph ">setProperty()</codeph>
- * to change an property of the data object.
- * The server updates the properties, dispatches a <codeph class="+ topic/ph pr-d/codeph ">sync</codeph> event, and
- * sends the properties back to the connected clients.
- * </p><p class="- topic/p ">
- * You can choose to make remote shared objects persistent on the client, the server,
- * or both. By default, Flash Player saves locally persistent remote shared objects up to 100K in size.
- * When you try to save a larger object, Flash Player displays the Local Storage dialog box,
- * which lets the user allow or deny local storage for the shared object.
- * Make sure your Stage size is at least 215 by 138 pixels; this is the minimum size Flash
- * requires to display the dialog box.
- * </p><p class="- topic/p ">
- * If the user selects Allow, the server saves the shared object and
- * dispatches a <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property of
- * <codeph class="+ topic/ph pr-d/codeph ">SharedObject.Flush.Success</codeph>.
- * If the user select Deny, the server does not save the shared object and dispatches
- * a <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event
- * with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property of <codeph class="+ topic/ph pr-d/codeph ">SharedObject.Flush.Failed</codeph>.
- * </p>
- *
- *   EXAMPLE:
- *
- *   The following code creates (and on subsequent executions, retrieves) a shared object
- * object using the ID <codeph class="+ topic/ph pr-d/codeph ">"application-name"</codeph>. When the Save button is clicked, the
- * <codeph class="+ topic/ph pr-d/codeph ">saveValue()</codeph> method attempts to save a property named <codeph class="+ topic/ph pr-d/codeph ">savedValue</codeph>
- * to the <codeph class="+ topic/ph pr-d/codeph ">data</codeph> property of the SharedObject object. If Flash Player must ask for permission to save
- * the data, when the user grants or denies permission the <codeph class="+ topic/ph pr-d/codeph ">onFlushStatus()</codeph> method is
- * called. When the Clear button is clicked, the <codeph class="+ topic/ph pr-d/codeph ">clearValue()</codeph> method deletes the value
- * saved in <codeph class="+ topic/ph pr-d/codeph ">savedValue</codeph>; the next time the SWF file is loaded, the value that is retrieved
- * is <codeph class="+ topic/ph pr-d/codeph ">undefined</codeph>.
- *
- *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.MouseEvent;
- * import flash.events.NetStatusEvent;
- * import flash.net.SharedObject;
- * import flash.net.SharedObjectFlushStatus;
- * import flash.text.TextField;
- * import flash.text.TextFieldAutoSize;
- * import flash.text.TextFieldType;
- *
- *   public class SharedObjectExample extends Sprite {
- *
- *   private var mySo:SharedObject;
- *
- *   public function SharedObjectExample() {
- * buildUI();
- * saveBtn.addEventListener(MouseEvent.CLICK, saveValue);
- * clearBtn.addEventListener(MouseEvent.CLICK, clearValue);
- *
- *   mySo = SharedObject.getLocal("application-name");
- * output.appendText("SharedObject loaded...\n");
- * output.appendText("loaded value: " + mySo.data.savedValue + "\n\n");
- * }
- *
- *   private function saveValue(event:MouseEvent):void {
- * output.appendText("saving value...\n");
- * mySo.data.savedValue = input.text;
- *
- *   var flushStatus:String = null;
- * try {
- * flushStatus = mySo.flush(10000);
- * } catch (error:Error) {
- * output.appendText("Error...Could not write SharedObject to disk\n");
- * }
- * if (flushStatus != null) {
- * switch (flushStatus) {
- * case SharedObjectFlushStatus.PENDING:
- * output.appendText("Requesting permission to save object...\n");
- * mySo.addEventListener(NetStatusEvent.NET_STATUS, onFlushStatus);
- * break;
- * case SharedObjectFlushStatus.FLUSHED:
- * output.appendText("Value flushed to disk.\n");
- * break;
- * }
- * }
- * output.appendText("\n");
- * }
- *
- *   private function clearValue(event:MouseEvent):void {
- * output.appendText("Cleared saved value...Reload SWF and the value should be \"undefined\".\n\n");
- * delete mySo.data.savedValue;
- * }
- *
- *   private function onFlushStatus(event:NetStatusEvent):void {
- * output.appendText("User closed permission dialog...\n");
- * switch (event.info.code) {
- * case "SharedObject.Flush.Success":
- * output.appendText("User granted permission -- value saved.\n");
- * break;
- * case "SharedObject.Flush.Failed":
- * output.appendText("User denied permission -- value not saved.\n");
- * break;
- * }
- * output.appendText("\n");
- *
- *   mySo.removeEventListener(NetStatusEvent.NET_STATUS, onFlushStatus);
- * }
- *
- *   // UI elements
- * private var inputLbl:TextField;
- * private var input:TextField;
- * private var output:TextField;
- * private var saveBtn:Sprite;
- * private var clearBtn:Sprite;
- *
- *   private function buildUI():void {
- * // input label
- * inputLbl = new TextField();
- * addChild(inputLbl);
- * inputLbl.x = 10;
- * inputLbl.y = 10;
- * inputLbl.text = "Value to save:";
- *
- *   // input TextField
- * input = new TextField();
- * addChild(input);
- * input.x = 80;
- * input.y = 10;
- * input.width = 100;
- * input.height = 20;
- * input.border = true;
- * input.background = true;
- * input.type = TextFieldType.INPUT;
- *
- *   // output TextField
- * output = new TextField();
- * addChild(output);
- * output.x = 10;
- * output.y = 35;
- * output.width = 250;
- * output.height = 250;
- * output.multiline = true;
- * output.wordWrap = true;
- * output.border = true;
- * output.background = true;
- *
- *   // Save button
- * saveBtn = new Sprite();
- * addChild(saveBtn);
- * saveBtn.x = 190;
- * saveBtn.y = 10;
- * saveBtn.useHandCursor = true;
- * saveBtn.graphics.lineStyle(1);
- * saveBtn.graphics.beginFill(0xcccccc);
- * saveBtn.graphics.drawRoundRect(0, 0, 30, 20, 5, 5);
- * var saveLbl:TextField = new TextField();
- * saveBtn.addChild(saveLbl);
- * saveLbl.text = "Save";
- * saveLbl.selectable = false;
- *
- *   // Clear button
- * clearBtn = new Sprite();
- * addChild(clearBtn);
- * clearBtn.x = 230;
- * clearBtn.y = 10;
- * clearBtn.useHandCursor = true;
- * clearBtn.graphics.lineStyle(1);
- * clearBtn.graphics.beginFill(0xcccccc);
- * clearBtn.graphics.drawRoundRect(0, 0, 30, 20, 5, 5);
- * var clearLbl:TextField = new TextField();
- * clearBtn.addChild(clearLbl);
- * clearLbl.text = "Clear";
- * clearLbl.selectable = false;
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 using namespace flash::net;
 
@@ -286,7 +40,254 @@ namespace flash
 {
     namespace net
     {
-        class SharedObject: public EventDispatcher
+        /**
+         * The SharedObject class is used to read and store limited amounts of data on a user's computer
+         * or on a server.
+         * Shared objects offer real-time data sharing between multiple client SWF files and objects
+         * that are persistent on the local computer or remote server. Local shared objects are similar
+         * to browser cookies and remote shared objects are similar to real-time data transfer devices.
+         * To use remote shared objects, you need Adobe Flash Media Server.
+         *
+         *   <p class="- topic/p ">Use shared objects to do the following:</p><ul class="- topic/ul "><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Maintain local persistence</b>.
+         * This is the simplest way to use a shared object, and does not require Flash Media Server.
+         * For example, you can call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph> to create a shared object in an
+         * application, such as a calculator with memory. When the user closes the calculator,
+         * Flash Player saves the last value in a shared object on the user's computer.
+         * The next time the calculator is run, it contains the values it had previously.
+         * Alternatively, if you set the shared object's properties to <codeph class="+ topic/ph pr-d/codeph ">null</codeph> before the
+         * calculator application is closed,  the next time the
+         * application runs, it opens without any values.
+         *
+         *   Another example of maintaining local persistence is tracking user preferences or
+         * other data for a complex website, such as a record of which
+         * articles a user read on a news site. Tracking this information allows you to display
+         * articles that have already been read differently from new, unread articles.
+         * Storing this information on the user's computer reduces server load.</li><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Store and share data on Flash Media Server</b>.
+         * A shared object can store data on the server for other clients to retrieve.
+         * For example, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getRemote()</codeph> to create a remote shared object,
+         * such as a phone list, that is persistent on the server. Whenever a client makes changes
+         * to the shared object, the revised data is available to all clients currently
+         * connected to the object or who later connect to it. If the object is also persistent locally,
+         * and a client changes data while not connected to the server, the data is copied to the remote shared
+         * object the next time the client connects to the object.</li><li class="- topic/li "><b class="+ topic/ph hi-d/b ">Share data in real time</b>.
+         * A shared object can share data among multiple clients in real time.
+         * For example, you can open a remote shared object that stores
+         * a list of users connected to a chat room that is visible to all clients
+         * connected to the object. When a user enters or leaves the chat room, the object
+         * is updated and all clients that are connected to the object see the revised list
+         * of chat room users.</li></ul><p class="- topic/p "> To create a local shared object, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph>. To create
+         * a remote shared object, call <codeph class="+ topic/ph pr-d/codeph ">SharedObject.getRemote()</codeph>.</p><p class="- topic/p "> When an application closes, shared objects are <i class="+ topic/ph hi-d/i ">flushed</i>, or written to a disk.
+         * You can also call the <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> method to explicitly write data to a disk.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Local disk space considerations.</b> Local shared objects have some limitations
+         * that are important to consider as you design your application.
+         * Sometimes SWF files may not be allowed to write local shared objects, and sometimes the data
+         * stored in local shared objects can be deleted without your knowledge. Flash Player users
+         * can manage the disk space that is available to individual domains or
+         * to all domains. When users decrease the amount of disk space available, some local shared
+         * objects may be deleted. Flash Player users also have privacy controls that can prevent
+         * third-party domains (domains other than the domain in the current browser address bar) from
+         * reading or writing local shared objects.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: SWF files that are stored and run on a local computer, not from a remote server,
+         * can always write third-party shared objects to disk.
+         * For more information about third-party shared objects, see the
+         * <xref href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager03.html" scope="external" class="- topic/xref ">Global Storage Settings panel</xref> in Flash Player Help.</p><p class="- topic/p ">It's a good idea to check for failures related to the amount of disk space and to
+         * user privacy controls. Perform these checks when you call <codeph class="+ topic/ph pr-d/codeph ">getLocal()</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph>:
+         *
+         *   <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">SharedObject.getLocal()</codeph>     Flash Player throws an exception when
+         * a call to this method fails, such as when the user has disabled
+         * third-party shared objects and the domain of your SWF file does not match the domain in the browser
+         * address bar.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">SharedObject.flush()</codeph>     Flash Player throws an exception
+         * when a call to this method fails. It returns <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushStatus.FLUSHED</codeph> when it succeeds.
+         * It returns <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushStatus.PENDING</codeph>
+         * when additional storage space is needed. Flash Player prompts the user to allow an increase
+         * in storage space for locally saved information. Thereafter, the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event
+         * is dispatched with an information object indicating whether the flush failed or succeeded.</li></ul></p><p class="- topic/p ">If your SWF file attempts to create or modify local shared objects, make sure
+         * that your SWF file is at least 215 pixels wide and at least 138 pixels high (the
+         * minimum dimensions for displaying the dialog box that prompts users to increase their
+         * local shared object storage limit). If your SWF file is smaller than these dimensions and an
+         * increase in the storage limit is required, <codeph class="+ topic/ph pr-d/codeph ">SharedObject.flush()</codeph> fails,
+         * returning <codeph class="+ topic/ph pr-d/codeph ">SharedObjectFlushedStatus.PENDING</codeph> and dispatching the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Remote shared objects.</b>
+         * With Flash Media Server, you can create and use remote shared objects,
+         * that are shared in real-time by all clients connected to your application.
+         * When one client changes a property of a remote shared object, the property
+         * is changed for all connected clients.
+         * You can use remote shared objects to synchronize clients, for example, users
+         * in a multi-player game.
+         * </p><p class="- topic/p ">
+         * Each remote shared object has a <codeph class="+ topic/ph pr-d/codeph ">data</codeph> property which is an Object with properties
+         * that store data. Call <codeph class="+ topic/ph pr-d/codeph ">setProperty()</codeph>
+         * to change an property of the data object.
+         * The server updates the properties, dispatches a <codeph class="+ topic/ph pr-d/codeph ">sync</codeph> event, and
+         * sends the properties back to the connected clients.
+         * </p><p class="- topic/p ">
+         * You can choose to make remote shared objects persistent on the client, the server,
+         * or both. By default, Flash Player saves locally persistent remote shared objects up to 100K in size.
+         * When you try to save a larger object, Flash Player displays the Local Storage dialog box,
+         * which lets the user allow or deny local storage for the shared object.
+         * Make sure your Stage size is at least 215 by 138 pixels; this is the minimum size Flash
+         * requires to display the dialog box.
+         * </p><p class="- topic/p ">
+         * If the user selects Allow, the server saves the shared object and
+         * dispatches a <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property of
+         * <codeph class="+ topic/ph pr-d/codeph ">SharedObject.Flush.Success</codeph>.
+         * If the user select Deny, the server does not save the shared object and dispatches
+         * a <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event
+         * with a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property of <codeph class="+ topic/ph pr-d/codeph ">SharedObject.Flush.Failed</codeph>.
+         * </p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following code creates (and on subsequent executions, retrieves) a shared object
+         * object using the ID <codeph class="+ topic/ph pr-d/codeph ">"application-name"</codeph>. When the Save button is clicked, the
+         * <codeph class="+ topic/ph pr-d/codeph ">saveValue()</codeph> method attempts to save a property named <codeph class="+ topic/ph pr-d/codeph ">savedValue</codeph>
+         * to the <codeph class="+ topic/ph pr-d/codeph ">data</codeph> property of the SharedObject object. If Flash Player must ask for permission to save
+         * the data, when the user grants or denies permission the <codeph class="+ topic/ph pr-d/codeph ">onFlushStatus()</codeph> method is
+         * called. When the Clear button is clicked, the <codeph class="+ topic/ph pr-d/codeph ">clearValue()</codeph> method deletes the value
+         * saved in <codeph class="+ topic/ph pr-d/codeph ">savedValue</codeph>; the next time the SWF file is loaded, the value that is retrieved
+         * is <codeph class="+ topic/ph pr-d/codeph ">undefined</codeph>.
+         *
+         *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.MouseEvent;
+         * import flash.events.NetStatusEvent;
+         * import flash.net.SharedObject;
+         * import flash.net.SharedObjectFlushStatus;
+         * import flash.text.TextField;
+         * import flash.text.TextFieldAutoSize;
+         * import flash.text.TextFieldType;
+         *
+         *   public class SharedObjectExample extends Sprite {
+         *
+         *   private var mySo:SharedObject;
+         *
+         *   public function SharedObjectExample() {
+         * buildUI();
+         * saveBtn.addEventListener(MouseEvent.CLICK, saveValue);
+         * clearBtn.addEventListener(MouseEvent.CLICK, clearValue);
+         *
+         *   mySo = SharedObject.getLocal("application-name");
+         * output.appendText("SharedObject loaded...\n");
+         * output.appendText("loaded value: " + mySo.data.savedValue + "\n\n");
+         * }
+         *
+         *   private function saveValue(event:MouseEvent):void {
+         * output.appendText("saving value...\n");
+         * mySo.data.savedValue = input.text;
+         *
+         *   var flushStatus:String = null;
+         * try {
+         * flushStatus = mySo.flush(10000);
+         * } catch (error:Error) {
+         * output.appendText("Error...Could not write SharedObject to disk\n");
+         * }
+         * if (flushStatus != null) {
+         * switch (flushStatus) {
+         * case SharedObjectFlushStatus.PENDING:
+         * output.appendText("Requesting permission to save object...\n");
+         * mySo.addEventListener(NetStatusEvent.NET_STATUS, onFlushStatus);
+         * break;
+         * case SharedObjectFlushStatus.FLUSHED:
+         * output.appendText("Value flushed to disk.\n");
+         * break;
+         * }
+         * }
+         * output.appendText("\n");
+         * }
+         *
+         *   private function clearValue(event:MouseEvent):void {
+         * output.appendText("Cleared saved value...Reload SWF and the value should be \"undefined\".\n\n");
+         * delete mySo.data.savedValue;
+         * }
+         *
+         *   private function onFlushStatus(event:NetStatusEvent):void {
+         * output.appendText("User closed permission dialog...\n");
+         * switch (event.info.code) {
+         * case "SharedObject.Flush.Success":
+         * output.appendText("User granted permission -- value saved.\n");
+         * break;
+         * case "SharedObject.Flush.Failed":
+         * output.appendText("User denied permission -- value not saved.\n");
+         * break;
+         * }
+         * output.appendText("\n");
+         *
+         *   mySo.removeEventListener(NetStatusEvent.NET_STATUS, onFlushStatus);
+         * }
+         *
+         *   // UI elements
+         * private var inputLbl:TextField;
+         * private var input:TextField;
+         * private var output:TextField;
+         * private var saveBtn:Sprite;
+         * private var clearBtn:Sprite;
+         *
+         *   private function buildUI():void {
+         * // input label
+         * inputLbl = new TextField();
+         * addChild(inputLbl);
+         * inputLbl.x = 10;
+         * inputLbl.y = 10;
+         * inputLbl.text = "Value to save:";
+         *
+         *   // input TextField
+         * input = new TextField();
+         * addChild(input);
+         * input.x = 80;
+         * input.y = 10;
+         * input.width = 100;
+         * input.height = 20;
+         * input.border = true;
+         * input.background = true;
+         * input.type = TextFieldType.INPUT;
+         *
+         *   // output TextField
+         * output = new TextField();
+         * addChild(output);
+         * output.x = 10;
+         * output.y = 35;
+         * output.width = 250;
+         * output.height = 250;
+         * output.multiline = true;
+         * output.wordWrap = true;
+         * output.border = true;
+         * output.background = true;
+         *
+         *   // Save button
+         * saveBtn = new Sprite();
+         * addChild(saveBtn);
+         * saveBtn.x = 190;
+         * saveBtn.y = 10;
+         * saveBtn.useHandCursor = true;
+         * saveBtn.graphics.lineStyle(1);
+         * saveBtn.graphics.beginFill(0xcccccc);
+         * saveBtn.graphics.drawRoundRect(0, 0, 30, 20, 5, 5);
+         * var saveLbl:TextField = new TextField();
+         * saveBtn.addChild(saveLbl);
+         * saveLbl.text = "Save";
+         * saveLbl.selectable = false;
+         *
+         *   // Clear button
+         * clearBtn = new Sprite();
+         * addChild(clearBtn);
+         * clearBtn.x = 230;
+         * clearBtn.y = 10;
+         * clearBtn.useHandCursor = true;
+         * clearBtn.graphics.lineStyle(1);
+         * clearBtn.graphics.beginFill(0xcccccc);
+         * clearBtn.graphics.drawRoundRect(0, 0, 30, 20, 5, 5);
+         * var clearLbl:TextField = new TextField();
+         * clearBtn.addChild(clearLbl);
+         * clearLbl.text = "Clear";
+         * clearLbl.selectable = false;
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class SharedObject : public flash::events::EventDispatcher
         {
             /**
              * The default object encoding (AMF version) for all local shared objects created in the SWF file.
@@ -563,7 +564,7 @@ namespace flash
              *   http://www.adobe.com/support/documentation/en/flashplayer/help/settings_manager03.html.
              */
         public:
-            static flash::net::SharedObject *getLocal(std::string name, std::string localPath, bool secure);
+            static flash::net::SharedObject *getLocal(std::string name, std::string localPath="", bool secure   =false);
 
             /**
              * Returns a reference to a shared object on Flash Media Server that multiple
@@ -618,7 +619,7 @@ namespace flash
              *   specified for the remotePath and persistence parameters.
              */
         public:
-            static flash::net::SharedObject *getRemote(std::string name, std::string remotePath, Object *persistence, bool secure);
+            static flash::net::SharedObject *getRemote(std::string name, std::string remotePath="", Object *persistence=false, bool secure   =false);
 
             /**
              * Connects to a remote shared object on a server through a specified NetConnection object.
@@ -653,7 +654,7 @@ namespace flash
              *   remote shared object was successfully created on the server.
              */
         public:
-            void     connect(NetConnection *myConnection, std::string params);
+            void     connect(NetConnection *myConnection, std::string params="");
 
             /**
              * Closes the connection between a remote shared object and the server.
@@ -714,7 +715,7 @@ namespace flash
              *   to disk, even if writing of third-party shared objects to disk is disallowed.
              */
         public:
-            std::string flush(int minDiskSpace);
+            std::string flush(int minDiskSpace=0);
 
         public:
             SharedObject();
@@ -810,7 +811,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     setProperty(std::string propertyName, Object *value);
+            void     setProperty(std::string propertyName, Object *value=NULL);
         };
     }
 }

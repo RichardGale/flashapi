@@ -20,13 +20,14 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace ime
         {
-            class CompositionAttributeRange: public Object
+            class CompositionAttributeRange : public Object
             {
                 /**
                  * The relative start position from the beginning of the current inline editing session.

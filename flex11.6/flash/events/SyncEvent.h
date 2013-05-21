@@ -3,27 +3,28 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.SyncEvent.SYNC
 //[Event(name="sync",type="flash.events.SyncEvent")]
 
-/**
- * An SharedObject object representing a remote shared object dispatches a SyncEvent object when the remote
- * shared object has been updated by the server. There is only one type of <codeph class="+ topic/ph pr-d/codeph ">sync</codeph> event:
- * <codeph class="+ topic/ph pr-d/codeph ">SyncEvent.SYNC</codeph>.
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- * @internal    includeExample examples\SyncEventExample.as -noswf
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class SyncEvent: public Event
+        /**
+         * An SharedObject object representing a remote shared object dispatches a SyncEvent object when the remote
+         * shared object has been updated by the server. There is only one type of <codeph class="+ topic/ph pr-d/codeph ">sync</codeph> event:
+         * <codeph class="+ topic/ph pr-d/codeph ">SyncEvent.SYNC</codeph>.
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         * @internal    includeExample examples\SyncEventExample.as -noswf
+         */
+        class SyncEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a sync event object.
@@ -78,7 +79,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SyncEvent(std::string type, bool bubbles, bool cancelable, std::vector<void *> changeList);
+            SyncEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::vector<void *> changeList=std::vector<void *>());
 
             /**
              * Returns a string that contains all the properties of the SyncEvent object. The string is in the following format:

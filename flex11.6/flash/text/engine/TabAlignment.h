@@ -12,13 +12,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TabAlignment: public Object
+            class TabAlignment : public Object
             {
                 /**
                  * Positions the start of the tabbed text at the tab stop.

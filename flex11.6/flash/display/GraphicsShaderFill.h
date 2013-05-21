@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsFill.h"
 #include "IGraphicsData.h"
 namespace flash
@@ -31,8 +32,7 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 using namespace flash::display;
 using namespace flash::geom;
 
@@ -40,7 +40,7 @@ namespace flash
 {
     namespace display
     {
-        class GraphicsShaderFill: public Object, public IGraphicsFill,, public IGraphicsData
+        class GraphicsShaderFill : public Object, public private::IGraphicsFill, public private::IGraphicsData
         {
             /**
              * The shader to use for the fill. This Shader instance is not required to
@@ -94,7 +94,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsShaderFill(Shader *shader, Matrix *matrix);
+            GraphicsShaderFill(Shader *shader=NULL, Matrix *matrix=NULL);
         };
     }
 }

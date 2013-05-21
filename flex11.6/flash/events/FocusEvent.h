@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -22,131 +23,8 @@ namespace flash
 //[Event(name="keyFocusChange",type="flash.events.FocusEvent")]
 
 
-//[Event(name="mouseFocusChange",type="flash.events.FocusEvent")]/// @eventType  flash.events.FocusEvent.MOUSE_FOCUS_CHANGE
+//[Event(name="mouseFocusChange",type="flash.events.FocusEvent")]
 
-/**
- * An object dispatches a FocusEvent object when the user changes the focus from one object
- * in the display list to another. There are four types of focus events:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.FOCUS_IN</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.FOCUS_OUT</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.KEY_FOCUS_CHANGE</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.MOUSE_FOCUS_CHANGE</codeph></li></ul>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">FocusEventExample</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">CustomSprite</codeph> classes to show how focus can be used in conjunction with items drawn on the Stage to capture events and print information.
- * This example carries out the following tasks:
- * <ol class="- topic/ol "><li class="- topic/li ">It declares the properties <codeph class="+ topic/ph pr-d/codeph ">child</codeph> (of type Sprite) and <codeph class="+ topic/ph pr-d/codeph ">childCount</codeph> (of type uint).</li><li class="- topic/li ">A <codeph class="+ topic/ph pr-d/codeph ">for</codeph> loop creates five light blue squares at (0,0). It begins by
- * assigning <codeph class="+ topic/ph pr-d/codeph ">child</codeph> to a new CustomSprite instance. Each time a CustomSprite
- * object is created, the following happens:
- * <ul class="- topic/ul "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">size</codeph> property of type uint is set to 50 pixels and <codeph class="+ topic/ph pr-d/codeph ">bgColor</codeph> is set
- * to light blue. </li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">buttonMode</codeph> and <codeph class="+ topic/ph pr-d/codeph ">useHandCursor</codeph> properties of the
- * Sprite class are set to <codeph class="+ topic/ph pr-d/codeph ">true</codeph> within the constructor.</li><li class="- topic/li ">An event listener of type <codeph class="+ topic/ph pr-d/codeph ">click</codeph> is instantiated, along with the associated subscriber
- * <codeph class="+ topic/ph pr-d/codeph ">clickHandler()</codeph>.  The subscriber method creates a local variable <codeph class="+ topic/ph pr-d/codeph ">target</codeph> of
- * type Sprite and assigns it whichever box was clicked. The Stage's focus is then assigned to
- * <codeph class="+ topic/ph pr-d/codeph ">target</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method is called, which creates a 50 x 50 pixel square by
- * calling the <codeph class="+ topic/ph pr-d/codeph ">beginFill()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">drawRect()</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">endFill()</codeph> methods of
- * the Graphics class and the instance properties.</li></ul></li><li class="- topic/li ">In the for loop, the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method is called, which instantiates three event
- * listeners/subscribers:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusIn</codeph>/<codeph class="+ topic/ph pr-d/codeph ">focusInHandler()</codeph> is dispatched after the <codeph class="+ topic/ph pr-d/codeph ">click</codeph> event
- * for whichever display list object (box) is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusOut</codeph>/<codeph class="+ topic/ph pr-d/codeph ">focusOutHandler()</codeph> is dispatched when another box is clicked or
- * if the focus leaves the Stage (for example, by clicking outside Flash Player).</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyFocusChange</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyFocusChangeHandler()</codeph> is dispatched if you use the Tab key
- * or the left-arrow or right-arrow keys to select a display list object. The <codeph class="+ topic/ph pr-d/codeph ">keyFocusChangeHandler()</codeph>
- * method traps the left-arrow and right-arrow keys, however, and calls the <codeph class="+ topic/ph pr-d/codeph ">preventDefault()</codeph> method
- * to disable them.</li></ul></li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">for</codeph> loop, each square is added to the display list and displayed (all in
- * the same area) by means of <codeph class="+ topic/ph pr-d/codeph ">addChild()</codeph>.</li><li class="- topic/li ">The constructor then calls <codeph class="+ topic/ph pr-d/codeph ">refreshLayout()</codeph>, which distributes the orange
- * squares across the top (y = 0) of the display with 5 pixels separating each square.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.display.DisplayObject;
- * import flash.events.FocusEvent;
- * import flash.events.IEventDispatcher;
- *
- *   public class FocusEventExample extends Sprite {
- * private var gutter:uint = 5;
- * private var childCount:uint = 5;
- *
- *   public function FocusEventExample() {
- * var child:Sprite;
- * for(var i:uint; i &lt; childCount; i++) {
- * child = new CustomSprite();
- * configureListeners(child);
- * addChild(child);
- * }
- * refreshLayout();
- * }
- *
- *   private function configureListeners(dispatcher:IEventDispatcher):void {
- * dispatcher.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
- * dispatcher.addEventListener(FocusEvent.FOCUS_OUT, focusOutHandler);
- * dispatcher.addEventListener(FocusEvent.KEY_FOCUS_CHANGE, keyFocusChangeHandler);
- * dispatcher.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE, mouseFocusChangeHandler);
- * }
- *
- *   private function refreshLayout():void {
- * var ln:uint = numChildren;
- * var child:DisplayObject = getChildAt(0);
- * var lastChild:DisplayObject = child;
- * for(var i:uint = 1; i &lt; ln; i++) {
- * child = getChildAt(i);
- * child.x = lastChild.x + lastChild.width + gutter;
- * lastChild = child;
- * }
- * }
- *
- *   private function focusInHandler(event:FocusEvent):void {
- * var target:CustomSprite = CustomSprite(event.target);
- * trace("focusInHandler: " + target.name);
- * }
- *
- *   private function focusOutHandler(event:FocusEvent):void {
- * var target:CustomSprite = CustomSprite(event.target);
- * trace("focusOutHandler: " + target.name);
- * }
- *
- *   private function keyFocusChangeHandler(event:FocusEvent):void {
- * if(event.keyCode == 39 || event.keyCode == 37){
- * event.preventDefault()
- * }
- * var target:CustomSprite = CustomSprite(event.target);
- * trace("keyFocusChangeHandler: " + target.name);
- * }
- * private function mouseFocusChangeHandler(event:FocusEvent):void {
- * var target:CustomSprite = CustomSprite(event.target);
- * trace("mouseFocusChangeHandler: " + target.name);
- * }
- * }
- * }
- *
- *   import flash.display.Sprite;
- * import flash.events.MouseEvent;
- *
- *   class CustomSprite extends Sprite {
- * private var size:uint = 50;
- * private var bgColor:uint = 0x00CCFF;
- *
- *   public function CustomSprite() {
- * buttonMode = true;
- * useHandCursor = true;
- * addEventListener(MouseEvent.CLICK, clickHandler);
- * draw(size, size);
- * }
- *
- *   private function draw(w:uint, h:uint):void {
- * graphics.beginFill(bgColor);
- * graphics.drawRect(0, 0, w, h);
- * graphics.endFill();
- * }
- *
- *   private function clickHandler(event:MouseEvent):void {
- * var target:Sprite = Sprite(event.target);
- * trace("clickHandler: " + target.name);
- * stage.focus = target;
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::display;
 using namespace flash::events;
 
@@ -154,7 +32,133 @@ namespace flash
 {
     namespace events
     {
-        class FocusEvent: public Event
+        /// @eventType  flash.events.FocusEvent.MOUSE_FOCUS_CHANGE
+
+
+        /**
+         * An object dispatches a FocusEvent object when the user changes the focus from one object
+         * in the display list to another. There are four types of focus events:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.FOCUS_IN</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.FOCUS_OUT</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.KEY_FOCUS_CHANGE</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">FocusEvent.MOUSE_FOCUS_CHANGE</codeph></li></ul>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">FocusEventExample</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">CustomSprite</codeph> classes to show how focus can be used in conjunction with items drawn on the Stage to capture events and print information.
+         * This example carries out the following tasks:
+         * <ol class="- topic/ol "><li class="- topic/li ">It declares the properties <codeph class="+ topic/ph pr-d/codeph ">child</codeph> (of type Sprite) and <codeph class="+ topic/ph pr-d/codeph ">childCount</codeph> (of type uint).</li><li class="- topic/li ">A <codeph class="+ topic/ph pr-d/codeph ">for</codeph> loop creates five light blue squares at (0,0). It begins by
+         * assigning <codeph class="+ topic/ph pr-d/codeph ">child</codeph> to a new CustomSprite instance. Each time a CustomSprite
+         * object is created, the following happens:
+         * <ul class="- topic/ul "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">size</codeph> property of type uint is set to 50 pixels and <codeph class="+ topic/ph pr-d/codeph ">bgColor</codeph> is set
+         * to light blue. </li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">buttonMode</codeph> and <codeph class="+ topic/ph pr-d/codeph ">useHandCursor</codeph> properties of the
+         * Sprite class are set to <codeph class="+ topic/ph pr-d/codeph ">true</codeph> within the constructor.</li><li class="- topic/li ">An event listener of type <codeph class="+ topic/ph pr-d/codeph ">click</codeph> is instantiated, along with the associated subscriber
+         * <codeph class="+ topic/ph pr-d/codeph ">clickHandler()</codeph>.  The subscriber method creates a local variable <codeph class="+ topic/ph pr-d/codeph ">target</codeph> of
+         * type Sprite and assigns it whichever box was clicked. The Stage's focus is then assigned to
+         * <codeph class="+ topic/ph pr-d/codeph ">target</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method is called, which creates a 50 x 50 pixel square by
+         * calling the <codeph class="+ topic/ph pr-d/codeph ">beginFill()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">drawRect()</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">endFill()</codeph> methods of
+         * the Graphics class and the instance properties.</li></ul></li><li class="- topic/li ">In the for loop, the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method is called, which instantiates three event
+         * listeners/subscribers:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusIn</codeph>/<codeph class="+ topic/ph pr-d/codeph ">focusInHandler()</codeph> is dispatched after the <codeph class="+ topic/ph pr-d/codeph ">click</codeph> event
+         * for whichever display list object (box) is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusOut</codeph>/<codeph class="+ topic/ph pr-d/codeph ">focusOutHandler()</codeph> is dispatched when another box is clicked or
+         * if the focus leaves the Stage (for example, by clicking outside Flash Player).</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">keyFocusChange</codeph>/<codeph class="+ topic/ph pr-d/codeph ">keyFocusChangeHandler()</codeph> is dispatched if you use the Tab key
+         * or the left-arrow or right-arrow keys to select a display list object. The <codeph class="+ topic/ph pr-d/codeph ">keyFocusChangeHandler()</codeph>
+         * method traps the left-arrow and right-arrow keys, however, and calls the <codeph class="+ topic/ph pr-d/codeph ">preventDefault()</codeph> method
+         * to disable them.</li></ul></li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">for</codeph> loop, each square is added to the display list and displayed (all in
+         * the same area) by means of <codeph class="+ topic/ph pr-d/codeph ">addChild()</codeph>.</li><li class="- topic/li ">The constructor then calls <codeph class="+ topic/ph pr-d/codeph ">refreshLayout()</codeph>, which distributes the orange
+         * squares across the top (y = 0) of the display with 5 pixels separating each square.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.display.DisplayObject;
+         * import flash.events.FocusEvent;
+         * import flash.events.IEventDispatcher;
+         *
+         *   public class FocusEventExample extends Sprite {
+         * private var gutter:uint = 5;
+         * private var childCount:uint = 5;
+         *
+         *   public function FocusEventExample() {
+         * var child:Sprite;
+         * for(var i:uint; i &lt; childCount; i++) {
+         * child = new CustomSprite();
+         * configureListeners(child);
+         * addChild(child);
+         * }
+         * refreshLayout();
+         * }
+         *
+         *   private function configureListeners(dispatcher:IEventDispatcher):void {
+         * dispatcher.addEventListener(FocusEvent.FOCUS_IN, focusInHandler);
+         * dispatcher.addEventListener(FocusEvent.FOCUS_OUT, focusOutHandler);
+         * dispatcher.addEventListener(FocusEvent.KEY_FOCUS_CHANGE, keyFocusChangeHandler);
+         * dispatcher.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE, mouseFocusChangeHandler);
+         * }
+         *
+         *   private function refreshLayout():void {
+         * var ln:uint = numChildren;
+         * var child:DisplayObject = getChildAt(0);
+         * var lastChild:DisplayObject = child;
+         * for(var i:uint = 1; i &lt; ln; i++) {
+         * child = getChildAt(i);
+         * child.x = lastChild.x + lastChild.width + gutter;
+         * lastChild = child;
+         * }
+         * }
+         *
+         *   private function focusInHandler(event:FocusEvent):void {
+         * var target:CustomSprite = CustomSprite(event.target);
+         * trace("focusInHandler: " + target.name);
+         * }
+         *
+         *   private function focusOutHandler(event:FocusEvent):void {
+         * var target:CustomSprite = CustomSprite(event.target);
+         * trace("focusOutHandler: " + target.name);
+         * }
+         *
+         *   private function keyFocusChangeHandler(event:FocusEvent):void {
+         * if(event.keyCode == 39 || event.keyCode == 37){
+         * event.preventDefault()
+         * }
+         * var target:CustomSprite = CustomSprite(event.target);
+         * trace("keyFocusChangeHandler: " + target.name);
+         * }
+         * private function mouseFocusChangeHandler(event:FocusEvent):void {
+         * var target:CustomSprite = CustomSprite(event.target);
+         * trace("mouseFocusChangeHandler: " + target.name);
+         * }
+         * }
+         * }
+         *
+         *   import flash.display.Sprite;
+         * import flash.events.MouseEvent;
+         *
+         *   class CustomSprite extends Sprite {
+         * private var size:uint = 50;
+         * private var bgColor:uint = 0x00CCFF;
+         *
+         *   public function CustomSprite() {
+         * buttonMode = true;
+         * useHandCursor = true;
+         * addEventListener(MouseEvent.CLICK, clickHandler);
+         * draw(size, size);
+         * }
+         *
+         *   private function draw(w:uint, h:uint):void {
+         * graphics.beginFill(bgColor);
+         * graphics.drawRect(0, 0, w, h);
+         * graphics.endFill();
+         * }
+         *
+         *   private function clickHandler(event:MouseEvent):void {
+         * var target:Sprite = Sprite(event.target);
+         * trace("clickHandler: " + target.name);
+         * stage.focus = target;
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class FocusEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a focusIn event object.
@@ -295,7 +299,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            FocusEvent(std::string type, bool bubbles, bool cancelable, InteractiveObject *relatedObject, bool shiftKey, unsigned int keyCode);
+            FocusEvent(std::string type, bool bubbles   =true, bool cancelable   =false, InteractiveObject *relatedObject=NULL, bool shiftKey   =false, unsigned int keyCode=0);
 
             /**
              * Creates a copy of the FocusEvent object and sets the value of each property to match that of the original.

@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DBlendFactor: public Object
+        class Context3DBlendFactor : public Object
         {
         public:
             static const std::string ONE;

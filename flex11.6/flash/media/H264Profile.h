@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class H264Profile: public Object
+        class H264Profile : public Object
         {
         public:
             static const std::string BASELINE;

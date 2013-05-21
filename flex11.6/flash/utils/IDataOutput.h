@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -74,6 +75,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::utils;
 
 namespace flash
@@ -88,9 +90,10 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual unsigned int objectEncoding() = 0;
-            virtual void objectEncoding(unsigned int version) = 0;
+             */virtual
+            unsigned int objectEncoding() = 0;
+            virtual
+            void         objectEncoding(unsigned int version) = 0;
 
             /**
              * The byte order for the data, either the BIG_ENDIAN or LITTLE_ENDIAN
@@ -99,8 +102,10 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual std::string endian() = 0;
-            virtual void endian(std::string type) = 0;
+            virtual
+            std::string  endian() = 0;
+            virtual
+            void         endian(std::string type) = 0;
 
             /**
              * Writes a sequence of bytes from the
@@ -125,7 +130,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeBytes(ByteArray *bytes, unsigned int offset, unsigned int length) = 0;
+            virtual
+            void     writeBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0) = 0;
 
             /**
              * Writes a Boolean value. A single byte is written according to the value parameter,
@@ -137,7 +143,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeBoolean(bool value) = 0;
+            virtual
+            void     writeBoolean(bool value) = 0;
 
             /**
              * Writes a byte.
@@ -149,7 +156,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeByte(int value) = 0;
+            virtual
+            void     writeByte(int value) = 0;
 
             /**
              * Writes a 16-bit integer. The low 16 bits of the parameter are used;
@@ -160,7 +168,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeShort(int value) = 0;
+            virtual
+            void     writeShort(int value) = 0;
 
             /**
              * Writes a 32-bit signed integer.
@@ -170,7 +179,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeInt(int value) = 0;
+            virtual
+            void     writeInt(int value) = 0;
 
             /**
              * Writes a 32-bit unsigned integer.
@@ -180,7 +190,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeUnsignedInt(unsigned int value) = 0;
+            virtual
+            void     writeUnsignedInt(unsigned int value) = 0;
 
             /**
              * Writes an IEEE 754 single-precision (32-bit) floating point number.
@@ -190,7 +201,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeFloat(float value) = 0;
+            virtual
+            void     writeFloat(float value) = 0;
 
             /**
              * Writes an IEEE 754 double-precision (64-bit) floating point number.
@@ -200,7 +212,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeDouble(float value) = 0;
+            virtual
+            void     writeDouble(float value) = 0;
 
             /**
              * Writes a multibyte string to the file stream, byte stream, or byte array, using the specified character set.
@@ -212,7 +225,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual void writeMultiByte(std::string value, std::string charSet) = 0;
+            virtual
+            void     writeMultiByte(std::string value, std::string charSet) = 0;
 
             /**
              * Writes a UTF-8 string to the file stream, byte stream, or byte array. The length of the UTF-8 string in bytes
@@ -226,7 +240,8 @@ namespace flash
              * @throws  RangeError If the length is larger than
              *   65535.
              */
-            virtual void writeUTF(std::string value) = 0;
+            virtual
+            void     writeUTF(std::string value) = 0;
 
             /**
              * Writes a UTF-8 string. Similar to writeUTF(),
@@ -237,7 +252,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeUTFBytes(std::string value) = 0;
+            virtual
+            void     writeUTFBytes(std::string value) = 0;
 
             /**
              * Writes an object to the file stream, byte stream, or byte array, in AMF serialized
@@ -248,7 +264,8 @@ namespace flash
              * @playerversion   Lite 4
              * @internal    throws IOError An I/O error occurred?
              */
-            virtual void writeObject(void *object) = 0;
+            virtual
+            void     writeObject(void *object) = 0;
         };
     }
 }

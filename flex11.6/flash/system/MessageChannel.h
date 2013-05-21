@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 using namespace flash::events;
@@ -11,7 +12,7 @@ namespace flash
 {
     namespace system
     {
-        class MessageChannel: public EventDispatcher
+        class MessageChannel : public flash::events::EventDispatcher
         {
         public:
             bool         messageAvailable();
@@ -23,16 +24,16 @@ namespace flash
             MessageChannel();
 
         public:
-            void     send(void *arg, int queueLimit);
+            void     send(void *arg, int queueLimit=-1);
 
         public:
-            void    *receive(bool blockUntilReceived);
+            void    *receive(bool blockUntilReceived   =false);
 
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference);
+            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
 
         public:
-            void     removeEventListener(std::string type, Function *listener, bool useCapture);
+            void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
 
         public:
             void     close();

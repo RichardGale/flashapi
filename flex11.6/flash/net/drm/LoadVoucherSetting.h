@@ -11,13 +11,14 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace net
     {
         namespace drm
         {
-            class LoadVoucherSetting: public Object
+            class LoadVoucherSetting : public Object
             {
                 /**
                  * Downloads the voucher from the media rights server only. Does not load the voucher from the local cache.

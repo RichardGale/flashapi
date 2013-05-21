@@ -12,13 +12,14 @@
  * @playerversion   Flash 10.1
  */
 
+
 namespace flash
 {
     namespace net
     {
         namespace drm
         {
-            class VoucherAccessInfo: public Object
+            class VoucherAccessInfo : public Object
             {
                 /**
                  * A user-friendly string that you can use to refer to the specified

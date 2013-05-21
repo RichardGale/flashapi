@@ -46,11 +46,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace events
     {
-        class GesturePhase: public Object
+        class GesturePhase : public Object
         {
             /**
              * The beginning of a new gesture (such as touching a finger to a touch enabled screen).

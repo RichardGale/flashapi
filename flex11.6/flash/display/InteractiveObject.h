@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace accessibility
@@ -22,6 +23,14 @@ namespace flash
     namespace ui
     {
         class ContextMenu;
+    }
+}
+#include "flash/display/DisplayObject.h"
+namespace flash
+{
+    namespace display
+    {
+        class NativeMenu;
     }
 }
 
@@ -397,100 +406,10 @@ namespace flash
  * Dispatched when the user selects 'Clear' (or 'Delete') from the text context menu.
  * @eventType   flash.events.Event.CLEAR
  */
-//[Event(name="clear",type="flash.events.Event")]/// This event is dispatched to any client app that supports inline input with an IME
+//[Event(name="clear",type="flash.events.Event")]
 
-/**
- * The InteractiveObject class is the abstract base class for all display objects with which the user can
- * interact, using the mouse, keyboard, or other user input device.
- *
- *   <p class="- topic/p ">You cannot instantiate the InteractiveObject class directly. A call to the <codeph class="+ topic/ph pr-d/codeph ">new
- * InteractiveObject()</codeph> constructor throws an <codeph class="+ topic/ph pr-d/codeph ">ArgumentError</codeph> exception.</p><p class="- topic/p ">The InteractiveObject class itself does not include any APIs for rendering content onscreen.
- * To create a custom subclass of the InteractiveObject class,
- * extend one of the subclasses that do have APIs for rendering content onscreen,
- * such as the Sprite, SimpleButton, TextField, or MovieClip classes.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">InteractiveObjectExample</codeph> class, which in
- * turn uses the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> class to draw a rectangle and then manipulate that rectangle
- * based on various mouse events.  This task is accomplished by performing the following steps:
- * <ol class="- topic/ol "><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">InteractiveObjectExample</codeph> constructor, a new ChildSprite object of type Sprite
- * called <codeph class="+ topic/ph pr-d/codeph ">child</codeph> is created, which calls the ChildSprite constructor method to draw the shape
- * and add mouse events for the shape (as explained in the following steps).  The <codeph class="+ topic/ph pr-d/codeph ">child</codeph>
- * object is added to the top of the display list at coordinates <i class="+ topic/ph hi-d/i ">x = 0, y = 0</i>.  </li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> class, declare the <codeph class="+ topic/ph pr-d/codeph ">size</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">overSize</codeph> properties that are used later in the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method and
- * MouseEvent methods.</li><li class="- topic/li ">Declare properties that set the background color to orange, the mouse-over color to
- * dark yellow, and the mouse-down color to light blue.</li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> constructor, an orange square is drawn by using methods from
- * the Graphics class and the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method.</li><li class="- topic/li ">The constructor adds four MouseEvent event listener methods:
- *
- *   <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseOverHandler</codeph>: redraws a larger 60 x 60 pixel square with a dark-yellow color
- * at the original coordinates.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseOutHandler</codeph>: returns the square to its original size and color.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseDownHandler</codeph>: redraws a larger 60 x 60 pixel square with a light-blue color
- * at the original coordinates.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseUpHandler</codeph>: same as <codeph class="+ topic/ph pr-d/codeph ">mouseOverHandler</codeph>.</li></ul></li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- *
- *   public class InteractiveObjectExample extends Sprite {
- *
- *   public function InteractiveObjectExample() {
- * var child:Sprite = new ChildSprite();
- * addChild(child);
- * }
- * }
- * }
- *
- *   import flash.display.Sprite;
- * import flash.events.MouseEvent;
- *
- *   class ChildSprite extends Sprite {
- * private var size:uint = 50;
- * private var overSize:uint = 60;
- * private var backgroundColor:uint = 0xFFCC00;
- * private var overColor:uint = 0xCCFF00;
- * private var downColor:uint = 0x00CCFF;
- *
- *   public function ChildSprite() {
- * buttonMode = true;
- * draw(size, size, backgroundColor);
- * addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);
- * addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);
- * addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler);
- * addEventListener(MouseEvent.MOUSE_UP, mouseUpHandler);
- * }
- *
- *   private function draw(w:uint, h:uint, bgColor:uint):void {
- * graphics.clear();
- * graphics.beginFill(bgColor);
- * graphics.drawRect(0, 0, w, h);
- * graphics.endFill();
- * }
- *
- *   public function mouseOverHandler(event:MouseEvent):void {
- * trace("mouseOverHandler");
- * draw(overSize, overSize, overColor);
- * }
- *
- *   public function mouseOutHandler(event:MouseEvent):void {
- * trace("mouseOutHandler");
- * draw(size, size, backgroundColor);
- * }
- *
- *   public function mouseDownHandler(event:MouseEvent):void {
- * trace("mouseDownHandler");
- * draw(overSize, overSize, downColor);
- * }
- *
- *   public function mouseUpHandler(event:MouseEvent):void {
- * trace("mouseUpHandler");
- * draw(overSize, overSize, overColor);
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::accessibility;
+using namespace flash::display;
 using namespace flash::geom;
 using namespace flash::ui;
 
@@ -498,7 +417,447 @@ namespace flash
 {
     namespace display
     {
-        class InteractiveObject: public DisplayObject
+        /// This event is dispatched to any client app that supports inline input with an IME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /**
+         * The InteractiveObject class is the abstract base class for all display objects with which the user can
+         * interact, using the mouse, keyboard, or other user input device.
+         *
+         *   <p class="- topic/p ">You cannot instantiate the InteractiveObject class directly. A call to the <codeph class="+ topic/ph pr-d/codeph ">new
+         * InteractiveObject()</codeph> constructor throws an <codeph class="+ topic/ph pr-d/codeph ">ArgumentError</codeph> exception.</p><p class="- topic/p ">The InteractiveObject class itself does not include any APIs for rendering content onscreen.
+         * To create a custom subclass of the InteractiveObject class,
+         * extend one of the subclasses that do have APIs for rendering content onscreen,
+         * such as the Sprite, SimpleButton, TextField, or MovieClip classes.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">InteractiveObjectExample</codeph> class, which in
+         * turn uses the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> class to draw a rectangle and then manipulate that rectangle
+         * based on various mouse events.  This task is accomplished by performing the following steps:
+         * <ol class="- topic/ol "><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">InteractiveObjectExample</codeph> constructor, a new ChildSprite object of type Sprite
+         * called <codeph class="+ topic/ph pr-d/codeph ">child</codeph> is created, which calls the ChildSprite constructor method to draw the shape
+         * and add mouse events for the shape (as explained in the following steps).  The <codeph class="+ topic/ph pr-d/codeph ">child</codeph>
+         * object is added to the top of the display list at coordinates <i class="+ topic/ph hi-d/i ">x = 0, y = 0</i>.  </li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> class, declare the <codeph class="+ topic/ph pr-d/codeph ">size</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">overSize</codeph> properties that are used later in the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method and
+         * MouseEvent methods.</li><li class="- topic/li ">Declare properties that set the background color to orange, the mouse-over color to
+         * dark yellow, and the mouse-down color to light blue.</li><li class="- topic/li ">In the <codeph class="+ topic/ph pr-d/codeph ">ChildSprite</codeph> constructor, an orange square is drawn by using methods from
+         * the Graphics class and the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method.</li><li class="- topic/li ">The constructor adds four MouseEvent event listener methods:
+         *
+         *   <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseOverHandler</codeph>: redraws a larger 60 x 60 pixel square with a dark-yellow color
+         * at the original coordinates.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseOutHandler</codeph>: returns the square to its original size and color.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseDownHandler</codeph>: redraws a larger 60 x 60 pixel square with a light-blue color
+         * at the original coordinates.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseUpHandler</codeph>: same as <codeph class="+ topic/ph pr-d/codeph ">mouseOverHandler</codeph>.</li></ul></li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         *
+         *   public class InteractiveObjectExample extends Sprite {
+         *
+         *   public function InteractiveObjectExample() {
+         * var child:Sprite = new ChildSprite();
+         * addChild(child);
+         * }
+         * }
+         * }
+         *
+         *   import flash.display.Sprite;
+         * import flash.events.MouseEvent;
+         *
+         *   class ChildSprite extends Sprite {
+         * private var size:uint = 50;
+         * private var overSize:uint = 60;
+         * private var backgroundColor:uint = 0xFFCC00;
+         * private var overColor:uint = 0xCCFF00;
+         * private var downColor:uint = 0x00CCFF;
+         *
+         *   public function ChildSprite() {
+         * buttonMode = true;
+         * draw(size, size, backgroundColor);
+         * addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);
+         * addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);
+         * addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler);
+         * addEventListener(MouseEvent.MOUSE_UP, mouseUpHandler);
+         * }
+         *
+         *   private function draw(w:uint, h:uint, bgColor:uint):void {
+         * graphics.clear();
+         * graphics.beginFill(bgColor);
+         * graphics.drawRect(0, 0, w, h);
+         * graphics.endFill();
+         * }
+         *
+         *   public function mouseOverHandler(event:MouseEvent):void {
+         * trace("mouseOverHandler");
+         * draw(overSize, overSize, overColor);
+         * }
+         *
+         *   public function mouseOutHandler(event:MouseEvent):void {
+         * trace("mouseOutHandler");
+         * draw(size, size, backgroundColor);
+         * }
+         *
+         *   public function mouseDownHandler(event:MouseEvent):void {
+         * trace("mouseDownHandler");
+         * draw(overSize, overSize, downColor);
+         * }
+         *
+         *   public function mouseUpHandler(event:MouseEvent):void {
+         * trace("mouseUpHandler");
+         * draw(overSize, overSize, overColor);
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class InteractiveObject : public flash::display::DisplayObject
         {
             /**
              * Specifies whether this object is in the tab order. If this object is in the tab order,

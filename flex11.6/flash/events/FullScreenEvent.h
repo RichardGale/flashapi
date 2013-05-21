@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -14,20 +15,20 @@ namespace flash
 /// @eventType  flash.events.FullScreenEvent.FULL_SCREEN
 //[Event(name="fullScreen",type="flash.events.FullScreenEvent")]
 
-/**
- * The Stage object dispatches a FullScreenEvent object whenever the Stage enters or leaves full-screen display mode.
- * There is only one type of <codeph class="+ topic/ph pr-d/codeph ">fullScreen</codeph> event: <codeph class="+ topic/ph pr-d/codeph ">FullScreenEvent.FULL_SCREEN</codeph>.
- * @langversion 3.0
- * @playerversion   Flash 9.0.28.0
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class FullScreenEvent: public ActivityEvent
+        /**
+         * The Stage object dispatches a FullScreenEvent object whenever the Stage enters or leaves full-screen display mode.
+         * There is only one type of <codeph class="+ topic/ph pr-d/codeph ">fullScreen</codeph> event: <codeph class="+ topic/ph pr-d/codeph ">FullScreenEvent.FULL_SCREEN</codeph>.
+         * @langversion 3.0
+         * @playerversion   Flash 9.0.28.0
+         * @playerversion   Lite 4
+         */
+        class FullScreenEvent : public ActivityEvent
         {
             /**
              * The FullScreenEvent.FULL_SCREEN constant defines the value of the type property of a fullScreen event object.
@@ -84,7 +85,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            FullScreenEvent(std::string type, bool bubbles, bool cancelable, bool fullScreen, bool interactive);
+            FullScreenEvent(std::string type, bool bubbles   =false, bool cancelable   =false, bool fullScreen   =false, bool interactive   =false);
 
             /**
              * Returns a string that contains all the properties of the FullScreenEvent object. The following

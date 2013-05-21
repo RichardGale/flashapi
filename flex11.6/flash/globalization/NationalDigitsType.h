@@ -11,11 +11,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class NationalDigitsType: public Object
+        class NationalDigitsType : public Object
         {
             /**
              * Represents the Unicode value for the zero digit of the Latin-1 (European) digit set.

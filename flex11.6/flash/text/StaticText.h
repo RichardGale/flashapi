@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/display/DisplayObject.h"
 
 /**
@@ -29,13 +30,14 @@
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace text
     {
-        class StaticText: public DisplayObject
+        class StaticText : public flash::display::DisplayObject
         {
             /**
              * Returns the current text of the static text field. The authoring tool may export multiple text field

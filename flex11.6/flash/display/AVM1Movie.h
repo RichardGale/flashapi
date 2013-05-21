@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -33,13 +34,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::utils;
 
 namespace flash
 {
     namespace display
     {
-        class AVM1Movie: public DisplayObject
+        class AVM1Movie : public DisplayObject
         {
         public:
             AVM1Movie();

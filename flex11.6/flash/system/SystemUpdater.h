@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace adobe
 {
@@ -61,23 +62,6 @@ namespace flash
  */
 //[Event(name="open",type="flash.events.Event")]
 
-/**
- * The SystemUpdater class allows you to update modules of the Flash Player,
- * such as the DRM module for Flash Access, as well as the Flash Player itself.
- * Available modules are listed in the SystemUpdaterType class.
- *
- *   <p class="- topic/p ">Flash Player identifies the need for a Flash-Access-module update by dispatching a NetStatusEvent event.
- * The event has a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property with a value of <codeph class="+ topic/ph pr-d/codeph ">"DRM.UpdateNeeded"</codeph>. For updates to the Flash Access
- * module, user consent is not required. Listen for the event and initiate the update by calling
- * <codeph class="+ topic/ph pr-d/codeph ">update("DRM")</codeph>.</p><p class="- topic/p ">Flash Player identifies the need for a player update by dispatching a StatusEvent event, with several
- * possible <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property values (see the <codeph class="+ topic/ph pr-d/codeph ">status</codeph> event). For updates to the player,
- * user consent is required. Listen for the event and present the user with the option to update. The user must agree to the actual
- * update and initiate the update by, for example, clicking a button in the user interface. You can then
- * initiate the player update directly in ActionScript by calling <codeph class="+ topic/ph pr-d/codeph ">update("SYSTEM")</codeph>.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: The SystemUpdater API is supported on all desktop platforms.</p>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- */
-using namespace flash::events;
 using namespace adobe::utils;
 using namespace flash::events;
 
@@ -85,7 +69,23 @@ namespace flash
 {
     namespace system
     {
-        class SystemUpdater: public EventDispatcher
+        /**
+         * The SystemUpdater class allows you to update modules of the Flash Player,
+         * such as the DRM module for Flash Access, as well as the Flash Player itself.
+         * Available modules are listed in the SystemUpdaterType class.
+         *
+         *   <p class="- topic/p ">Flash Player identifies the need for a Flash-Access-module update by dispatching a NetStatusEvent event.
+         * The event has a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property with a value of <codeph class="+ topic/ph pr-d/codeph ">"DRM.UpdateNeeded"</codeph>. For updates to the Flash Access
+         * module, user consent is not required. Listen for the event and initiate the update by calling
+         * <codeph class="+ topic/ph pr-d/codeph ">update("DRM")</codeph>.</p><p class="- topic/p ">Flash Player identifies the need for a player update by dispatching a StatusEvent event, with several
+         * possible <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property values (see the <codeph class="+ topic/ph pr-d/codeph ">status</codeph> event). For updates to the player,
+         * user consent is required. Listen for the event and present the user with the option to update. The user must agree to the actual
+         * update and initiate the update by, for example, clicking a button in the user interface. You can then
+         * initiate the player update directly in ActionScript by calling <codeph class="+ topic/ph pr-d/codeph ">update("SYSTEM")</codeph>.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note</b>: The SystemUpdater API is supported on all desktop platforms.</p>
+         * @langversion 3.0
+         * @playerversion   Flash 10.1
+         */
+        class SystemUpdater : public flash::events::EventDispatcher
         {
             /**
              * Constructor.

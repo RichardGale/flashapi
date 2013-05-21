@@ -12,11 +12,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class BlendMode: public Object
+        class BlendMode : public Object
         {
             /**
              * The display object appears in front of the background. Pixel values of the display object

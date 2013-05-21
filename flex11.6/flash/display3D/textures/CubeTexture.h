@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -27,19 +28,19 @@ namespace flash
     {
         namespace textures
         {
-            class CubeTexture: public TextureBase
+            class CubeTexture : public TextureBase
             {
             public:
                 CubeTexture();
 
             public:
-                void     uploadFromBitmapData(BitmapData *source, unsigned int side, unsigned int miplevel);
+                void     uploadFromBitmapData(BitmapData *source, unsigned int side, unsigned int miplevel=0);
 
             public:
-                void     uploadFromByteArray(ByteArray *data, unsigned int byteArrayOffset, unsigned int side, unsigned int miplevel);
+                void     uploadFromByteArray(ByteArray *data, unsigned int byteArrayOffset, unsigned int side, unsigned int miplevel=0);
 
             public:
-                void     uploadCompressedTextureFromByteArray(ByteArray *data, unsigned int byteArrayOffset, bool async);
+                void     uploadCompressedTextureFromByteArray(ByteArray *data, unsigned int byteArrayOffset, bool async   =false);
             };
         }
     }

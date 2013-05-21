@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -53,8 +54,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
-using namespace flash::text::engine;
+
 using namespace flash::events;
 using namespace flash::text::engine;
 
@@ -64,7 +64,7 @@ namespace flash
     {
         namespace engine
         {
-            class ContentElement: public Object
+            class ContentElement : public Object
             {
                 /**
                  * Indicates the presence of a graphic element in the text.
@@ -228,7 +228,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                ContentElement(ElementFormat *elementFormat, EventDispatcher *eventMirror, std::string textRotation);
+                ContentElement(ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
             };
         }
     }

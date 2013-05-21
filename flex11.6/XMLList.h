@@ -60,7 +60,8 @@
  * @playerversion   Lite 4
  */
 
-class XMLList: public Object
+
+class XMLList : public Object
 {
 public:
     static const void *length;
@@ -95,7 +96,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasOwnProperty(void *P);
+    bool     hasOwnProperty(void *P=NULL);
 
     /**
      * Checks whether the property p is in the set of properties that can be iterated in a for..in statement
@@ -106,7 +107,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     propertyIsEnumerable(void *P);
+    bool     propertyIsEnumerable(void *P=NULL);
 
     /**
      * Calls the attribute() method of each XML object and returns an XMLList object
@@ -191,7 +192,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *descendants(void *name);
+    XMLList *descendants(void *name=(void *)"*");
 
     /**
      * Calls the elements() method of each XML object. The name parameter is
@@ -202,7 +203,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *elements(void *name);
+    XMLList *elements(void *name=(void *)"*");
 
     /**
      * Checks whether the XMLList object contains complex content. An XMLList object is
@@ -265,7 +266,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *processingInstructions(void *name);
+    XMLList *processingInstructions(void *name=(void *)"*");
 
     /**
      * Calls the text() method of each XML
@@ -303,7 +304,7 @@ public:
 
     std::string nodeKind();
 
-    void    *namespace(void *prefix);
+    void    *namespace(void *prefix=NULL);
 
     Object  *localName();
 
@@ -332,7 +333,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    XMLList(void *value);
+    XMLList(void *value=NULL);
 };
 
 #endif // FLEX11_6_XMLLIST_AS

@@ -8,7 +8,7 @@ namespace flash
 {
     namespace automation
     {
-        class Configuration: public Object
+        class Configuration : public Object
         {
         public:
             static std::string  testAutomationConfiguration();

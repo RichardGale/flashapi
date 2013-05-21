@@ -46,7 +46,8 @@
  * @refpath Objects/Core/Boolean/
  */
 
-class Boolean: public Object
+
+class Boolean : public Object
 {
 public:
     static const int length;
@@ -62,7 +63,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    Boolean(void *value);
+    Boolean(void *value=NULL);
 
     /**
      * Returns the string representation ("true" or

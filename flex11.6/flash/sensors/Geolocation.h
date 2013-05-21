@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -18,93 +19,93 @@
  */
 //[Event(name="update",type="flash.events.GeolocationEvent")]
 
-/**
- * The Geolocation class dispatches events in response to the device's location sensor.
- *
- *   <p class="- topic/p ">If a device supports geolocation, you can use this class to obtain the current geographical
- * location of the device. The geographical location is displayed on the device in the form of latitudinal
- * and longitudinal coordinates (in WGS-84 standard format). When the location of the device changes,
- * you can receive updates about the changes. If the device supports this feature, you will be able to obtain
- * information about the altitude, accuracy, heading, speed, and timestamp of the latest change in the location.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
- * only on mobile devices. It is not supported on desktop or AIR for TV devices. You can test
- * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">Geolocation.isSupported</codeph> property. See
- * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
- * AIR Profile Support</xref> for more information regarding API support across multiple profiles.
- * </p>
- *
- *   EXAMPLE:
- *
- *   In the following example, the application displays the latitude,
- * longitude, and horizontal accuracy of geolocation <codeph class="+ topic/ph pr-d/codeph ">update</codeph> events
- * as they are received.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package
- * {
- * import flash.display.Sprite;
- * import flash.display.StageAlign;
- * import flash.display.StageScaleMode;
- * import flash.events.GeolocationEvent;
- * import flash.sensors.Geolocation;
- * import flash.text.TextField;
- * import flash.text.TextFormat;
- *
- *   public class GeolocationTest extends Sprite
- * {
- * private var geo:Geolocation;
- * private var log:TextField;
- *
- *   public function GeolocationTest()
- * {
- * stage.scaleMode = StageScaleMode.NO_SCALE;
- * stage.align = StageAlign.TOP_LEFT;
- * setUpTextField();
- *
- *   if (Geolocation.isSupported)
- * {
- * geo = new Geolocation();
- * geo.setRequestedUpdateInterval(100);
- * geo.addEventListener(GeolocationEvent.UPDATE, geolocationUpdateHandler);
- * }
- * else
- * {
- * log.text =  "No geolocation support.";
- * }
- * }
- *
- *   private function geolocationUpdateHandler(event:GeolocationEvent):void
- * {
- * log.text = "latitude:" + event.latitude.toString() + "  \n";
- * log.appendText("longitude:" + event.longitude.toString() + "  \n");
- * log.appendText("horizontal accuracy:" + event.horizontalAccuracy.toString() + " m");
- * }
- * private function setUpTextField():void
- * {
- * log = new TextField();
- * var format:TextFormat = new TextFormat("_sans", 24);
- * log.defaultTextFormat = format;
- * log.border = true;
- * log.wordWrap = true;
- * log.multiline = true;
- * log.x = 10;
- * log.y = 10;
- * log.height = stage.stageHeight - 20;
- * log.width = stage.stageWidth - 20;
- * addChild(log);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace sensors
     {
-        class Geolocation: public EventDispatcher
+        /**
+         * The Geolocation class dispatches events in response to the device's location sensor.
+         *
+         *   <p class="- topic/p ">If a device supports geolocation, you can use this class to obtain the current geographical
+         * location of the device. The geographical location is displayed on the device in the form of latitudinal
+         * and longitudinal coordinates (in WGS-84 standard format). When the location of the device changes,
+         * you can receive updates about the changes. If the device supports this feature, you will be able to obtain
+         * information about the altitude, accuracy, heading, speed, and timestamp of the latest change in the location.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
+         * only on mobile devices. It is not supported on desktop or AIR for TV devices. You can test
+         * for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">Geolocation.isSupported</codeph> property. See
+         * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
+         * AIR Profile Support</xref> for more information regarding API support across multiple profiles.
+         * </p>
+         *
+         *   EXAMPLE:
+         *
+         *   In the following example, the application displays the latitude,
+         * longitude, and horizontal accuracy of geolocation <codeph class="+ topic/ph pr-d/codeph ">update</codeph> events
+         * as they are received.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package
+         * {
+         * import flash.display.Sprite;
+         * import flash.display.StageAlign;
+         * import flash.display.StageScaleMode;
+         * import flash.events.GeolocationEvent;
+         * import flash.sensors.Geolocation;
+         * import flash.text.TextField;
+         * import flash.text.TextFormat;
+         *
+         *   public class GeolocationTest extends Sprite
+         * {
+         * private var geo:Geolocation;
+         * private var log:TextField;
+         *
+         *   public function GeolocationTest()
+         * {
+         * stage.scaleMode = StageScaleMode.NO_SCALE;
+         * stage.align = StageAlign.TOP_LEFT;
+         * setUpTextField();
+         *
+         *   if (Geolocation.isSupported)
+         * {
+         * geo = new Geolocation();
+         * geo.setRequestedUpdateInterval(100);
+         * geo.addEventListener(GeolocationEvent.UPDATE, geolocationUpdateHandler);
+         * }
+         * else
+         * {
+         * log.text =  "No geolocation support.";
+         * }
+         * }
+         *
+         *   private function geolocationUpdateHandler(event:GeolocationEvent):void
+         * {
+         * log.text = "latitude:" + event.latitude.toString() + "  \n";
+         * log.appendText("longitude:" + event.longitude.toString() + "  \n");
+         * log.appendText("horizontal accuracy:" + event.horizontalAccuracy.toString() + " m");
+         * }
+         * private function setUpTextField():void
+         * {
+         * log = new TextField();
+         * var format:TextFormat = new TextFormat("_sans", 24);
+         * log.defaultTextFormat = format;
+         * log.border = true;
+         * log.wordWrap = true;
+         * log.multiline = true;
+         * log.x = 10;
+         * log.y = 10;
+         * log.height = stage.stageHeight - 20;
+         * log.width = stage.stageWidth - 20;
+         * addChild(log);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class Geolocation : public flash::events::EventDispatcher
         {
             /**
              * Whether a location sensor is available on the device (true); otherwise false.

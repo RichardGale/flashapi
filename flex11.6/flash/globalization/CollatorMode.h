@@ -13,11 +13,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class CollatorMode: public Object
+        class CollatorMode : public Object
         {
             /**
              * Initializes a Collator object so that the compare method is optimized for

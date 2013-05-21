@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/display/DisplayObjectContainer.h"
 namespace flash
 {
@@ -207,12 +208,11 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
-using namespace flash::text::engine;
-using namespace flash::text::engine;
 using namespace flash::events;
 using namespace flash::geom;
-using namespace flash::display;
+using namespace flash::text::engine;
 using namespace flash::ui;
 
 namespace flash
@@ -221,7 +221,7 @@ namespace flash
     {
         namespace engine
         {
-            class TextLine: public DisplayObjectContainer
+            class TextLine : public flash::display::DisplayObjectContainer
             {
                 /**
                  * The maximum requested width of a text line, in pixels. The TextBlock.createTextLine() method uses this constant
@@ -474,7 +474,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::vector<flash::text::engine::TextLineMirrorRegion *> *mirrorRegions();
+                std::vector<flash::text::engine::TextLineMirrorRegion *> mirrorRegions();
 
             public:
                 void         contextMenu(ContextMenu *value);

@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class StageDisplayState: public Object
+        class StageDisplayState : public Object
         {
             /**
              * Specifies that the Stage is in full-screen mode. Keyboard interactivity is disabled in this mode.

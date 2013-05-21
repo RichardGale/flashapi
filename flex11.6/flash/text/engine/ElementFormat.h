@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -99,7 +100,7 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
-using namespace flash::text::engine;
+
 using namespace flash::text::engine;
 
 namespace flash
@@ -108,7 +109,7 @@ namespace flash
     {
         namespace engine
         {
-            class ElementFormat: public Object
+            class ElementFormat : public Object
             {
                 /**
                  * Specifies the type of baseline in the containing element to which to align the dominant baselines of elements having
@@ -515,7 +516,7 @@ namespace flash
                  * @throws  ArgumentError The typographicCase specified is not a member of TypographicCase.
                  */
             public:
-                ElementFormat(FontDescription *fontDescription, float fontSize, unsigned int color, float alpha, std::string textRotation, std::string dominantBaseline, std::string alignmentBaseline, float baselineShift, std::string kerning, float trackingRight, float trackingLeft, std::string locale, std::string breakOpportunity, std::string digitCase, std::string digitWidth, std::string ligatureLevel, std::string typographicCase);
+                ElementFormat(FontDescription *fontDescription=NULL, float fontSize =12, unsigned int color=0, float alpha =1, std::string textRotation="auto", std::string dominantBaseline="roman", std::string alignmentBaseline="useDominantBaseline", float baselineShift =0, std::string kerning="on", float trackingRight =0, float trackingLeft =0, std::string locale="en", std::string breakOpportunity="auto", std::string digitCase="default", std::string digitWidth="default", std::string ligatureLevel="common", std::string typographicCase="default");
 
                 /**
                  * Returns a FontMetrics object with properties which describe the emBox, strikethrough position,

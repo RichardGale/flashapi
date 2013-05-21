@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -102,13 +103,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace display
     {
-        class Shape: public DisplayObject
+        class Shape : public DisplayObject
         {
             /**
              * Specifies the Graphics object belonging to this Shape object, where vector

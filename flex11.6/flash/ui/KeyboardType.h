@@ -45,11 +45,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class KeyboardType: public Object
+        class KeyboardType : public Object
         {
             /**
              * A standard keyboard with a full set of numbers and letters.

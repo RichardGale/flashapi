@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -27,14 +28,15 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
-using namespace flash::utils;
+
 using namespace flash::media;
+using namespace flash::utils;
 
 namespace flash
 {
     namespace media
     {
-        class SoundMixer: public Object
+        class SoundMixer : public Object
         {
             /**
              * The number of seconds to preload an embedded streaming sound into a buffer before it starts
@@ -150,7 +152,7 @@ namespace flash
              * @internal    Should confirm if the floating point numbers are single- or double-precision.
              */
         public:
-            static void     computeSpectrum(ByteArray *outputArray, bool FFTMode, int stretchFactor);
+            static void     computeSpectrum(ByteArray *outputArray, bool FFTMode   =false, int stretchFactor=0);
 
             /**
              * Determines whether any sounds are not accessible due to security restrictions. For example,

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -15,14 +16,14 @@ namespace flash
 }
 #include "flash/events/Event.h"
 
-using namespace flash::net::drm;
 using namespace flash::events;
+using namespace flash::net::drm;
 
 namespace flash
 {
     namespace events
     {
-        class DRMDeviceGroupEvent: public Event
+        class DRMDeviceGroupEvent : public flash::events::Event
         {
         public:
             static const std::string ADD_TO_DEVICE_GROUP_COMPLETE;
@@ -35,7 +36,7 @@ namespace flash
             DRMDeviceGroup *deviceGroup();
 
         public:
-            DRMDeviceGroupEvent(std::string type, bool bubbles, bool cancelable, DRMDeviceGroup *deviceGroup);
+            DRMDeviceGroupEvent(std::string type, bool bubbles   =false, bool cancelable   =false, DRMDeviceGroup *deviceGroup=NULL);
 
         public:
             Event   *clone();

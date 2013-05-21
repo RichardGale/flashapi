@@ -10,11 +10,12 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+
 namespace flash
 {
     namespace sampler
     {
-        class StackFrame: public Object
+        class StackFrame : public Object
         {
             /**
              * The function name in the stack frame. For Flash Player debugger version only.

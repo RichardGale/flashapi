@@ -4,16 +4,16 @@
 
 
 
-class JSON: public Object
+class JSON : public Object
 {
 public:
     JSON();
 
 public:
-    static Object  *parse(std::string text, Function *reviver);
+    static Object  *parse(std::string text, Function *reviver=NULL);
 
 public:
-    static std::string stringify(Object *value, void *replacer, void *space);
+    static std::string stringify(Object *value, void *replacer=NULL, void *space=NULL);
 };
 
 #endif // FLEX11_6_JSON_AS

@@ -45,7 +45,8 @@
  * @playerversion   Lite 4
  */
 
-class ArgumentError: public Error
+
+class ArgumentError : public Error
 {
 public:
     static const int length;
@@ -58,7 +59,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    ArgumentError(void *message, void *id);
+    ArgumentError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_ARGUMENTERROR_AS

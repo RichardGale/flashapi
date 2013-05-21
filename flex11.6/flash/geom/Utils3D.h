@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -25,14 +26,14 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace flash::geom;
+
 using namespace flash::geom;
 
 namespace flash
 {
     namespace geom
     {
-        class Utils3D: public Object
+        class Utils3D : public Object
         {
             /**
              * Using a projection Matrix3D object, projects a Vector3D object from one space coordinate to another.
@@ -83,7 +84,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            static void     projectVectors(Matrix3D *m, std::vector<float> *verts, std::vector<float> *projectedVerts, std::vector<float> *uvts);
+            static void     projectVectors(Matrix3D *m, std::vector<float> verts, std::vector<float> projectedVerts, std::vector<float> uvts);
 
             /**
              * Interpolates the orientation of an object toward a position. The pointTowards()
@@ -118,7 +119,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            static flash::geom::Matrix3D *pointTowards(float percent, Matrix3D *mat, Vector3D *pos, Vector3D *at, Vector3D *up);
+            static flash::geom::Matrix3D *pointTowards(float percent, Matrix3D *mat, Vector3D *pos, Vector3D *at=NULL, Vector3D *up=NULL);
 
         public:
             Utils3D();

@@ -14,11 +14,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetStreamInfo: public Object
+        class NetStreamInfo : public Object
         {
             /**
              * Specifies the rate at which the NetStream buffer is filled in bytes per second. The value is calculated as a smooth
@@ -323,7 +324,7 @@ namespace flash
             bool         isLive();
 
         public:
-            NetStreamInfo(float curBPS, float byteCount, float maxBPS, float audioBPS, float audioByteCount, float videoBPS, float videoByteCount, float dataBPS, float dataByteCount, float playbackBPS, float droppedFrames, float audioBufferByteLength, float videoBufferByteLength, float dataBufferByteLength, float audioBufferLength, float videoBufferLength, float dataBufferLength, float srtt, float audioLossRate, float videoLossRate, Object *metaData, Object *xmpData, std::string uri, std::string resourceName, bool isLive);
+            NetStreamInfo(float curBPS, float byteCount, float maxBPS, float audioBPS, float audioByteCount, float videoBPS, float videoByteCount, float dataBPS, float dataByteCount, float playbackBPS, float droppedFrames, float audioBufferByteLength, float videoBufferByteLength, float dataBufferByteLength, float audioBufferLength, float videoBufferLength, float dataBufferLength, float srtt, float audioLossRate, float videoLossRate, Object *metaData=NULL, Object *xmpData=NULL, std::string uri="", std::string resourceName="", bool isLive   =true);
 
             /**
              * Returns a text value listing the properties of the NetStreamInfo object.

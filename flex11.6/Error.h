@@ -55,7 +55,8 @@
  * @playerversion   Lite 4
  */
 
-class Error: public Object
+
+class Error : public Object
 {
 public:
     static const int length;
@@ -101,7 +102,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    Error(void *message, void *id);
+    Error(void *message=(void *)"", void *id=0);
 
 public:
     static std::string getErrorMessage(int index);

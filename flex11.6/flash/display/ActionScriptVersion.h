@@ -14,11 +14,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ActionScriptVersion: public Object
+        class ActionScriptVersion : public Object
         {
             /**
              * ActionScript language version 2.0 and earlier.

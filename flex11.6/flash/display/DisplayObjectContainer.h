@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -10,6 +11,7 @@ namespace flash
         class DisplayObject;
     }
 }
+#include "flash/display/InteractiveObject.h"
 namespace flash
 {
     namespace text
@@ -101,15 +103,16 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
-using namespace flash::text;
 using namespace flash::geom;
+using namespace flash::text;
 
 namespace flash
 {
     namespace display
     {
-        class DisplayObjectContainer: public InteractiveObject
+        class DisplayObjectContainer : public flash::display::InteractiveObject
         {
             /**
              * Returns the number of children of this object.
@@ -437,7 +440,7 @@ namespace flash
             void     swapChildren(DisplayObject *child1, DisplayObject *child2);
 
         public:
-            void     removeChildren(int beginIndex, int endIndex);
+            void     removeChildren(int beginIndex=0, int endIndex=2147483647);
         };
     }
 }

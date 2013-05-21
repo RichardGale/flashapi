@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace utils
     {
-        class SetIntervalTimer: public Timer
+        class SetIntervalTimer : public Timer
         {
             unsigned int id;
 

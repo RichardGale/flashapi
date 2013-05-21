@@ -10,11 +10,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class LineScaleMode: public Object
+        class LineScaleMode : public Object
         {
             /**
              * With this setting used as the scaleMode parameter of the lineStyle()

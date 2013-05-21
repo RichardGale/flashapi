@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DVertexBufferFormat: public Object
+        class Context3DVertexBufferFormat : public Object
         {
         public:
             static const std::string FLOAT_1;

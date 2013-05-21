@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -88,6 +89,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::events;
 using namespace flash::text;
 
@@ -95,7 +97,7 @@ namespace flash
 {
     namespace text
     {
-        class StyleSheet: public EventDispatcher
+        class StyleSheet : public flash::events::EventDispatcher
         {
             /**
              * An array that contains the names (as strings) of all of the styles registered

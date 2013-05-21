@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -14,11 +15,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class SecurityDomain: public Object
+        class SecurityDomain : public Object
         {
             /**
              * Gets the current security domain.

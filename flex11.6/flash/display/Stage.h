@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -119,86 +120,11 @@ namespace flash
  */
 //[Event(name="mouseLeave",type="flash.events.Event")]
 
-/**
- * The Stage class represents the main drawing area.
- *
- *   <p class="- topic/p ">For SWF content running in the browser (in
- * Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player), the Stage represents the entire area where Flash
- * content is shown. For content running in AIR on desktop operating systems, each NativeWindow object has a corresponding
- * Stage object.</p><p class="- topic/p ">The Stage object is not globally accessible. You need to access it through the
- * <codeph class="+ topic/ph pr-d/codeph ">stage</codeph> property of a DisplayObject instance.</p><p class="- topic/p ">The Stage class has several ancestor classes     DisplayObjectContainer, InteractiveObject,
- * DisplayObject, and EventDispatcher     from which it inherits properties and methods.
- * Many of these properties and methods are either inapplicable to Stage objects,
- * or require security checks when called on a Stage object.  The properties and methods that
- * require security checks are documented as part of the Stage class.</p><p class="- topic/p ">In addition, the following inherited properties are inapplicable to Stage objects. If you
- * try to set them, an IllegalOperationError is thrown. These properties may always be read, but
- * since they cannot be set, they will always contain default values.</p><ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">accessibilityProperties</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">alpha</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">blendMode</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">cacheAsBitmap</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">contextMenu</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">filters</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusRect</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mask</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseEnabled</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">name</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">opaqueBackground</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">rotation</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scale9Grid</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scaleX</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scaleY</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scrollRect</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">tabEnabled</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">tabIndex</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">transform</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">visible</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">x</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">y</codeph></li></ul><p class="- topic/p ">Some events that you might expect to be a part of the Stage class,
- * such as <codeph class="+ topic/ph pr-d/codeph ">enterFrame</codeph>, <codeph class="+ topic/ph pr-d/codeph ">exitFrame</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">frameConstructed</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">render</codeph>,
- * cannot be Stage events because a reference to the Stage object
- * cannot be guaranteed to exist in every situation where these events
- * are used. Because these events cannot be dispatched by the Stage
- * object, they are instead dispatched by every DisplayObject instance,
- * which means that you can add an event listener to
- * any DisplayObject instance to listen for these events.
- * These events, which are part of the DisplayObject class,
- * are called broadcast events to differentiate them from events
- * that target a specific DisplayObject instance.
- * Two other broadcast events, <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph>,
- * belong to DisplayObject's superclass, EventDispatcher.
- * The <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph> events
- * behave similarly to the DisplayObject broadcast events, except
- * that these two events are dispatched not only by all DisplayObject
- * instances, but also by all EventDispatcher instances and instances
- * of other EventDispatcher subclasses.
- * For more information on broadcast events, see the DisplayObject class.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">StageExample</codeph> class to dispatch
- * events whenever the stage is activated or resized.  This is accomplished by performing the following steps:
- * <ol class="- topic/ol "><li class="- topic/li ">The class constructor first sets the Flash application to be fixed, regardless of the size of
- * the Flash Player window and then adds two event listeners with the
- * <codeph class="+ topic/ph pr-d/codeph ">activateHandler()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">resizeHandler()</codeph> methods.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">activateHandler()</codeph> method runs when the left mouse button is clicked.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">resizeHandler()</codeph> method runs when the stage is resized.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.display.StageAlign;
- * import flash.display.StageScaleMode;
- * import flash.events.Event;
- *
- *   public class StageExample extends Sprite {
- *
- *   public function StageExample() {
- * stage.scaleMode = StageScaleMode.NO_SCALE;
- * stage.align = StageAlign.TOP_LEFT;
- * stage.addEventListener(Event.ACTIVATE, activateHandler);
- * stage.addEventListener(Event.RESIZE, resizeHandler);
- * }
- *
- *   private function activateHandler(event:Event):void {
- * trace("activateHandler: " + event);
- * }
- *
- *   private function resizeHandler(event:Event):void {
- * trace("resizeHandler: " + event);
- * trace("stageWidth: " + stage.stageWidth + " stageHeight: " + stage.stageHeight);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
+using namespace flash::accessibility;
 using namespace flash::display;
+using namespace flash::events;
 using namespace flash::geom;
 using namespace flash::media;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::geom;
-using namespace flash::accessibility;
-using namespace flash::accessibility;
-using namespace flash::events;
 using namespace flash::text;
 using namespace flash::ui;
 
@@ -206,7 +132,78 @@ namespace flash
 {
     namespace display
     {
-        class Stage: public DisplayObjectContainer
+        /**
+         * The Stage class represents the main drawing area.
+         *
+         *   <p class="- topic/p ">For SWF content running in the browser (in
+         * Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player), the Stage represents the entire area where Flash
+         * content is shown. For content running in AIR on desktop operating systems, each NativeWindow object has a corresponding
+         * Stage object.</p><p class="- topic/p ">The Stage object is not globally accessible. You need to access it through the
+         * <codeph class="+ topic/ph pr-d/codeph ">stage</codeph> property of a DisplayObject instance.</p><p class="- topic/p ">The Stage class has several ancestor classes     DisplayObjectContainer, InteractiveObject,
+         * DisplayObject, and EventDispatcher     from which it inherits properties and methods.
+         * Many of these properties and methods are either inapplicable to Stage objects,
+         * or require security checks when called on a Stage object.  The properties and methods that
+         * require security checks are documented as part of the Stage class.</p><p class="- topic/p ">In addition, the following inherited properties are inapplicable to Stage objects. If you
+         * try to set them, an IllegalOperationError is thrown. These properties may always be read, but
+         * since they cannot be set, they will always contain default values.</p><ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">accessibilityProperties</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">alpha</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">blendMode</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">cacheAsBitmap</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">contextMenu</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">filters</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">focusRect</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mask</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">mouseEnabled</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">name</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">opaqueBackground</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">rotation</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scale9Grid</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scaleX</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scaleY</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">scrollRect</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">tabEnabled</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">tabIndex</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">transform</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">visible</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">x</codeph></li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">y</codeph></li></ul><p class="- topic/p ">Some events that you might expect to be a part of the Stage class,
+         * such as <codeph class="+ topic/ph pr-d/codeph ">enterFrame</codeph>, <codeph class="+ topic/ph pr-d/codeph ">exitFrame</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">frameConstructed</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">render</codeph>,
+         * cannot be Stage events because a reference to the Stage object
+         * cannot be guaranteed to exist in every situation where these events
+         * are used. Because these events cannot be dispatched by the Stage
+         * object, they are instead dispatched by every DisplayObject instance,
+         * which means that you can add an event listener to
+         * any DisplayObject instance to listen for these events.
+         * These events, which are part of the DisplayObject class,
+         * are called broadcast events to differentiate them from events
+         * that target a specific DisplayObject instance.
+         * Two other broadcast events, <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph>,
+         * belong to DisplayObject's superclass, EventDispatcher.
+         * The <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph> events
+         * behave similarly to the DisplayObject broadcast events, except
+         * that these two events are dispatched not only by all DisplayObject
+         * instances, but also by all EventDispatcher instances and instances
+         * of other EventDispatcher subclasses.
+         * For more information on broadcast events, see the DisplayObject class.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">StageExample</codeph> class to dispatch
+         * events whenever the stage is activated or resized.  This is accomplished by performing the following steps:
+         * <ol class="- topic/ol "><li class="- topic/li ">The class constructor first sets the Flash application to be fixed, regardless of the size of
+         * the Flash Player window and then adds two event listeners with the
+         * <codeph class="+ topic/ph pr-d/codeph ">activateHandler()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">resizeHandler()</codeph> methods.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">activateHandler()</codeph> method runs when the left mouse button is clicked.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">resizeHandler()</codeph> method runs when the stage is resized.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.display.StageAlign;
+         * import flash.display.StageScaleMode;
+         * import flash.events.Event;
+         *
+         *   public class StageExample extends Sprite {
+         *
+         *   public function StageExample() {
+         * stage.scaleMode = StageScaleMode.NO_SCALE;
+         * stage.align = StageAlign.TOP_LEFT;
+         * stage.addEventListener(Event.ACTIVATE, activateHandler);
+         * stage.addEventListener(Event.RESIZE, resizeHandler);
+         * }
+         *
+         *   private function activateHandler(event:Event):void {
+         * trace("activateHandler: " + event);
+         * }
+         *
+         *   private function resizeHandler(event:Event):void {
+         * trace("resizeHandler: " + event);
+         * trace("stageWidth: " + stage.stageWidth + " stageHeight: " + stage.stageHeight);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class Stage : public DisplayObjectContainer
         {
             /**
              * Gets and sets the frame rate of the stage. The frame rate is defined as frames per second.
@@ -594,10 +591,10 @@ namespace flash
              * @playerversion   AIR 2.5
              */
         public:
-            std::vector<flash::media::StageVideo *> *stageVideos();
+            std::vector<flash::media::StageVideo *> stageVideos();
 
         public:
-            std::vector<Stage3D *> *stage3Ds();
+            std::vector<Stage3D *> stage3Ds();
 
         public:
             unsigned int color();
@@ -1125,7 +1122,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference);
+            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
 
             /**
              * Dispatches an event into the event flow. The event target is the EventDispatcher
@@ -1146,7 +1143,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool     dispatchEvent(Event *event);
+            bool     dispatchEvent(flash::events::Event *event);
 
             /**
              * Checks whether the EventDispatcher object has any listeners registered for a specific type

@@ -9,11 +9,12 @@
  * @playerversion   Flash 11
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextInteractionMode: public Object
+        class TextInteractionMode : public Object
         {
             /**
              * The text field's default interaction mode is NORMAL and it varies across platform.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -84,13 +85,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class BlurFilter: public BitmapFilter
+        class BlurFilter : public flash::filters::BitmapFilter
         {
             /**
              * The amount of horizontal blur. Valid values are from 0 to 255 (floating point). The
@@ -271,7 +273,7 @@ namespace flash
              *   </listing>
              */
         public:
-            BlurFilter(float blurX, float blurY, int quality);
+            BlurFilter(float blurX =4, float blurY =4, int quality=1);
 
             /**
              * Returns a copy of this filter object.

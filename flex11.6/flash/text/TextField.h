@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/display/InteractiveObject.h"
 namespace flash
 {
@@ -73,90 +74,87 @@ namespace flash
  */
 //[Event(name="change",type="flash.events.Event")]
 
-/**
- * The TextField class is used to create display objects for text display and input.
- * <ph outputclass="flexonly" class="- topic/ph ">You can use the TextField class to perform low-level text rendering.
- * However, in Flex, you typically use the Label, Text, TextArea, and TextInput controls to process text.</ph><ph outputclass="flashonly" class="- topic/ph ">You can give a text field an instance name in the Property inspector and
- * use the methods and properties of the TextField class to manipulate it with ActionScript.
- * TextField instance names are displayed in the Movie Explorer and in the Insert Target Path dialog box
- * in the Actions panel.</ph><p class="- topic/p ">To create a text field dynamically, use the <codeph class="+ topic/ph pr-d/codeph ">TextField()</codeph> constructor.</p><p class="- topic/p ">The methods of the TextField class let you set, select, and manipulate text in a dynamic or input
- * text field that you create during authoring or at runtime. </p><p class="- topic/p ">ActionScript provides several ways to
- * format your text at runtime. The TextFormat class lets you set character and paragraph formatting
- * for TextField objects. You can apply Cascading Style Sheets (CSS) styles
- * to text fields by using the <codeph class="+ topic/ph pr-d/codeph ">TextField.styleSheet</codeph> property and the StyleSheet class. You can use CSS to
- * style built-in HTML tags, define new formatting tags, or apply styles.
- * You can assign HTML formatted text, which optionally uses CSS styles, directly to a text
- * field. HTML text that you assign to a text field can contain embedded
- * media (movie clips, SWF files, GIF files, PNG files, and JPEG files). The text wraps around the
- * embedded media in the same way that a web browser wraps text around media embedded in an HTML document. </p><p class="- topic/p ">Flash Player supports a subset of HTML tags that you can use to format text. See the list of supported
- * HTML tags in the description of the <codeph class="+ topic/ph pr-d/codeph ">htmlText</codeph> property.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">TextFieldExample</codeph> class to
- * display a text message.  This is accomplished by using the following steps:
- * <ol class="- topic/ol "><li class="- topic/li ">A <codeph class="+ topic/ph pr-d/codeph ">label</codeph> property of type TextField is created.</li><li class="- topic/li ">The class constructor calls the <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> function.</li><li class="- topic/li "> The <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> method first creates a new TextField object and assigns it to
- * the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> property, and then sets its parameters to the following:
- * <ul class="- topic/ul "><li class="- topic/li ">Left-justify the text field.</li><li class="- topic/li ">Enable the background fill.</li><li class="- topic/li ">Enable the border.</li></ul></li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> method creates the <codeph class="+ topic/ph pr-d/codeph ">format</codeph> variable  and assigns it to
- * a new TextFormat instance with its parameters set to the following:
- * <ul class="- topic/ul "><li class="- topic/li ">Font type = Verdana</li><li class="- topic/li ">Font color = solid red</li><li class="- topic/li ">Font size = 10</li><li class="- topic/li ">Font underline = true</li></ul></li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">defaultTextFormat</codeph> property of the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> text field
- * is set to <codeph class="+ topic/ph pr-d/codeph ">format</codeph>, and the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> instance is added to the display list,
- * which initially displays a text field with no text on the stage.</li><li class="- topic/li ">The constructor sets the text of the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> text field to
- * <codeph class="+ topic/ph pr-d/codeph ">"Hello world and welcome to the show."</codeph> by calling the
- * <codeph class="+ topic/ph pr-d/codeph ">setLabel()</codeph> method.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.text.TextField;
- * import flash.text.TextFieldAutoSize;
- * import flash.text.TextFormat;
- *
- *   public class TextFieldExample extends Sprite {
- * private var label:TextField;
- * private var labelText:String = "Hello world and welcome to the show.";
- *
- *   public function TextFieldExample() {
- * configureLabel();
- * setLabel(labelText);
- * }
- *
- *   public function setLabel(str:String):void {
- * label.text = str;
- * }
- *
- *   private function configureLabel():void {
- * label = new TextField();
- * label.autoSize = TextFieldAutoSize.LEFT;
- * label.background = true;
- * label.border = true;
- *
- *   var format:TextFormat = new TextFormat();
- * format.font = "Verdana";
- * format.color = 0xFF0000;
- * format.size = 10;
- * format.underline = true;
- *
- *   label.defaultTextFormat = format;
- * addChild(label);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::display;
-using namespace flash::text;
-using namespace flash::text;
 using namespace flash::geom;
 using namespace flash::text;
-using namespace flash::display;
 
 namespace flash
 {
     namespace text
     {
-        class TextField: public InteractiveObject
+        /**
+         * The TextField class is used to create display objects for text display and input.
+         * <ph outputclass="flexonly" class="- topic/ph ">You can use the TextField class to perform low-level text rendering.
+         * However, in Flex, you typically use the Label, Text, TextArea, and TextInput controls to process text.</ph><ph outputclass="flashonly" class="- topic/ph ">You can give a text field an instance name in the Property inspector and
+         * use the methods and properties of the TextField class to manipulate it with ActionScript.
+         * TextField instance names are displayed in the Movie Explorer and in the Insert Target Path dialog box
+         * in the Actions panel.</ph><p class="- topic/p ">To create a text field dynamically, use the <codeph class="+ topic/ph pr-d/codeph ">TextField()</codeph> constructor.</p><p class="- topic/p ">The methods of the TextField class let you set, select, and manipulate text in a dynamic or input
+         * text field that you create during authoring or at runtime. </p><p class="- topic/p ">ActionScript provides several ways to
+         * format your text at runtime. The TextFormat class lets you set character and paragraph formatting
+         * for TextField objects. You can apply Cascading Style Sheets (CSS) styles
+         * to text fields by using the <codeph class="+ topic/ph pr-d/codeph ">TextField.styleSheet</codeph> property and the StyleSheet class. You can use CSS to
+         * style built-in HTML tags, define new formatting tags, or apply styles.
+         * You can assign HTML formatted text, which optionally uses CSS styles, directly to a text
+         * field. HTML text that you assign to a text field can contain embedded
+         * media (movie clips, SWF files, GIF files, PNG files, and JPEG files). The text wraps around the
+         * embedded media in the same way that a web browser wraps text around media embedded in an HTML document. </p><p class="- topic/p ">Flash Player supports a subset of HTML tags that you can use to format text. See the list of supported
+         * HTML tags in the description of the <codeph class="+ topic/ph pr-d/codeph ">htmlText</codeph> property.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">TextFieldExample</codeph> class to
+         * display a text message.  This is accomplished by using the following steps:
+         * <ol class="- topic/ol "><li class="- topic/li ">A <codeph class="+ topic/ph pr-d/codeph ">label</codeph> property of type TextField is created.</li><li class="- topic/li ">The class constructor calls the <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> function.</li><li class="- topic/li "> The <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> method first creates a new TextField object and assigns it to
+         * the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> property, and then sets its parameters to the following:
+         * <ul class="- topic/ul "><li class="- topic/li ">Left-justify the text field.</li><li class="- topic/li ">Enable the background fill.</li><li class="- topic/li ">Enable the border.</li></ul></li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">configureLabel()</codeph> method creates the <codeph class="+ topic/ph pr-d/codeph ">format</codeph> variable  and assigns it to
+         * a new TextFormat instance with its parameters set to the following:
+         * <ul class="- topic/ul "><li class="- topic/li ">Font type = Verdana</li><li class="- topic/li ">Font color = solid red</li><li class="- topic/li ">Font size = 10</li><li class="- topic/li ">Font underline = true</li></ul></li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">defaultTextFormat</codeph> property of the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> text field
+         * is set to <codeph class="+ topic/ph pr-d/codeph ">format</codeph>, and the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> instance is added to the display list,
+         * which initially displays a text field with no text on the stage.</li><li class="- topic/li ">The constructor sets the text of the <codeph class="+ topic/ph pr-d/codeph ">label</codeph> text field to
+         * <codeph class="+ topic/ph pr-d/codeph ">"Hello world and welcome to the show."</codeph> by calling the
+         * <codeph class="+ topic/ph pr-d/codeph ">setLabel()</codeph> method.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.text.TextField;
+         * import flash.text.TextFieldAutoSize;
+         * import flash.text.TextFormat;
+         *
+         *   public class TextFieldExample extends Sprite {
+         * private var label:TextField;
+         * private var labelText:String = "Hello world and welcome to the show.";
+         *
+         *   public function TextFieldExample() {
+         * configureLabel();
+         * setLabel(labelText);
+         * }
+         *
+         *   public function setLabel(str:String):void {
+         * label.text = str;
+         * }
+         *
+         *   private function configureLabel():void {
+         * label = new TextField();
+         * label.autoSize = TextFieldAutoSize.LEFT;
+         * label.background = true;
+         * label.border = true;
+         *
+         *   var format:TextFormat = new TextFormat();
+         * format.font = "Verdana";
+         * format.color = 0xFF0000;
+         * format.size = 10;
+         * format.underline = true;
+         *
+         *   label.defaultTextFormat = format;
+         * addChild(label);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class TextField : public flash::display::InteractiveObject
         {
             /**
              * When set to true and the text field is not in focus, Flash Player highlights the
@@ -1262,19 +1260,19 @@ namespace flash
              * @throws  RangeError The beginIndex or endIndex specified is out of range.
              */
         public:
-            flash::text::TextFormat *getTextFormat(int beginIndex, int endIndex);
+            flash::text::TextFormat *getTextFormat(int beginIndex=-1, int endIndex=-1);
 
         public:
-            std::vector<void *> getTextRuns(int beginIndex, int endIndex);
+            std::vector<void *> getTextRuns(int beginIndex=0, int endIndex=2147483647);
 
         public:
             std::string getRawText();
 
         public:
-            std::string getXMLText(int beginIndex, int endIndex);
+            std::string getXMLText(int beginIndex=0, int endIndex=2147483647);
 
         public:
-            void     insertXMLText(int beginIndex, int endIndex, std::string richText, bool pasting);
+            void     insertXMLText(int beginIndex, int endIndex, std::string richText, bool pasting   =false);
 
             bool     pasteRichText(std::string richText);
 
@@ -1371,7 +1369,7 @@ namespace flash
              * @throws  RangeError The beginIndex or endIndex specified is out of range.
              */
         public:
-            void     setTextFormat(TextFormat *format, int beginIndex, int endIndex);
+            void     setTextFormat(TextFormat *format, int beginIndex=-1, int endIndex=-1);
 
             /**
              * Returns a DisplayObject reference for the given id, for an image or SWF file

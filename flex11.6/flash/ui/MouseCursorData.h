@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -94,6 +95,7 @@ namespace flash
  * @playerversion   Flash 10.2
  * @playerversion   AIR 2.6
  */
+
 using namespace flash::display;
 using namespace flash::geom;
 
@@ -101,7 +103,7 @@ namespace flash
 {
     namespace ui
     {
-        class MouseCursorData: public Object
+        class MouseCursorData : public Object
         {
             /**
              * A Vector of BitmapData objects containing the cursor image or images.
@@ -113,9 +115,9 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            std::vector<flash::display::BitmapData *> *data();
+            std::vector<flash::display::BitmapData *> data();
         public:
-            void         data(std::vector<BitmapData *> *data);
+            void         data(std::vector<BitmapData *> data);
 
             /**
              * The hot spot of the cursor in pixels.

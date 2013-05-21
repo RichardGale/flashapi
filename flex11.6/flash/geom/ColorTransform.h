@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -72,11 +73,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace geom
     {
-        class ColorTransform: public Object
+        class ColorTransform : public Object
         {
             /**
              * A decimal value that is multiplied with the red channel value.
@@ -413,7 +415,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ColorTransform(float redMultiplier, float greenMultiplier, float blueMultiplier, float alphaMultiplier, float redOffset, float greenOffset, float blueOffset, float alphaOffset);
+            ColorTransform(float redMultiplier =1, float greenMultiplier =1, float blueMultiplier =1, float alphaMultiplier =1, float redOffset =0, float greenOffset =0, float blueOffset =0, float alphaOffset =0);
 
             /**
              * Concatenates the ColorTranform object specified by the second parameter

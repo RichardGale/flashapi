@@ -184,11 +184,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace accessibility
     {
-        class AccessibilityProperties: public Object
+        class AccessibilityProperties : public Object
         {
             /**
              * Provides a name for this display object in the accessible presentation.

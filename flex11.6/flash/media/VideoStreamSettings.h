@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class VideoStreamSettings: public Object
+        class VideoStreamSettings : public Object
         {
         public:
             int          width();

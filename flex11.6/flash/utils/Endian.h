@@ -20,11 +20,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace utils
     {
-        class Endian: public Object
+        class Endian : public Object
         {
             /**
              * Indicates the most significant byte of the multibyte number appears first in the sequence of bytes.

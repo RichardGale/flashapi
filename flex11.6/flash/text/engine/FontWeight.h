@@ -11,13 +11,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class FontWeight: public Object
+            class FontWeight : public Object
             {
                 /**
                  * Used to indicate normal font weight.

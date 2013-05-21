@@ -10,7 +10,7 @@ namespace flash
     {
         namespace drm
         {
-            class AddToDeviceGroupSetting: public Object
+            class AddToDeviceGroupSetting : public Object
             {
             public:
                 static const std::string FORCE_REFRESH;

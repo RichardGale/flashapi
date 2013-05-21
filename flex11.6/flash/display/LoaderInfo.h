@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 namespace flash
@@ -93,93 +94,90 @@ namespace flash
  */
 //[Event(name="complete",type="flash.events.Event")]
 
-/**
- * The LoaderInfo class provides information about a loaded SWF file or a loaded image file
- * (JPEG, GIF, or PNG).  LoaderInfo objects are available for any display object.
- * The information provided includes load progress, the URLs of the loader and
- * loaded content, the number of bytes total for the media, and the nominal height and width of the
- * media.
- *
- *   <p class="- topic/p ">You can access LoaderInfo objects in two ways: </p><ul class="- topic/ul "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a flash.display.Loader object
- * The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property is always available for any Loader object.
- * For a Loader object that has not called the <codeph class="+ topic/ph pr-d/codeph ">load()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">loadBytes()</codeph>
- * method, or that has not sufficiently loaded, attempting to access many of the properties of the
- * <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property throws an error.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of a display object. </li></ul><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a Loader object provides information about
- * the content that the Loader object is loading, whereas the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of
- * a DisplayObject provides information about the root SWF file for that display object. </p><p class="- topic/p ">When you use a Loader object to load a display object (such as a SWF file or a bitmap), the
- * <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of the display object is the same as the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph>
- * property of the Loader object (<codeph class="+ topic/ph pr-d/codeph ">DisplayObject.loaderInfo = Loader.contentLoaderInfo</codeph>).
- * Because the instance of the main class of the SWF file has
- * no Loader object, the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property is the only way to
- * access the LoaderInfo for the instance of the main class of the SWF file.</p><p class="- topic/p ">The following diagram shows the different uses of the LoaderInfo object   for the instance of the main class of
- * the SWF file, for the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a Loader object, and for the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph>
- * property of a loaded object:</p><p class="- topic/p "><adobeimage alt="An image of different LoaderInfo situations" href="../../images/loaderInfo_object.jpg" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><p class="- topic/p ">When a loading operation is not complete, some properties of the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph>
- * property of a Loader object are not available.  You can obtain some properties, such as
- * <codeph class="+ topic/ph pr-d/codeph ">bytesLoaded</codeph>, <codeph class="+ topic/ph pr-d/codeph ">bytesTotal</codeph>, <codeph class="+ topic/ph pr-d/codeph ">url</codeph>, <codeph class="+ topic/ph pr-d/codeph ">loaderURL</codeph>,
- * and <codeph class="+ topic/ph pr-d/codeph ">applicationDomain</codeph>. When the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> object dispatches the
- * <codeph class="+ topic/ph pr-d/codeph ">init</codeph> event, you can access all properties of the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> object and
- * the loaded image or SWF file.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> All properties of LoaderInfo objects are read-only.</p><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.dispatchEvent()</codeph> method
- *
- *   is not applicable to LoaderInfo objects. If you call <codeph class="+ topic/ph pr-d/codeph ">dispatchEvent()</codeph>
- * on a LoaderInfo object, an IllegalOperationError exception is thrown.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the LoaderInfoExample class to display an image on
- * the stage.  This is accomplished by performing the following steps:
- * <ol class="- topic/ol "><li class="- topic/li ">A property <codeph class="+ topic/ph pr-d/codeph ">url</codeph> is created, which is the location and name of the image.</li><li class="- topic/li ">The class constructor creates a Loader object named <codeph class="+ topic/ph pr-d/codeph ">loader</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object instantiates an event listener to ensure that the image loads properly.</li><li class="- topic/li ">The constructor creates a new instance of a URLRequest object, <codeph class="+ topic/ph pr-d/codeph ">request</codeph>,
- * with <codeph class="+ topic/ph pr-d/codeph ">url</codeph> passed so that the file name and location are known.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">request</codeph> object is then passed to the <codeph class="+ topic/ph pr-d/codeph ">load()</codeph> method of the
- * <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object, which loads the image onto the display list.</li></ol><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Important:</b> This example requires that you add a file named Image.gif in the same directory
- * as the compiled SWF file. Use an image that has an area that fits within the dimensions of the main SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Loader;
- * import flash.display.LoaderInfo;
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.net.URLRequest;
- *
- *   public class LoaderInfoExample extends Sprite {
- * private var url:String = "Image.gif";
- *
- *   public function LoaderInfoExample() {
- * var loader:Loader = new Loader();
- * loader.contentLoaderInfo.addEventListener(Event.INIT, initHandler);
- * loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * var request:URLRequest = new URLRequest(url);
- * loader.load(request);
- * addChild(loader);
- * }
- *
- *   private function initHandler(event:Event):void {
- * var loader:Loader = Loader(event.target.loader);
- * var info:LoaderInfo = LoaderInfo(loader.contentLoaderInfo);
- * trace("initHandler: loaderURL=" + info.loaderURL + " url=" + info.url);
- * }
- *
- *   private function ioErrorHandler(event:IOErrorEvent):void {
- * trace("ioErrorHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- * @internal    Update the places LoaderInfo can be obtained from (playerglobal.as) and double-check loader vs. loadee.
- */
+using namespace flash::display;
 using namespace flash::events;
 using namespace flash::system;
-using namespace flash::events;
-using namespace flash::display;
-using namespace flash::display;
 using namespace flash::utils;
-using namespace flash::events;
 
 namespace flash
 {
     namespace display
     {
-        class LoaderInfo: public EventDispatcher
+        /**
+         * The LoaderInfo class provides information about a loaded SWF file or a loaded image file
+         * (JPEG, GIF, or PNG).  LoaderInfo objects are available for any display object.
+         * The information provided includes load progress, the URLs of the loader and
+         * loaded content, the number of bytes total for the media, and the nominal height and width of the
+         * media.
+         *
+         *   <p class="- topic/p ">You can access LoaderInfo objects in two ways: </p><ul class="- topic/ul "><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a flash.display.Loader object
+         * The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property is always available for any Loader object.
+         * For a Loader object that has not called the <codeph class="+ topic/ph pr-d/codeph ">load()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">loadBytes()</codeph>
+         * method, or that has not sufficiently loaded, attempting to access many of the properties of the
+         * <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property throws an error.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of a display object. </li></ul><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a Loader object provides information about
+         * the content that the Loader object is loading, whereas the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of
+         * a DisplayObject provides information about the root SWF file for that display object. </p><p class="- topic/p ">When you use a Loader object to load a display object (such as a SWF file or a bitmap), the
+         * <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property of the display object is the same as the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph>
+         * property of the Loader object (<codeph class="+ topic/ph pr-d/codeph ">DisplayObject.loaderInfo = Loader.contentLoaderInfo</codeph>).
+         * Because the instance of the main class of the SWF file has
+         * no Loader object, the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> property is the only way to
+         * access the LoaderInfo for the instance of the main class of the SWF file.</p><p class="- topic/p ">The following diagram shows the different uses of the LoaderInfo object   for the instance of the main class of
+         * the SWF file, for the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph> property of a Loader object, and for the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph>
+         * property of a loaded object:</p><p class="- topic/p "><adobeimage alt="An image of different LoaderInfo situations" href="../../images/loaderInfo_object.jpg" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><p class="- topic/p ">When a loading operation is not complete, some properties of the <codeph class="+ topic/ph pr-d/codeph ">contentLoaderInfo</codeph>
+         * property of a Loader object are not available.  You can obtain some properties, such as
+         * <codeph class="+ topic/ph pr-d/codeph ">bytesLoaded</codeph>, <codeph class="+ topic/ph pr-d/codeph ">bytesTotal</codeph>, <codeph class="+ topic/ph pr-d/codeph ">url</codeph>, <codeph class="+ topic/ph pr-d/codeph ">loaderURL</codeph>,
+         * and <codeph class="+ topic/ph pr-d/codeph ">applicationDomain</codeph>. When the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> object dispatches the
+         * <codeph class="+ topic/ph pr-d/codeph ">init</codeph> event, you can access all properties of the <codeph class="+ topic/ph pr-d/codeph ">loaderInfo</codeph> object and
+         * the loaded image or SWF file.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> All properties of LoaderInfo objects are read-only.</p><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.dispatchEvent()</codeph> method
+         *
+         *   is not applicable to LoaderInfo objects. If you call <codeph class="+ topic/ph pr-d/codeph ">dispatchEvent()</codeph>
+         * on a LoaderInfo object, an IllegalOperationError exception is thrown.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the LoaderInfoExample class to display an image on
+         * the stage.  This is accomplished by performing the following steps:
+         * <ol class="- topic/ol "><li class="- topic/li ">A property <codeph class="+ topic/ph pr-d/codeph ">url</codeph> is created, which is the location and name of the image.</li><li class="- topic/li ">The class constructor creates a Loader object named <codeph class="+ topic/ph pr-d/codeph ">loader</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object instantiates an event listener to ensure that the image loads properly.</li><li class="- topic/li ">The constructor creates a new instance of a URLRequest object, <codeph class="+ topic/ph pr-d/codeph ">request</codeph>,
+         * with <codeph class="+ topic/ph pr-d/codeph ">url</codeph> passed so that the file name and location are known.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">request</codeph> object is then passed to the <codeph class="+ topic/ph pr-d/codeph ">load()</codeph> method of the
+         * <codeph class="+ topic/ph pr-d/codeph ">loader</codeph> object, which loads the image onto the display list.</li></ol><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Important:</b> This example requires that you add a file named Image.gif in the same directory
+         * as the compiled SWF file. Use an image that has an area that fits within the dimensions of the main SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Loader;
+         * import flash.display.LoaderInfo;
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.net.URLRequest;
+         *
+         *   public class LoaderInfoExample extends Sprite {
+         * private var url:String = "Image.gif";
+         *
+         *   public function LoaderInfoExample() {
+         * var loader:Loader = new Loader();
+         * loader.contentLoaderInfo.addEventListener(Event.INIT, initHandler);
+         * loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * var request:URLRequest = new URLRequest(url);
+         * loader.load(request);
+         * addChild(loader);
+         * }
+         *
+         *   private function initHandler(event:Event):void {
+         * var loader:Loader = Loader(event.target.loader);
+         * var info:LoaderInfo = LoaderInfo(loader.contentLoaderInfo);
+         * trace("initHandler: loaderURL=" + info.loaderURL + " url=" + info.url);
+         * }
+         *
+         *   private function ioErrorHandler(event:IOErrorEvent):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         * @internal    Update the places LoaderInfo can be obtained from (playerglobal.as) and double-check loader vs. loadee.
+         */
+        class LoaderInfo : public flash::events::EventDispatcher
         {
             /**
              * The URL of the SWF file that initiated the loading of the media

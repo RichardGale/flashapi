@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -12,14 +13,14 @@ namespace flash
     }
 }
 
-using namespace flash::events;
 using namespace flash::display3D;
+using namespace flash::events;
 
 namespace flash
 {
     namespace display
     {
-        class Stage3D: public EventDispatcher
+        class Stage3D : public flash::events::EventDispatcher
         {
         public:
             Context3D   *context3D();
@@ -40,7 +41,7 @@ namespace flash
             void         visible(bool value);
 
         public:
-            void     requestContext3D(std::string context3DRenderMode, std::string profile);
+            void     requestContext3D(std::string context3DRenderMode="auto", std::string profile="baseline");
 
         public:
             Stage3D();

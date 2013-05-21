@@ -8,7 +8,7 @@ namespace flash
 {
     namespace media
     {
-        class AudioDecoder: public Object
+        class AudioDecoder : public Object
         {
         public:
             static const std::string DOLBY_DIGITAL;

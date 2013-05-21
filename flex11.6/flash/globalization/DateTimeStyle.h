@@ -17,11 +17,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class DateTimeStyle: public Object
+        class DateTimeStyle : public Object
         {
             /**
              * Specifies that a custom pattern string is used to specify the date or time style.

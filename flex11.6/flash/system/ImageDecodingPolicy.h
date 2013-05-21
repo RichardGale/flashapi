@@ -10,11 +10,12 @@
  * @playerversion   AIR 2.6
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class ImageDecodingPolicy: public Object
+        class ImageDecodingPolicy : public Object
         {
             /**
              * Specifies that the image being loaded will not be decoded until needed.

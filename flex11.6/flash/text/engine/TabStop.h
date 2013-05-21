@@ -72,13 +72,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TabStop: public Object
+            class TabStop : public Object
             {
                 /**
                  * Specifies the tab alignment for this tab stop. Use the constants in the TabAlignment class to
@@ -144,7 +145,7 @@ namespace flash
                  * @throws  ArgumentError The alignment specified is not a member of TabAlignment.
                  */
             public:
-                TabStop(std::string alignment, float position, std::string decimalAlignmentToken);
+                TabStop(std::string alignment="start", float position =0, std::string decimalAlignmentToken="");
             };
         }
     }

@@ -9,11 +9,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class AntiAliasType: public Object
+        class AntiAliasType : public Object
         {
             /**
              * Sets anti-aliasing to the anti-aliasing that is used in Flash Player 7 and earlier.

@@ -13,11 +13,12 @@
  * @playerversion   AIR (unsupported)
  */
 
+
 namespace flash
 {
     namespace events
     {
-        class VideoEvent: public Event
+        class VideoEvent : public Event
         {
             /**
              * Defines the value of the type property of a renderState event object.
@@ -78,7 +79,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            VideoEvent(std::string type, bool bubbles, bool cancelable, std::string status);
+            VideoEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string status="");
         };
     }
 }

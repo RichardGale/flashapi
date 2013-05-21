@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsFill.h"
 #include "IGraphicsData.h"
 namespace flash
@@ -31,8 +32,7 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 using namespace flash::display;
 using namespace flash::geom;
 
@@ -40,7 +40,7 @@ namespace flash
 {
     namespace display
     {
-        class GraphicsBitmapFill: public Object, public IGraphicsFill,, public IGraphicsData
+        class GraphicsBitmapFill : public Object, public private::IGraphicsFill, public private::IGraphicsData
         {
             /**
              * A transparent or opaque bitmap image.
@@ -115,7 +115,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsBitmapFill(BitmapData *bitmapData, Matrix *matrix, bool repeat, bool smooth);
+            GraphicsBitmapFill(BitmapData *bitmapData=NULL, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
         };
     }
 }

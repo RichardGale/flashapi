@@ -8,7 +8,7 @@ namespace flash
 {
     namespace concurrent
     {
-        class Mutex: public Object
+        class Mutex : public Object
         {
         public:
             static bool         isSupported();

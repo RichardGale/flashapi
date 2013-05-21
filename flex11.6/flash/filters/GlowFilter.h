@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/filters/BitmapFilter.h"
 
 /**
@@ -100,13 +101,14 @@
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::filters;
 
 namespace flash
 {
     namespace filters
     {
-        class GlowFilter: public BitmapFilter
+        class GlowFilter : public flash::filters::BitmapFilter
         {
             /**
              * The color of the glow. Valid values are in the hexadecimal format
@@ -526,7 +528,7 @@ namespace flash
              *   </listing>
              */
         public:
-            GlowFilter(unsigned int color, float alpha, float blurX, float blurY, float strength, int quality, bool inner, bool knockout);
+            GlowFilter(unsigned int color=16711680, float alpha =1, float blurX =6, float blurY =6, float strength =2, int quality=1, bool inner   =false, bool knockout   =false);
 
             /**
              * Returns a copy of this filter object.

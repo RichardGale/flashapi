@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -77,11 +78,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace filters
     {
-        class BitmapFilter: public Object
+        class BitmapFilter : public Object
         {
         public:
             BitmapFilter();

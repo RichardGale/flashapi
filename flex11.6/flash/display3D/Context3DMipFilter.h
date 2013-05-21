@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DMipFilter: public Object
+        class Context3DMipFilter : public Object
         {
         public:
             static const std::string MIPNONE;

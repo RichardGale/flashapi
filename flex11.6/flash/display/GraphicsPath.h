@@ -15,11 +15,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class GraphicsPath: public Object, public IGraphicsPath,, public IGraphicsData
+        class GraphicsPath : public Object, public IGraphicsPath, public IGraphicsData
         {
             /**
              * The Vector of drawing commands as integers representing the path. Each command can be one of the values defined
@@ -29,7 +30,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<int> *commands;
+            std::vector<int> commands;
 
             /**
              * The Vector of Numbers containing the parameters used with the drawing commands.
@@ -38,7 +39,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<float> *data;
+            std::vector<float> data;
 
             /**
              * Specifies the winding rule using a value defined in the GraphicsPathWinding class.
@@ -61,7 +62,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsPath(std::vector<int> *commands, std::vector<float> *data, std::string winding);
+            GraphicsPath(std::vector<int> commands=std::vector<int>(), std::vector<float> data=std::vector<float>(), std::string winding="evenOdd");
 
             /**
              * Adds a new "moveTo" command to the commands vector and

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -76,6 +77,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::utils;
 
 namespace flash
@@ -93,8 +95,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual unsigned int bytesAvailable() = 0;
+             */virtual
+            unsigned int bytesAvailable() = 0;
 
             /**
              * Used to determine whether the AMF3 or AMF0 format is used when writing or reading binary data using the
@@ -103,8 +105,10 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual unsigned int objectEncoding() = 0;
-            virtual void objectEncoding(unsigned int version) = 0;
+            virtual
+            unsigned int objectEncoding() = 0;
+            virtual
+            void         objectEncoding(unsigned int version) = 0;
 
             /**
              * The byte order for the data, either the BIG_ENDIAN or LITTLE_ENDIAN constant
@@ -113,8 +117,10 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual std::string endian() = 0;
-            virtual void endian(std::string type) = 0;
+            virtual
+            std::string  endian() = 0;
+            virtual
+            void         endian(std::string type) = 0;
 
             /**
              * Reads the number of data bytes, specified by the length parameter,
@@ -133,7 +139,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual void readBytes(ByteArray *bytes, unsigned int offset, unsigned int length) = 0;
+            virtual
+            void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0) = 0;
 
             /**
              * Reads a Boolean value from the file stream, byte stream, or byte array. A single byte is read
@@ -147,7 +154,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual bool readBoolean() = 0;
+            virtual
+            bool     readBoolean() = 0;
 
             /**
              * Reads a signed byte from the file stream, byte stream, or byte array.
@@ -158,7 +166,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual int readByte() = 0;
+            virtual
+            int      readByte() = 0;
 
             /**
              * Reads an unsigned byte from the file stream, byte stream, or byte array.
@@ -169,7 +178,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual unsigned int readUnsignedByte() = 0;
+            virtual
+            unsigned int readUnsignedByte() = 0;
 
             /**
              * Reads a signed 16-bit integer from the file stream, byte stream, or byte array.
@@ -180,7 +190,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual int readShort() = 0;
+            virtual
+            int      readShort() = 0;
 
             /**
              * Reads an unsigned 16-bit integer from the file stream, byte stream, or byte array.
@@ -191,7 +202,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual unsigned int readUnsignedShort() = 0;
+            virtual
+            unsigned int readUnsignedShort() = 0;
 
             /**
              * Reads a signed 32-bit integer from the file stream, byte stream, or byte array.
@@ -202,7 +214,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual int readInt() = 0;
+            virtual
+            int      readInt() = 0;
 
             /**
              * Reads an unsigned 32-bit integer from the file stream, byte stream, or byte array.
@@ -213,7 +226,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual unsigned int readUnsignedInt() = 0;
+            virtual
+            unsigned int readUnsignedInt() = 0;
 
             /**
              * Reads an IEEE 754 single-precision floating point number from the file stream, byte stream, or byte array.
@@ -224,7 +238,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual float readFloat() = 0;
+            virtual
+            float    readFloat() = 0;
 
             /**
              * Reads an IEEE 754 double-precision floating point number from the file stream, byte stream, or byte array.
@@ -235,7 +250,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual float readDouble() = 0;
+            virtual
+            float    readDouble() = 0;
 
             /**
              * Reads a multibyte string of specified length from the file stream, byte stream, or byte array using the
@@ -261,7 +277,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual std::string readMultiByte(unsigned int length, std::string charSet) = 0;
+            virtual
+            std::string readMultiByte(unsigned int length, std::string charSet) = 0;
 
             /**
              * Reads a UTF-8 string from the file stream, byte stream, or byte array.  The string
@@ -277,7 +294,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual std::string readUTF() = 0;
+            virtual
+            std::string readUTF() = 0;
 
             /**
              * Reads a sequence of UTF-8 bytes from the byte stream or byte array and returns a string.
@@ -289,7 +307,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual std::string readUTFBytes(unsigned int length) = 0;
+            virtual
+            std::string readUTFBytes(unsigned int length) = 0;
 
             /**
              * Reads an object from the file stream, byte stream, or byte array, encoded in AMF
@@ -301,7 +320,8 @@ namespace flash
              * @throws  EOFError There is not sufficient data available
              *   to read.
              */
-            virtual void *readObject() = 0;
+            virtual
+            void    *readObject() = 0;
         };
     }
 }

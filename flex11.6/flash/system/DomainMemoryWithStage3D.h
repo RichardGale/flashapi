@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -18,14 +19,14 @@ namespace flash
     }
 }
 
-using namespace flash::system;
 using namespace flash::events;
+using namespace flash::system;
 
 namespace flash
 {
     namespace system
     {
-        class DomainMemoryWithStage3D: public Object
+        class DomainMemoryWithStage3D : public Object
         {
         public:
             DomainMemoryWithStage3D();

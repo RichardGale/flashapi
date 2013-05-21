@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -19,7 +20,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMAuthenticationContext: public DRMManagerSession
+            class DRMAuthenticationContext : public DRMManagerSession
             {
             public:
                 ByteArray   *authenticationToken();

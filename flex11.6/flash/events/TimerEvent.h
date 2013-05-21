@@ -3,54 +3,58 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.TimerEvent.TIMER_COMPLETE
 //[Event(name="timerComplete",type="flash.events.TimerEvent")]
 
 
-//[Event(name="timer",type="flash.events.TimerEvent")]/// @eventType  flash.events.TimerEvent.TIMER
+//[Event(name="timer",type="flash.events.TimerEvent")]
 
-/**
- * A Timer object dispatches a TimerEvent objects whenever the Timer object reaches the interval
- * specified by the <codeph class="+ topic/ph pr-d/codeph ">Timer.delay</codeph> property.
- *
- *   EXAMPLE:
- *
- *   The following example uses the TimerExample class to show how a
- * listener method <codeph class="+ topic/ph pr-d/codeph ">timerHandler()</codeph> can be instantiated and set to listen for a new TimerEvent
- * to be dispatched, which happens when the Timer's <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method is called.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.utils.Timer;
- * import flash.events.TimerEvent;
- * import flash.display.Sprite;
- *
- *   public class TimerEventExample extends Sprite {
- *
- *   public function TimerEventExample() {
- * var myTimer:Timer = new Timer(1000, 2);
- * myTimer.addEventListener(TimerEvent.TIMER, timerHandler);
- * myTimer.start();
- * }
- *
- *   public function timerHandler(event:TimerEvent):void {
- * trace("timerHandler: " + event);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class TimerEvent: public Event
+        /// @eventType  flash.events.TimerEvent.TIMER
+
+
+        /**
+         * A Timer object dispatches a TimerEvent objects whenever the Timer object reaches the interval
+         * specified by the <codeph class="+ topic/ph pr-d/codeph ">Timer.delay</codeph> property.
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the TimerExample class to show how a
+         * listener method <codeph class="+ topic/ph pr-d/codeph ">timerHandler()</codeph> can be instantiated and set to listen for a new TimerEvent
+         * to be dispatched, which happens when the Timer's <codeph class="+ topic/ph pr-d/codeph ">start()</codeph> method is called.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.utils.Timer;
+         * import flash.events.TimerEvent;
+         * import flash.display.Sprite;
+         *
+         *   public class TimerEventExample extends Sprite {
+         *
+         *   public function TimerEventExample() {
+         * var myTimer:Timer = new Timer(1000, 2);
+         * myTimer.addEventListener(TimerEvent.TIMER, timerHandler);
+         * myTimer.start();
+         * }
+         *
+         *   public function timerHandler(event:TimerEvent):void {
+         * trace("timerHandler: " + event);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class TimerEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a timer event object.
@@ -95,7 +99,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TimerEvent(std::string type, bool bubbles, bool cancelable);
+            TimerEvent(std::string type, bool bubbles   =false, bool cancelable   =false);
 
             /**
              * Returns a string that contains all the properties of the TimerEvent object. The string is in the following format:

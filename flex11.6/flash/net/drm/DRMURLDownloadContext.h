@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -48,10 +49,6 @@ namespace flash
 }
 
 using namespace flash::events;
-using namespace flash::utils;
-using namespace flash::net;
-using namespace flash::events;
-using namespace flash::events;
 using namespace flash::net;
 using namespace flash::utils;
 
@@ -61,7 +58,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMURLDownloadContext: public EventDispatcher
+            class DRMURLDownloadContext : public flash::events::EventDispatcher
             {
             public:
                 DRMURLDownloadContext();

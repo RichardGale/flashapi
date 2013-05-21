@@ -3,92 +3,93 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.NetStatusEvent.NET_STATUS
 //[Event(name="netStatus",type="flash.events.NetStatusEvent")]
 
-/**
- * A NetConnection, NetStream, or SharedObject object dispatches NetStatusEvent objects when a it reports its status.
- * There is only one type of status event: <codeph class="+ topic/ph pr-d/codeph ">NetStatusEvent.NET_STATUS</codeph>.
- *
- *   EXAMPLE:
- *
- *   The following example uses a Video object with the NetConnection and
- * NetStream classes to load and play an FLV file.
- * <p class="- topic/p ">In this example, the <codeph class="+ topic/ph pr-d/codeph ">netStatusHandler</codeph> method is registered as a listener for
- * the NetStatusEvent event <codeph class="+ topic/ph pr-d/codeph ">NetConnection.netStatus</codeph>.
- * When the status (success or failure) of the <codeph class="+ topic/ph pr-d/codeph ">NetConnection.connect()</codeph> attempt
- * is determined, the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event triggers this method. If the
- * attempt to connect to the NetConnection object is successful (in other words,
- * if the <codeph class="+ topic/ph pr-d/codeph ">info</codeph> property of the NetStatusEvent object dispatched by the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph>
- * event has a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property that indicates success), the code creates the Video and NetStream
- * objects and calls the <codeph class="+ topic/ph pr-d/codeph ">Video.attachNetStream()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> methods.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run this example, you need an FLV file
- * whose name and location match the variable passed to <codeph class="+ topic/ph pr-d/codeph ">videoURL</codeph>;
- * in this case, an FLV file called Video.flv that is in the same directory as the SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.media.Video;
- * import flash.net.NetConnection;
- * import flash.net.NetStream;
- *
- *   public class NetStatusEventExample extends Sprite {
- * private var videoURL:String = "Video.flv";
- * private var connection:NetConnection;
- * private var stream:NetStream;
- *
- *   public function NetStatusEventExample() {
- * connection = new NetConnection();
- * connection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * connection.connect(null);
- * }
- *
- *   private function netStatusHandler(event:NetStatusEvent):void {
- * switch (event.info.code) {
- * case "NetConnection.Connect.Success":
- * connectStream();
- * break;
- * case "NetStream.Play.StreamNotFound":
- * trace("Unable to locate video: " + videoURL);
- * break;
- * }
- * }
- *
- *   private function connectStream():void {
- * var stream:NetStream = new NetStream(connection);
- * stream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * stream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
- * var video:Video = new Video();
- * video.attachNetStream(stream);
- * stream.play(videoURL);
- * addChild(video);
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
- * // ignore AsyncErrorEvent events.
- * }
- *
- *   }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class NetStatusEvent: public Event
+        /**
+         * A NetConnection, NetStream, or SharedObject object dispatches NetStatusEvent objects when a it reports its status.
+         * There is only one type of status event: <codeph class="+ topic/ph pr-d/codeph ">NetStatusEvent.NET_STATUS</codeph>.
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses a Video object with the NetConnection and
+         * NetStream classes to load and play an FLV file.
+         * <p class="- topic/p ">In this example, the <codeph class="+ topic/ph pr-d/codeph ">netStatusHandler</codeph> method is registered as a listener for
+         * the NetStatusEvent event <codeph class="+ topic/ph pr-d/codeph ">NetConnection.netStatus</codeph>.
+         * When the status (success or failure) of the <codeph class="+ topic/ph pr-d/codeph ">NetConnection.connect()</codeph> attempt
+         * is determined, the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph> event triggers this method. If the
+         * attempt to connect to the NetConnection object is successful (in other words,
+         * if the <codeph class="+ topic/ph pr-d/codeph ">info</codeph> property of the NetStatusEvent object dispatched by the <codeph class="+ topic/ph pr-d/codeph ">netStatus</codeph>
+         * event has a <codeph class="+ topic/ph pr-d/codeph ">code</codeph> property that indicates success), the code creates the Video and NetStream
+         * objects and calls the <codeph class="+ topic/ph pr-d/codeph ">Video.attachNetStream()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">NetStream.play()</codeph> methods.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run this example, you need an FLV file
+         * whose name and location match the variable passed to <codeph class="+ topic/ph pr-d/codeph ">videoURL</codeph>;
+         * in this case, an FLV file called Video.flv that is in the same directory as the SWF file.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.media.Video;
+         * import flash.net.NetConnection;
+         * import flash.net.NetStream;
+         *
+         *   public class NetStatusEventExample extends Sprite {
+         * private var videoURL:String = "Video.flv";
+         * private var connection:NetConnection;
+         * private var stream:NetStream;
+         *
+         *   public function NetStatusEventExample() {
+         * connection = new NetConnection();
+         * connection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * connection.connect(null);
+         * }
+         *
+         *   private function netStatusHandler(event:NetStatusEvent):void {
+         * switch (event.info.code) {
+         * case "NetConnection.Connect.Success":
+         * connectStream();
+         * break;
+         * case "NetStream.Play.StreamNotFound":
+         * trace("Unable to locate video: " + videoURL);
+         * break;
+         * }
+         * }
+         *
+         *   private function connectStream():void {
+         * var stream:NetStream = new NetStream(connection);
+         * stream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * stream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
+         * var video:Video = new Video();
+         * video.attachNetStream(stream);
+         * stream.play(videoURL);
+         * addChild(video);
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
+         * // ignore AsyncErrorEvent events.
+         * }
+         *
+         *   }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class NetStatusEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a netStatus event object.
@@ -161,7 +162,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            NetStatusEvent(std::string type, bool bubbles, bool cancelable, Object *info);
+            NetStatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, Object *info=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetStatusEvent object. The string is in the following format:

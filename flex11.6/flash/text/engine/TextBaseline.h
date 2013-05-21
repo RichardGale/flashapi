@@ -20,13 +20,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TextBaseline: public Object
+            class TextBaseline : public Object
             {
                 /**
                  * Specifies a roman baseline.

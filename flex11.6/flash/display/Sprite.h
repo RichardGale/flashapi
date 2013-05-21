@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -24,6 +25,7 @@ namespace flash
         class DisplayObject;
     }
 }
+#include "flash/display/DisplayObjectContainer.h"
 
 namespace flash
 {
@@ -112,16 +114,16 @@ namespace flash
  * @playerversion   AIR 1.0
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 using namespace flash::geom;
-using namespace flash::display;
 using namespace flash::media;
 
 namespace flash
 {
     namespace display
     {
-        class Sprite: public DisplayObjectContainer
+        class Sprite : public flash::display::DisplayObjectContainer
         {
             /**
              * Specifies the Graphics object that belongs to this sprite where vector
@@ -273,7 +275,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     startDrag(bool lockCenter, Rectangle *bounds);
+            void     startDrag(bool lockCenter   =false, Rectangle *bounds=NULL);
 
             /**
              * Ends the startDrag() method. A sprite that was made draggable with the
@@ -309,7 +311,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     startTouchDrag(int touchPointID, bool lockCenter, Rectangle *bounds);
+            void     startTouchDrag(int touchPointID, bool lockCenter   =false, Rectangle *bounds=NULL);
 
             /**
              * Ends the startTouchDrag() method, for use with touch-enabled devices. A sprite that was made draggable with the

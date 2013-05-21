@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Program3D: public Object
+        class Program3D : public Object
         {
         public:
             Program3D();

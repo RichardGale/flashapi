@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 namespace flash
@@ -28,7 +29,7 @@ namespace flash
 {
     namespace system
     {
-        class Worker: public EventDispatcher
+        class Worker : public flash::events::EventDispatcher
         {
         public:
             static bool         isSupported();
@@ -55,10 +56,10 @@ namespace flash
             void    *getSharedProperty(std::string key);
 
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference);
+            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
 
         public:
-            void     removeEventListener(std::string type, Function *listener, bool useCapture);
+            void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
 
         public:
             bool     terminate();

@@ -27,7 +27,8 @@
  * @playerversion   Lite 4
  */
 
-class Math: public Object
+
+class Math : public Object
 {
     /**
      * A mathematical constant for the base of natural logarithms, expressed as e.
@@ -318,7 +319,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    max(float val1, float val2, ...);
+    static float    max(float val1 =-Number::Infinity, float val2 =-Number::Infinity, ...);
 
     /**
      * Evaluates val1 and val2 (or more values) and returns the smallest value.
@@ -331,7 +332,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    min(float val1, float val2, ...);
+    static float    min(float val1 =Number::Infinity, float val2 =Number::Infinity, ...);
 
     /**
      * Returns a pseudo-random number n, where 0 <= n < 1. The number returned is calculated in an undisclosed manner, and is "pseudo-random" because the calculation inevitably contains some element of non-randomness.

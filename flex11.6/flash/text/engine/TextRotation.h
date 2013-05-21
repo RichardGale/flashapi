@@ -16,13 +16,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TextRotation: public Object
+            class TextRotation : public Object
             {
                 /**
                  * Specifies no rotation.

@@ -70,7 +70,8 @@
  * @playerversion   Lite 4
  */
 
-class RegExp: public Object
+
+class RegExp : public Object
 {
 public:
     static const int length;
@@ -207,7 +208,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    RegExp(void *pattern, void *options);
+    RegExp(void *pattern=NULL, void *options=NULL);
 
     /**
      * Performs a search for the regular expression on the given string str.
@@ -231,7 +232,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    Object  *exec(std::string s);
+    Object  *exec(std::string s="");
 
     /**
      * Tests for the match of the regular expression in the given string str.
@@ -248,7 +249,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     test(std::string s);
+    bool     test(std::string s="");
 };
 
 #endif // FLEX11_6_REGEXP_AS

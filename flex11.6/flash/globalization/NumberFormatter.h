@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace globalization
@@ -111,13 +112,14 @@ namespace flash
  * @playerversion   Flash 10.1
  * @playerversion   AIR 2
  */
+
 using namespace flash::globalization;
 
 namespace flash
 {
     namespace globalization
     {
-        class NumberFormatter: public Object
+        class NumberFormatter : public Object
         {
             /**
              * The status of previous operation that this NumberFormatter object performed.
@@ -404,7 +406,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *getAvailableLocaleIDNames();
+            static std::vector<std::string> getAvailableLocaleIDNames();
 
             /**
              * Constructs a new NumberFormatter object to format numbers according to

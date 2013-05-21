@@ -56,11 +56,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ShaderParameter: public Object
+        class ShaderParameter : public Object
         {
             /**
              * The value or values that are passed in as the parameter value to the shader.

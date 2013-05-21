@@ -98,11 +98,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class JointStyle: public Object
+        class JointStyle : public Object
         {
             /**
              * Specifies round joints in the joints parameter of the

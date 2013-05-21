@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -188,13 +189,14 @@ namespace flash
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace accessibility
     {
-        class Accessibility: public Object
+        class Accessibility : public Object
         {
             /**
              * Indicates whether a screen reader is active and the application is
@@ -221,7 +223,7 @@ namespace flash
             Accessibility();
 
         public:
-            static void     sendEvent(DisplayObject *source, unsigned int childID, unsigned int eventType, bool nonHTML);
+            static void     sendEvent(DisplayObject *source, unsigned int childID, unsigned int eventType, bool nonHTML   =false);
 
             /**
              * Tells Flash Player to apply any accessibility changes made by using the DisplayObject.accessibilityProperties property.

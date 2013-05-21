@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 namespace flash
 {
@@ -178,11 +179,9 @@ namespace flash
  * @playerversion   AIR 1.0
  * @playerversion   Lite 4
  */
-using namespace flash::geom;
-using namespace flash::geom;
-using namespace flash::filters;
-using namespace flash::geom;
+
 using namespace flash::display;
+using namespace flash::filters;
 using namespace flash::geom;
 using namespace flash::utils;
 
@@ -190,7 +189,7 @@ namespace flash
 {
     namespace display
     {
-        class BitmapData: public Object, public IBitmapDrawable
+        class BitmapData : public Object, public flash::display::IBitmapDrawable
         {
             /**
              * The width of the bitmap image in pixels.
@@ -267,7 +266,7 @@ namespace flash
              * @throws  ArgumentError width and/or height exceed the maximum dimensions.
              */
         public:
-            BitmapData(int width, int height, bool transparent, unsigned int fillColor);
+            BitmapData(int width, int height, bool transparent   =true, unsigned int fillColor=4294967295);
 
             /**
              * Returns a new BitmapData object that is a clone of the original instance
@@ -584,7 +583,7 @@ namespace flash
              * @throws  TypeError The sourceBitmapData, sourceRect, destPoint are null.
              */
         public:
-            void     copyPixels(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, BitmapData *alphaBitmapData, Point *alphaPoint, bool mergeAlpha);
+            void     copyPixels(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, BitmapData *alphaBitmapData=NULL, Point *alphaPoint=NULL, bool mergeAlpha   =false);
 
             /**
              * Frees memory that is used to store the BitmapData object.
@@ -677,10 +676,10 @@ namespace flash
              * @throws  ArgumentError The source is null or not a valid IBitmapDrawable object.
              */
         public:
-            void     draw(IBitmapDrawable *source, Matrix *matrix, ColorTransform *colorTransform, std::string blendMode, Rectangle *clipRect, bool smoothing);
+            void     draw(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing   =false);
 
         public:
-            void     drawWithQuality(IBitmapDrawable *source, Matrix *matrix, ColorTransform *colorTransform, std::string blendMode, Rectangle *clipRect, bool smoothing, std::string quality);
+            void     drawWithQuality(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing   =false, std::string quality="");
 
             /**
              * Fills a rectangular area of pixels with a specified ARGB color.
@@ -769,7 +768,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            flash::geom::Rectangle *getColorBoundsRect(unsigned int mask, unsigned int color, bool findColor);
+            flash::geom::Rectangle *getColorBoundsRect(unsigned int mask, unsigned int color, bool findColor   =true);
 
             /**
              * Generates a byte array from a rectangular region of pixel data.
@@ -802,7 +801,7 @@ namespace flash
              * @throws  TypeError The rect is null.
              */
         public:
-            std::vector<unsigned int> *getVector(Rectangle *rect);
+            std::vector<unsigned int> getVector(Rectangle *rect);
 
             /**
              * Performs pixel-level hit detection between one bitmap image
@@ -836,7 +835,7 @@ namespace flash
              * @throws  TypeError The firstPoint is null.
              */
         public:
-            bool     hitTest(Point *firstPoint, unsigned int firstAlphaThreshold, Object *secondObject, Point *secondBitmapDataPoint, unsigned int secondAlphaThreshold);
+            bool     hitTest(Point *firstPoint, unsigned int firstAlphaThreshold, Object *secondObject, Point *secondBitmapDataPoint=NULL, unsigned int secondAlphaThreshold=1);
 
             /**
              * Performs per-channel blending from a source image to a destination image. For each channel
@@ -891,7 +890,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            void     noise(int randomSeed, unsigned int low, unsigned int high, unsigned int channelOptions, bool grayScale);
+            void     noise(int randomSeed, unsigned int low=0, unsigned int high=255, unsigned int channelOptions=7, bool grayScale   =false);
 
             /**
              * Remaps the color channel values in an image that has up to four arrays of color palette data, one
@@ -932,7 +931,7 @@ namespace flash
              * @throws  TypeError The sourceBitmapData, sourceRect or destPoint are null.
              */
         public:
-            void     paletteMap(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::vector<void *> redArray, std::vector<void *> greenArray, std::vector<void *> blueArray, std::vector<void *> alphaArray);
+            void     paletteMap(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::vector<void *> redArray=std::vector<void *>(), std::vector<void *> greenArray=std::vector<void *>(), std::vector<void *> blueArray=std::vector<void *>(), std::vector<void *> alphaArray=std::vector<void *>());
 
             /**
              * Generates a Perlin noise image.
@@ -976,7 +975,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            void     perlinNoise(float baseX, float baseY, unsigned int numOctaves, int randomSeed, bool stitch, bool fractalNoise, unsigned int channelOptions, bool grayScale, std::vector<void *> offsets);
+            void     perlinNoise(float baseX, float baseY, unsigned int numOctaves, int randomSeed, bool stitch, bool fractalNoise, unsigned int channelOptions=7, bool grayScale   =false, std::vector<void *> offsets=std::vector<void *>());
 
             /**
              * Performs a pixel dissolve either from a source image to a destination image or by using the same image.
@@ -1009,7 +1008,7 @@ namespace flash
              * @throws  TypeError The numPixels value is negative
              */
         public:
-            int      pixelDissolve(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, int randomSeed, int numPixels, unsigned int fillColor);
+            int      pixelDissolve(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, int randomSeed=0, int numPixels=0, unsigned int fillColor=0);
 
             /**
              * Scrolls an image by a certain (x, y) pixel amount. Edge
@@ -1058,7 +1057,7 @@ namespace flash
              * @throws  RangeError The vector array is not large enough to read all the pixel data.
              */
         public:
-            void     setVector(Rectangle *rect, std::vector<unsigned int> *inputVector);
+            void     setVector(Rectangle *rect, std::vector<unsigned int> inputVector);
 
             /**
              * Tests pixel values in an image against a specified threshold and sets pixels that pass the test to new color values.
@@ -1094,7 +1093,7 @@ namespace flash
              * @throws  ArgumentError The operation string is not a valid operation
              */
         public:
-            unsigned int threshold(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::string operation, unsigned int threshold, unsigned int color, unsigned int mask, bool copySource);
+            unsigned int threshold(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::string operation, unsigned int threshold, unsigned int color=0, unsigned int mask=4294967295, bool copySource   =false);
 
             /**
              * Locks an image so that any objects that reference the BitmapData object, such as Bitmap objects,
@@ -1121,7 +1120,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            void     unlock(Rectangle *changeRect);
+            void     unlock(Rectangle *changeRect=NULL);
 
             /**
              * Computes a 256-value binary number histogram of a BitmapData object. This method returns a Vector object
@@ -1136,10 +1135,10 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<float> *histogram(Rectangle *hRect);
+            std::vector<float> histogram(Rectangle *hRect=NULL);
 
         public:
-            ByteArray *encode(Rectangle *rect, Object *compressor, ByteArray *byteArray);
+            ByteArray *encode(Rectangle *rect, Object *compressor, ByteArray *byteArray=NULL);
         };
     }
 }

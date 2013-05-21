@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 #include "flash/display/IBitmapDrawable.h"
 
@@ -121,137 +122,130 @@ namespace flash
  */
 //[Event(name="added",type="flash.events.Event")]
 
-/**
- * The DisplayObject class is the base class for all objects that can be placed on
- * the display list. The display list manages all objects displayed in the Flash runtimes.
- * Use the DisplayObjectContainer class to arrange the display objects in the display list.
- * DisplayObjectContainer objects can have child display objects, while other display objects, such as
- * Shape and TextField objects, are "leaf" nodes that have only parents and siblings, no children.
- *
- *   <p class="- topic/p ">The DisplayObject class supports basic functionality like the <i class="+ topic/ph hi-d/i ">x</i> and <i class="+ topic/ph hi-d/i ">y</i> position of
- * an object, as well as more advanced properties of the object such as its transformation matrix.
- * </p><p class="- topic/p ">DisplayObject is an abstract base class; therefore, you cannot call DisplayObject directly. Invoking
- * <codeph class="+ topic/ph pr-d/codeph ">new DisplayObject()</codeph> throws an <codeph class="+ topic/ph pr-d/codeph ">ArgumentError</codeph> exception. </p><p class="- topic/p ">All display objects inherit from the DisplayObject class.</p><p class="- topic/p ">The DisplayObject class itself does not include any APIs for rendering content onscreen.
- * For that reason, if you want create a custom subclass of the DisplayObject class, you will want
- * to extend one of its subclasses that do have APIs for rendering content onscreen,
- * such as the Shape, Sprite, Bitmap, SimpleButton, TextField, or MovieClip class.</p><p class="- topic/p ">The DisplayObject class contains several broadcast events. Normally, the target
- * of any particular event is a specific DisplayObject instance. For example,
- * the target of an <codeph class="+ topic/ph pr-d/codeph ">added</codeph> event is the specific DisplayObject instance
- * that was added to the display list. Having a single target restricts the placement of
- * event listeners to that target and in some cases the target's ancestors on the display list.
- * With broadcast events, however, the target is not a specific DisplayObject instance,
- * but rather all DisplayObject instances, including those that are not on the display list.
- * This means that you can add a listener to any DisplayObject instance to listen for broadcast events.
- * In addition to the broadcast events listed in the DisplayObject class's Events table,
- * the DisplayObject class also inherits two broadcast events from the EventDispatcher
- * class: <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph>.</p><p class="- topic/p ">Some properties previously used in the ActionScript 1.0 and 2.0 MovieClip, TextField, and Button
- * classes (such as <codeph class="+ topic/ph pr-d/codeph ">_alpha</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_height</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_name</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_width</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">_x</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_y</codeph>, and others) have equivalents in the ActionScript 3.0
- * DisplayObject class that are renamed so that they no longer begin with the underscore (_) character.</p><p class="- topic/p ">For more information, see the "Display Programming" chapter of the <i class="+ topic/ph hi-d/i ">ActionScript 3.0 Developer's Guide</i>.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">DisplayObjectExample</codeph> class to
- * draw an orange square in the corner of the Stage and then respond to events by displaying text
- * information for each event.  This task is accomplished by performing the following steps:
- * <ol class="- topic/ol "><li class="- topic/li ">Class properties are declared for the color and size of the square.</li><li class="- topic/li ">The constructor calls the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method, which draws an orange square on
- * the Stage at the default coordinates of <i class="+ topic/ph hi-d/i ">x = 0, y = 0</i>.</li><li class="- topic/li ">The following event listener methods are attached to the square:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">addedHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">added</codeph> events, dispatched when the
- * square is added to the display list.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">enterFrameHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">enterFrame</codeph> events, which have no
- * real meaning in this example.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">removedHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">removed</codeph> events, dispatched when
- * the square is removed from the display list, which happens when the square is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">clickHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">click</codeph> events, dispatched when the
- * orange square is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">renderHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">render</codeph> events after the display
- * list is updated.</li></ul></li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- *
- *   public class DisplayObjectExample extends Sprite {
- * public function DisplayObjectExample() {
- * var child:CustomDisplayObject = new CustomDisplayObject();
- * addChild(child);
- * }
- * }
- * }
- *
- *   import flash.display.DisplayObject;
- * import flash.display.Sprite;
- * import flash.display.Stage;
- * import flash.display.StageAlign;
- * import flash.display.StageScaleMode;
- * import flash.events.*;
- *
- *   class CustomDisplayObject extends Sprite {
- * private var bgColor:uint = 0xFFCC00;
- * private var size:uint    = 80;
- *
- *   public function CustomDisplayObject() {
- * draw();
- * addEventListener(Event.ADDED, addedHandler);
- * addEventListener(Event.ENTER_FRAME, enterFrameHandler);
- * addEventListener(Event.REMOVED, removedHandler);
- * addEventListener(MouseEvent.CLICK, clickHandler);
- * addEventListener(Event.RENDER, renderHandler);
- * }
- *
- *   private function draw():void {
- * graphics.beginFill(bgColor);
- * graphics.drawRect(0, 0, size, size);
- * graphics.endFill();
- * }
- *
- *   private function clickHandler(event:MouseEvent):void {
- * trace("clickHandler: " + event);
- * parent.removeChild(this);
- * }
- *
- *   private function addedHandler(event:Event):void {
- * trace("addedHandler: " + event);
- * stage.scaleMode = StageScaleMode.NO_SCALE;
- * stage.align = StageAlign.TOP_LEFT;
- * stage.addEventListener("resize", resizeHandler);
- * }
- *
- *   private function enterFrameHandler(event:Event):void {
- * trace("enterFrameHandler: " + event);
- * removeEventListener("enterFrame", enterFrameHandler);
- * }
- *
- *   private function removedHandler(event:Event):void {
- * trace("removedHandler: " + event);
- * stage.removeEventListener("resize", resizeHandler);
- * }
- *
- *   private function renderHandler(event:Event):void {
- * trace("renderHandler: " + event);
- * }
- *
- *   private function resizeHandler(event:Event):void {
- * trace("resizeHandler: " + event);
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
-using namespace flash::events;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::geom;
-using namespace flash::geom;
-using namespace flash::geom;
-using namespace flash::display;
 using namespace flash::accessibility;
-using namespace flash::geom;
 using namespace flash::display;
+using namespace flash::events;
+using namespace flash::geom;
 
 namespace flash
 {
     namespace display
     {
-        class DisplayObject: public EventDispatcher, public IBitmapDrawable
+        /**
+         * The DisplayObject class is the base class for all objects that can be placed on
+         * the display list. The display list manages all objects displayed in the Flash runtimes.
+         * Use the DisplayObjectContainer class to arrange the display objects in the display list.
+         * DisplayObjectContainer objects can have child display objects, while other display objects, such as
+         * Shape and TextField objects, are "leaf" nodes that have only parents and siblings, no children.
+         *
+         *   <p class="- topic/p ">The DisplayObject class supports basic functionality like the <i class="+ topic/ph hi-d/i ">x</i> and <i class="+ topic/ph hi-d/i ">y</i> position of
+         * an object, as well as more advanced properties of the object such as its transformation matrix.
+         * </p><p class="- topic/p ">DisplayObject is an abstract base class; therefore, you cannot call DisplayObject directly. Invoking
+         * <codeph class="+ topic/ph pr-d/codeph ">new DisplayObject()</codeph> throws an <codeph class="+ topic/ph pr-d/codeph ">ArgumentError</codeph> exception. </p><p class="- topic/p ">All display objects inherit from the DisplayObject class.</p><p class="- topic/p ">The DisplayObject class itself does not include any APIs for rendering content onscreen.
+         * For that reason, if you want create a custom subclass of the DisplayObject class, you will want
+         * to extend one of its subclasses that do have APIs for rendering content onscreen,
+         * such as the Shape, Sprite, Bitmap, SimpleButton, TextField, or MovieClip class.</p><p class="- topic/p ">The DisplayObject class contains several broadcast events. Normally, the target
+         * of any particular event is a specific DisplayObject instance. For example,
+         * the target of an <codeph class="+ topic/ph pr-d/codeph ">added</codeph> event is the specific DisplayObject instance
+         * that was added to the display list. Having a single target restricts the placement of
+         * event listeners to that target and in some cases the target's ancestors on the display list.
+         * With broadcast events, however, the target is not a specific DisplayObject instance,
+         * but rather all DisplayObject instances, including those that are not on the display list.
+         * This means that you can add a listener to any DisplayObject instance to listen for broadcast events.
+         * In addition to the broadcast events listed in the DisplayObject class's Events table,
+         * the DisplayObject class also inherits two broadcast events from the EventDispatcher
+         * class: <codeph class="+ topic/ph pr-d/codeph ">activate</codeph> and <codeph class="+ topic/ph pr-d/codeph ">deactivate</codeph>.</p><p class="- topic/p ">Some properties previously used in the ActionScript 1.0 and 2.0 MovieClip, TextField, and Button
+         * classes (such as <codeph class="+ topic/ph pr-d/codeph ">_alpha</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_height</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_name</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_width</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">_x</codeph>, <codeph class="+ topic/ph pr-d/codeph ">_y</codeph>, and others) have equivalents in the ActionScript 3.0
+         * DisplayObject class that are renamed so that they no longer begin with the underscore (_) character.</p><p class="- topic/p ">For more information, see the "Display Programming" chapter of the <i class="+ topic/ph hi-d/i ">ActionScript 3.0 Developer's Guide</i>.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">DisplayObjectExample</codeph> class to
+         * draw an orange square in the corner of the Stage and then respond to events by displaying text
+         * information for each event.  This task is accomplished by performing the following steps:
+         * <ol class="- topic/ol "><li class="- topic/li ">Class properties are declared for the color and size of the square.</li><li class="- topic/li ">The constructor calls the <codeph class="+ topic/ph pr-d/codeph ">draw()</codeph> method, which draws an orange square on
+         * the Stage at the default coordinates of <i class="+ topic/ph hi-d/i ">x = 0, y = 0</i>.</li><li class="- topic/li ">The following event listener methods are attached to the square:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">addedHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">added</codeph> events, dispatched when the
+         * square is added to the display list.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">enterFrameHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">enterFrame</codeph> events, which have no
+         * real meaning in this example.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">removedHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">removed</codeph> events, dispatched when
+         * the square is removed from the display list, which happens when the square is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">clickHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">click</codeph> events, dispatched when the
+         * orange square is clicked.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">renderHandler()</codeph> listens for <codeph class="+ topic/ph pr-d/codeph ">render</codeph> events after the display
+         * list is updated.</li></ul></li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         *
+         *   public class DisplayObjectExample extends Sprite {
+         * public function DisplayObjectExample() {
+         * var child:CustomDisplayObject = new CustomDisplayObject();
+         * addChild(child);
+         * }
+         * }
+         * }
+         *
+         *   import flash.display.DisplayObject;
+         * import flash.display.Sprite;
+         * import flash.display.Stage;
+         * import flash.display.StageAlign;
+         * import flash.display.StageScaleMode;
+         * import flash.events.*;
+         *
+         *   class CustomDisplayObject extends Sprite {
+         * private var bgColor:uint = 0xFFCC00;
+         * private var size:uint    = 80;
+         *
+         *   public function CustomDisplayObject() {
+         * draw();
+         * addEventListener(Event.ADDED, addedHandler);
+         * addEventListener(Event.ENTER_FRAME, enterFrameHandler);
+         * addEventListener(Event.REMOVED, removedHandler);
+         * addEventListener(MouseEvent.CLICK, clickHandler);
+         * addEventListener(Event.RENDER, renderHandler);
+         * }
+         *
+         *   private function draw():void {
+         * graphics.beginFill(bgColor);
+         * graphics.drawRect(0, 0, size, size);
+         * graphics.endFill();
+         * }
+         *
+         *   private function clickHandler(event:MouseEvent):void {
+         * trace("clickHandler: " + event);
+         * parent.removeChild(this);
+         * }
+         *
+         *   private function addedHandler(event:Event):void {
+         * trace("addedHandler: " + event);
+         * stage.scaleMode = StageScaleMode.NO_SCALE;
+         * stage.align = StageAlign.TOP_LEFT;
+         * stage.addEventListener("resize", resizeHandler);
+         * }
+         *
+         *   private function enterFrameHandler(event:Event):void {
+         * trace("enterFrameHandler: " + event);
+         * removeEventListener("enterFrame", enterFrameHandler);
+         * }
+         *
+         *   private function removedHandler(event:Event):void {
+         * trace("removedHandler: " + event);
+         * stage.removeEventListener("resize", resizeHandler);
+         * }
+         *
+         *   private function renderHandler(event:Event):void {
+         * trace("renderHandler: " + event);
+         * }
+         *
+         *   private function resizeHandler(event:Event):void {
+         * trace("resizeHandler: " + event);
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class DisplayObject : public flash::events::EventDispatcher, public flash::display::IBitmapDrawable
         {
             /**
              * For a display object in a loaded SWF file, the root property is the
@@ -1179,7 +1173,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hitTestPoint(float x, float y, bool shapeFlag);
+            bool     hitTestPoint(float x, float y, bool shapeFlag   =false);
 
             /**
              * Converts a two-dimensional point from the Stage (global) coordinates to a

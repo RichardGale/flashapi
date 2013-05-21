@@ -62,11 +62,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class SecurityPanel: public Object
+        class SecurityPanel : public Object
         {
             /**
              * When passed to Security.showSettings(), displays the panel

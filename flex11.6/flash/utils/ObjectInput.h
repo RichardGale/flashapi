@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -17,7 +18,7 @@ namespace flash
 {
     namespace utils
     {
-        class ObjectInput: public Object, public IDataInput
+        class ObjectInput : public Object, public IDataInput
         {
         public:
             unsigned int bytesAvailable();
@@ -36,7 +37,7 @@ namespace flash
             ObjectInput();
 
         public:
-            void     readBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
         public:
             bool     readBoolean();

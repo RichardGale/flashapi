@@ -15,13 +15,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class CFFHinting: public Object
+            class CFFHinting : public Object
             {
                 /**
                  * No hinting is applied. Horizontal stems in the glyphs are not forced to the pixel grid.

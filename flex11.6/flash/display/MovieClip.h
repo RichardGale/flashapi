@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -77,13 +78,14 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 
 namespace flash
 {
     namespace display
     {
-        class MovieClip: public Sprite
+        class MovieClip : public Sprite
         {
             /**
              * Specifies the number of the frame in which the playhead is located in the timeline of
@@ -278,7 +280,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     gotoAndPlay(Object *frame, std::string scene);
+            void     gotoAndPlay(Object *frame, std::string scene="");
 
             /**
              * Brings the playhead to the specified frame of the movie clip and stops it there.  This happens after all
@@ -296,7 +298,7 @@ namespace flash
              *   not found in this movie clip.
              */
         public:
-            void     gotoAndStop(Object *frame, std::string scene);
+            void     gotoAndStop(Object *frame, std::string scene="");
 
         public:
             void     addFrameScript(...);

@@ -13,11 +13,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class IMEConversionMode: public Object
+        class IMEConversionMode : public Object
         {
             /**
              * The string "ALPHANUMERIC_FULL", for use with the

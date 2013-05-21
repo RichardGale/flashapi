@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 
 /**
@@ -25,270 +26,270 @@
  */
 //[Event(name="asyncError",type="flash.events.AsyncErrorEvent")]
 
-/**
- * The LocalConnection class lets you create a LocalConnection object that can invoke a method in another
- * LocalConnection object. The communication can be:
- *
- *   <ul class="- topic/ul "><li class="- topic/li ">Within a single SWF file</li><li class="- topic/li ">Between multiple SWF files</li><li class="- topic/li ">Between content (SWF-based or HTML-based) in AIR applications</li><li class="- topic/li ">Between content (SWF-based or HTML-based) in an AIR application and SWF content running in a browser</li></ul><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
- * on all desktop operating systems and on all AIR for TV devices, but is not supported on mobile devices.
- * You can test for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.isSupported</codeph> property. See
- * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
- * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note: </b>AIR for TV devices support communication only between SWF-based content in AIR
- * applications.</p><p class="- topic/p ">Local connections enable this kind of communication between SWF files without the use of <codeph class="+ topic/ph pr-d/codeph ">fscommand()</codeph>
- * or JavaScript. LocalConnection objects can communicate only among files that are running
- * on the same client computer, but they can be
- * running in different applications     for example, a file running in a browser
- * and a SWF file running in Adobe AIR. </p><p class="- topic/p ">LocalConnection objects created in ActionScript 3.0 can communicate with
- * LocalConnection objects created in ActionScript 1.0 or 2.0. The reverse is also true:
- * LocalConnection objects created in ActionScript 1.0 or 2.0 can communicate with LocalConnection
- * objects created in ActionScript 3.0. Flash Player handles this communication
- * between LocalConnection objects of different versions automatically.</p><p class="- topic/p ">There are three ways to add callback methods to a LocalConnection object:</p><ul class="- topic/ul "><li class="- topic/li ">Subclass the LocalConnection class and add methods.</li><li class="- topic/li ">Set the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.client</codeph> property to an object that implements the methods.</li><li class="- topic/li ">Create a dynamic class that extends LocalConnection and dynamically attach methods.</li></ul><p class="- topic/p ">To understand how to use LocalConnection objects to implement communication between two files,
- * it is helpful to identify the commands used in each file. One file is called the <i class="+ topic/ph hi-d/i ">receiving</i> file;
- * it is the file that contains the method to be invoked. The receiving file must contain a LocalConnection object
- * and a call to the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method.  The other file is called the <i class="+ topic/ph hi-d/i ">sending</i> file;
- * it is the file that invokes the method. The sending file must contain another LocalConnection object
- * and a call to the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method.</p><p class="- topic/p ">Your use of <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> differs depending on whether the
- * files are in the same domain, in different domains with predictable domain names,
- * or in different domains with unpredictable or dynamic domain names. The following paragraphs
- * explain the three different situations, with code samples for each.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Same domain</b>. This is the simplest way to use a LocalConnection object,
- * to allow communication only between LocalConnection objects that are located in the same domain,
- * because same-domain communication is permitted by default. When two files from the same domain communicate,
- * you do not need to implement any special security measures, and you simply pass the same
- * value for the <codeph class="+ topic/ph pr-d/codeph ">connectionName</codeph> parameter to both the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph>
- * and <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> methods:</p><p class="- topic/p "><adobeimage alt="Loading from the same domain" href="../../images/localconnection_samedomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is in http://www.domain.com/receiving.swf
- * receivingLC.connect('myConnection');
- *
- *   // sendingLC is in http://www.domain.com/sending.swf
- * // myMethod() is defined in sending.swf
- * sendingLC.send('myConnection', 'myMethod');
- * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Different domains with predictable domain names</b>.
- * When two SWF files from different domains communicate,
- * you need to allow communication between the two domains by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
- * method. You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
- * with the receiving LocalConnection object's domain name:</p><p class="- topic/p "><adobeimage alt="Loading from separate domains" href="../../images/localconnection_differentdomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is in http://www.domain.com/receiving.swf
- * receivingLC.allowDomain('www.anotherdomain.com');
- * receivingLC.connect('myConnection');
- *
- *   // sendingLC is in http://www.anotherdomain.com/sending.swf
- * sendingLC.send('www.domain.com:myConnection', 'myMethod');
- * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Different domains with unpredictable domain names</b>.
- * Sometimes, you might want to make the file with the receiving LocalConnection object
- * more portable between domains. To avoid specifying the domain name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method,
- * but to indicate that the receiving and sending LocalConnection objects
- * are not in the same domain, precede the connection name
- * with an underscore (_), in both the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> calls.
- * To allow communication between the two domains, call the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method
- * and pass the domains from which you want to allow LocalConnection calls.
- * Alternatively, pass the wildcard (~~) argument to allow calls from all domains:</p><p class="- topic/p "><adobeimage alt="Loading from unknown domain names" href="../../images/localconnection_unknowndomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is in http://www.domain.com/receiving.swf
- * receivingLC.allowDomain('~~');
- * receivingLC.connect('_myConnection');
- *
- *   // sendingLC is in http://www.anotherdomain.com/sending.swf
- * sendingLC.send('_myConnection', 'myMethod');
- * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From Flash Player to an AIR application</b>.
- * A LocalConnection object created in the AIR application sandbox uses a special string as it's connection
- * prefix instead of a domain name. This string has the form:
- * <codeph class="+ topic/ph pr-d/codeph ">app#appID.pubID</codeph> where appID is the application ID and pubID is the publisher ID of the application.
- * (Only include the publisher ID if the AIR application uses a publisher ID.) For example, if an
- * AIR application has an application ID of, "com.example", and no publisher ID, you could use:
- * <codeph class="+ topic/ph pr-d/codeph ">app#com.example:myConnection</codeph> as the local connection string. The AIR application also must call
- * the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method, passing in the calling SWF file's domain of origin: </p><p class="- topic/p "><adobeimage alt="Flash Player to AIR connection" href="../../images/localconnection_flash2AIR.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is an AIR application with app ID = com.example (and no publisher ID)
- * receivingLC.allowDomain('www.domain.com');
- * receivingLC.connect('myConnection');
- *
- *   // sendingLC is in http://www.domain.com/sending.swf
- * sendingLC.send('app#com.example:myConnection', 'myMethod');
- * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> If an AIR application loads a SWF outside the AIR application sandbox, then the rules for
- * establishing a local connection with that SWF are the same as the rules for establishing a connection with a SWF
- * running in Flash Player.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From an AIR application to Flash Player</b>.
- * When an AIR application communicates with a SWF running in the Flash Player runtime,
- * you need to allow communication between the two by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
- * method and passing in the AIR application's connection prefix. For example, if an
- * AIR application has an application ID of, "com.example", and no publisher ID, you could pass the string:
- * <codeph class="+ topic/ph pr-d/codeph ">app#com.example</codeph> to the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method.
- * You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
- * with the receiving LocalConnection object's domain name (use "localhost" as the domain for SWF files loaded from the
- * local file system):</p><p class="- topic/p "><adobeimage alt="AIR to Flash Player communication" href="../../images/localconnection_AIR2flash.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is in http://www.domain.com/receiving.swf
- * receivingLC.allowDomain('app#com.example');
- * receivingLC.connect('myConnection');
- *
- *   // sendingLC is an AIR application with app ID = com.example (and no publisher ID)
- * sendingLC.send('www.domain.com:myConnection', 'myMethod');
- * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From an AIR application to another AIR application</b>.
- * To communicate between two AIR applications,
- * you need to allow communication between the two by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
- * method and passing in the sending AIR application's connection prefix. For example, if the sending
- * application has an application ID of, "com.example", and no publisher ID, you could pass the string:
- * <codeph class="+ topic/ph pr-d/codeph ">app#com.example</codeph> to the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method in the receiving application.
- * You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
- * with the receiving LocalConnection object's connection prefix:</p><p class="- topic/p "><adobeimage alt="AIR to AIR communication" href="../../images/localconnection_AIR2AIR.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // receivingLC is an AIR application with app ID = com.sample (and no publisher ID)
- * receivingLC.allowDomain('app#com.example');
- * receivingLC.connect('myConnection');
- *
- *   // sendingLC is an AIR application with app ID = com.example (and no publisher ID)
- * sendingLC.send('app#com.sample:myConnection', 'myMethod');
- * </codeblock><p class="- topic/p ">You can use LocalConnection objects to send and receive data within a single file,
- * but this is not a typical implementation.</p><p class="- topic/p ">For more information about the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> methods, see the discussion of the
- * <codeph class="+ topic/ph pr-d/codeph ">connectionName</codeph> parameter in the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.send()</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.connect()</codeph>entries. Also, see the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">domain</codeph> entries.</p>
- *
- *   EXAMPLE:
- *
- *   This example consists of two ActionScript classes which
- * should be compiled into two separate SWF files:
- *
- *   <p class="- topic/p ">In the LocalConnectionSenderExample SWF file, a LocalConnection instance is created,
- * and when the button is pressed the <codeph class="+ topic/ph pr-d/codeph ">call()</codeph> method is used to
- * call the method named <codeph class="+ topic/ph pr-d/codeph ">lcHandler</codeph> in the SWF file with the
- * connection name "myConnection," passing the contents of the
- * TextField as a parameter.</p><p class="- topic/p ">In the LocalConnectionReceiverExample SWF file, a LocalConnection instance is
- * created and the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method is called to designate
- * this SWF file as the recipient of messages that are addressed to the
- * connection named "myConnection." In addition, this class includes
- * a public method named <codeph class="+ topic/ph pr-d/codeph ">lcHandler()</codeph>; this method is the
- * one that is called by the LocalConnectionSenderExample SWF file. When it's called,
- * the text that is passed in as a parameter is appended to the
- * TextField on the Stage.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To test the example, both SWF files must
- * be loaded on the same computer simultaneously.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   // Code in LocalConnectionSenderExample.as
- * package {
- * import flash.display.Sprite;
- * import flash.events.MouseEvent;
- * import flash.net.LocalConnection;
- * import flash.text.TextField;
- * import flash.text.TextFieldType;
- * import flash.events.StatusEvent;
- * import flash.text.TextFieldAutoSize;
- *
- *   public class LocalConnectionSenderExample extends Sprite {
- * private var conn:LocalConnection;
- *
- *   // UI elements
- * private var messageLabel:TextField;
- * private var message:TextField;
- * private var sendBtn:Sprite;
- *
- *   public function LocalConnectionSenderExample() {
- * buildUI();
- * sendBtn.addEventListener(MouseEvent.CLICK, sendMessage);
- * conn = new LocalConnection();
- * conn.addEventListener(StatusEvent.STATUS, onStatus);
- * }
- *
- *   private function sendMessage(event:MouseEvent):void {
- * conn.send("myConnection", "lcHandler", message.text);
- * }
- *
- *   private function onStatus(event:StatusEvent):void {
- * switch (event.level) {
- * case "status":
- * trace("LocalConnection.send() succeeded");
- * break;
- * case "error":
- * trace("LocalConnection.send() failed");
- * break;
- * }
- * }
- *
- *   private function buildUI():void {
- * const hPadding:uint = 5;
- * // messageLabel
- * messageLabel = new TextField();
- * messageLabel.x = 10;
- * messageLabel.y = 10;
- * messageLabel.text = "Text to send:";
- * messageLabel.autoSize = TextFieldAutoSize.LEFT;
- * addChild(messageLabel);
- *
- *   // message
- * message = new TextField();
- * message.x = messageLabel.x + messageLabel.width + hPadding;
- * message.y = 10;
- * message.width = 120;
- * message.height = 20;
- * message.background = true;
- * message.border = true;
- * message.type = TextFieldType.INPUT;
- * addChild(message);
- *
- *   // sendBtn
- * sendBtn = new Sprite();
- * sendBtn.x = message.x + message.width + hPadding;
- * sendBtn.y = 10;
- * var sendLbl:TextField = new TextField();
- * sendLbl.x = 1 + hPadding;
- * sendLbl.y = 1;
- * sendLbl.selectable = false;
- * sendLbl.autoSize = TextFieldAutoSize.LEFT;
- * sendLbl.text = "Send";
- * sendBtn.addChild(sendLbl);
- * sendBtn.graphics.lineStyle(1);
- * sendBtn.graphics.beginFill(0xcccccc);
- * sendBtn.graphics.drawRoundRect(0, 0, (sendLbl.width + 2 + hPadding + hPadding), (sendLbl.height + 2), 5, 5);
- * sendBtn.graphics.endFill();
- * addChild(sendBtn);
- * }
- * }
- * }
- * </codeblock>
- *
- *   EXAMPLE:
- *
- *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * // Code in LocalConnectionReceiverExample.as
- * package {
- * import flash.display.Sprite;
- * import flash.net.LocalConnection;
- * import flash.text.TextField;
- *
- *   public class LocalConnectionReceiverExample extends Sprite {
- * private var conn:LocalConnection;
- * private var output:TextField;
- *
- *   public function LocalConnectionReceiverExample()     {
- * buildUI();
- *
- *   conn = new LocalConnection();
- * conn.client = this;
- * try {
- * conn.connect("myConnection");
- * } catch (error:ArgumentError) {
- * trace("Can't connect...the connection name is already being used by another SWF");
- * }
- * }
- *
- *   public function lcHandler(msg:String):void {
- * output.appendText(msg + "\n");
- * }
- *
- *   private function buildUI():void {
- * output = new TextField();
- * output.background = true;
- * output.border = true;
- * output.wordWrap = true;
- * addChild(output);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace net
     {
-        class LocalConnection: public EventDispatcher
+        /**
+         * The LocalConnection class lets you create a LocalConnection object that can invoke a method in another
+         * LocalConnection object. The communication can be:
+         *
+         *   <ul class="- topic/ul "><li class="- topic/li ">Within a single SWF file</li><li class="- topic/li ">Between multiple SWF files</li><li class="- topic/li ">Between content (SWF-based or HTML-based) in AIR applications</li><li class="- topic/li ">Between content (SWF-based or HTML-based) in an AIR application and SWF content running in a browser</li></ul><p class="- topic/p "><i class="+ topic/ph hi-d/i ">AIR profile support:</i> This feature is supported
+         * on all desktop operating systems and on all AIR for TV devices, but is not supported on mobile devices.
+         * You can test for support at run time using the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.isSupported</codeph> property. See
+         * <xref href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html" class="- topic/xref ">
+         * AIR Profile Support</xref> for more information regarding API support across multiple profiles.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note: </b>AIR for TV devices support communication only between SWF-based content in AIR
+         * applications.</p><p class="- topic/p ">Local connections enable this kind of communication between SWF files without the use of <codeph class="+ topic/ph pr-d/codeph ">fscommand()</codeph>
+         * or JavaScript. LocalConnection objects can communicate only among files that are running
+         * on the same client computer, but they can be
+         * running in different applications     for example, a file running in a browser
+         * and a SWF file running in Adobe AIR. </p><p class="- topic/p ">LocalConnection objects created in ActionScript 3.0 can communicate with
+         * LocalConnection objects created in ActionScript 1.0 or 2.0. The reverse is also true:
+         * LocalConnection objects created in ActionScript 1.0 or 2.0 can communicate with LocalConnection
+         * objects created in ActionScript 3.0. Flash Player handles this communication
+         * between LocalConnection objects of different versions automatically.</p><p class="- topic/p ">There are three ways to add callback methods to a LocalConnection object:</p><ul class="- topic/ul "><li class="- topic/li ">Subclass the LocalConnection class and add methods.</li><li class="- topic/li ">Set the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.client</codeph> property to an object that implements the methods.</li><li class="- topic/li ">Create a dynamic class that extends LocalConnection and dynamically attach methods.</li></ul><p class="- topic/p ">To understand how to use LocalConnection objects to implement communication between two files,
+         * it is helpful to identify the commands used in each file. One file is called the <i class="+ topic/ph hi-d/i ">receiving</i> file;
+         * it is the file that contains the method to be invoked. The receiving file must contain a LocalConnection object
+         * and a call to the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method.  The other file is called the <i class="+ topic/ph hi-d/i ">sending</i> file;
+         * it is the file that invokes the method. The sending file must contain another LocalConnection object
+         * and a call to the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method.</p><p class="- topic/p ">Your use of <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> differs depending on whether the
+         * files are in the same domain, in different domains with predictable domain names,
+         * or in different domains with unpredictable or dynamic domain names. The following paragraphs
+         * explain the three different situations, with code samples for each.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Same domain</b>. This is the simplest way to use a LocalConnection object,
+         * to allow communication only between LocalConnection objects that are located in the same domain,
+         * because same-domain communication is permitted by default. When two files from the same domain communicate,
+         * you do not need to implement any special security measures, and you simply pass the same
+         * value for the <codeph class="+ topic/ph pr-d/codeph ">connectionName</codeph> parameter to both the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph>
+         * and <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> methods:</p><p class="- topic/p "><adobeimage alt="Loading from the same domain" href="../../images/localconnection_samedomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is in http://www.domain.com/receiving.swf
+         * receivingLC.connect('myConnection');
+         *
+         *   // sendingLC is in http://www.domain.com/sending.swf
+         * // myMethod() is defined in sending.swf
+         * sendingLC.send('myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Different domains with predictable domain names</b>.
+         * When two SWF files from different domains communicate,
+         * you need to allow communication between the two domains by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
+         * method. You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
+         * with the receiving LocalConnection object's domain name:</p><p class="- topic/p "><adobeimage alt="Loading from separate domains" href="../../images/localconnection_differentdomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is in http://www.domain.com/receiving.swf
+         * receivingLC.allowDomain('www.anotherdomain.com');
+         * receivingLC.connect('myConnection');
+         *
+         *   // sendingLC is in http://www.anotherdomain.com/sending.swf
+         * sendingLC.send('www.domain.com:myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Different domains with unpredictable domain names</b>.
+         * Sometimes, you might want to make the file with the receiving LocalConnection object
+         * more portable between domains. To avoid specifying the domain name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method,
+         * but to indicate that the receiving and sending LocalConnection objects
+         * are not in the same domain, precede the connection name
+         * with an underscore (_), in both the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> calls.
+         * To allow communication between the two domains, call the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method
+         * and pass the domains from which you want to allow LocalConnection calls.
+         * Alternatively, pass the wildcard (~~) argument to allow calls from all domains:</p><p class="- topic/p "><adobeimage alt="Loading from unknown domain names" href="../../images/localconnection_unknowndomains.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is in http://www.domain.com/receiving.swf
+         * receivingLC.allowDomain('~~');
+         * receivingLC.connect('_myConnection');
+         *
+         *   // sendingLC is in http://www.anotherdomain.com/sending.swf
+         * sendingLC.send('_myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From Flash Player to an AIR application</b>.
+         * A LocalConnection object created in the AIR application sandbox uses a special string as it's connection
+         * prefix instead of a domain name. This string has the form:
+         * <codeph class="+ topic/ph pr-d/codeph ">app#appID.pubID</codeph> where appID is the application ID and pubID is the publisher ID of the application.
+         * (Only include the publisher ID if the AIR application uses a publisher ID.) For example, if an
+         * AIR application has an application ID of, "com.example", and no publisher ID, you could use:
+         * <codeph class="+ topic/ph pr-d/codeph ">app#com.example:myConnection</codeph> as the local connection string. The AIR application also must call
+         * the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method, passing in the calling SWF file's domain of origin: </p><p class="- topic/p "><adobeimage alt="Flash Player to AIR connection" href="../../images/localconnection_flash2AIR.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is an AIR application with app ID = com.example (and no publisher ID)
+         * receivingLC.allowDomain('www.domain.com');
+         * receivingLC.connect('myConnection');
+         *
+         *   // sendingLC is in http://www.domain.com/sending.swf
+         * sendingLC.send('app#com.example:myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> If an AIR application loads a SWF outside the AIR application sandbox, then the rules for
+         * establishing a local connection with that SWF are the same as the rules for establishing a connection with a SWF
+         * running in Flash Player.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From an AIR application to Flash Player</b>.
+         * When an AIR application communicates with a SWF running in the Flash Player runtime,
+         * you need to allow communication between the two by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
+         * method and passing in the AIR application's connection prefix. For example, if an
+         * AIR application has an application ID of, "com.example", and no publisher ID, you could pass the string:
+         * <codeph class="+ topic/ph pr-d/codeph ">app#com.example</codeph> to the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method.
+         * You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
+         * with the receiving LocalConnection object's domain name (use "localhost" as the domain for SWF files loaded from the
+         * local file system):</p><p class="- topic/p "><adobeimage alt="AIR to Flash Player communication" href="../../images/localconnection_AIR2flash.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is in http://www.domain.com/receiving.swf
+         * receivingLC.allowDomain('app#com.example');
+         * receivingLC.connect('myConnection');
+         *
+         *   // sendingLC is an AIR application with app ID = com.example (and no publisher ID)
+         * sendingLC.send('www.domain.com:myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p "><b class="+ topic/ph hi-d/b ">From an AIR application to another AIR application</b>.
+         * To communicate between two AIR applications,
+         * you need to allow communication between the two by calling the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph>
+         * method and passing in the sending AIR application's connection prefix. For example, if the sending
+         * application has an application ID of, "com.example", and no publisher ID, you could pass the string:
+         * <codeph class="+ topic/ph pr-d/codeph ">app#com.example</codeph> to the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> method in the receiving application.
+         * You also need to qualify the connection name in the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> method
+         * with the receiving LocalConnection object's connection prefix:</p><p class="- topic/p "><adobeimage alt="AIR to AIR communication" href="../../images/localconnection_AIR2AIR.gif" placement="inline" class="+ topic/image adobe-d/adobeimage " /></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // receivingLC is an AIR application with app ID = com.sample (and no publisher ID)
+         * receivingLC.allowDomain('app#com.example');
+         * receivingLC.connect('myConnection');
+         *
+         *   // sendingLC is an AIR application with app ID = com.example (and no publisher ID)
+         * sendingLC.send('app#com.sample:myConnection', 'myMethod');
+         * </codeblock><p class="- topic/p ">You can use LocalConnection objects to send and receive data within a single file,
+         * but this is not a typical implementation.</p><p class="- topic/p ">For more information about the <codeph class="+ topic/ph pr-d/codeph ">send()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> methods, see the discussion of the
+         * <codeph class="+ topic/ph pr-d/codeph ">connectionName</codeph> parameter in the <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.send()</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">LocalConnection.connect()</codeph>entries. Also, see the <codeph class="+ topic/ph pr-d/codeph ">allowDomain()</codeph> and <codeph class="+ topic/ph pr-d/codeph ">domain</codeph> entries.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   This example consists of two ActionScript classes which
+         * should be compiled into two separate SWF files:
+         *
+         *   <p class="- topic/p ">In the LocalConnectionSenderExample SWF file, a LocalConnection instance is created,
+         * and when the button is pressed the <codeph class="+ topic/ph pr-d/codeph ">call()</codeph> method is used to
+         * call the method named <codeph class="+ topic/ph pr-d/codeph ">lcHandler</codeph> in the SWF file with the
+         * connection name "myConnection," passing the contents of the
+         * TextField as a parameter.</p><p class="- topic/p ">In the LocalConnectionReceiverExample SWF file, a LocalConnection instance is
+         * created and the <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method is called to designate
+         * this SWF file as the recipient of messages that are addressed to the
+         * connection named "myConnection." In addition, this class includes
+         * a public method named <codeph class="+ topic/ph pr-d/codeph ">lcHandler()</codeph>; this method is the
+         * one that is called by the LocalConnectionSenderExample SWF file. When it's called,
+         * the text that is passed in as a parameter is appended to the
+         * TextField on the Stage.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To test the example, both SWF files must
+         * be loaded on the same computer simultaneously.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   // Code in LocalConnectionSenderExample.as
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.MouseEvent;
+         * import flash.net.LocalConnection;
+         * import flash.text.TextField;
+         * import flash.text.TextFieldType;
+         * import flash.events.StatusEvent;
+         * import flash.text.TextFieldAutoSize;
+         *
+         *   public class LocalConnectionSenderExample extends Sprite {
+         * private var conn:LocalConnection;
+         *
+         *   // UI elements
+         * private var messageLabel:TextField;
+         * private var message:TextField;
+         * private var sendBtn:Sprite;
+         *
+         *   public function LocalConnectionSenderExample() {
+         * buildUI();
+         * sendBtn.addEventListener(MouseEvent.CLICK, sendMessage);
+         * conn = new LocalConnection();
+         * conn.addEventListener(StatusEvent.STATUS, onStatus);
+         * }
+         *
+         *   private function sendMessage(event:MouseEvent):void {
+         * conn.send("myConnection", "lcHandler", message.text);
+         * }
+         *
+         *   private function onStatus(event:StatusEvent):void {
+         * switch (event.level) {
+         * case "status":
+         * trace("LocalConnection.send() succeeded");
+         * break;
+         * case "error":
+         * trace("LocalConnection.send() failed");
+         * break;
+         * }
+         * }
+         *
+         *   private function buildUI():void {
+         * const hPadding:uint = 5;
+         * // messageLabel
+         * messageLabel = new TextField();
+         * messageLabel.x = 10;
+         * messageLabel.y = 10;
+         * messageLabel.text = "Text to send:";
+         * messageLabel.autoSize = TextFieldAutoSize.LEFT;
+         * addChild(messageLabel);
+         *
+         *   // message
+         * message = new TextField();
+         * message.x = messageLabel.x + messageLabel.width + hPadding;
+         * message.y = 10;
+         * message.width = 120;
+         * message.height = 20;
+         * message.background = true;
+         * message.border = true;
+         * message.type = TextFieldType.INPUT;
+         * addChild(message);
+         *
+         *   // sendBtn
+         * sendBtn = new Sprite();
+         * sendBtn.x = message.x + message.width + hPadding;
+         * sendBtn.y = 10;
+         * var sendLbl:TextField = new TextField();
+         * sendLbl.x = 1 + hPadding;
+         * sendLbl.y = 1;
+         * sendLbl.selectable = false;
+         * sendLbl.autoSize = TextFieldAutoSize.LEFT;
+         * sendLbl.text = "Send";
+         * sendBtn.addChild(sendLbl);
+         * sendBtn.graphics.lineStyle(1);
+         * sendBtn.graphics.beginFill(0xcccccc);
+         * sendBtn.graphics.drawRoundRect(0, 0, (sendLbl.width + 2 + hPadding + hPadding), (sendLbl.height + 2), 5, 5);
+         * sendBtn.graphics.endFill();
+         * addChild(sendBtn);
+         * }
+         * }
+         * }
+         * </codeblock>
+         *
+         *   EXAMPLE:
+         *
+         *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * // Code in LocalConnectionReceiverExample.as
+         * package {
+         * import flash.display.Sprite;
+         * import flash.net.LocalConnection;
+         * import flash.text.TextField;
+         *
+         *   public class LocalConnectionReceiverExample extends Sprite {
+         * private var conn:LocalConnection;
+         * private var output:TextField;
+         *
+         *   public function LocalConnectionReceiverExample()     {
+         * buildUI();
+         *
+         *   conn = new LocalConnection();
+         * conn.client = this;
+         * try {
+         * conn.connect("myConnection");
+         * } catch (error:ArgumentError) {
+         * trace("Can't connect...the connection name is already being used by another SWF");
+         * }
+         * }
+         *
+         *   public function lcHandler(msg:String):void {
+         * output.appendText(msg + "\n");
+         * }
+         *
+         *   private function buildUI():void {
+         * output = new TextField();
+         * output.background = true;
+         * output.border = true;
+         * output.wordWrap = true;
+         * addChild(output);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class LocalConnection : public flash::events::EventDispatcher
         {
             /**
              * The isSupported property is set to true if the

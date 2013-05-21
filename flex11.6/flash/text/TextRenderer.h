@@ -74,11 +74,12 @@
  * @internal    -- Class sample changed due to bug 193833
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextRenderer: public Object
+        class TextRenderer : public Object
         {
         public:
             static std::string  antiAliasType();

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace text
@@ -33,22 +34,8 @@ namespace flash
  */
 //[Event(name="imeStartComposition",type="flash.events.IMEEvent")]
 
-/**
- * Interface for IME (input method editor) clients.  Components based on the flash.text.engine package must implement
- * this interface to support editing text inline using an IME. This interface is not used with TextField objects.
- * TextLayoutFramework (TLF) uses this interface to support inline IME, so clients using TLF do not need to implement this
- * interface.
- * <p class="- topic/p ">To support inline IME, set the <codeph class="+ topic/ph pr-d/codeph ">imeClient</codeph> property of an <codeph class="+ topic/ph pr-d/codeph ">ImeEvent.IME_START_COMPOSITION</codeph> event to
- * an object which implements this interface.</p><p class="- topic/p ">The following terms are often used in the IME related API:</p><ul class="- topic/ul "><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">conversation</i> is the interchange between the IME and the application. During a conversation, a composition is
- * updated one or more times and then confirmed by the user.</li><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">composition</i> identifies the text entered by the user through the IME; including associated input state information
- * such as the selected range and the extent of any clauses.</li><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">clause</i> is a range of the composition possibly sharing semantic information, such as indicating whether the input is
- * in a selected or converted state. A composition contains zero or more clauses.</li></ul>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- * @playerversion   AIR 2
- */
-using namespace flash::text::ime;
 using namespace flash::geom;
+using namespace flash::text::ime;
 
 namespace flash
 {
@@ -56,6 +43,20 @@ namespace flash
     {
         namespace ime
         {
+            /**
+             * Interface for IME (input method editor) clients.  Components based on the flash.text.engine package must implement
+             * this interface to support editing text inline using an IME. This interface is not used with TextField objects.
+             * TextLayoutFramework (TLF) uses this interface to support inline IME, so clients using TLF do not need to implement this
+             * interface.
+             * <p class="- topic/p ">To support inline IME, set the <codeph class="+ topic/ph pr-d/codeph ">imeClient</codeph> property of an <codeph class="+ topic/ph pr-d/codeph ">ImeEvent.IME_START_COMPOSITION</codeph> event to
+             * an object which implements this interface.</p><p class="- topic/p ">The following terms are often used in the IME related API:</p><ul class="- topic/ul "><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">conversation</i> is the interchange between the IME and the application. During a conversation, a composition is
+             * updated one or more times and then confirmed by the user.</li><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">composition</i> identifies the text entered by the user through the IME; including associated input state information
+             * such as the selected range and the extent of any clauses.</li><li class="- topic/li ">A <i class="+ topic/ph hi-d/i ">clause</i> is a range of the composition possibly sharing semantic information, such as indicating whether the input is
+             * in a selected or converted state. A composition contains zero or more clauses.</li></ul>
+             * @langversion 3.0
+             * @playerversion   Flash 10.1
+             * @playerversion   AIR 2
+             */
             class IIMEClient
             {
                 /**
@@ -64,8 +65,8 @@ namespace flash
                  * @langversion 3.0
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
-                 */
-                virtual int  compositionStartIndex() = 0;
+                 */virtual
+                int          compositionStartIndex() = 0;
 
                 /**
                  * The zero-based character index value of the end of the current edit session text (such as
@@ -74,7 +75,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual int  compositionEndIndex() = 0;
+                virtual
+                int          compositionEndIndex() = 0;
 
                 /**
                  * Indicates whether the text in the component is vertical or not. This property directs the positioning
@@ -83,7 +85,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual bool verticalTextLayout() = 0;
+                virtual
+                bool         verticalTextLayout() = 0;
 
                 /**
                  * The zero-based character index value of the first character in the current selection.
@@ -91,7 +94,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual int  selectionAnchorIndex() = 0;
+                virtual
+                int          selectionAnchorIndex() = 0;
 
                 /**
                  * The zero-based character index value of the last character in the current selection.
@@ -99,7 +103,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual int  selectionActiveIndex() = 0;
+                virtual
+                int          selectionActiveIndex() = 0;
 
                 /**
                  * Callback for updating the contents of the inline editing session.
@@ -113,7 +118,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual void updateComposition(std::string text, std::vector<flash::text::ime::CompositionAttributeRange *> *attributes, int compositionStartIndex, int compositionEndIndex) = 0;
+                virtual
+                void     updateComposition(std::string text, std::vector<flash::text::ime::CompositionAttributeRange *> attributes, int compositionStartIndex, int compositionEndIndex) = 0;
 
                 /**
                  * Use this callback to end the inline editing session and confirm the text.
@@ -123,7 +129,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual void confirmComposition(std::string text, bool preserveSelection) = 0;
+                virtual
+                void     confirmComposition(std::string text="", bool preserveSelection   =false) = 0;
 
                 /**
                  * The IME uses this method to query the bounding box of the text currently edited with the IME client.
@@ -137,7 +144,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual flash::geom::Rectangle *getTextBounds(int startIndex, int endIndex) = 0;
+                virtual
+                flash::geom::Rectangle *getTextBounds(int startIndex, int endIndex) = 0;
 
                 /**
                  * Sets the range of selected text in the component.
@@ -148,7 +156,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual void selectRange(int anchorIndex, int activeIndex) = 0;
+                virtual
+                void     selectRange(int anchorIndex, int activeIndex) = 0;
 
                 /**
                  * Gets the specified range of text from the component.  This method is called during IME reconversion.
@@ -161,7 +170,8 @@ namespace flash
                  * @playerversion   Flash 10.1
                  * @playerversion   AIR 2
                  */
-                virtual std::string getTextInRange(int startIndex, int endIndex) = 0;
+                virtual
+                std::string getTextInRange(int startIndex, int endIndex) = 0;
             };
         }
     }

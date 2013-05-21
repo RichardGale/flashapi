@@ -35,11 +35,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace ui
     {
-        class MultitouchInputMode: public Object
+        class MultitouchInputMode : public Object
         {
             /**
              * Specifies that all user contact with a touch-enabled device is interpreted as a type of mouse event.

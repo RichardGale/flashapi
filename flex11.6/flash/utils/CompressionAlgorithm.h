@@ -11,11 +11,12 @@
  * @playerversion   AIR 1.0
  */
 
+
 namespace flash
 {
     namespace utils
     {
-        class CompressionAlgorithm: public Object
+        class CompressionAlgorithm : public Object
         {
             /**
              * Defines the string to use for the zlib compression algorithm.

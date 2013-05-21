@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -19,7 +20,7 @@ namespace flash
 {
     namespace system
     {
-        class ApplicationInstaller: public EventDispatcher
+        class ApplicationInstaller : public flash::events::EventDispatcher
         {
         public:
             bool         isInstalled();
@@ -34,7 +35,7 @@ namespace flash
             static std::string iconDigest(ByteArray *icon);
 
         public:
-            void     install(std::string mode);
+            void     install(std::string mode="install_with_shortcuts");
         };
     }
 }

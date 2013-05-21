@@ -45,11 +45,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace system
     {
-        class TouchscreenType: public Object
+        class TouchscreenType : public Object
         {
             /**
              * A touchscreen designed to respond to finger touches.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -103,6 +104,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
 using namespace flash::media;
 
@@ -110,7 +112,7 @@ namespace flash
 {
     namespace display
     {
-        class SimpleButton: public InteractiveObject
+        class SimpleButton : public InteractiveObject
         {
             /**
              * A Boolean value that, when set to true, indicates whether
@@ -255,7 +257,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SimpleButton(DisplayObject *upState, DisplayObject *overState, DisplayObject *downState, DisplayObject *hitTestState);
+            SimpleButton(DisplayObject *upState=NULL, DisplayObject *overState=NULL, DisplayObject *downState=NULL, DisplayObject *hitTestState=NULL);
         };
     }
 }

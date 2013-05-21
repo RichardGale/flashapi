@@ -12,6 +12,7 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
@@ -33,8 +34,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual void writeDynamicProperty(std::string name, void *value) = 0;
+             */virtual
+            void     writeDynamicProperty(std::string name, void *value) = 0;
         };
     }
 }

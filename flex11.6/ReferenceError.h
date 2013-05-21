@@ -38,7 +38,8 @@
  * @playerversion   Lite 4
  */
 
-class ReferenceError: public Error
+
+class ReferenceError : public Error
 {
 public:
     static const int length;
@@ -51,7 +52,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    ReferenceError(void *message, void *id);
+    ReferenceError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_REFERENCEERROR_AS

@@ -96,11 +96,12 @@
  * @internal    The above include is not a mistake, but rather code re-use.
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class URLRequest: public Object
+        class URLRequest : public Object
         {
             /**
              * The URL to be requested.
@@ -296,7 +297,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            URLRequest(std::string url);
+            URLRequest(std::string url="");
         };
     }
 }

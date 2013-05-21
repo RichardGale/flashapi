@@ -43,7 +43,8 @@
  * @playerversion   Lite 4
  */
 
-class SecurityError: public Error
+
+class SecurityError : public Error
 {
 public:
     static const int length;
@@ -55,7 +56,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    SecurityError(void *message, void *id);
+    SecurityError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_SECURITYERROR_AS

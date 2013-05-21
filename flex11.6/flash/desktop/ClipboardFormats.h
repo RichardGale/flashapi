@@ -12,11 +12,12 @@
  * @internal    Clipboard, ClipboardFormats and ClipboardTransferMode were all added to AIR 1.0. These are also being added, with some exceptions listed in this file, to FP10.
  */
 
+
 namespace flash
 {
     namespace desktop
     {
-        class ClipboardFormats: public Object
+        class ClipboardFormats : public Object
         {
             static const std::string FLASH_PREFIX;
             static const std::string AIR_PREFIX;

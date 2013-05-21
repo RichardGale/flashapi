@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -21,14 +22,14 @@ namespace flash
     }
 }
 
-using namespace flash::net::drm;
 using namespace flash::events;
+using namespace flash::net::drm;
 
 namespace flash
 {
     namespace events
     {
-        class DRMDeviceGroupErrorEvent: public ErrorEvent
+        class DRMDeviceGroupErrorEvent : public ErrorEvent
         {
         public:
             static const std::string ADD_TO_DEVICE_GROUP_ERROR;
@@ -52,7 +53,7 @@ namespace flash
             bool         drmUpdateNeeded();
 
         public:
-            DRMDeviceGroupErrorEvent(std::string type, bool bubbles, bool cancelable, std::string errorDetail, int errorCode, int subErrorID, DRMDeviceGroup *deviceGroup, bool systemUpdateNeeded, bool drmUpdateNeeded);
+            DRMDeviceGroupErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string errorDetail="", int errorCode=0, int subErrorID=0, DRMDeviceGroup *deviceGroup=NULL, bool systemUpdateNeeded   =false, bool drmUpdateNeeded   =false);
 
         public:
             std::string toString();

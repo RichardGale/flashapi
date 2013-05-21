@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "IGraphicsFill.h"
 #include "IGraphicsData.h"
 
@@ -17,14 +18,13 @@
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace ;
-using namespace ;
+
 
 namespace flash
 {
     namespace display
     {
-        class GraphicsSolidFill: public Object, public IGraphicsFill,, public IGraphicsData
+        class GraphicsSolidFill : public Object, public private::IGraphicsFill, public private::IGraphicsData
         {
             /**
              * The color of the fill. Valid values are in the hexadecimal format 0xRRGGBB. The default value is 0xFF0000 (or the uint 0).
@@ -54,7 +54,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsSolidFill(unsigned int color, float alpha);
+            GraphicsSolidFill(unsigned int color=0, float alpha =1);
         };
     }
 }

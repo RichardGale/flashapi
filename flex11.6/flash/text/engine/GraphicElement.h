@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -84,9 +85,10 @@ namespace flash
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
 using namespace flash::display;
-using namespace flash::text::engine;
 using namespace flash::events;
+using namespace flash::text::engine;
 
 namespace flash
 {
@@ -94,7 +96,7 @@ namespace flash
     {
         namespace engine
         {
-            class GraphicElement: public ContentElement
+            class GraphicElement : public ContentElement
             {
                 /**
                  * The DisplayObject to be used as a graphic for the GraphicElement.
@@ -165,7 +167,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                GraphicElement(DisplayObject *graphic, float elementWidth, float elementHeight, ElementFormat *elementFormat, EventDispatcher *eventMirror, std::string textRotation);
+                GraphicElement(DisplayObject *graphic=NULL, float elementWidth =15, float elementHeight =15, ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
             };
         }
     }

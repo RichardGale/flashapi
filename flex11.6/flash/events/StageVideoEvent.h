@@ -3,25 +3,25 @@
 #if defined(__cplusplus)
 
 
+/// @eventType  flash.events.StageVideoEvent.RENDER_STATE
+//[Event(name="renderState",type="flash.events.StageVideoEvent")]
 
-//[Event(name="renderState",type="flash.events.StageVideoEvent")]/// @eventType  flash.events.StageVideoEvent.RENDER_STATE
-
-/**
- * A StageVideo object dispatches a StageVideoEvent object after the <codeph class="+ topic/ph pr-d/codeph ">attachNetStream()</codeph> method
- * of the StageVideo object and the <codeph class="+ topic/ph pr-d/codeph ">play()</codeph> method of
- * the attached NetStream object have both been called. Also, depending on the platform,
- * any change in the playing status can result in dispatching the event.
- * The one type of StageVideoEvent is <codeph class="+ topic/ph pr-d/codeph ">StageVideoEvent.RENDER_STATE</codeph>.
- * @langversion 3.0
- * @playerversion   AIR 2.5
- * @playerversion   Flash 10.2
- */
 
 namespace flash
 {
     namespace events
     {
-        class StageVideoEvent: public Event
+        /**
+         * A StageVideo object dispatches a StageVideoEvent object after the <codeph class="+ topic/ph pr-d/codeph ">attachNetStream()</codeph> method
+         * of the StageVideo object and the <codeph class="+ topic/ph pr-d/codeph ">play()</codeph> method of
+         * the attached NetStream object have both been called. Also, depending on the platform,
+         * any change in the playing status can result in dispatching the event.
+         * The one type of StageVideoEvent is <codeph class="+ topic/ph pr-d/codeph ">StageVideoEvent.RENDER_STATE</codeph>.
+         * @langversion 3.0
+         * @playerversion   AIR 2.5
+         * @playerversion   Flash 10.2
+         */
+        class StageVideoEvent : public Event
         {
             /**
              * The StageVideoEvent.RENDER_STATE constant defines the value of the type property of a renderState event object.
@@ -104,7 +104,7 @@ namespace flash
              * @playerversion   Flash 10.2
              */
         public:
-            StageVideoEvent(std::string type, bool bubbles, bool cancelable, std::string status, std::string colorSpace);
+            StageVideoEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string status="", std::string colorSpace="");
         };
     }
 }

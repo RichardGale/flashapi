@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace ui
@@ -153,13 +154,14 @@ namespace flash
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::ui;
 
 namespace flash
 {
     namespace ui
     {
-        class Mouse: public Object
+        class Mouse : public Object
         {
             /**
              * Indicates whether the computer or device displays a persistent cursor.

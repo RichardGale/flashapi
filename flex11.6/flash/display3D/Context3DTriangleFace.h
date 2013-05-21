@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DTriangleFace: public Object
+        class Context3DTriangleFace : public Object
         {
         public:
             static const std::string NONE;

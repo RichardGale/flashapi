@@ -117,11 +117,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextLineMetrics: public Object
+        class TextLineMetrics : public Object
         {
             /**
              * The x value is the left position of the first character in pixels. This value includes the margin,

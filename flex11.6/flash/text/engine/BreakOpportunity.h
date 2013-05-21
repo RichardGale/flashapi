@@ -13,13 +13,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class BreakOpportunity: public Object
+            class BreakOpportunity : public Object
             {
                 /**
                  * Bases line break opportunities on Unicode character properties. This setting implements

@@ -10,11 +10,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class TextExtent: public Object
+        class TextExtent : public Object
         {
         public:
             float width;

@@ -15,11 +15,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class DateTimeNameContext: public Object
+        class DateTimeNameContext : public Object
         {
             /**
              * Indicates that the date element name is used within a date format.

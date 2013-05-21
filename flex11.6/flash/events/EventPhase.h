@@ -11,11 +11,12 @@
  * @internal    includeExample examples\EventPhaseExample.as -noswf
  */
 
+
 namespace flash
 {
     namespace events
     {
-        class EventPhase: public Object
+        class EventPhase : public Object
         {
             /**
              * The capturing phase, which is the first phase of the event flow.

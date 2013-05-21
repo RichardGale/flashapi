@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -14,22 +15,22 @@ namespace flash
 /// @eventType  flash.events.AsyncErrorEvent.ASYNC_ERROR
 //[Event(name="asyncError",type="flash.events.AsyncErrorEvent")]
 
-/**
- * An object dispatches an AsyncErrorEvent when an exception is thrown from native
- * asynchronous code, which could be from, for example, LocalConnection, NetConnection,
- * <ph class="- topic/ph ">SharedObject</ph>, or NetStream. There is only one type of asynchronous error event:
- * <codeph class="+ topic/ph pr-d/codeph ">AsyncErrorEvent.ASYNC_ERROR</codeph>.
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class AsyncErrorEvent: public ErrorEvent
+        /**
+         * An object dispatches an AsyncErrorEvent when an exception is thrown from native
+         * asynchronous code, which could be from, for example, LocalConnection, NetConnection,
+         * <ph class="- topic/ph ">SharedObject</ph>, or NetStream. There is only one type of asynchronous error event:
+         * <codeph class="+ topic/ph pr-d/codeph ">AsyncErrorEvent.ASYNC_ERROR</codeph>.
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class AsyncErrorEvent : public ErrorEvent
         {
             /**
              * The AsyncErrorEvent.ASYNC_ERROR constant defines the value of the
@@ -73,7 +74,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            AsyncErrorEvent(std::string type, bool bubbles, bool cancelable, std::string text, Error *error);
+            AsyncErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", Error *error=NULL);
 
             /**
              * Creates a copy of the AsyncErrorEvent object and sets the value of each property to match

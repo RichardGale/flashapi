@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/IEventDispatcher.h"
 namespace flash
 {
@@ -26,78 +27,77 @@ namespace flash
  */
 //[Event(name="activate",type="flash.events.Event")]
 
-/**
- * The EventDispatcher class is the base class for all  classes that dispatch events.
- * <ph class="- topic/ph ">The EventDispatcher class implements the IEventDispatcher interface and is the base class for
- * the DisplayObject class. The EventDispatcher class allows any object on the display list to be
- * an event target and as such, to use the methods of the IEventDispatcher interface.</ph><p class="- topic/p ">Event targets are an important part of the Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player and
- * Adobe<sup class="+ topic/ph hi-d/sup ">  </sup> AIR<sup class="+ topic/ph hi-d/sup ">  </sup> event model. The event target serves
- * as the focal point for how events flow through the display list hierarchy.
- * When an event such as a mouse click or a keypress occurs, Flash Player or the AIR application dispatches an event
- * object into the event flow from the root of the display list. The event object then makes its
- * way through the display list until it reaches the event target, at which point it begins its
- * return trip through the display list. This round-trip journey to the event target is
- * conceptually divided into three phases: the capture phase comprises the journey from the
- * root to the last node before the event target's node, the target phase comprises only the
- * event target node, and the bubbling phase comprises any subsequent nodes encountered on
- * the return trip to the root of the display list.</p><p class="- topic/p ">In general, the easiest way for a user-defined class to gain event dispatching
- * capabilities is to extend EventDispatcher.  If this is impossible (that is, if the class is already extending
- * another class), you can instead implement the IEventDispatcher interface, create an EventDispatcher member,
- * and write simple hooks to route calls into the aggregated EventDispatcher.</p>
- *
- *   EXAMPLE:
- *
- *   The following example uses the classes <codeph class="+ topic/ph pr-d/codeph ">EventDispatcherExample</codeph> and
- * <codeph class="+ topic/ph pr-d/codeph ">CustomDispatcher</codeph>, a subclass of <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher</codeph>, to show how a
- * custom event is created and dispatched.  The example carries out the following tasks:
- * <ol class="- topic/ol "><li class="- topic/li ">The constructor of <codeph class="+ topic/ph pr-d/codeph ">EventDispatcherExample</codeph> creates a local variable
- * <codeph class="+ topic/ph pr-d/codeph ">dispatcher</codeph> and assigns it to a new CustomDispatcher instance.</li><li class="- topic/li ">Inside <codeph class="+ topic/ph pr-d/codeph ">CustomDispatcher</codeph>, a string is set so that the event has
- * the name <codeph class="+ topic/ph pr-d/codeph ">action</codeph>, and the <codeph class="+ topic/ph pr-d/codeph ">doAction()</codeph> method is declared. When called, this method creates the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
- * event and dispatches it using <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.dispatchEvent()</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">dispatcher</codeph> property is then used to add the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
- * event listener and associated subscriber method <codeph class="+ topic/ph pr-d/codeph ">actionHandler()</codeph>, which simply
- * prints information about the event when it is dispatched.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">doAction()</codeph> method is invoked, dispatching the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
- * event.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.Event;
- *
- *   public class EventDispatcherExample extends Sprite {
- *
- *   public function EventDispatcherExample() {
- * var dispatcher:CustomDispatcher = new CustomDispatcher();
- * dispatcher.addEventListener(CustomDispatcher.ACTION, actionHandler);
- * dispatcher.doAction();
- * }
- *
- *   private function actionHandler(event:Event):void {
- * trace("actionHandler: " + event);
- * }
- * }
- * }
- *
- *   import flash.events.EventDispatcher;
- * import flash.events.Event;
- *
- *   class CustomDispatcher extends EventDispatcher {
- * public static var ACTION:String = "action";
- *
- *   public function doAction():void {
- * dispatchEvent(new Event(CustomDispatcher.ACTION));
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
-using namespace flash::events;
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class EventDispatcher: public Object, public IEventDispatcher
+        /**
+         * The EventDispatcher class is the base class for all  classes that dispatch events.
+         * <ph class="- topic/ph ">The EventDispatcher class implements the IEventDispatcher interface and is the base class for
+         * the DisplayObject class. The EventDispatcher class allows any object on the display list to be
+         * an event target and as such, to use the methods of the IEventDispatcher interface.</ph><p class="- topic/p ">Event targets are an important part of the Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player and
+         * Adobe<sup class="+ topic/ph hi-d/sup ">  </sup> AIR<sup class="+ topic/ph hi-d/sup ">  </sup> event model. The event target serves
+         * as the focal point for how events flow through the display list hierarchy.
+         * When an event such as a mouse click or a keypress occurs, Flash Player or the AIR application dispatches an event
+         * object into the event flow from the root of the display list. The event object then makes its
+         * way through the display list until it reaches the event target, at which point it begins its
+         * return trip through the display list. This round-trip journey to the event target is
+         * conceptually divided into three phases: the capture phase comprises the journey from the
+         * root to the last node before the event target's node, the target phase comprises only the
+         * event target node, and the bubbling phase comprises any subsequent nodes encountered on
+         * the return trip to the root of the display list.</p><p class="- topic/p ">In general, the easiest way for a user-defined class to gain event dispatching
+         * capabilities is to extend EventDispatcher.  If this is impossible (that is, if the class is already extending
+         * another class), you can instead implement the IEventDispatcher interface, create an EventDispatcher member,
+         * and write simple hooks to route calls into the aggregated EventDispatcher.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the classes <codeph class="+ topic/ph pr-d/codeph ">EventDispatcherExample</codeph> and
+         * <codeph class="+ topic/ph pr-d/codeph ">CustomDispatcher</codeph>, a subclass of <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher</codeph>, to show how a
+         * custom event is created and dispatched.  The example carries out the following tasks:
+         * <ol class="- topic/ol "><li class="- topic/li ">The constructor of <codeph class="+ topic/ph pr-d/codeph ">EventDispatcherExample</codeph> creates a local variable
+         * <codeph class="+ topic/ph pr-d/codeph ">dispatcher</codeph> and assigns it to a new CustomDispatcher instance.</li><li class="- topic/li ">Inside <codeph class="+ topic/ph pr-d/codeph ">CustomDispatcher</codeph>, a string is set so that the event has
+         * the name <codeph class="+ topic/ph pr-d/codeph ">action</codeph>, and the <codeph class="+ topic/ph pr-d/codeph ">doAction()</codeph> method is declared. When called, this method creates the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
+         * event and dispatches it using <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.dispatchEvent()</codeph>.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">dispatcher</codeph> property is then used to add the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
+         * event listener and associated subscriber method <codeph class="+ topic/ph pr-d/codeph ">actionHandler()</codeph>, which simply
+         * prints information about the event when it is dispatched.</li><li class="- topic/li ">The <codeph class="+ topic/ph pr-d/codeph ">doAction()</codeph> method is invoked, dispatching the <codeph class="+ topic/ph pr-d/codeph ">action</codeph>
+         * event.</li></ol><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.Event;
+         *
+         *   public class EventDispatcherExample extends Sprite {
+         *
+         *   public function EventDispatcherExample() {
+         * var dispatcher:CustomDispatcher = new CustomDispatcher();
+         * dispatcher.addEventListener(CustomDispatcher.ACTION, actionHandler);
+         * dispatcher.doAction();
+         * }
+         *
+         *   private function actionHandler(event:Event):void {
+         * trace("actionHandler: " + event);
+         * }
+         * }
+         * }
+         *
+         *   import flash.events.EventDispatcher;
+         * import flash.events.Event;
+         *
+         *   class CustomDispatcher extends EventDispatcher {
+         * public static var ACTION:String = "action";
+         *
+         *   public function doAction():void {
+         * dispatchEvent(new Event(CustomDispatcher.ACTION));
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class EventDispatcher : public Object, public flash::events::IEventDispatcher
         {
             /**
              * Aggregates an instance of the EventDispatcher class.
@@ -116,7 +116,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            EventDispatcher(IEventDispatcher *target);
+            EventDispatcher(IEventDispatcher *target=NULL);
 
         public:
             std::string toString();
@@ -184,7 +184,7 @@ namespace flash
              * @throws  ArgumentError The listener specified is not a function.
              */
         public:
-            virtual void     addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference);
+            virtual void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
 
             /**
              * Removes a listener from the EventDispatcher object. If there is no matching listener registered with the EventDispatcher object, a call to this method has no effect.
@@ -200,7 +200,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            virtual void     removeEventListener(std::string type, Function *listener, bool useCapture);
+            virtual void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
 
             /**
              * Dispatches an event into the event flow. The event target is the EventDispatcher

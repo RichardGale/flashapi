@@ -11,11 +11,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class NetGroupSendResult: public Object
+        class NetGroupSendResult : public Object
         {
             /**
              * Indicates an error occurred (such as no permission) when using a Directed Routing method.

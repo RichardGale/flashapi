@@ -3,12 +3,15 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
+#include "IDataInput.h"
+
 
 namespace flash
 {
     namespace utils
     {
-        class IDataInput2: public IDataInput
+        class IDataInput2 : public IDataInput
     {   };
     }
 }

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -135,7 +136,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
-using namespace flash::utils;
+
 using namespace flash::utils;
 
 namespace flash
@@ -151,8 +152,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual void writeExternal(IDataOutput *output) = 0;
+             */virtual
+            void     writeExternal(IDataOutput *output) = 0;
 
             /**
              * A class implements this method to decode itself from a data stream by calling the methods of the IDataInput
@@ -163,7 +164,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual void readExternal(IDataInput *input) = 0;
+            virtual
+            void     readExternal(IDataInput *input) = 0;
         };
     }
 }

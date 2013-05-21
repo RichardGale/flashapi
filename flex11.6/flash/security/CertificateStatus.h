@@ -10,11 +10,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace security
     {
-        class CertificateStatus: public Object
+        class CertificateStatus : public Object
         {
             /**
              * A valid, trusted certificate.

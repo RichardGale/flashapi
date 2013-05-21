@@ -11,11 +11,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class FontType: public Object
+        class FontType : public Object
         {
             /**
              * Indicates that this is an embedded font.

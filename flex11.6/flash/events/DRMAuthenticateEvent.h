@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace net
@@ -19,91 +20,94 @@ namespace flash
 //[Event(name="drmAuthenticate",type="flash.events.DRMAuthenticateEvent")]
 
 
-//[Event(name="drmAuthenticate",type="flash.events.DRMAuthenticateEvent")]/// @eventType  flash.events.DRMAuthenticateEvent.DRM_AUTHENTICATE
+//[Event(name="drmAuthenticate",type="flash.events.DRMAuthenticateEvent")]
 
-/**
- * A NetStream object dispatchs a DRMAuthenticateEvent object when attempting to play digital rights management (DRM) encrypted
- * content that requires a user credential for authentication.
- * <p class="- topic/p ">
- * The DRMAuthenticateEvent handler is responsible for gathering the required credentials
- * (such as the user name, password, and type) and passing the values to the
- * <codeph class="+ topic/ph pr-d/codeph ">NetStream.setDRMAuthenticationCredentials()</codeph> method for authentication. Each
- * AIR application must provide some mechanism for obtaining user credentials.
- * For example, the application could provide a user with a simple user interface to enter the
- * username and password values, and optionally the type value as well.
- * </p><p class="- topic/p ">
- * If user authentication failed, the application will retry
- * authentication and dispatch a new DRMAuthenticateEvent event for the NetStream object.
- * </p>
- *
- *   EXAMPLE:
- *
- *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">package
- * {
- * import flash.display.Sprite;
- * import flash.events.AsyncErrorEvent;
- * import flash.events.NetStatusEvent;
- * import flash.events.DRMAuthenticateEvent;
- * import flash.media.Video;
- * import flash.net.NetConnection;
- * import flash.net.NetStream;
- *
- *   public class DRMAuthenticateEventExample extends Sprite
- * {
- * var videoURL:String = "Video.flv";
- * var videoConnection:NetConnection;
- * var videoStream:NetStream;
- * var video:Video = new Video();
- *
- *   public function DRMAuthenticateEventExample()
- * {
- * videoConnection = new NetConnection();
- * videoConnection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * videoConnection.connect(null);
- * }
- *
- *   private function connectStream():void {
- * videoStream = new NetStream(videoConnection);
- * videoStream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
- * videoStream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
- * videoStream.addEventListener(DRMAuthenticateEvent.DRM_AUTHENTICATE, drmAuthenticateEventHandler);
- * video.attachNetStream(videoStream);
- * videoStream.play(videoURL);
- * addChild(video);
- * }
- *
- *   private function netStatusHandler(event:NetStatusEvent):void {
- * switch (event.info.code) {
- * case "NetConnection.Connect.Success":
- * connectStream();
- * break;
- * case "NetStream.Play.StreamNotFound":
- * trace("Unable to locate video: " + videoURL);
- * break;
- * }
- * }
- *
- *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
- * // ignore AsyncErrorEvent events.
- * }
- *
- *   private function drmAuthenticateEventHandler(event:DRMAuthenticateEvent):void {
- * videoStream.setDRMAuthenticationCredentials("User", "password", "drm");
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   AIR 1.0
- */
-using namespace flash::net;
 using namespace flash::events;
+using namespace flash::net;
 
 namespace flash
 {
     namespace events
     {
-        class DRMAuthenticateEvent: public Event
+        /// @eventType  flash.events.DRMAuthenticateEvent.DRM_AUTHENTICATE
+
+
+        /**
+         * A NetStream object dispatchs a DRMAuthenticateEvent object when attempting to play digital rights management (DRM) encrypted
+         * content that requires a user credential for authentication.
+         * <p class="- topic/p ">
+         * The DRMAuthenticateEvent handler is responsible for gathering the required credentials
+         * (such as the user name, password, and type) and passing the values to the
+         * <codeph class="+ topic/ph pr-d/codeph ">NetStream.setDRMAuthenticationCredentials()</codeph> method for authentication. Each
+         * AIR application must provide some mechanism for obtaining user credentials.
+         * For example, the application could provide a user with a simple user interface to enter the
+         * username and password values, and optionally the type value as well.
+         * </p><p class="- topic/p ">
+         * If user authentication failed, the application will retry
+         * authentication and dispatch a new DRMAuthenticateEvent event for the NetStream object.
+         * </p>
+         *
+         *   EXAMPLE:
+         *
+         *   <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">package
+         * {
+         * import flash.display.Sprite;
+         * import flash.events.AsyncErrorEvent;
+         * import flash.events.NetStatusEvent;
+         * import flash.events.DRMAuthenticateEvent;
+         * import flash.media.Video;
+         * import flash.net.NetConnection;
+         * import flash.net.NetStream;
+         *
+         *   public class DRMAuthenticateEventExample extends Sprite
+         * {
+         * var videoURL:String = "Video.flv";
+         * var videoConnection:NetConnection;
+         * var videoStream:NetStream;
+         * var video:Video = new Video();
+         *
+         *   public function DRMAuthenticateEventExample()
+         * {
+         * videoConnection = new NetConnection();
+         * videoConnection.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * videoConnection.connect(null);
+         * }
+         *
+         *   private function connectStream():void {
+         * videoStream = new NetStream(videoConnection);
+         * videoStream.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+         * videoStream.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
+         * videoStream.addEventListener(DRMAuthenticateEvent.DRM_AUTHENTICATE, drmAuthenticateEventHandler);
+         * video.attachNetStream(videoStream);
+         * videoStream.play(videoURL);
+         * addChild(video);
+         * }
+         *
+         *   private function netStatusHandler(event:NetStatusEvent):void {
+         * switch (event.info.code) {
+         * case "NetConnection.Connect.Success":
+         * connectStream();
+         * break;
+         * case "NetStream.Play.StreamNotFound":
+         * trace("Unable to locate video: " + videoURL);
+         * break;
+         * }
+         * }
+         *
+         *   private function asyncErrorHandler(event:AsyncErrorEvent):void {
+         * // ignore AsyncErrorEvent events.
+         * }
+         *
+         *   private function drmAuthenticateEventHandler(event:DRMAuthenticateEvent):void {
+         * videoStream.setDRMAuthenticationCredentials("User", "password", "drm");
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   AIR 1.0
+         */
+        class DRMAuthenticateEvent : public flash::events::Event
         {
             /**
              * The DRMAuthenticateEvent.DRM_AUTHENTICATE constant defines the value of the
@@ -225,7 +229,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            DRMAuthenticateEvent(std::string type, bool bubbles, bool cancelable, std::string header, std::string userPrompt, std::string passPrompt, std::string urlPrompt, std::string authenticationType, NetStream *netstream);
+            DRMAuthenticateEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string header="", std::string userPrompt="", std::string passPrompt="", std::string urlPrompt="", std::string authenticationType="", NetStream *netstream=NULL);
 
             /**
              * Returns a string that contains all the properties of the DRMAuthenticateEvent object.

@@ -10,11 +10,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class ColorCorrection: public Object
+        class ColorCorrection : public Object
         {
             /**
              * Uses the host's default color correction. For the web player the host is usually a browser, and Flash Player

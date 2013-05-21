@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -60,13 +61,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class FontDescription: public Object
+            class FontDescription : public Object
             {
                 /**
                  * The rendering mode used for this text. Use RenderingMode
@@ -218,7 +220,7 @@ namespace flash
                  * @throws  ArgumentError The cffHinting specified is not a member of CFFHinting.
                  */
             public:
-                FontDescription(std::string fontName, std::string fontWeight, std::string fontPosture, std::string fontLookup, std::string renderingMode, std::string cffHinting);
+                FontDescription(std::string fontName="_serif", std::string fontWeight="normal", std::string fontPosture="normal", std::string fontLookup="device", std::string renderingMode="cff", std::string cffHinting="horizontalStem");
 
                 /**
                  * Returns true if an embedded font is available with the specified fontName, fontWeight, and fontPosture

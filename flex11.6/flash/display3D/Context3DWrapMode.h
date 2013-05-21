@@ -8,7 +8,7 @@ namespace flash
 {
     namespace display3D
     {
-        class Context3DWrapMode: public Object
+        class Context3DWrapMode : public Object
         {
         public:
             static const std::string REPEAT;

@@ -3,24 +3,25 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.GeolocationEvent.UPDATE
 //[Event(name="update",type="flash.events.GeolocationEvent")]
 
-/**
- * A Geolocation object dispatches GeolocationEvent objects when it receives updates from the location sensor installed on the device.
- * @langversion 3.0
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class GeolocationEvent: public Event
+        /**
+         * A Geolocation object dispatches GeolocationEvent objects when it receives updates from the location sensor installed on the device.
+         * @langversion 3.0
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class GeolocationEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a GeolocationEvent event object.
@@ -154,7 +155,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            GeolocationEvent(std::string type, bool bubbles, bool cancelable, float latitude, float longitude, float altitude, float hAccuracy, float vAccuracy, float speed, float heading, float timestamp);
+            GeolocationEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float latitude =0, float longitude =0, float altitude =0, float hAccuracy =0, float vAccuracy =0, float speed =0, float heading =0, float timestamp =0);
 
             /**
              * Creates a copy of the GeolocationEvent object and sets the value of each property to match that of the original.

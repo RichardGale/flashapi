@@ -8,7 +8,7 @@ namespace flash
 {
     namespace net
     {
-        class DynamicPropertyOutput: public Object, public IDynamicPropertyOutput
+        class DynamicPropertyOutput : public Object, public IDynamicPropertyOutput
         {
         public:
             DynamicPropertyOutput();

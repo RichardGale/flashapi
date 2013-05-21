@@ -3,7 +3,10 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
+#include "flash/utils/IDataInput2.h"
+#include "flash/utils/IDataOutput2.h"
 
 /**
  * The ByteArray class provides methods and properties to optimize reading, writing,
@@ -85,11 +88,13 @@
  * @playerversion   Lite 4
  */
 
+using namespace flash::utils;
+
 namespace flash
 {
     namespace utils
     {
-        class ByteArray: public Object, public IDataInput2,, public IDataOutput2
+        class ByteArray : public Object, public flash::utils::IDataInput2, public flash::utils::IDataOutput2
         {
             /**
              * Denotes the default object encoding for the ByteArray class to use for a new ByteArray instance.
@@ -208,7 +213,7 @@ namespace flash
              * @throws  RangeError The value of the supplied offset and length, combined, is greater than the maximum for a uint.
              */
         public:
-            void     readBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
             /**
              * Writes a sequence of length bytes from the
@@ -231,7 +236,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     writeBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     writeBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
             /**
              * Writes a Boolean value. A single byte is written according to the value parameter,
@@ -612,7 +617,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     compress(std::string algorithm);
+            void     compress(std::string algorithm="zlib");
 
             /**
              * Decompresses the byte array using the deflate compression algorithm.
@@ -660,7 +665,7 @@ namespace flash
              *   same compression algorithm used to compress.
              */
         public:
-            void     uncompress(std::string algorithm);
+            void     uncompress(std::string algorithm="zlib");
 
             /**
              * Converts the byte array to a string.

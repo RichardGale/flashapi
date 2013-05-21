@@ -16,11 +16,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class NumberParseResult: public Object
+        class NumberParseResult : public Object
         {
             /**
              * The value of the numeric portion of the input string.
@@ -61,7 +62,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            NumberParseResult(float value, int startIndex, int endIndex);
+            NumberParseResult(float value =NaN, int startIndex=2147483647, int endIndex=2147483647);
         };
     }
 }

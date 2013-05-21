@@ -16,11 +16,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace net
     {
-        class Responder: public Object
+        class Responder : public Object
         {
             /**
              * Creates a new Responder object. You pass a Responder object to
@@ -34,7 +35,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Responder(Function *result, Function *status);
+            Responder(Function *result, Function *status=NULL);
         };
     }
 }

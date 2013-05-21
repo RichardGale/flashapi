@@ -10,11 +10,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class CurrencyParseResult: public Object
+        class CurrencyParseResult : public Object
         {
             /**
              * The currency amount value that was extracted from the input string.
@@ -43,7 +44,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            CurrencyParseResult(float value, std::string symbol);
+            CurrencyParseResult(float value =NaN, std::string symbol="");
         };
     }
 }

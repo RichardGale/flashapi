@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -94,6 +95,7 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
 using namespace flash::events;
 
 namespace flash
@@ -149,8 +151,8 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 9
              * @playerversion   Lite 4
-             */
-            virtual void addEventListener(std::string type, Function *listener, bool useCapture, int priority, bool useWeakReference) = 0;
+             */virtual
+            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false) = 0;
 
             /**
              * Removes a listener from the EventDispatcher object. If there is no matching listener
@@ -162,7 +164,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual void removeEventListener(std::string type, Function *listener, bool useCapture) = 0;
+            virtual
+            void     removeEventListener(std::string type, Function *listener, bool useCapture   =false) = 0;
 
             /**
              * Dispatches an event into the event flow. The event target is the
@@ -174,7 +177,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual bool dispatchEvent(Event *event) = 0;
+            virtual
+            bool     dispatchEvent(Event *event) = 0;
 
             /**
              * Checks whether the EventDispatcher object has any listeners registered for a specific type
@@ -187,7 +191,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual bool hasEventListener(std::string type) = 0;
+            virtual
+            bool     hasEventListener(std::string type) = 0;
 
             /**
              * Checks whether an event listener is registered with this EventDispatcher object or any of its ancestors for the specified event type. This method returns true if an event listener is triggered during any phase of the event flow when an event of the specified type is dispatched to this EventDispatcher object or any of its descendants.
@@ -198,7 +203,8 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            virtual bool willTrigger(std::string type) = 0;
+            virtual
+            bool     willTrigger(std::string type) = 0;
         };
     }
 }

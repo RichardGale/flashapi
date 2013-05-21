@@ -3,24 +3,25 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.OutputProgressEvent.OUTPUT_PROGRESS
 //[Event(name="outputProgress",type="flash.events.OutputProgressEvent")]
 
-/**
- * A FileStream object dispatches OutputProgressEvent objects as pending asynchronous file write operations are
- * performed. There is one type of output progress event: <codeph class="+ topic/ph pr-d/codeph ">OutputProgressEvent.OUTPUT_PROGRESS</codeph>.
- * @langversion 3.0
- * @playerversion   AIR 1.0
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class OutputProgressEvent: public Event
+        /**
+         * A FileStream object dispatches OutputProgressEvent objects as pending asynchronous file write operations are
+         * performed. There is one type of output progress event: <codeph class="+ topic/ph pr-d/codeph ">OutputProgressEvent.OUTPUT_PROGRESS</codeph>.
+         * @langversion 3.0
+         * @playerversion   AIR 1.0
+         */
+        class OutputProgressEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of an outputProgress event object.
@@ -77,7 +78,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            OutputProgressEvent(std::string type, bool bubbles, bool cancelable, float bytesPending, float bytesTotal);
+            OutputProgressEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float bytesPending =0, float bytesTotal =0);
 
             /**
              * Returns a string that contains all the properties of the OutputProgressEvent object. The string is in the following format:

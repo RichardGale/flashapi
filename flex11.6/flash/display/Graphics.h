@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace geom
@@ -144,19 +145,15 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
+
+using namespace flash::display;
 using namespace flash::geom;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::display;
-using namespace flash::display;
 
 namespace flash
 {
     namespace display
     {
-        class Graphics: public Object
+        class Graphics : public Object
         {
             /**
              * Clears the graphics that were drawn to this Graphics object, and resets fill and
@@ -184,7 +181,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     beginFill(unsigned int color, float alpha);
+            void     beginFill(unsigned int color, float alpha =1);
 
             /**
              * Specifies a gradient fill used by subsequent calls to other
@@ -260,7 +257,7 @@ namespace flash
              * @throws  ArgumentError If the type parameter is not valid.
              */
         public:
-            void     beginGradientFill(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix, std::string spreadMethod, std::string interpolationMethod, float focalPointRatio);
+            void     beginGradientFill(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
 
             /**
              * Fills a drawing area with a bitmap image. The bitmap can be repeated or tiled to fill
@@ -297,7 +294,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     beginBitmapFill(BitmapData *bitmap, Matrix *matrix, bool repeat, bool smooth);
+            void     beginBitmapFill(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
 
             /**
              * Specifies a shader fill used by subsequent calls to other Graphics methods
@@ -347,7 +344,7 @@ namespace flash
              *   property for more information.
              */
         public:
-            void     beginShaderFill(Shader *shader, Matrix *matrix);
+            void     beginShaderFill(Shader *shader, Matrix *matrix=NULL);
 
         public:
             Graphics();
@@ -405,7 +402,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     lineGradientStyle(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix, std::string spreadMethod, std::string interpolationMethod, float focalPointRatio);
+            void     lineGradientStyle(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
 
             /**
              * Specifies a line style used for subsequent calls to
@@ -499,7 +496,7 @@ namespace flash
              *   </listing>
              */
         public:
-            void     lineStyle(float thickness, unsigned int color, float alpha, bool pixelHinting, std::string scaleMode, std::string caps, std::string joints, float miterLimit);
+            void     lineStyle(float thickness =NULL, unsigned int color=0, float alpha =1, bool pixelHinting   =false, std::string scaleMode="normal", std::string caps="", std::string joints="", float miterLimit =3);
 
             /**
              * Draws a rectangle. Set the line style, fill, or both before
@@ -543,7 +540,7 @@ namespace flash
              *   or ellipseHeight parameters are not a number (Number.NaN).
              */
         public:
-            void     drawRoundRect(float x, float y, float width, float height, float ellipseWidth, float ellipseHeight);
+            void     drawRoundRect(float x, float y, float width, float height, float ellipseWidth, float ellipseHeight =NULL);
 
         public:
             void     drawRoundRectComplex(float x, float y, float width, float height, float topLeftRadius, float topRightRadius, float bottomLeftRadius, float bottomRightRadius);
@@ -735,7 +732,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     lineBitmapStyle(BitmapData *bitmap, Matrix *matrix, bool repeat, bool smooth);
+            void     lineBitmapStyle(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
 
             /**
              * Specifies a shader to use for the line stroke when drawing lines.
@@ -757,7 +754,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     lineShaderStyle(Shader *shader, Matrix *matrix);
+            void     lineShaderStyle(Shader *shader, Matrix *matrix=NULL);
 
             /**
              * Submits a series of commands for drawing. The drawPath() method uses vector arrays to consolidate
@@ -793,7 +790,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     drawPath(std::vector<int> *commands, std::vector<float> *data, std::string winding);
+            void     drawPath(std::vector<int> commands, std::vector<float> data, std::string winding="evenOdd");
 
             /**
              * Renders a set of triangles, typically to distort bitmaps and give them a three-dimensional appearance. The
@@ -828,7 +825,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     drawTriangles(std::vector<float> *vertices, std::vector<int> *indices, std::vector<float> *uvtData, std::string culling);
+            void     drawTriangles(std::vector<float> vertices, std::vector<int> indices=std::vector<int>(), std::vector<float> uvtData=std::vector<float>(), std::string culling="none");
 
             /**
              * Submits a series of IGraphicsData instances for drawing. This method accepts a Vector containing objects
@@ -845,10 +842,10 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     drawGraphicsData(std::vector<flash::display::IGraphicsData *> *graphicsData);
+            void     drawGraphicsData(std::vector<flash::display::IGraphicsData *> graphicsData);
 
         public:
-            std::vector<IGraphicsData *> *readGraphicsData(bool recurse);
+            std::vector<IGraphicsData *> readGraphicsData(bool recurse   =true);
         };
     }
 }

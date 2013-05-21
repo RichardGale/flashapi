@@ -85,11 +85,12 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+
 namespace flash
 {
     namespace sampler
     {
-        class Sample: public Object
+        class Sample : public Object
         {
             /**
              * The microseconds that define the duration of the Sample instance. For Flash Player debugger version only.

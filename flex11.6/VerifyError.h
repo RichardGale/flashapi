@@ -12,7 +12,8 @@
  * @playerversion   Lite 4
  */
 
-class VerifyError: public Error
+
+class VerifyError : public Error
 {
 public:
     static const int length;
@@ -25,7 +26,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    VerifyError(void *message, void *id);
+    VerifyError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_VERIFYERROR_AS

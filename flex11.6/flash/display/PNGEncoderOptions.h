@@ -8,13 +8,13 @@ namespace flash
 {
     namespace display
     {
-        class PNGEncoderOptions: public Object
+        class PNGEncoderOptions : public Object
         {
         public:
             bool fastCompression;
 
         public:
-            PNGEncoderOptions(bool fastCompression);
+            PNGEncoderOptions(bool fastCompression   =false);
         };
     }
 }

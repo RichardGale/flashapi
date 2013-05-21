@@ -8,7 +8,7 @@ namespace flash
 {
     namespace automation
     {
-        class MouseAutomationAction: public AutomationAction
+        class MouseAutomationAction : public AutomationAction
         {
         public:
             static const std::string MOUSE_DOWN;
@@ -43,7 +43,7 @@ namespace flash
             void         delta(int value);
 
         public:
-            MouseAutomationAction(std::string type, float stageX, float stageY, int delta);
+            MouseAutomationAction(std::string type, float stageX =0, float stageY =0, int delta=0);
         };
     }
 }

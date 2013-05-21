@@ -13,11 +13,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class GraphicsPathCommand: public Object
+        class GraphicsPathCommand : public Object
         {
             /**
              * Represents the default "do nothing" command.

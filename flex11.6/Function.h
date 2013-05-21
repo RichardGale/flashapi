@@ -130,7 +130,8 @@
  * @playerversion   Lite 4
  */
 
-class Function: public Object
+
+class Function : public Object
 {
 public:
     static const int _length;
@@ -185,7 +186,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    void    *call(void *thisArg, ...);
+    void    *call(void *thisArg=NULL, ...);
 
     /**
      * Specifies the value of thisObject to be used within any function that ActionScript calls.
@@ -201,7 +202,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    void    *apply(void *thisArg, void *argArray);
+    void    *apply(void *thisArg=NULL, void *argArray=NULL);
 };
 
 #endif // FLEX11_6_FUNCTION_AS

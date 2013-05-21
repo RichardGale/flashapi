@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace globalization
@@ -121,13 +122,14 @@ namespace flash
  * @playerversion   Flash 10.1
  * @playerversion   AIR 2
  */
+
 using namespace flash::globalization;
 
 namespace flash
 {
     namespace globalization
     {
-        class CurrencyFormatter: public Object
+        class CurrencyFormatter : public Object
         {
             /**
              * The three letter ISO 4217 currency code for the actual locale being used.
@@ -491,7 +493,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *getAvailableLocaleIDNames();
+            static std::vector<std::string> getAvailableLocaleIDNames();
 
             /**
              * Sets the currencyISOCode and currencySymbol properties of the CurrencyFormatter object.
@@ -533,7 +535,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string format(float value, bool withCurrencySymbol);
+            std::string format(float value, bool withCurrencySymbol   =false);
 
             /**
              * Determines whether the currently specified currency symbol can be used when formatting currency amounts.

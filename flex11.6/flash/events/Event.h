@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /// @eventType  flash.events.Event.ACTIVATE
@@ -147,199 +148,202 @@
 //[Event(name="userIdle",type="flash.events.Event")]
 
 
-//[Event(name="userIdle",type="flash.events.Event")]/// @eventType  flash.events.Event.USER_PRESENT
+//[Event(name="userIdle",type="flash.events.Event")]
 
-/**
- * The Event class is used as the base class for the creation of Event objects,
- * which are passed as parameters to event listeners when an event occurs.
- *
- *   <p class="- topic/p ">The properties of the Event class carry basic information about an event, such as
- * the event's type or whether the event's default behavior can be canceled. For many
- * events, such as the events represented by the Event class constants, this basic information
- * is sufficient. Other events, however, may require more detailed information. <ph class="- topic/ph ">Events associated
- * with a mouse click, for example, need to include additional information about the location of
- * the click event and whether any keys were pressed during the click event.  You can pass such additional
- * information to event listeners by extending the Event class, which is what
- * the MouseEvent class does. ActionScript 3.0</ph> API defines several Event subclasses for common
- * events that require additional information. Events associated with each of the Event
- * subclasses are described in the documentation for each class.</p><p class="- topic/p ">The methods of the Event class can be used in event listener functions to affect the
- * behavior of the event object. Some events have an associated default behavior.<ph class="- topic/ph "> For example,
- * the <codeph class="+ topic/ph pr-d/codeph ">doubleClick</codeph> event has an associated default behavior that highlights
- * the word under the mouse pointer at the time of the event.</ph>
- * Your event listener can cancel this
- * behavior by calling the <codeph class="+ topic/ph pr-d/codeph ">preventDefault()</codeph> method.
- * <ph class="- topic/ph ">You can also make the current
- * event listener the last one to process an event by calling the <codeph class="+ topic/ph pr-d/codeph ">stopPropagation()</codeph>
- * or <codeph class="+ topic/ph pr-d/codeph ">stopImmediatePropagation()</codeph> method.</ph></p><p class="- topic/p ">Other sources of information include:</p><ul class="- topic/ul "><li class="- topic/li ">A useful description about the timing of events, code execution, and rendering at runtime in Ted Patrick's blog entry:
- * <xref href="http://www.onflex.org/ted/2005/07/flash-player-mental-model-elastic.php" scope="external" class="- topic/xref ">Flash Player Mental Model - The Elastic Racetrack</xref>.</li><li class="- topic/li ">A blog entry by Johannes Tacskovics about the timing of frame events, such as ENTER_FRAME, EXIT_FRAME:
- * <xref href="http://blog.johannest.com/2009/06/15/the-movieclip-life-cycle-revisited-from-event-added-to-event-removed_from_stage/" scope="external" class="- topic/xref ">The MovieClip Lifecycle</xref>.</li><li class="- topic/li ">An article by Trevor McCauley about the order of ActionScript operations:
- * <xref href="http://www.senocular.com/flash/tutorials/orderofoperations/" scope="external" class="- topic/xref ">Order of Operations in ActionScript</xref>.</li><li class="- topic/li ">A blog entry by Matt Przybylski on creating custom events:
- * <xref href="http://evolve.reintroducing.com/2007/10/23/as3/as3-custom-events/" scope="external" class="- topic/xref ">AS3: Custom Events</xref>.</li></ul>
- *
- *   EXAMPLE:
- *
- *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">EventExample</codeph> class and the
- * <codeph class="+ topic/ph pr-d/codeph ">Square</codeph> custom class to demonstrate how to manage event bubbling.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.Event;
- * import flash.events.MouseEvent;
- *
- *   public class EventExample extends Sprite {
- *
- *   public function EventExample() {
- * var square_0:Square = new Square(300, 0x336633);
- * addChild(square_0);
- *
- *   var square_1:Square = new Square(250, 0x669966);
- * square_0.addChild(square_1);
- *
- *   var square_2:Square = new Square(200, 0x66CC66);
- * square_1.addChild(square_2);
- *
- *   var square_3:Square = new Square(150, 0xAA0000);
- * square_3.shouldBubble = false;
- * square_2.addChild(square_3);
- *
- *   var square_4:Square = new Square(100, 0x66FF66);
- * square_3.addChild(square_4);
- *
- *   var square_5:Square = new Square(50, 0xCC0000);
- * square_5.shouldBubble = false;
- * square_4.addChild(square_5);
- *
- *   this.addEventListener(MouseEvent.CLICK, clickHandler);
- * }
- *
- *   private function clickHandler(e:Event):void {
- * trace("&gt;&gt; stage: " + e.type + " event from " + e.target.name + " called on " + this.name);
- * trace("&gt;&gt; --------------------------------------------");
- * }
- * }
- * }
- *
- *   import flash.display.Sprite;
- * import flash.events.Event;
- * import flash.events.MouseEvent;
- *
- *   class Square extends Sprite {
- * private var sideLen:int;
- * private var color:Number;
- * public var shouldBubble:Boolean = true;
- *
- *   public function Square(sideLen:int, color:Number) {
- * this.sideLen = sideLen;
- * this.color = color;
- * init();
- * draw();
- * }
- *
- *   private function init():void {
- * buttonMode = true;
- * this.addEventListener(MouseEvent.CLICK, firstClickHandler);
- * this.addEventListener(MouseEvent.CLICK, secondClickHandler);
- * this.addEventListener(MouseEvent.CLICK, thirdClickHandler);
- * }
- *
- *   private function draw():void {
- * this.graphics.beginFill(color);
- * this.graphics.drawRect(0, 0, sideLen, sideLen);
- * }
- *
- *   private function firstClickHandler(e:Event):void {
- * trace("&gt;&gt; 1e: " + e.type + " event from " + e.target.name + " called on " + this.name);
- * if(!shouldBubble) {
- * e.stopPropagation();
- * }
- * }
- *
- *   private function secondClickHandler(e:Event):void {
- * trace("&gt;&gt; 2e: " + e.type + " event from " + e.target.name + " called on " + this.name);
- * if(!shouldBubble) {
- * e.stopImmediatePropagation();
- * trace("&gt;&gt; --------------------------------------------");
- * }
- * }
- *
- *   private function thirdClickHandler(e:Event):void {
- * trace("&gt;&gt; 3e: " + e.type + " event from " + e.target.name + " called on " + this.name);
- * }
- * }
- * </codeblock>
- *
- *   EXAMPLE:
- *
- *   The following example creates an interactive demonstration of
- * the difference between <codeph class="+ topic/ph pr-d/codeph ">ADDED</codeph> and <codeph class="+ topic/ph pr-d/codeph ">ADDED_TO_STAGE</codeph> events,
- * as well as the difference between <codeph class="+ topic/ph pr-d/codeph ">REMOVED</codeph> and <codeph class="+ topic/ph pr-d/codeph ">REMOVED_FROM_STAGE</codeph>
- * events. Clicking a sprite will remove it from the stage as well as everything nested within it.
- * For example, clicking the largest sprite will cause a <codeph class="+ topic/ph pr-d/codeph ">REMOVED</codeph> event
- * as well as three <codeph class="+ topic/ph pr-d/codeph ">REMOVED_FROM_STAGE</codeph> events to fire.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.*;
- *
- *   public class EventExample2 extends Sprite {
- * public function EventExample2():void {
- * var parentSprite:Sprite = createSprite("parentSprite",200);
- * var childSprite:Sprite = createSprite("childSprite",100);
- * var childOfChildSprite:Sprite = createSprite("childOfChildSprite",50);
- *
- *   trace(":: Adding to Stage ::");
- * this.addChild(parentSprite);
- * trace(":: Adding to Stage ::");
- * parentSprite.addChild(childSprite);
- * trace(":: Adding to Stage ::");
- * childSprite.addChild(childOfChildSprite);
- * }
- * private function createSprite(name:String,size:uint):Sprite {
- * trace(":: Creating Sprite ::");
- * var newSprite:Sprite = new Sprite();
- * newSprite.name = name;
- * newSprite.graphics.beginFill(0xFFFFFF * Math.random(),1);
- * newSprite.graphics.drawRect(0,0,size,size);
- * newSprite.graphics.endFill();
- * newSprite.addEventListener(Event.ADDED, spriteAdded);
- * newSprite.addEventListener(Event.ADDED_TO_STAGE, spriteAddedToStage);
- * newSprite.addEventListener(Event.REMOVED, spriteRemoved);
- * newSprite.addEventListener(Event.REMOVED_FROM_STAGE, spriteRemovedFromStage);
- * newSprite.addEventListener(MouseEvent.CLICK, remove);
- * return newSprite;
- * }
- * private function remove(event:Event) {
- * if(event.target == event.currentTarget) {
- * trace(":: Removing Clicked Sprite ::");
- * var target:Sprite = Sprite(event.target);
- * target.parent.removeChild(target);
- * }
- * }
- * private function spriteRemovedFromStage(event:Event):void {
- * trace("REMOVED_FROM_STAGE: " + event.target.name + " : " + event.currentTarget.name);
- * }
- * private function spriteRemoved(event:Event):void {
- * trace("REMOVED: " + event.target.name + " from " + event.currentTarget.name);
- * }
- * private function spriteAddedToStage(event:Event):void {
- * trace("ADDED_TO_STAGE: " + event.target.name + " : " + event.currentTarget.name);
- * }
- * private function spriteAdded(event:Event):void {
- * trace("ADDED: " + event.target.name + " within " + event.currentTarget.name);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 
 namespace flash
 {
     namespace events
     {
-        class Event: public Object
+        /// @eventType  flash.events.Event.USER_PRESENT
+
+
+        /**
+         * The Event class is used as the base class for the creation of Event objects,
+         * which are passed as parameters to event listeners when an event occurs.
+         *
+         *   <p class="- topic/p ">The properties of the Event class carry basic information about an event, such as
+         * the event's type or whether the event's default behavior can be canceled. For many
+         * events, such as the events represented by the Event class constants, this basic information
+         * is sufficient. Other events, however, may require more detailed information. <ph class="- topic/ph ">Events associated
+         * with a mouse click, for example, need to include additional information about the location of
+         * the click event and whether any keys were pressed during the click event.  You can pass such additional
+         * information to event listeners by extending the Event class, which is what
+         * the MouseEvent class does. ActionScript 3.0</ph> API defines several Event subclasses for common
+         * events that require additional information. Events associated with each of the Event
+         * subclasses are described in the documentation for each class.</p><p class="- topic/p ">The methods of the Event class can be used in event listener functions to affect the
+         * behavior of the event object. Some events have an associated default behavior.<ph class="- topic/ph "> For example,
+         * the <codeph class="+ topic/ph pr-d/codeph ">doubleClick</codeph> event has an associated default behavior that highlights
+         * the word under the mouse pointer at the time of the event.</ph>
+         * Your event listener can cancel this
+         * behavior by calling the <codeph class="+ topic/ph pr-d/codeph ">preventDefault()</codeph> method.
+         * <ph class="- topic/ph ">You can also make the current
+         * event listener the last one to process an event by calling the <codeph class="+ topic/ph pr-d/codeph ">stopPropagation()</codeph>
+         * or <codeph class="+ topic/ph pr-d/codeph ">stopImmediatePropagation()</codeph> method.</ph></p><p class="- topic/p ">Other sources of information include:</p><ul class="- topic/ul "><li class="- topic/li ">A useful description about the timing of events, code execution, and rendering at runtime in Ted Patrick's blog entry:
+         * <xref href="http://www.onflex.org/ted/2005/07/flash-player-mental-model-elastic.php" scope="external" class="- topic/xref ">Flash Player Mental Model - The Elastic Racetrack</xref>.</li><li class="- topic/li ">A blog entry by Johannes Tacskovics about the timing of frame events, such as ENTER_FRAME, EXIT_FRAME:
+         * <xref href="http://blog.johannest.com/2009/06/15/the-movieclip-life-cycle-revisited-from-event-added-to-event-removed_from_stage/" scope="external" class="- topic/xref ">The MovieClip Lifecycle</xref>.</li><li class="- topic/li ">An article by Trevor McCauley about the order of ActionScript operations:
+         * <xref href="http://www.senocular.com/flash/tutorials/orderofoperations/" scope="external" class="- topic/xref ">Order of Operations in ActionScript</xref>.</li><li class="- topic/li ">A blog entry by Matt Przybylski on creating custom events:
+         * <xref href="http://evolve.reintroducing.com/2007/10/23/as3/as3-custom-events/" scope="external" class="- topic/xref ">AS3: Custom Events</xref>.</li></ul>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example uses the <codeph class="+ topic/ph pr-d/codeph ">EventExample</codeph> class and the
+         * <codeph class="+ topic/ph pr-d/codeph ">Square</codeph> custom class to demonstrate how to manage event bubbling.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.Event;
+         * import flash.events.MouseEvent;
+         *
+         *   public class EventExample extends Sprite {
+         *
+         *   public function EventExample() {
+         * var square_0:Square = new Square(300, 0x336633);
+         * addChild(square_0);
+         *
+         *   var square_1:Square = new Square(250, 0x669966);
+         * square_0.addChild(square_1);
+         *
+         *   var square_2:Square = new Square(200, 0x66CC66);
+         * square_1.addChild(square_2);
+         *
+         *   var square_3:Square = new Square(150, 0xAA0000);
+         * square_3.shouldBubble = false;
+         * square_2.addChild(square_3);
+         *
+         *   var square_4:Square = new Square(100, 0x66FF66);
+         * square_3.addChild(square_4);
+         *
+         *   var square_5:Square = new Square(50, 0xCC0000);
+         * square_5.shouldBubble = false;
+         * square_4.addChild(square_5);
+         *
+         *   this.addEventListener(MouseEvent.CLICK, clickHandler);
+         * }
+         *
+         *   private function clickHandler(e:Event):void {
+         * trace("&gt;&gt; stage: " + e.type + " event from " + e.target.name + " called on " + this.name);
+         * trace("&gt;&gt; --------------------------------------------");
+         * }
+         * }
+         * }
+         *
+         *   import flash.display.Sprite;
+         * import flash.events.Event;
+         * import flash.events.MouseEvent;
+         *
+         *   class Square extends Sprite {
+         * private var sideLen:int;
+         * private var color:Number;
+         * public var shouldBubble:Boolean = true;
+         *
+         *   public function Square(sideLen:int, color:Number) {
+         * this.sideLen = sideLen;
+         * this.color = color;
+         * init();
+         * draw();
+         * }
+         *
+         *   private function init():void {
+         * buttonMode = true;
+         * this.addEventListener(MouseEvent.CLICK, firstClickHandler);
+         * this.addEventListener(MouseEvent.CLICK, secondClickHandler);
+         * this.addEventListener(MouseEvent.CLICK, thirdClickHandler);
+         * }
+         *
+         *   private function draw():void {
+         * this.graphics.beginFill(color);
+         * this.graphics.drawRect(0, 0, sideLen, sideLen);
+         * }
+         *
+         *   private function firstClickHandler(e:Event):void {
+         * trace("&gt;&gt; 1e: " + e.type + " event from " + e.target.name + " called on " + this.name);
+         * if(!shouldBubble) {
+         * e.stopPropagation();
+         * }
+         * }
+         *
+         *   private function secondClickHandler(e:Event):void {
+         * trace("&gt;&gt; 2e: " + e.type + " event from " + e.target.name + " called on " + this.name);
+         * if(!shouldBubble) {
+         * e.stopImmediatePropagation();
+         * trace("&gt;&gt; --------------------------------------------");
+         * }
+         * }
+         *
+         *   private function thirdClickHandler(e:Event):void {
+         * trace("&gt;&gt; 3e: " + e.type + " event from " + e.target.name + " called on " + this.name);
+         * }
+         * }
+         * </codeblock>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example creates an interactive demonstration of
+         * the difference between <codeph class="+ topic/ph pr-d/codeph ">ADDED</codeph> and <codeph class="+ topic/ph pr-d/codeph ">ADDED_TO_STAGE</codeph> events,
+         * as well as the difference between <codeph class="+ topic/ph pr-d/codeph ">REMOVED</codeph> and <codeph class="+ topic/ph pr-d/codeph ">REMOVED_FROM_STAGE</codeph>
+         * events. Clicking a sprite will remove it from the stage as well as everything nested within it.
+         * For example, clicking the largest sprite will cause a <codeph class="+ topic/ph pr-d/codeph ">REMOVED</codeph> event
+         * as well as three <codeph class="+ topic/ph pr-d/codeph ">REMOVED_FROM_STAGE</codeph> events to fire.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         *
+         *   public class EventExample2 extends Sprite {
+         * public function EventExample2():void {
+         * var parentSprite:Sprite = createSprite("parentSprite",200);
+         * var childSprite:Sprite = createSprite("childSprite",100);
+         * var childOfChildSprite:Sprite = createSprite("childOfChildSprite",50);
+         *
+         *   trace(":: Adding to Stage ::");
+         * this.addChild(parentSprite);
+         * trace(":: Adding to Stage ::");
+         * parentSprite.addChild(childSprite);
+         * trace(":: Adding to Stage ::");
+         * childSprite.addChild(childOfChildSprite);
+         * }
+         * private function createSprite(name:String,size:uint):Sprite {
+         * trace(":: Creating Sprite ::");
+         * var newSprite:Sprite = new Sprite();
+         * newSprite.name = name;
+         * newSprite.graphics.beginFill(0xFFFFFF * Math.random(),1);
+         * newSprite.graphics.drawRect(0,0,size,size);
+         * newSprite.graphics.endFill();
+         * newSprite.addEventListener(Event.ADDED, spriteAdded);
+         * newSprite.addEventListener(Event.ADDED_TO_STAGE, spriteAddedToStage);
+         * newSprite.addEventListener(Event.REMOVED, spriteRemoved);
+         * newSprite.addEventListener(Event.REMOVED_FROM_STAGE, spriteRemovedFromStage);
+         * newSprite.addEventListener(MouseEvent.CLICK, remove);
+         * return newSprite;
+         * }
+         * private function remove(event:Event) {
+         * if(event.target == event.currentTarget) {
+         * trace(":: Removing Clicked Sprite ::");
+         * var target:Sprite = Sprite(event.target);
+         * target.parent.removeChild(target);
+         * }
+         * }
+         * private function spriteRemovedFromStage(event:Event):void {
+         * trace("REMOVED_FROM_STAGE: " + event.target.name + " : " + event.currentTarget.name);
+         * }
+         * private function spriteRemoved(event:Event):void {
+         * trace("REMOVED: " + event.target.name + " from " + event.currentTarget.name);
+         * }
+         * private function spriteAddedToStage(event:Event):void {
+         * trace("ADDED_TO_STAGE: " + event.target.name + " : " + event.currentTarget.name);
+         * }
+         * private function spriteAdded(event:Event):void {
+         * trace("ADDED: " + event.target.name + " within " + event.currentTarget.name);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class Event : public Object
         {
             /**
              * The ACTIVATE constant defines the value of the type property of an activate event object.
@@ -910,7 +914,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Event(std::string type, bool bubbles, bool cancelable);
+            Event(std::string type, bool bubbles   =false, bool cancelable   =false);
 
             /**
              * A utility function for implementing the toString() method in custom

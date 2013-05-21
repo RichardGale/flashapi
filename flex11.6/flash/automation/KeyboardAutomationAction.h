@@ -8,7 +8,7 @@ namespace flash
 {
     namespace automation
     {
-        class KeyboardAutomationAction: public AutomationAction
+        class KeyboardAutomationAction : public AutomationAction
         {
         public:
             static const std::string KEY_DOWN;
@@ -21,7 +21,7 @@ namespace flash
             void         keyCode(unsigned int value);
 
         public:
-            KeyboardAutomationAction(std::string type, unsigned int keyCode);
+            KeyboardAutomationAction(std::string type, unsigned int keyCode=0);
         };
     }
 }

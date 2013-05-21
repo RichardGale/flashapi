@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -21,152 +22,155 @@ namespace flash
 //[Event(name="gestureSwipe",type="flash.events.TransformGestureEvent")]
 
 
-//[Event(name="gestureZoom",type="flash.events.TransformGestureEvent")]/// @eventType  flash.events.TransformGestureEvent.GESTURE_ZOOM
+//[Event(name="gestureZoom",type="flash.events.TransformGestureEvent")]
 
-/**
- * The TransformGestureEvent class lets you handle complex movement input events (such as moving fingers across a touch screen)
- * that the device or operating system interprets as a gesture. A gesture can have one or more touch points.
- * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
- * touches and moves across the screen with his or her fingers or a pointing device. You can develop applications that respond to
- * this user interaction with the GestureEvent, PressAndTapGestureEvent, and TransformGestureEvent classes. Create event listeners using the event types defined here, or in
- * the related GestureEvent and TouchEvent classes. And, use the properties and methods of these classes
- * to construct event handlers that respond to the user touching the device.
- * <p class="- topic/p ">A device or operating system interprets gesture input. So, different devices or operating systems have different requirements for
- * individual gesture types. A swipe on one device might require different input movement than a swipe on another device. Refer to the hardware
- * or operating system documentation to discover how the device or operating system interprets contact as a specific gesture.</p><p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
- * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
- * nested object that is visible in the display list. This object is called the target node. To have a target node's
- * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
- * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
- * touch event you want to detect.</p><p class="- topic/p ">While the user is in contact with the device, the TransformGestureEvent object's scale, rotation, and offset properties are incremental values
- * from the previous gesture event. For example, as a gesture increases the size of a display object, the scale values might go in sequence <codeph class="+ topic/ph pr-d/codeph ">1.03</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">1.01</codeph>, <codeph class="+ topic/ph pr-d/codeph ">1.01</codeph>, <codeph class="+ topic/ph pr-d/codeph ">1.02</codeph> indicating the display object scaled 1.0717 times its original size by the end of the gesture.</p><p class="- topic/p ">For TransformGestureEvent objects, properties not modified by the current gesture are set to identity values. For example, a pan gesture does not have a rotation
- * or scale transformation, so the <codeph class="+ topic/ph pr-d/codeph ">rotation</codeph> value of the event object is <codeph class="+ topic/ph pr-d/codeph ">0</codeph>, the <codeph class="+ topic/ph pr-d/codeph ">scaleX</codeph> and <codeph class="+ topic/ph pr-d/codeph ">scaleY</codeph> properties are <codeph class="+ topic/ph pr-d/codeph ">1</codeph>.</p>
- *
- *   EXAMPLE:
- *
- *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_ROTATE</codeph> events.
- * While the user performs a rotation gesture on the touch-enabled device, mySprite rotates and myTextField populates with the current phase.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * Multitouch.inputMode = MultitouchInputMode.GESTURE;
- *
- *   var mySprite = new Sprite();
- * mySprite.addEventListener(TransformGestureEvent.GESTURE_ROTATE , onRotate );
- * mySprite.graphics.beginFill(0x336699);
- * mySprite.graphics.drawRect(0, 0, 100, 80);
- * var myTextField = new TextField();
- * myTextField.y = 200;
- * addChild(mySprite);
- * addChild(myTextField);
- *
- *   function onRotate(evt:TransformGestureEvent):void {
- *
- *   evt.target.rotation -= 45;
- *
- *   if (evt.phase==GesturePhase.BEGIN) {
- * myTextField.text = "Begin";
- * }
- * if (evt.phase==GesturePhase.UPDATE) {
- * myTextField.text = "Update";
- * }
- * if (evt.phase==GesturePhase.END) {
- * myTextField.text = "End";
- * }
- * }
- * </codeblock>
- *
- *   EXAMPLE:
- *
- *   The following example shows how to handle transform gesture events. This example assumes an image is on your local system
- * called "african_elephant.jpg" and in the same directory as the TransformGestureExample2 class.
- * This example comes from Christian Cantrell, and is explained in more detail in his quickstart:
- * <xref href="http://www.adobe.com/devnet/flash/articles/multitouch_gestures.html" scope="external" class="- topic/xref ">Multi-touch and gesture support on the Flash Platform</xref>.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package
- * {
- * import flash.display.Bitmap;
- * import flash.display.Sprite;
- * import flash.events.TransformGestureEvent;
- * import flash.text.TextField;
- * import flash.text.TextFormat;
- * import flash.ui.Multitouch;
- * import flash.ui.MultitouchInputMode;
- *
- *   [SWF(width=320, height=460, frameRate=24, backgroundColor=0x000000)]
- * public class TransformGestureExample2 extends Sprite
- * {
- * [Embed(source="african_elephant.jpg")]
- * public var ElephantImage:Class;
- * public var scaleDebug:TextField;
- * public var rotateDebug:TextField;
- *
- *   public function TransformGestureExample2()
- * {
- * // Debug
- * var tf:TextFormat = new TextFormat();
- * tf.color = 0xffffff;
- * tf.font = "Helvetica";
- * tf.size = 11;
- * this.scaleDebug = new TextField();
- * this.scaleDebug.width = 310;
- * this.scaleDebug.defaultTextFormat = tf;
- * this.scaleDebug.x = 2;
- * this.scaleDebug.y = 2;
- * this.stage.addChild(this.scaleDebug);
- * this.rotateDebug = new TextField();
- * this.rotateDebug.width = 310;
- * this.rotateDebug.defaultTextFormat = tf;
- * this.rotateDebug.x = 2;
- * this.rotateDebug.y = 15;
- * this.stage.addChild(this.rotateDebug);
- *
- *   var elephantBitmap:Bitmap = new ElephantImage();
- * var elephant:Sprite = new Sprite();
- *
- *   elephant.addChild(elephantBitmap);
- *
- *   elephant.x = 160;
- * elephant.y = 230;
- *
- *   elephantBitmap.x = (300 - (elephantBitmap.bitmapData.width / 2)) * -1;
- * elephantBitmap.y = (400 - (elephantBitmap.bitmapData.height / 2)) *-1;
- *
- *   this.addChild(elephant);
- *
- *   Multitouch.inputMode = MultitouchInputMode.GESTURE;
- * elephant.addEventListener(TransformGestureEvent.GESTURE_ZOOM, onZoom);
- * elephant.addEventListener(TransformGestureEvent.GESTURE_ROTATE, onRotate);
- * }
- *
- *   private function onZoom(e:TransformGestureEvent):void
- * {
- * this.scaleDebug.text = (e.scaleX + ", " + e.scaleY);
- * var elephant:Sprite = e.target as Sprite;
- * elephant.scaleX *= e.scaleX;
- * elephant.scaleY *= e.scaleY;
- * }
- *
- *   private function onRotate(e:TransformGestureEvent):void
- * {
- * var elephant:Sprite = e.target as Sprite;
- * this.rotateDebug.text = String(e.rotation);
- * elephant.rotation += e.rotation;
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class TransformGestureEvent: public GestureEvent
+        /// @eventType  flash.events.TransformGestureEvent.GESTURE_ZOOM
+
+
+        /**
+         * The TransformGestureEvent class lets you handle complex movement input events (such as moving fingers across a touch screen)
+         * that the device or operating system interprets as a gesture. A gesture can have one or more touch points.
+         * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
+         * touches and moves across the screen with his or her fingers or a pointing device. You can develop applications that respond to
+         * this user interaction with the GestureEvent, PressAndTapGestureEvent, and TransformGestureEvent classes. Create event listeners using the event types defined here, or in
+         * the related GestureEvent and TouchEvent classes. And, use the properties and methods of these classes
+         * to construct event handlers that respond to the user touching the device.
+         * <p class="- topic/p ">A device or operating system interprets gesture input. So, different devices or operating systems have different requirements for
+         * individual gesture types. A swipe on one device might require different input movement than a swipe on another device. Refer to the hardware
+         * or operating system documentation to discover how the device or operating system interprets contact as a specific gesture.</p><p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
+         * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
+         * nested object that is visible in the display list. This object is called the target node. To have a target node's
+         * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
+         * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
+         * touch event you want to detect.</p><p class="- topic/p ">While the user is in contact with the device, the TransformGestureEvent object's scale, rotation, and offset properties are incremental values
+         * from the previous gesture event. For example, as a gesture increases the size of a display object, the scale values might go in sequence <codeph class="+ topic/ph pr-d/codeph ">1.03</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">1.01</codeph>, <codeph class="+ topic/ph pr-d/codeph ">1.01</codeph>, <codeph class="+ topic/ph pr-d/codeph ">1.02</codeph> indicating the display object scaled 1.0717 times its original size by the end of the gesture.</p><p class="- topic/p ">For TransformGestureEvent objects, properties not modified by the current gesture are set to identity values. For example, a pan gesture does not have a rotation
+         * or scale transformation, so the <codeph class="+ topic/ph pr-d/codeph ">rotation</codeph> value of the event object is <codeph class="+ topic/ph pr-d/codeph ">0</codeph>, the <codeph class="+ topic/ph pr-d/codeph ">scaleX</codeph> and <codeph class="+ topic/ph pr-d/codeph ">scaleY</codeph> properties are <codeph class="+ topic/ph pr-d/codeph ">1</codeph>.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">GESTURE_ROTATE</codeph> events.
+         * While the user performs a rotation gesture on the touch-enabled device, mySprite rotates and myTextField populates with the current phase.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * Multitouch.inputMode = MultitouchInputMode.GESTURE;
+         *
+         *   var mySprite = new Sprite();
+         * mySprite.addEventListener(TransformGestureEvent.GESTURE_ROTATE , onRotate );
+         * mySprite.graphics.beginFill(0x336699);
+         * mySprite.graphics.drawRect(0, 0, 100, 80);
+         * var myTextField = new TextField();
+         * myTextField.y = 200;
+         * addChild(mySprite);
+         * addChild(myTextField);
+         *
+         *   function onRotate(evt:TransformGestureEvent):void {
+         *
+         *   evt.target.rotation -= 45;
+         *
+         *   if (evt.phase==GesturePhase.BEGIN) {
+         * myTextField.text = "Begin";
+         * }
+         * if (evt.phase==GesturePhase.UPDATE) {
+         * myTextField.text = "Update";
+         * }
+         * if (evt.phase==GesturePhase.END) {
+         * myTextField.text = "End";
+         * }
+         * }
+         * </codeblock>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows how to handle transform gesture events. This example assumes an image is on your local system
+         * called "african_elephant.jpg" and in the same directory as the TransformGestureExample2 class.
+         * This example comes from Christian Cantrell, and is explained in more detail in his quickstart:
+         * <xref href="http://www.adobe.com/devnet/flash/articles/multitouch_gestures.html" scope="external" class="- topic/xref ">Multi-touch and gesture support on the Flash Platform</xref>.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package
+         * {
+         * import flash.display.Bitmap;
+         * import flash.display.Sprite;
+         * import flash.events.TransformGestureEvent;
+         * import flash.text.TextField;
+         * import flash.text.TextFormat;
+         * import flash.ui.Multitouch;
+         * import flash.ui.MultitouchInputMode;
+         *
+         *   [SWF(width=320, height=460, frameRate=24, backgroundColor=0x000000)]
+         * public class TransformGestureExample2 extends Sprite
+         * {
+         * [Embed(source="african_elephant.jpg")]
+         * public var ElephantImage:Class;
+         * public var scaleDebug:TextField;
+         * public var rotateDebug:TextField;
+         *
+         *   public function TransformGestureExample2()
+         * {
+         * // Debug
+         * var tf:TextFormat = new TextFormat();
+         * tf.color = 0xffffff;
+         * tf.font = "Helvetica";
+         * tf.size = 11;
+         * this.scaleDebug = new TextField();
+         * this.scaleDebug.width = 310;
+         * this.scaleDebug.defaultTextFormat = tf;
+         * this.scaleDebug.x = 2;
+         * this.scaleDebug.y = 2;
+         * this.stage.addChild(this.scaleDebug);
+         * this.rotateDebug = new TextField();
+         * this.rotateDebug.width = 310;
+         * this.rotateDebug.defaultTextFormat = tf;
+         * this.rotateDebug.x = 2;
+         * this.rotateDebug.y = 15;
+         * this.stage.addChild(this.rotateDebug);
+         *
+         *   var elephantBitmap:Bitmap = new ElephantImage();
+         * var elephant:Sprite = new Sprite();
+         *
+         *   elephant.addChild(elephantBitmap);
+         *
+         *   elephant.x = 160;
+         * elephant.y = 230;
+         *
+         *   elephantBitmap.x = (300 - (elephantBitmap.bitmapData.width / 2)) * -1;
+         * elephantBitmap.y = (400 - (elephantBitmap.bitmapData.height / 2)) *-1;
+         *
+         *   this.addChild(elephant);
+         *
+         *   Multitouch.inputMode = MultitouchInputMode.GESTURE;
+         * elephant.addEventListener(TransformGestureEvent.GESTURE_ZOOM, onZoom);
+         * elephant.addEventListener(TransformGestureEvent.GESTURE_ROTATE, onRotate);
+         * }
+         *
+         *   private function onZoom(e:TransformGestureEvent):void
+         * {
+         * this.scaleDebug.text = (e.scaleX + ", " + e.scaleY);
+         * var elephant:Sprite = e.target as Sprite;
+         * elephant.scaleX *= e.scaleX;
+         * elephant.scaleY *= e.scaleY;
+         * }
+         *
+         *   private function onRotate(e:TransformGestureEvent):void
+         * {
+         * var elephant:Sprite = e.target as Sprite;
+         * this.rotateDebug.text = String(e.rotation);
+         * elephant.rotation += e.rotation;
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 10.1
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class TransformGestureEvent : public GestureEvent
         {
             /**
              * Defines the value of the type property of a GESTURE_ZOOM touch event object.
@@ -345,7 +349,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TransformGestureEvent(std::string type, bool bubbles, bool cancelable, std::string phase, float localX, float localY, float scaleX, float scaleY, float rotation, float offsetX, float offsetY, bool ctrlKey, bool altKey, bool shiftKey);
+            TransformGestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, float scaleX =1, float scaleY =1, float rotation =0, float offsetX =0, float offsetY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
         };
     }
 }

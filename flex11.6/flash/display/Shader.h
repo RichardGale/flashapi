@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -166,14 +167,15 @@ namespace flash
  * @playerversion   Flash 10
  * @playerversion   AIR 1.5
  */
-using namespace flash::utils;
+
 using namespace flash::display;
+using namespace flash::utils;
 
 namespace flash
 {
     namespace display
     {
-        class Shader: public Object
+        class Shader : public Object
         {
             /**
              * The raw shader bytecode for this Shader instance.
@@ -228,7 +230,7 @@ namespace flash
             void         precisionHint(std::string p);
 
         public:
-            Shader(ByteArray *code);
+            Shader(ByteArray *code=NULL);
         };
     }
 }

@@ -8,7 +8,7 @@ namespace flash
 {
     namespace automation
     {
-        class AutomationAction: public Object
+        class AutomationAction : public Object
         {
         public:
             std::string  type();

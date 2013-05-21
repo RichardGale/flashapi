@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -19,7 +20,7 @@ namespace flash
 {
     namespace ui
     {
-        class GameInput: public EventDispatcher
+        class GameInput : public flash::events::EventDispatcher
         {
         public:
             static int          numDevices();

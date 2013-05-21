@@ -16,11 +16,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
-        class Font: public Object
+        class Font : public Object
         {
             /**
              * The name of an embedded font.
@@ -60,7 +61,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::vector<void *> enumerateFonts(bool enumerateDeviceFonts);
+            static std::vector<void *> enumerateFonts(bool enumerateDeviceFonts   =false);
 
         public:
             Font();

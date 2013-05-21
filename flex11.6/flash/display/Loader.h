@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace system
@@ -190,21 +191,18 @@ namespace flash
  * @playerversion   Flash 9
  * @playerversion   Lite 4
  */
-using namespace flash::system;
-using namespace flash::net;
-using namespace flash::utils;
-using namespace flash::system;
-using namespace flash::system;
-using namespace flash::display;
-using namespace flash::display;
+
 using namespace flash::display;
 using namespace flash::events;
+using namespace flash::net;
+using namespace flash::system;
+using namespace flash::utils;
 
 namespace flash
 {
     namespace display
     {
-        class Loader: public DisplayObjectContainer
+        class Loader : public flash::display::DisplayObjectContainer
         {
             /**
              * Contains the root display object of the SWF file or image (JPG, PNG, or GIF)
@@ -335,7 +333,7 @@ namespace flash
              *   set to non-null and has some values which are not Strings.
              */
         public:
-            void     load(URLRequest *request, LoaderContext *context);
+            void     load(URLRequest *request, LoaderContext *context=NULL);
 
             /**
              * Loads from binary data stored in a ByteArray object.
@@ -373,7 +371,7 @@ namespace flash
              *   ActionScript 3.0 Developer's Guide.
              */
         public:
-            void     loadBytes(ByteArray *bytes, LoaderContext *context);
+            void     loadBytes(ByteArray *bytes, LoaderContext *context=NULL);
 
             /**
              * Cancels a load() method operation that is currently in progress for the Loader instance.
@@ -464,7 +462,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     unloadAndStop(bool gc);
+            void     unloadAndStop(bool gc   =true);
 
         public:
             DisplayObject *addChild(DisplayObject *child);

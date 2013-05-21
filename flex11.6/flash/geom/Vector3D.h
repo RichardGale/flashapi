@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -27,11 +28,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace geom
     {
-        class Vector3D: public Object
+        class Vector3D : public Object
         {
             /**
              * The x axis defined as a Vector3D object with coordinates (1,0,0).
@@ -148,7 +150,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            Vector3D(float x, float y, float z, float w);
+            Vector3D(float x =0, float y =0, float z =0, float w =0);
 
             /**
              * Returns the angle in radians between two vectors. The returned angle is the smallest radian
@@ -348,7 +350,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     equals(Vector3D *toCompare, bool allFour);
+            bool     equals(Vector3D *toCompare, bool allFour   =false);
 
             /**
              * Compares the elements of the current Vector3D object with the elements of a specified
@@ -371,7 +373,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     nearEquals(Vector3D *toCompare, float tolerance, bool allFour);
+            bool     nearEquals(Vector3D *toCompare, float tolerance, bool allFour   =false);
 
             /**
              * Divides the value of the x, y, and z properties of the

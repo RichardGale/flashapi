@@ -16,11 +16,12 @@
  * @playerversion   AIR 1.5
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class GraphicsPathWinding: public Object
+        class GraphicsPathWinding : public Object
         {
             /**
              * Establishes the even-odd winding type. The even-odd winding type is the rule used by all of the

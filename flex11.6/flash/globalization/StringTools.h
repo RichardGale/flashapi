@@ -109,11 +109,12 @@
  * @playerversion   AIR 2
  */
 
+
 namespace flash
 {
     namespace globalization
     {
-        class StringTools: public Object
+        class StringTools : public Object
         {
             /**
              * The status of the most recent operation that this StringTools object performed.
@@ -192,7 +193,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::vector<std::string> *getAvailableLocaleIDNames();
+            static std::vector<std::string> getAvailableLocaleIDNames();
 
             /**
              * Constructs a new StringTools object that provides case conversion and other utilities according to

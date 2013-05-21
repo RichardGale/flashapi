@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 namespace flash
 {
@@ -85,219 +86,6 @@ namespace flash
  */
 //[Event(name="cancel",type="flash.events.Event")]
 
-/**
- * The FileReference class provides a means to upload and
- * download files between a user's computer and a server. An operating-system
- * dialog box prompts the user to select a file to upload or a location for
- * download. Each FileReference object refers to a single file on the user's disk
- * and has properties that contain information about
- * the file's size, type, name, creation date, modification date, and creator type
- * (Macintosh only).
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> In Adobe AIR, the File class, which extends the FileReference class,
- * provides more capabilities and has less security restrictions than the FileReference class.</p><p class="- topic/p ">FileReference instances are created in the following ways:</p><ul class="- topic/ul "><li class="- topic/li ">When you use the <codeph class="+ topic/ph pr-d/codeph ">new</codeph> operator with the FileReference constructor:
- *
- *   <codeph class="+ topic/ph pr-d/codeph ">var myFileReference = new FileReference();</codeph></li><li class="- topic/li ">When you call the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method, which creates an array of FileReference objects.</li></ul><p class="- topic/p ">During an upload operation, all the properties of a FileReference object are
- * populated by calls to the <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> methods.
- * During a download operation, the <codeph class="+ topic/ph pr-d/codeph ">name</codeph> property is populated when the
- * <codeph class="+ topic/ph pr-d/codeph ">select</codeph> event is dispatched; all other properties are populated when the
- * <codeph class="+ topic/ph pr-d/codeph ">complete</codeph> event is dispatched.</p><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method opens an operating-system dialog box that prompts the
- * user to select a file for upload. The <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph> method
- * lets the user select a single file; the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method
- * lets the user select multiple files. After a successful call to the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method,
- * call the <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph> method to upload one file at a time. The
- * <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph> method prompts the user for a location to save
- * the file and initiates downloading from a remote URL.</p><p class="- topic/p ">The FileReference and FileReferenceList classes do not let you set the default file location
- * for the dialog box that the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">download()</codeph> methods generate.
- * The default location shown in the dialog box is the most
- * recently browsed folder, if that location can be determined, or the desktop.
- * The classes do not allow you to read from or write to the transferred file.
- * They do not allow the SWF file that initiated the
- * upload or download to access the uploaded or downloaded file or the file's location on
- * the user's disk.</p><p class="- topic/p ">The FileReference and FileReferenceList classes also do not provide
- * methods for authentication. With servers that require authentication, you can
- * download files with the Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player browser plug-in, but
- * uploading (on all players) and downloading (on the stand-alone or
- * external player) fails. Listen for FileReference events to determine whether
- * operations complete successfully and to handle errors.</p><p class="- topic/p ">For <ph class="- topic/ph ">content running in Flash Player or for</ph>
- * content running in Adobe AIR outside of the application security sandbox,
- * uploading and downloading operations can access files only within its own domain and within
- * any domains that a URL policy file specifies. Put a policy file on the file server
- * if the content initiating the upload or download doesn't come from the same domain as the file server.</p><p class="- topic/p ">Note that because of new functionality added to the Flash Player, when publishing to Flash Player 10, you can have
- * only one of the following operations active at one time: <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReference.load()</codeph>,
- * <codeph class="+ topic/ph pr-d/codeph ">FileReference.save()</codeph>. Otherwise, Flash Player throws a runtime error (code 2174). Use <codeph class="+ topic/ph pr-d/codeph ">FileReference.cancel()</codeph>
- * to stop an operation in progress. This restriction applies only to Flash Player 10. Previous versions of Flash Player
- * are unaffected by this restriction on simultaneous multiple operations.</p><p class="- topic/p ">While calls to the <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph>,
- * or <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph> methods are executing, SWF file playback pauses in stand-alone and external versions
- * of Flash Player and in AIR for Linux and Mac OS X 10.1 and earlier</p><p class="- topic/p ">The following sample HTTP <codeph class="+ topic/ph pr-d/codeph ">POST</codeph> request is sent from Flash Player to a server-side
- * script if no parameters are specified:
- * </p><pre xml:space="preserve" class="- topic/pre ">
- * POST /handler.cfm HTTP/1.1
- * Accept: text/~~
- * Content-Type: multipart/form-data;
- * boundary=----------Ij5ae0ae0KM7GI3KM7
- * User-Agent: Shockwave Flash
- * Host: www.example.com
- * Content-Length: 421
- * Connection: Keep-Alive
- * Cache-Control: no-cache
- *
- *   ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Filename"
- *
- *   MyFile.jpg
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Filedata"; filename="MyFile.jpg"
- * Content-Type: application/octet-stream
- *
- *   FileDataHere
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Upload"
- *
- *   Submit Query
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7--
- * </pre><p class="- topic/p ">Flash Player sends the following HTTP <codeph class="+ topic/ph pr-d/codeph ">POST</codeph> request if the user
- * specifies the parameters <codeph class="+ topic/ph pr-d/codeph ">"api_sig"</codeph>, <codeph class="+ topic/ph pr-d/codeph ">"api_key"</codeph>, and
- * <codeph class="+ topic/ph pr-d/codeph ">"auth_token"</codeph>:
- * </p><pre xml:space="preserve" class="- topic/pre ">
- * POST /handler.cfm HTTP/1.1
- * Accept: text/~~
- * Content-Type: multipart/form-data;
- * boundary=----------Ij5ae0ae0KM7GI3KM7
- * User-Agent: Shockwave Flash
- * Host: www.example.com
- * Content-Length: 421
- * Connection: Keep-Alive
- * Cache-Control: no-cache
- *
- *   ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Filename"
- *
- *   MyFile.jpg
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="api_sig"
- *
- *   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="api_key"
- *
- *   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="auth_token"
- *
- *   XXXXXXXXXXXXXXXXXXXXXX
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Filedata"; filename="MyFile.jpg"
- * Content-Type: application/octet-stream
- *
- *   FileDataHere
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
- * Content-Disposition: form-data; name="Upload"
- *
- *   Submit Query
- * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7--
- * </pre>
- *
- *   EXAMPLE:
- *
- *   The following example displays the
- * data format and status information for a file loaded at runtime.
- * <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b>
- * To run this example, change the uploadURL.url property to point to an actual URL,
- * rather than the fictional one in the example. The URL should point to a file named
- * <codeph class="+ topic/ph pr-d/codeph ">yourUploadHandlerScript.cfm</codeph> in the root    web directory of the URL specified.
- * Based on your configuration, you might also need to compile the SWF file with Local Playback Security set to Access Network Only
- * or to update Flash Player security settings to allow this file network access.
- * </p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.*;
- * import flash.net.FileFilter;
- * import flash.net.FileReference;
- * import flash.net.URLRequest;
- *
- *   public class FileReferenceExample extends Sprite {
- * private var uploadURL:URLRequest;
- * private var file:FileReference;
- *
- *   public function FileReferenceExample() {
- * uploadURL = new URLRequest();
- * uploadURL.url = "http://www.[yourDomain].com/yourUploadHandlerScript.cfm";
- * file = new FileReference();
- * configureListeners(file);
- * file.browse(getTypes());
- * }
- *
- *   private function configureListeners(dispatcher:IEventDispatcher):void {
- * dispatcher.addEventListener(Event.CANCEL, cancelHandler);
- * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
- * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
- * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * dispatcher.addEventListener(Event.OPEN, openHandler);
- * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
- * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * dispatcher.addEventListener(Event.SELECT, selectHandler);
- * dispatcher.addEventListener(DataEvent.UPLOAD_COMPLETE_DATA,uploadCompleteDataHandler);
- * }
- *
- *   private function getTypes():Array {
- * var allTypes:Array = new Array(getImageTypeFilter(), getTextTypeFilter());
- * return allTypes;
- * }
- *
- *   private function getImageTypeFilter():FileFilter {
- * return new FileFilter("Images (*.jpg, *.jpeg, *.gif, *.png)", "*.jpg;*.jpeg;*.gif;*.png");
- * }
- *
- *   private function getTextTypeFilter():FileFilter {
- * return new FileFilter("Text Files (*.txt, *.rtf)", "*.txt;*.rtf");
- * }
- *
- *   private function cancelHandler(event:Event):void {
- * trace("cancelHandler: " + event);
- * }
- *
- *   private function completeHandler(event:Event):void {
- * trace("completeHandler: " + event);
- * }
- *
- *   private function uploadCompleteDataHandler(event:DataEvent):void {
- * trace("uploadCompleteData: " + event);
- * }
- *
- *   private function httpStatusHandler(event:HTTPStatusEvent):void {
- * trace("httpStatusHandler: " + event);
- * }
- *
- *   private function ioErrorHandler(event:IOErrorEvent):void {
- * trace("ioErrorHandler: " + event);
- * }
- *
- *   private function openHandler(event:Event):void {
- * trace("openHandler: " + event);
- * }
- *
- *   private function progressHandler(event:ProgressEvent):void {
- * var file:FileReference = FileReference(event.target);
- * trace("progressHandler name=" + file.name + " bytesLoaded=" + event.bytesLoaded + " bytesTotal=" + event.bytesTotal);
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function selectHandler(event:Event):void {
- * var file:FileReference = FileReference(event.target);
- * trace("selectHandler: name=" + file.name + " URL=" + uploadURL.url);
- * file.upload(uploadURL);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- */
 using namespace flash::events;
 using namespace flash::net;
 using namespace flash::utils;
@@ -306,7 +94,220 @@ namespace flash
 {
     namespace net
     {
-        class FileReference: public EventDispatcher
+        /**
+         * The FileReference class provides a means to upload and
+         * download files between a user's computer and a server. An operating-system
+         * dialog box prompts the user to select a file to upload or a location for
+         * download. Each FileReference object refers to a single file on the user's disk
+         * and has properties that contain information about
+         * the file's size, type, name, creation date, modification date, and creator type
+         * (Macintosh only).
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> In Adobe AIR, the File class, which extends the FileReference class,
+         * provides more capabilities and has less security restrictions than the FileReference class.</p><p class="- topic/p ">FileReference instances are created in the following ways:</p><ul class="- topic/ul "><li class="- topic/li ">When you use the <codeph class="+ topic/ph pr-d/codeph ">new</codeph> operator with the FileReference constructor:
+         *
+         *   <codeph class="+ topic/ph pr-d/codeph ">var myFileReference = new FileReference();</codeph></li><li class="- topic/li ">When you call the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method, which creates an array of FileReference objects.</li></ul><p class="- topic/p ">During an upload operation, all the properties of a FileReference object are
+         * populated by calls to the <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> methods.
+         * During a download operation, the <codeph class="+ topic/ph pr-d/codeph ">name</codeph> property is populated when the
+         * <codeph class="+ topic/ph pr-d/codeph ">select</codeph> event is dispatched; all other properties are populated when the
+         * <codeph class="+ topic/ph pr-d/codeph ">complete</codeph> event is dispatched.</p><p class="- topic/p ">The <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method opens an operating-system dialog box that prompts the
+         * user to select a file for upload. The <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph> method
+         * lets the user select a single file; the <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph> method
+         * lets the user select multiple files. After a successful call to the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> method,
+         * call the <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph> method to upload one file at a time. The
+         * <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph> method prompts the user for a location to save
+         * the file and initiates downloading from a remote URL.</p><p class="- topic/p ">The FileReference and FileReferenceList classes do not let you set the default file location
+         * for the dialog box that the <codeph class="+ topic/ph pr-d/codeph ">browse()</codeph> or <codeph class="+ topic/ph pr-d/codeph ">download()</codeph> methods generate.
+         * The default location shown in the dialog box is the most
+         * recently browsed folder, if that location can be determined, or the desktop.
+         * The classes do not allow you to read from or write to the transferred file.
+         * They do not allow the SWF file that initiated the
+         * upload or download to access the uploaded or downloaded file or the file's location on
+         * the user's disk.</p><p class="- topic/p ">The FileReference and FileReferenceList classes also do not provide
+         * methods for authentication. With servers that require authentication, you can
+         * download files with the Flash<sup class="+ topic/ph hi-d/sup ">  </sup> Player browser plug-in, but
+         * uploading (on all players) and downloading (on the stand-alone or
+         * external player) fails. Listen for FileReference events to determine whether
+         * operations complete successfully and to handle errors.</p><p class="- topic/p ">For <ph class="- topic/ph ">content running in Flash Player or for</ph>
+         * content running in Adobe AIR outside of the application security sandbox,
+         * uploading and downloading operations can access files only within its own domain and within
+         * any domains that a URL policy file specifies. Put a policy file on the file server
+         * if the content initiating the upload or download doesn't come from the same domain as the file server.</p><p class="- topic/p ">Note that because of new functionality added to the Flash Player, when publishing to Flash Player 10, you can have
+         * only one of the following operations active at one time: <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">FileReference.upload()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReference.load()</codeph>,
+         * <codeph class="+ topic/ph pr-d/codeph ">FileReference.save()</codeph>. Otherwise, Flash Player throws a runtime error (code 2174). Use <codeph class="+ topic/ph pr-d/codeph ">FileReference.cancel()</codeph>
+         * to stop an operation in progress. This restriction applies only to Flash Player 10. Previous versions of Flash Player
+         * are unaffected by this restriction on simultaneous multiple operations.</p><p class="- topic/p ">While calls to the <codeph class="+ topic/ph pr-d/codeph ">FileReference.browse()</codeph>, <codeph class="+ topic/ph pr-d/codeph ">FileReferenceList.browse()</codeph>,
+         * or <codeph class="+ topic/ph pr-d/codeph ">FileReference.download()</codeph> methods are executing, SWF file playback pauses in stand-alone and external versions
+         * of Flash Player and in AIR for Linux and Mac OS X 10.1 and earlier</p><p class="- topic/p ">The following sample HTTP <codeph class="+ topic/ph pr-d/codeph ">POST</codeph> request is sent from Flash Player to a server-side
+         * script if no parameters are specified:
+         * </p><pre xml:space="preserve" class="- topic/pre ">
+         * POST /handler.cfm HTTP/1.1
+         * Accept: text/~~
+         * Content-Type: multipart/form-data;
+         * boundary=----------Ij5ae0ae0KM7GI3KM7
+         * User-Agent: Shockwave Flash
+         * Host: www.example.com
+         * Content-Length: 421
+         * Connection: Keep-Alive
+         * Cache-Control: no-cache
+         *
+         *   ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Filename"
+         *
+         *   MyFile.jpg
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Filedata"; filename="MyFile.jpg"
+         * Content-Type: application/octet-stream
+         *
+         *   FileDataHere
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Upload"
+         *
+         *   Submit Query
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7--
+         * </pre><p class="- topic/p ">Flash Player sends the following HTTP <codeph class="+ topic/ph pr-d/codeph ">POST</codeph> request if the user
+         * specifies the parameters <codeph class="+ topic/ph pr-d/codeph ">"api_sig"</codeph>, <codeph class="+ topic/ph pr-d/codeph ">"api_key"</codeph>, and
+         * <codeph class="+ topic/ph pr-d/codeph ">"auth_token"</codeph>:
+         * </p><pre xml:space="preserve" class="- topic/pre ">
+         * POST /handler.cfm HTTP/1.1
+         * Accept: text/~~
+         * Content-Type: multipart/form-data;
+         * boundary=----------Ij5ae0ae0KM7GI3KM7
+         * User-Agent: Shockwave Flash
+         * Host: www.example.com
+         * Content-Length: 421
+         * Connection: Keep-Alive
+         * Cache-Control: no-cache
+         *
+         *   ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Filename"
+         *
+         *   MyFile.jpg
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="api_sig"
+         *
+         *   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="api_key"
+         *
+         *   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="auth_token"
+         *
+         *   XXXXXXXXXXXXXXXXXXXXXX
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Filedata"; filename="MyFile.jpg"
+         * Content-Type: application/octet-stream
+         *
+         *   FileDataHere
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7
+         * Content-Disposition: form-data; name="Upload"
+         *
+         *   Submit Query
+         * ------------Ij5GI3GI3ei4GI3ei4KM7GI3KM7KM7--
+         * </pre>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example displays the
+         * data format and status information for a file loaded at runtime.
+         * <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b>
+         * To run this example, change the uploadURL.url property to point to an actual URL,
+         * rather than the fictional one in the example. The URL should point to a file named
+         * <codeph class="+ topic/ph pr-d/codeph ">yourUploadHandlerScript.cfm</codeph> in the root    web directory of the URL specified.
+         * Based on your configuration, you might also need to compile the SWF file with Local Playback Security set to Access Network Only
+         * or to update Flash Player security settings to allow this file network access.
+         * </p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.*;
+         * import flash.net.FileFilter;
+         * import flash.net.FileReference;
+         * import flash.net.URLRequest;
+         *
+         *   public class FileReferenceExample extends Sprite {
+         * private var uploadURL:URLRequest;
+         * private var file:FileReference;
+         *
+         *   public function FileReferenceExample() {
+         * uploadURL = new URLRequest();
+         * uploadURL.url = "http://www.[yourDomain].com/yourUploadHandlerScript.cfm";
+         * file = new FileReference();
+         * configureListeners(file);
+         * file.browse(getTypes());
+         * }
+         *
+         *   private function configureListeners(dispatcher:IEventDispatcher):void {
+         * dispatcher.addEventListener(Event.CANCEL, cancelHandler);
+         * dispatcher.addEventListener(Event.COMPLETE, completeHandler);
+         * dispatcher.addEventListener(HTTPStatusEvent.HTTP_STATUS, httpStatusHandler);
+         * dispatcher.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * dispatcher.addEventListener(Event.OPEN, openHandler);
+         * dispatcher.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+         * dispatcher.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * dispatcher.addEventListener(Event.SELECT, selectHandler);
+         * dispatcher.addEventListener(DataEvent.UPLOAD_COMPLETE_DATA,uploadCompleteDataHandler);
+         * }
+         *
+         *   private function getTypes():Array {
+         * var allTypes:Array = new Array(getImageTypeFilter(), getTextTypeFilter());
+         * return allTypes;
+         * }
+         *
+         *   private function getImageTypeFilter():FileFilter {
+         * return new FileFilter("Images (*.jpg, *.jpeg, *.gif, *.png)", "*.jpg;*.jpeg;*.gif;*.png");
+         * }
+         *
+         *   private function getTextTypeFilter():FileFilter {
+         * return new FileFilter("Text Files (*.txt, *.rtf)", "*.txt;*.rtf");
+         * }
+         *
+         *   private function cancelHandler(event:Event):void {
+         * trace("cancelHandler: " + event);
+         * }
+         *
+         *   private function completeHandler(event:Event):void {
+         * trace("completeHandler: " + event);
+         * }
+         *
+         *   private function uploadCompleteDataHandler(event:DataEvent):void {
+         * trace("uploadCompleteData: " + event);
+         * }
+         *
+         *   private function httpStatusHandler(event:HTTPStatusEvent):void {
+         * trace("httpStatusHandler: " + event);
+         * }
+         *
+         *   private function ioErrorHandler(event:IOErrorEvent):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         *
+         *   private function openHandler(event:Event):void {
+         * trace("openHandler: " + event);
+         * }
+         *
+         *   private function progressHandler(event:ProgressEvent):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("progressHandler name=" + file.name + " bytesLoaded=" + event.bytesLoaded + " bytesTotal=" + event.bytesTotal);
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function selectHandler(event:Event):void {
+         * var file:FileReference = FileReference(event.target);
+         * trace("selectHandler: name=" + file.name + " URL=" + uploadURL.url);
+         * file.upload(uploadURL);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         */
+        class FileReference : public flash::events::EventDispatcher
         {
             /**
              * The creation date of the file on the local disk. If the object is
@@ -557,7 +558,7 @@ namespace flash
              *   event or keypress event.
              */
         public:
-            void     download(URLRequest *request, std::string defaultFileName);
+            void     download(URLRequest *request, std::string defaultFileName="");
 
             /**
              * Starts the upload of the file to a remote server. Although
@@ -671,7 +672,7 @@ namespace flash
              *   to perform a POST operation.
              */
         public:
-            void     upload(URLRequest *request, std::string uploadDataFieldName, bool testUpload);
+            void     upload(URLRequest *request, std::string uploadDataFieldName="Filedata", bool testUpload   =false);
 
             /**
              * Starts the load of a local file selected by a user.
@@ -773,7 +774,7 @@ namespace flash
              *   The file may be too large or available memory may be too low.
              */
         public:
-            void     save(void *data, std::string defaultFileName);
+            void     save(void *data, std::string defaultFileName="");
 
             /**
              * Displays a file-browsing dialog box that lets the
@@ -820,7 +821,7 @@ namespace flash
              *   event or keypress event.
              */
         public:
-            bool     browse(std::vector<void *> typeFilter);
+            bool     browse(std::vector<void *> typeFilter=std::vector<void *>());
         };
     }
 }

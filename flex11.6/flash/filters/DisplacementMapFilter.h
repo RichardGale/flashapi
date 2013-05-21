@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -148,15 +149,16 @@ namespace flash
  * @langversion 3.0
  * @playerversion   Flash 9
  */
+
 using namespace flash::display;
-using namespace flash::geom;
 using namespace flash::filters;
+using namespace flash::geom;
 
 namespace flash
 {
     namespace filters
     {
-        class DisplacementMapFilter: public BitmapFilter
+        class DisplacementMapFilter : public flash::filters::BitmapFilter
         {
             /**
              * A BitmapData object containing the displacement map data.
@@ -816,7 +818,7 @@ namespace flash
              * @category    Constructor
              */
         public:
-            DisplacementMapFilter(BitmapData *mapBitmap, Point *mapPoint, unsigned int componentX, unsigned int componentY, float scaleX, float scaleY, std::string mode, unsigned int color, float alpha);
+            DisplacementMapFilter(BitmapData *mapBitmap=NULL, Point *mapPoint=NULL, unsigned int componentX=0, unsigned int componentY=0, float scaleX =0, float scaleY =0, std::string mode="wrap", unsigned int color=0, float alpha =0);
 
             /**
              * Returns a copy of this filter object.

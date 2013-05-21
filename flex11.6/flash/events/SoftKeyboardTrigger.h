@@ -12,11 +12,12 @@
  * @playerversion   Flash 10.2
  */
 
+
 namespace flash
 {
     namespace events
     {
-        class SoftKeyboardTrigger: public Object
+        class SoftKeyboardTrigger : public Object
         {
             /**
              * A function call triggered the event.

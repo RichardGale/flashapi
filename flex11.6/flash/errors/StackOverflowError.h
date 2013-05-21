@@ -47,14 +47,15 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace errors
     {
-        class StackOverflowError: public Error
+        class StackOverflowError : public Error
         {
         public:
-            StackOverflowError(std::string message, int id);
+            StackOverflowError(std::string message="", int id=0);
         };
     }
 }

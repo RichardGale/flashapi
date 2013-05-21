@@ -44,7 +44,8 @@
  * @playerversion   Lite 4
  */
 
-class RangeError: public Error
+
+class RangeError : public Error
 {
 public:
     static const int length;
@@ -57,7 +58,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    RangeError(void *message, void *id);
+    RangeError(void *message=(void *)"", void *id=0);
 };
 
 #endif // FLEX11_6_RANGEERROR_AS

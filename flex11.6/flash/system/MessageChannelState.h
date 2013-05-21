@@ -8,7 +8,7 @@ namespace flash
 {
     namespace system
     {
-        class MessageChannelState: public Object
+        class MessageChannelState : public Object
         {
         public:
             static const std::string OPEN;

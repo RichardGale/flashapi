@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -12,14 +13,14 @@ namespace flash
 }
 #include "flash/events/Event.h"
 
-using namespace flash::utils;
 using namespace flash::events;
+using namespace flash::utils;
 
 namespace flash
 {
     namespace events
     {
-        class NetFilterEvent: public Event
+        class NetFilterEvent : public flash::events::Event
         {
         public:
             ByteArray *header;
@@ -30,7 +31,7 @@ namespace flash
             Event   *clone();
 
         public:
-            NetFilterEvent(std::string type, bool bubbles, bool cancelable, ByteArray *header, ByteArray *data);
+            NetFilterEvent(std::string type, bool bubbles   =false, bool cancelable   =false, ByteArray *header=NULL, ByteArray *data=NULL);
 
         public:
             std::string toString();

@@ -14,11 +14,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class ID3Info: public Object
+        class ID3Info : public Object
         {
             /**
              * The name of the song; corresponds to the ID3 2.0 tag TIT2.

@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/EventDispatcher.h"
 #include "IDataInput.h"
 #include "IDataOutput.h"
@@ -67,137 +68,6 @@ namespace flash
  */
 //[Event(name="close",type="flash.events.Event")]
 
-/**
- * The Socket class enables code to establish Transport Control Protocol (TCP) socket
- * connections for sending and receiving binary data.
- *
- *   <p class="- topic/p ">The Socket class is useful for working with servers that use binary protocols.</p><p class="- topic/p ">To use the methods of the Socket class, first use the constructor, <codeph class="+ topic/ph pr-d/codeph ">new Socket</codeph>,
- * to create a Socket object.</p><p class="- topic/p ">A socket transmits and receives data asynchronously. </p><p class="- topic/p ">On some operating systems, flush() is called automatically between execution frames, but on other operating systems, such
- * as Windows, the data is never sent unless you call <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> explicitly. To ensure your application behaves reliably
- * across all operating systems, it is a good practice to call the <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> method after writing each message
- * (or related group of data) to the socket.</p><p class="- topic/p ">In Adobe AIR, Socket objects are also created when a listening ServerSocket receives a connection from an external process.
- * The Socket representing the connection is dispatched in a ServerSocketConnectEvent. Your application is responsible for
- * maintaining a reference to this Socket object. If you don't, the Socket object is eligible for garbage collection and may be
- * destroyed by the runtime without warning.</p><p class="- topic/p ">SWF content running in the local-with-filesystem security sandbox cannot use sockets.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">Socket policy files</i> on the target host specify the hosts from which SWF files
- * can make socket connections, and the ports to which those connections can be made.
- * The security requirements with regard to socket policy files have become more stringent
- * in the last several releases of Flash Player.
- * In all versions of Flash Player, Adobe recommends the use of a socket policy file;
- * in some circumstances, a socket policy file is required. Therefore, if you
- * are using Socket objects, make sure that the target host provides a socket policy file
- * if necessary. </p><p class="- topic/p ">The following list summarizes the requirements for socket policy files
- * in different versions of Flash Player:</p><ul class="- topic/ul "><li class="- topic/li "> In Flash Player 9.0.124.0 and later, a socket policy file is required for any socket connection.
- * That is, a socket policy file on the target host is required no matter what port
- * you are connecting to, and is required even if you are connecting
- * to a port on the same host that is serving the SWF file. </li><li class="- topic/li "> In Flash Player versions 9.0.115.0 and earlier, if you want to connect to a port number below 1024,
- * or if you want to connect to a host other than the one serving the SWF file,
- * a socket policy file on the target host is required. </li><li class="- topic/li "> In Flash Player 9.0.115.0, even if a socket policy file isn't required,
- * a warning is displayed when using the Flash Debug Player if the target host
- * doesn't serve a socket policy file. </li><li class="- topic/li ">In AIR, a socket policy file is not required for content running in the application
- * security sandbox. Socket policy files are required for any socket connection established
- * by content running outside the AIR application security sandbox.</li></ul><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
- * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref></p>
- *
- *   EXAMPLE:
- *
- *   The following example reads from and writes to a socket and outputs information
- * transmitted during socket events. Highlights of the example follow:
- * <ol class="- topic/ol "><li class="- topic/li ">The constructor creates a <codeph class="+ topic/ph pr-d/codeph ">CustomSocket</codeph> instance named <codeph class="+ topic/ph pr-d/codeph ">socket</codeph> and passes the
- * host name <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph> and port 80 as arguments. Since <codeph class="+ topic/ph pr-d/codeph ">CustomSocket</codeph> extends
- * Socket, a call to <codeph class="+ topic/ph pr-d/codeph ">super()</codeph> calls Socket's constructor.</li><li class="- topic/li ">The example then calls the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method, which adds listeners for
- * Socket events.</li><li class="- topic/li ">Finally, the socket <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method is called with <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph> as the
- * host name and 80 as the port number.</li></ol><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run the example, you need a server running on the same domain
- * where the SWF resides (in the example, <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph>) and listening on port 80.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- *
- *   package {
- * import flash.display.Sprite;
- *
- *   public class SocketExample extends Sprite {
- *
- *   public function SocketExample() {
- * var socket:CustomSocket = new CustomSocket("localhost", 80);
- * }
- * }
- * }
- *
- *   import flash.errors.*;
- * import flash.events.*;
- * import flash.net.Socket;
- *
- *   class CustomSocket extends Socket {
- * private var response:String;
- *
- *   public function CustomSocket(host:String = null, port:uint = 0) {
- * super();
- * configureListeners();
- * if (host &amp;&amp; port)  {
- * super.connect(host, port);
- * }
- * }
- *
- *   private function configureListeners():void {
- * addEventListener(Event.CLOSE, closeHandler);
- * addEventListener(Event.CONNECT, connectHandler);
- * addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
- * addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
- * addEventListener(ProgressEvent.SOCKET_DATA, socketDataHandler);
- * }
- *
- *   private function writeln(str:String):void {
- * str += "\n";
- * try {
- * writeUTFBytes(str);
- * }
- * catch(e:IOError) {
- * trace(e);
- * }
- * }
- *
- *   private function sendRequest():void {
- * trace("sendRequest");
- * response = "";
- * writeln("GET /");
- * flush();
- * }
- *
- *   private function readResponse():void {
- * var str:String = readUTFBytes(bytesAvailable);
- * response += str;
- * }
- *
- *   private function closeHandler(event:Event):void {
- * trace("closeHandler: " + event);
- * trace(response.toString());
- * }
- *
- *   private function connectHandler(event:Event):void {
- * trace("connectHandler: " + event);
- * sendRequest();
- * }
- *
- *   private function ioErrorHandler(event:IOErrorEvent):void {
- * trace("ioErrorHandler: " + event);
- * }
- *
- *   private function securityErrorHandler(event:SecurityErrorEvent):void {
- * trace("securityErrorHandler: " + event);
- * }
- *
- *   private function socketDataHandler(event:ProgressEvent):void {
- * trace("socketDataHandler: " + event);
- * readResponse();
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
-using namespace flash::events;
-using namespace ;
-using namespace ;
-using namespace flash::utils;
-using namespace flash::events;
 using namespace flash::events;
 using namespace flash::utils;
 
@@ -205,7 +75,133 @@ namespace flash
 {
     namespace net
     {
-        class Socket: public EventDispatcher, public IDataInput,, public IDataOutput
+        /**
+         * The Socket class enables code to establish Transport Control Protocol (TCP) socket
+         * connections for sending and receiving binary data.
+         *
+         *   <p class="- topic/p ">The Socket class is useful for working with servers that use binary protocols.</p><p class="- topic/p ">To use the methods of the Socket class, first use the constructor, <codeph class="+ topic/ph pr-d/codeph ">new Socket</codeph>,
+         * to create a Socket object.</p><p class="- topic/p ">A socket transmits and receives data asynchronously. </p><p class="- topic/p ">On some operating systems, flush() is called automatically between execution frames, but on other operating systems, such
+         * as Windows, the data is never sent unless you call <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> explicitly. To ensure your application behaves reliably
+         * across all operating systems, it is a good practice to call the <codeph class="+ topic/ph pr-d/codeph ">flush()</codeph> method after writing each message
+         * (or related group of data) to the socket.</p><p class="- topic/p ">In Adobe AIR, Socket objects are also created when a listening ServerSocket receives a connection from an external process.
+         * The Socket representing the connection is dispatched in a ServerSocketConnectEvent. Your application is responsible for
+         * maintaining a reference to this Socket object. If you don't, the Socket object is eligible for garbage collection and may be
+         * destroyed by the runtime without warning.</p><p class="- topic/p ">SWF content running in the local-with-filesystem security sandbox cannot use sockets.</p><p class="- topic/p "><i class="+ topic/ph hi-d/i ">Socket policy files</i> on the target host specify the hosts from which SWF files
+         * can make socket connections, and the ports to which those connections can be made.
+         * The security requirements with regard to socket policy files have become more stringent
+         * in the last several releases of Flash Player.
+         * In all versions of Flash Player, Adobe recommends the use of a socket policy file;
+         * in some circumstances, a socket policy file is required. Therefore, if you
+         * are using Socket objects, make sure that the target host provides a socket policy file
+         * if necessary. </p><p class="- topic/p ">The following list summarizes the requirements for socket policy files
+         * in different versions of Flash Player:</p><ul class="- topic/ul "><li class="- topic/li "> In Flash Player 9.0.124.0 and later, a socket policy file is required for any socket connection.
+         * That is, a socket policy file on the target host is required no matter what port
+         * you are connecting to, and is required even if you are connecting
+         * to a port on the same host that is serving the SWF file. </li><li class="- topic/li "> In Flash Player versions 9.0.115.0 and earlier, if you want to connect to a port number below 1024,
+         * or if you want to connect to a host other than the one serving the SWF file,
+         * a socket policy file on the target host is required. </li><li class="- topic/li "> In Flash Player 9.0.115.0, even if a socket policy file isn't required,
+         * a warning is displayed when using the Flash Debug Player if the target host
+         * doesn't serve a socket policy file. </li><li class="- topic/li ">In AIR, a socket policy file is not required for content running in the application
+         * security sandbox. Socket policy files are required for any socket connection established
+         * by content running outside the AIR application security sandbox.</li></ul><p class="- topic/p ">For more information related to security, see the Flash Player Developer Center Topic:
+         * <xref href="http://www.adobe.com/go/devnet_security_en" scope="external" class="- topic/xref ">Security</xref></p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example reads from and writes to a socket and outputs information
+         * transmitted during socket events. Highlights of the example follow:
+         * <ol class="- topic/ol "><li class="- topic/li ">The constructor creates a <codeph class="+ topic/ph pr-d/codeph ">CustomSocket</codeph> instance named <codeph class="+ topic/ph pr-d/codeph ">socket</codeph> and passes the
+         * host name <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph> and port 80 as arguments. Since <codeph class="+ topic/ph pr-d/codeph ">CustomSocket</codeph> extends
+         * Socket, a call to <codeph class="+ topic/ph pr-d/codeph ">super()</codeph> calls Socket's constructor.</li><li class="- topic/li ">The example then calls the <codeph class="+ topic/ph pr-d/codeph ">configureListeners()</codeph> method, which adds listeners for
+         * Socket events.</li><li class="- topic/li ">Finally, the socket <codeph class="+ topic/ph pr-d/codeph ">connect()</codeph> method is called with <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph> as the
+         * host name and 80 as the port number.</li></ol><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> To run the example, you need a server running on the same domain
+         * where the SWF resides (in the example, <codeph class="+ topic/ph pr-d/codeph ">localhost</codeph>) and listening on port 80.</p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         *
+         *   package {
+         * import flash.display.Sprite;
+         *
+         *   public class SocketExample extends Sprite {
+         *
+         *   public function SocketExample() {
+         * var socket:CustomSocket = new CustomSocket("localhost", 80);
+         * }
+         * }
+         * }
+         *
+         *   import flash.errors.*;
+         * import flash.events.*;
+         * import flash.net.Socket;
+         *
+         *   class CustomSocket extends Socket {
+         * private var response:String;
+         *
+         *   public function CustomSocket(host:String = null, port:uint = 0) {
+         * super();
+         * configureListeners();
+         * if (host &amp;&amp; port)  {
+         * super.connect(host, port);
+         * }
+         * }
+         *
+         *   private function configureListeners():void {
+         * addEventListener(Event.CLOSE, closeHandler);
+         * addEventListener(Event.CONNECT, connectHandler);
+         * addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
+         * addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+         * addEventListener(ProgressEvent.SOCKET_DATA, socketDataHandler);
+         * }
+         *
+         *   private function writeln(str:String):void {
+         * str += "\n";
+         * try {
+         * writeUTFBytes(str);
+         * }
+         * catch(e:IOError) {
+         * trace(e);
+         * }
+         * }
+         *
+         *   private function sendRequest():void {
+         * trace("sendRequest");
+         * response = "";
+         * writeln("GET /");
+         * flush();
+         * }
+         *
+         *   private function readResponse():void {
+         * var str:String = readUTFBytes(bytesAvailable);
+         * response += str;
+         * }
+         *
+         *   private function closeHandler(event:Event):void {
+         * trace("closeHandler: " + event);
+         * trace(response.toString());
+         * }
+         *
+         *   private function connectHandler(event:Event):void {
+         * trace("connectHandler: " + event);
+         * sendRequest();
+         * }
+         *
+         *   private function ioErrorHandler(event:IOErrorEvent):void {
+         * trace("ioErrorHandler: " + event);
+         * }
+         *
+         *   private function securityErrorHandler(event:SecurityErrorEvent):void {
+         * trace("securityErrorHandler: " + event);
+         * }
+         *
+         *   private function socketDataHandler(event:ProgressEvent):void {
+         * trace("socketDataHandler: " + event);
+         * readResponse();
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class Socket : public flash::events::EventDispatcher, public private::IDataInput, public private::IDataOutput
         {
             /**
              * Indicates the number of milliseconds to wait for a connection.
@@ -332,7 +328,7 @@ namespace flash
              *   This limitation is not set for AIR application content in the application security sandbox.You cannot specify a socket port higher than 65535.
              */
         public:
-            Socket(std::string host, int port);
+            Socket(std::string host="", int port=0);
 
             /**
              * Reads the number of data bytes specified by the length
@@ -351,7 +347,7 @@ namespace flash
              *   not open.
              */
         public:
-            void     readBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
             /**
              * Writes a sequence of bytes from the specified byte array. The write
@@ -375,7 +371,7 @@ namespace flash
              *   length exceeds the data available.
              */
         public:
-            void     writeBytes(ByteArray *bytes, unsigned int offset, unsigned int length);
+            void     writeBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
             /**
              * Writes a Boolean value to the socket. This method writes a single byte,

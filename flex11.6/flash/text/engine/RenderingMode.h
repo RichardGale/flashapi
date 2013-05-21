@@ -11,13 +11,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class RenderingMode: public Object
+            class RenderingMode : public Object
             {
                 /**
                  * Sets rendering mode to the rendering mode that is used in Flash Player 7 and earlier.

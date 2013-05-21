@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 using namespace flash::events;
@@ -11,7 +12,7 @@ namespace flash
 {
     namespace events
     {
-        class ThrottleEvent: public Event
+        class ThrottleEvent : public flash::events::Event
         {
         public:
             static const std::string THROTTLE;
@@ -26,7 +27,7 @@ namespace flash
             Event   *clone();
 
         public:
-            ThrottleEvent(std::string type, bool bubbles, bool cancelable, std::string state, float targetFrameRate);
+            ThrottleEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string state="", float targetFrameRate =0);
 
         public:
             std::string toString();

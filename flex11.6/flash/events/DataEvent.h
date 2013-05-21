@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace events
@@ -15,55 +16,58 @@ namespace flash
 //[Event(name="data",type="flash.events.DataEvent")]
 
 
-//[Event(name="uploadCompleteData",type="flash.events.DataEvent")]/// @eventType  flash.events.DataEvent.UPLOAD_COMPLETE_DATA
+//[Event(name="uploadCompleteData",type="flash.events.DataEvent")]
 
-/**
- * An object dispatches a DataEvent object when raw data has completed loading.
- * There are two types of data event:
- * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">DataEvent.DATA</codeph>: dispatched for data sent or received.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">DataEvent.UPLOAD_COMPLETE_DATA</codeph>: dispatched when data is sent and the server has responded.</li></ul>
- *
- *   EXAMPLE:
- *
- *   The following example creates an XMLSocket and connects it to a socket server
- * running on port 8080 of <codeph class="+ topic/ph pr-d/codeph ">yourDomain</codeph>. An event listener is attached to the XMLSocket
- * object that listens for <codeph class="+ topic/ph pr-d/codeph ">data</codeph> events, which are dispatched whenever raw data
- * is received.
- *
- *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Notes:</b><ul class="- topic/ul "><li class="- topic/li ">To generate a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph> event in this example, you need to compile the SWF file with "Local playback security" set
- * to "Access network only".</li><li class="- topic/li ">You need a server running on [<codeph class="+ topic/ph pr-d/codeph ">yourDomain</codeph>] using port 8080.</li></ul></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package {
- * import flash.display.Sprite;
- * import flash.events.DataEvent;
- * import flash.net.XMLSocket;
- *
- *   public class DataEventExample extends Sprite {
- * private var hostName:String = "[yourDomain]";
- * private var port:uint = 8080;
- * private var socket:XMLSocket;
- *
- *   public function DataEventExample() {
- * socket = new XMLSocket();
- * socket.addEventListener(DataEvent.DATA, dataHandler);
- * socket.connect(hostName, port);
- * }
- *
- *   private function dataHandler(event:DataEvent):void {
- * trace("dataHandler: " + event.data);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class DataEvent: public TextEvent
+        /// @eventType  flash.events.DataEvent.UPLOAD_COMPLETE_DATA
+
+
+        /**
+         * An object dispatches a DataEvent object when raw data has completed loading.
+         * There are two types of data event:
+         * <ul class="- topic/ul "><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">DataEvent.DATA</codeph>: dispatched for data sent or received.</li><li class="- topic/li "><codeph class="+ topic/ph pr-d/codeph ">DataEvent.UPLOAD_COMPLETE_DATA</codeph>: dispatched when data is sent and the server has responded.</li></ul>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example creates an XMLSocket and connects it to a socket server
+         * running on port 8080 of <codeph class="+ topic/ph pr-d/codeph ">yourDomain</codeph>. An event listener is attached to the XMLSocket
+         * object that listens for <codeph class="+ topic/ph pr-d/codeph ">data</codeph> events, which are dispatched whenever raw data
+         * is received.
+         *
+         *   <p class="- topic/p "><b class="+ topic/ph hi-d/b ">Notes:</b><ul class="- topic/ul "><li class="- topic/li ">To generate a <codeph class="+ topic/ph pr-d/codeph ">securityError</codeph> event in this example, you need to compile the SWF file with "Local playback security" set
+         * to "Access network only".</li><li class="- topic/li ">You need a server running on [<codeph class="+ topic/ph pr-d/codeph ">yourDomain</codeph>] using port 8080.</li></ul></p><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package {
+         * import flash.display.Sprite;
+         * import flash.events.DataEvent;
+         * import flash.net.XMLSocket;
+         *
+         *   public class DataEventExample extends Sprite {
+         * private var hostName:String = "[yourDomain]";
+         * private var port:uint = 8080;
+         * private var socket:XMLSocket;
+         *
+         *   public function DataEventExample() {
+         * socket = new XMLSocket();
+         * socket.addEventListener(DataEvent.DATA, dataHandler);
+         * socket.connect(hostName, port);
+         * }
+         *
+         *   private function dataHandler(event:DataEvent):void {
+         * trace("dataHandler: " + event.data);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         */
+        class DataEvent : public TextEvent
         {
             /**
              * Defines the value of the type property of a data event object.
@@ -116,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            DataEvent(std::string type, bool bubbles, bool cancelable, std::string data);
+            DataEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string data="");
 
             /**
              * Creates a copy of the DataEvent object and sets the value of each property to match that of the

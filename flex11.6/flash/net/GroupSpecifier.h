@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace utils
@@ -22,13 +23,14 @@ namespace flash
  * @playerversion   Flash 10.1
  * @playerversion   AIR 2
  */
+
 using namespace flash::utils;
 
 namespace flash
 {
     namespace net
     {
-        class GroupSpecifier: public Object
+        class GroupSpecifier : public Object
         {
         public:
             static int          maxSupportedGroupspecVersion();
@@ -175,7 +177,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string encodeIPMulticastAddressSpec(std::string address, void *port, std::string source);
+            static std::string encodeIPMulticastAddressSpec(std::string address, void *port=NULL, std::string source="");
 
             /**
              * Encodes and returns a string that represents a bootstrap peerID. If you append the string
@@ -224,7 +226,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            void     setPublishPassword(std::string password, std::string salt);
+            void     setPublishPassword(std::string password="", std::string salt="");
 
             /**
              * Specifies whether a password is required to post in the NetGroup.
@@ -237,7 +239,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            void     setPostingPassword(std::string password, std::string salt);
+            void     setPostingPassword(std::string password="", std::string salt="");
 
             /**
              * Causes the associated NetStream or NetGroup to make an initial neighbor connection to the
@@ -267,7 +269,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            void     addIPMulticastAddress(std::string address, void *port, std::string source);
+            void     addIPMulticastAddress(std::string address, void *port=NULL, std::string source="");
 
             /**
              * Identical to the groupspecWithAuthorizations() method.

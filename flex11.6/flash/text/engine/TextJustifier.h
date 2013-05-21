@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 
 
 /**
@@ -18,13 +19,14 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace text
     {
         namespace engine
         {
-            class TextJustifier: public Object
+            class TextJustifier : public Object
             {
                 /**
                  * Specifies the locale to determine the justification rules for the text in a text block.

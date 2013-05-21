@@ -10,7 +10,7 @@ namespace flash
     {
         namespace drm
         {
-            class DRMDeviceGroup: public Object
+            class DRMDeviceGroup : public Object
             {
             public:
                 std::string  serverURL();

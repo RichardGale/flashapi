@@ -22,11 +22,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace media
     {
-        class SoundLoaderContext: public Object
+        class SoundLoaderContext : public Object
         {
             /**
              * The number of milliseconds to preload a streaming sound into a buffer
@@ -121,7 +122,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SoundLoaderContext(float bufferTime, bool checkPolicyFile);
+            SoundLoaderContext(float bufferTime =1000, bool checkPolicyFile   =false);
         };
     }
 }

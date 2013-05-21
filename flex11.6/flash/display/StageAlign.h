@@ -10,11 +10,12 @@
  * @playerversion   Lite 4
  */
 
+
 namespace flash
 {
     namespace display
     {
-        class StageAlign: public Object
+        class StageAlign : public Object
         {
             /**
              * Specifies that the Stage is aligned at the top.

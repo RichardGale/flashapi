@@ -10,11 +10,12 @@
  * @playerversion   Flash 9
  */
 
+
 namespace flash
 {
     namespace filters
     {
-        class DisplacementMapFilterMode: public Object
+        class DisplacementMapFilterMode : public Object
         {
             /**
              * Wraps the displacement value to the other side of the source image.

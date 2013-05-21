@@ -3,6 +3,7 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 namespace flash
 {
     namespace display
@@ -34,182 +35,8 @@ namespace flash
 //[Event(name="touchRollOver",type="flash.events.TouchEvent")]
 
 
-//[Event(name="touchTap",type="flash.events.TouchEvent")]/// @eventType  flash.events.TouchEvent.TOUCH_TAP
+//[Event(name="touchTap",type="flash.events.TouchEvent")]
 
-/**
- * The TouchEvent class lets you handle events on devices that detect user contact with
- * the device (such as a finger on a touch screen).
- * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
- * touches the screen with his or her fingers or a pointing device. You can develop applications that respond to
- * basic touch events (such as a single finger tap) with the TouchEvent class. Create event listeners using the event types defined in this class.
- * For user interaction with multiple points of contact (such as several fingers moving across a touch screen at the same time) use
- * the related GestureEvent, PressAndTapGestureEvent, and TransformGestureEvent classes. And, use the properties and methods of these classes
- * to construct event handlers that respond to the user touching the device.
- * <p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
- * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
- * nested object that is visible in the display list. This object is called the target node. To have a target node's
- * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
- * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
- * touch event you want to detect.</p>
- *
- *   EXAMPLE:
- *
- *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">TOUCH_BEGIN</codeph>, <codeph class="+ topic/ph pr-d/codeph ">TOUCH_MOVE</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">TOUCH_END</codeph> events.
- * While the point of contact moves across the screen (<codeph class="+ topic/ph pr-d/codeph ">onTouchMove</codeph>), the x-coordinate relative to the stage is traced to output.
- * For the <codeph class="+ topic/ph pr-d/codeph ">Sprite.startTouchDrag</codeph> parameters in the <codeph class="+ topic/ph pr-d/codeph ">onTouchBegin</codeph> function, the value for touchPointID is the value assigned to the event object.
- * The bounds parameter is the rectangle defining the boundaries of
- * the parent display object (bg is a display object containing MySprite).
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
- *
- *   MySprite.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchBegin);
- * MySprite.addEventListener(TouchEvent.TOUCH_MOVE, onTouchMove);
- * MySprite.addEventListener(TouchEvent.TOUCH_END, onTouchEnd);
- *
- *   function onTouchBegin(eBegin:TouchEvent) {
- * eBegin.target.startTouchDrag(eBegin.touchPointID, false, bg.getRect(this));
- * trace("touch begin");
- *
- *   }
- *
- *   function onTouchMove(eMove:TouchEvent) {
- * trace(eMove.stageX);
- * }
- *
- *   function onTouchEnd(eEnd:TouchEvent) {
- * eEnd.target.stopTouchDrag(eEnd.touchPointID);
- * trace("touch end");
- * }
- * </codeblock>
- *
- *   EXAMPLE:
- *
- *   The following example shows how to handle touch events and touch event phases, as well as the <codeph class="+ topic/ph pr-d/codeph ">Multitouch.maxTouchPoints</codeph> and the
- * touch event object's <codeph class="+ topic/ph pr-d/codeph ">touchPointID</codeph> properties.
- * This example comes from Christian Cantrell, and is explained in more detail in his quickstart:
- * <xref href="http://www.adobe.com/devnet/flash/articles/multitouch_gestures.html" scope="external" class="- topic/xref ">Multi-touch and gesture support on the Flash Platform</xref>.
- * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
- * package
- * {
- * import flash.display.Sprite;
- * import flash.events.TouchEvent;
- * import flash.text.AntiAliasType;
- * import flash.text.TextField;
- * import flash.text.TextFormat;
- * import flash.ui.Multitouch;
- * import flash.ui.MultitouchInputMode;
- *
- *   [SWF(width=320, height=460, frameRate=24, backgroundColor=0xEB7F00)]
- * public class TouchExample2 extends Sprite
- * {
- * private var dots:Object;
- * private var labels:Object;
- * private var labelFormat:TextFormat;
- * private var dotCount:uint;
- * private var dotsLeft:TextField;
- * private static const LABEL_SPACING:uint = 15;
- *
- *   public function TouchExample2()
- * {
- * super();
- *
- *   this.labelFormat = new TextFormat();
- * labelFormat.color = 0xACF0F2;
- * labelFormat.font = "Helvetica";
- * labelFormat.size = 11;
- *
- *   this.dotCount = 0;
- *
- *   this.dotsLeft = new TextField();
- * this.dotsLeft.width = 300;
- * this.dotsLeft.defaultTextFormat = this.labelFormat;
- * this.dotsLeft.x = 3;
- * this.dotsLeft.y = 0;
- * this.stage.addChild(this.dotsLeft);
- * this.updateDotsLeft();
- *
- *   this.dots = new Object();
- * this.labels = new Object();
- *
- *   Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
- * this.stage.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchBegin);
- * this.stage.addEventListener(TouchEvent.TOUCH_MOVE, onTouchMove);
- * this.stage.addEventListener(TouchEvent.TOUCH_END, onTouchEnd);
- * }
- *
- *   private function onTouchBegin(e:TouchEvent):void
- * {
- * if (this.dotCount == Multitouch.maxTouchPoints) return;
- * var dot:Sprite = this.getCircle();
- * dot.x = e.stageX;
- * dot.y = e.stageY;
- * this.stage.addChild(dot);
- * dot.startTouchDrag(e.touchPointID, true);
- * this.dots[e.touchPointID] = dot;
- *
- *   ++this.dotCount;
- *
- *   var label:TextField = this.getLabel(e.stageX + ", " + e.stageY);
- * label.x = 3;
- * label.y = this.dotCount * LABEL_SPACING;
- * this.stage.addChild(label);
- * this.labels[e.touchPointID] = label;
- *
- *   this.updateDotsLeft();
- * }
- *
- *   private function onTouchMove(e:TouchEvent):void
- * {
- * var label:TextField = this.labels[e.touchPointID];
- * label.text = (e.stageX + ", " + e.stageY);
- * }
- *
- *   private function onTouchEnd(e:TouchEvent):void
- * {
- * var dot:Sprite = this.dots[e.touchPointID];
- * var label:TextField = this.labels[e.touchPointID];
- *
- *   this.stage.removeChild(dot);
- * this.stage.removeChild(label);
- *
- *   delete this.dots[e.touchPointID];
- * delete this.labels[e.touchPointID];
- *
- *   --this.dotCount;
- *
- *   this.updateDotsLeft();
- * }
- *
- *   private function getCircle(circumference:uint = 40):Sprite
- * {
- * var circle:Sprite = new Sprite();
- * circle.graphics.beginFill(0x1695A3);
- * circle.graphics.drawCircle(0, 0, circumference);
- * return circle;
- * }
- *
- *   private function getLabel(initialText:String):TextField
- * {
- * var label:TextField = new TextField();
- * label.defaultTextFormat = this.labelFormat;
- * label.selectable = false;
- * label.antiAliasType = AntiAliasType.ADVANCED;
- * label.text = initialText;
- * return label;
- * }
- *
- *   private function updateDotsLeft():void
- * {
- * this.dotsLeft.text = "Touches Remaining: " + (Multitouch.maxTouchPoints - this.dotCount);
- * }
- * }
- * }
- * </codeblock>
- * @langversion 3.0
- * @playerversion   Flash 10.1
- * @playerversion   AIR 2
- * @playerversion   Lite 4
- */
 using namespace flash::display;
 using namespace flash::events;
 
@@ -217,7 +44,184 @@ namespace flash
 {
     namespace events
     {
-        class TouchEvent: public Event
+        /// @eventType  flash.events.TouchEvent.TOUCH_TAP
+
+
+        /**
+         * The TouchEvent class lets you handle events on devices that detect user contact with
+         * the device (such as a finger on a touch screen).
+         * When a user interacts with a device such as a mobile phone or tablet with a touch screen, the user typically
+         * touches the screen with his or her fingers or a pointing device. You can develop applications that respond to
+         * basic touch events (such as a single finger tap) with the TouchEvent class. Create event listeners using the event types defined in this class.
+         * For user interaction with multiple points of contact (such as several fingers moving across a touch screen at the same time) use
+         * the related GestureEvent, PressAndTapGestureEvent, and TransformGestureEvent classes. And, use the properties and methods of these classes
+         * to construct event handlers that respond to the user touching the device.
+         * <p class="- topic/p ">Use the Multitouch class to determine the current environment's support for touch interaction, and to
+         * manage the support of touch interaction if the current environment supports it.</p><p class="- topic/p "><b class="+ topic/ph hi-d/b ">Note:</b> When objects are nested on the display list, touch events target the deepest possible
+         * nested object that is visible in the display list. This object is called the target node. To have a target node's
+         * ancestor (an object containing the target node in the display list) receive notification of a touch event, use
+         * <codeph class="+ topic/ph pr-d/codeph ">EventDispatcher.addEventListener()</codeph> on the ancestor node with the type parameter set to the specific
+         * touch event you want to detect.</p>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows event handling for the <codeph class="+ topic/ph pr-d/codeph ">TOUCH_BEGIN</codeph>, <codeph class="+ topic/ph pr-d/codeph ">TOUCH_MOVE</codeph>, and <codeph class="+ topic/ph pr-d/codeph ">TOUCH_END</codeph> events.
+         * While the point of contact moves across the screen (<codeph class="+ topic/ph pr-d/codeph ">onTouchMove</codeph>), the x-coordinate relative to the stage is traced to output.
+         * For the <codeph class="+ topic/ph pr-d/codeph ">Sprite.startTouchDrag</codeph> parameters in the <codeph class="+ topic/ph pr-d/codeph ">onTouchBegin</codeph> function, the value for touchPointID is the value assigned to the event object.
+         * The bounds parameter is the rectangle defining the boundaries of
+         * the parent display object (bg is a display object containing MySprite).
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
+         *
+         *   MySprite.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchBegin);
+         * MySprite.addEventListener(TouchEvent.TOUCH_MOVE, onTouchMove);
+         * MySprite.addEventListener(TouchEvent.TOUCH_END, onTouchEnd);
+         *
+         *   function onTouchBegin(eBegin:TouchEvent) {
+         * eBegin.target.startTouchDrag(eBegin.touchPointID, false, bg.getRect(this));
+         * trace("touch begin");
+         *
+         *   }
+         *
+         *   function onTouchMove(eMove:TouchEvent) {
+         * trace(eMove.stageX);
+         * }
+         *
+         *   function onTouchEnd(eEnd:TouchEvent) {
+         * eEnd.target.stopTouchDrag(eEnd.touchPointID);
+         * trace("touch end");
+         * }
+         * </codeblock>
+         *
+         *   EXAMPLE:
+         *
+         *   The following example shows how to handle touch events and touch event phases, as well as the <codeph class="+ topic/ph pr-d/codeph ">Multitouch.maxTouchPoints</codeph> and the
+         * touch event object's <codeph class="+ topic/ph pr-d/codeph ">touchPointID</codeph> properties.
+         * This example comes from Christian Cantrell, and is explained in more detail in his quickstart:
+         * <xref href="http://www.adobe.com/devnet/flash/articles/multitouch_gestures.html" scope="external" class="- topic/xref ">Multi-touch and gesture support on the Flash Platform</xref>.
+         * <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock ">
+         * package
+         * {
+         * import flash.display.Sprite;
+         * import flash.events.TouchEvent;
+         * import flash.text.AntiAliasType;
+         * import flash.text.TextField;
+         * import flash.text.TextFormat;
+         * import flash.ui.Multitouch;
+         * import flash.ui.MultitouchInputMode;
+         *
+         *   [SWF(width=320, height=460, frameRate=24, backgroundColor=0xEB7F00)]
+         * public class TouchExample2 extends Sprite
+         * {
+         * private var dots:Object;
+         * private var labels:Object;
+         * private var labelFormat:TextFormat;
+         * private var dotCount:uint;
+         * private var dotsLeft:TextField;
+         * private static const LABEL_SPACING:uint = 15;
+         *
+         *   public function TouchExample2()
+         * {
+         * super();
+         *
+         *   this.labelFormat = new TextFormat();
+         * labelFormat.color = 0xACF0F2;
+         * labelFormat.font = "Helvetica";
+         * labelFormat.size = 11;
+         *
+         *   this.dotCount = 0;
+         *
+         *   this.dotsLeft = new TextField();
+         * this.dotsLeft.width = 300;
+         * this.dotsLeft.defaultTextFormat = this.labelFormat;
+         * this.dotsLeft.x = 3;
+         * this.dotsLeft.y = 0;
+         * this.stage.addChild(this.dotsLeft);
+         * this.updateDotsLeft();
+         *
+         *   this.dots = new Object();
+         * this.labels = new Object();
+         *
+         *   Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
+         * this.stage.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchBegin);
+         * this.stage.addEventListener(TouchEvent.TOUCH_MOVE, onTouchMove);
+         * this.stage.addEventListener(TouchEvent.TOUCH_END, onTouchEnd);
+         * }
+         *
+         *   private function onTouchBegin(e:TouchEvent):void
+         * {
+         * if (this.dotCount == Multitouch.maxTouchPoints) return;
+         * var dot:Sprite = this.getCircle();
+         * dot.x = e.stageX;
+         * dot.y = e.stageY;
+         * this.stage.addChild(dot);
+         * dot.startTouchDrag(e.touchPointID, true);
+         * this.dots[e.touchPointID] = dot;
+         *
+         *   ++this.dotCount;
+         *
+         *   var label:TextField = this.getLabel(e.stageX + ", " + e.stageY);
+         * label.x = 3;
+         * label.y = this.dotCount * LABEL_SPACING;
+         * this.stage.addChild(label);
+         * this.labels[e.touchPointID] = label;
+         *
+         *   this.updateDotsLeft();
+         * }
+         *
+         *   private function onTouchMove(e:TouchEvent):void
+         * {
+         * var label:TextField = this.labels[e.touchPointID];
+         * label.text = (e.stageX + ", " + e.stageY);
+         * }
+         *
+         *   private function onTouchEnd(e:TouchEvent):void
+         * {
+         * var dot:Sprite = this.dots[e.touchPointID];
+         * var label:TextField = this.labels[e.touchPointID];
+         *
+         *   this.stage.removeChild(dot);
+         * this.stage.removeChild(label);
+         *
+         *   delete this.dots[e.touchPointID];
+         * delete this.labels[e.touchPointID];
+         *
+         *   --this.dotCount;
+         *
+         *   this.updateDotsLeft();
+         * }
+         *
+         *   private function getCircle(circumference:uint = 40):Sprite
+         * {
+         * var circle:Sprite = new Sprite();
+         * circle.graphics.beginFill(0x1695A3);
+         * circle.graphics.drawCircle(0, 0, circumference);
+         * return circle;
+         * }
+         *
+         *   private function getLabel(initialText:String):TextField
+         * {
+         * var label:TextField = new TextField();
+         * label.defaultTextFormat = this.labelFormat;
+         * label.selectable = false;
+         * label.antiAliasType = AntiAliasType.ADVANCED;
+         * label.text = initialText;
+         * return label;
+         * }
+         *
+         *   private function updateDotsLeft():void
+         * {
+         * this.dotsLeft.text = "Touches Remaining: " + (Multitouch.maxTouchPoints - this.dotCount);
+         * }
+         * }
+         * }
+         * </codeblock>
+         * @langversion 3.0
+         * @playerversion   Flash 10.1
+         * @playerversion   AIR 2
+         * @playerversion   Lite 4
+         */
+        class TouchEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a TOUCH_BEGIN touch event object.
@@ -596,7 +600,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TouchEvent(std::string type, bool bubbles, bool cancelable, int touchPointID, bool isPrimaryTouchPoint, float localX, float localY, float sizeX, float sizeY, float pressure, InteractiveObject *relatedObject, bool ctrlKey, bool altKey, bool shiftKey);
+            TouchEvent(std::string type, bool bubbles   =true, bool cancelable   =false, int touchPointID=0, bool isPrimaryTouchPoint   =false, float localX =Number::NaN, float localY =Number::NaN, float sizeX =Number::NaN, float sizeY =Number::NaN, float pressure =Number::NaN, InteractiveObject *relatedObject=NULL, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
 
             /**
              * Instructs Flash Player or Adobe AIR to render after processing of this event completes, if the display list has been modified.

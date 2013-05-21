@@ -3,25 +3,26 @@
 #if defined(__cplusplus)
 
 
+#include "flex11.6.h"
 #include "flash/events/Event.h"
 
 /// @eventType  flash.events.StatusEvent.STATUS
 //[Event(name="status",type="flash.events.StatusEvent")]
 
-/**
- * An object dispatches a StatusEvent object when a device, such as a camera or microphone, or an object such as a LocalConnection object reports its status. There is only one type of status event: <codeph class="+ topic/ph pr-d/codeph ">StatusEvent.STATUS</codeph>.
- * @langversion 3.0
- * @playerversion   Flash 9
- * @playerversion   Lite 4
- * @internal    includeExample examples\StatusEventExample.as -noswf
- */
 using namespace flash::events;
 
 namespace flash
 {
     namespace events
     {
-        class StatusEvent: public Event
+        /**
+         * An object dispatches a StatusEvent object when a device, such as a camera or microphone, or an object such as a LocalConnection object reports its status. There is only one type of status event: <codeph class="+ topic/ph pr-d/codeph ">StatusEvent.STATUS</codeph>.
+         * @langversion 3.0
+         * @playerversion   Flash 9
+         * @playerversion   Lite 4
+         * @internal    includeExample examples\StatusEventExample.as -noswf
+         */
+        class StatusEvent : public flash::events::Event
         {
             /**
              * Defines the value of the type property of a status event object.
@@ -79,7 +80,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            StatusEvent(std::string type, bool bubbles, bool cancelable, std::string code, std::string level);
+            StatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string code="", std::string level="");
 
             /**
              * Returns a string that contains all the properties of the StatusEvent object. The string is in the following format:
