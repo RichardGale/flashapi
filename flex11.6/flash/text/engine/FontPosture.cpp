@@ -22,7 +22,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontPosture::NORMAL="normal";
+        const std::string FontPosture::NORMAL   = "normal";
 
         /**
          * Used to indicate italic font posture.
@@ -31,7 +31,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontPosture::ITALIC="italic";
+        const std::string FontPosture::ITALIC   = "italic";
 
         FontPosture::FontPosture();
 }

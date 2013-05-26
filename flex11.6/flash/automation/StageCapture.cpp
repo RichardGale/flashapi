@@ -13,12 +13,12 @@ namespace flash {
 namespace automation {
 
 
-        const std::string StageCapture::CURRENT;
-        const std::string StageCapture::NEXT;
-        const std::string StageCapture::MULTIPLE;
-        const std::string StageCapture::RASTER;
-        const std::string StageCapture::STAGE;
-        const std::string StageCapture::SCREEN;
+        const std::string StageCapture::CURRENT  ;
+        const std::string StageCapture::NEXT  ;
+        const std::string StageCapture::MULTIPLE  ;
+        const std::string StageCapture::RASTER  ;
+        const std::string StageCapture::STAGE  ;
+        const std::string StageCapture::SCREEN  ;
 
         void StageCapture::fileNameBase(std::string value)       ;
         std::string StageCapture::fileNameBase()         ;

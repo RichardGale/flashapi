@@ -96,8 +96,6 @@
 
 
 
-        const void* XML::length;
-
         /**
          * Determines whether XML comments are ignored 
          * when XML objects parse the source XML data. By default, the comments are ignored 
@@ -482,7 +480,7 @@
          * @return  Returns null, undefined, or a namespace.
          * @langversion 3.0
          * @playerversion   Flash 9
-         */void* XML::namespace(void* prefix)    ;
+         */void* XML::NAMESPACE(void* prefix)    ;
 
         /**
          * Lists namespace declarations associated with the XML object in the context of its parent.

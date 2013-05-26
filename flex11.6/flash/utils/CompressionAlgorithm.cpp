@@ -18,15 +18,15 @@ namespace utils {
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string CompressionAlgorithm::ZLIB="zlib";
+        const std::string CompressionAlgorithm::ZLIB   = "zlib";
 
         /**
          * Defines the string to use for the deflate compression algorithm.
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string CompressionAlgorithm::DEFLATE="deflate";
-        const std::string CompressionAlgorithm::LZMA;
+        const std::string CompressionAlgorithm::DEFLATE   = "deflate";
+        const std::string CompressionAlgorithm::LZMA  ;
 
         CompressionAlgorithm::CompressionAlgorithm();
 }

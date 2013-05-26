@@ -23,8 +23,8 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Flash 10.1
          */
-        const std::string DRMErrorEvent::DRM_ERROR="drmError";
-        const std::string DRMErrorEvent::DRM_LOAD_DEVICEID_ERROR;
+        const std::string DRMErrorEvent::DRM_ERROR   = "drmError";
+        const std::string DRMErrorEvent::DRM_LOAD_DEVICEID_ERROR  ;
 
         /**
          * An error ID that indicates more detailed information about the underlying problem.

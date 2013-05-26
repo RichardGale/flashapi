@@ -1,4 +1,4 @@
-#if 0
+
 
     /**
      * The NetStreamPlayTransitions class specifies the valid strings that you can use with the 
@@ -27,7 +27,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::APPEND="append";
+        const std::string NetStreamPlayTransitions::APPEND   = "append";
 
         /**
          * Clears any previous play calls and plays the specified stream immediately.
@@ -41,7 +41,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::RESET="reset";
+        const std::string NetStreamPlayTransitions::RESET   = "reset";
 
         /**
          * Switches from playing one stream to another stream, typically with streams of the same content.
@@ -62,7 +62,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::SWITCH="switch";
+        const std::string NetStreamPlayTransitions::SWITCH   = "switch";
 
         /**
          * Replaces a content stream with a different content stream and maintains the rest of the playlist.
@@ -80,7 +80,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::SWAP="swap";
+        const std::string NetStreamPlayTransitions::SWAP   = "swap";
 
         /**
          * Stops playing the streams in a playlist. This mode does the same thing as calling NetStream.play(false). 
@@ -90,7 +90,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::STOP="stop";
+        const std::string NetStreamPlayTransitions::STOP   = "stop";
 
         /**
          * Requests data from the new connection starting from the point at which the previous connection ended.
@@ -102,7 +102,7 @@ namespace net {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::RESUME="resume";
+        const std::string NetStreamPlayTransitions::RESUME   = "resume";
 
         /**
          * Builds a playlist without starting to play it from the first stream.
@@ -121,10 +121,9 @@ namespace net {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string NetStreamPlayTransitions::APPEND_AND_WAIT="appendAndWait";
+        const std::string NetStreamPlayTransitions::APPEND_AND_WAIT   = "appendAndWait";
 
         NetStreamPlayTransitions::NetStreamPlayTransitions();
 }
 }
-#endif
 

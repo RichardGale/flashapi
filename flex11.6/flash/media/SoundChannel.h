@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        position();
+            float       position();
 
             /**
              * The SoundTransform object assigned to the sound channel. A SoundTransform object
@@ -144,7 +144,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        leftPeak();
+            float       leftPeak();
 
             /**
              * The current amplitude (volume) of the right channel, from 0 (silent) to 1 (full amplitude).
@@ -154,7 +154,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        rightPeak();
+            float       rightPeak();
 
         public:
             SoundChannel();

@@ -20,7 +20,7 @@ namespace media {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string SoundCodec::NELLYMOSER="NellyMoser";
+        const std::string SoundCodec::NELLYMOSER   = "NellyMoser";
 
         /**
          * Specifies that the Speex codec be used for compressing audio.
@@ -28,9 +28,9 @@ namespace media {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string SoundCodec::SPEEX="Speex";
-        const std::string SoundCodec::PCMA;
-        const std::string SoundCodec::PCMU;
+        const std::string SoundCodec::SPEEX   = "Speex";
+        const std::string SoundCodec::PCMA  ;
+        const std::string SoundCodec::PCMU  ;
 
         SoundCodec::SoundCodec();
 }

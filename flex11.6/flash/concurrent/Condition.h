@@ -21,16 +21,16 @@ namespace flash
         class Condition : public Object
         {
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
-            Mutex       *mutex();
+            Mutex        *mutex();
 
         public:
             Condition(Mutex *mutex);
 
         public:
-            bool     wait(float timeout =-1);
+            bool  wait(float timeout=-1);
 
         public:
             void     notify();

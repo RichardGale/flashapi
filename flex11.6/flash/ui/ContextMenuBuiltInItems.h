@@ -79,7 +79,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         save();
+            bool      save();
         public:
             void         save(bool val);
 
@@ -89,7 +89,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         zoom();
+            bool      zoom();
         public:
             void         zoom(bool val);
 
@@ -99,7 +99,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         quality();
+            bool      quality();
         public:
             void         quality(bool val);
 
@@ -109,7 +109,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         play();
+            bool      play();
         public:
             void         play(bool val);
 
@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         loop();
+            bool      loop();
         public:
             void         loop(bool val);
 
@@ -131,7 +131,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         rewind();
+            bool      rewind();
         public:
             void         rewind(bool val);
 
@@ -142,7 +142,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         forwardAndBack();
+            bool      forwardAndBack();
         public:
             void         forwardAndBack(bool val);
 
@@ -152,7 +152,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         print();
+            bool      print();
         public:
             void         print(bool val);
 

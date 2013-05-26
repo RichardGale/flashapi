@@ -15,6 +15,9 @@
  * @playerversion   AIR 1.5
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -48,7 +51,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  winding();
+            std::string       winding();
         public:
             void         winding(std::string value);
 

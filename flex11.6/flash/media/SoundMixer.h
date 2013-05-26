@@ -80,12 +80,12 @@ namespace flash
             static void         soundTransform(SoundTransform *sndTransform);
 
         public:
-            static std::string  audioPlaybackMode();
+            static std::string       audioPlaybackMode();
         public:
             static void         audioPlaybackMode(std::string value);
 
         public:
-            static bool         useSpeakerphoneForVoice();
+            static bool      useSpeakerphoneForVoice();
         public:
             static void         useSpeakerphoneForVoice(bool value);
 
@@ -152,7 +152,7 @@ namespace flash
              * @internal    Should confirm if the floating point numbers are single- or double-precision.
              */
         public:
-            static void     computeSpectrum(ByteArray *outputArray, bool FFTMode   =false, int stretchFactor=0);
+            static void     computeSpectrum(ByteArray *outputArray, bool FFTMode=false, int stretchFactor=0);
 
             /**
              * Determines whether any sounds are not accessible due to security restrictions. For example,
@@ -171,7 +171,7 @@ namespace flash
              * @refpath
              */
         public:
-            static bool     areSoundsInaccessible();
+            static bool  areSoundsInaccessible();
         };
     }
 }

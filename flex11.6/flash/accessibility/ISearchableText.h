@@ -10,6 +10,9 @@
  * @playerversion   Flash 10.1
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -22,7 +25,7 @@ namespace flash
              * @langversion 3.0
              * @playerversion   Flash 10.1
              */virtual
-            std::string  searchText() = 0;
+            std::string       searchText() = 0;
         };
     }
 }

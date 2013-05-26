@@ -36,6 +36,9 @@
  * @playerversion   AIR 1.5
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -58,7 +61,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            Object      *input();
+            Object       *input();
         public:
             void         input(Object *input);
 

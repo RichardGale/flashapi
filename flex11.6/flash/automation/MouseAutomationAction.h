@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace automation
@@ -28,12 +32,12 @@ namespace flash
             static const std::string RIGHT_MOUSE_UP;
 
         public:
-            float        stageX();
+            float       stageX();
         public:
             void         stageX(float value);
 
         public:
-            float        stageY();
+            float       stageY();
         public:
             void         stageY(float value);
 
@@ -43,7 +47,7 @@ namespace flash
             void         delta(int value);
 
         public:
-            MouseAutomationAction(std::string type, float stageX =0, float stageY =0, int delta=0);
+            MouseAutomationAction(std::string type, float stageX=0, float stageY=0, int delta=0);
         };
     }
 }

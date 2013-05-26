@@ -197,7 +197,7 @@ namespace flash
              * @throws  TypeError The Array is null when being set
              */
         public:
-            std::vector<void *> matrix();
+            std::vector<void *>        matrix();
         public:
             void         matrix(std::vector<void *> value);
 

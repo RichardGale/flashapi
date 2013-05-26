@@ -60,6 +60,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -78,7 +81,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  inputMode();
+            static std::string       inputMode();
         public:
             static void         inputMode(std::string value);
 
@@ -91,7 +94,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         supportsTouchEvents();
+            static bool      supportsTouchEvents();
 
             /**
              * Indicates whether the current environment supports gesture input, such as rotating two fingers
@@ -104,7 +107,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         supportsGestureEvents();
+            static bool      supportsGestureEvents();
 
             /**
              * A Vector array (a typed array of string values) of multi-touch contact types supported in the current environment. The array of strings
@@ -133,7 +136,7 @@ namespace flash
             static int          maxTouchPoints();
 
         public:
-            static bool         mapTouchToMouse();
+            static bool      mapTouchToMouse();
         public:
             static void         mapTouchToMouse(bool value);
 

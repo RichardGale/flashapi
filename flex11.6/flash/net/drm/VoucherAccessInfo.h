@@ -12,6 +12,9 @@
  * @playerversion   Flash 10.1
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -40,7 +43,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  displayName();
+                std::string       displayName();
 
                 /**
                  * The type of authentication required to obtain a voucher for the associated content.
@@ -53,7 +56,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  authenticationMethod();
+                std::string       authenticationMethod();
 
                 /**
                  * The content domain of the media rights server to which the user must be authenticated
@@ -69,7 +72,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  domain();
+                std::string       domain();
 
             public:
                 VoucherAccessInfo();

@@ -9,7 +9,7 @@ namespace flash {
 namespace automation {
 
 
-        const std::string StageCaptureEvent::CAPTURE;
+        const std::string StageCaptureEvent::CAPTURE  ;
 
         std::string StageCaptureEvent::url()         ;
 

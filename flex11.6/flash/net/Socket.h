@@ -214,7 +214,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int timeout();
+            unsigned int         timeout();
         public:
             void         timeout(unsigned int value);
 
@@ -229,7 +229,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesAvailable();
+            unsigned int         bytesAvailable();
 
             /**
              * Indicates whether this Socket object is currently connected.
@@ -240,7 +240,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         connected();
+            bool      connected();
 
             /**
              * Controls the version of AMF used when writing or reading an object.
@@ -250,7 +250,7 @@ namespace flash
              * @internal    Property documented; needs review
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
@@ -263,12 +263,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  endian();
+            std::string       endian();
         public:
             void         endian(std::string type);
 
         public:
-            unsigned int bytesPending();
+            unsigned int         bytesPending();
 
             /**
              * Connects the socket to the specified host and port.
@@ -510,7 +510,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            bool     readBoolean();
+            bool  readBoolean();
 
             /**
              * Reads a signed byte from the socket.
@@ -534,7 +534,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            unsigned int readUnsignedByte();
+            unsigned int     readUnsignedByte();
 
             /**
              * Reads a signed 16-bit integer from the socket.
@@ -558,7 +558,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            unsigned int readUnsignedShort();
+            unsigned int     readUnsignedShort();
 
             /**
              * Reads a signed 32-bit integer from the socket.
@@ -582,7 +582,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            unsigned int readUnsignedInt();
+            unsigned int     readUnsignedInt();
 
             /**
              * Reads an IEEE 754 single-precision floating-point number from the socket.
@@ -594,7 +594,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            float    readFloat();
+            float   readFloat();
 
             /**
              * Reads an IEEE 754 double-precision floating-point number from the socket.
@@ -606,7 +606,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            float    readDouble();
+            float   readDouble();
 
             /**
              * Reads a multibyte string from the byte stream, using the specified character set.
@@ -628,7 +628,7 @@ namespace flash
              * @throws  EOFError There is insufficient data available to read.
              */
         public:
-            std::string readMultiByte(unsigned int length, std::string charSet);
+            std::string   readMultiByte(unsigned int length, std::string charSet);
 
             /**
              * Reads a UTF-8 string from the socket.  The string is assumed to be prefixed
@@ -641,7 +641,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            std::string readUTF();
+            std::string   readUTF();
 
             /**
              * Reads the number of UTF-8 data bytes specified by the length
@@ -655,7 +655,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            std::string readUTFBytes(unsigned int length);
+            std::string   readUTFBytes(unsigned int length);
 
             /**
              * Closes the socket. You cannot read or write any data after the close() method
@@ -707,7 +707,7 @@ namespace flash
              * @throws  IOError An I/O error occurred on the socket, or the socket is not open.
              */
         public:
-            void    *readObject();
+            void        *readObject();
         };
     }
 }

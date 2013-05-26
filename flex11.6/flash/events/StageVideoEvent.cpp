@@ -15,7 +15,7 @@ namespace events {
          * @playerversion   AIR 2.5
          * @playerversion   Flash 10.2
          */
-        const std::string StageVideoEvent::RENDER_STATE="renderState";
+        const std::string StageVideoEvent::RENDER_STATE   = "renderState";
 
         /**
          * Indicates that displaying the video using the StageVideo object is not possible.
@@ -29,7 +29,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 2.5
          */
-        const std::string StageVideoEvent::RENDER_STATUS_UNAVAILABLE="unavailable";
+        const std::string StageVideoEvent::RENDER_STATUS_UNAVAILABLE   = "unavailable";
 
         /**
          * Indicates that software is decoding and displaying the video.
@@ -40,7 +40,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 2.5
          */
-        const std::string StageVideoEvent::RENDER_STATUS_SOFTWARE="software";
+        const std::string StageVideoEvent::RENDER_STATUS_SOFTWARE   = "software";
 
         /**
          * Indicates that hardware is decoding and displaying the video.
@@ -49,7 +49,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 2.5
          */
-        const std::string StageVideoEvent::RENDER_STATUS_ACCELERATED="accelerated";
+        const std::string StageVideoEvent::RENDER_STATUS_ACCELERATED   = "accelerated";
                      
 
         /**

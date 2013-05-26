@@ -323,7 +323,7 @@ namespace flash
              *   indicating a file I/O error.
              */
         public:
-            Date        *creationDate();
+            Date         *creationDate();
 
             /**
              * The Macintosh creator type of the file, which is only used in Mac OS versions
@@ -339,7 +339,7 @@ namespace flash
              *   is null.
              */
         public:
-            std::string  creator();
+            std::string       creator();
 
             /**
              * The date that the file on the local disk was last modified. If the FileReference
@@ -356,7 +356,7 @@ namespace flash
              *   indicating a file I/O error.
              */
         public:
-            Date        *modificationDate();
+            Date         *modificationDate();
 
             /**
              * The name of the file on the local disk. If the FileReference object
@@ -375,7 +375,7 @@ namespace flash
              *   incorrect sequence or an earlier call was unsuccessful.
              */
         public:
-            std::string  name();
+            std::string       name();
 
             /**
              * The size of the file on the local disk in bytes. If size is 0,
@@ -393,7 +393,7 @@ namespace flash
              *   accessing the file, an exception is thrown with a message indicating a file I/O error.
              */
         public:
-            float        size();
+            float       size();
 
             /**
              * The file type.
@@ -411,7 +411,7 @@ namespace flash
              *   is null.
              */
         public:
-            std::string  type();
+            std::string       type();
 
             /**
              * The ByteArray object representing the data from the loaded file after a successful call to the load() method.
@@ -672,7 +672,7 @@ namespace flash
              *   to perform a POST operation.
              */
         public:
-            void     upload(URLRequest *request, std::string uploadDataFieldName="Filedata", bool testUpload   =false);
+            void     upload(URLRequest *request, std::string uploadDataFieldName="Filedata", bool testUpload=false);
 
             /**
              * Starts the load of a local file selected by a user.
@@ -821,7 +821,7 @@ namespace flash
              *   event or keypress event.
              */
         public:
-            bool     browse(std::vector<void *> typeFilter=std::vector<void *>());
+            bool  browse(std::vector<void *> typeFilter=std::vector<void *>());
         };
     }
 }

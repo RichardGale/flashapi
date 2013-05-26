@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::ACTIVATE="activate";
+        const std::string Event::ACTIVATE   = "activate";
 
         /**
          * The Event.ADDED constant defines the value of the type property of 
@@ -36,7 +36,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::ADDED="added";
+        const std::string Event::ADDED   = "added";
 
         /**
          * The Event.ADDED_TO_STAGE constant defines the value of the type 
@@ -50,7 +50,7 @@ namespace events {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string Event::ADDED_TO_STAGE="addedToStage";
+        const std::string Event::ADDED_TO_STAGE   = "addedToStage";
 
         /**
          * The Event.CANCEL constant defines the value of the type property of a cancel event object. 
@@ -61,7 +61,7 @@ namespace events {
          * @playerversion   Lite 4
          * @internal    <code>ProductManager</code> pulled from table
          */
-        const std::string Event::CANCEL="cancel";
+        const std::string Event::CANCEL   = "cancel";
 
         /**
          * The Event.CHANGE constant defines the value of the type property of a change event object.
@@ -75,7 +75,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::CHANGE="change";
+        const std::string Event::CHANGE   = "change";
 
         /**
          * The Event.CLEAR constant defines the value of the type property 
@@ -92,7 +92,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Event::CLEAR="clear";
+        const std::string Event::CLEAR   = "clear";
 
         /**
          * The Event.CLOSE constant defines the value of the type property of a close event object.
@@ -103,7 +103,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::CLOSE="close";
+        const std::string Event::CLOSE   = "close";
 
         /**
          * The Event.COMPLETE constant defines the value of the type property of a complete event object.
@@ -114,7 +114,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::COMPLETE="complete";
+        const std::string Event::COMPLETE   = "complete";
 
         /**
          * The Event.CONNECT constant defines the value of the type property of a connect event object.
@@ -125,7 +125,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::CONNECT="connect";
+        const std::string Event::CONNECT   = "connect";
 
         /**
          * Defines the value of the type property of a copy event object. 
@@ -141,7 +141,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Event::COPY="copy";
+        const std::string Event::COPY   = "copy";
 
         /**
          * Defines the value of the type property of a cut event object. 
@@ -157,7 +157,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Event::CUT="cut";
+        const std::string Event::CUT   = "cut";
 
         /**
          * The Event.DEACTIVATE constant defines the value of the type property of a deactivate event object. 
@@ -169,7 +169,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::DEACTIVATE="deactivate";
+        const std::string Event::DEACTIVATE   = "deactivate";
 
         /**
          * The Event.ENTER_FRAME constant defines the value of the type property of an enterFrame event object. 
@@ -181,7 +181,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::ENTER_FRAME="enterFrame";
+        const std::string Event::ENTER_FRAME   = "enterFrame";
 
         /**
          * The Event.FRAME_CONSTRUCTED constant defines the value of the type property of an frameConstructed event object.
@@ -194,7 +194,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::FRAME_CONSTRUCTED="frameConstructed";
+        const std::string Event::FRAME_CONSTRUCTED   = "frameConstructed";
 
         /**
          * The Event.EXIT_FRAME constant defines the value of the type property of an exitFrame event object. 
@@ -206,8 +206,8 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::EXIT_FRAME="exitFrame";
-        const std::string Event::FRAME_LABEL;
+        const std::string Event::EXIT_FRAME   = "exitFrame";
+        const std::string Event::FRAME_LABEL  ;
 
         /**
          * The Event.ID3 constant defines the value of the type property of an id3 event object. 
@@ -220,7 +220,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::ID3="id3";
+        const std::string Event::ID3   = "id3";
 
         /**
          * The Event.INIT constant defines the value of the type property of an init event object.
@@ -231,7 +231,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::INIT="init";
+        const std::string Event::INIT   = "init";
 
         /**
          * The Event.MOUSE_LEAVE constant defines the value of the type property of a mouseLeave event object.
@@ -245,7 +245,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::MOUSE_LEAVE="mouseLeave";
+        const std::string Event::MOUSE_LEAVE   = "mouseLeave";
 
         /**
          * The Event.OPEN constant defines the value of the type property of an open event object.
@@ -256,7 +256,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::OPEN="open";
+        const std::string Event::OPEN   = "open";
 
         /**
          * The Event.PASTE constant defines the value of the type property of a paste event object. 
@@ -272,7 +272,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Event::PASTE="paste";
+        const std::string Event::PASTE   = "paste";
 
         /**
          * The Event.REMOVED constant defines the value of the type property of
@@ -287,7 +287,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::REMOVED="removed";
+        const std::string Event::REMOVED   = "removed";
 
         /**
          * The Event.REMOVED_FROM_STAGE constant defines the value of the type 
@@ -301,7 +301,7 @@ namespace events {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string Event::REMOVED_FROM_STAGE="removedFromStage";
+        const std::string Event::REMOVED_FROM_STAGE   = "removedFromStage";
 
         /**
          * The Event.RENDER constant defines the value of the type property of a render event object. 
@@ -313,7 +313,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::RENDER="render";
+        const std::string Event::RENDER   = "render";
 
         /**
          * The Event.RESIZE constant defines the value of the type property of a resize event object.
@@ -324,7 +324,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::RESIZE="resize";
+        const std::string Event::RESIZE   = "resize";
 
         /**
          * The Event.SCROLL constant defines the value of the type property of a scroll event object.
@@ -338,7 +338,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::SCROLL="scroll";
+        const std::string Event::SCROLL   = "scroll";
 
         /**
          * The Event.TEXT_INTERACTION_MODE_CHANGE constant defines the value of the type property of a interaction mode event object.
@@ -352,7 +352,7 @@ namespace events {
          * @playerversion   Flash 11
          * @playerversion   Lite 4
          */
-        const std::string Event::TEXT_INTERACTION_MODE_CHANGE="textInteractionModeChange";
+        const std::string Event::TEXT_INTERACTION_MODE_CHANGE   = "textInteractionModeChange";
 
         /**
          * The Event.SELECT constant defines the value of the type property of a select event object.
@@ -363,7 +363,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::SELECT="select";
+        const std::string Event::SELECT   = "select";
 
         /**
          * The Event.SELECT_ALL constant defines the value of the type property of a selectAll event object. 
@@ -379,7 +379,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Event::SELECT_ALL="selectAll";
+        const std::string Event::SELECT_ALL   = "selectAll";
 
         /**
          * The Event.SOUND_COMPLETE constant defines the value of the type property of a soundComplete event object.
@@ -390,7 +390,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::SOUND_COMPLETE="soundComplete";
+        const std::string Event::SOUND_COMPLETE   = "soundComplete";
 
         /**
          * The Event.TAB_CHILDREN_CHANGE constant defines the value of the type property of a tabChildrenChange event object. 
@@ -403,7 +403,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::TAB_CHILDREN_CHANGE="tabChildrenChange";
+        const std::string Event::TAB_CHILDREN_CHANGE   = "tabChildrenChange";
 
         /**
          * The Event.TAB_ENABLED_CHANGE constant defines the value of the type 
@@ -418,7 +418,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::TAB_ENABLED_CHANGE="tabEnabledChange";
+        const std::string Event::TAB_ENABLED_CHANGE   = "tabEnabledChange";
 
         /**
          * The Event.TAB_INDEX_CHANGE constant defines the value of the 
@@ -433,7 +433,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::TAB_INDEX_CHANGE="tabIndexChange";
+        const std::string Event::TAB_INDEX_CHANGE   = "tabIndexChange";
 
         /**
          * The Event.UNLOAD constant defines the value of the type property of an unload event object.
@@ -444,7 +444,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::UNLOAD="unload";
+        const std::string Event::UNLOAD   = "unload";
 
         /**
          * The Event.FULL_SCREEN constant defines the value of the type property of a fullScreen event object.
@@ -455,14 +455,14 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Event::FULLSCREEN="fullScreen";
-        const std::string Event::CONTEXT3D_CREATE;
-        const std::string Event::TEXTURE_READY;
-        const std::string Event::VIDEO_FRAME;
-        const std::string Event::SUSPEND;
-        const std::string Event::CHANNEL_MESSAGE;
-        const std::string Event::CHANNEL_STATE;
-        const std::string Event::WORKER_STATE;
+        const std::string Event::FULLSCREEN   = "fullScreen";
+        const std::string Event::CONTEXT3D_CREATE  ;
+        const std::string Event::TEXTURE_READY  ;
+        const std::string Event::VIDEO_FRAME  ;
+        const std::string Event::SUSPEND  ;
+        const std::string Event::CHANNEL_MESSAGE  ;
+        const std::string Event::CHANNEL_STATE  ;
+        const std::string Event::WORKER_STATE  ;
 
         /**
          * The type of event. The type is case-sensitive.

@@ -45,7 +45,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int Array::CASEINSENSITIVE=1;
+        const unsigned int Array::CASEINSENSITIVE   = 1;
 
         /**
          * Specifies descending sorting for the Array class sorting methods. 
@@ -56,7 +56,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int Array::DESCENDING=2;
+        const unsigned int Array::DESCENDING   = 2;
 
         /**
          * Specifies the unique sorting requirement for the Array class sorting methods. 
@@ -68,7 +68,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int Array::UNIQUESORT=4;
+        const unsigned int Array::UNIQUESORT   = 4;
 
         /**
          * Specifies that a sort returns an array that consists of array indices. You can use this constant
@@ -79,7 +79,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int Array::RETURNINDEXEDARRAY=8;
+        const unsigned int Array::RETURNINDEXEDARRAY   = 8;
 
         /**
          * Specifies numeric (instead of character-string) sorting for the Array class sorting methods. 
@@ -98,7 +98,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int Array::NUMERIC=16;
+        const unsigned int Array::NUMERIC   = 16;
         const int Array::length  ;
 
         /**

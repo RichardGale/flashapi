@@ -109,7 +109,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            IMEEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", IIMEClient *imeClient=NULL);
+            IMEEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string text="", IIMEClient *imeClient=NULL);
 
             /**
              * Returns a string that contains all the properties of the IMEEvent object. The string is in the following format:
@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

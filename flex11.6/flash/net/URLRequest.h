@@ -96,6 +96,9 @@
  * @internal    The above include is not a mistake, but rather code re-use.
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -132,7 +135,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  url();
+            std::string       url();
         public:
             void         url(std::string value);
 
@@ -164,7 +167,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *data();
+            Object       *data();
         public:
             void         data(Object *value);
 
@@ -193,7 +196,7 @@ namespace flash
              *   URLRequestMethod.GET or URLRequestMethod.POST.
              */
         public:
-            std::string  method();
+            std::string       method();
         public:
             void         method(std::string value);
 
@@ -220,7 +223,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  contentType();
+            std::string       contentType();
         public:
             void         contentType(std::string value);
 
@@ -247,7 +250,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> requestHeaders();
+            std::vector<void *>        requestHeaders();
         public:
             void         requestHeaders(std::vector<void *> value);
 
@@ -279,7 +282,7 @@ namespace flash
              *   (nonhexadecimal) characters.
              */
         public:
-            std::string  digest();
+            std::string       digest();
         public:
             void         digest(std::string value);
 

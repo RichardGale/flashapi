@@ -19,6 +19,9 @@
  * @productversion  Flash CS3
  */
 
+#include "flex11.6.h"
+
+
 
 namespace adobe
 {
@@ -35,7 +38,7 @@ namespace adobe
              * @productversion  Flash CS3
              */
         public:
-            static std::string getProperty(std::string name);
+            static std::string   getProperty(std::string name);
 
             /**
              * Modifies the value of the specified property of the current XMLUI dialog.

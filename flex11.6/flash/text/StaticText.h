@@ -48,7 +48,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  text();
+            std::string       text();
 
         public:
             StaticText();

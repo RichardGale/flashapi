@@ -225,7 +225,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  precisionHint();
+            std::string       precisionHint();
         public:
             void         precisionHint(std::string p);
 

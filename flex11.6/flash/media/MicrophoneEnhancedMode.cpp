@@ -21,7 +21,7 @@ namespace media {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string MicrophoneEnhancedMode::FULL_DUPLEX="fullDuplex";
+        const std::string MicrophoneEnhancedMode::FULL_DUPLEX   = "fullDuplex";
 
         /**
          * Use this mode for older and lower-quality speakers and microphones. Acoustic echo cancellation operates in half-duplex mode. 
@@ -34,7 +34,7 @@ namespace media {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string MicrophoneEnhancedMode::HALF_DUPLEX="halfDuplex";
+        const std::string MicrophoneEnhancedMode::HALF_DUPLEX   = "halfDuplex";
 
         /**
          * Use this mode when both parties are using headsets. Acoustic echo cancellation operates in low-echo mode. This mode requires the least amount
@@ -43,7 +43,7 @@ namespace media {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string MicrophoneEnhancedMode::HEADSET="headset";
+        const std::string MicrophoneEnhancedMode::HEADSET   = "headset";
 
         /**
          * Use this mode when the speaker is muted. Acoustic echo cancellation is turned off. Enhanced audio performs
@@ -52,7 +52,7 @@ namespace media {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string MicrophoneEnhancedMode::SPEAKER_MUTE="speakerMute";
+        const std::string MicrophoneEnhancedMode::SPEAKER_MUTE   = "speakerMute";
 
         /**
          * All enhanced audio functionality is turned off.
@@ -60,7 +60,7 @@ namespace media {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string MicrophoneEnhancedMode::OFF="off";
+        const std::string MicrophoneEnhancedMode::OFF   = "off";
 
         MicrophoneEnhancedMode::MicrophoneEnhancedMode();
 }

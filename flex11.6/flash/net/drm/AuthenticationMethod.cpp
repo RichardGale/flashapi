@@ -21,7 +21,7 @@ namespace drm {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string AuthenticationMethod::ANONYMOUS="anonymous";
+        const std::string AuthenticationMethod::ANONYMOUS   = "anonymous";
 
         /**
          * Indicates that a valid user name and password are required.
@@ -29,7 +29,7 @@ namespace drm {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string AuthenticationMethod::USERNAME_AND_PASSWORD="usernameAndPassword";
+        const std::string AuthenticationMethod::USERNAME_AND_PASSWORD   = "usernameAndPassword";
 
         AuthenticationMethod::AuthenticationMethod();
 }

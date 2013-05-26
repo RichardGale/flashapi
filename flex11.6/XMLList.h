@@ -60,12 +60,12 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class XMLList : public Object
 {
-public:
-    static const void *length;
-
     /**
      * Returns a string representation of all the XML objects in an XMLList object. The rules for
      * this conversion depend on whether the XML object has simple content or complex content:
@@ -79,7 +79,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toString();
+    std::string   toString();
 
     /**
      * Returns the XMLList object.
@@ -87,7 +87,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *valueOf();
+    XMLList  *valueOf();
 
     /**
      * Checks for the property specified by p.
@@ -96,7 +96,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasOwnProperty(void *P=NULL);
+    bool  hasOwnProperty(void *P=NULL);
 
     /**
      * Checks whether the property p is in the set of properties that can be iterated in a for..in statement
@@ -107,7 +107,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     propertyIsEnumerable(void *P=NULL);
+    bool  propertyIsEnumerable(void *P=NULL);
 
     /**
      * Calls the attribute() method of each XML object and returns an XMLList object
@@ -118,7 +118,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *attribute(void *arg);
+    XMLList  *attribute(void *arg);
 
     /**
      * Calls the attributes() method of each XML object and
@@ -127,7 +127,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *attributes();
+    XMLList  *attributes();
 
     /**
      * Calls the child() method of each XML object and returns an XMLList object that
@@ -137,7 +137,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *child(void *propertyName);
+    XMLList  *child(void *propertyName);
 
     /**
      * Calls the children() method of each XML object and
@@ -146,7 +146,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *children();
+    XMLList  *children();
 
     /**
      * Calls the comments() method of each XML object and returns
@@ -155,7 +155,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *comments();
+    XMLList  *comments();
 
     /**
      * Checks whether the XMLList object contains an XML object that is equal to the given
@@ -166,7 +166,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     contains(void *value);
+    bool  contains(void *value);
 
     /**
      * Returns a copy of the given XMLList object. The copy is a duplicate of the entire tree of nodes.
@@ -175,7 +175,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *copy();
+    XMLList  *copy();
 
     /**
      * Returns all descendants (children, grandchildren, great-grandchildren, and so on) of the XML object
@@ -192,7 +192,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *descendants(void *name=(void *)"*");
+    XMLList  *descendants(void *name=(void *)"*");
 
     /**
      * Calls the elements() method of each XML object. The name parameter is
@@ -203,7 +203,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *elements(void *name=(void *)"*");
+    XMLList  *elements(void *name=(void *)"*");
 
     /**
      * Checks whether the XMLList object contains complex content. An XMLList object is
@@ -214,7 +214,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasComplexContent();
+    bool  hasComplexContent();
 
     /**
      * Checks whether the XMLList object contains simple content. An XMLList object is
@@ -225,7 +225,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasSimpleContent();
+    bool  hasSimpleContent();
 
     /**
      * Returns the number of properties in the XMLList object.
@@ -235,7 +235,7 @@ public:
      */
     int      length();
 
-    Object  *name();
+    Object   *name();
 
     /**
      * Merges adjacent text nodes and eliminates empty text nodes for each
@@ -246,7 +246,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *normalize();
+    XMLList  *normalize();
 
     /**
      * Returns the parent of the XMLList object if all items in the XMLList object have the same parent.
@@ -255,7 +255,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    Object  *parent();
+    Object   *parent();
 
     /**
      * If a name parameter is provided, lists all the children of the XMLList object that
@@ -266,7 +266,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *processingInstructions(void *name=(void *)"*");
+    XMLList  *processingInstructions(void *name=(void *)"*");
 
     /**
      * Calls the text() method of each XML
@@ -275,7 +275,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *text();
+    XMLList  *text();
 
     /**
      * Returns a string representation of all the XML objects in an XMLList object.
@@ -288,35 +288,35 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toXMLString();
+    std::string   toXMLString();
 
-    XML     *addNamespace(void *ns);
+    XML      *addNamespace(void *ns);
 
-    XML     *appendChild(void *child);
+    XML      *appendChild(void *child);
 
     int      childIndex();
 
-    std::vector<void *> inScopeNamespaces();
+    std::vector<void *>    inScopeNamespaces();
 
-    void    *insertChildAfter(void *child1, void *child2);
+    void        *insertChildAfter(void *child1, void *child2);
 
-    void    *insertChildBefore(void *child1, void *child2);
+    void        *insertChildBefore(void *child1, void *child2);
 
-    std::string nodeKind();
+    std::string   nodeKind();
 
-    void    *namespace(void *prefix=NULL);
+    void        *NAMESPACE(void *prefix=NULL);
 
-    Object  *localName();
+    Object   *localName();
 
-    std::vector<void *> namespaceDeclarations();
+    std::vector<void *>    namespaceDeclarations();
 
-    XML     *prependChild(void *value);
+    XML      *prependChild(void *value);
 
-    XML     *removeNamespace(void *ns);
+    XML      *removeNamespace(void *ns);
 
-    XML     *replace(void *propertyName, void *value);
+    XML      *replace(void *propertyName, void *value);
 
-    XML     *setChildren(void *value);
+    XML      *setChildren(void *value);
 
     void     setLocalName(void *name);
 
@@ -324,7 +324,7 @@ public:
 
     void     setNamespace(void *ns);
 
-    void    *toJSON(std::string k);
+    void        *toJSON(std::string k);
 
     /**
      * Creates a new XMLList object.

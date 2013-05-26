@@ -47,19 +47,19 @@ namespace flash
             DRMDeviceGroup *deviceGroup();
 
         public:
-            bool         systemUpdateNeeded();
+            bool      systemUpdateNeeded();
 
         public:
-            bool         drmUpdateNeeded();
+            bool      drmUpdateNeeded();
 
         public:
-            DRMDeviceGroupErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string errorDetail="", int errorCode=0, int subErrorID=0, DRMDeviceGroup *deviceGroup=NULL, bool systemUpdateNeeded   =false, bool drmUpdateNeeded   =false);
+            DRMDeviceGroupErrorEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string errorDetail="", int errorCode=0, int subErrorID=0, DRMDeviceGroup *deviceGroup=NULL, bool systemUpdateNeeded=false, bool drmUpdateNeeded=false);
 
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
-            Event   *clone();
+            Event    *clone();
         };
     }
 }

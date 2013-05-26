@@ -23,20 +23,20 @@ namespace flash
         class Stage3D : public flash::events::EventDispatcher
         {
         public:
-            Context3D   *context3D();
+            Context3D    *context3D();
 
         public:
-            float        x();
+            float       x();
         public:
             void         x(float value);
 
         public:
-            float        y();
+            float       y();
         public:
             void         y(float value);
 
         public:
-            bool         visible();
+            bool      visible();
         public:
             void         visible(bool value);
 

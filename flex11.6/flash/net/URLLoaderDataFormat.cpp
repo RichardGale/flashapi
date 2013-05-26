@@ -107,7 +107,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string URLLoaderDataFormat::TEXT="text";
+        const std::string URLLoaderDataFormat::TEXT   = "text";
 
         /**
          * Specifies that downloaded data is received as raw binary data.
@@ -115,7 +115,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string URLLoaderDataFormat::BINARY="binary";
+        const std::string URLLoaderDataFormat::BINARY   = "binary";
 
         /**
          * Specifies that downloaded data is received as URL-encoded variables.
@@ -123,7 +123,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string URLLoaderDataFormat::VARIABLES="variables";
+        const std::string URLLoaderDataFormat::VARIABLES   = "variables";
 
         URLLoaderDataFormat::URLLoaderDataFormat();
 }

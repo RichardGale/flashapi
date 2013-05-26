@@ -22,7 +22,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoEvent::RENDER_STATE="renderState";
+        const std::string VideoEvent::RENDER_STATE   = "renderState";
 
         /**
          * For internal use only. Use flash.media.VideoStatus.UNAVAILABLE instead.
@@ -30,7 +30,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoEvent::RENDER_STATUS_UNAVAILABLE="unavailable";
+        const std::string VideoEvent::RENDER_STATUS_UNAVAILABLE   = "unavailable";
 
         /**
          * For internal use only. Use flash.media.VideoStatus.SOFTWARE instead.
@@ -38,7 +38,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoEvent::RENDER_STATUS_SOFTWARE="software";
+        const std::string VideoEvent::RENDER_STATUS_SOFTWARE   = "software";
 
         /**
          * For internal use only. Use flash.media.VideoStatus.ACCELERATED instead.
@@ -46,7 +46,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoEvent::RENDER_STATUS_ACCELERATED="accelerated";
+        const std::string VideoEvent::RENDER_STATUS_ACCELERATED   = "accelerated";
                      
 
         /**

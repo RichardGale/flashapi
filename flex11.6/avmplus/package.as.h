@@ -4,7 +4,7 @@
 
 
 public:
-Object  *describeTypeJSON(void *o, unsigned int flags);
+Object   *describeTypeJSON(void *o, unsigned int flags);
 public:
 public:
 public:
@@ -38,11 +38,11 @@ public:
 public:
 public:
 public:
-XML     *describeType(void *value, unsigned int flags);
+XML      *describeType(void *value, unsigned int flags);
 public:
-std::string getQualifiedClassName(void *value);
+std::string   getQualifiedClassName(void *value);
 public:
-std::string getQualifiedSuperclassName(void *value);
+std::string   getQualifiedSuperclassName(void *value);
 #endif // FLEX11_6_AVMPLUS_PACKAGE_AS_AS
 #endif // __cplusplus
 

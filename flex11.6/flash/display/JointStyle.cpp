@@ -106,7 +106,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string JointStyle::ROUND="round";
+        const std::string JointStyle::ROUND   = "round";
 
         /**
          * Specifies beveled joints in the joints parameter of the
@@ -114,7 +114,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string JointStyle::BEVEL="bevel";
+        const std::string JointStyle::BEVEL   = "bevel";
 
         /**
          * Specifies mitered joints in the joints parameter of the
@@ -122,7 +122,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string JointStyle::MITER="miter";
+        const std::string JointStyle::MITER   = "miter";
 
         JointStyle::JointStyle();
 }

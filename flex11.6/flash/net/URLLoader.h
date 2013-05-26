@@ -303,7 +303,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
+            void     addEventListener(std::string type, Function *listener, bool useCapture=false, int priority=0, bool useWeakReference=false);
 
             /**
              * Sends and loads data from the specified URL. The data can be received as

@@ -110,7 +110,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  type();
+            std::string       type();
         public:
             void         type(std::string value);
 
@@ -144,7 +144,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  spreadMethod();
+            std::string       spreadMethod();
         public:
             void         spreadMethod(std::string value);
 
@@ -159,7 +159,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  interpolationMethod();
+            std::string       interpolationMethod();
         public:
             void         interpolationMethod(std::string value);
 
@@ -198,7 +198,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsGradientFill(std::string type="linear", std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), void *matrix=NULL, void *spreadMethod=(void *)"pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
+            GraphicsGradientFill(std::string type="linear", std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), void *matrix=NULL, void *spreadMethod=(void *)"pad", std::string interpolationMethod="rgb", float focalPointRatio=0);
         };
     }
 }

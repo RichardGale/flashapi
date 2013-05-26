@@ -18,7 +18,7 @@ namespace media {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoStatus::UNAVAILABLE="unavailable";
+        const std::string VideoStatus::UNAVAILABLE   = "unavailable";
 
         /**
          * Indicates software video decoding.
@@ -26,7 +26,7 @@ namespace media {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoStatus::SOFTWARE="software";
+        const std::string VideoStatus::SOFTWARE   = "software";
 
         /**
          * Indicates hardware-accelerated (GPU) video decoding.
@@ -34,7 +34,7 @@ namespace media {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string VideoStatus::ACCELERATED="accelerated";
+        const std::string VideoStatus::ACCELERATED   = "accelerated";
 
         VideoStatus::VideoStatus();
 }

@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  text();
+            std::string       text();
         public:
             void         text(std::string value);
 
@@ -182,7 +182,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TextEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="");
+            TextEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string text="");
 
             /**
              * Returns a string that contains all the properties of the TextEvent object. The string is in the following format:
@@ -193,7 +193,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

@@ -17,6 +17,9 @@
  * @productversion  Flash CS3
  */
 
+#include "flex11.6.h"
+
+
 
 namespace adobe
 {
@@ -36,7 +39,7 @@ namespace adobe
              * @productversion  Flash CS3
              */
         public:
-            static std::vector<void *> actionsList();
+            static std::vector<void *>        actionsList();
 
         public:
             CustomActions();
@@ -83,7 +86,7 @@ namespace adobe
              * @productversion  Flash CS3
              */
         public:
-            static std::string getActions(std::string name);
+            static std::string   getActions(std::string name);
         };
     }
 }

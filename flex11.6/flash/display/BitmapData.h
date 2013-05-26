@@ -222,7 +222,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         transparent();
+            bool      transparent();
 
             /**
              * The rectangle that defines the size and location of the bitmap image. The top and left of the
@@ -266,7 +266,7 @@ namespace flash
              * @throws  ArgumentError width and/or height exceed the maximum dimensions.
              */
         public:
-            BitmapData(int width, int height, bool transparent   =true, unsigned int fillColor=4294967295);
+            BitmapData(int width, int height, bool transparent=true, unsigned int fillColor=4294967295);
 
             /**
              * Returns a new BitmapData object that is a clone of the original instance
@@ -303,7 +303,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int getPixel(int x, int y);
+            unsigned int     getPixel(int x, int y);
 
             /**
              * Returns an ARGB color value that contains alpha channel data and RGB
@@ -328,7 +328,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int getPixel32(int x, int y);
+            unsigned int     getPixel32(int x, int y);
 
             /**
              * Sets a single pixel of a BitmapData object. The current
@@ -510,7 +510,7 @@ namespace flash
              * @throws  TypeError The otherBitmapData is null.
              */
         public:
-            Object  *compare(BitmapData *otherBitmapData);
+            Object   *compare(BitmapData *otherBitmapData);
 
             /**
              * Transfers data from one channel of another BitmapData object or the current
@@ -583,7 +583,7 @@ namespace flash
              * @throws  TypeError The sourceBitmapData, sourceRect, destPoint are null.
              */
         public:
-            void     copyPixels(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, BitmapData *alphaBitmapData=NULL, Point *alphaPoint=NULL, bool mergeAlpha   =false);
+            void     copyPixels(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, BitmapData *alphaBitmapData=NULL, Point *alphaPoint=NULL, bool mergeAlpha=false);
 
             /**
              * Frees memory that is used to store the BitmapData object.
@@ -676,10 +676,10 @@ namespace flash
              * @throws  ArgumentError The source is null or not a valid IBitmapDrawable object.
              */
         public:
-            void     draw(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing   =false);
+            void     draw(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing=false);
 
         public:
-            void     drawWithQuality(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing   =false, std::string quality="");
+            void     drawWithQuality(IBitmapDrawable *source, Matrix *matrix=NULL, ColorTransform *colorTransform=NULL, std::string blendMode="", Rectangle *clipRect=NULL, bool smoothing=false, std::string quality="");
 
             /**
              * Fills a rectangular area of pixels with a specified ARGB color.
@@ -768,7 +768,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            flash::geom::Rectangle *getColorBoundsRect(unsigned int mask, unsigned int color, bool findColor   =true);
+            flash::geom::Rectangle *getColorBoundsRect(unsigned int mask, unsigned int color, bool findColor=true);
 
             /**
              * Generates a byte array from a rectangular region of pixel data.
@@ -835,7 +835,7 @@ namespace flash
              * @throws  TypeError The firstPoint is null.
              */
         public:
-            bool     hitTest(Point *firstPoint, unsigned int firstAlphaThreshold, Object *secondObject, Point *secondBitmapDataPoint=NULL, unsigned int secondAlphaThreshold=1);
+            bool  hitTest(Point *firstPoint, unsigned int firstAlphaThreshold, Object *secondObject, Point *secondBitmapDataPoint=NULL, unsigned int secondAlphaThreshold=1);
 
             /**
              * Performs per-channel blending from a source image to a destination image. For each channel
@@ -890,7 +890,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            void     noise(int randomSeed, unsigned int low=0, unsigned int high=255, unsigned int channelOptions=7, bool grayScale   =false);
+            void     noise(int randomSeed, unsigned int low=0, unsigned int high=255, unsigned int channelOptions=7, bool grayScale=false);
 
             /**
              * Remaps the color channel values in an image that has up to four arrays of color palette data, one
@@ -975,7 +975,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            void     perlinNoise(float baseX, float baseY, unsigned int numOctaves, int randomSeed, bool stitch, bool fractalNoise, unsigned int channelOptions=7, bool grayScale   =false, std::vector<void *> offsets=std::vector<void *>());
+            void     perlinNoise(float baseX, float baseY, unsigned int numOctaves, int randomSeed, bool stitch, bool fractalNoise, unsigned int channelOptions=7, bool grayScale=false, std::vector<void *> offsets=std::vector<void *>());
 
             /**
              * Performs a pixel dissolve either from a source image to a destination image or by using the same image.
@@ -1093,7 +1093,7 @@ namespace flash
              * @throws  ArgumentError The operation string is not a valid operation
              */
         public:
-            unsigned int threshold(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::string operation, unsigned int threshold, unsigned int color=0, unsigned int mask=4294967295, bool copySource   =false);
+            unsigned int     threshold(BitmapData *sourceBitmapData, Rectangle *sourceRect, Point *destPoint, std::string operation, unsigned int threshold, unsigned int color=0, unsigned int mask=4294967295, bool copySource=false);
 
             /**
              * Locks an image so that any objects that reference the BitmapData object, such as Bitmap objects,

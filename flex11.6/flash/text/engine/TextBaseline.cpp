@@ -32,7 +32,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::ROMAN="roman";
+        const std::string TextBaseline::ROMAN   = "roman";
 
         /**
          * Specifies an ascent baseline.
@@ -43,7 +43,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::ASCENT="ascent";
+        const std::string TextBaseline::ASCENT   = "ascent";
 
         /**
          * Specifies a descent baseline.
@@ -54,7 +54,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::DESCENT="descent";
+        const std::string TextBaseline::DESCENT   = "descent";
 
         /**
          * Specifies an ideographic top baseline.
@@ -65,7 +65,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::IDEOGRAPHIC_TOP="ideographicTop";
+        const std::string TextBaseline::IDEOGRAPHIC_TOP   = "ideographicTop";
 
         /**
          * Specifies an ideographic center baseline.
@@ -76,7 +76,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::IDEOGRAPHIC_CENTER="ideographicCenter";
+        const std::string TextBaseline::IDEOGRAPHIC_CENTER   = "ideographicCenter";
 
         /**
          * Specifies an ideographic bottom baseline.
@@ -87,7 +87,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::IDEOGRAPHIC_BOTTOM="ideographicBottom";
+        const std::string TextBaseline::IDEOGRAPHIC_BOTTOM   = "ideographicBottom";
 
         /**
          * Specifies that the alignmentBaseline is the same as the dominantBaseline.
@@ -97,7 +97,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextBaseline::USE_DOMINANT_BASELINE="useDominantBaseline";
+        const std::string TextBaseline::USE_DOMINANT_BASELINE   = "useDominantBaseline";
 
         TextBaseline::TextBaseline();
 }

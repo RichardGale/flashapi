@@ -130,7 +130,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  caption();
+            std::string       caption();
         public:
             void         caption(std::string value);
 
@@ -143,7 +143,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         separatorBefore();
+            bool      separatorBefore();
         public:
             void         separatorBefore(bool value);
 
@@ -154,7 +154,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         visible();
+            bool      visible();
         public:
             void         visible(bool value);
 
@@ -173,7 +173,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ContextMenuItem(std::string caption, bool separatorBefore   =false, bool enabled   =true, bool visible   =true);
+            ContextMenuItem(std::string caption, bool separatorBefore=false, bool enabled=true, bool visible=true);
 
             /// Creates a copy of the NativeMenuItem object.
         public:

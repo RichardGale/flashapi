@@ -5,5 +5,5 @@
 
         const int UninitializedError::length  ;
 
-        UninitializedError::UninitializedError(void* message, void* id);
+        UninitializedError::UninitializedError(std::string message, void* id);
 

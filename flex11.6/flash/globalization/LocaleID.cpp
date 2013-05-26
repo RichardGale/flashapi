@@ -77,7 +77,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LocaleID::DEFAULT="i-default";
+        const std::string LocaleID::DEFAULT   = "i-default";
 
         /**
          * Returns a slightly more "canonical" locale identifier.

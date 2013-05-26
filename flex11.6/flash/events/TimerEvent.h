@@ -99,7 +99,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TimerEvent(std::string type, bool bubbles   =false, bool cancelable   =false);
+            TimerEvent(std::string type, bool bubbles=false, bool cancelable=false);
 
             /**
              * Returns a string that contains all the properties of the TimerEvent object. The string is in the following format:
@@ -110,7 +110,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Instructs Flash Player or the AIR runtime to render

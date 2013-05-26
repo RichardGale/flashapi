@@ -19,7 +19,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageScaleMode::SHOW_ALL="showAll";
+        const std::string StageScaleMode::SHOW_ALL   = "showAll";
 
         /**
          * Specifies that the entire application be visible in the specified area without trying to preserve 
@@ -28,7 +28,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageScaleMode::EXACT_FIT="exactFit";
+        const std::string StageScaleMode::EXACT_FIT   = "exactFit";
 
         /**
          * Specifies that the entire application fill the specified area, without distortion but possibly with 
@@ -37,7 +37,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageScaleMode::NO_BORDER="noBorder";
+        const std::string StageScaleMode::NO_BORDER   = "noBorder";
 
         /**
          * Specifies that the size of the application be fixed, so that it remains unchanged even as the size 
@@ -46,7 +46,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageScaleMode::NO_SCALE="noScale";
+        const std::string StageScaleMode::NO_SCALE   = "noScale";
 
         StageScaleMode::StageScaleMode();
 }

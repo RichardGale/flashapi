@@ -47,7 +47,7 @@ namespace flash
             AVM1Movie();
 
         public:
-            void    *call(std::string functionName, ...);
+            void        *call(std::string functionName, ...);
 
         public:
             void     addCallback(std::string functionName, Function *closure);

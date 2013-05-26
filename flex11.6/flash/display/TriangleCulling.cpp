@@ -28,16 +28,16 @@ namespace display {
 
 
         /// Specifies no culling. All triangles in the path are rendered.
-        const std::string TriangleCulling::NONE="none";
+        const std::string TriangleCulling::NONE   = "none";
 
         /**
          * Specifies culling of all triangles facing away from the current view point. 
          * This is also known as backface culling.
          */
-        const std::string TriangleCulling::POSITIVE="positive";
+        const std::string TriangleCulling::POSITIVE   = "positive";
 
         /// Specifies culling of all triangles facing toward the current view point.
-        const std::string TriangleCulling::NEGATIVE="negative";
+        const std::string TriangleCulling::NEGATIVE   = "negative";
 
         TriangleCulling::TriangleCulling();
 }

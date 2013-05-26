@@ -231,7 +231,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::vector<void *> fileList();
+            std::vector<void *>        fileList();
 
             /**
              * Displays a file-browsing dialog box that lets the
@@ -276,7 +276,7 @@ namespace flash
              *   event or keypress event.
              */
         public:
-            bool     browse(std::vector<void *> typeFilter=std::vector<void *>());
+            bool  browse(std::vector<void *> typeFilter=std::vector<void *>());
 
             /**
              * Creates a new FileReferenceList object. A FileReferenceList object contains nothing

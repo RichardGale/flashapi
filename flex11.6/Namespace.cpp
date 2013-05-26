@@ -264,7 +264,7 @@
 
 
 
-        const void* Namespace::length;
+        const void* Namespace::length  ;
 
         /**
          * The prefix of the namespace.

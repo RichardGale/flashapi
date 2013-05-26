@@ -19,7 +19,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldAutoSize::NONE="none";
+        const std::string TextFieldAutoSize::NONE   = "none";
 
         /**
          * Specifies that the text is to be treated as left-justified text, 
@@ -29,7 +29,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldAutoSize::LEFT="left";
+        const std::string TextFieldAutoSize::LEFT   = "left";
 
         /**
          * Specifies that the text is to be treated as center-justified text.
@@ -39,7 +39,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldAutoSize::CENTER="center";
+        const std::string TextFieldAutoSize::CENTER   = "center";
 
         /**
          * Specifies that the text is to be treated as right-justified text, 
@@ -49,7 +49,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldAutoSize::RIGHT="right";
+        const std::string TextFieldAutoSize::RIGHT   = "right";
 
         TextFieldAutoSize::TextFieldAutoSize();
 }

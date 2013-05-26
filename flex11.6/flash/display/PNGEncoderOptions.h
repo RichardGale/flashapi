@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace display
@@ -14,7 +18,7 @@ namespace flash
             bool fastCompression;
 
         public:
-            PNGEncoderOptions(bool fastCompression   =false);
+            PNGEncoderOptions(bool fastCompression=false);
         };
     }
 }

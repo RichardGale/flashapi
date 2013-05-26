@@ -125,7 +125,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  alignmentBaseline();
+                std::string       alignmentBaseline();
             public:
                 void         alignmentBaseline(std::string alignmentBaseline);
 
@@ -144,7 +144,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                float        alpha();
+                float       alpha();
             public:
                 void         alpha(float value);
 
@@ -161,7 +161,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                float        baselineShift();
+                float       baselineShift();
             public:
                 void         baselineShift(float value);
 
@@ -183,7 +183,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  breakOpportunity();
+                std::string       breakOpportunity();
             public:
                 void         breakOpportunity(std::string opportunityType);
 
@@ -199,7 +199,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                unsigned int color();
+                unsigned int         color();
             public:
                 void         color(unsigned int value);
 
@@ -219,7 +219,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  dominantBaseline();
+                std::string       dominantBaseline();
             public:
                 void         dominantBaseline(std::string dominantBaseline);
 
@@ -254,7 +254,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  digitCase();
+                std::string       digitCase();
             public:
                 void         digitCase(std::string digitCaseType);
 
@@ -271,7 +271,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  digitWidth();
+                std::string       digitWidth();
             public:
                 void         digitWidth(std::string digitWidthType);
 
@@ -293,7 +293,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  ligatureLevel();
+                std::string       ligatureLevel();
             public:
                 void         ligatureLevel(std::string ligatureLevelType);
 
@@ -309,7 +309,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                float        fontSize();
+                float       fontSize();
             public:
                 void         fontSize(float value);
 
@@ -328,7 +328,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  kerning();
+                std::string       kerning();
             public:
                 void         kerning(std::string value);
 
@@ -346,7 +346,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  locale();
+                std::string       locale();
             public:
                 void         locale(std::string value);
 
@@ -373,7 +373,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  textRotation();
+                std::string       textRotation();
             public:
                 void         textRotation(std::string value);
 
@@ -405,7 +405,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                float        trackingRight();
+                float       trackingRight();
             public:
                 void         trackingRight(float value);
 
@@ -437,7 +437,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                float        trackingLeft();
+                float       trackingLeft();
             public:
                 void         trackingLeft(float value);
 
@@ -453,7 +453,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                std::string  typographicCase();
+                std::string       typographicCase();
             public:
                 void         typographicCase(std::string typographicCaseType);
 
@@ -467,7 +467,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the ElementFormat object is locked (locked is true).
                  */
             public:
-                bool         locked();
+                bool      locked();
             public:
                 void         locked(bool value);
 
@@ -516,7 +516,7 @@ namespace flash
                  * @throws  ArgumentError The typographicCase specified is not a member of TypographicCase.
                  */
             public:
-                ElementFormat(FontDescription *fontDescription=NULL, float fontSize =12, unsigned int color=0, float alpha =1, std::string textRotation="auto", std::string dominantBaseline="roman", std::string alignmentBaseline="useDominantBaseline", float baselineShift =0, std::string kerning="on", float trackingRight =0, float trackingLeft =0, std::string locale="en", std::string breakOpportunity="auto", std::string digitCase="default", std::string digitWidth="default", std::string ligatureLevel="common", std::string typographicCase="default");
+                ElementFormat(FontDescription *fontDescription=NULL, float fontSize=12, unsigned int color=0, float alpha=1, std::string textRotation="auto", std::string dominantBaseline="roman", std::string alignmentBaseline="useDominantBaseline", float baselineShift=0, std::string kerning="on", float trackingRight=0, float trackingLeft=0, std::string locale="en", std::string breakOpportunity="auto", std::string digitCase="default", std::string digitWidth="default", std::string ligatureLevel="common", std::string typographicCase="default");
 
                 /**
                  * Returns a FontMetrics object with properties which describe the emBox, strikethrough position,

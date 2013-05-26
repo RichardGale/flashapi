@@ -185,6 +185,9 @@
  * @internal    Verify table is still correct and paragraph below the table still applies.
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -216,7 +219,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         available();
+            static bool      available();
 
             /**
              * Returns the id attribute of the object tag in Internet Explorer,
@@ -226,7 +229,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  objectID();
+            static std::string       objectID();
 
         public:
             ExternalInterface();
@@ -323,7 +326,7 @@ namespace flash
              *     flash.system.Security.allowDomain(sourceDomain)
              */
         public:
-            static void    *call(std::string functionName, ...);
+            static void        *call(std::string functionName, ...);
         };
     }
 }

@@ -23,7 +23,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardTransferMode::ORIGINAL_PREFERRED="originalPreferred";
+        const std::string ClipboardTransferMode::ORIGINAL_PREFERRED   = "originalPreferred";
 
         /**
          * The Clipboard object should only return a reference.
@@ -31,7 +31,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardTransferMode::ORIGINAL_ONLY="originalOnly";
+        const std::string ClipboardTransferMode::ORIGINAL_ONLY   = "originalOnly";
 
         /**
          * The Clipboard object should return a copy if available and a reference if not.
@@ -39,7 +39,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardTransferMode::CLONE_PREFERRED="clonePreferred";
+        const std::string ClipboardTransferMode::CLONE_PREFERRED   = "clonePreferred";
 
         /**
          * The Clipboard object should only return a copy.
@@ -47,7 +47,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardTransferMode::CLONE_ONLY="cloneOnly";
+        const std::string ClipboardTransferMode::CLONE_ONLY   = "cloneOnly";
 
         ClipboardTransferMode::ClipboardTransferMode();
 }

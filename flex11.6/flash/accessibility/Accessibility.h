@@ -217,13 +217,13 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static bool         active();
+            static bool      active();
 
         public:
             Accessibility();
 
         public:
-            static void     sendEvent(DisplayObject *source, unsigned int childID, unsigned int eventType, bool nonHTML   =false);
+            static void     sendEvent(DisplayObject *source, unsigned int childID, unsigned int eventType, bool nonHTML=false);
 
             /**
              * Tells Flash Player to apply any accessibility changes made by using the DisplayObject.accessibilityProperties property.

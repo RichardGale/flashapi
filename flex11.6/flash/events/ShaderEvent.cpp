@@ -31,7 +31,7 @@ namespace events {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderEvent::COMPLETE="complete";
+        const std::string ShaderEvent::COMPLETE   = "complete";
 
         /**
          * The BitmapData object that was passed to the ShaderJob.start() method. 

@@ -22,7 +22,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TabAlignment::START="start";
+        const std::string TabAlignment::START   = "start";
 
         /**
          * Positions the center of the tabbed text at the tab stop.
@@ -31,7 +31,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TabAlignment::CENTER="center";
+        const std::string TabAlignment::CENTER   = "center";
 
         /**
          * Positions the end of the tabbed text at the tab stop.
@@ -40,7 +40,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TabAlignment::END="end";
+        const std::string TabAlignment::END   = "end";
 
         /**
          * Positions the alignment token of the tabbed text at the tab stop.
@@ -49,7 +49,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TabAlignment::DECIMAL="decimal";
+        const std::string TabAlignment::DECIMAL   = "decimal";
 
         TabAlignment::TabAlignment();
 }

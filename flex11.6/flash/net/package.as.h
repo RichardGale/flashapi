@@ -47,7 +47,7 @@ void     registerClassAlias(std::string aliasName, Class *classObject);
  * @throws  ReferenceError The alias was not registered.
  */
 public:
-Class   *getClassByAlias(std::string aliasName);
+Class    *getClassByAlias(std::string aliasName);
 /**
  * Opens or replaces a window in the application that contains the Flash Player container
  * (usually a browser). In Adobe AIR, the function opens a URL in the default system web browserImportant Security Note  Developers often pass URL values to the navigateToURL() function that were obtained from external sources

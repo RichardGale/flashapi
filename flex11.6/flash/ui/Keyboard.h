@@ -13,6 +13,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -2286,7 +2289,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         capsLock();
+            static bool      capsLock();
 
             /**
              * Specifies whether the Num Lock key is activated (true) or not (false).
@@ -2295,7 +2298,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         numLock();
+            static bool      numLock();
 
             /**
              * Indicates whether the computer or device provides a virtual keyboard.
@@ -2305,7 +2308,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         hasVirtualKeyboard();
+            static bool      hasVirtualKeyboard();
 
             /**
              * Indicates the type of physical keyboard provided by the computer or device, if any.
@@ -2317,7 +2320,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string  physicalKeyboardType();
+            static std::string       physicalKeyboardType();
 
         public:
             Keyboard();
@@ -2332,7 +2335,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static bool     isAccessible();
+            static bool  isAccessible();
         };
     }
 }

@@ -21,7 +21,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::NO_ERROR="noError";
+        const std::string LastOperationStatus::NO_ERROR   = "noError";
 
         /**
          * Indicates that a fallback value was set during the most recent operation.
@@ -31,7 +31,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::USING_FALLBACK_WARNING="usingFallbackWarning";
+        const std::string LastOperationStatus::USING_FALLBACK_WARNING   = "usingFallbackWarning";
 
         /**
          * Indicates that an operating system default value was used during the most recent operation.
@@ -40,7 +40,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::USING_DEFAULT_WARNING="usingDefaultWarning";
+        const std::string LastOperationStatus::USING_DEFAULT_WARNING   = "usingDefaultWarning";
 
         /**
          * Indicates that the parsing of a number failed.
@@ -52,7 +52,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::PARSE_ERROR="parseError";
+        const std::string LastOperationStatus::PARSE_ERROR   = "parseError";
 
         /**
          * Indicates that the requested operation or option is not supported. This status can be returned by methods like 
@@ -62,7 +62,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::UNSUPPORTED_ERROR="unsupportedError";
+        const std::string LastOperationStatus::UNSUPPORTED_ERROR   = "unsupportedError";
 
         /**
          * Indicates that the return error code is not known.
@@ -73,7 +73,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::ERROR_CODE_UNKNOWN="errorCodeUnknown";
+        const std::string LastOperationStatus::ERROR_CODE_UNKNOWN   = "errorCodeUnknown";
 
         /**
          * Indicates that the pattern for formatting a number, date, or time is invalid.
@@ -93,7 +93,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::PATTERN_SYNTAX_ERROR="patternSyntaxError";
+        const std::string LastOperationStatus::PATTERN_SYNTAX_ERROR   = "patternSyntaxError";
 
         /**
          * Indicates that memory allocation has failed.
@@ -101,7 +101,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::MEMORY_ALLOCATION_ERROR="memoryAllocationError";
+        const std::string LastOperationStatus::MEMORY_ALLOCATION_ERROR   = "memoryAllocationError";
 
         /**
          * Indicates that an argument passed to a method was illegal.
@@ -119,7 +119,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::ILLEGAL_ARGUMENT_ERROR="illegalArgumentError";
+        const std::string LastOperationStatus::ILLEGAL_ARGUMENT_ERROR   = "illegalArgumentError";
 
         /**
          * Indicates that given buffer is not enough to hold the result.
@@ -127,7 +127,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::BUFFER_OVERFLOW_ERROR="bufferOverflowError";
+        const std::string LastOperationStatus::BUFFER_OVERFLOW_ERROR   = "bufferOverflowError";
 
         /**
          * Indicates that a given attribute value is out of the expected range.
@@ -146,7 +146,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::INVALID_ATTR_VALUE="invalidAttrValue";
+        const std::string LastOperationStatus::INVALID_ATTR_VALUE   = "invalidAttrValue";
 
         /**
          * Indicates that an operation resulted a value that exceeds a specified numeric type.
@@ -154,7 +154,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::NUMBER_OVERFLOW_ERROR="numberOverflowError";
+        const std::string LastOperationStatus::NUMBER_OVERFLOW_ERROR   = "numberOverflowError";
 
         /**
          * Indicates that invalid Unicode value was found.
@@ -162,7 +162,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::INVALID_CHAR_FOUND="invalidCharFound";
+        const std::string LastOperationStatus::INVALID_CHAR_FOUND   = "invalidCharFound";
 
         /**
          * Indicates that a truncated Unicode character value was found.
@@ -170,7 +170,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::TRUNCATED_CHAR_FOUND="truncatedCharFound";
+        const std::string LastOperationStatus::TRUNCATED_CHAR_FOUND   = "truncatedCharFound";
 
         /**
          * Indicates that an iterator went out of range or an invalid parameter was specified for month, day, or time.
@@ -178,7 +178,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::INDEX_OUT_OF_BOUNDS_ERROR="indexOutOfBoundsError";
+        const std::string LastOperationStatus::INDEX_OUT_OF_BOUNDS_ERROR   = "indexOutOfBoundsError";
 
         /**
          * Indicates that an underlying platform API failed for an operation.
@@ -186,7 +186,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::PLATFORM_API_FAILED="platformAPIFailed";
+        const std::string LastOperationStatus::PLATFORM_API_FAILED   = "platformAPIFailed";
 
         /**
          * Indicates that an unexpected token was detected in a Locale ID string.
@@ -207,7 +207,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string LastOperationStatus::UNEXPECTED_TOKEN="unexpectedToken";
+        const std::string LastOperationStatus::UNEXPECTED_TOKEN   = "unexpectedToken";
 
         LastOperationStatus::LastOperationStatus();
 }

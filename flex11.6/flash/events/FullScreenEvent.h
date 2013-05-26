@@ -50,10 +50,10 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         fullScreen();
+            bool      fullScreen();
 
         public:
-            bool         interactive();
+            bool      interactive();
 
             /**
              * Creates a copy of a FullScreenEvent object and sets the value of each property to match that of
@@ -85,7 +85,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            FullScreenEvent(std::string type, bool bubbles   =false, bool cancelable   =false, bool fullScreen   =false, bool interactive   =false);
+            FullScreenEvent(std::string type, bool bubbles=false, bool cancelable=false, bool fullScreen=false, bool interactive=false);
 
             /**
              * Returns a string that contains all the properties of the FullScreenEvent object. The following
@@ -98,7 +98,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

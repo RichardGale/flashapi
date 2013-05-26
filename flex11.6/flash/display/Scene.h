@@ -18,6 +18,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -32,7 +35,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  name();
+            std::string       name();
 
             /**
              * An array of FrameLabel objects for the scene. Each FrameLabel object contains
@@ -43,7 +46,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> labels();
+            std::vector<void *>        labels();
 
             /**
              * The number of frames in the scene.

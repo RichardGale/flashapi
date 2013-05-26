@@ -55,7 +55,7 @@ namespace ui {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string KeyboardType::ALPHANUMERIC="alphanumeric";
+        const std::string KeyboardType::ALPHANUMERIC   = "alphanumeric";
 
         /**
          * A phone-style 12-button keypad.
@@ -65,7 +65,7 @@ namespace ui {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string KeyboardType::KEYPAD="keypad";
+        const std::string KeyboardType::KEYPAD   = "keypad";
 
         /**
          * No physical keyboard is supported.
@@ -75,7 +75,7 @@ namespace ui {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string KeyboardType::NONE="none";
+        const std::string KeyboardType::NONE   = "none";
 
         KeyboardType::KeyboardType();
 }

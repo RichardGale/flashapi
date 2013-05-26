@@ -29,7 +29,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderPrecision::FULL="full";
+        const std::string ShaderPrecision::FULL   = "full";
 
         /**
          * Represents fast precision mode.
@@ -42,7 +42,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderPrecision::FAST="fast";
+        const std::string ShaderPrecision::FAST   = "fast";
 
         ShaderPrecision::ShaderPrecision();
 }

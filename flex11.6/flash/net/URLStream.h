@@ -182,7 +182,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         connected();
+            bool      connected();
 
             /**
              * Returns the number of bytes of data available for reading
@@ -195,7 +195,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesAvailable();
+            unsigned int         bytesAvailable();
 
             /**
              * Controls the version of Action Message Format (AMF) used when writing or reading an object.
@@ -205,7 +205,7 @@ namespace flash
              * @internal    Property documented; needs review
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
@@ -217,20 +217,20 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  endian();
+            std::string       endian();
         public:
             void         endian(std::string type);
 
         public:
-            bool         diskCacheEnabled();
+            bool      diskCacheEnabled();
 
         public:
-            float        position();
+            float       position();
         public:
             void         position(float offset);
 
         public:
-            float        length();
+            float       length();
 
             /**
              * Begins downloading the URL specified in the request parameter.
@@ -338,7 +338,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            bool     readBoolean();
+            bool  readBoolean();
 
             /**
              * Reads a signed byte from the stream.
@@ -374,7 +374,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            unsigned int readUnsignedByte();
+            unsigned int     readUnsignedByte();
 
             /**
              * Reads a signed 16-bit integer from the stream.
@@ -410,7 +410,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            unsigned int readUnsignedShort();
+            unsigned int     readUnsignedShort();
 
             /**
              * Reads an unsigned 32-bit integer from the stream.
@@ -428,7 +428,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            unsigned int readUnsignedInt();
+            unsigned int     readUnsignedInt();
 
             /**
              * Reads a signed 32-bit integer from the stream.
@@ -463,7 +463,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            float    readFloat();
+            float   readFloat();
 
             /**
              * Reads an IEEE 754 double-precision floating-point number from the stream.
@@ -480,7 +480,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            float    readDouble();
+            float   readDouble();
 
             /**
              * Reads a multibyte string of specified length from the byte stream using the
@@ -508,7 +508,7 @@ namespace flash
              *   received, and any of the read methods throws an EOFError exception.
              */
         public:
-            std::string readMultiByte(unsigned int length, std::string charSet);
+            std::string   readMultiByte(unsigned int length, std::string charSet);
 
             /**
              * Reads a UTF-8 string from the stream.  The string
@@ -527,7 +527,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            std::string readUTF();
+            std::string   readUTF();
 
             /**
              * Reads a sequence of length UTF-8
@@ -546,7 +546,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            std::string readUTFBytes(unsigned int length);
+            std::string   readUTFBytes(unsigned int length);
 
             /**
              * Immediately closes the stream and
@@ -575,7 +575,7 @@ namespace flash
              *   or the stream is not open.
              */
         public:
-            void    *readObject();
+            void        *readObject();
 
         public:
             void     stop();

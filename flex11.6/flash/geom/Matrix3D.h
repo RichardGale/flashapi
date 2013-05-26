@@ -104,7 +104,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        determinant();
+            float       determinant();
 
             /**
              * Simplifies the interpolation from one frame of reference to another by interpolating a display object
@@ -242,7 +242,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     invert();
+            bool  invert();
 
             /**
              * Converts the current matrix to an identity or unit matrix. An identity matrix has a value
@@ -336,7 +336,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     recompose(std::vector<flash::geom::Vector3D *> components, std::string orientationStyle="eulerAngles");
+            bool  recompose(std::vector<flash::geom::Vector3D *> components, std::string orientationStyle="eulerAngles");
 
             /**
              * Appends an incremental translation, a repositioning along the x, y, and z axes,
@@ -679,10 +679,10 @@ namespace flash
             void     copyFrom(Matrix3D *sourceMatrix3D);
 
         public:
-            void     copyRawDataTo(std::vector<float> vector, unsigned int index=0, bool transpose   =false);
+            void     copyRawDataTo(std::vector<float> vector, unsigned int index=0, bool transpose=false);
 
         public:
-            void     copyRawDataFrom(std::vector<float> vector, unsigned int index=0, bool transpose   =false);
+            void     copyRawDataFrom(std::vector<float> vector, unsigned int index=0, bool transpose=false);
 
         public:
             void     copyRowTo(unsigned int row, Vector3D *vector3D);

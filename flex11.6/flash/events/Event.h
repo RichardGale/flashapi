@@ -847,7 +847,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  type();
+            std::string       type();
 
             /**
              * Indicates whether an event is a bubbling event. If the event can bubble,
@@ -864,7 +864,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         bubbles();
+            bool      bubbles();
 
             /**
              * Indicates whether the behavior associated with the event can be prevented.
@@ -874,7 +874,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         cancelable();
+            bool      cancelable();
 
             /**
              * The event target. This property contains the target node. For example, if a user clicks an OK button, the target node is the display list node containing that button.
@@ -883,7 +883,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *target();
+            Object       *target();
 
             /**
              * The object that is actively processing the Event object with an event listener. For example, if a user clicks an OK button, the current target could be the node containing that button or one of its ancestors that has registered an event listener for that event.
@@ -892,7 +892,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *currentTarget();
+            Object       *currentTarget();
 
             /**
              * The current phase in the event flow. This property can contain the following numeric values:
@@ -902,7 +902,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int eventPhase();
+            unsigned int         eventPhase();
 
             /**
              * Creates an Event object to pass as a parameter to event listeners.
@@ -914,7 +914,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Event(std::string type, bool bubbles   =false, bool cancelable   =false);
+            Event(std::string type, bool bubbles=false, bool cancelable=false);
 
             /**
              * A utility function for implementing the toString() method in custom
@@ -940,7 +940,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string formatToString(std::string className, ...);
+            std::string   formatToString(std::string className, ...);
 
             /**
              * Duplicates an instance of an Event subclass.
@@ -982,7 +982,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Prevents processing of any event listeners in nodes subsequent to the current node in the
@@ -1044,7 +1044,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     isDefaultPrevented();
+            bool  isDefaultPrevented();
         };
     }
 }

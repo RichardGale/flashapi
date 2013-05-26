@@ -18,19 +18,19 @@ namespace flash
             static const std::string THROTTLE;
 
         public:
-            float        targetFrameRate();
+            float       targetFrameRate();
 
         public:
-            std::string  state();
+            std::string       state();
 
         public:
-            Event   *clone();
+            Event    *clone();
 
         public:
-            ThrottleEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string state="", float targetFrameRate =0);
+            ThrottleEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string state="", float targetFrameRate=0);
 
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

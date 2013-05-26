@@ -61,6 +61,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -95,7 +98,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  name();
+            std::string       name();
 
             /**
              * The status of the most recent operation that this LocaleID object performed.
@@ -106,7 +109,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * Returns a list of acceptable locales based on a list of desired locales and a list of the locales that are currently available.
@@ -140,7 +143,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getLanguage();
+            std::string   getLanguage();
 
             /**
              * Returns the region code specified by the locale ID name.
@@ -158,7 +161,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getRegion();
+            std::string   getRegion();
 
             /**
              * Returns the script code specified by the locale ID name.
@@ -178,7 +181,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getScript();
+            std::string   getScript();
 
             /**
              * Returns the language variant code specified by the locale ID name.
@@ -192,7 +195,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getVariant();
+            std::string   getVariant();
 
             /**
              * Constructs a new LocaleID object, given a locale name. The locale name
@@ -237,7 +240,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            Object  *getKeysAndValues();
+            Object   *getKeysAndValues();
 
             /**
              * Specifies whtehr the text direction for the specified locale is right to left.
@@ -251,7 +254,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool     isRightToLeft();
+            bool  isRightToLeft();
         };
     }
 }

@@ -18,19 +18,19 @@ namespace flash
             static const std::string CAPTURE;
 
         public:
-            std::string  url();
+            std::string       url();
 
         public:
-            unsigned int checksum();
+            unsigned int         checksum();
 
         public:
-            Event   *clone();
+            Event    *clone();
 
         public:
-            StageCaptureEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string url="", unsigned int checksum=0);
+            StageCaptureEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string url="", unsigned int checksum=0);
 
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

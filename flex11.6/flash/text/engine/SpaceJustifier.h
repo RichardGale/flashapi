@@ -92,7 +92,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                bool         letterSpacing();
+                bool      letterSpacing();
             public:
                 void         letterSpacing(bool value);
 
@@ -106,7 +106,7 @@ namespace flash
                  * @throws  ArgumentError The value specified is less than zero or greater than optimumSpacing.
                  */
             public:
-                float        minimumSpacing();
+                float       minimumSpacing();
             public:
                 void         minimumSpacing(float value);
 
@@ -120,7 +120,7 @@ namespace flash
                  * @throws  ArgumentError The value specified is less than minimumSpacing or greater than maximumSpacing.
                  */
             public:
-                float        optimumSpacing();
+                float       optimumSpacing();
             public:
                 void         optimumSpacing(float value);
 
@@ -136,7 +136,7 @@ namespace flash
                  * @throws  ArgumentError The value specified is less than optimumSpacing.
                  */
             public:
-                float        maximumSpacing();
+                float       maximumSpacing();
             public:
                 void         maximumSpacing(float value);
 
@@ -180,7 +180,7 @@ namespace flash
                  * @throws  ArgumentError The lineJustification specified is not a member of LineJustification.
                  */
             public:
-                SpaceJustifier(std::string locale="en", std::string lineJustification="unjustified", bool letterSpacing   =false);
+                SpaceJustifier(std::string locale="en", std::string lineJustification="unjustified", bool letterSpacing=false);
             };
         }
     }

@@ -132,7 +132,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurX();
+            float       blurX();
         public:
             void         blurX(float value);
 
@@ -174,7 +174,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurY();
+            float       blurY();
         public:
             void         blurY(float value);
 
@@ -273,7 +273,7 @@ namespace flash
              *   </listing>
              */
         public:
-            BlurFilter(float blurX =4, float blurY =4, int quality=1);
+            BlurFilter(float blurX=4, float blurY=4, int quality=1);
 
             /**
              * Returns a copy of this filter object.

@@ -35,7 +35,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::FLOAT="float";
+        const std::string ShaderParameterType::FLOAT   = "float";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -45,7 +45,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::FLOAT2="float2";
+        const std::string ShaderParameterType::FLOAT2   = "float2";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -55,7 +55,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::FLOAT3="float3";
+        const std::string ShaderParameterType::FLOAT3   = "float3";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -65,7 +65,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::FLOAT4="float4";
+        const std::string ShaderParameterType::FLOAT4   = "float4";
 
         /**
          * Indicates that the shader parameter is defined as an 
@@ -87,7 +87,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::INT="int";
+        const std::string ShaderParameterType::INT   = "int";
 
         /**
          * Indicates that the shader parameter is defined as an 
@@ -97,7 +97,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::INT2="int2";
+        const std::string ShaderParameterType::INT2   = "int2";
 
         /**
          * Indicates that the shader parameter is defined as an 
@@ -107,7 +107,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::INT3="int3";
+        const std::string ShaderParameterType::INT3   = "int3";
 
         /**
          * Indicates that the shader parameter is defined as an  
@@ -117,7 +117,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::INT4="int4";
+        const std::string ShaderParameterType::INT4   = "int4";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -139,7 +139,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::BOOL="bool";
+        const std::string ShaderParameterType::BOOL   = "bool";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -149,7 +149,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::BOOL2="bool2";
+        const std::string ShaderParameterType::BOOL2   = "bool2";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -159,7 +159,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::BOOL3="bool3";
+        const std::string ShaderParameterType::BOOL3   = "bool3";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -169,7 +169,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::BOOL4="bool4";
+        const std::string ShaderParameterType::BOOL4   = "bool4";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -179,7 +179,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::MATRIX2X2="matrix2x2";
+        const std::string ShaderParameterType::MATRIX2X2   = "matrix2x2";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -189,7 +189,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::MATRIX3X3="matrix3x3";
+        const std::string ShaderParameterType::MATRIX3X3   = "matrix3x3";
 
         /**
          * Indicates that the shader parameter is defined as a 
@@ -199,7 +199,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ShaderParameterType::MATRIX4X4="matrix4x4";
+        const std::string ShaderParameterType::MATRIX4X4   = "matrix4x4";
 
         ShaderParameterType::ShaderParameterType();
 }

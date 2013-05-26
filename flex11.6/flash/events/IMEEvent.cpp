@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string IMEEvent::IME_COMPOSITION="imeComposition";
+        const std::string IMEEvent::IME_COMPOSITION   = "imeComposition";
 
         /**
          * To handle IME text input, the receiver must set the imeClient field of the event to an object
@@ -33,7 +33,7 @@ namespace events {
          * @playerversion   Flash 10.1
          * @airversion  AIR 2
          */
-        const std::string IMEEvent::IME_START_COMPOSITION="imeStartComposition";
+        const std::string IMEEvent::IME_START_COMPOSITION   = "imeStartComposition";
 
         /**
          * Specifies an object that implements the IMEClient interface. Components based on the flash.text.engine 

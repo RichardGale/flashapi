@@ -43,11 +43,11 @@ namespace flash
             ApplicationInstaller *createApplicationInstaller(XML *strings, ByteArray *icon);
 
         public:
-            bool     enableDiskCache(URLStream *stream);
+            bool  enableDiskCache(URLStream *stream);
 
-            bool     isFeatureEnabled(std::string feature, std::string data="");
+            bool  isFeatureEnabled(std::string feature, std::string data="");
 
-            bool     isNegativeToken();
+            bool  isNegativeToken();
         };
     }
 }

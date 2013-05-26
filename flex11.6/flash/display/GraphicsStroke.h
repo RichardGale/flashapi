@@ -110,7 +110,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  caps();
+            std::string       caps();
         public:
             void         caps(std::string value);
 
@@ -131,7 +131,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  joints();
+            std::string       joints();
         public:
             void         joints(std::string value);
 
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  scaleMode();
+            std::string       scaleMode();
         public:
             void         scaleMode(std::string value);
 
@@ -229,7 +229,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsStroke(float thickness =NaN, bool pixelHinting   =false, std::string scaleMode="normal", std::string caps="none", std::string joints="round", float miterLimit =3, IGraphicsFill *fill=NULL);
+            GraphicsStroke(float thickness=NaN, bool pixelHinting=false, std::string scaleMode="normal", std::string caps="none", std::string joints="round", float miterLimit=3, IGraphicsFill *fill=NULL);
         };
     }
 }

@@ -34,7 +34,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::E    = 2.71828182845905;
+        const float Math::E   = 2.71828182845905;
 
         /**
          * A mathematical constant for the natural logarithm of 10, expressed as loge10,
@@ -43,7 +43,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::LN10    = 2.302585092994046;
+        const float Math::LN10   = 2.302585092994046;
 
         /**
          * A mathematical constant for the natural logarithm of 2, expressed as loge2,
@@ -52,7 +52,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::LN2    = 0.6931471805599453;
+        const float Math::LN2   = 0.6931471805599453;
 
         /**
          * A mathematical constant for the base-10 logarithm of the constant e (Math.E),
@@ -63,7 +63,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::LOG10E    = 0.4342944819032518;
+        const float Math::LOG10E   = 0.4342944819032518;
 
         /**
          * A mathematical constant for the base-2 logarithm of the constant e, expressed 
@@ -75,7 +75,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::LOG2E    = 1.442695040888963387;
+        const float Math::LOG2E   = 1.442695040888963387;
 
         /**
          * A mathematical constant for the ratio of the circumference of a circle to its diameter,
@@ -84,7 +84,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::PI    = 3.141592653589793;
+        const float Math::PI   = 3.141592653589793;
 
         /**
          * A mathematical constant for the square root of one-half, with an approximate  
@@ -93,7 +93,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::SQRT1_2    = 0.7071067811865476;
+        const float Math::SQRT1_2   = 0.7071067811865476;
 
         /**
          * A mathematical constant for the square root of 2, with an approximate 
@@ -102,7 +102,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Math::SQRT2    = 1.4142135623730951;
+        const float Math::SQRT2   = 1.4142135623730951;
 
         Math::Math();
 

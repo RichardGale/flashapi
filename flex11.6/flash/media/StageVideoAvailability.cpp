@@ -18,7 +18,7 @@ namespace media {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string StageVideoAvailability::AVAILABLE="available";
+        const std::string StageVideoAvailability::AVAILABLE   = "available";
 
         /**
          * Stage video is not currently available.
@@ -26,7 +26,7 @@ namespace media {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string StageVideoAvailability::UNAVAILABLE="unavailable";
+        const std::string StageVideoAvailability::UNAVAILABLE   = "unavailable";
 
         StageVideoAvailability::StageVideoAvailability();
 }

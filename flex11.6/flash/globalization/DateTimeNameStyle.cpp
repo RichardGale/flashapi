@@ -25,7 +25,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeNameStyle::FULL="full";
+        const std::string DateTimeNameStyle::FULL   = "full";
 
         /**
          * Specifies the long abbreviation style for month names and weekday names.
@@ -35,7 +35,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeNameStyle::LONG_ABBREVIATION="longAbbreviation";
+        const std::string DateTimeNameStyle::LONG_ABBREVIATION   = "longAbbreviation";
 
         /**
          * Specifies the short abbreviation style for month names and weekday names.
@@ -45,7 +45,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeNameStyle::SHORT_ABBREVIATION="shortAbbreviation";
+        const std::string DateTimeNameStyle::SHORT_ABBREVIATION   = "shortAbbreviation";
 
         DateTimeNameStyle::DateTimeNameStyle();
 }

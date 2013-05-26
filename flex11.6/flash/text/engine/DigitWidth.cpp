@@ -23,7 +23,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitWidth::DEFAULT="default";
+        const std::string DigitWidth::DEFAULT   = "default";
 
         /**
          * Used to specify proportional digit width.
@@ -32,7 +32,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitWidth::PROPORTIONAL="proportional";
+        const std::string DigitWidth::PROPORTIONAL   = "proportional";
 
         /**
          * Used to specify tabular digit width.
@@ -41,7 +41,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitWidth::TABULAR="tabular";
+        const std::string DigitWidth::TABULAR   = "tabular";
 
         DigitWidth::DigitWidth();
 }

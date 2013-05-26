@@ -10,6 +10,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -24,7 +27,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        value();
+            float       value();
 
             /**
              * The portion of the input string that corresponds to the currency symbol or currency string.
@@ -33,7 +36,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  currencyString();
+            std::string       currencyString();
 
             /**
              * Constructs a currency parse result object.
@@ -44,7 +47,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            CurrencyParseResult(float value =NaN, std::string symbol="");
+            CurrencyParseResult(float value=NaN, std::string symbol="");
         };
     }
 }

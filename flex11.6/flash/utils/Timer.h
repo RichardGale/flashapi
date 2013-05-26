@@ -84,7 +84,7 @@ namespace flash
              * @throws  Error Throws an exception if the delay specified is negative or not a finite number.
              */
         public:
-            float        delay();
+            float       delay();
 
             /**
              * The total number of times the timer is set to run.
@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         running();
+            bool      running();
 
         public:
             void         delay(float value);

@@ -15,10 +15,10 @@ namespace flash
         class MessageChannel : public flash::events::EventDispatcher
         {
         public:
-            bool         messageAvailable();
+            bool      messageAvailable();
 
         public:
-            std::string  state();
+            std::string       state();
 
         public:
             MessageChannel();
@@ -27,19 +27,19 @@ namespace flash
             void     send(void *arg, int queueLimit=-1);
 
         public:
-            void    *receive(bool blockUntilReceived   =false);
+            void        *receive(bool blockUntilReceived=false);
 
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
+            void     addEventListener(std::string type, Function *listener, bool useCapture=false, int priority=0, bool useWeakReference=false);
 
         public:
-            void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
+            void     removeEventListener(std::string type, Function *listener, bool useCapture=false);
 
         public:
             void     close();
 
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

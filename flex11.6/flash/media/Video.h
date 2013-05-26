@@ -183,7 +183,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         smoothing();
+            bool      smoothing();
         public:
             void         smoothing(bool value);
 

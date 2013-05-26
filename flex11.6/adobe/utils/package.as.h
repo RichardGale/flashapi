@@ -27,7 +27,7 @@
  * @productversion  Flash CS3
  */
 public:
-std::string MMExecute(std::string name);
+std::string   MMExecute(std::string name);
 /**
  * Notifies an application hosting a SWF command that a command is done and instructs the application to commit or discard
  * the changes submitted by the MMExecute() command.

@@ -77,7 +77,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static unsigned int totalMemory();
+            static unsigned int         totalMemory();
 
             /**
              * The amount of memory (in bytes) currently in use that has been directly allocated by
@@ -93,7 +93,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static float        totalMemoryNumber();
+            static float       totalMemoryNumber();
 
             /**
              * The amount of memory (in bytes) that is allocated to
@@ -106,7 +106,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static float        freeMemory();
+            static float       freeMemory();
 
             /**
              * The entire amount of memory (in bytes) used by an application. This is the amount of resident private memory for the entire process.
@@ -118,10 +118,10 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static float        privateMemory();
+            static float       privateMemory();
 
         public:
-            static float        processCPUUsage();
+            static float       processCPUUsage();
 
             /**
              * A Boolean value that determines which code page to use to interpret external text files.
@@ -155,12 +155,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         useCodePage();
+            static bool      useCodePage();
         public:
             static void         useCodePage(bool value);
 
         public:
-            static std::string  vmVersion();
+            static std::string       vmVersion();
 
             /**
              * Replaces the contents of the Clipboard with a specified text string. This method works from any security
@@ -228,7 +228,7 @@ namespace flash
             static void     gc();
 
         public:
-            static void     pauseForGCIfCollectionImminent(float imminence =0.75);
+            static void     pauseForGCIfCollectionImminent(float imminence=0.75);
 
             /**
              * Makes the specified XML object immediately available for garbage collection.

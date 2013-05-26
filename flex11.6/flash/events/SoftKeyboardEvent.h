@@ -85,7 +85,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            std::string  triggerType();
+            std::string       triggerType();
 
             /**
              * A reference to a display list object that is related to the event.
@@ -140,7 +140,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

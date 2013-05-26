@@ -21,12 +21,12 @@ namespace flash
         class ObjectOutput : public Object, public IDataOutput
         {
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
         public:
-            std::string  endian();
+            std::string       endian();
         public:
             void         endian(std::string type);
 

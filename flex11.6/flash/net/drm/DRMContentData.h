@@ -57,7 +57,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  serverURL();
+                std::string       serverURL();
 
                 /**
                  * The type of authentication required to obtain a voucher for the associated content.
@@ -70,7 +70,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  authenticationMethod();
+                std::string       authenticationMethod();
 
                 /**
                  * A unique id identifying the content associated with this metadata on
@@ -80,7 +80,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  licenseID();
+                std::string       licenseID();
 
                 /**
                  * The content domain of the media rights server to which the user must be authenticated
@@ -96,7 +96,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                std::string  domain();
+                std::string       domain();
 
                 /**
                  * Constructor.

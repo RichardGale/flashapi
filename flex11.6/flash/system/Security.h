@@ -58,6 +58,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -160,12 +163,12 @@ namespace flash
              *   at least once in a decision about player settings.
              */
         public:
-            static bool         exactSettings();
+            static bool      exactSettings();
         public:
             static void         exactSettings(bool value);
 
         public:
-            static bool         disableAVM1Loading();
+            static bool      disableAVM1Loading();
         public:
             static void         disableAVM1Loading(bool value);
 
@@ -190,7 +193,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  sandboxType();
+            static std::string       sandboxType();
 
             /**
              * Get the page domain containing the swf. For security reasons, the method does not return the full URL, only the page
@@ -200,7 +203,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            static std::string  pageDomain();
+            static std::string       pageDomain();
 
             /**
              * Lets SWF files in the identified domains access objects and variables
@@ -493,9 +496,9 @@ namespace flash
         public:
             static void     loadPolicyFile(std::string url);
 
-            static std::vector<void *> duplicateSandboxBridgeInputArguments(Object *toplevel, std::vector<void *> args);
+            static std::vector<void *>    duplicateSandboxBridgeInputArguments(Object *toplevel, std::vector<void *> args);
 
-            static void    *duplicateSandboxBridgeOutputArgument(Object *toplevel, void *arg);
+            static void        *duplicateSandboxBridgeOutputArgument(Object *toplevel, void *arg);
 
         public:
             Security();

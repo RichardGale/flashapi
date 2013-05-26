@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int EventPhase::CAPTURING_PHASE=1;
+        const unsigned int EventPhase::CAPTURING_PHASE   = 1;
 
         /**
          * The target phase, which is the second phase of the event flow.
@@ -27,7 +27,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int EventPhase::AT_TARGET=2;
+        const unsigned int EventPhase::AT_TARGET   = 2;
 
         /**
          * The bubbling phase, which is the third phase of the event flow.
@@ -35,7 +35,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int EventPhase::BUBBLING_PHASE=3;
+        const unsigned int EventPhase::BUBBLING_PHASE   = 3;
 
         EventPhase::EventPhase();
 }

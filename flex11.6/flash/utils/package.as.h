@@ -25,7 +25,7 @@
  * @playerversion   Flash 9
  */
 public:
-unsigned int setInterval(Function *closure, float delay, ...);
+unsigned int     setInterval(Function *closure, float delay, ...);
 /**
  * Runs a specified function after a specified delay (in milliseconds).
  *
@@ -48,7 +48,7 @@ unsigned int setInterval(Function *closure, float delay, ...);
  * @playerversion   Flash 9
  */
 public:
-unsigned int setTimeout(Function *closure, float delay, ...);
+unsigned int     setTimeout(Function *closure, float delay, ...);
 /**
  * Cancels a specified setInterval() call.
  * @param   id  The ID of the setInterval() call, which you set to a variable,
@@ -91,9 +91,9 @@ void     clearTimeout(unsigned int id);
  * @playerversion   Lite 4
  */
 public:
-XML     *describeType(void *value);
+XML      *describeType(void *value);
 public:
-std::string getAliasName(void *value);
+std::string   getAliasName(void *value);
 /**
  * Returns the fully qualified class name of an object.
  * @param   value   The object for which a fully qualified class name is desired. Any ActionScript value
@@ -105,7 +105,7 @@ std::string getAliasName(void *value);
  * @playerversion   Lite 4
  */
 public:
-std::string getQualifiedClassName(void *value);
+std::string   getQualifiedClassName(void *value);
 /**
  * Returns a reference to the class object of the class specified by the name parameter.
  * @param   name    The name of a class.
@@ -117,7 +117,7 @@ std::string getQualifiedClassName(void *value);
  *   specified name.
  */
 public:
-Object  *getDefinitionByName(std::string name);
+Object   *getDefinitionByName(std::string name);
 /**
  * Returns the fully qualified class name of the base class of the object specified by the value
  * parameter. This function provides a quicker way of retrieving the base class name than describeType(), but also
@@ -136,7 +136,7 @@ Object  *getDefinitionByName(std::string name);
  * @playerversion   Lite 4
  */
 public:
-std::string getQualifiedSuperclassName(void *value);
+std::string   getQualifiedSuperclassName(void *value);
 /**
  * Used to compute relative time. For a Flash runtime processing ActionScript 3.0, this method returns the number of milliseconds that have elapsed
  * since the Flash runtime virtual machine for ActionScript 3.0 (AVM2) started. For a Flash runtime processing ActionScript 2.0, this method returns
@@ -172,7 +172,7 @@ int      getTimer();
  * @playerversion   Lite 4
  */
 public:
-std::string escapeMultiByte(std::string value);
+std::string   escapeMultiByte(std::string value);
 /**
  * Returns an unescaped copy of the input string, which is decoded from either system code page page or UTF-8 depending on the value of System.useCodePage.
  * Use of System.useCodePage allows legacy content encoded in local code pages to be accessed by the runtime, but only on systems using that legacy code page.
@@ -189,7 +189,7 @@ std::string escapeMultiByte(std::string value);
  * @playerversion   Lite 4
  */
 public:
-std::string unescapeMultiByte(std::string value);
+std::string   unescapeMultiByte(std::string value);
 namespace flash_proxy {};
 #endif // FLEX11_6_FLASH_UTILS_PACKAGE_AS_AS
 #endif // __cplusplus

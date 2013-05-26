@@ -28,7 +28,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string CFFHinting::NONE="none";
+        const std::string CFFHinting::NONE   = "none";
 
         /**
          * Fits strong horizontal stems to the pixel grid for improved readability.
@@ -41,7 +41,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string CFFHinting::HORIZONTAL_STEM="horizontalStem";
+        const std::string CFFHinting::HORIZONTAL_STEM   = "horizontalStem";
 
         CFFHinting::CFFHinting();
 }

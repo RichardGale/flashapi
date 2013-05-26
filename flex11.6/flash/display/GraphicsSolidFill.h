@@ -54,7 +54,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsSolidFill(unsigned int color=0, float alpha =1);
+            GraphicsSolidFill(unsigned int color=0, float alpha=1);
         };
     }
 }

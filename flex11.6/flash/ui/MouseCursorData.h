@@ -144,7 +144,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            float        frameRate();
+            float       frameRate();
         public:
             void         frameRate(float data);
 

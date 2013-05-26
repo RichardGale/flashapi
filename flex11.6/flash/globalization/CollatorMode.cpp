@@ -25,7 +25,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string CollatorMode::SORTING="sorting";
+        const std::string CollatorMode::SORTING   = "sorting";
 
         /**
          * Initializes a Collator object so that the compare method is optimized for
@@ -36,7 +36,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string CollatorMode::MATCHING="matching";
+        const std::string CollatorMode::MATCHING   = "matching";
 
         CollatorMode::CollatorMode();
 }

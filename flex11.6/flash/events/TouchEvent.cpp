@@ -26,7 +26,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_BEGIN="touchBegin";
+        const std::string TouchEvent::TOUCH_BEGIN   = "touchBegin";
 
         /**
          * Defines the value of the type property of a TOUCH_END touch event object.
@@ -41,7 +41,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_END="touchEnd";
+        const std::string TouchEvent::TOUCH_END   = "touchEnd";
 
         /**
          * Defines the value of the type property of a TOUCH_MOVE touch event object.
@@ -56,7 +56,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_MOVE="touchMove";
+        const std::string TouchEvent::TOUCH_MOVE   = "touchMove";
 
         /**
          * Defines the value of the type property of a TOUCH_OVER touch event object.
@@ -71,7 +71,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_OVER="touchOver";
+        const std::string TouchEvent::TOUCH_OVER   = "touchOver";
 
         /**
          * Defines the value of the type property of a TOUCH_OUT touch event object.
@@ -86,7 +86,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_OUT="touchOut";
+        const std::string TouchEvent::TOUCH_OUT   = "touchOut";
 
         /**
          * Defines the value of the type property of a TOUCH_ROLL_OVER touch event object.
@@ -101,7 +101,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_ROLL_OVER="touchRollOver";
+        const std::string TouchEvent::TOUCH_ROLL_OVER   = "touchRollOver";
 
         /**
          * Defines the value of the type property of a TOUCH_ROLL_OUT touch event object.
@@ -116,7 +116,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_ROLL_OUT="touchRollOut";
+        const std::string TouchEvent::TOUCH_ROLL_OUT   = "touchRollOut";
 
         /**
          * Defines the value of the type property of a TOUCH_TAP touch event object.
@@ -131,14 +131,14 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TouchEvent::TOUCH_TAP="touchTap";
-        const std::string TouchEvent::PROXIMITY_BEGIN;
-        const std::string TouchEvent::PROXIMITY_END;
-        const std::string TouchEvent::PROXIMITY_MOVE;
-        const std::string TouchEvent::PROXIMITY_OUT;
-        const std::string TouchEvent::PROXIMITY_OVER;
-        const std::string TouchEvent::PROXIMITY_ROLL_OUT;
-        const std::string TouchEvent::PROXIMITY_ROLL_OVER;
+        const std::string TouchEvent::TOUCH_TAP   = "touchTap";
+        const std::string TouchEvent::PROXIMITY_BEGIN  ;
+        const std::string TouchEvent::PROXIMITY_END  ;
+        const std::string TouchEvent::PROXIMITY_MOVE  ;
+        const std::string TouchEvent::PROXIMITY_OUT  ;
+        const std::string TouchEvent::PROXIMITY_OVER  ;
+        const std::string TouchEvent::PROXIMITY_ROLL_OUT  ;
+        const std::string TouchEvent::PROXIMITY_ROLL_OVER  ;
 
         /**
          * The horizontal coordinate at which the event occurred relative to the containing sprite.

@@ -38,6 +38,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class ReferenceError : public Error
 {
@@ -52,7 +55,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    ReferenceError(void *message=(void *)"", void *id=0);
+    ReferenceError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_REFERENCEERROR_AS

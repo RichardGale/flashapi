@@ -125,7 +125,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        elementHeight();
+                float       elementHeight();
             public:
                 void         elementHeight(float value);
 
@@ -140,7 +140,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        elementWidth();
+                float       elementWidth();
             public:
                 void         elementWidth(float value);
 
@@ -167,7 +167,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                GraphicElement(DisplayObject *graphic=NULL, float elementWidth =15, float elementHeight =15, ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
+                GraphicElement(DisplayObject *graphic=NULL, float elementWidth=15, float elementHeight=15, ElementFormat *elementFormat=NULL, EventDispatcher *eventMirror=NULL, std::string textRotation="rotate0");
             };
         }
     }

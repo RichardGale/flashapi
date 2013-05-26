@@ -98,7 +98,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  data();
+            std::string       data();
         public:
             void         data(std::string value);
 
@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            DataEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string data="");
+            DataEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string data="");
 
             /**
              * Creates a copy of the DataEvent object and sets the value of each property to match that of the
@@ -144,7 +144,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

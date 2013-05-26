@@ -314,7 +314,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         allowLoadBytesCodeExecution();
+            bool      allowLoadBytesCodeExecution();
         public:
             void         allowLoadBytesCodeExecution(bool allow);
 
@@ -333,7 +333,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            LoaderContext(bool checkPolicyFile   =false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
+            LoaderContext(bool checkPolicyFile=false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
         };
     }
 }

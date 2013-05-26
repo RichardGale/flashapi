@@ -401,7 +401,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Parses the XML text specified in the value parameter

@@ -91,7 +91,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */virtual
-            unsigned int objectEncoding() = 0;
+            unsigned int         objectEncoding() = 0;
             virtual
             void         objectEncoding(unsigned int version) = 0;
 
@@ -103,7 +103,7 @@ namespace flash
              * @playerversion   Lite 4
              */
             virtual
-            std::string  endian() = 0;
+            std::string       endian() = 0;
             virtual
             void         endian(std::string type) = 0;
 

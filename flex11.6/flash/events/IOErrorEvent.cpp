@@ -19,10 +19,10 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string IOErrorEvent::IO_ERROR="ioError";
-        const std::string IOErrorEvent::NETWORK_ERROR;
-        const std::string IOErrorEvent::DISK_ERROR;
-        const std::string IOErrorEvent::VERIFY_ERROR;
+        const std::string IOErrorEvent::IO_ERROR   = "ioError";
+        const std::string IOErrorEvent::NETWORK_ERROR  ;
+        const std::string IOErrorEvent::DISK_ERROR  ;
+        const std::string IOErrorEvent::VERIFY_ERROR  ;
 
         /**
          * Creates an Event object that contains specific information about ioError events.

@@ -110,12 +110,12 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  justificationStyle();
+                std::string       justificationStyle();
             public:
                 void         justificationStyle(std::string value);
 
             public:
-                bool         composeTrailingIdeographicSpaces();
+                bool      composeTrailingIdeographicSpaces();
             public:
                 void         composeTrailingIdeographicSpaces(bool value);
 

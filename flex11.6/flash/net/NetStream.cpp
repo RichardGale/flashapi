@@ -37,7 +37,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStream::DIRECT_CONNECTIONS="directConnections";
+        const std::string NetStream::DIRECT_CONNECTIONS   = "directConnections";
 
         /**
          * A static object used as a parameter to
@@ -50,7 +50,7 @@ namespace net {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string NetStream::CONNECT_TO_FMS="connectToFMS";
+        const std::string NetStream::CONNECT_TO_FMS   = "connectToFMS";
 
         /**
          * Specifies how long to buffer messages before starting to display the stream.

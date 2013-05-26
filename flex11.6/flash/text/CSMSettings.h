@@ -13,6 +13,9 @@
  * @internal    Not functioning correctly. Bug report 193833
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

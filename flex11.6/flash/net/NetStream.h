@@ -402,7 +402,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        bufferTime();
+            float       bufferTime();
         public:
             void         bufferTime(float bufferTime);
 
@@ -418,7 +418,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        maxPauseBufferTime();
+            float       maxPauseBufferTime();
         public:
             void         maxPauseBufferTime(float pauseBufferTime);
 
@@ -436,7 +436,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        backBufferTime();
+            float       backBufferTime();
         public:
             void         backBufferTime(float backBufferTime);
 
@@ -457,7 +457,7 @@ namespace flash
              * @internal    The following links work only if qualified with NetStream. We don't know why.
              */
         public:
-            bool         inBufferSeek();
+            bool      inBufferSeek();
         public:
             void         inBufferSeek(bool value);
 
@@ -471,7 +471,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        backBufferLength();
+            float       backBufferLength();
 
             /**
              * Specifies a maximum buffer length for live streaming content, in seconds. The default value is 0.
@@ -488,7 +488,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bufferTimeMax();
+            float       bufferTimeMax();
         public:
             void         bufferTimeMax(float bufferTimeMax);
 
@@ -534,7 +534,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        time();
+            float       time();
 
             /**
              * The number of frames per second being displayed. If you are exporting video files to be played back on a number
@@ -545,7 +545,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        currentFPS();
+            float       currentFPS();
 
             /**
              * The number of seconds of data currently in the buffer. You can use this property with
@@ -556,7 +556,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        bufferLength();
+            float       bufferLength();
 
             /**
              * The number of seconds of data in the subscribing stream's
@@ -572,7 +572,7 @@ namespace flash
              * @category    Property
              */
         public:
-            float        liveDelay();
+            float       liveDelay();
 
             /**
              * The number of bytes of data that have been loaded into the application. You can use this property
@@ -583,7 +583,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesLoaded();
+            unsigned int         bytesLoaded();
 
             /**
              * The total size in bytes of the file being loaded into the application.
@@ -592,16 +592,16 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesTotal();
+            unsigned int         bytesTotal();
 
         public:
-            unsigned int decodedFrames();
+            unsigned int         decodedFrames();
 
         public:
-            unsigned int videoCodec();
+            unsigned int         videoCodec();
 
         public:
-            unsigned int audioCodec();
+            unsigned int         audioCodec();
 
             /**
              * Controls sound in this NetStream object. For more information, see the SoundTransform class.
@@ -655,7 +655,7 @@ namespace flash
              * @internal    : please review at same time: checkPolicyFile property in LoaderContext
              */
         public:
-            bool         checkPolicyFile();
+            bool      checkPolicyFile();
         public:
             void         checkPolicyFile(bool state);
 
@@ -725,7 +725,7 @@ namespace flash
              * @throws  TypeError The client property must be set to a non-null object.
              */
         public:
-            Object      *client();
+            Object       *client();
         public:
             void         client(Object *object);
 
@@ -748,7 +748,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
 
             /**
              * For RTMFP connections, specifies the maximum number of peers to which to proactively push
@@ -758,7 +758,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        multicastPushNeighborLimit();
+            float       multicastPushNeighborLimit();
         public:
             void         multicastPushNeighborLimit(float neighbors);
 
@@ -773,7 +773,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        multicastWindowDuration();
+            float       multicastWindowDuration();
         public:
             void         multicastWindowDuration(float seconds);
 
@@ -786,7 +786,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        multicastRelayMarginDuration();
+            float       multicastRelayMarginDuration();
         public:
             void         multicastRelayMarginDuration(float seconds);
 
@@ -802,7 +802,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        multicastAvailabilityUpdatePeriod();
+            float       multicastAvailabilityUpdatePeriod();
         public:
             void         multicastAvailabilityUpdatePeriod(float seconds);
 
@@ -822,7 +822,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        multicastFetchPeriod();
+            float       multicastFetchPeriod();
         public:
             void         multicastFetchPeriod(float seconds);
 
@@ -838,7 +838,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         multicastAvailabilitySendToAll();
+            bool      multicastAvailabilitySendToAll();
         public:
             void         multicastAvailabilitySendToAll(bool value);
 
@@ -849,7 +849,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  farID();
+            std::string       farID();
 
             /**
              * For RTMFP and RTMPE connections, a value chosen substantially by this end of the stream, unique to this connection.
@@ -860,7 +860,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  nearNonce();
+            std::string       nearNonce();
 
             /**
              * For RTMFP and RTMPE connections, a value chosen substantially by the other end of this stream, unique to this connection.
@@ -870,7 +870,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  farNonce();
+            std::string       farNonce();
 
             /**
              * An object that holds all of the subscribing NetStream instances that are listening to this publishing NetStream instance.
@@ -879,7 +879,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<void *> peerStreams();
+            std::vector<void *>        peerStreams();
 
             /**
              * For RTMFP connections, specifies whether audio is sent with full reliability.  When TRUE, all audio transmitted over this NetStream is fully reliable.
@@ -893,7 +893,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         audioReliable();
+            bool      audioReliable();
         public:
             void         audioReliable(bool reliable);
 
@@ -909,7 +909,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         videoReliable();
+            bool      videoReliable();
         public:
             void         videoReliable(bool reliable);
 
@@ -928,7 +928,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         dataReliable();
+            bool      dataReliable();
         public:
             void         dataReliable(bool reliable);
 
@@ -940,7 +940,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         audioSampleAccess();
+            bool      audioSampleAccess();
         public:
             void         audioSampleAccess(bool reliable);
 
@@ -952,17 +952,17 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         videoSampleAccess();
+            bool      videoSampleAccess();
         public:
             void         videoSampleAccess(bool reliable);
 
         public:
-            bool         useHardwareDecoder();
+            bool      useHardwareDecoder();
         public:
             void         useHardwareDecoder(bool v);
 
         public:
-            bool         useJitterBuffer();
+            bool      useJitterBuffer();
         public:
             void         useJitterBuffer(bool value);
 
@@ -1591,7 +1591,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     onPeerConnect(NetStream *subscriber);
+            bool  onPeerConnect(NetStream *subscriber);
 
             /**
              * Passes a ByteArray into a NetStream for playout. Call this method on a NetStream in "Data Generation Mode". To put a NetStream into

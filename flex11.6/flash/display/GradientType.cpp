@@ -19,7 +19,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string GradientType::LINEAR="linear";
+        const std::string GradientType::LINEAR   = "linear";
 
         /**
          * Value used to specify a radial gradient fill.
@@ -27,7 +27,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string GradientType::RADIAL="radial";
+        const std::string GradientType::RADIAL   = "radial";
 
         GradientType::GradientType();
 }

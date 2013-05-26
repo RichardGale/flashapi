@@ -185,7 +185,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Matrix(float a =1, float b =0, float c =0, float d =1, float tx =0, float ty =0);
+            Matrix(float a=1, float b=0, float c=0, float d=1, float tx=0, float ty=0);
 
             /**
              * Returns a new Matrix object that is a clone of this
@@ -348,7 +348,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     createBox(float scaleX, float scaleY, float rotation =0, float tx =0, float ty =0);
+            void     createBox(float scaleX, float scaleY, float rotation=0, float tx=0, float ty=0);
 
             /**
              * Creates the specific style of matrix expected by the beginGradientFill() and
@@ -388,7 +388,7 @@ namespace flash
              * @category    Method
              */
         public:
-            void     createGradientBox(float width, float height, float rotation =0, float tx =0, float ty =0);
+            void     createGradientBox(float width, float height, float rotation=0, float tx=0, float ty=0);
 
             /**
              * Applies a rotation transformation to the Matrix object.
@@ -669,7 +669,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
             void     copyFrom(Matrix *sourceMatrix);

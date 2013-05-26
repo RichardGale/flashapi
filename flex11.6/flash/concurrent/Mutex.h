@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace concurrent
@@ -11,7 +15,7 @@ namespace flash
         class Mutex : public Object
         {
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
             void     lock();
@@ -20,7 +24,7 @@ namespace flash
             Mutex();
 
         public:
-            bool     tryLock();
+            bool  tryLock();
 
         public:
             void     unlock();

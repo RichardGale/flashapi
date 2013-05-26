@@ -109,6 +109,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -125,7 +128,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * The name of the requested locale ID that was passed to the constructor of this StringTools object.
@@ -138,7 +141,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  requestedLocaleIDName();
+            std::string       requestedLocaleIDName();
 
             /**
              * The name of the actual locale ID used by this StringTools object.
@@ -180,7 +183,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  actualLocaleIDName();
+            std::string       actualLocaleIDName();
 
             /**
              * Lists all of the locale ID names supported by this class.
@@ -229,7 +232,7 @@ namespace flash
              * @throws  ArgumentError when  the s parameter is null.
              */
         public:
-            std::string toLowerCase(std::string s);
+            std::string   toLowerCase(std::string s);
 
             /**
              * Converts a string to uppercase according to language conventions.
@@ -245,7 +248,7 @@ namespace flash
              * @throws  ArgumentError when the s parameter is null.
              */
         public:
-            std::string toUpperCase(std::string s);
+            std::string   toUpperCase(std::string s);
         };
     }
 }

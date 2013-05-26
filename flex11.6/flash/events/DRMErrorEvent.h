@@ -160,7 +160,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            bool         systemUpdateNeeded();
+            bool      systemUpdateNeeded();
 
             /**
              * Indicates whether a DRM update is needed to play the DRM-protected content.
@@ -169,7 +169,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            bool         drmUpdateNeeded();
+            bool      drmUpdateNeeded();
 
             /**
              * Creates a copy of the DRMErrorEvent object and sets the value of each property to match
@@ -196,7 +196,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMErrorEvent(std::string type="drmError", bool bubbles   =false, bool cancelable   =false, std::string inErrorDetail="", int inErrorCode=0, int insubErrorID=0, DRMContentData *inMetadata=NULL, bool inSystemUpdateNeeded   =false, bool inDrmUpdateNeeded   =false);
+            DRMErrorEvent(std::string type="drmError", bool bubbles=false, bool cancelable=false, std::string inErrorDetail="", int inErrorCode=0, int insubErrorID=0, DRMContentData *inMetadata=NULL, bool inSystemUpdateNeeded=false, bool inDrmUpdateNeeded=false);
 
             /**
              * Returns a string that contains all the properties of the DRMErrorEvent object.
@@ -209,7 +209,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

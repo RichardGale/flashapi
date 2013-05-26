@@ -25,7 +25,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string RenderingMode::NORMAL="normal";
+        const std::string RenderingMode::NORMAL   = "normal";
 
         /**
          * Sets rendering mode to CFF (Compact Font Format). CFF rendering improves readability of text on a display. 
@@ -38,7 +38,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string RenderingMode::CFF="cff";
+        const std::string RenderingMode::CFF   = "cff";
 
         RenderingMode::RenderingMode();
 }

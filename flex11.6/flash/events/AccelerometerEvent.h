@@ -45,7 +45,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        accelerationX();
+            float       accelerationX();
         public:
             void         accelerationX(float value);
 
@@ -59,7 +59,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        accelerationY();
+            float       accelerationY();
         public:
             void         accelerationY(float value);
 
@@ -73,7 +73,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        accelerationZ();
+            float       accelerationZ();
         public:
             void         accelerationZ(float value);
 
@@ -87,7 +87,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        timestamp();
+            float       timestamp();
         public:
             void         timestamp(float value);
 
@@ -107,7 +107,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            AccelerometerEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float timestamp =0, float accelerationX =0, float accelerationY =0, float accelerationZ =0);
+            AccelerometerEvent(std::string type, bool bubbles=false, bool cancelable=false, float timestamp=0, float accelerationX=0, float accelerationY=0, float accelerationZ=0);
 
             /**
              * Creates a copy of an AccelerometerEvent object and sets the value of each property to match that of
@@ -133,7 +133,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

@@ -16,10 +16,10 @@ namespace net {
 namespace drm {
 
 
-        const unsigned int DRMManagerSession::STATUS_READY;
-        const unsigned int DRMManagerSession::STATUS_NOTREADY;
-        const unsigned int DRMManagerSession::STATUS_FAILED;
-        const unsigned int DRMManagerSession::STATUS_UNKNOWN;
+        const unsigned int DRMManagerSession::STATUS_READY  ;
+        const unsigned int DRMManagerSession::STATUS_NOTREADY  ;
+        const unsigned int DRMManagerSession::STATUS_FAILED  ;
+        const unsigned int DRMManagerSession::STATUS_UNKNOWN  ;
                    
 
         DRMContentData* DRMManagerSession::metadata()                 ;

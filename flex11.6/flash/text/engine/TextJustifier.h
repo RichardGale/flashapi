@@ -39,7 +39,7 @@ namespace flash
                  * @throws  ArgumentError The locale specified is null or too short to represent a valid locale.
                  */
             public:
-                std::string  locale();
+                std::string       locale();
 
                 /**
                  * Specifies the line justification for the text in a text block.
@@ -51,7 +51,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  lineJustification();
+                std::string       lineJustification();
             public:
                 void         lineJustification(std::string value);
 

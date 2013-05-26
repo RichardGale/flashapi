@@ -53,7 +53,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> changeList();
+            std::vector<void *>        changeList();
         public:
             void         changeList(std::vector<void *> value);
 
@@ -79,7 +79,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SyncEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::vector<void *> changeList=std::vector<void *>());
+            SyncEvent(std::string type, bool bubbles=false, bool cancelable=false, std::vector<void *> changeList=std::vector<void *>());
 
             /**
              * Returns a string that contains all the properties of the SyncEvent object. The string is in the following format:
@@ -90,7 +90,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

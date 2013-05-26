@@ -19,7 +19,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 11
          */
-        const std::string TextInteractionMode::NORMAL="normal";
+        const std::string TextInteractionMode::NORMAL   = "normal";
 
         /**
          * On mobile platforms like Android, the text field starts in normal mode(which implies scroll and non-selectable mode).
@@ -27,7 +27,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 11
          */
-        const std::string TextInteractionMode::SELECTION="selection";
+        const std::string TextInteractionMode::SELECTION   = "selection";
 
         TextInteractionMode::TextInteractionMode();
 }

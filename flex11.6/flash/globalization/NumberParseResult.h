@@ -16,6 +16,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -30,7 +33,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        value();
+            float       value();
 
             /**
              * The index of the first character of the numeric portion of the input string.
@@ -62,7 +65,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            NumberParseResult(float value =NaN, int startIndex=2147483647, int endIndex=2147483647);
+            NumberParseResult(float value=NaN, int startIndex=2147483647, int endIndex=2147483647);
         };
     }
 }

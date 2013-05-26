@@ -18,7 +18,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageQuality::LOW="low";
+        const std::string StageQuality::LOW   = "low";
 
         /**
          * Specifies medium rendering quality: graphics are anti-aliased using a 2 x 2 pixel grid, 
@@ -27,7 +27,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageQuality::MEDIUM="medium";
+        const std::string StageQuality::MEDIUM   = "medium";
 
         /**
          * Specifies high rendering quality: graphics are anti-aliased using a 4 x 4 pixel grid, 
@@ -36,7 +36,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageQuality::HIGH="high";
+        const std::string StageQuality::HIGH   = "high";
 
         /**
          * Specifies very high rendering quality: graphics are anti-aliased using a 4 x 4 pixel 
@@ -45,11 +45,11 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageQuality::BEST="best";
-        const std::string StageQuality::HIGH_8X8;
-        const std::string StageQuality::HIGH_8X8_LINEAR;
-        const std::string StageQuality::HIGH_16X16;
-        const std::string StageQuality::HIGH_16X16_LINEAR;
+        const std::string StageQuality::BEST   = "best";
+        const std::string StageQuality::HIGH_8X8  ;
+        const std::string StageQuality::HIGH_8X8_LINEAR  ;
+        const std::string StageQuality::HIGH_16X16  ;
+        const std::string StageQuality::HIGH_16X16_LINEAR  ;
 
         StageQuality::StageQuality();
 }

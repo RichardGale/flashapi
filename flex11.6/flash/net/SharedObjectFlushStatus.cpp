@@ -18,7 +18,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SharedObjectFlushStatus::FLUSHED="flushed";
+        const std::string SharedObjectFlushStatus::FLUSHED   = "flushed";
 
         /**
          * Indicates that the user is being prompted to increase disk space for the shared object
@@ -27,7 +27,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SharedObjectFlushStatus::PENDING="pending";
+        const std::string SharedObjectFlushStatus::PENDING   = "pending";
 
         SharedObjectFlushStatus::SharedObjectFlushStatus();
 }

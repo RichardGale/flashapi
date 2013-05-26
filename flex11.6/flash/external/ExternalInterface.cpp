@@ -196,7 +196,7 @@ namespace external {
          * @playerversion   Flash 9.0.115.0
          * @playerversion   Lite 4
          */
-         bool ExternalInterface::marshallExceptions     ;
+        bool ExternalInterface::marshallExceptions  ;
 
         /**
          * Indicates whether this player is in a container that offers an external interface.

@@ -19,7 +19,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrection::DEFAULT="default";
+        const std::string ColorCorrection::DEFAULT   = "default";
 
         /**
          * Turns on color correction regardless of the player host environment, if available.
@@ -27,7 +27,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrection::ON="on";
+        const std::string ColorCorrection::ON   = "on";
 
         /**
          * Turns off color correction regardless of the player host environment.
@@ -36,7 +36,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrection::OFF="off";
+        const std::string ColorCorrection::OFF   = "off";
 
         ColorCorrection::ColorCorrection();
 }

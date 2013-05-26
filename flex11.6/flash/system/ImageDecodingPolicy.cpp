@@ -17,7 +17,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   AIR 2.6
          */
-        const std::string ImageDecodingPolicy::ON_DEMAND="onDemand";
+        const std::string ImageDecodingPolicy::ON_DEMAND   = "onDemand";
 
         /**
          * Specifies that the image will be decoded when it is loaded, before the 
@@ -25,7 +25,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   AIR 2.6
          */
-        const std::string ImageDecodingPolicy::ON_LOAD="onLoad";
+        const std::string ImageDecodingPolicy::ON_LOAD   = "onLoad";
 
         ImageDecodingPolicy::ImageDecodingPolicy();
 }

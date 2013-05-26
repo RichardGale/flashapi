@@ -115,7 +115,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            GraphicsBitmapFill(BitmapData *bitmapData=NULL, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
+            GraphicsBitmapFill(BitmapData *bitmapData=NULL, Matrix *matrix=NULL, bool repeat=true, bool smooth=false);
         };
     }
 }

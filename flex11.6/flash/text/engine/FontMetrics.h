@@ -170,7 +170,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                FontMetrics(Rectangle *emBox, float strikethroughOffset, float strikethroughThickness, float underlineOffset, float underlineThickness, float subscriptOffset, float subscriptScale, float superscriptOffset, float superscriptScale, float lineGap =0);
+                FontMetrics(Rectangle *emBox, float strikethroughOffset, float strikethroughThickness, float underlineOffset, float underlineThickness, float subscriptOffset, float subscriptScale, float superscriptOffset, float superscriptScale, float lineGap=0);
             };
         }
     }

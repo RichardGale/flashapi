@@ -226,7 +226,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            float        frameRate();
+            float       frameRate();
         public:
             void         frameRate(float value);
 
@@ -255,7 +255,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            std::string  scaleMode();
+            std::string       scaleMode();
         public:
             void         scaleMode(std::string value);
 
@@ -273,7 +273,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  align();
+            std::string       align();
         public:
             void         align(std::string value);
 
@@ -358,7 +358,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool         showDefaultContextMenu();
+            bool      showDefaultContextMenu();
         public:
             void         showDefaultContextMenu(bool value);
 
@@ -403,7 +403,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  colorCorrection();
+            std::string       colorCorrection();
         public:
             void         colorCorrection(std::string value);
 
@@ -419,7 +419,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  colorCorrectionSupport();
+            std::string       colorCorrectionSupport();
 
             /**
              * Specifies whether or not objects display a glowing border when they have focus.
@@ -433,7 +433,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool         stageFocusRect();
+            bool      stageFocusRect();
         public:
             void         stageFocusRect(bool on);
 
@@ -470,7 +470,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            std::string  quality();
+            std::string       quality();
         public:
             void         quality(std::string value);
 
@@ -531,7 +531,7 @@ namespace flash
              *   true throws a security error.
              */
         public:
-            std::string  displayState();
+            std::string       displayState();
         public:
             void         displayState(std::string value);
 
@@ -569,7 +569,7 @@ namespace flash
             void         fullScreenSourceRect(Rectangle *value);
 
         public:
-            bool         mouseLock();
+            bool      mouseLock();
         public:
             void         mouseLock(bool value);
 
@@ -597,7 +597,7 @@ namespace flash
             std::vector<Stage3D *> stage3Ds();
 
         public:
-            unsigned int color();
+            unsigned int         color();
         public:
             void         color(unsigned int color);
 
@@ -618,7 +618,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int fullScreenWidth();
+            unsigned int         fullScreenWidth();
 
             /**
              * Returns the height of the monitor that will be used when going to full screen size, if that state
@@ -637,7 +637,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int fullScreenHeight();
+            unsigned int         fullScreenHeight();
 
             /**
              * Indicates whether GPU compositing is available and in use. The wmodeGPU value is trueonly
@@ -667,7 +667,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         wmodeGPU();
+            bool      wmodeGPU();
 
             /**
              * The area of the stage that is currently covered by the software keyboard.
@@ -795,7 +795,7 @@ namespace flash
              *   even if you are the Stage owner.
              */
         public:
-            float        width();
+            float       width();
         public:
             void         width(float value);
 
@@ -827,7 +827,7 @@ namespace flash
              *   even if the calling object is the Stage owner (the main SWF file).
              */
         public:
-            float        height();
+            float       height();
         public:
             void         height(float value);
 
@@ -865,7 +865,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool         mouseChildren();
+            bool      mouseChildren();
         public:
             void         mouseChildren(bool value);
 
@@ -897,7 +897,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool         tabChildren();
+            bool      tabChildren();
         public:
             void         tabChildren(bool value);
 
@@ -911,19 +911,19 @@ namespace flash
              *   </pre>
              */
         public:
-            bool         allowsFullScreen();
+            bool      allowsFullScreen();
 
         public:
-            bool         allowsFullScreenInteractive();
+            bool      allowsFullScreenInteractive();
 
         public:
-            float        contentsScaleFactor();
+            float       contentsScaleFactor();
 
         public:
-            std::string  displayContextInfo();
+            std::string       displayContextInfo();
 
         public:
-            void        *constructor();
+            void            *constructor();
         public:
             void         constructor(void *c);
 
@@ -966,7 +966,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     isFocusInaccessible();
+            bool  isFocusInaccessible();
 
             /**
              * Adds a child DisplayObject instance to this DisplayObjectContainer instance. The child is added
@@ -1122,7 +1122,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
+            void     addEventListener(std::string type, Function *listener, bool useCapture=false, int priority=0, bool useWeakReference=false);
 
             /**
              * Dispatches an event into the event flow. The event target is the EventDispatcher
@@ -1143,7 +1143,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool     dispatchEvent(flash::events::Event *event);
+            bool  dispatchEvent(flash::events::Event *event);
 
             /**
              * Checks whether the EventDispatcher object has any listeners registered for a specific type
@@ -1171,7 +1171,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool     hasEventListener(std::string type);
+            bool  hasEventListener(std::string type);
 
             /**
              * Checks whether an event listener is registered with this EventDispatcher object or any of
@@ -1195,7 +1195,7 @@ namespace flash
              *   For more information, see the "Security" chapter in the ActionScript 3.0 Developer's Guide.
              */
         public:
-            bool     willTrigger(std::string type);
+            bool  willTrigger(std::string type);
 
             /**
              * Removes a child DisplayObject from the specified index position in the child list of

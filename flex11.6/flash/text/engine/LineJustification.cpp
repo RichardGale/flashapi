@@ -22,7 +22,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LineJustification::UNJUSTIFIED="unjustified";
+        const std::string LineJustification::UNJUSTIFIED   = "unjustified";
 
         /**
          * Justify all but the last line.
@@ -31,7 +31,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LineJustification::ALL_BUT_LAST="allButLast";
+        const std::string LineJustification::ALL_BUT_LAST   = "allButLast";
 
         /**
          * Justify all lines.
@@ -40,8 +40,8 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LineJustification::ALL_INCLUDING_LAST="allIncludingLast";
-        const std::string LineJustification::ALL_BUT_MANDATORY_BREAK;
+        const std::string LineJustification::ALL_INCLUDING_LAST   = "allIncludingLast";
+        const std::string LineJustification::ALL_BUT_MANDATORY_BREAK  ;
 
         LineJustification::LineJustification();
 }

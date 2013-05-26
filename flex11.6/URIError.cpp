@@ -23,5 +23,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        URIError::URIError(void* message, void* id);
+        URIError::URIError(std::string message, void* id);
 

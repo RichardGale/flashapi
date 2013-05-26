@@ -9,8 +9,8 @@ namespace flash {
 namespace events {
 
 
-        const std::string GameInputEvent::DEVICE_ADDED;
-        const std::string GameInputEvent::DEVICE_REMOVED;
+        const std::string GameInputEvent::DEVICE_ADDED  ;
+        const std::string GameInputEvent::DEVICE_REMOVED  ;
 
         GameInputDevice* GameInputEvent::device()                  ;
 

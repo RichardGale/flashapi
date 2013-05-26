@@ -74,7 +74,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            AsyncErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", Error *error=NULL);
+            AsyncErrorEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string text="", Error *error=NULL);
 
             /**
              * Creates a copy of the AsyncErrorEvent object and sets the value of each property to match
@@ -99,7 +99,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

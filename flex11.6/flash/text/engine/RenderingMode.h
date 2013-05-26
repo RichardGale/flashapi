@@ -11,6 +11,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

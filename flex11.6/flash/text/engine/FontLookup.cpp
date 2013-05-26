@@ -26,7 +26,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontLookup::DEVICE="device";
+        const std::string FontLookup::DEVICE   = "device";
 
         /**
          * Used to indicate embedded CFF (Compact Font Format) font lookup.
@@ -40,7 +40,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontLookup::EMBEDDED_CFF="embeddedCFF";
+        const std::string FontLookup::EMBEDDED_CFF   = "embeddedCFF";
 
         FontLookup::FontLookup();
 }

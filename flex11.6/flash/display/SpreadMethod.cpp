@@ -19,21 +19,21 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string SpreadMethod::PAD="pad";
+        const std::string SpreadMethod::PAD   = "pad";
 
         /**
          * Specifies that the gradient use the reflect spread method.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string SpreadMethod::REFLECT="reflect";
+        const std::string SpreadMethod::REFLECT   = "reflect";
 
         /**
          * Specifies that the gradient use the repeat spread method.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string SpreadMethod::REPEAT="repeat";
+        const std::string SpreadMethod::REPEAT   = "repeat";
 
         SpreadMethod::SpreadMethod();
 }

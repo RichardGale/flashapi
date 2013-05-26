@@ -37,6 +37,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Array : public Object
 {
@@ -118,7 +121,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    unsigned int length();
+    unsigned int         length();
 public:
     void         length(unsigned int newLength);
 
@@ -138,7 +141,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string join(void *sep=NULL);
+    std::string   join(void *sep=NULL);
 
     /**
      * Removes the last element from an array and returns the value of that element.
@@ -147,7 +150,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    void    *pop();
+    void        *pop();
 
     /**
      * Adds one or more elements to the end of an array and returns the new length of the array.
@@ -157,7 +160,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    unsigned int push(...);
+    unsigned int     push(...);
 
     /**
      * Reverses the array in place.
@@ -166,7 +169,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> reverse();
+    std::vector<void *>    reverse();
 
     /**
      * Concatenates the elements specified in the parameters with the elements in an array and creates a new array.
@@ -179,7 +182,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> concat(...);
+    std::vector<void *>    concat(...);
 
     /**
      * Removes the first element from an array and returns that element. The remaining array elements are moved
@@ -189,7 +192,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    void    *shift();
+    void        *shift();
 
     /**
      * Returns a new array that consists of a range of elements from the original array, without modifying the original array.
@@ -209,7 +212,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> slice(void *A=0, void *B=4294967295);
+    std::vector<void *>    slice(void *A=0, void *B=4294967295);
 
     /**
      * Adds one or more elements to the beginning of an array and returns the new length of the array. The other
@@ -220,7 +223,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    unsigned int unshift(...);
+    unsigned int     unshift(...);
 
     /**
      * Adds elements to and removes elements from an array. This method modifies the array without
@@ -247,7 +250,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> splice(...);
+    std::vector<void *>    splice(...);
 
     /**
      * Sorts the elements in an array. This method sorts according to Unicode values. (ASCII is a subset of Unicode.)
@@ -272,7 +275,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> sort(...);
+    std::vector<void *>    sort(...);
 
     /**
      * Sorts the elements in an array according to one or more fields in the array.
@@ -302,7 +305,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> sortOn(void *names, void *options=0, ...);
+    std::vector<void *>    sortOn(void *names, void *options=0, ...);
 
     /**
      * Searches for an item in an array by using strict equality (===) and returns the index
@@ -360,7 +363,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     every(Function *callback, void *thisObject=NULL);
+    bool  every(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a test function on each item in the array and constructs a new array for all items that return true for the specified function. If an item returns false, it is not included in the new array.
@@ -389,7 +392,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> filter(Function *callback, void *thisObject=NULL);
+    std::vector<void *>    filter(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a function on each item in the array.
@@ -448,7 +451,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::vector<void *> map(Function *callback, void *thisObject=NULL);
+    std::vector<void *>    map(Function *callback, void *thisObject=NULL);
 
     /**
      * Executes a test function on each item in the array until an item is reached that returns true. Use this method to determine whether any items in an array meet a criterion, such as having a value less than a particular number.
@@ -478,7 +481,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     some(Function *callback, void *thisObject=NULL);
+    bool  some(Function *callback, void *thisObject=NULL);
 };
 
 #endif // FLEX11_6_ARRAY_AS

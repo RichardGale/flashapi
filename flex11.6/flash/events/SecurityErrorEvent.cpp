@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Lite 4
          * @internal    (at)see flash.display.LoaderInfo#event:securityError
          */
-        const std::string SecurityErrorEvent::SECURITY_ERROR="securityError";
+        const std::string SecurityErrorEvent::SECURITY_ERROR   = "securityError";
 
         /**
          * Creates a copy of the SecurityErrorEvent object and sets the value of each property to match that of the original.

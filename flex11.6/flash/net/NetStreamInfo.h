@@ -14,6 +14,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -30,7 +33,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        currentBytesPerSecond();
+            float       currentBytesPerSecond();
 
             /**
              * Specifies the total number of bytes that have arrived into the queue, regardless of how many have been played or flushed.
@@ -42,7 +45,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        byteCount();
+            float       byteCount();
 
             /**
              * Specifies the maximum rate at which the NetStream buffer is filled in bytes per second. This value provides information about the capacity of the
@@ -55,7 +58,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        maxBytesPerSecond();
+            float       maxBytesPerSecond();
 
             /**
              * Specifies the rate at which the NetStream audio buffer is filled in bytes per second. The value is calculated as a smooth
@@ -66,7 +69,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        audioBytesPerSecond();
+            float       audioBytesPerSecond();
 
             /**
              * Specifies the total number of audio bytes that have arrived in the queue, regardless of how many have been played or flushed.
@@ -78,7 +81,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        audioByteCount();
+            float       audioByteCount();
 
             /**
              * Specifies the rate at which the NetStream video buffer is filled in bytes per second. The value is calculated as a smooth
@@ -89,7 +92,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        videoBytesPerSecond();
+            float       videoBytesPerSecond();
 
             /**
              * Specifies the total number of video bytes that have arrived in the queue, regardless of how many have been played or flushed.
@@ -102,7 +105,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        videoByteCount();
+            float       videoByteCount();
 
             /**
              * Specifies the rate at which the NetStream data buffer is filled in bytes per second. The value is calculated as a smooth
@@ -113,7 +116,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        dataBytesPerSecond();
+            float       dataBytesPerSecond();
 
             /**
              * Specifies the total number of bytes of data messages that have arrived in the queue, regardless of how many have been played or flushed.
@@ -126,7 +129,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        dataByteCount();
+            float       dataByteCount();
 
             /**
              * Returns the stream playback rate in bytes per second. The playback buffer can contain content of various playlists.
@@ -137,7 +140,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        playbackBytesPerSecond();
+            float       playbackBytesPerSecond();
 
             /**
              * Returns the number of video frames dropped in the current NetStream playback session.
@@ -151,7 +154,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        droppedFrames();
+            float       droppedFrames();
 
             /**
              * Provides the NetStream audio buffer size in bytes.
@@ -164,7 +167,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        audioBufferByteLength();
+            float       audioBufferByteLength();
 
             /**
              * Provides the NetStream video buffer size in bytes.
@@ -177,7 +180,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        videoBufferByteLength();
+            float       videoBufferByteLength();
 
             /**
              * Provides the NetStream data buffer size in bytes.
@@ -190,7 +193,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        dataBufferByteLength();
+            float       dataBufferByteLength();
 
             /**
              * Provides NetStream audio buffer size in seconds. This property extends the NetStream.bufferLength property
@@ -201,7 +204,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        audioBufferLength();
+            float       audioBufferLength();
 
             /**
              * Provides NetStream video buffer size in seconds. This property extends the NetStream.bufferLength property
@@ -212,7 +215,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        videoBufferLength();
+            float       videoBufferLength();
 
             /**
              * Provides NetStream data buffer size in seconds. This property extends the NetStream.bufferLength property
@@ -223,7 +226,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        dataBufferLength();
+            float       dataBufferLength();
 
             /**
              * The smoothed round trip time (SRTT) for the NetStream session, in milliseconds.
@@ -234,7 +237,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        SRTT();
+            float       SRTT();
 
             /**
              * Specifies the audio loss for the NetStream session. This value returns a valid value only for RTMFP streams and would return 0 for RTMP streams.
@@ -244,7 +247,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        audioLossRate();
+            float       audioLossRate();
 
             /**
              * Provides the NetStream video loss rate (ratio of lost messages to total messages).
@@ -258,7 +261,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        videoLossRate();
+            float       videoLossRate();
 
             /**
              * The most recent metadata object associated with the media being played.
@@ -270,7 +273,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            Object      *metaData();
+            Object       *metaData();
 
             /**
              * The most recent XMP data object associated with the media being played.
@@ -282,7 +285,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            Object      *xmpData();
+            Object       *xmpData();
 
             /**
              * The URI used when NetConnection.connect() was called. This is null for progressive download
@@ -295,7 +298,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            std::string  uri();
+            std::string       uri();
 
             /**
              * The resource name used when NetStream.play() was called. This property contains the full URL for progressive
@@ -308,7 +311,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            std::string  resourceName();
+            std::string       resourceName();
 
             /**
              * Whether the media being played is recorded or live. This property is relevant for RTMP streaming only.  For
@@ -321,10 +324,10 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            bool         isLive();
+            bool      isLive();
 
         public:
-            NetStreamInfo(float curBPS, float byteCount, float maxBPS, float audioBPS, float audioByteCount, float videoBPS, float videoByteCount, float dataBPS, float dataByteCount, float playbackBPS, float droppedFrames, float audioBufferByteLength, float videoBufferByteLength, float dataBufferByteLength, float audioBufferLength, float videoBufferLength, float dataBufferLength, float srtt, float audioLossRate, float videoLossRate, Object *metaData=NULL, Object *xmpData=NULL, std::string uri="", std::string resourceName="", bool isLive   =true);
+            NetStreamInfo(float curBPS, float byteCount, float maxBPS, float audioBPS, float audioByteCount, float videoBPS, float videoByteCount, float dataBPS, float dataByteCount, float playbackBPS, float droppedFrames, float audioBufferByteLength, float videoBufferByteLength, float dataBufferByteLength, float audioBufferLength, float videoBufferLength, float dataBufferLength, float srtt, float audioLossRate, float videoLossRate, Object *metaData=NULL, Object *xmpData=NULL, std::string uri="", std::string resourceName="", bool isLive=true);
 
             /**
              * Returns a text value listing the properties of the NetStreamInfo object.
@@ -335,7 +338,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

@@ -55,7 +55,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string GesturePhase::BEGIN="begin";
+        const std::string GesturePhase::BEGIN   = "begin";
 
         /**
          * The progress of a gesture (such as moving a finger across a touch enabled screen).
@@ -64,7 +64,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string GesturePhase::UPDATE="update";
+        const std::string GesturePhase::UPDATE   = "update";
 
         /**
          * The completion of a gesture (such as lifting a finger off a touch enabled screen).
@@ -73,7 +73,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string GesturePhase::END="end";
+        const std::string GesturePhase::END   = "end";
 
         /**
          * A single value that encompasses all phases of simple gestures like two-finger-tap or swipe. 
@@ -83,7 +83,7 @@ namespace events {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string GesturePhase::ALL="all";
+        const std::string GesturePhase::ALL   = "all";
 
         GesturePhase::GesturePhase();
 }

@@ -18,6 +18,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -32,7 +35,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        sendDataBytesPerSecond();
+            float       sendDataBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is sending control overhead messages to peers and the server, in bytes per second.
@@ -41,7 +44,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        sendControlBytesPerSecond();
+            float       sendControlBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving media data from peers, from the server, and over IP multicast, in bytes per second.
@@ -50,7 +53,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        receiveDataBytesPerSecond();
+            float       receiveDataBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving control overhead messages from peers, in bytes per second.
@@ -59,7 +62,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        receiveControlBytesPerSecond();
+            float       receiveControlBytesPerSecond();
 
             /**
              * Specifies the number of media bytes that the local node has proactively pushed to peers.
@@ -68,7 +71,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesPushedToPeers();
+            float       bytesPushedToPeers();
 
             /**
              * Specifies the number of media fragment messages that the local node has proactively pushed to peers.
@@ -77,7 +80,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsPushedToPeers();
+            float       fragmentsPushedToPeers();
 
             /**
              * Specifies the number of media bytes that the local node has sent to peers in response to requests from those peers for specific fragments.
@@ -86,7 +89,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesRequestedByPeers();
+            float       bytesRequestedByPeers();
 
             /**
              * Specifies the number of media fragment messages that the local node has sent to peers in response to requests from those peers for specific fragments.
@@ -95,7 +98,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsRequestedByPeers();
+            float       fragmentsRequestedByPeers();
 
             /**
              * Specifies the number of media bytes that were proactively pushed from peers and received by the local node.
@@ -104,7 +107,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesPushedFromPeers();
+            float       bytesPushedFromPeers();
 
             /**
              * Specifies the number of media fragment messages that were proactively pushed from peers and received by the local node.
@@ -113,7 +116,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsPushedFromPeers();
+            float       fragmentsPushedFromPeers();
 
             /**
              * Specifies the number of media bytes that the local node requested and received from peers.
@@ -122,7 +125,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesRequestedFromPeers();
+            float       bytesRequestedFromPeers();
 
             /**
              * Specifies the number of media fragment messages that the local node requested and received from peers.
@@ -131,7 +134,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsRequestedFromPeers();
+            float       fragmentsRequestedFromPeers();
 
             /**
              * Specifies the rate at which the local node is sending control overhead messages to the server, in bytes per second.
@@ -140,7 +143,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        sendControlBytesPerSecondToServer();
+            float       sendControlBytesPerSecondToServer();
 
             /**
              * Specifies the rate at which the local node is receiving media data from the server, in bytes per second.
@@ -149,7 +152,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        receiveDataBytesPerSecondFromServer();
+            float       receiveDataBytesPerSecondFromServer();
 
             /**
              * Specifies the number of media bytes that the local node has received from the server.
@@ -158,7 +161,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesReceivedFromServer();
+            float       bytesReceivedFromServer();
 
             /**
              * Specifies the number of media fragment messages that the local node has received from the server.
@@ -167,7 +170,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsReceivedFromServer();
+            float       fragmentsReceivedFromServer();
 
             /**
              * Specifies the rate at which the local node is receiving data from IP Multicast, in bytes per second.
@@ -176,7 +179,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        receiveDataBytesPerSecondFromIPMulticast();
+            float       receiveDataBytesPerSecondFromIPMulticast();
 
             /**
              * Specifies the number of media bytes that the local node has received from IP Multicast.
@@ -185,7 +188,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        bytesReceivedFromIPMulticast();
+            float       bytesReceivedFromIPMulticast();
 
             /**
              * Specifies the number of media fragment messages that the local node has received from IP Multicast.
@@ -194,7 +197,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        fragmentsReceivedFromIPMulticast();
+            float       fragmentsReceivedFromIPMulticast();
 
         public:
             NetStreamMulticastInfo(float sendDataBytesPerSecond, float sendControlBytesPerSecond, float receiveDataBytesPerSecond, float receiveControlBytesPerSecond, float bytesPushedToPeers, float fragmentsPushedToPeers, float bytesRequestedByPeers, float fragmentsRequestedByPeers, float bytesPushedFromPeers, float fragmentsPushedFromPeers, float bytesRequestedFromPeers, float fragmentsRequestedFromPeers, float sendControlBytesPerSecondToServer, float receiveDataBytesPerSecondFromServer, float bytesReceivedFromServer, float fragmentsReceivedFromServer, float receiveDataBytesPerSecondFromIPMulticast, float bytesReceivedFromIPMulticast, float fragmentsReceivedFromIPMulticast);
@@ -207,7 +210,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

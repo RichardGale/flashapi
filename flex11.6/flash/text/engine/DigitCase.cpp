@@ -23,7 +23,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitCase::DEFAULT="default";
+        const std::string DigitCase::DEFAULT   = "default";
 
         /**
          * Used to specify lining digit case.
@@ -32,7 +32,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitCase::LINING="lining";
+        const std::string DigitCase::LINING   = "lining";
 
         /**
          * Used to specify old style digit case.
@@ -41,7 +41,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string DigitCase::OLD_STYLE="oldStyle";
+        const std::string DigitCase::OLD_STYLE   = "oldStyle";
 
         DigitCase::DigitCase();
 }

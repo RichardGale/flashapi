@@ -158,7 +158,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  pixelSnapping();
+            std::string       pixelSnapping();
         public:
             void         pixelSnapping(std::string value);
 
@@ -170,7 +170,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         smoothing();
+            bool      smoothing();
         public:
             void         smoothing(bool value);
 
@@ -197,7 +197,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Bitmap(BitmapData *bitmapData=NULL, std::string pixelSnapping="auto", bool smoothing   =false);
+            Bitmap(BitmapData *bitmapData=NULL, std::string pixelSnapping="auto", bool smoothing=false);
         };
     }
 }

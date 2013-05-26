@@ -97,7 +97,7 @@ namespace flash
              * @throws  Error Error code 2143, AccessibilityImplementation.get_accRole() must be overridden from its default.
              */
         public:
-            unsigned int get_accRole(unsigned int childID);
+            unsigned int     get_accRole(unsigned int childID);
 
             /**
              * MSAA method for returning the name for the component
@@ -137,7 +137,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string get_accName(unsigned int childID);
+            std::string   get_accName(unsigned int childID);
 
             /**
              * MSAA method for returning the runtime value of the component that this
@@ -159,7 +159,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string get_accValue(unsigned int childID);
+            std::string   get_accValue(unsigned int childID);
 
             /**
              * IAccessible method for returning the current runtime state of the component that this
@@ -179,7 +179,7 @@ namespace flash
              * @throws  Error Error code 2144, AccessibilityImplementation.get_accState() must be overridden from its default.
              */
         public:
-            unsigned int get_accState(unsigned int childID);
+            unsigned int     get_accState(unsigned int childID);
 
             /**
              * MSAA method for returning the default action of the component
@@ -201,7 +201,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string get_accDefaultAction(unsigned int childID);
+            std::string   get_accDefaultAction(unsigned int childID);
 
             /**
              * An IAccessible method that performs the default action associated with the component
@@ -246,7 +246,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool     isLabeledBy(Rectangle *labelBounds);
+            bool  isLabeledBy(Rectangle *labelBounds);
 
             /**
              * Returns an array containing the unsigned integer IDs of all child elements
@@ -268,7 +268,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::vector<void *> getChildIDArray();
+            std::vector<void *>    getChildIDArray();
 
             /**
              * MSAA method for returning a DisplayObject or Rectangle
@@ -302,7 +302,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            void    *accLocation(unsigned int childID);
+            void        *accLocation(unsigned int childID);
 
             /**
              * MSAA method for returning an array containing the IDs of all child elements that are selected.
@@ -312,7 +312,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::vector<void *> get_accSelection();
+            std::vector<void *>    get_accSelection();
 
             /**
              * MSAA method for returning the unsigned integer ID of the child element, if any,
@@ -322,7 +322,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            unsigned int get_accFocus();
+            unsigned int     get_accFocus();
 
             /**
              * IAccessible method for altering the selection in the component
@@ -373,10 +373,10 @@ namespace flash
             void     accSelect(unsigned int operation, unsigned int childID);
 
         public:
-            void    *get_selectionAnchorIndex();
+            void        *get_selectionAnchorIndex();
 
         public:
-            void    *get_selectionActiveIndex();
+            void        *get_selectionActiveIndex();
         };
     }
 }

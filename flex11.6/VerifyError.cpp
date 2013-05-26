@@ -21,5 +21,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        VerifyError::VerifyError(void* message, void* id);
+        VerifyError::VerifyError(std::string message, void* id);
 

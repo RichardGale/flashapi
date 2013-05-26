@@ -42,6 +42,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class uint : public Object
 {
@@ -75,7 +78,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string toString(void *radix=10);
+    std::string   toString(void *radix=10);
 
     /**
      * Creates a new uint object. You can create a variable of uint type and assign it a literal value. The new uint() constructor is primarily used
@@ -100,7 +103,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    unsigned int valueOf();
+    unsigned int     valueOf();
 
     /**
      * Returns a string representation of the number in exponential notation. The string contains
@@ -113,7 +116,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toExponential(void *p=0);
+    std::string   toExponential(void *p=0);
 
     /**
      * Returns a string representation of the number either in exponential notation or in
@@ -126,7 +129,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the precision argument is outside the range 1 to 21.
      */
-    std::string toPrecision(void *p=0);
+    std::string   toPrecision(void *p=0);
 
     /**
      * Returns a string representation of the number in fixed-point notation.
@@ -141,7 +144,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toFixed(void *p=0);
+    std::string   toFixed(void *p=0);
 };
 
 #endif // FLEX11_6_UINT_AS

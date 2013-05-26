@@ -96,7 +96,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            bool         isLocal();
+            bool      isLocal();
         public:
             void         isLocal(bool value);
 
@@ -124,7 +124,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMStatusEvent(std::string type="drmStatus", bool bubbles   =false, bool cancelable   =false, DRMContentData *inMetadata=NULL, DRMVoucher *inVoucher=NULL, bool inLocal   =false);
+            DRMStatusEvent(std::string type="drmStatus", bool bubbles=false, bool cancelable=false, DRMContentData *inMetadata=NULL, DRMVoucher *inVoucher=NULL, bool inLocal=false);
 
             /**
              * Returns a string that contains all the properties of the DRMStatusEvent object.
@@ -132,7 +132,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

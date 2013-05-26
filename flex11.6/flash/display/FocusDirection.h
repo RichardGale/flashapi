@@ -11,6 +11,9 @@
  * @playerversion   AIR 1.0
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

@@ -22,5 +22,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        DefinitionError::DefinitionError(void* message, void* id);
+        DefinitionError::DefinitionError(std::string message, void* id);
 

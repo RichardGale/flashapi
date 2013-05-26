@@ -19,14 +19,14 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 10.1
          */
-        const std::string SystemUpdaterType::SYSTEM="system";
+        const std::string SystemUpdaterType::SYSTEM   = "system";
 
         /**
          * Updates the DRM module.
          * @langversion 3.0
          * @playerversion   Flash 10.1
          */
-        const std::string SystemUpdaterType::DRM="drm";
+        const std::string SystemUpdaterType::DRM   = "drm";
 
         SystemUpdaterType::SystemUpdaterType();
 }

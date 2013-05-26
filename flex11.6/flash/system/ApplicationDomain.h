@@ -319,7 +319,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static unsigned int MIN_DOMAIN_MEMORY_LENGTH();
+            static unsigned int         MIN_DOMAIN_MEMORY_LENGTH();
 
             /**
              * Gets the parent domain of this application domain.
@@ -367,7 +367,7 @@ namespace flash
              *   specified name.
              */
         public:
-            Object  *getDefinition(std::string name);
+            Object   *getDefinition(std::string name);
 
             /**
              * Checks to see if a public definition exists within the specified application domain.
@@ -379,7 +379,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hasDefinition(std::string name);
+            bool  hasDefinition(std::string name);
 
         public:
             std::vector<std::string> getQualifiedDefinitionNames();

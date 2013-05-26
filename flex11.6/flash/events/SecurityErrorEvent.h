@@ -107,7 +107,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SecurityErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", int id=0);
+            SecurityErrorEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string text="", int id=0);
 
             /**
              * Returns a string that contains all the properties of the SecurityErrorEvent object. The string is in the following format:
@@ -119,7 +119,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace automation
@@ -16,7 +20,7 @@ namespace flash
             static const std::string KEY_UP;
 
         public:
-            unsigned int keyCode();
+            unsigned int         keyCode();
         public:
             void         keyCode(unsigned int value);
 

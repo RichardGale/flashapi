@@ -138,7 +138,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static std::vector<void *> names();
+            static std::vector<void *>        names();
 
             /**
              * The isSupported property is set to true if the
@@ -149,7 +149,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * The amount of motion the camera is detecting. Values range from 0 (no motion is being detected) to
@@ -163,7 +163,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        activityLevel();
+            float       activityLevel();
 
             /**
              * The maximum amount of bandwidth the current outgoing video feed can use, in bytes.
@@ -184,7 +184,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        currentFPS();
+            float       currentFPS();
 
             /**
              * The maximum rate at which the camera can capture data, in frames per second.
@@ -194,7 +194,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        fps();
+            float       fps();
 
             /**
              * The current capture height, in pixels. To set a value for this property,
@@ -242,7 +242,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         loopback();
+            bool      loopback();
 
             /**
              * The amount of motion required to invoke the activity event. Acceptable values range from 0 to 100.
@@ -274,7 +274,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         muted();
+            bool      muted();
 
             /**
              * The name of the current camera, as returned by the camera hardware.
@@ -282,10 +282,10 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  name();
+            std::string       name();
 
         public:
-            std::string  position();
+            std::string       position();
 
             /**
              * The required level of picture quality, as determined by the amount of compression being applied to each video
@@ -423,7 +423,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     setLoopback(bool compress   =false);
+            void     setLoopback(bool compress=false);
 
             /**
              * Sets the camera capture mode to the native mode that best meets the specified requirements.
@@ -457,7 +457,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     setMode(int width, int height, float fps, bool favorArea   =true);
+            void     setMode(int width, int height, float fps, bool favorArea=true);
 
             /**
              * Specifies how much motion is required to dispatch the activity event.

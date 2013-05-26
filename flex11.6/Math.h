@@ -27,6 +27,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Math : public Object
 {
@@ -128,7 +131,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    abs(float val);
+    static float   abs(float val);
 
     /**
      * Computes and returns the arc cosine of the number specified in the
@@ -140,7 +143,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    acos(float val);
+    static float   acos(float val);
 
     /**
      * Computes and returns the arc sine for the number specified in the
@@ -153,7 +156,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    asin(float val);
+    static float   asin(float val);
 
     /**
      * Computes and returns the value, in radians, of the angle whose tangent is
@@ -167,7 +170,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    atan(float val);
+    static float   atan(float val);
 
     /**
      * Returns the ceiling of the specified number or expression. The ceiling of a
@@ -180,7 +183,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    ceil(float val);
+    static float   ceil(float val);
 
     /**
      * Computes and returns the cosine of the specified angle in radians. To
@@ -192,7 +195,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    cos(float angleRadians);
+    static float   cos(float angleRadians);
 
     /**
      * Returns the value of the base of the natural logarithm (e), to the
@@ -205,7 +208,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    exp(float val);
+    static float   exp(float val);
 
     /**
      * Returns the floor of the number or expression specified in the parameter
@@ -219,7 +222,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    floor(float val);
+    static float   floor(float val);
 
     /**
      * Returns the natural logarithm of the parameter val.
@@ -230,7 +233,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    log(float val);
+    static float   log(float val);
 
     /**
      * Rounds the value of the parameter val up or down to the nearest
@@ -244,7 +247,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    round(float val);
+    static float   round(float val);
 
     /**
      * Computes and returns the sine of the specified angle in radians. To
@@ -256,7 +259,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    sin(float angleRadians);
+    static float   sin(float angleRadians);
 
     /**
      * Computes and returns the square root of the specified number.
@@ -267,7 +270,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    sqrt(float val);
+    static float   sqrt(float val);
 
     /**
      * Computes and returns the tangent of the specified angle. To calculate a
@@ -279,7 +282,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    tan(float angleRadians);
+    static float   tan(float angleRadians);
 
     /**
      * Computes and returns the angle of the point y/x in
@@ -294,7 +297,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    atan2(float y, float x);
+    static float   atan2(float y, float x);
 
     /**
      * Computes and returns base to the power of pow.
@@ -306,7 +309,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    pow(float base, float pow);
+    static float   pow(float base, float pow);
 
     /**
      * Evaluates val1 and val2 (or more values) and returns the largest value.
@@ -319,7 +322,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    max(float val1 =-Number::Infinity, float val2 =-Number::Infinity, ...);
+    static float   max(float val1=-Number::Infinity, float val2=-Number::Infinity, ...);
 
     /**
      * Evaluates val1 and val2 (or more values) and returns the smallest value.
@@ -332,7 +335,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    min(float val1 =Number::Infinity, float val2 =Number::Infinity, ...);
+    static float   min(float val1=Number::Infinity, float val2=Number::Infinity, ...);
 
     /**
      * Returns a pseudo-random number n, where 0 <= n < 1. The number returned is calculated in an undisclosed manner, and is "pseudo-random" because the calculation inevitably contains some element of non-randomness.
@@ -342,7 +345,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    random();
+    static float   random();
 };
 
 #endif // FLEX11_6_MATH_AS

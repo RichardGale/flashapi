@@ -275,7 +275,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                bool         hasGraphicElement();
+                bool      hasGraphicElement();
 
                 /**
                  * Indicates whether the text line contains any tabs.
@@ -283,7 +283,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                bool         hasTabs();
+                bool      hasTabs();
 
                 /**
                  * The next TextLine in the TextBlock, or null if the current line is the last line in the block
@@ -316,7 +316,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        ascent();
+                float       ascent();
 
                 /**
                  * Specifies the number of pixels from the baseline to the bottom of the lowest-descending characters in the line. For a TextLine that
@@ -327,7 +327,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        descent();
+                float       descent();
 
                 /**
                  * The logical height of the text line, which is equal to ascent + descent.
@@ -342,7 +342,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        textHeight();
+                float       textHeight();
 
                 /**
                  * The logical width of the text line, which is the width that the text engine uses to lay out the line. Access the inherited
@@ -353,7 +353,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        textWidth();
+                float       textWidth();
 
                 /**
                  * Specifies the number of pixels from the baseline to the top of the tallest character or graphic in the line.
@@ -361,7 +361,7 @@ namespace flash
                  * @playerversion   Flash 10.2
                  */
             public:
-                float        totalAscent();
+                float       totalAscent();
 
                 /**
                  * Specifies the number of pixels from the baseline to the bottom of the lowest-descending character or graphic in the line.
@@ -369,7 +369,7 @@ namespace flash
                  * @playerversion   Flash 10.2
                  */
             public:
-                float        totalDescent();
+                float       totalDescent();
 
                 /**
                  * The total logical height of the text line, which is equal to totalAscent + totalDescent.
@@ -377,7 +377,7 @@ namespace flash
                  * @playerversion   Flash 10.2
                  */
             public:
-                float        totalHeight();
+                float       totalHeight();
 
                 /**
                  * The index of the first character of the line in the raw text of the text block.
@@ -410,7 +410,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        specifiedWidth();
+                float       specifiedWidth();
 
                 /**
                  * The width of the line if it was not justified. For unjustified text, this value is the same as textWidth. For
@@ -423,7 +423,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                float        unjustifiedTextWidth();
+                float       unjustifiedTextWidth();
 
                 /**
                  * Specifies the current validity of the text line.
@@ -450,7 +450,7 @@ namespace flash
                  * @throws  ArgumentError If new value is TextLineValidity.POSSIBLY_INVALID.
                  */
             public:
-                std::string  validity();
+                std::string       validity();
             public:
                 void         validity(std::string value);
 
@@ -600,7 +600,7 @@ namespace flash
                  * @throws  IllegalOperationError The validity of the line is TextLineValidity.STATIC.
                  */
             public:
-                std::string getAtomTextRotation(int atomIndex);
+                std::string   getAtomTextRotation(int atomIndex);
 
                 /**
                  * Gets the text block begin index of the atom at the specified index.
@@ -645,7 +645,7 @@ namespace flash
                  * @throws  IllegalOperationError The validity of the line is TextLineValidity.STATIC.
                  */
             public:
-                float    getAtomCenter(int atomIndex);
+                float   getAtomCenter(int atomIndex);
 
                 /**
                  * Indicates whether a word boundary occurs to the left of the atom at the specified index.
@@ -661,7 +661,7 @@ namespace flash
                  * @throws  IllegalOperationError The validity of the line is TextLineValidity.STATIC.
                  */
             public:
-                bool     getAtomWordBoundaryOnLeft(int atomIndex);
+                bool  getAtomWordBoundaryOnLeft(int atomIndex);
 
                 /**
                  * Gets the graphic of the atom at the specified index, or null if the atom is a character.
@@ -689,7 +689,7 @@ namespace flash
                  * @throws  ArgumentError If the baseline specified is not a member of TextBaseline.
                  */
             public:
-                float    getBaselinePosition(std::string baseline);
+                float   getBaselinePosition(std::string baseline);
 
                 /**
                  * Dumps the underlying contents of the TextLine as an XML string.
@@ -724,7 +724,7 @@ namespace flash
                  * @playerversion   AIR 1.5
                  */
             public:
-                std::string dump();
+                std::string   dump();
             };
         }
     }

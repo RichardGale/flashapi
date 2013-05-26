@@ -20,7 +20,7 @@ namespace drm {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string LoadVoucherSetting::FORCE_REFRESH="forceRefresh";
+        const std::string LoadVoucherSetting::FORCE_REFRESH   = "forceRefresh";
 
         /**
          * Loads the voucher from the local cache only. Does not download the voucher from a media rights server.
@@ -28,7 +28,7 @@ namespace drm {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string LoadVoucherSetting::LOCAL_ONLY="localOnly";
+        const std::string LoadVoucherSetting::LOCAL_ONLY   = "localOnly";
 
         /**
          * Loads the voucher from the local cache, if possible; downloads the voucher from a media rights server 
@@ -37,7 +37,7 @@ namespace drm {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string LoadVoucherSetting::ALLOW_SERVER="allowServer";
+        const std::string LoadVoucherSetting::ALLOW_SERVER   = "allowServer";
 
         LoadVoucherSetting::LoadVoucherSetting();
 }

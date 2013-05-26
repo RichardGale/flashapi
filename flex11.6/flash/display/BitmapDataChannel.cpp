@@ -25,7 +25,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int BitmapDataChannel::RED=1;
+        const unsigned int BitmapDataChannel::RED   = 1;
 
         /**
          * The green channel.
@@ -33,7 +33,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int BitmapDataChannel::GREEN=2;
+        const unsigned int BitmapDataChannel::GREEN   = 2;
 
         /**
          * The blue channel.
@@ -41,7 +41,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int BitmapDataChannel::BLUE=4;
+        const unsigned int BitmapDataChannel::BLUE   = 4;
 
         /**
          * The alpha channel.
@@ -49,7 +49,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int BitmapDataChannel::ALPHA=8;
+        const unsigned int BitmapDataChannel::ALPHA   = 8;
 
         BitmapDataChannel::BitmapDataChannel();
 }

@@ -17,7 +17,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string TextColorType::DARK_COLOR="dark";
+        const std::string TextColorType::DARK_COLOR   = "dark";
 
         /**
          * Used in the colorType parameter in the setAdvancedAntiAliasingTable() method.
@@ -25,7 +25,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string TextColorType::LIGHT_COLOR="light";
+        const std::string TextColorType::LIGHT_COLOR   = "light";
 
         TextColorType::TextColorType();
 }

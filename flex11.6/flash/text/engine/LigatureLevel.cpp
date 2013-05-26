@@ -25,7 +25,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LigatureLevel::NONE="none";
+        const std::string LigatureLevel::NONE   = "none";
 
         /**
          * Used to specify minimum ligatures.
@@ -34,7 +34,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LigatureLevel::MINIMUM="minimum";
+        const std::string LigatureLevel::MINIMUM   = "minimum";
 
         /**
          * Used to specify common ligatures.
@@ -43,7 +43,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LigatureLevel::COMMON="common";
+        const std::string LigatureLevel::COMMON   = "common";
 
         /**
          * Used to specify uncommon ligatures.
@@ -52,7 +52,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LigatureLevel::UNCOMMON="uncommon";
+        const std::string LigatureLevel::UNCOMMON   = "uncommon";
 
         /**
          * Used to specify exotic ligatures.
@@ -61,7 +61,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string LigatureLevel::EXOTIC="exotic";
+        const std::string LigatureLevel::EXOTIC   = "exotic";
 
         LigatureLevel::LigatureLevel();
 }

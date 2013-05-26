@@ -215,7 +215,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         connected();
+            bool      connected();
 
             /**
              * Establishes a connection to the specified Internet host using the specified TCP port.

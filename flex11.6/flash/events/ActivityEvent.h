@@ -67,7 +67,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         activating();
+            bool      activating();
         public:
             void         activating(bool value);
 
@@ -89,7 +89,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ActivityEvent(std::string type, bool bubbles   =false, bool cancelable   =false, bool activating   =false);
+            ActivityEvent(std::string type, bool bubbles=false, bool cancelable=false, bool activating=false);
 
             /**
              * Creates a copy of an ActivityEvent object and sets the value of each property to match that of
@@ -111,7 +111,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

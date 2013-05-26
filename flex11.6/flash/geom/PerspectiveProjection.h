@@ -77,7 +77,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        fieldOfView();
+            float       fieldOfView();
         public:
             void         fieldOfView(float fieldOfViewAngleInDegrees);
 
@@ -107,7 +107,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        focalLength();
+            float       focalLength();
         public:
             void         focalLength(float value);
 

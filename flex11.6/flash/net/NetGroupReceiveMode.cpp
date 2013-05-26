@@ -27,7 +27,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupReceiveMode::EXACT="exact";
+        const std::string NetGroupReceiveMode::EXACT   = "exact";
 
         /**
          * Specifies that this node accepts local messages from neighbors that send messages to group
@@ -37,7 +37,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupReceiveMode::NEAREST="nearest";
+        const std::string NetGroupReceiveMode::NEAREST   = "nearest";
 
         NetGroupReceiveMode::NetGroupReceiveMode();
 }

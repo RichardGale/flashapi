@@ -51,5 +51,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        SecurityError::SecurityError(void* message, void* id);
+        SecurityError::SecurityError(std::string message, void* id);
 

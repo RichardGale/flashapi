@@ -18,7 +18,7 @@ namespace events {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string UncaughtErrorEvent::UNCAUGHT_ERROR="uncaughtError";
+        const std::string UncaughtErrorEvent::UNCAUGHT_ERROR   = "uncaughtError";
 
         /**
          * The error object associated with the uncaught error. Typically, this 

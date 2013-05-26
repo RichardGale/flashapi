@@ -21,6 +21,9 @@
  * @playerversion   AIR (unsupported)
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -45,7 +48,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            std::string  availability();
+            std::string       availability();
 
             /**
              * Constructor.
@@ -58,7 +61,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            StageVideoAvailabilityEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string availability="");
+            StageVideoAvailabilityEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string availability="");
         };
     }
 }

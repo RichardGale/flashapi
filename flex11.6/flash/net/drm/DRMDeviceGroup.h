@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace net
@@ -13,13 +17,13 @@ namespace flash
             class DRMDeviceGroup : public Object
             {
             public:
-                std::string  serverURL();
+                std::string       serverURL();
 
             public:
-                std::string  authenticationMethod();
+                std::string       authenticationMethod();
 
             public:
-                std::string  domain();
+                std::string       domain();
 
             public:
                 DRMDeviceGroup();

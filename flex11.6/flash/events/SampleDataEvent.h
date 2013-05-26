@@ -102,7 +102,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        position();
+            float       position();
         public:
             void         position(float theposition);
 
@@ -140,7 +140,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            SampleDataEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float theposition =0, ByteArray *thedata=NULL);
+            SampleDataEvent(std::string type, bool bubbles=false, bool cancelable=false, float theposition=0, ByteArray *thedata=NULL);
 
             /**
              * Returns a string that contains all the properties of the SampleDataEvent object. The string is in the following format:
@@ -151,7 +151,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

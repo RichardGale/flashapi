@@ -133,7 +133,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * The status of the server's certificate.
@@ -149,7 +149,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  serverCertificateStatus();
+            std::string       serverCertificateStatus();
 
         public:
             X509Certificate *serverCertificate();

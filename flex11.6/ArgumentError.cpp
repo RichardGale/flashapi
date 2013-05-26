@@ -54,5 +54,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        ArgumentError::ArgumentError(void* message, void* id);
+        ArgumentError::ArgumentError(std::string message, void* id);
 

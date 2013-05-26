@@ -300,7 +300,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * A string representing the domain of the location of the current file.
@@ -321,7 +321,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  domain();
+            std::string       domain();
 
             /**
              * Indicates the object on which callback methods are invoked. The default object
@@ -334,12 +334,12 @@ namespace flash
              * @throws  TypeError The client property must be set to a non-null object.
              */
         public:
-            Object      *client();
+            Object       *client();
         public:
             void         client(Object *client);
 
         public:
-            bool         isPerUser();
+            bool      isPerUser();
         public:
             void         isPerUser(bool newValue);
 

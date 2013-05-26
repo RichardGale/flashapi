@@ -1,4 +1,3 @@
-#if 0
 #if !defined(FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS)
 #define FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS
 #if defined(__cplusplus)
@@ -14,6 +13,9 @@
  * @playerversion   AIR 1.5
  * @playerversion   Lite 4
  */
+
+#include "flex11.6.h"
+
 
 
 namespace flash
@@ -144,5 +146,4 @@ namespace flash
 
 #endif // FLEX11_6_FLASH_NET_NETSTREAMPLAYTRANSITIONS_AS
 #endif // __cplusplus
-#endif
 

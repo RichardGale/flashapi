@@ -147,7 +147,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static std::vector<void *> names();
+            static std::vector<void *>        names();
 
             /**
              * The isSupported property is set to true if the
@@ -158,7 +158,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
             void         gain(float gain);
@@ -193,7 +193,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  codec();
+            std::string       codec();
 
             /**
              * Number of Speex speech frames transmitted in a packet (message).
@@ -244,7 +244,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         enableVAD();
+            bool      enableVAD();
         public:
             void         enableVAD(bool enable);
 
@@ -258,7 +258,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        activityLevel();
+            float       activityLevel();
 
             /**
              * The amount by which the microphone boosts the signal. Valid values are 0 to 100. The default value is 50.
@@ -266,7 +266,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        gain();
+            float       gain();
 
             /**
              * The index of the microphone, as reflected in the array returned by
@@ -286,7 +286,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         muted();
+            bool      muted();
 
             /**
              * The name of the current sound capture device, as returned by the sound capture hardware.
@@ -294,7 +294,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  name();
+            std::string       name();
 
             /**
              * The amount of sound required to activate the microphone and dispatch
@@ -303,7 +303,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        silenceLevel();
+            float       silenceLevel();
 
             /**
              * The number of milliseconds between the time the microphone stops
@@ -324,7 +324,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         useEchoSuppression();
+            bool      useEchoSuppression();
 
             /**
              * Controls the sound of this microphone object when it is in loopback mode.
@@ -490,7 +490,7 @@ namespace flash
              * @internal    Document this better with examples.
              */
         public:
-            void     setLoopBack(bool state   =true);
+            void     setLoopBack(bool state=true);
         };
     }
 }

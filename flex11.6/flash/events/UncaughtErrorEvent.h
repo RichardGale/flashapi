@@ -303,7 +303,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            void        *error();
+            void            *error();
 
             /**
              * Creates a copy of the UncaughtErrorEvent object and sets the value of
@@ -325,7 +325,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Creates an UncaughtErrorEvent object that contains information about an
@@ -339,7 +339,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            UncaughtErrorEvent(std::string type="uncaughtError", bool bubbles   =true, bool cancelable   =true, void *error_in=NULL);
+            UncaughtErrorEvent(std::string type="uncaughtError", bool bubbles=true, bool cancelable=true, void *error_in=NULL);
         };
     }
 }

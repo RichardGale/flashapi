@@ -32,7 +32,7 @@ namespace flash
             static flash::system::SecurityDomain *currentDomain();
 
         public:
-            std::string  domainID();
+            std::string       domainID();
 
         public:
             SecurityDomain();

@@ -126,7 +126,7 @@ namespace flash
                  * @playerversion   AIR 2
                  */
             public:
-                static bool         isSupported();
+                static bool      isSupported();
 
             public:
                 DRMManager();

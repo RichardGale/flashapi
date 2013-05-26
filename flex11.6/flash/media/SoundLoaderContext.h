@@ -22,6 +22,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -122,7 +125,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            SoundLoaderContext(float bufferTime =1000, bool checkPolicyFile   =false);
+            SoundLoaderContext(float bufferTime=1000, bool checkPolicyFile=false);
         };
     }
 }

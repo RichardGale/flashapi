@@ -67,6 +67,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Date : public Object
 {
@@ -74,88 +77,88 @@ public:
     static const int length;
 
 public:
-    float        fullYear();
+    float       fullYear();
 public:
     void         fullYear(float value);
 
 public:
-    float        month();
+    float       month();
 public:
     void         month(float value);
 
 public:
-    float        date();
+    float       date();
 public:
     void         date(float value);
 
 public:
-    float        hours();
+    float       hours();
 public:
     void         hours(float value);
 
 public:
-    float        minutes();
+    float       minutes();
 public:
     void         minutes(float value);
 
 public:
-    float        seconds();
+    float       seconds();
 public:
     void         seconds(float value);
 
 public:
-    float        milliseconds();
+    float       milliseconds();
 public:
     void         milliseconds(float value);
 
 public:
-    float        fullYearUTC();
+    float       fullYearUTC();
 public:
     void         fullYearUTC(float value);
 
 public:
-    float        monthUTC();
+    float       monthUTC();
 public:
     void         monthUTC(float value);
 
 public:
-    float        dateUTC();
+    float       dateUTC();
 public:
     void         dateUTC(float value);
 
 public:
-    float        hoursUTC();
+    float       hoursUTC();
 public:
     void         hoursUTC(float value);
 
 public:
-    float        minutesUTC();
+    float       minutesUTC();
 public:
     void         minutesUTC(float value);
 
 public:
-    float        secondsUTC();
+    float       secondsUTC();
 public:
     void         secondsUTC(float value);
 
 public:
-    float        millisecondsUTC();
+    float       millisecondsUTC();
 public:
     void         millisecondsUTC(float value);
 
 public:
-    float        time();
+    float       time();
 public:
     void         time(float value);
 
 public:
-    float        timezoneOffset();
+    float       timezoneOffset();
 
 public:
-    float        day();
+    float       day();
 
 public:
-    float        dayUTC();
+    float       dayUTC();
 
     /**
      * Constructs a new Date object that holds the specified date and time.
@@ -211,7 +214,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    parse(void *s);
+    static float   parse(void *s);
 
     /**
      * Returns the number of milliseconds between midnight on January 1, 1970, universal time,
@@ -235,7 +238,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    static float    UTC(void *year, void *month, void *date=1, void *hours=0, void *minutes=0, void *seconds=0, void *ms=0, ...);
+    static float   UTC(void *year, void *month, void *date=1, void *hours=0, void *minutes=0, void *seconds=0, void *ms=0, ...);
 
     /**
      * Returns the number of milliseconds since midnight January 1, 1970, universal time,
@@ -246,7 +249,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    valueOf();
+    float   valueOf();
 
     /**
      * Sets the date in milliseconds since midnight on January 1, 1970, and returns the new
@@ -258,7 +261,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setTime(void *t=NULL);
+    float   setTime(void *t=NULL);
 
     /**
      * Returns a String representation of the day, date, time, and timezone.
@@ -273,7 +276,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toString();
+    std::string   toString();
 
     /**
      * Returns a string representation of the day and date only, and does not include the time or timezone.
@@ -285,7 +288,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toDateString();
+    std::string   toDateString();
 
     /**
      * Returns a String representation of the time and timezone only, and does not include the day and date.
@@ -296,7 +299,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toTimeString();
+    std::string   toTimeString();
 
     /**
      * Returns a String representation of the day, date, time, given in local time.
@@ -308,7 +311,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toLocaleString();
+    std::string   toLocaleString();
 
     /**
      * Returns a String representation of the day and date only, and does not include the time or timezone.
@@ -322,7 +325,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toLocaleDateString();
+    std::string   toLocaleDateString();
 
     /**
      * Returns a String representation of the time only, and does not include the day, date, year, or timezone.
@@ -333,7 +336,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toLocaleTimeString();
+    std::string   toLocaleTimeString();
 
     /**
      * Returns a String representation of the day, date, and time in universal time (UTC).
@@ -344,7 +347,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string toUTCString();
+    std::string   toUTCString();
 
     /**
      * Returns the four-digit year of a Date object according to universal time (UTC).
@@ -354,7 +357,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCFullYear();
+    float   getUTCFullYear();
 
     /**
      * Returns the month (0 [January] to 11 [December]) portion of a Date object
@@ -365,7 +368,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCMonth();
+    float   getUTCMonth();
 
     /**
      * Returns the day of the month (an integer from 1 to 31) of a Date object,
@@ -376,7 +379,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCDate();
+    float   getUTCDate();
 
     /**
      * Returns the day of the week (0 for Sunday, 1 for Monday, and so on) of this Date
@@ -387,7 +390,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCDay();
+    float   getUTCDay();
 
     /**
      * Returns the hour (an integer from 0 to 23) of the day of a Date object
@@ -398,7 +401,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCHours();
+    float   getUTCHours();
 
     /**
      * Returns the minutes (an integer from 0 to 59) portion of a Date object
@@ -409,7 +412,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCMinutes();
+    float   getUTCMinutes();
 
     /**
      * Returns the seconds (an integer from 0 to 59) portion of a Date object
@@ -420,7 +423,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCSeconds();
+    float   getUTCSeconds();
 
     /**
      * Returns the milliseconds (an integer from 0 to 999) portion of a Date object
@@ -431,7 +434,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getUTCMilliseconds();
+    float   getUTCMilliseconds();
 
     /**
      * Returns the full year (a four-digit number, such as 2000) of a Date object
@@ -443,7 +446,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getFullYear();
+    float   getFullYear();
 
     /**
      * Returns the month (0 for January, 1 for February, and so on) portion of this
@@ -455,7 +458,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getMonth();
+    float   getMonth();
 
     /**
      * Returns the day of the month (an integer from 1 to 31) specified by a Date object
@@ -467,7 +470,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getDate();
+    float   getDate();
 
     /**
      * Returns the day of the week (0 for Sunday, 1 for Monday, and so on) specified by this
@@ -480,7 +483,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getDay();
+    float   getDay();
 
     /**
      * Returns the hour (an integer from 0 to 23) of the day portion of a Date object
@@ -492,7 +495,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getHours();
+    float   getHours();
 
     /**
      * Returns the minutes (an integer from 0 to 59) portion of a Date object
@@ -504,7 +507,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getMinutes();
+    float   getMinutes();
 
     /**
      * Returns the seconds (an integer from 0 to 59) portion of a Date object
@@ -516,7 +519,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getSeconds();
+    float   getSeconds();
 
     /**
      * Returns the milliseconds (an integer from 0 to 999) portion of a Date object
@@ -528,7 +531,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getMilliseconds();
+    float   getMilliseconds();
 
     /**
      * Returns the difference, in minutes, between universal
@@ -540,7 +543,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getTimezoneOffset();
+    float   getTimezoneOffset();
 
     /**
      * Returns the number of milliseconds since midnight January 1, 1970, universal time,
@@ -552,7 +555,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    getTime();
+    float   getTime();
 
     /**
      * Sets the year, according to local time, and returns the new time in milliseconds. If
@@ -573,7 +576,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setFullYear(void *year=NULL, void *month=NULL, void *date=NULL);
+    float   setFullYear(void *year=NULL, void *month=NULL, void *date=NULL);
 
     /**
      * Sets the month and optionally the day of the month, according to local time, and
@@ -587,7 +590,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setMonth(void *month=NULL, void *date=NULL);
+    float   setMonth(void *month=NULL, void *date=NULL);
 
     /**
      * Sets the day of the month, according to local time, and returns the new time in
@@ -600,7 +603,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setDate(void *date=NULL);
+    float   setDate(void *date=NULL);
 
     /**
      * Sets the hour, according to local time, and returns the new time in milliseconds.
@@ -615,7 +618,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setHours(void *hour=NULL, void *min=NULL, void *sec=NULL, void *ms=NULL);
+    float   setHours(void *hour=NULL, void *min=NULL, void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the minutes, according to local time, and returns the new time in milliseconds.
@@ -629,7 +632,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setMinutes(void *min=NULL, void *sec=NULL, void *ms=NULL);
+    float   setMinutes(void *min=NULL, void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the seconds, according to local time, and returns the new time in milliseconds.
@@ -642,7 +645,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setSeconds(void *sec=NULL, void *ms=NULL);
+    float   setSeconds(void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the milliseconds, according to local time, and returns the new time in
@@ -655,7 +658,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setMilliseconds(void *ms=NULL);
+    float   setMilliseconds(void *ms=NULL);
 
     /**
      * Sets the year, in universal time (UTC), and returns the new time in milliseconds.
@@ -674,7 +677,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCFullYear(void *year=NULL, void *month=NULL, void *date=NULL);
+    float   setUTCFullYear(void *year=NULL, void *month=NULL, void *date=NULL);
 
     /**
      * Sets the month, and optionally the day, in universal time(UTC) and returns the new
@@ -689,7 +692,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCMonth(void *month=NULL, void *date=NULL);
+    float   setUTCMonth(void *month=NULL, void *date=NULL);
 
     /**
      * Sets the day of the month, in universal time (UTC), and returns the new time in
@@ -703,7 +706,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCDate(void *date=NULL);
+    float   setUTCDate(void *date=NULL);
 
     /**
      * Sets the hour, in universal time (UTC), and returns the new time in milliseconds.
@@ -718,7 +721,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCHours(void *hour=NULL, void *min=NULL, void *sec=NULL, void *ms=NULL);
+    float   setUTCHours(void *hour=NULL, void *min=NULL, void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the minutes, in universal time (UTC), and returns the new time in milliseconds.
@@ -732,7 +735,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCMinutes(void *min=NULL, void *sec=NULL, void *ms=NULL);
+    float   setUTCMinutes(void *min=NULL, void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the seconds, and optionally the milliseconds, in universal time (UTC) and
@@ -745,7 +748,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCSeconds(void *sec=NULL, void *ms=NULL);
+    float   setUTCSeconds(void *sec=NULL, void *ms=NULL);
 
     /**
      * Sets the milliseconds, in universal time (UTC), and returns the new time in milliseconds.
@@ -756,7 +759,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    setUTCMilliseconds(void *ms=NULL);
+    float   setUTCMilliseconds(void *ms=NULL);
 };
 
 #endif // FLEX11_6_DATE_AS

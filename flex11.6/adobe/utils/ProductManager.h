@@ -15,25 +15,25 @@ namespace adobe
         class ProductManager : public flash::events::EventDispatcher
         {
         public:
-            bool         running();
+            bool      running();
 
         public:
-            bool         installed();
+            bool      installed();
 
         public:
-            std::string  installedVersion();
+            std::string       installedVersion();
 
         public:
-            ProductManager(std::string name="", bool shared   =false);
+            ProductManager(std::string name="", bool shared=false);
 
         public:
-            bool     launch(std::string parameters="");
+            bool  launch(std::string parameters="");
 
         public:
-            bool     download(std::string caption="", std::string fileName="", std::vector<void *> pathElements=std::vector<void *>());
+            bool  download(std::string caption="", std::string fileName="", std::vector<void *> pathElements=std::vector<void *>());
 
         public:
-            bool     doSelfUpgrade(std::string os);
+            bool  doSelfUpgrade(std::string os);
         };
     }
 }

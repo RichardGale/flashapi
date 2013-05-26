@@ -20,7 +20,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string AntiAliasType::NORMAL="normal";
+        const std::string AntiAliasType::NORMAL   = "normal";
 
         /**
          * Sets anti-aliasing to advanced anti-aliasing. Advanced anti-aliasing 
@@ -33,7 +33,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string AntiAliasType::ADVANCED="advanced";
+        const std::string AntiAliasType::ADVANCED   = "advanced";
 
         AntiAliasType::AntiAliasType();
 }

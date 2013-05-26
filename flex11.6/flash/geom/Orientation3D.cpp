@@ -29,7 +29,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string Orientation3D::EULER_ANGLES="eulerAngles";
+        const std::string Orientation3D::EULER_ANGLES   = "eulerAngles";
 
         /**
          * The axis angle orientation uses a combination of an axis and an angle to determine the orientation. 
@@ -48,7 +48,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string Orientation3D::AXIS_ANGLE="axisAngle";
+        const std::string Orientation3D::AXIS_ANGLE   = "axisAngle";
 
         /**
          * The quaternion orientation uses complex numbers. An orientation in quaternion is by the three axes of 
@@ -61,7 +61,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string Orientation3D::QUATERNION="quaternion";
+        const std::string Orientation3D::QUATERNION   = "quaternion";
 
         Orientation3D::Orientation3D();
 }

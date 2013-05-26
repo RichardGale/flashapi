@@ -14,10 +14,10 @@ namespace flash {
 namespace desktop {
 
 
-        const std::string ClipboardFormats::FLASH_PREFIX;
-        const std::string ClipboardFormats::AIR_PREFIX;
-        const std::string ClipboardFormats::REFERENCE_PREFIX;
-        const std::string ClipboardFormats::SERIALIZATION_PREFIX;
+        const std::string ClipboardFormats::FLASH_PREFIX  ;
+        const std::string ClipboardFormats::AIR_PREFIX  ;
+        const std::string ClipboardFormats::REFERENCE_PREFIX  ;
+        const std::string ClipboardFormats::SERIALIZATION_PREFIX  ;
 
         /**
          * String data.
@@ -25,7 +25,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardFormats::TEXT_FORMAT="air:text";
+        const std::string ClipboardFormats::TEXT_FORMAT   = "air:text";
 
         /**
          * HTML data.
@@ -33,7 +33,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.0
          */
-        const std::string ClipboardFormats::HTML_FORMAT="air:html";
+        const std::string ClipboardFormats::HTML_FORMAT   = "air:html";
 
         /**
          * Rich Text Format data.
@@ -41,7 +41,7 @@ namespace desktop {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.1
          */
-        const std::string ClipboardFormats::RICH_TEXT_FORMAT="air:rtf";
+        const std::string ClipboardFormats::RICH_TEXT_FORMAT   = "air:rtf";
 
         /**
          * A URL string (AIR only).
@@ -49,7 +49,7 @@ namespace desktop {
          * @playerversion   AIR 1.0
          * @internal    Not supported in FP10.
          */
-        const std::string ClipboardFormats::URL_FORMAT="air:url";
+        const std::string ClipboardFormats::URL_FORMAT   = "air:url";
 
         /**
          * An array of files (AIR only).
@@ -57,7 +57,7 @@ namespace desktop {
          * @playerversion   AIR 1.0
          * @internal    Not supported in FP10.
          */
-        const std::string ClipboardFormats::FILE_LIST_FORMAT="air:file list";
+        const std::string ClipboardFormats::FILE_LIST_FORMAT   = "air:file list";
 
         /**
          * Image data (AIR only).
@@ -65,7 +65,7 @@ namespace desktop {
          * @playerversion   AIR 1.0
          * @internal    Not supported in FP10.
          */
-        const std::string ClipboardFormats::BITMAP_FORMAT="air:bitmap";
+        const std::string ClipboardFormats::BITMAP_FORMAT   = "air:bitmap";
 
         /**
          * File promise list (AIR only).
@@ -73,7 +73,7 @@ namespace desktop {
          * @playerversion   AIR 2
          * @internal    Not supported in FP10.
          */
-        const std::string ClipboardFormats::FILE_PROMISE_LIST_FORMAT="air:file promise list";
+        const std::string ClipboardFormats::FILE_PROMISE_LIST_FORMAT   = "air:file promise list";
 
         ClipboardFormats::ClipboardFormats();
 }

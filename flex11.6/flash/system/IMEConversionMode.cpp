@@ -23,7 +23,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::ALPHANUMERIC_FULL="ALPHANUMERIC_FULL";
+        const std::string IMEConversionMode::ALPHANUMERIC_FULL   = "ALPHANUMERIC_FULL";
 
         /**
          * The string "ALPHANUMERIC_HALF", for use with the 
@@ -33,7 +33,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::ALPHANUMERIC_HALF="ALPHANUMERIC_HALF";
+        const std::string IMEConversionMode::ALPHANUMERIC_HALF   = "ALPHANUMERIC_HALF";
 
         /**
          * The string "CHINESE", for use with the 
@@ -43,7 +43,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::CHINESE="CHINESE";
+        const std::string IMEConversionMode::CHINESE   = "CHINESE";
 
         /**
          * The string "JAPANESE_HIRAGANA", for use with the
@@ -53,7 +53,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::JAPANESE_HIRAGANA="JAPANESE_HIRAGANA";
+        const std::string IMEConversionMode::JAPANESE_HIRAGANA   = "JAPANESE_HIRAGANA";
 
         /**
          * The string "JAPANESE_KATAKANA_FULL", for use with the 
@@ -63,7 +63,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::JAPANESE_KATAKANA_FULL="JAPANESE_KATAKANA_FULL";
+        const std::string IMEConversionMode::JAPANESE_KATAKANA_FULL   = "JAPANESE_KATAKANA_FULL";
 
         /**
          * The string "JAPANESE_KATAKANA_HALF", for use with the 
@@ -73,7 +73,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::JAPANESE_KATAKANA_HALF="JAPANESE_KATAKANA_HALF";
+        const std::string IMEConversionMode::JAPANESE_KATAKANA_HALF   = "JAPANESE_KATAKANA_HALF";
 
         /**
          * The string "KOREAN", for use with the 
@@ -83,7 +83,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::KOREAN="KOREAN";
+        const std::string IMEConversionMode::KOREAN   = "KOREAN";
 
         /**
          * The string "UNKNOWN", which can be returned by a call to
@@ -94,7 +94,7 @@ namespace system {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string IMEConversionMode::UNKNOWN="UNKNOWN";
+        const std::string IMEConversionMode::UNKNOWN   = "UNKNOWN";
 
         IMEConversionMode::IMEConversionMode();
 }

@@ -24,7 +24,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string BreakOpportunity::AUTO="auto";
+        const std::string BreakOpportunity::AUTO   = "auto";
 
         /**
          * Treats any character in the ContentElement object as a line break opportunity.
@@ -35,7 +35,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string BreakOpportunity::ANY="any";
+        const std::string BreakOpportunity::ANY   = "any";
 
         /**
          * Treats no characters in the ContentElement object as line break opportunities.
@@ -44,7 +44,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string BreakOpportunity::NONE="none";
+        const std::string BreakOpportunity::NONE   = "none";
 
         /**
          * Treats all characters in the ContentElement object as line break opportunities, meaning that a line break will occur
@@ -55,7 +55,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string BreakOpportunity::ALL="all";
+        const std::string BreakOpportunity::ALL   = "all";
 
         BreakOpportunity::BreakOpportunity();
 }

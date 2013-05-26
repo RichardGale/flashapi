@@ -96,12 +96,12 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class XML : public Object
 {
-public:
-    static const void *length;
-
     /**
      * Determines whether XML comments are ignored
      * when XML objects parse the source XML data. By default, the comments are ignored
@@ -113,7 +113,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    static bool         ignoreComments();
+    static bool      ignoreComments();
 public:
     static void         ignoreComments(bool newIgnore);
 
@@ -130,7 +130,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    static bool         ignoreProcessingInstructions();
+    static bool      ignoreProcessingInstructions();
 public:
     static void         ignoreProcessingInstructions(bool newIgnore);
 
@@ -149,7 +149,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    static bool         ignoreWhitespace();
+    static bool      ignoreWhitespace();
 public:
     static void         ignoreWhitespace(bool newIgnore);
 
@@ -161,7 +161,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    static bool         prettyPrinting();
+    static bool      prettyPrinting();
 public:
     static void         prettyPrinting(bool newPretty);
 
@@ -189,7 +189,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    static Object  *settings();
+    static Object   *settings();
 
     /**
      * Sets values for the following XML properties: ignoreComments,
@@ -220,7 +220,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    static Object  *defaultSettings();
+    static Object   *defaultSettings();
 
     /**
      * Returns a string representation of the XML object. The rules for this conversion depend on whether
@@ -235,7 +235,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toString();
+    std::string   toString();
 
     /**
      * Checks to see whether the object has the property specified by the p parameter.
@@ -244,7 +244,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasOwnProperty(void *P=NULL);
+    bool  hasOwnProperty(void *P=NULL);
 
     /**
      * Checks whether the property p is in the set of properties that can be iterated in a
@@ -256,7 +256,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     propertyIsEnumerable(void *P=NULL);
+    bool  propertyIsEnumerable(void *P=NULL);
 
     /**
      * Adds a namespace to the set of in-scope namespaces for the XML object. If the namespace already
@@ -270,7 +270,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *addNamespace(void *ns);
+    XML      *addNamespace(void *ns);
 
     /**
      * Appends the given child to the end of the XML object's properties.
@@ -283,7 +283,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *appendChild(void *child);
+    XML      *appendChild(void *child);
 
     /**
      * Returns the XML value of the attribute that has the name matching the attributeName
@@ -304,7 +304,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *attribute(void *arg);
+    XMLList  *attribute(void *arg);
 
     /**
      * Returns a list of attribute values for the given XML object. Use the name()
@@ -314,7 +314,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *attributes();
+    XMLList  *attributes();
 
     /**
      * Lists the children of an XML object. An XML child is an XML element, text node, comment,
@@ -334,7 +334,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *child(void *propertyName);
+    XMLList  *child(void *propertyName);
 
     /**
      * Identifies the zero-indexed position of this XML object within the context of its parent.
@@ -351,7 +351,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *children();
+    XMLList  *children();
 
     /**
      * Lists the properties of the XML object that contain XML comments.
@@ -359,7 +359,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *comments();
+    XMLList  *comments();
 
     /**
      * Compares the XML object against the given value parameter.
@@ -368,7 +368,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     contains(void *value);
+    bool  contains(void *value);
 
     /**
      * Returns a copy of the given XML object. The copy is a duplicate of the entire tree of nodes.
@@ -378,7 +378,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *copy();
+    XML      *copy();
 
     /**
      * Returns all descendants (children, grandchildren, great-grandchildren, and so on) of the
@@ -394,7 +394,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *descendants(void *name=(void *)"*");
+    XMLList  *descendants(void *name=(void *)"*");
 
     /**
      * Lists the elements of an XML object. An element consists of a start and an end tag;
@@ -416,7 +416,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *elements(void *name=(void *)"*");
+    XMLList  *elements(void *name=(void *)"*");
 
     /**
      * Checks to see whether the XML object contains complex content. An XML object contains complex content if
@@ -427,7 +427,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasComplexContent();
+    bool  hasComplexContent();
 
     /**
      * Checks to see whether the XML object contains simple content. An XML object contains simple content
@@ -438,7 +438,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    bool     hasSimpleContent();
+    bool  hasSimpleContent();
 
     /**
      * Lists the namespaces for the XML object, based on the object's parent.
@@ -446,7 +446,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::vector<void *> inScopeNamespaces();
+    std::vector<void *>    inScopeNamespaces();
 
     /**
      * Inserts the given child2 parameter after the child1 parameter in this XML object and returns the
@@ -464,7 +464,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    void    *insertChildAfter(void *child1, void *child2);
+    void        *insertChildAfter(void *child1, void *child2);
 
     /**
      * Inserts the given child2 parameter before the child1 parameter
@@ -482,7 +482,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    void    *insertChildBefore(void *child1, void *child2);
+    void        *insertChildBefore(void *child1, void *child2);
 
     /**
      * For XML objects, this method always returns the integer 1.
@@ -500,7 +500,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    Object  *localName();
+    Object   *localName();
 
     /**
      * Gives the qualified name for the XML object.
@@ -508,7 +508,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    Object  *name();
+    Object   *name();
 
     /**
      * If no parameter is provided, gives the namespace associated with the qualified name of
@@ -520,7 +520,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    void    *namespace(void *prefix=NULL);
+    void        *NAMESPACE(void *prefix=NULL);
 
     /**
      * Lists namespace declarations associated with the XML object in the context of its parent.
@@ -528,7 +528,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::vector<void *> namespaceDeclarations();
+    std::vector<void *>    namespaceDeclarations();
 
     /**
      * Specifies the type of node: text, comment, processing-instruction,
@@ -537,7 +537,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string nodeKind();
+    std::string   nodeKind();
 
     /**
      * For the XML object and all descendant XML objects, merges adjacent text nodes and
@@ -546,7 +546,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *normalize();
+    XML      *normalize();
 
     /**
      * Returns the parent of the XML object. If the XML object has no parent, the method returns
@@ -556,7 +556,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    void    *parent();
+    void        *parent();
 
     /**
      * If a name parameter is provided, lists all the children of the XML object
@@ -567,7 +567,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *processingInstructions(void *name=(void *)"*");
+    XMLList  *processingInstructions(void *name=(void *)"*");
 
     /**
      * Inserts a copy of the provided child object into the XML element before any existing XML
@@ -579,7 +579,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *prependChild(void *value);
+    XML      *prependChild(void *value);
 
     /**
      * Removes the given namespace for this object and all descendants. The removeNamespaces()
@@ -590,7 +590,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *removeNamespace(void *ns);
+    XML      *removeNamespace(void *ns);
 
     /**
      * Replaces the properties specified by the propertyName parameter
@@ -606,7 +606,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *replace(void *propertyName, void *value);
+    XML      *replace(void *propertyName, void *value);
 
     /**
      * Replaces the child properties of the XML object with the specified set of XML properties,
@@ -616,7 +616,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *setChildren(void *value);
+    XML      *setChildren(void *value);
 
     /**
      * Changes the local name of the XML object to the given name parameter.
@@ -648,7 +648,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XMLList *text();
+    XMLList  *text();
 
     /**
      * Returns a string representation of the XML object. Unlike the toString() method,
@@ -660,13 +660,13 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toXMLString();
+    std::string   toXMLString();
 
     Function *notification();
 
-    void    *setNotification(Function *f);
+    void        *setNotification(Function *f);
 
-    void    *toJSON(std::string k);
+    void        *toJSON(std::string k);
 
     /**
      * Returns the XML object.
@@ -674,7 +674,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    XML     *valueOf();
+    XML      *valueOf();
 
     /**
      * Creates a new XML object. You must use the constructor to create an

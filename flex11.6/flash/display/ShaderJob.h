@@ -89,7 +89,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            Object      *target();
+            Object       *target();
         public:
             void         target(Object *s);
 
@@ -134,7 +134,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        progress();
+            float       progress();
 
             /**
              *
@@ -206,7 +206,7 @@ namespace flash
              *   property for more information.
              */
         public:
-            void     start(bool waitForCompletion   =false);
+            void     start(bool waitForCompletion=false);
 
             /**
              * Cancels the currently running shader operation. Any result data that is already

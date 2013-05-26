@@ -124,7 +124,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        length();
+            float       length();
 
             /**
              * The square of the length of the current Vector3D object, calculated using the x,
@@ -136,7 +136,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        lengthSquared();
+            float       lengthSquared();
 
             /**
              * Creates an instance of a Vector3D object. If you do not specify a parameter for the constructor,
@@ -150,7 +150,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            Vector3D(float x =0, float y =0, float z =0, float w =0);
+            Vector3D(float x=0, float y=0, float z=0, float w=0);
 
             /**
              * Returns the angle in radians between two vectors. The returned angle is the smallest radian
@@ -166,7 +166,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            static float    angleBetween(Vector3D *a, Vector3D *b);
+            static float   angleBetween(Vector3D *a, Vector3D *b);
 
             /**
              * Returns the distance between two Vector3D objects. The distance() method
@@ -180,7 +180,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            static float    distance(Vector3D *pt1, Vector3D *pt2);
+            static float   distance(Vector3D *pt1, Vector3D *pt2);
 
             /**
              * Returns a new Vector3D object that is an exact copy of the current Vector3D object.
@@ -212,7 +212,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float    dotProduct(Vector3D *a);
+            float   dotProduct(Vector3D *a);
 
             /**
              * Returns a new Vector3D object that is perpendicular (at a right angle) to the current
@@ -244,7 +244,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float    normalize();
+            float   normalize();
 
             /**
              * Scales the current Vector3D object by a scalar, a magnitude. The Vector3D object's
@@ -350,7 +350,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     equals(Vector3D *toCompare, bool allFour   =false);
+            bool  equals(Vector3D *toCompare, bool allFour=false);
 
             /**
              * Compares the elements of the current Vector3D object with the elements of a specified
@@ -373,7 +373,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool     nearEquals(Vector3D *toCompare, float tolerance, bool allFour   =false);
+            bool  nearEquals(Vector3D *toCompare, float tolerance, bool allFour=false);
 
             /**
              * Divides the value of the x, y, and z properties of the
@@ -400,7 +400,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
             void     copyFrom(Vector3D *sourceVector3D);

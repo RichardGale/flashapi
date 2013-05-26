@@ -153,7 +153,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        distance();
+            float       distance();
         public:
             void         distance(float value);
 
@@ -199,7 +199,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        angle();
+            float       angle();
         public:
             void         angle(float value);
 
@@ -241,7 +241,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int highlightColor();
+            unsigned int         highlightColor();
         public:
             void         highlightColor(unsigned int value);
 
@@ -284,7 +284,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        highlightAlpha();
+            float       highlightAlpha();
         public:
             void         highlightAlpha(float value);
 
@@ -326,7 +326,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int shadowColor();
+            unsigned int         shadowColor();
         public:
             void         shadowColor(unsigned int value);
 
@@ -369,7 +369,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        shadowAlpha();
+            float       shadowAlpha();
         public:
             void         shadowAlpha(float value);
 
@@ -412,7 +412,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurX();
+            float       blurX();
         public:
             void         blurX(float value);
 
@@ -455,7 +455,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurY();
+            float       blurY();
         public:
             void         blurY(float value);
 
@@ -498,7 +498,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool         knockout();
+            bool      knockout();
         public:
             void         knockout(bool value);
 
@@ -592,7 +592,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        strength();
+            float       strength();
         public:
             void         strength(float value);
 
@@ -638,7 +638,7 @@ namespace flash
              * @throws  TypeError The string is null when being set
              */
         public:
-            std::string  type();
+            std::string       type();
         public:
             void         type(std::string value);
 
@@ -708,7 +708,7 @@ namespace flash
              *   </listing>
              */
         public:
-            BevelFilter(float distance =4, float angle =45, unsigned int highlightColor=16777215, float highlightAlpha =1, unsigned int shadowColor=0, float shadowAlpha =1, float blurX =4, float blurY =4, float strength =1, int quality=1, std::string type="inner", bool knockout   =false);
+            BevelFilter(float distance=4, float angle=45, unsigned int highlightColor=16777215, float highlightAlpha=1, unsigned int shadowColor=0, float shadowAlpha=1, float blurX=4, float blurY=4, float strength=1, int quality=1, std::string type="inner", bool knockout=false);
 
             /**
              * Returns a copy of this filter object.

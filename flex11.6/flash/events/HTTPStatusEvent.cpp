@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string HTTPStatusEvent::HTTP_STATUS="httpStatus";
+        const std::string HTTPStatusEvent::HTTP_STATUS   = "httpStatus";
 
         /**
          * Unlike the httpStatus event, the httpResponseStatus event is 
@@ -39,7 +39,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string HTTPStatusEvent::HTTP_RESPONSE_STATUS="httpResponseStatus";
+        const std::string HTTPStatusEvent::HTTP_RESPONSE_STATUS   = "httpResponseStatus";
 
         /**
          * The HTTP status code returned by the server. For example, a value of 404 indicates that the server

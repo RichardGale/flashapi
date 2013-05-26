@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace automation
@@ -11,7 +15,7 @@ namespace flash
         class AutomationAction : public Object
         {
         public:
-            std::string  type();
+            std::string       type();
         public:
             void         type(std::string value);
 

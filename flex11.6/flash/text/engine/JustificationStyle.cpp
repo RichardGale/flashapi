@@ -24,7 +24,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string JustificationStyle::PUSH_IN_KINSOKU="pushInKinsoku";
+        const std::string JustificationStyle::PUSH_IN_KINSOKU   = "pushInKinsoku";
 
         /**
          * Bases justification on expanding the line.
@@ -33,7 +33,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string JustificationStyle::PUSH_OUT_ONLY="pushOutOnly";
+        const std::string JustificationStyle::PUSH_OUT_ONLY   = "pushOutOnly";
 
         /**
          * Bases justification on either expanding or compressing
@@ -43,7 +43,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string JustificationStyle::PRIORITIZE_LEAST_ADJUSTMENT="prioritizeLeastAdjustment";
+        const std::string JustificationStyle::PRIORITIZE_LEAST_ADJUSTMENT   = "prioritizeLeastAdjustment";
 
         JustificationStyle::JustificationStyle();
 }

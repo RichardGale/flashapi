@@ -19,7 +19,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldType::INPUT="input";
+        const std::string TextFieldType::INPUT   = "input";
 
         /**
          * Used to specify a dynamic TextField.
@@ -27,7 +27,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFieldType::DYNAMIC="dynamic";
+        const std::string TextFieldType::DYNAMIC   = "dynamic";
 
         TextFieldType::TextFieldType();
 }

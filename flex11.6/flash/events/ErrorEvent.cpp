@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string ErrorEvent::ERROR="error";
+        const std::string ErrorEvent::ERROR   = "error";
 
         /**
          * Contains the reference number associated with the specific error.

@@ -21,7 +21,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::NORMAL="normal";
+        const std::string BlendMode::NORMAL   = "normal";
 
         /**
          * Forces the creation of a transparency group for the display object. This means that the display 
@@ -34,7 +34,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::LAYER="layer";
+        const std::string BlendMode::LAYER   = "layer";
 
         /**
          * Multiplies the values of the display object constituent colors by the constituent colors of 
@@ -48,7 +48,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::MULTIPLY="multiply";
+        const std::string BlendMode::MULTIPLY   = "multiply";
 
         /**
          * Multiplies the complement (inverse) of the display object color by the complement of the background 
@@ -57,7 +57,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::SCREEN="screen";
+        const std::string BlendMode::SCREEN   = "screen";
 
         /**
          * Selects the lighter of the constituent colors of the display object and the colors of the background (the 
@@ -69,7 +69,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::LIGHTEN="lighten";
+        const std::string BlendMode::LIGHTEN   = "lighten";
 
         /**
          * Selects the darker of the constituent colors of the display object and the colors of the background (the 
@@ -81,7 +81,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::DARKEN="darken";
+        const std::string BlendMode::DARKEN   = "darken";
 
         /**
          * Adds the values of the constituent colors of the display object to the colors of its background, applying a 
@@ -94,7 +94,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::ADD="add";
+        const std::string BlendMode::ADD   = "add";
 
         /**
          * Subtracts the values of the constituent colors in the display object from the values of the background
@@ -107,7 +107,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::SUBTRACT="subtract";
+        const std::string BlendMode::SUBTRACT   = "subtract";
 
         /**
          * Compares the constituent colors of the display object with the colors of its background, and subtracts 
@@ -120,14 +120,14 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::DIFFERENCE="difference";
+        const std::string BlendMode::DIFFERENCE   = "difference";
 
         /**
          * Inverts the background.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::INVERT="invert";
+        const std::string BlendMode::INVERT   = "invert";
 
         /**
          * Adjusts the color of each pixel based on the darkness of the background. 
@@ -140,7 +140,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::OVERLAY="overlay";
+        const std::string BlendMode::OVERLAY   = "overlay";
 
         /**
          * Adjusts the color of each pixel based on the darkness of the display object. 
@@ -153,7 +153,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::HARDLIGHT="hardlight";
+        const std::string BlendMode::HARDLIGHT   = "hardlight";
 
         /**
          * Applies the alpha value of each pixel of the display object to the background. 
@@ -164,7 +164,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::ALPHA="alpha";
+        const std::string BlendMode::ALPHA   = "alpha";
 
         /**
          * Erases the background based on the alpha value of the display object. This process requires 
@@ -175,7 +175,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BlendMode::ERASE="erase";
+        const std::string BlendMode::ERASE   = "erase";
 
         /**
          * Uses a shader to define the blend between objects.
@@ -195,7 +195,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string BlendMode::SHADER="shader";
+        const std::string BlendMode::SHADER   = "shader";
 
         BlendMode::BlendMode();
 }

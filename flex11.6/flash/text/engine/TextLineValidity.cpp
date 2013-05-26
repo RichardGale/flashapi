@@ -22,7 +22,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineValidity::VALID="valid";
+        const std::string TextLineValidity::VALID   = "valid";
 
         /**
          * Specifies that the text line is possibly invalid.  The Flash runtime uses this validity during rebreaking of a previously broken text 
@@ -32,7 +32,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineValidity::POSSIBLY_INVALID="possiblyInvalid";
+        const std::string TextLineValidity::POSSIBLY_INVALID   = "possiblyInvalid";
 
         /**
          * Specifies that the line is invalid.
@@ -41,7 +41,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineValidity::INVALID="invalid";
+        const std::string TextLineValidity::INVALID   = "invalid";
 
         /**
          * Specifies that the line is static, and that the connection between the line and the text block has been severed.
@@ -50,7 +50,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineValidity::STATIC="static";
+        const std::string TextLineValidity::STATIC   = "static";
 
         TextLineValidity::TextLineValidity();
 }

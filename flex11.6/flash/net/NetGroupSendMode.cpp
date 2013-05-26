@@ -19,7 +19,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupSendMode::NEXT_INCREASING="nextIncreasing";
+        const std::string NetGroupSendMode::NEXT_INCREASING   = "nextIncreasing";
 
         /**
          * Specifies the neighbor with the nearest group address in the decreasing direction.
@@ -27,7 +27,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupSendMode::NEXT_DECREASING="nextDecreasing";
+        const std::string NetGroupSendMode::NEXT_DECREASING   = "nextDecreasing";
 
         NetGroupSendMode::NetGroupSendMode();
 }

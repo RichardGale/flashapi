@@ -15,6 +15,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -73,7 +76,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     getSelected(int beginIndex, int endIndex);
+            bool  getSelected(int beginIndex, int endIndex);
 
             /**
              * Returns a string that contains all the characters specified by the corresponding
@@ -95,7 +98,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string getSelectedText(bool includeLineEndings   =false);
+            std::string   getSelectedText(bool includeLineEndings=false);
 
             /**
              * Returns a string that contains all the characters specified by the beginIndex
@@ -127,7 +130,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string getText(int beginIndex, int endIndex, bool includeLineEndings   =false);
+            std::string   getText(int beginIndex, int endIndex, bool includeLineEndings=false);
 
             /**
              * Returns an array of objects that contains information about a run of text. Each object corresponds
@@ -165,7 +168,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> getTextRunInfo(int beginIndex, int endIndex);
+            std::vector<void *>    getTextRunInfo(int beginIndex, int endIndex);
 
             /**
              * Lets you determine which character within a TextSnapshot object is on or near the specified
@@ -198,7 +201,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float    hitTestTextNearPos(float x, float y, float maxDistance =0);
+            float   hitTestTextNearPos(float x, float y, float maxDistance=0);
 
             /**
              * Specifies the color to use when highlighting characters that have been selected with the

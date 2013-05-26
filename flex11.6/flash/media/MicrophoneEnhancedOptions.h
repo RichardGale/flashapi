@@ -17,6 +17,9 @@
  * @playerversion   AIR 2.7
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -33,7 +36,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            std::string  mode();
+            std::string       mode();
         public:
             void         mode(std::string mode);
 
@@ -61,7 +64,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            bool         nonLinearProcessing();
+            bool      nonLinearProcessing();
         public:
             void         nonLinearProcessing(bool enabled);
 
@@ -73,7 +76,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            bool         autoGain();
+            bool      autoGain();
         public:
             void         autoGain(bool enabled);
 

@@ -70,6 +70,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class RegExp : public Object
 {
@@ -83,7 +86,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    std::string  source();
+    std::string       source();
 
     /**
      * Specifies whether to use global matching for the regular expression. When
@@ -96,7 +99,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    bool         global();
+    bool      global();
 
     /**
      * Specifies whether the regular expression ignores case sensitivity. Use the
@@ -106,7 +109,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    bool         ignoreCase();
+    bool      ignoreCase();
 
     /**
      * Specifies whether the m (multiline) flag is set. If it is set,
@@ -119,7 +122,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    bool         multiline();
+    bool      multiline();
 
     /**
      * Specifies the index position in the string at which to start the next search. This property
@@ -140,7 +143,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    float        lastIndex();
+    float       lastIndex();
 public:
     void         lastIndex(int i);
 
@@ -153,7 +156,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    bool         dotall();
+    bool      dotall();
 
     /**
      * Specifies whether to use extended mode for the regular expression.
@@ -167,7 +170,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    bool         extended();
+    bool      extended();
 
     /**
      * Lets you construct a regular expression from two strings. One string defines the pattern of the
@@ -232,7 +235,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    Object  *exec(std::string s="");
+    Object   *exec(std::string s="");
 
     /**
      * Tests for the match of the regular expression in the given string str.
@@ -249,7 +252,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     test(std::string s="");
+    bool  test(std::string s="");
 };
 
 #endif // FLEX11_6_REGEXP_AS

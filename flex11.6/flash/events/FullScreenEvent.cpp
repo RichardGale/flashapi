@@ -19,8 +19,8 @@ namespace events {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string FullScreenEvent::FULL_SCREEN="fullScreen";
-        const std::string FullScreenEvent::FULL_SCREEN_INTERACTIVE_ACCEPTED;
+        const std::string FullScreenEvent::FULL_SCREEN   = "fullScreen";
+        const std::string FullScreenEvent::FULL_SCREEN_INTERACTIVE_ACCEPTED  ;
 
         /**
          * Indicates whether the Stage object is in full-screen mode (true) or not (false).

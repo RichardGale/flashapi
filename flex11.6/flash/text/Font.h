@@ -16,6 +16,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -30,7 +33,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  fontName();
+            std::string       fontName();
 
             /**
              * The style of the font. This value can be any of the values defined in the FontStyle class.
@@ -39,7 +42,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  fontStyle();
+            std::string       fontStyle();
 
             /**
              * The type of the font. This value can be any of the constants defined in the FontType class.
@@ -48,7 +51,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  fontType();
+            std::string       fontType();
 
             /**
              * Specifies whether to provide a list of the currently available embedded fonts.
@@ -61,7 +64,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::vector<void *> enumerateFonts(bool enumerateDeviceFonts   =false);
+            static std::vector<void *>    enumerateFonts(bool enumerateDeviceFonts=false);
 
         public:
             Font();
@@ -85,7 +88,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hasGlyphs(std::string str);
+            bool  hasGlyphs(std::string str);
         };
     }
 }

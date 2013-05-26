@@ -40,7 +40,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            float        timestamp();
+            float       timestamp();
 
             /**
              * A data object describing the message. The info object has two properties:
@@ -52,7 +52,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            Object      *info();
+            Object       *info();
 
             /**
              * Creates a copy of an NetDataEvent object and sets the value of each property to match that of
@@ -82,7 +82,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            NetDataEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float timestamp =0, Object *info=NULL);
+            NetDataEvent(std::string type, bool bubbles=false, bool cancelable=false, float timestamp=0, Object *info=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetDataEvent object. The following
@@ -95,7 +95,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

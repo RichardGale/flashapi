@@ -85,6 +85,9 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -111,7 +114,7 @@ namespace flash
              * @playerversion   Flash 9.0.115.0
              */
         public:
-            void        *object();
+            void            *object();
 
             /**
              * The NewObjectSample object size. If the object has been garbagecollected, this property is
@@ -120,7 +123,7 @@ namespace flash
              * @playerversion   Flash 9.0.115.0
              */
         public:
-            float        size();
+            float       size();
 
         public:
             NewObjectSample();

@@ -135,7 +135,7 @@ namespace flash
              *   </listing><p class="- topic/p ">When the mouse is over and clicks <code>myBtn1_btn</code>, there is no pointing hand. However, you see the pointing hand when the button is over and clicks <code>myBtn2_btn</code>.</p>
              */
         public:
-            bool         useHandCursor();
+            bool      useHandCursor();
         public:
             void         useHandCursor(bool value);
 
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         enabled();
+            bool      enabled();
         public:
             void         enabled(bool value);
 
@@ -172,7 +172,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         trackAsMenu();
+            bool      trackAsMenu();
         public:
             void         trackAsMenu(bool value);
 

@@ -86,7 +86,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  renderingMode();
+                std::string       renderingMode();
             public:
                 void         renderingMode(std::string value);
 
@@ -107,7 +107,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  fontLookup();
+                std::string       fontLookup();
             public:
                 void         fontLookup(std::string value);
 
@@ -126,7 +126,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  fontName();
+                std::string       fontName();
             public:
                 void         fontName(std::string value);
 
@@ -142,7 +142,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  fontPosture();
+                std::string       fontPosture();
             public:
                 void         fontPosture(std::string value);
 
@@ -158,7 +158,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  fontWeight();
+                std::string       fontWeight();
             public:
                 void         fontWeight(std::string value);
 
@@ -181,7 +181,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                std::string  cffHinting();
+                std::string       cffHinting();
             public:
                 void         cffHinting(std::string value);
 
@@ -195,7 +195,7 @@ namespace flash
                  * @throws  IllegalOperationError If set after the FontDescription object is locked (locked is true).
                  */
             public:
-                bool         locked();
+                bool      locked();
             public:
                 void         locked(bool value);
 
@@ -246,7 +246,7 @@ namespace flash
                  * @throws  ArgumentError The fontPosture specified is not a member of FontPosture.
                  */
             public:
-                static bool     isFontCompatible(std::string fontName, std::string fontWeight, std::string fontPosture);
+                static bool  isFontCompatible(std::string fontName, std::string fontWeight, std::string fontPosture);
 
                 /**
                  * Returns true if a usable device font is available with the specified fontName, fontWeight, and fontPosture.
@@ -264,7 +264,7 @@ namespace flash
                  * @throws  ArgumentError The fontPosture specified is not a member of FontPosture.
                  */
             public:
-                static bool     isDeviceFontCompatible(std::string fontName, std::string fontWeight, std::string fontPosture);
+                static bool  isDeviceFontCompatible(std::string fontName, std::string fontWeight, std::string fontPosture);
 
                 /**
                  * Constructs an unlocked, cloned copy of the FontDescription.

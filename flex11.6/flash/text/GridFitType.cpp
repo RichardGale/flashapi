@@ -21,7 +21,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string GridFitType::NONE="none";
+        const std::string GridFitType::NONE   = "none";
 
         /**
          * Fits strong horizontal and vertical lines to the pixel grid. 
@@ -33,7 +33,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string GridFitType::PIXEL="pixel";
+        const std::string GridFitType::PIXEL   = "pixel";
 
         /**
          * Fits strong horizontal and vertical lines to the sub-pixel 
@@ -46,7 +46,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string GridFitType::SUBPIXEL="subpixel";
+        const std::string GridFitType::SUBPIXEL   = "subpixel";
 
         GridFitType::GridFitType();
 }

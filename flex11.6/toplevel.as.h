@@ -5,7 +5,7 @@
 
 namespace AS3 {};
 public:
-bool     bugzilla(int n);
+bool  bugzilla(int n);
 /**
  * Decodes an encoded URI into a string. Returns a string in which all characters previously encoded
  * by the encodeURI function are restored to their unencoded representation.
@@ -18,7 +18,7 @@ bool     bugzilla(int n);
  * @playerversion   Lite 4
  */
 public:
-std::string decodeURI(std::string uri=undefined);
+std::string   decodeURI(std::string uri=undefined);
 /**
  * Decodes an encoded URI component into a string. Returns a string in which
  * all characters previously escaped by the encodeURIComponent
@@ -37,7 +37,7 @@ std::string decodeURI(std::string uri=undefined);
  * @playerversion   Lite 4
  */
 public:
-std::string decodeURIComponent(std::string uri=undefined);
+std::string   decodeURIComponent(std::string uri=undefined);
 /**
  * Encodes a string into a valid URI (Uniform Resource Identifier).
  * Converts a complete URI into a string in which all characters are encoded
@@ -50,7 +50,7 @@ std::string decodeURIComponent(std::string uri=undefined);
  * @playerversion   Lite 4
  */
 public:
-std::string encodeURI(std::string uri=undefined);
+std::string   encodeURI(std::string uri=undefined);
 /**
  * Encodes a string into a valid URI component. Converts a substring of a URI into a
  * string in which all characters are encoded as UTF-8 escape sequences unless a character
@@ -66,7 +66,7 @@ std::string encodeURI(std::string uri=undefined);
  * @playerversion   Lite 4
  */
 public:
-std::string encodeURIComponent(std::string uri=undefined);
+std::string   encodeURIComponent(std::string uri=undefined);
 /**
  * Returns true if the value is NaN(not a number). The isNaN() function is useful for checking whether a mathematical expression evaluates successfully to a number.
  * The most common use of isNaN() is to check the value returned from the parseInt()and parseFloat() functions. The NaN value is a special member of the Number data type that represents a value that is "not a number."
@@ -80,7 +80,7 @@ std::string encodeURIComponent(std::string uri=undefined);
  * @playerversion   Lite 4
  */
 public:
-bool     isNaN(float n =NULL);
+bool  isNaN(float n=NULL);
 /**
  * Returns true if the value is a finite number,
  * or false if the value is Infinity or -Infinity.
@@ -94,7 +94,7 @@ bool     isNaN(float n =NULL);
  * @playerversion   Lite 4
  */
 public:
-bool     isFinite(float n =NULL);
+bool  isFinite(float n=NULL);
 /**
  * Converts a string to an integer. If the specified string in the parameters cannot be converted to a number, the function returns NaN. Strings beginning with 0x are interpreted as hexadecimal numbers. Unlike in previous versions of ActionScript, integers beginning with 0 are not interpreted as octal numbers. You must specify a radix of 8 for octal numbers. White space and zeroes preceding valid integers are ignored, as are trailing nonnumeric characters.
  * @param   str A string to convert to an integer.
@@ -105,7 +105,7 @@ bool     isFinite(float n =NULL);
  * @playerversion   Lite 4
  */
 public:
-float    parseInt(std::string s="NaN", int radix=0);
+float   parseInt(std::string s="NaN", int radix=0);
 /**
  * Converts a string to a floating-point number. The function reads, or parses, and returns the numbers in a string until it reaches a character that is not a part of the initial number. If the string does not begin with a number that can be parsed, parseFloat() returns NaN. White space preceding valid integers is ignored, as are trailing nonnumeric characters.
  * @param   str The string to read and convert to a floating-point number.
@@ -115,7 +115,7 @@ float    parseInt(std::string s="NaN", int radix=0);
  * @playerversion   Lite 4
  */
 public:
-float    parseFloat(std::string str="NaN");
+float   parseFloat(std::string str="NaN");
 /**
  * Converts the parameter to a string and encodes it in a URL-encoded format,
  * where most nonalphanumeric characters are replaced with % hexadecimal sequences.
@@ -131,7 +131,7 @@ float    parseFloat(std::string str="NaN");
  * @playerversion   Lite 4
  */
 public:
-std::string escape(std::string s=undefined);
+std::string   escape(std::string s=undefined);
 /**
  * Evaluates the parameter str as a string, decodes the string from URL-encoded format
  * (converting all hexadecimal sequences to ASCII characters), and returns the string.
@@ -142,7 +142,7 @@ std::string escape(std::string s=undefined);
  * @playerversion   Lite 4
  */
 public:
-std::string unescape(std::string s=undefined);
+std::string   unescape(std::string s=undefined);
 /**
  * Determines whether the specified string is a valid name for an XML element or attribute.
  * @param   str A string to evaluate.
@@ -152,7 +152,7 @@ std::string unescape(std::string s=undefined);
  * @playerversion   Lite 4
  */
 public:
-bool     isXMLName(void *str=NULL);
+bool  isXMLName(void *str=NULL);
 
 
 
@@ -184,7 +184,7 @@ public:
 public:
 void     trace(...);
 public:
-bool     watson(int n);
+bool  watson(int n);
 #endif // FLEX11_6_TOPLEVEL_AS_AS
 #endif // __cplusplus
 

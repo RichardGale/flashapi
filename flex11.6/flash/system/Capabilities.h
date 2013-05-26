@@ -146,6 +146,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -162,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         isEmbeddedInAcrobat();
+            static bool      isEmbeddedInAcrobat();
 
             /**
              * Specifies whether the system supports
@@ -174,7 +177,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasEmbeddedVideo();
+            static bool      hasEmbeddedVideo();
 
             /**
              * Specifies whether the system has audio
@@ -186,7 +189,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasAudio();
+            static bool      hasAudio();
 
             /**
              * Specifies whether access to the user's camera and microphone has
@@ -202,7 +205,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         avHardwareDisable();
+            static bool      avHardwareDisable();
 
             /**
              * Specifies whether the system supports
@@ -215,7 +218,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasAccessibility();
+            static bool      hasAccessibility();
 
             /**
              * Specifies whether the system can (true) or cannot (false)
@@ -227,7 +230,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasAudioEncoder();
+            static bool      hasAudioEncoder();
 
             /**
              * Specifies whether the system does (true)
@@ -239,7 +242,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasMP3();
+            static bool      hasMP3();
 
             /**
              * Specifies whether the system does (true)
@@ -251,7 +254,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasPrinting();
+            static bool      hasPrinting();
 
             /**
              * Specifies whether the system does (true) or does not (false)
@@ -264,7 +267,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasScreenBroadcast();
+            static bool      hasScreenBroadcast();
 
             /**
              * Specifies whether the system does (true) or does not
@@ -277,7 +280,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasScreenPlayback();
+            static bool      hasScreenPlayback();
 
             /**
              * Specifies whether the system can (true) or cannot (false)
@@ -289,7 +292,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasStreamingAudio();
+            static bool      hasStreamingAudio();
 
             /**
              * Specifies whether the system can (true) or cannot
@@ -301,7 +304,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasStreamingVideo();
+            static bool      hasStreamingVideo();
 
             /**
              * Specifies whether the system can (true) or cannot
@@ -314,7 +317,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasVideoEncoder();
+            static bool      hasVideoEncoder();
 
             /**
              * Specifies whether the system is a special debugging version
@@ -328,7 +331,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         isDebugger();
+            static bool      isDebugger();
 
             /**
              * Specifies whether read access to the user's hard disk has been
@@ -355,7 +358,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         localFileReadDisable();
+            static bool      localFileReadDisable();
 
             /**
              * Specifies the language code of the system on which the content is running. The language is
@@ -379,7 +382,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  language();
+            static std::string       language();
 
             /**
              * Specifies the manufacturer of the running version of
@@ -398,7 +401,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  manufacturer();
+            static std::string       manufacturer();
 
             /**
              * Specifies the current operating system. The os property
@@ -416,7 +419,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  os();
+            static std::string       os();
 
             /**
              * Specifies the current CPU architecture. The cpuArchitecture property
@@ -432,7 +435,7 @@ namespace flash
              *   </pre>
              */
         public:
-            static std::string  cpuArchitecture();
+            static std::string       cpuArchitecture();
 
             /**
              * Specifies the type of runtime environment. This property can have one of the following
@@ -447,7 +450,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  playerType();
+            static std::string       playerType();
 
             /**
              * A URL-encoded string that specifies values for each Capabilities
@@ -464,7 +467,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  serverString();
+            static std::string       serverString();
 
             /**
              * Specifies the Flash Player or Adobe   AIR
@@ -489,7 +492,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  version();
+            static std::string       version();
 
             /**
              * Specifies the screen color. This property can have the value
@@ -502,7 +505,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  screenColor();
+            static std::string       screenColor();
 
             /**
              * Specifies the pixel aspect ratio of the screen. The server string
@@ -513,7 +516,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static float        pixelAspectRatio();
+            static float       pixelAspectRatio();
 
             /**
              * Specifies the dots-per-inch (dpi) resolution of the screen, in pixels.
@@ -524,7 +527,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static float        screenDPI();
+            static float       screenDPI();
 
             /**
              * Specifies the maximum horizontal resolution of the screen.
@@ -538,7 +541,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static float        screenResolutionX();
+            static float       screenResolutionX();
 
             /**
              * Specifies the maximum vertical resolution of the screen.
@@ -552,7 +555,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static float        screenResolutionY();
+            static float       screenResolutionY();
 
             /**
              * Specifies the type of touchscreen supported, if any. Values are defined in the flash.system.TouchscreenType class.
@@ -561,7 +564,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string  touchscreenType();
+            static std::string       touchscreenType();
 
             /**
              * Specifies whether the system does (true)
@@ -573,7 +576,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasIME();
+            static bool      hasIME();
 
             /**
              * Specifies whether the system supports native SSL sockets through NetConnection
@@ -585,7 +588,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         hasTLS();
+            static bool      hasTLS();
 
             /**
              * Retrieves the highest H.264 Level IDC that the client hardware supports.
@@ -601,7 +604,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static std::string  maxLevelIDC();
+            static std::string       maxLevelIDC();
 
             /**
              * Specifies whether the system supports running 32-bit processes.
@@ -615,7 +618,7 @@ namespace flash
              *   </pre>
              */
         public:
-            static bool         supports32BitProcesses();
+            static bool      supports32BitProcesses();
 
             /**
              * Specifies whether the system supports running 64-bit processes.
@@ -629,16 +632,16 @@ namespace flash
              *   </pre>
              */
         public:
-            static bool         supports64BitProcesses();
+            static bool      supports64BitProcesses();
 
         public:
-            static unsigned int _internal();
+            static unsigned int         _internal();
 
         public:
             Capabilities();
 
         public:
-            static bool     hasMultiChannelAudio(std::string type);
+            static bool  hasMultiChannelAudio(std::string type);
         };
     }
 }

@@ -44,7 +44,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int ObjectEncoding::AMF0=0;
+        const unsigned int ObjectEncoding::AMF0   = 0;
 
         /**
          * Specifies that objects are serialized using the Action Message Format for ActionScript 3.0.
@@ -52,7 +52,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int ObjectEncoding::AMF3=3;
+        const unsigned int ObjectEncoding::AMF3   = 3;
 
         /**
          * Specifies the default (latest) format for the current runtime (either Flash
@@ -70,7 +70,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int ObjectEncoding::DEFAULT=3;
+        const unsigned int ObjectEncoding::DEFAULT   = 3;
 
         /**
          * Allows greater control over the serialization of dynamic properties of dynamic objects.

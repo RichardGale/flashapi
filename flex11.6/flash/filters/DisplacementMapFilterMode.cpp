@@ -18,7 +18,7 @@ namespace filters {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string DisplacementMapFilterMode::WRAP="wrap";
+        const std::string DisplacementMapFilterMode::WRAP   = "wrap";
 
         /**
          * Clamps the displacement value to the edge of the source image.
@@ -27,7 +27,7 @@ namespace filters {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string DisplacementMapFilterMode::CLAMP="clamp";
+        const std::string DisplacementMapFilterMode::CLAMP   = "clamp";
 
         /**
          * If the displacement value is out of range, ignores the displacement and uses the source pixel.
@@ -36,7 +36,7 @@ namespace filters {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string DisplacementMapFilterMode::IGNORE="ignore";
+        const std::string DisplacementMapFilterMode::IGNORE   = "ignore";
 
         /**
          * If the displacement value is outside the image, substitutes the values in 
@@ -46,7 +46,7 @@ namespace filters {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string DisplacementMapFilterMode::COLOR="color";
+        const std::string DisplacementMapFilterMode::COLOR   = "color";
 
         DisplacementMapFilterMode::DisplacementMapFilterMode();
 }

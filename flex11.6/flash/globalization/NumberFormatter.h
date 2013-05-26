@@ -130,7 +130,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * The name of the requested locale ID that was passed to the constructor of this NumberFormatter object.
@@ -143,7 +143,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  requestedLocaleIDName();
+            std::string       requestedLocaleIDName();
 
             /**
              * The name of the actual locale ID used by this NumberFormatter object.
@@ -185,7 +185,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  actualLocaleIDName();
+            std::string       actualLocaleIDName();
 
             /**
              * The maximum number of digits that can appear after the decimal separator.
@@ -220,7 +220,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         useGrouping();
+            bool      useGrouping();
         public:
             void         useGrouping(bool value);
 
@@ -251,7 +251,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  groupingPattern();
+            std::string       groupingPattern();
         public:
             void         groupingPattern(std::string value);
 
@@ -269,7 +269,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            unsigned int digitsType();
+            unsigned int         digitsType();
         public:
             void         digitsType(unsigned int value);
 
@@ -286,7 +286,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  decimalSeparator();
+            std::string       decimalSeparator();
         public:
             void         decimalSeparator(std::string value);
 
@@ -305,7 +305,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  groupingSeparator();
+            std::string       groupingSeparator();
         public:
             void         groupingSeparator(std::string value);
 
@@ -324,7 +324,7 @@ namespace flash
              * @throws  MemoryError if the system cannot allocate enough internal memory.
              */
         public:
-            std::string  negativeSymbol();
+            std::string       negativeSymbol();
         public:
             void         negativeSymbol(std::string value);
 
@@ -344,7 +344,7 @@ namespace flash
              * @throws  ArgumentError if the assigned value is not a number between 0 and 4.
              */
         public:
-            unsigned int negativeNumberFormat();
+            unsigned int         negativeNumberFormat();
         public:
             void         negativeNumberFormat(unsigned int value);
 
@@ -368,7 +368,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            bool         leadingZero();
+            bool      leadingZero();
         public:
             void         leadingZero(bool value);
 
@@ -391,7 +391,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            bool         trailingZeros();
+            bool      trailingZeros();
         public:
             void         trailingZeros(bool value);
 
@@ -476,7 +476,7 @@ namespace flash
              * @throws  TypeError if the parseString is null
              */
         public:
-            float    parseNumber(std::string parseString);
+            float   parseNumber(std::string parseString);
 
             /**
              * Formats an int value.
@@ -494,7 +494,7 @@ namespace flash
              * @throws  MemoryError for any internal memory allocation problems.
              */
         public:
-            std::string formatInt(int value);
+            std::string   formatInt(int value);
 
             /**
              * Formats a uint value.
@@ -512,7 +512,7 @@ namespace flash
              * @throws  MemoryError if there are any internal memory allocation problems.
              */
         public:
-            std::string formatUint(unsigned int value);
+            std::string   formatUint(unsigned int value);
 
             /**
              * Formats a Number value.
@@ -535,7 +535,7 @@ namespace flash
              * @throws  MemoryError if there are any internal memory allocation problems.
              */
         public:
-            std::string formatNumber(float value);
+            std::string   formatNumber(float value);
         };
     }
 }

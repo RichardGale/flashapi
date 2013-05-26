@@ -27,7 +27,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string GraphicsPathWinding::EVEN_ODD="evenOdd";
+        const std::string GraphicsPathWinding::EVEN_ODD   = "evenOdd";
 
         /**
          * Establishes the non-zero winding type. The non-zero winding type determines that
@@ -37,7 +37,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string GraphicsPathWinding::NON_ZERO="nonZero";
+        const std::string GraphicsPathWinding::NON_ZERO   = "nonZero";
 
         GraphicsPathWinding::GraphicsPathWinding();
 }

@@ -107,6 +107,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class QName : public Object
 {
@@ -119,7 +122,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    std::string  localName();
+    std::string       localName();
 
     /**
      * The Uniform Resource Identifier (URI) of the QName object.
@@ -127,7 +130,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    std::string  uri();
+    std::string       uri();
 
 public:
     QName(void *namespace=NULL, void *name=NULL);
@@ -138,7 +141,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    QName   *valueOf();
+    QName    *valueOf();
 
     /**
      * Returns a string composed of the URI, and the local name for the
@@ -154,7 +157,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toString();
+    std::string   toString();
 };
 
 #endif // FLEX11_6_QNAME_AS

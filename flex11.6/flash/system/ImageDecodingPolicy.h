@@ -10,6 +10,9 @@
  * @playerversion   AIR 2.6
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

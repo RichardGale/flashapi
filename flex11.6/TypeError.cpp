@@ -50,5 +50,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        TypeError::TypeError(void* message, void* id);
+        TypeError::TypeError(std::string message, void* id);
 

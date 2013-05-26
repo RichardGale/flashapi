@@ -387,7 +387,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * The overall paper height, in points. This property is available only
@@ -462,7 +462,7 @@ namespace flash
              * @playerversion   AIR 2  read-write
              */
         public:
-            std::string  orientation();
+            std::string       orientation();
 
             /**
              * Creates a PrintJob object that you can use to print one or more pages.
@@ -545,7 +545,7 @@ namespace flash
              * @throws  IllegalOperationError in AIR 2 or later, if another PrintJob is currently active
              */
         public:
-            bool     start();
+            bool  start();
 
             /**
              * Sends spooled pages to the printer after successful calls to the start() or

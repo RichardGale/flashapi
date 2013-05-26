@@ -43,6 +43,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class SecurityError : public Error
 {
@@ -56,7 +59,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    SecurityError(void *message=(void *)"", void *id=0);
+    SecurityError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_SECURITYERROR_AS

@@ -54,7 +54,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *voucherStartDate();
+                Date         *voucherStartDate();
 
                 /**
                  * The date on which this voucher expires.
@@ -63,7 +63,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *voucherEndDate();
+                Date         *voucherEndDate();
 
                 /**
                  * The date and time at which this voucher becomes valid for offline playback.
@@ -75,7 +75,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *offlineLeaseStartDate();
+                Date         *offlineLeaseStartDate();
 
                 /**
                  * The date and time at which this voucher expires for offline playback.
@@ -87,7 +87,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *offlineLeaseEndDate();
+                Date         *offlineLeaseEndDate();
 
                 /**
                  * A dynamic object that reports policies defined by the application.
@@ -98,7 +98,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Object      *policies();
+                Object       *policies();
 
                 /**
                  * The time period, after the first viewing, during which

@@ -110,7 +110,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static unsigned int defaultObjectEncoding();
+            static unsigned int         defaultObjectEncoding();
         public:
             static void         defaultObjectEncoding(unsigned int version);
 
@@ -125,7 +125,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int length();
+            unsigned int         length();
         public:
             void         length(unsigned int value);
 
@@ -142,7 +142,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesAvailable();
+            unsigned int         bytesAvailable();
 
             /**
              * Moves, or returns the current position, in bytes, of the file
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int position();
+            unsigned int         position();
         public:
             void         position(unsigned int offset);
 
@@ -168,7 +168,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
@@ -180,12 +180,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  endian();
+            std::string       endian();
         public:
             void         endian(std::string type);
 
         public:
-            bool         shareable();
+            bool      shareable();
         public:
             void         shareable(bool newValue);
 
@@ -363,7 +363,7 @@ namespace flash
              *   to read.
              */
         public:
-            bool     readBoolean();
+            bool  readBoolean();
 
             /**
              * Reads a signed byte from the byte stream.
@@ -390,7 +390,7 @@ namespace flash
              *   to read.
              */
         public:
-            unsigned int readUnsignedByte();
+            unsigned int     readUnsignedByte();
 
             /**
              * Reads a signed 16-bit integer from the byte stream.
@@ -418,7 +418,7 @@ namespace flash
              *   to read.
              */
         public:
-            unsigned int readUnsignedShort();
+            unsigned int     readUnsignedShort();
 
             /**
              * Reads a signed 32-bit integer from the byte stream.
@@ -446,7 +446,7 @@ namespace flash
              *   to read.
              */
         public:
-            unsigned int readUnsignedInt();
+            unsigned int     readUnsignedInt();
 
             /**
              * Reads an IEEE 754 single-precision (32-bit) floating-point number from the byte stream.
@@ -458,7 +458,7 @@ namespace flash
              *   to read.
              */
         public:
-            float    readFloat();
+            float   readFloat();
 
             /**
              * Reads an IEEE 754 double-precision (64-bit) floating-point number from the byte stream.
@@ -470,7 +470,7 @@ namespace flash
              *   to read.
              */
         public:
-            float    readDouble();
+            float   readDouble();
 
             /**
              * Reads a multibyte string of specified length from the byte stream using the
@@ -494,7 +494,7 @@ namespace flash
              *   to read.
              */
         public:
-            std::string readMultiByte(unsigned int length, std::string charSet);
+            std::string   readMultiByte(unsigned int length, std::string charSet);
 
             /**
              * Reads a UTF-8 string from the byte stream.  The string
@@ -508,7 +508,7 @@ namespace flash
              *   to read.
              */
         public:
-            std::string readUTF();
+            std::string   readUTF();
 
             /**
              * Reads a sequence of UTF-8 bytes specified by the length
@@ -522,7 +522,7 @@ namespace flash
              *   to read.
              */
         public:
-            std::string readUTFBytes(unsigned int length);
+            std::string   readUTFBytes(unsigned int length);
 
             /**
              * Writes an object into the byte array in AMF
@@ -546,7 +546,7 @@ namespace flash
              *   to read.
              */
         public:
-            void    *readObject();
+            void        *readObject();
 
             /**
              * Compresses the byte array using the deflate compression algorithm.
@@ -678,7 +678,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Clears the contents of the byte array and resets the length

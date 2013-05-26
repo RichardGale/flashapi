@@ -395,7 +395,7 @@ namespace flash
              * @oldexample  This example sets the RGB color value for the movie clip <code>my_mc</code>.<span class="flashonly"> To see this code work, place a movie clip on the Stage with the instance name <code>my_mc</code>. Then place the following code on Frame 1 in the main Timeline and select Control &gt; Test Movie:</span><pre xml:space="preserve" class="- topic/pre "><code>var my_color:Color = new Color(my_mc);</code><code>my_color.setRGB(0xFF0000); // my_mc turns red</code></pre>
              */
         public:
-            unsigned int color();
+            unsigned int         color();
         public:
             void         color(unsigned int newColor);
 
@@ -415,7 +415,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ColorTransform(float redMultiplier =1, float greenMultiplier =1, float blueMultiplier =1, float alphaMultiplier =1, float redOffset =0, float greenOffset =0, float blueOffset =0, float alphaOffset =0);
+            ColorTransform(float redMultiplier=1, float greenMultiplier=1, float blueMultiplier=1, float alphaMultiplier=1, float redOffset=0, float greenOffset=0, float blueOffset=0, float alphaOffset=0);
 
             /**
              * Concatenates the ColorTranform object specified by the second parameter
@@ -479,7 +479,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

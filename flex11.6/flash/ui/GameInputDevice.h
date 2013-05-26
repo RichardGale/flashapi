@@ -42,15 +42,15 @@ namespace flash
             void         sampleInterval(int val);
 
         public:
-            bool         enabled();
+            bool      enabled();
         public:
             void         enabled(bool val);
 
         public:
-            std::string  id();
+            std::string       id();
 
         public:
-            std::string  name();
+            std::string       name();
 
         public:
             GameInputDevice();
@@ -65,7 +65,7 @@ namespace flash
             void     stopCachingSamples();
 
         public:
-            int      getCachedSamples(ByteArray *data, bool append   =false);
+            int      getCachedSamples(ByteArray *data, bool append=false);
         };
     }
 }

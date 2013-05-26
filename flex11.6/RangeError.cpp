@@ -53,5 +53,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        RangeError::RangeError(void* message, void* id);
+        RangeError::RangeError(std::string message, void* id);
 

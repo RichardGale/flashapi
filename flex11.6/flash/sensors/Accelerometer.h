@@ -154,7 +154,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * Specifies whether the user has denied access to the accelerometer (true)
@@ -165,7 +165,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            bool         muted();
+            bool      muted();
 
             /**
              * Creates a new Accelerometer instance.

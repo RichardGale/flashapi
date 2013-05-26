@@ -19,7 +19,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFormatAlign::LEFT="left";
+        const std::string TextFormatAlign::LEFT   = "left";
 
         /**
          * Constant; centers the text in the text field.
@@ -28,7 +28,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFormatAlign::CENTER="center";
+        const std::string TextFormatAlign::CENTER   = "center";
 
         /**
          * Constant; aligns text to the right within the text field.
@@ -37,7 +37,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFormatAlign::RIGHT="right";
+        const std::string TextFormatAlign::RIGHT   = "right";
 
         /**
          * Constant; justifies text within the text field. 
@@ -46,9 +46,9 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextFormatAlign::JUSTIFY="justify";
-        const std::string TextFormatAlign::START;
-        const std::string TextFormatAlign::END;
+        const std::string TextFormatAlign::JUSTIFY   = "justify";
+        const std::string TextFormatAlign::START  ;
+        const std::string TextFormatAlign::END  ;
 
         TextFormatAlign::TextFormatAlign();
 }

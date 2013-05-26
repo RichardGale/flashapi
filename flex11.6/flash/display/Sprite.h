@@ -169,7 +169,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         buttonMode();
+            bool      buttonMode();
         public:
             void         buttonMode(bool value);
 
@@ -225,7 +225,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            bool         useHandCursor();
+            bool      useHandCursor();
         public:
             void         useHandCursor(bool value);
 
@@ -275,7 +275,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     startDrag(bool lockCenter   =false, Rectangle *bounds=NULL);
+            void     startDrag(bool lockCenter=false, Rectangle *bounds=NULL);
 
             /**
              * Ends the startDrag() method. A sprite that was made draggable with the
@@ -311,7 +311,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     startTouchDrag(int touchPointID, bool lockCenter   =false, Rectangle *bounds=NULL);
+            void     startTouchDrag(int touchPointID, bool lockCenter=false, Rectangle *bounds=NULL);
 
             /**
              * Ends the startTouchDrag() method, for use with touch-enabled devices. A sprite that was made draggable with the

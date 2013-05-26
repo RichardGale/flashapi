@@ -11,8 +11,8 @@ namespace flash {
 namespace events {
 
 
-        const std::string DRMDeviceGroupErrorEvent::ADD_TO_DEVICE_GROUP_ERROR;
-        const std::string DRMDeviceGroupErrorEvent::REMOVE_FROM_DEVICE_GROUP_ERROR;
+        const std::string DRMDeviceGroupErrorEvent::ADD_TO_DEVICE_GROUP_ERROR  ;
+        const std::string DRMDeviceGroupErrorEvent::REMOVE_FROM_DEVICE_GROUP_ERROR  ;
 
         int DRMDeviceGroupErrorEvent::subErrorID()      ;
         void DRMDeviceGroupErrorEvent::subErrorID(int value)       ;

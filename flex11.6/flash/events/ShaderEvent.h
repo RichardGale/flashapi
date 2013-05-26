@@ -133,7 +133,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            ShaderEvent(std::string type, bool bubbles   =false, bool cancelable   =false, BitmapData *bitmap=NULL, ByteArray *array=NULL, std::vector<float> vector=std::vector<float>());
+            ShaderEvent(std::string type, bool bubbles=false, bool cancelable=false, BitmapData *bitmap=NULL, ByteArray *array=NULL, std::vector<float> vector=std::vector<float>());
 
             /**
              * Returns a string that contains all the properties of the ShaderEvent object.
@@ -148,7 +148,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

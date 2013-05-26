@@ -21,15 +21,15 @@ namespace flash
         class ObjectInput : public Object, public IDataInput
         {
         public:
-            unsigned int bytesAvailable();
+            unsigned int         bytesAvailable();
 
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
         public:
-            std::string  endian();
+            std::string       endian();
         public:
             void         endian(std::string type);
 
@@ -40,43 +40,43 @@ namespace flash
             void     readBytes(ByteArray *bytes, unsigned int offset=0, unsigned int length=0);
 
         public:
-            bool     readBoolean();
+            bool  readBoolean();
 
         public:
             int      readByte();
 
         public:
-            unsigned int readUnsignedByte();
+            unsigned int     readUnsignedByte();
 
         public:
             int      readShort();
 
         public:
-            unsigned int readUnsignedShort();
+            unsigned int     readUnsignedShort();
 
         public:
             int      readInt();
 
         public:
-            unsigned int readUnsignedInt();
+            unsigned int     readUnsignedInt();
 
         public:
-            float    readFloat();
+            float   readFloat();
 
         public:
-            float    readDouble();
+            float   readDouble();
 
         public:
-            std::string readMultiByte(unsigned int length, std::string charSet);
+            std::string   readMultiByte(unsigned int length, std::string charSet);
 
         public:
-            std::string readUTF();
+            std::string   readUTF();
 
         public:
-            std::string readUTFBytes(unsigned int length);
+            std::string   readUTFBytes(unsigned int length);
 
         public:
-            void    *readObject();
+            void        *readObject();
         };
     }
 }

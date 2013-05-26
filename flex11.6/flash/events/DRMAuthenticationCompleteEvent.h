@@ -47,7 +47,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            std::string  serverURL();
+            std::string       serverURL();
         public:
             void         serverURL(std::string value);
 
@@ -58,7 +58,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            std::string  domain();
+            std::string       domain();
         public:
             void         domain(std::string value);
 
@@ -119,7 +119,7 @@ namespace flash
              * @playerversion   Flash 10.1
              */
         public:
-            DRMAuthenticationCompleteEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string inServerURL="", std::string inDomain="", ByteArray *inToken=NULL);
+            DRMAuthenticationCompleteEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string inServerURL="", std::string inDomain="", ByteArray *inToken=NULL);
         };
     }
 }

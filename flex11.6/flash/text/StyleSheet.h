@@ -107,7 +107,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> styleNames();
+            std::vector<void *>        styleNames();
 
             /**
              * Returns a copy of the style object associated with the style named styleName.
@@ -120,7 +120,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object  *getStyle(std::string styleName);
+            Object   *getStyle(std::string styleName);
 
             /**
              * Adds a new style with the specified name to the style sheet object.

@@ -43,7 +43,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         routingEnabled();
+            bool      routingEnabled();
         public:
             void         routingEnabled(bool enabled);
 
@@ -56,7 +56,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         multicastEnabled();
+            bool      multicastEnabled();
         public:
             void         multicastEnabled(bool enabled);
 
@@ -68,7 +68,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         objectReplicationEnabled();
+            bool      objectReplicationEnabled();
         public:
             void         objectReplicationEnabled(bool enabled);
 
@@ -80,7 +80,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         postingEnabled();
+            bool      postingEnabled();
         public:
             void         postingEnabled(bool enabled);
 
@@ -96,7 +96,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         peerToPeerDisabled();
+            bool      peerToPeerDisabled();
         public:
             void         peerToPeerDisabled(bool disable);
 
@@ -111,7 +111,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ipMulticastMemberUpdatesEnabled();
+            bool      ipMulticastMemberUpdatesEnabled();
         public:
             void         ipMulticastMemberUpdatesEnabled(bool enabled);
 
@@ -127,7 +127,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         serverChannelEnabled();
+            bool      serverChannelEnabled();
         public:
             void         serverChannelEnabled(bool enabled);
 
@@ -146,7 +146,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string encodePostingAuthorization(std::string password);
+            static std::string   encodePostingAuthorization(std::string password);
 
             /**
              * Encodes and returns a string that represents a multicast publishing password. When multicast publishing is password-protected,
@@ -158,7 +158,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string encodePublishAuthorization(std::string password);
+            static std::string   encodePublishAuthorization(std::string password);
 
             /**
              * Encodes and returns a string that represents an IP multicast socket address.
@@ -177,7 +177,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string encodeIPMulticastAddressSpec(std::string address, void *port=NULL, std::string source="");
+            static std::string   encodeIPMulticastAddressSpec(std::string address, void *port=NULL, std::string source="");
 
             /**
              * Encodes and returns a string that represents a bootstrap peerID. If you append the string
@@ -190,7 +190,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static std::string encodeBootstrapPeerIDSpec(std::string peerID);
+            static std::string   encodeBootstrapPeerIDSpec(std::string peerID);
 
             /**
              * Creates a new GroupSpecifier object.
@@ -280,7 +280,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Returns the opaque groupspec string, without authorizations, that can be passed to NetStream and NetGroup constructors.
@@ -289,7 +289,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string groupspecWithoutAuthorizations();
+            std::string   groupspecWithoutAuthorizations();
 
             /**
              * Returns the opaque groupspec string, including authorizations, that can be passed to NetStream and NetGroup constructors.
@@ -298,7 +298,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string groupspecWithAuthorizations();
+            std::string   groupspecWithAuthorizations();
 
             /**
              * Returns a string that represents passwords for IP multicast publishing and for posting.
@@ -309,7 +309,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string authorizations();
+            std::string   authorizations();
         };
     }
 }

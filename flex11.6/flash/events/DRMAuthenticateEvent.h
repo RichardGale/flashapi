@@ -152,7 +152,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string  header();
+            std::string       header();
 
             /**
              * A prompt for a user name credential, provided by the server.
@@ -162,7 +162,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string  usernamePrompt();
+            std::string       usernamePrompt();
 
             /**
              * A prompt for a password credential, provided by the server.
@@ -171,7 +171,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string  passwordPrompt();
+            std::string       passwordPrompt();
 
             /**
              * A prompt for a URL string, provided by the server.
@@ -180,7 +180,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string  urlPrompt();
+            std::string       urlPrompt();
 
             /**
              * Indicates whether the supplied credentials are for authenticating against Flash Media Rights Management Server (FMRMS)
@@ -193,7 +193,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string  authenticationType();
+            std::string       authenticationType();
 
             /**
              * The NetStream object that initiated this event.
@@ -229,7 +229,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            DRMAuthenticateEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string header="", std::string userPrompt="", std::string passPrompt="", std::string urlPrompt="", std::string authenticationType="", NetStream *netstream=NULL);
+            DRMAuthenticateEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string header="", std::string userPrompt="", std::string passPrompt="", std::string urlPrompt="", std::string authenticationType="", NetStream *netstream=NULL);
 
             /**
              * Returns a string that contains all the properties of the DRMAuthenticateEvent object.
@@ -241,7 +241,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

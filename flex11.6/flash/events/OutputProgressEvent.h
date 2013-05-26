@@ -42,7 +42,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            float        bytesPending();
+            float       bytesPending();
         public:
             void         bytesPending(float value);
 
@@ -52,7 +52,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            float        bytesTotal();
+            float       bytesTotal();
         public:
             void         bytesTotal(float value);
 
@@ -78,7 +78,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            OutputProgressEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float bytesPending =0, float bytesTotal =0);
+            OutputProgressEvent(std::string type, bool bubbles=false, bool cancelable=false, float bytesPending=0, float bytesTotal=0);
 
             /**
              * Returns a string that contains all the properties of the OutputProgressEvent object. The string is in the following format:
@@ -89,7 +89,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

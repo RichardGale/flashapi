@@ -47,5 +47,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        ReferenceError::ReferenceError(void* message, void* id);
+        ReferenceError::ReferenceError(std::string message, void* id);
 

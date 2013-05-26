@@ -20,7 +20,7 @@ namespace ui {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const unsigned int KeyLocation::STANDARD=0;
+        const unsigned int KeyLocation::STANDARD   = 0;
 
         /**
          * Indicates the key activated is in the left key location (there is more than one possible location for this 
@@ -29,7 +29,7 @@ namespace ui {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const unsigned int KeyLocation::LEFT=1;
+        const unsigned int KeyLocation::LEFT   = 1;
 
         /**
          * Indicates the key activated is in the right key location (there is more than one possible location for this 
@@ -38,7 +38,7 @@ namespace ui {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const unsigned int KeyLocation::RIGHT=2;
+        const unsigned int KeyLocation::RIGHT   = 2;
 
         /**
          * Indicates the key activation originated on the numeric keypad or with a virtual key corresponding 
@@ -46,7 +46,7 @@ namespace ui {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const unsigned int KeyLocation::NUM_PAD=3;
+        const unsigned int KeyLocation::NUM_PAD   = 3;
 
         /**
          * Indicates the key activation originated on a directional pad of input device.
@@ -54,7 +54,7 @@ namespace ui {
          * @langversion 3.0
          * @playerversion   AIR 2.5
          */
-        const unsigned int KeyLocation::D_PAD=4;
+        const unsigned int KeyLocation::D_PAD   = 4;
 
         KeyLocation::KeyLocation();
 }

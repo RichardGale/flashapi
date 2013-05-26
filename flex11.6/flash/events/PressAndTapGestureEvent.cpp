@@ -27,7 +27,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string PressAndTapGestureEvent::GESTURE_PRESS_AND_TAP="gesturePressAndTap";
+        const std::string PressAndTapGestureEvent::GESTURE_PRESS_AND_TAP   = "gesturePressAndTap";
 
         /**
          * The horizontal coordinate at which the event occurred relative to the containing interactive object.

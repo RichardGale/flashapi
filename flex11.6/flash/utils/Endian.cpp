@@ -34,7 +34,7 @@ namespace utils {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Endian::BIG_ENDIAN="bigEndian";
+        const std::string Endian::BIG_ENDIAN   = "bigEndian";
 
         /**
          * Indicates the least significant byte of the multibyte number appears first in the sequence of bytes.
@@ -48,7 +48,7 @@ namespace utils {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string Endian::LITTLE_ENDIAN="littleEndian";
+        const std::string Endian::LITTLE_ENDIAN   = "littleEndian";
 
         Endian::Endian();
 }

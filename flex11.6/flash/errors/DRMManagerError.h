@@ -9,6 +9,9 @@
  * @playerversion   AIR 1.5
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -41,7 +44,7 @@ namespace flash
              * @return  The error message.
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

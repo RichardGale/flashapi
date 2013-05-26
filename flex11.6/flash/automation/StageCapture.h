@@ -46,17 +46,17 @@ namespace flash
         public:
             void         fileNameBase(std::string value);
         public:
-            std::string  fileNameBase();
+            std::string       fileNameBase();
 
         public:
             void         clipRect(Rectangle *value);
         public:
-            Rectangle   *clipRect();
+            Rectangle    *clipRect();
 
         public:
             void         captureSource(std::string value);
         public:
-            std::string  captureSource();
+            std::string       captureSource();
 
         public:
             void     capture(std::string type);

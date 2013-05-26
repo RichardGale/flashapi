@@ -148,7 +148,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int color();
+            unsigned int         color();
         public:
             void         color(unsigned int value);
 
@@ -191,7 +191,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        alpha();
+            float       alpha();
         public:
             void         alpha(float value);
 
@@ -235,7 +235,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurX();
+            float       blurX();
         public:
             void         blurX(float value);
 
@@ -279,7 +279,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        blurY();
+            float       blurY();
         public:
             void         blurY(float value);
 
@@ -322,7 +322,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool         inner();
+            bool      inner();
         public:
             void         inner(bool value);
 
@@ -365,7 +365,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool         knockout();
+            bool      knockout();
         public:
             void         knockout(bool value);
 
@@ -458,7 +458,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        strength();
+            float       strength();
         public:
             void         strength(float value);
 
@@ -528,7 +528,7 @@ namespace flash
              *   </listing>
              */
         public:
-            GlowFilter(unsigned int color=16711680, float alpha =1, float blurX =6, float blurY =6, float strength =2, int quality=1, bool inner   =false, bool knockout   =false);
+            GlowFilter(unsigned int color=16711680, float alpha=1, float blurX=6, float blurY=6, float strength=2, int quality=1, bool inner=false, bool knockout=false);
 
             /**
              * Returns a copy of this filter object.

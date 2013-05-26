@@ -9,7 +9,7 @@ namespace flash {
 namespace events {
 
 
-        const std::string ThrottleEvent::THROTTLE;
+        const std::string ThrottleEvent::THROTTLE  ;
 
         float ThrottleEvent::targetFrameRate()         ;
 

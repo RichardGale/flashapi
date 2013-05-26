@@ -28,13 +28,13 @@ namespace flash
             ByteArray *data;
 
         public:
-            Event   *clone();
+            Event    *clone();
 
         public:
-            NetFilterEvent(std::string type, bool bubbles   =false, bool cancelable   =false, ByteArray *header=NULL, ByteArray *data=NULL);
+            NetFilterEvent(std::string type, bool bubbles=false, bool cancelable=false, ByteArray *header=NULL, ByteArray *data=NULL);
 
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

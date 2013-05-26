@@ -77,16 +77,16 @@ namespace flash
                 void     setTimerUp();
 
             public:
-                unsigned int checkStatus();
+                unsigned int     checkStatus();
 
             public:
-                unsigned int getLastError();
+                unsigned int     getLastError();
 
             public:
-                unsigned int getLastSubErrorID();
+                unsigned int     getLastSubErrorID();
 
             public:
-                void    *issueDRMStatusEvent(DRMContentData *inMetadata, DRMVoucher *voucher);
+                void        *issueDRMStatusEvent(DRMContentData *inMetadata, DRMVoucher *voucher);
 
             public:
                 void     issueDRMErrorEvent(DRMContentData *metadata, int errorID, int subErrorID, std::string eventType="");

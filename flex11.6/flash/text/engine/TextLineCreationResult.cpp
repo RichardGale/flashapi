@@ -21,7 +21,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineCreationResult::SUCCESS="success";
+        const std::string TextLineCreationResult::SUCCESS   = "success";
 
         /**
          * Indicates the line was created with an emergency break because no break opportunity
@@ -31,7 +31,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineCreationResult::EMERGENCY="emergency";
+        const std::string TextLineCreationResult::EMERGENCY   = "emergency";
 
         /**
          * Indicates no line was created because all text in the block had already been broken.
@@ -40,7 +40,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineCreationResult::COMPLETE="complete";
+        const std::string TextLineCreationResult::COMPLETE   = "complete";
 
         /**
          * Indicates no line was created because no text could fit in the specified width
@@ -50,7 +50,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextLineCreationResult::INSUFFICIENT_WIDTH="insufficientWidth";
+        const std::string TextLineCreationResult::INSUFFICIENT_WIDTH   = "insufficientWidth";
 
         TextLineCreationResult::TextLineCreationResult();
 }

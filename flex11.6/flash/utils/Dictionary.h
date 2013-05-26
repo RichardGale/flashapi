@@ -27,6 +27,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -44,7 +47,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Dictionary(bool weakKeys   =false);
+            Dictionary(bool weakKeys=false);
         };
     }
 }

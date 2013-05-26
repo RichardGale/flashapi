@@ -26,7 +26,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string InterpolationMethod::RGB="rgb";
+        const std::string InterpolationMethod::RGB   = "rgb";
 
         /**
          * Specifies that the linear RGB interpolation method should be used. This means that
@@ -34,7 +34,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string InterpolationMethod::LINEAR_RGB="linearRGB";
+        const std::string InterpolationMethod::LINEAR_RGB   = "linearRGB";
 
         InterpolationMethod::InterpolationMethod();
 }

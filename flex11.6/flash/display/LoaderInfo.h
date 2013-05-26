@@ -188,7 +188,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  loaderURL();
+            std::string       loaderURL();
 
             /**
              * The URL of the media being loaded.
@@ -205,7 +205,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  url();
+            std::string       url();
 
             /**
              * Indicates if the LoaderInfo.url property has been
@@ -231,7 +231,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         isURLInaccessible();
+            bool      isURLInaccessible();
 
             /**
              * The number of bytes that are loaded for the media. When this number equals
@@ -241,7 +241,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesLoaded();
+            unsigned int         bytesLoaded();
 
             /**
              * The number of compressed bytes in the entire media file.
@@ -255,7 +255,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int bytesTotal();
+            unsigned int         bytesTotal();
 
             /**
              * When an external SWF file is loaded, all ActionScript 3.0 definitions contained in the loaded
@@ -289,7 +289,7 @@ namespace flash
              * @throws  Error If the file is not a SWF file.
              */
         public:
-            unsigned int swfVersion();
+            unsigned int         swfVersion();
 
             /**
              * The ActionScript version of the loaded SWF file.
@@ -309,7 +309,7 @@ namespace flash
              * @throws  Error If the file is not a SWF file.
              */
         public:
-            unsigned int actionScriptVersion();
+            unsigned int         actionScriptVersion();
 
             /**
              * The nominal frame rate, in frames per second, of the loaded SWF file. This
@@ -327,7 +327,7 @@ namespace flash
              * @throws  Error If the file is not a SWF file.
              */
         public:
-            float        frameRate();
+            float       frameRate();
 
             /**
              * An object that contains name-value pairs that represent the parameters provided
@@ -345,7 +345,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *parameters();
+            Object       *parameters();
 
             /**
              * The nominal width of the loaded content. This value might differ from the actual
@@ -381,7 +381,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  contentType();
+            std::string       contentType();
 
             /**
              * An EventDispatcher instance that can be used to exchange events across security boundaries.
@@ -404,7 +404,7 @@ namespace flash
              * @throws  SecurityError Only content in the Loader object's sandbox can set this property.
              */
         public:
-            Object      *parentSandboxBridge();
+            Object       *parentSandboxBridge();
         public:
             void         parentSandboxBridge(Object *door);
 
@@ -418,7 +418,7 @@ namespace flash
              * @throws  SecurityError Only content in the loaded content's sandbox can set this property.
              */
         public:
-            Object      *childSandboxBridge();
+            Object       *childSandboxBridge();
         public:
             void         childSandboxBridge(Object *door);
 
@@ -432,7 +432,7 @@ namespace flash
              *   to retrieve the requested information.
              */
         public:
-            bool         sameDomain();
+            bool      sameDomain();
 
             /**
              * Expresses the trust relationship from content (child) to the Loader (parent).
@@ -452,7 +452,7 @@ namespace flash
              *   to retrieve the requested information.
              */
         public:
-            bool         childAllowsParent();
+            bool      childAllowsParent();
 
             /**
              * Expresses the trust relationship from Loader (parent) to the content (child).
@@ -472,7 +472,7 @@ namespace flash
              *   to retrieve the requested information.
              */
         public:
-            bool         parentAllowsChild();
+            bool      parentAllowsChild();
 
             /**
              * The Loader object associated with this LoaderInfo object. If this LoaderInfo object
@@ -561,7 +561,7 @@ namespace flash
             LoaderInfo();
 
         public:
-            bool     dispatchEvent(Event *event);
+            bool  dispatchEvent(Event *event);
         };
     }
 }

@@ -71,7 +71,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::DEFAULT="default";
+        const std::string SecurityPanel::DEFAULT   = "default";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -80,7 +80,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::PRIVACY="privacy";
+        const std::string SecurityPanel::PRIVACY   = "privacy";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -89,7 +89,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::LOCAL_STORAGE="localStorage";
+        const std::string SecurityPanel::LOCAL_STORAGE   = "localStorage";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -98,7 +98,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::MICROPHONE="microphone";
+        const std::string SecurityPanel::MICROPHONE   = "microphone";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -107,7 +107,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::CAMERA="camera";
+        const std::string SecurityPanel::CAMERA   = "camera";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -116,7 +116,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::DISPLAY="display";
+        const std::string SecurityPanel::DISPLAY   = "display";
 
         /**
          * When passed to Security.showSettings(), displays the
@@ -125,7 +125,7 @@ namespace system {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SecurityPanel::SETTINGS_MANAGER="settingsManager";
+        const std::string SecurityPanel::SETTINGS_MANAGER   = "settingsManager";
 
         SecurityPanel::SecurityPanel();
 }

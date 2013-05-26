@@ -92,7 +92,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        tapLocalX();
+            float       tapLocalX();
         public:
             void         tapLocalX(float value);
 
@@ -104,7 +104,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        tapLocalY();
+            float       tapLocalY();
         public:
             void         tapLocalY(float value);
 
@@ -117,7 +117,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        tapStageX();
+            float       tapStageX();
 
             /**
              * The vertical coordinate at which the tap touch occurred in global Stage coordinates.
@@ -128,7 +128,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        tapStageY();
+            float       tapStageY();
 
             /**
              * Creates a copy of the PressAndTapGestureEvent object and sets the value of each property to match that of the original.
@@ -165,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            PressAndTapGestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, float tapLocalX =0, float tapLocalY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
+            PressAndTapGestureEvent(std::string type, bool bubbles=true, bool cancelable=false, std::string phase="", float localX=0, float localY=0, float tapLocalX=0, float tapLocalY=0, bool ctrlKey=false, bool altKey=false, bool shiftKey=false);
 
             /**
              * Returns a string that contains all the properties of the PressAndTapGestureEvent object. The string is in the following format:
@@ -177,7 +177,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

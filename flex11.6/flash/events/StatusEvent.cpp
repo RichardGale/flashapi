@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StatusEvent::STATUS="status";
+        const std::string StatusEvent::STATUS   = "status";
 
         /**
          * A description of the object's status.

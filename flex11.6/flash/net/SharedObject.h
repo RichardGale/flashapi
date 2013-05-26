@@ -314,7 +314,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static unsigned int defaultObjectEncoding();
+            static unsigned int         defaultObjectEncoding();
         public:
             static void         defaultObjectEncoding(unsigned int version);
 
@@ -387,7 +387,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *data();
+            Object       *data();
 
             /**
              * The current size of the shared object, in bytes.
@@ -401,7 +401,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int size();
+            unsigned int         size();
 
             /**
              * Specifies the number of times per second that a client's changes to a
@@ -456,7 +456,7 @@ namespace flash
              *   its value is determined by the associated NetConnection instance.
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
@@ -472,7 +472,7 @@ namespace flash
              * @throws  TypeError The client property must be set to a non-null object.
              */
         public:
-            Object      *client();
+            Object       *client();
         public:
             void         client(Object *object);
 
@@ -564,7 +564,7 @@ namespace flash
              *   http://www.adobe.com/support/documentation/en/flashplayer/help/settings_manager03.html.
              */
         public:
-            static flash::net::SharedObject *getLocal(std::string name, std::string localPath="", bool secure   =false);
+            static flash::net::SharedObject *getLocal(std::string name, std::string localPath="", bool secure=false);
 
             /**
              * Returns a reference to a shared object on Flash Media Server that multiple
@@ -619,7 +619,7 @@ namespace flash
              *   specified for the remotePath and persistence parameters.
              */
         public:
-            static flash::net::SharedObject *getRemote(std::string name, std::string remotePath="", Object *persistence=false, bool secure   =false);
+            static flash::net::SharedObject *getRemote(std::string name, std::string remotePath="", Object *persistence=false, bool secure=false);
 
             /**
              * Connects to a remote shared object on a server through a specified NetConnection object.
@@ -715,7 +715,7 @@ namespace flash
              *   to disk, even if writing of third-party shared objects to disk is disallowed.
              */
         public:
-            std::string flush(int minDiskSpace=0);
+            std::string   flush(int minDiskSpace=0);
 
         public:
             SharedObject();

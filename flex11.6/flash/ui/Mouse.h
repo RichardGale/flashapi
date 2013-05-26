@@ -174,7 +174,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         supportsCursor();
+            static bool      supportsCursor();
 
             /**
              * Sets or returns the type of cursor, or, for a native cursor, the cursor name.
@@ -189,7 +189,7 @@ namespace flash
              *   the Mouse.registerCursor() method.
              */
         public:
-            static std::string  cursor();
+            static std::string       cursor();
         public:
             static void         cursor(std::string value);
 
@@ -200,7 +200,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            static bool         supportsNativeCursor();
+            static bool      supportsNativeCursor();
 
             /**
              * Hides the pointer. The pointer is visible by default.

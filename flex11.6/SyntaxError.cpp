@@ -21,5 +21,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        SyntaxError::SyntaxError(void* message, void* id);
+        SyntaxError::SyntaxError(std::string message, void* id);
 

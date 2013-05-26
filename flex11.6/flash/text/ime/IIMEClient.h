@@ -86,7 +86,7 @@ namespace flash
                  * @playerversion   AIR 2
                  */
                 virtual
-                bool         verticalTextLayout() = 0;
+                bool      verticalTextLayout() = 0;
 
                 /**
                  * The zero-based character index value of the first character in the current selection.
@@ -130,7 +130,7 @@ namespace flash
                  * @playerversion   AIR 2
                  */
                 virtual
-                void     confirmComposition(std::string text="", bool preserveSelection   =false) = 0;
+                void     confirmComposition(std::string text="", bool preserveSelection=false) = 0;
 
                 /**
                  * The IME uses this method to query the bounding box of the text currently edited with the IME client.
@@ -171,7 +171,7 @@ namespace flash
                  * @playerversion   AIR 2
                  */
                 virtual
-                std::string getTextInRange(int startIndex, int endIndex) = 0;
+                std::string   getTextInRange(int startIndex, int endIndex) = 0;
             };
         }
     }

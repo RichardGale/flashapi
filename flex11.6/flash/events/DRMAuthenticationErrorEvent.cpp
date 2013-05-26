@@ -24,7 +24,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string DRMAuthenticationErrorEvent::AUTHENTICATION_ERROR="authenticationError";
+        const std::string DRMAuthenticationErrorEvent::AUTHENTICATION_ERROR   = "authenticationError";
 
         /**
          * A more detailed error code.

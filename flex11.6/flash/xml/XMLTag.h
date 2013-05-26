@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace xml
@@ -11,22 +15,22 @@ namespace flash
         class XMLTag : public Object
         {
         public:
-            unsigned int type();
+            unsigned int         type();
         public:
             void         type(unsigned int value);
 
         public:
-            bool         empty();
+            bool      empty();
         public:
             void         empty(bool value);
 
         public:
-            std::string  value();
+            std::string       value();
         public:
             void         value(std::string v);
 
         public:
-            Object      *attrs();
+            Object       *attrs();
         public:
             void         attrs(Object *value);
 

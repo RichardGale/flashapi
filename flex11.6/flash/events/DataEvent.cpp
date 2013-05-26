@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string DataEvent::DATA="data";
+        const std::string DataEvent::DATA   = "data";
 
         /**
          * Defines the value of the type property of an uploadCompleteData event object.
@@ -29,7 +29,7 @@ namespace events {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string DataEvent::UPLOAD_COMPLETE_DATA="uploadCompleteData";
+        const std::string DataEvent::UPLOAD_COMPLETE_DATA   = "uploadCompleteData";
 
         /**
          * The raw data loaded into Flash Player or Adobe AIR.

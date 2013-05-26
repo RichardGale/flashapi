@@ -29,7 +29,7 @@ namespace flash
             GameInputDevice *device();
 
         public:
-            GameInputEvent(std::string type, bool bubbles   =false, bool cancelable   =false, GameInputDevice *device=NULL);
+            GameInputEvent(std::string type, bool bubbles=false, bool cancelable=false, GameInputDevice *device=NULL);
         };
     }
 }

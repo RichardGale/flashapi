@@ -21,7 +21,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string OutputProgressEvent::OUTPUT_PROGRESS="outputProgress";
+        const std::string OutputProgressEvent::OUTPUT_PROGRESS   = "outputProgress";
 
         /**
          * The number of bytes not yet written when the listener processes the event.

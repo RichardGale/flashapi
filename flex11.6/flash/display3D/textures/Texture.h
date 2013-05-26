@@ -42,7 +42,7 @@ namespace flash
                 void     uploadFromByteArray(ByteArray *data, unsigned int byteArrayOffset, unsigned int miplevel=0);
 
             public:
-                void     uploadCompressedTextureFromByteArray(ByteArray *data, unsigned int byteArrayOffset, bool async   =false);
+                void     uploadCompressedTextureFromByteArray(ByteArray *data, unsigned int byteArrayOffset, bool async=false);
             };
         }
     }

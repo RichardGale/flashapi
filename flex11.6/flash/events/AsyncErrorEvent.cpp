@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string AsyncErrorEvent::ASYNC_ERROR="asyncError";
+        const std::string AsyncErrorEvent::ASYNC_ERROR   = "asyncError";
 
         /**
          * The exception that was thrown.

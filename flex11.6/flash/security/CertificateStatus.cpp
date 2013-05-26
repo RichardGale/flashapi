@@ -20,7 +20,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::TRUSTED="trusted";
+        const std::string CertificateStatus::TRUSTED   = "trusted";
 
         /**
          * The validity of the certificate is not known.
@@ -30,7 +30,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::UNKNOWN="unknown";
+        const std::string CertificateStatus::UNKNOWN   = "unknown";
 
         /**
          * An invalid certificate.
@@ -42,7 +42,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::INVALID="invalid";
+        const std::string CertificateStatus::INVALID   = "invalid";
 
         /**
          * The certificate is outside its valid period.
@@ -55,7 +55,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::EXPIRED="expired";
+        const std::string CertificateStatus::EXPIRED   = "expired";
 
         /**
          * The certificate is not yet valid.
@@ -65,7 +65,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::NOT_YET_VALID="notYetValid";
+        const std::string CertificateStatus::NOT_YET_VALID   = "notYetValid";
 
         /**
          * The certificate common name does not match the expected host name.
@@ -76,7 +76,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::PRINCIPAL_MISMATCH="principalMismatch";
+        const std::string CertificateStatus::PRINCIPAL_MISMATCH   = "principalMismatch";
 
         /**
          * The certificate does not chain to a trusted root certificate.
@@ -90,7 +90,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::UNTRUSTED_SIGNERS="untrustedSigners";
+        const std::string CertificateStatus::UNTRUSTED_SIGNERS   = "untrustedSigners";
 
         /**
          * The certificate has been revoked.
@@ -103,7 +103,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::REVOKED="revoked";
+        const std::string CertificateStatus::REVOKED   = "revoked";
 
         /**
          * A root or intermediate certificate in this certificate's chain is invalid.
@@ -114,7 +114,7 @@ namespace security {
          * @langversion 3.0
          * @playerversion   AIR 2
          */
-        const std::string CertificateStatus::INVALID_CHAIN="invalidChain";
+        const std::string CertificateStatus::INVALID_CHAIN   = "invalidChain";
 
         CertificateStatus::CertificateStatus();
 }

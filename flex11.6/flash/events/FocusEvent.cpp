@@ -29,7 +29,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FocusEvent::FOCUS_IN="focusIn";
+        const std::string FocusEvent::FOCUS_IN   = "focusIn";
 
         /**
          * Defines the value of the type property of a focusOut event object. 
@@ -42,7 +42,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FocusEvent::FOCUS_OUT="focusOut";
+        const std::string FocusEvent::FOCUS_OUT   = "focusOut";
 
         /**
          * Defines the value of the type property of a keyFocusChange event object.
@@ -58,7 +58,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FocusEvent::KEY_FOCUS_CHANGE="keyFocusChange";
+        const std::string FocusEvent::KEY_FOCUS_CHANGE   = "keyFocusChange";
 
         /**
          * Defines the value of the type property of a mouseFocusChange event object. 
@@ -72,7 +72,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FocusEvent::MOUSE_FOCUS_CHANGE="mouseFocusChange";
+        const std::string FocusEvent::MOUSE_FOCUS_CHANGE   = "mouseFocusChange";
 
         /**
          * A reference to the complementary InteractiveObject instance that is affected by the

@@ -36,13 +36,13 @@ namespace flash
             DRMDeviceGroup *deviceGroup();
 
         public:
-            DRMDeviceGroupEvent(std::string type, bool bubbles   =false, bool cancelable   =false, DRMDeviceGroup *deviceGroup=NULL);
+            DRMDeviceGroupEvent(std::string type, bool bubbles=false, bool cancelable=false, DRMDeviceGroup *deviceGroup=NULL);
 
         public:
-            Event   *clone();
+            Event    *clone();
 
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

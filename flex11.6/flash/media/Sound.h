@@ -197,7 +197,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  url();
+            std::string       url();
 
             /**
              * Indicates if the Sound.url property has been
@@ -221,7 +221,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         isURLInaccessible();
+            bool      isURLInaccessible();
 
             /**
              * The length of the current sound in milliseconds.
@@ -230,7 +230,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        length();
+            float       length();
 
             /**
              * Returns the buffering state of external MP3 files. If the value is true,
@@ -242,7 +242,7 @@ namespace flash
              * @refpath
              */
         public:
-            bool         isBuffering();
+            bool      isBuffering();
 
             /**
              * Returns the currently available number of bytes in this sound object. This property is
@@ -253,7 +253,7 @@ namespace flash
              * @refpath
              */
         public:
-            unsigned int bytesLoaded();
+            unsigned int         bytesLoaded();
 
             /**
              * Returns the total number of bytes in this sound object.
@@ -351,7 +351,7 @@ namespace flash
             void     loadCompressedDataFromByteArray(ByteArray *bytes, unsigned int bytesLength);
 
         public:
-            void     loadPCMFromByteArray(ByteArray *bytes, unsigned int samples, std::string format="float", bool stereo   =true, float sampleRate =44100);
+            void     loadPCMFromByteArray(ByteArray *bytes, unsigned int samples, std::string format="float", bool stereo=true, float sampleRate=44100);
 
             /**
              * Creates a new Sound object. If you pass a valid URLRequest object to the
@@ -400,7 +400,7 @@ namespace flash
              * @refpath
              */
         public:
-            flash::media::SoundChannel *play(float startTime =0, int loops=0, SoundTransform *sndTransform=NULL);
+            flash::media::SoundChannel *play(float startTime=0, int loops=0, SoundTransform *sndTransform=NULL);
 
             /**
              * Closes the stream, causing any download of data to cease.
@@ -441,7 +441,7 @@ namespace flash
              * @refpath
              */
         public:
-            float    extract(ByteArray *target, float length, float startPosition =-1);
+            float   extract(ByteArray *target, float length, float startPosition=-1);
         };
     }
 }

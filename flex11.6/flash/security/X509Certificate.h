@@ -29,43 +29,43 @@ namespace flash
         class X509Certificate : public Object
         {
         public:
-            unsigned int version();
+            unsigned int         version();
 
         public:
-            std::string  serialNumber();
+            std::string       serialNumber();
 
         public:
-            std::string  signatureAlgorithmOID();
+            std::string       signatureAlgorithmOID();
 
         public:
-            ByteArray   *signatureAlgorithmParams();
+            ByteArray    *signatureAlgorithmParams();
 
         public:
             X500DistinguishedName *issuer();
 
         public:
-            Date        *validNotBefore();
+            Date         *validNotBefore();
 
         public:
-            Date        *validNotAfter();
+            Date         *validNotAfter();
 
         public:
             X500DistinguishedName *subject();
 
         public:
-            std::string  subjectPublicKeyAlgorithmOID();
+            std::string       subjectPublicKeyAlgorithmOID();
 
         public:
-            std::string  subjectPublicKey();
+            std::string       subjectPublicKey();
 
         public:
-            std::string  issuerUniqueID();
+            std::string       issuerUniqueID();
 
         public:
-            std::string  subjectUniqueID();
+            std::string       subjectUniqueID();
 
         public:
-            ByteArray   *encoded();
+            ByteArray    *encoded();
 
         public:
             X509Certificate();

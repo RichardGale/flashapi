@@ -157,6 +157,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -183,7 +186,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ignoreCase();
+            bool      ignoreCase();
         public:
             void         ignoreCase(bool value);
 
@@ -202,7 +205,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ignoreDiacritics();
+            bool      ignoreDiacritics();
         public:
             void         ignoreDiacritics(bool value);
 
@@ -222,7 +225,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ignoreKanaType();
+            bool      ignoreKanaType();
         public:
             void         ignoreKanaType(bool value);
 
@@ -242,7 +245,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ignoreSymbols();
+            bool      ignoreSymbols();
         public:
             void         ignoreSymbols(bool value);
 
@@ -264,7 +267,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ignoreCharacterWidth();
+            bool      ignoreCharacterWidth();
         public:
             void         ignoreCharacterWidth(bool value);
 
@@ -285,7 +288,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         numericComparison();
+            bool      numericComparison();
         public:
             void         numericComparison(bool value);
 
@@ -298,7 +301,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * The name of the actual locale ID used by this Collator object.
@@ -341,7 +344,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  actualLocaleIDName();
+            std::string       actualLocaleIDName();
 
             /**
              * The name of the requested locale ID that was passed to the constructor of this Collator object.
@@ -354,7 +357,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  requestedLocaleIDName();
+            std::string       requestedLocaleIDName();
 
             /**
              * Constructs a new Collator object to provide string comparisons according to the conventions of a specified locale.
@@ -489,7 +492,7 @@ namespace flash
              * @throws  ArgumentError when a parameter contains an invalid value.
              */
         public:
-            bool     equals(std::string string1, std::string string2);
+            bool  equals(std::string string1, std::string string2);
         };
     }
 }

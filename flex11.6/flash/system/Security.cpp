@@ -67,7 +67,7 @@ namespace system {
          * @playerversion   Lite 4
          * @refpath
          */
-        const std::string Security::REMOTE="remote";
+        const std::string Security::REMOTE   = "remote";
 
         /**
          * The file is a local file, has not been trusted by the user, 
@@ -80,7 +80,7 @@ namespace system {
          * @playerversion   Lite 4
          * @refpath
          */
-        const std::string Security::LOCAL_WITH_FILE="localWithFile";
+        const std::string Security::LOCAL_WITH_FILE   = "localWithFile";
 
         /**
          * The file is a local file, has not been trusted by the user, and it is a SWF
@@ -91,7 +91,7 @@ namespace system {
          * @playerversion   Lite 4
          * @refpath
          */
-        const std::string Security::LOCAL_WITH_NETWORK="localWithNetwork";
+        const std::string Security::LOCAL_WITH_NETWORK   = "localWithNetwork";
 
         /**
          * The file is a local file and has been trusted by the user, 
@@ -103,7 +103,7 @@ namespace system {
          * @playerversion   Lite 4
          * @refpath
          */
-        const std::string Security::LOCAL_TRUSTED="localTrusted";
+        const std::string Security::LOCAL_TRUSTED   = "localTrusted";
 
         /**
          * The file is running in an AIR application, and it was installed with the package (the AIR file) for that 
@@ -113,7 +113,7 @@ namespace system {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string Security::APPLICATION="application";
+        const std::string Security::APPLICATION   = "application";
 
         /**
          * Determines how Flash Player or AIR chooses the domain to use for certain 

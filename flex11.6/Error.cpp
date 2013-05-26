@@ -94,7 +94,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        Error::Error(void* message, void* id);
+        Error::Error(std::string message, void* id);
 
         std::string Error::getErrorMessage(int index)         ;
 

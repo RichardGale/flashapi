@@ -92,6 +92,9 @@
  * @refpath
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -107,7 +110,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        volume();
+            float       volume();
         public:
             void         volume(float volume);
 
@@ -120,7 +123,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        leftToLeft();
+            float       leftToLeft();
         public:
             void         leftToLeft(float leftToLeft);
 
@@ -133,7 +136,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        leftToRight();
+            float       leftToRight();
         public:
             void         leftToRight(float leftToRight);
 
@@ -146,7 +149,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        rightToRight();
+            float       rightToRight();
         public:
             void         rightToRight(float rightToRight);
 
@@ -159,7 +162,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        rightToLeft();
+            float       rightToLeft();
         public:
             void         rightToLeft(float rightToLeft);
 
@@ -173,7 +176,7 @@ namespace flash
              * @refpath
              */
         public:
-            float        pan();
+            float       pan();
         public:
             void         pan(float panning);
 
@@ -188,7 +191,7 @@ namespace flash
              * @refpath
              */
         public:
-            SoundTransform(float vol =1, float panning =0);
+            SoundTransform(float vol=1, float panning=0);
         };
     }
 }

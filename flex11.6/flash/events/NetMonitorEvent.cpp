@@ -21,7 +21,7 @@ namespace events {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string NetMonitorEvent::NET_STREAM_CREATE="netStreamCreate";
+        const std::string NetMonitorEvent::NET_STREAM_CREATE   = "netStreamCreate";
 
         /**
          * The new NetStream object.

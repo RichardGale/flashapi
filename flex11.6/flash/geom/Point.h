@@ -120,7 +120,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        length();
+            float       length();
 
             /**
              * Determines a point between two specified points. The parameter f
@@ -161,7 +161,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static float    distance(Point *pt1, Point *pt2);
+            static float   distance(Point *pt1, Point *pt2);
 
             /**
              * Creates a new point. If you pass no parameters to this method, a point is created at (0,0).
@@ -186,7 +186,7 @@ namespace flash
              *   </listing>
              */
         public:
-            Point(float x =0, float y =0);
+            Point(float x=0, float y=0);
 
             /**
              * Converts a pair of polar coordinates to a Cartesian point coordinate.
@@ -272,7 +272,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     equals(Point *toCompare);
+            bool  equals(Point *toCompare);
 
             /**
              * Subtracts the coordinates of another point from the coordinates of this point to create a new
@@ -350,7 +350,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
             void     copyFrom(Point *sourcePoint);

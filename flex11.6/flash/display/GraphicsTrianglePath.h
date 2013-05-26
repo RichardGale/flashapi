@@ -82,7 +82,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  culling();
+            std::string       culling();
         public:
             void         culling(std::string value);
 

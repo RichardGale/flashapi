@@ -181,7 +181,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     beginFill(unsigned int color, float alpha =1);
+            void     beginFill(unsigned int color, float alpha=1);
 
             /**
              * Specifies a gradient fill used by subsequent calls to other
@@ -257,7 +257,7 @@ namespace flash
              * @throws  ArgumentError If the type parameter is not valid.
              */
         public:
-            void     beginGradientFill(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
+            void     beginGradientFill(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio=0);
 
             /**
              * Fills a drawing area with a bitmap image. The bitmap can be repeated or tiled to fill
@@ -294,7 +294,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     beginBitmapFill(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
+            void     beginBitmapFill(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat=true, bool smooth=false);
 
             /**
              * Specifies a shader fill used by subsequent calls to other Graphics methods
@@ -402,7 +402,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            void     lineGradientStyle(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio =0);
+            void     lineGradientStyle(std::string type, std::vector<void *> colors, std::vector<void *> alphas, std::vector<void *> ratios, Matrix *matrix=NULL, std::string spreadMethod="pad", std::string interpolationMethod="rgb", float focalPointRatio=0);
 
             /**
              * Specifies a line style used for subsequent calls to
@@ -496,7 +496,7 @@ namespace flash
              *   </listing>
              */
         public:
-            void     lineStyle(float thickness =NULL, unsigned int color=0, float alpha =1, bool pixelHinting   =false, std::string scaleMode="normal", std::string caps="", std::string joints="", float miterLimit =3);
+            void     lineStyle(float thickness=NULL, unsigned int color=0, float alpha=1, bool pixelHinting=false, std::string scaleMode="normal", std::string caps="", std::string joints="", float miterLimit=3);
 
             /**
              * Draws a rectangle. Set the line style, fill, or both before
@@ -540,7 +540,7 @@ namespace flash
              *   or ellipseHeight parameters are not a number (Number.NaN).
              */
         public:
-            void     drawRoundRect(float x, float y, float width, float height, float ellipseWidth, float ellipseHeight =NULL);
+            void     drawRoundRect(float x, float y, float width, float height, float ellipseWidth, float ellipseHeight=NULL);
 
         public:
             void     drawRoundRectComplex(float x, float y, float width, float height, float topLeftRadius, float topRightRadius, float bottomLeftRadius, float bottomRightRadius);
@@ -732,7 +732,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            void     lineBitmapStyle(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat   =true, bool smooth   =false);
+            void     lineBitmapStyle(BitmapData *bitmap, Matrix *matrix=NULL, bool repeat=true, bool smooth=false);
 
             /**
              * Specifies a shader to use for the line stroke when drawing lines.
@@ -845,7 +845,7 @@ namespace flash
             void     drawGraphicsData(std::vector<flash::display::IGraphicsData *> graphicsData);
 
         public:
-            std::vector<IGraphicsData *> readGraphicsData(bool recurse   =true);
+            std::vector<IGraphicsData *> readGraphicsData(bool recurse=true);
         };
     }
 }

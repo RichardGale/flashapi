@@ -134,7 +134,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  responseURL();
+            std::string       responseURL();
         public:
             void         responseURL(std::string value);
 
@@ -145,7 +145,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> responseHeaders();
+            std::vector<void *>        responseHeaders();
         public:
             void         responseHeaders(std::vector<void *> value);
 
@@ -171,7 +171,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            HTTPStatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, int status=0);
+            HTTPStatusEvent(std::string type, bool bubbles=false, bool cancelable=false, int status=0);
 
             /**
              * Returns a string that contains all the properties of the HTTPStatusEvent object. The string is in the following format:
@@ -182,7 +182,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

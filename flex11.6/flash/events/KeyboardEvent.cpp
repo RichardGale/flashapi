@@ -24,7 +24,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string KeyboardEvent::KEY_DOWN="keyDown";
+        const std::string KeyboardEvent::KEY_DOWN   = "keyDown";
 
         /**
          * The KeyboardEvent.KEY_UP constant defines the value of the type property of a keyUp event object. 
@@ -37,7 +37,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string KeyboardEvent::KEY_UP="keyUp";
+        const std::string KeyboardEvent::KEY_UP   = "keyUp";
 
         /**
          * Contains the character code value of the key pressed or released.

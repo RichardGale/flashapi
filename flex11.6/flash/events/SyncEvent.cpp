@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string SyncEvent::SYNC="sync";
+        const std::string SyncEvent::SYNC   = "sync";
 
         /**
          * An array of objects; each object contains properties that describe the changed members of a remote shared object.

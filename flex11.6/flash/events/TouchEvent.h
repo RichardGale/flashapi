@@ -373,7 +373,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localX();
+            float       localX();
         public:
             void         localX(float value);
 
@@ -385,7 +385,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localY();
+            float       localY();
         public:
             void         localY(float value);
 
@@ -409,7 +409,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         isPrimaryTouchPoint();
+            bool      isPrimaryTouchPoint();
         public:
             void         isPrimaryTouchPoint(bool value);
 
@@ -421,7 +421,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        sizeX();
+            float       sizeX();
         public:
             void         sizeX(float value);
 
@@ -433,7 +433,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        sizeY();
+            float       sizeY();
         public:
             void         sizeY(float value);
 
@@ -446,7 +446,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        pressure();
+            float       pressure();
         public:
             void         pressure(float value);
 
@@ -475,7 +475,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ctrlKey();
+            bool      ctrlKey();
         public:
             void         ctrlKey(bool value);
 
@@ -490,7 +490,7 @@ namespace flash
              *   only the Windows version is hooked up.
              */
         public:
-            bool         altKey();
+            bool      altKey();
         public:
             void         altKey(bool value);
 
@@ -502,7 +502,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         shiftKey();
+            bool      shiftKey();
         public:
             void         shiftKey(bool value);
 
@@ -515,7 +515,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageX();
+            float       stageX();
 
             /**
              * The vertical coordinate at which the event occurred in global Stage coordinates.
@@ -526,7 +526,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageY();
+            float       stageY();
 
             /**
              * If true, the relatedObject property is set to null for
@@ -542,7 +542,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         isRelatedObjectInaccessible();
+            bool      isRelatedObjectInaccessible();
         public:
             void         isRelatedObjectInaccessible(bool value);
 
@@ -567,7 +567,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Creates an Event object that contains information about touch events.
@@ -600,7 +600,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TouchEvent(std::string type, bool bubbles   =true, bool cancelable   =false, int touchPointID=0, bool isPrimaryTouchPoint   =false, float localX =Number::NaN, float localY =Number::NaN, float sizeX =Number::NaN, float sizeY =Number::NaN, float pressure =Number::NaN, InteractiveObject *relatedObject=NULL, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
+            TouchEvent(std::string type, bool bubbles=true, bool cancelable=false, int touchPointID=0, bool isPrimaryTouchPoint=false, float localX=Number::NaN, float localY=Number::NaN, float sizeX=Number::NaN, float sizeY=Number::NaN, float pressure=Number::NaN, InteractiveObject *relatedObject=NULL, bool ctrlKey=false, bool altKey=false, bool shiftKey=false);
 
             /**
              * Instructs Flash Player or Adobe AIR to render after processing of this event completes, if the display list has been modified.

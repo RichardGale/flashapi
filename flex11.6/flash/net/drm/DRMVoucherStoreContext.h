@@ -36,7 +36,7 @@ namespace flash
             class DRMVoucherStoreContext : public DRMManagerSession
             {
             public:
-                DRMVoucher  *voucher();
+                DRMVoucher   *voucher();
 
             public:
                 DRMVoucherStoreContext();

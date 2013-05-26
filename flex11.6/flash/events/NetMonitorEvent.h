@@ -80,7 +80,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            NetMonitorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, NetStream *netStream=NULL);
+            NetMonitorEvent(std::string type, bool bubbles=false, bool cancelable=false, NetStream *netStream=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetMonitorEvent object. The following
@@ -93,7 +93,7 @@ namespace flash
              * @playerversion   AIR 2.7
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

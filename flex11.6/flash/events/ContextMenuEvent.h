@@ -197,7 +197,7 @@ namespace flash
              * @playerversion   Flash 10
              */
         public:
-            bool         isMouseTargetInaccessible();
+            bool      isMouseTargetInaccessible();
         public:
             void         isMouseTargetInaccessible(bool value);
 
@@ -214,7 +214,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            ContextMenuEvent(std::string type, bool bubbles   =false, bool cancelable   =false, InteractiveObject *mouseTarget=NULL, InteractiveObject *contextMenuOwner=NULL);
+            ContextMenuEvent(std::string type, bool bubbles=false, bool cancelable=false, InteractiveObject *mouseTarget=NULL, InteractiveObject *contextMenuOwner=NULL);
 
             /**
              * Creates a copy of the ContextMenuEvent object and sets the value of each property to match that of the original.
@@ -233,7 +233,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

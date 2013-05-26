@@ -35,6 +35,9 @@
  * @playerversion   Flash 9
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -57,7 +60,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  description();
+            std::string       description();
         public:
             void         description(std::string value);
 
@@ -73,7 +76,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  extension();
+            std::string       extension();
         public:
             void         extension(std::string value);
 
@@ -88,7 +91,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  macType();
+            std::string       macType();
         public:
             void         macType(std::string value);
 

@@ -99,18 +99,18 @@ namespace flash
         class Context3D : public flash::events::EventDispatcher
         {
         public:
-            std::string  driverInfo();
+            std::string       driverInfo();
 
         public:
-            bool         enableErrorChecking();
+            bool      enableErrorChecking();
         public:
             void         enableErrorChecking(bool toggle);
 
         public:
-            void     clear(float red =0, float green =0, float blue =0, float alpha =1, float depth =1, unsigned int stencil=0, unsigned int mask=4294967295);
+            void     clear(float red=0, float green=0, float blue=0, float alpha=1, float depth=1, unsigned int stencil=0, unsigned int mask=4294967295);
 
         public:
-            void     configureBackBuffer(int width, int height, int antiAlias, bool enableDepthAndStencil   =true, bool wantsBestResolution   =false);
+            void     configureBackBuffer(int width, int height, int antiAlias, bool enableDepthAndStencil=true, bool wantsBestResolution=false);
 
         public:
             Context3D();
@@ -131,7 +131,7 @@ namespace flash
             VertexBuffer3D *createVertexBuffer(int numVertices, int data32PerVertex);
 
         public:
-            void     dispose(bool recreate   =true);
+            void     dispose(bool recreate=true);
 
         public:
             void     drawToBitmapData(BitmapData *destination);
@@ -161,7 +161,7 @@ namespace flash
             void     setProgramConstantsFromByteArray(std::string programType, int firstRegister, int numRegisters, ByteArray *data, unsigned int byteArrayOffset);
 
         public:
-            void     setProgramConstantsFromMatrix(std::string programType, int firstRegister, Matrix3D *matrix, bool transposedMatrix   =false);
+            void     setProgramConstantsFromMatrix(std::string programType, int firstRegister, Matrix3D *matrix, bool transposedMatrix=false);
 
         public:
             void     setProgramConstantsFromVector(std::string programType, int firstRegister, std::vector<float> data, int numRegisters=-1);
@@ -170,7 +170,7 @@ namespace flash
             void     setRenderToBackBuffer();
 
         public:
-            void     setRenderToTexture(TextureBase *texture, bool enableDepthAndStencil   =false, int antiAlias=0, int surfaceSelector=0);
+            void     setRenderToTexture(TextureBase *texture, bool enableDepthAndStencil=false, int antiAlias=0, int surfaceSelector=0);
 
         public:
             void     setSamplerStateAt(int sampler, std::string wrap, std::string filter, std::string mipfilter);

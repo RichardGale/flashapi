@@ -72,6 +72,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -95,7 +98,7 @@ namespace flash
                  * @throws  ArgumentError If set to any value that is not a member of TabAlignment.
                  */
             public:
-                std::string  alignment();
+                std::string       alignment();
             public:
                 void         alignment(std::string value);
 
@@ -110,7 +113,7 @@ namespace flash
                  * @throws  ArgumentError If set to a value less than 0.0.
                  */
             public:
-                float        position();
+                float       position();
             public:
                 void         position(float value);
 
@@ -125,7 +128,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  decimalAlignmentToken();
+                std::string       decimalAlignmentToken();
             public:
                 void         decimalAlignmentToken(std::string value);
 
@@ -145,7 +148,7 @@ namespace flash
                  * @throws  ArgumentError The alignment specified is not a member of TabAlignment.
                  */
             public:
-                TabStop(std::string alignment="start", float position =0, std::string decimalAlignmentToken="");
+                TabStop(std::string alignment="start", float position=0, std::string decimalAlignmentToken="");
             };
         }
     }

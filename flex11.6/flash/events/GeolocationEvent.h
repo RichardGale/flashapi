@@ -42,7 +42,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        latitude();
+            float       latitude();
         public:
             void         latitude(float value);
 
@@ -54,7 +54,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        longitude();
+            float       longitude();
         public:
             void         longitude(float value);
 
@@ -67,7 +67,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        altitude();
+            float       altitude();
         public:
             void         altitude(float value);
 
@@ -78,7 +78,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        horizontalAccuracy();
+            float       horizontalAccuracy();
         public:
             void         horizontalAccuracy(float value);
 
@@ -89,7 +89,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        verticalAccuracy();
+            float       verticalAccuracy();
         public:
             void         verticalAccuracy(float value);
 
@@ -100,7 +100,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        speed();
+            float       speed();
         public:
             void         speed(float value);
 
@@ -115,7 +115,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        heading();
+            float       heading();
         public:
             void         heading(float value);
 
@@ -128,7 +128,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        timestamp();
+            float       timestamp();
         public:
             void         timestamp(float value);
 
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            GeolocationEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float latitude =0, float longitude =0, float altitude =0, float hAccuracy =0, float vAccuracy =0, float speed =0, float heading =0, float timestamp =0);
+            GeolocationEvent(std::string type, bool bubbles=false, bool cancelable=false, float latitude=0, float longitude=0, float altitude=0, float hAccuracy=0, float vAccuracy=0, float speed=0, float heading=0, float timestamp=0);
 
             /**
              * Creates a copy of the GeolocationEvent object and sets the value of each property to match that of the original.
@@ -176,7 +176,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

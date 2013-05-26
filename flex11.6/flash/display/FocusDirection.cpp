@@ -17,19 +17,19 @@ namespace display {
          * Indicates that focus should be given to the object at the beginning of the reading order.
          * @playerversion   AIR 1.0
          */
-        const std::string FocusDirection::TOP="top";
+        const std::string FocusDirection::TOP   = "top";
 
         /**
          * Indicates that focus should be given to the object at the end of the reading order.
          * @playerversion   AIR 1.0
          */
-        const std::string FocusDirection::BOTTOM="bottom";
+        const std::string FocusDirection::BOTTOM   = "bottom";
 
         /**
          * Indicates that focus object within the interactive object should not change.
          * @playerversion   AIR 1.0
          */
-        const std::string FocusDirection::NONE="none";
+        const std::string FocusDirection::NONE   = "none";
 
         FocusDirection::FocusDirection();
 }

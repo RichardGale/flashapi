@@ -24,7 +24,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TransformGestureEvent::GESTURE_ZOOM="gestureZoom";
+        const std::string TransformGestureEvent::GESTURE_ZOOM   = "gestureZoom";
 
         /**
          * Defines the value of the type property of a GESTURE_PAN touch event object.
@@ -40,7 +40,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TransformGestureEvent::GESTURE_PAN="gesturePan";
+        const std::string TransformGestureEvent::GESTURE_PAN   = "gesturePan";
 
         /**
          * Defines the value of the type property of a GESTURE_ROTATE touch event object.
@@ -55,7 +55,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TransformGestureEvent::GESTURE_ROTATE="gestureRotate";
+        const std::string TransformGestureEvent::GESTURE_ROTATE   = "gestureRotate";
 
         /**
          * Defines the value of the type property of a GESTURE_SWIPE touch event object.
@@ -71,7 +71,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string TransformGestureEvent::GESTURE_SWIPE="gestureSwipe";
+        const std::string TransformGestureEvent::GESTURE_SWIPE   = "gestureSwipe";
 
         /**
          * The horizontal scale of the display object, since the previous gesture event.

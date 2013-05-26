@@ -136,7 +136,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *info();
+            Object       *info();
         public:
             void         info(Object *value);
 
@@ -162,7 +162,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            NetStatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, Object *info=NULL);
+            NetStatusEvent(std::string type, bool bubbles=false, bool cancelable=false, Object *info=NULL);
 
             /**
              * Returns a string that contains all the properties of the NetStatusEvent object. The string is in the following format:
@@ -173,7 +173,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

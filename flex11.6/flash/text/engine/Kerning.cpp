@@ -21,7 +21,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Kerning::ON="on";
+        const std::string Kerning::ON   = "on";
 
         /**
          * Used to indicate kerning is disabled.
@@ -30,7 +30,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Kerning::OFF="off";
+        const std::string Kerning::OFF   = "off";
 
         /**
          * Used to indicate that kerning is enabled except where inappropriate in Asian typography. Kerning is 
@@ -40,7 +40,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string Kerning::AUTO="auto";
+        const std::string Kerning::AUTO   = "auto";
 
         Kerning::Kerning();
 }

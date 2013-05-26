@@ -65,7 +65,7 @@ void     _setSamplerCallback(Function *f);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-float    getSize(void *o);
+float   getSize(void *o);
 /**
  * Returns an object containing all members of a specified object, including private members. You can then
  * iterate over the returned object to see all values. This method is similar to the flash.utils.describeType()
@@ -79,7 +79,7 @@ float    getSize(void *o);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-Object  *getMemberNames(Object *o, bool instanceNames   =false);
+Object   *getMemberNames(Object *o, bool instanceNames=false);
 /**
  * Returns an object of memory usage Sample instances from the last sampling session. For Flash Player debugger version only.
  * @return  An iterator of Sample instances.
@@ -87,9 +87,9 @@ Object  *getMemberNames(Object *o, bool instanceNames   =false);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-Object  *getSamples();
+Object   *getSamples();
 public:
-Object  *_getSamples(Class *cf);
+Object   *_getSamples(Class *cf);
 /**
  * Returns the number of samples collected. For Flash Player debugger version only.
  * @return  An iterator of Sample instances.
@@ -97,7 +97,7 @@ Object  *_getSamples(Class *cf);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-float    getSampleCount();
+float   getSampleCount();
 /**
  * Returns the number of times a method was executed. If the parameter obj
  * is a Class and the parameter qname is undefined then this method
@@ -111,7 +111,7 @@ float    getSampleCount();
  * @playerversion   Flash 9.0.115.0
  */
 public:
-float    getInvocationCount(Object *obj, QName *qname);
+float   getInvocationCount(Object *obj, QName *qname);
 /**
  * Returns the number of times a set function was executed. Use
  * isGetterSetter() to verify that you have a get/set function before you use
@@ -123,7 +123,7 @@ float    getInvocationCount(Object *obj, QName *qname);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-float    getSetterInvocationCount(Object *obj, QName *qname);
+float   getSetterInvocationCount(Object *obj, QName *qname);
 /**
  * Returns the number of times a get function was executed. Use
  * isGetterSetter() to verify that you have a get/set function before you use
@@ -135,9 +135,9 @@ float    getSetterInvocationCount(Object *obj, QName *qname);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-float    getGetterInvocationCount(Object *obj, QName *qname);
+float   getGetterInvocationCount(Object *obj, QName *qname);
 public:
-float    _getInvocationCount(Object *obj, QName *qname, unsigned int type);
+float   _getInvocationCount(Object *obj, QName *qname, unsigned int type);
 /**
  * Checks to see if a property is defined by a get/set function. If you want to use
  * getInvocationCount() on a get/set function for a property,
@@ -152,7 +152,7 @@ float    _getInvocationCount(Object *obj, QName *qname, unsigned int type);
  * @playerversion   Flash 9.0.115.0
  */
 public:
-bool     isGetterSetter(Object *obj, QName *qname);
+bool  isGetterSetter(Object *obj, QName *qname);
 /**
  * Exposes the lexical scope of a Function so that captured scope objects (including activation
  * objects and with scopes) are seen by the profiler as being retained by the Function instance.
@@ -160,14 +160,14 @@ bool     isGetterSetter(Object *obj, QName *qname);
  * @return  An array containings all the lexical scope elements
  */
 public:
-std::vector<void *> getLexicalScopes(Function *obj);
+std::vector<void *>    getLexicalScopes(Function *obj);
 /**
  * Returns the saved "this" from a Method closure that you normal can't see from AS.
  * @param   obj A MethodClosure instance
  * @return  An object that is the "this" of the MethodClosure
  */
 public:
-Object  *getSavedThis(Function *obj);
+Object   *getSavedThis(Function *obj);
 /**
  * Returns the master string upon which this string depends, or null if this
  * string does not depend on another string.  For example, if you call
@@ -186,7 +186,7 @@ Object  *getSavedThis(Function *obj);
  * @langversion 3.0
  */
 public:
-std::string getMasterString(std::string str);
+std::string   getMasterString(std::string str);
 #endif // FLEX11_6_FLASH_SAMPLER_PACKAGE_AS_AS
 #endif // __cplusplus
 

@@ -26,7 +26,7 @@ namespace flash
             static int          numDevices();
 
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
             GameInput();

@@ -178,7 +178,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
             /**
              * An instance of the ContextMenuBuiltInItems class with the following properties:
@@ -209,7 +209,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::vector<void *> customItems();
+            std::vector<void *>        customItems();
         public:
             void         customItems(std::vector<void *> value);
 
@@ -237,7 +237,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         clipboardMenu();
+            bool      clipboardMenu();
         public:
             void         clipboardMenu(bool value);
 

@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string GeolocationEvent::UPDATE="update";
+        const std::string GeolocationEvent::UPDATE   = "update";
 
         /**
          * The latitude in degrees. The latitude values have the following range: (-90 <= latitude <= 90). Negative latitude is 

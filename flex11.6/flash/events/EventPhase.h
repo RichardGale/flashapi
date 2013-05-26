@@ -11,6 +11,9 @@
  * @internal    includeExample examples\EventPhaseExample.as -noswf
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

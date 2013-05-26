@@ -79,21 +79,21 @@ namespace filters {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BitmapFilterType::INNER="inner";
+        const std::string BitmapFilterType::INNER   = "inner";
 
         /**
          * Defines the setting that applies a filter to the outer area of an object.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BitmapFilterType::OUTER="outer";
+        const std::string BitmapFilterType::OUTER   = "outer";
 
         /**
          * Defines the setting that applies a filter to the entire area of an object.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string BitmapFilterType::FULL="full";
+        const std::string BitmapFilterType::FULL   = "full";
 
         BitmapFilterType::BitmapFilterType();
 }

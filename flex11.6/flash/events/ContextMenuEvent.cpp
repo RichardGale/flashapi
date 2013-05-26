@@ -23,7 +23,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string ContextMenuEvent::MENU_ITEM_SELECT="menuItemSelect";
+        const std::string ContextMenuEvent::MENU_ITEM_SELECT   = "menuItemSelect";
 
         /**
          * Defines the value of the type property of a menuSelect event object. 
@@ -35,7 +35,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string ContextMenuEvent::MENU_SELECT="menuSelect";
+        const std::string ContextMenuEvent::MENU_SELECT   = "menuSelect";
 
         /**
          * The display list object on which the user right-clicked to display the context menu. This could be the display list object to which the

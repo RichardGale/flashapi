@@ -87,7 +87,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localX();
+            float       localX();
         public:
             void         localX(float value);
 
@@ -99,7 +99,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localY();
+            float       localY();
         public:
             void         localY(float value);
 
@@ -116,7 +116,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  phase();
+            std::string       phase();
         public:
             void         phase(std::string value);
 
@@ -128,7 +128,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         ctrlKey();
+            bool      ctrlKey();
         public:
             void         ctrlKey(bool value);
 
@@ -143,7 +143,7 @@ namespace flash
              *   only the Windows version is hooked up.
              */
         public:
-            bool         altKey();
+            bool      altKey();
         public:
             void         altKey(bool value);
 
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         shiftKey();
+            bool      shiftKey();
         public:
             void         shiftKey(bool value);
 
@@ -168,7 +168,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageX();
+            float       stageX();
 
             /**
              * The vertical coordinate at which the event occurred in global Stage coordinates.
@@ -179,7 +179,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageY();
+            float       stageY();
 
             /**
              * Creates a copy of the GestureEvent object and sets the value of each property to match that of the original.
@@ -213,7 +213,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            GestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
+            GestureEvent(std::string type, bool bubbles=true, bool cancelable=false, std::string phase="", float localX=0, float localY=0, bool ctrlKey=false, bool altKey=false, bool shiftKey=false);
 
             /**
              * Returns a string that contains all the properties of the GestureEvent object. The string is in the following format:
@@ -225,7 +225,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Refreshes the Flash runtime display after processing the gesture event, in case the display list has been modified by the event handler.

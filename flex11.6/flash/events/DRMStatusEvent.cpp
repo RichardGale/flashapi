@@ -27,7 +27,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Flash 10.1
          */
-        const std::string DRMStatusEvent::DRM_STATUS="drmStatus";
+        const std::string DRMStatusEvent::DRM_STATUS   = "drmStatus";
 
         /**
          * A DRMContentData object containing the information necessary

@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace security
@@ -11,25 +15,25 @@ namespace flash
         class X500DistinguishedName : public Object
         {
         public:
-            std::string  commonName();
+            std::string       commonName();
 
         public:
-            std::string  organizationName();
+            std::string       organizationName();
 
         public:
-            std::string  organizationalUnitName();
+            std::string       organizationalUnitName();
 
         public:
-            std::string  localityName();
+            std::string       localityName();
 
         public:
-            std::string  stateOrProvinceName();
+            std::string       stateOrProvinceName();
 
         public:
-            std::string  countryName();
+            std::string       countryName();
 
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
             X500DistinguishedName();

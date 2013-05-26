@@ -117,6 +117,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -134,7 +137,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            void    *getProperty(void *name);
+            void        *getProperty(void *name);
 
         public:
             Proxy();
@@ -162,7 +165,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            void    *callProperty(void *name, ...);
+            void        *callProperty(void *name, ...);
 
             /**
              * Overrides a request to check whether an object has a particular property by name.
@@ -172,7 +175,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            bool     hasProperty(void *name);
+            bool  hasProperty(void *name);
 
             /**
              * Overrides the request to delete a property. When a property is deleted
@@ -184,7 +187,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            bool     deleteProperty(void *name);
+            bool  deleteProperty(void *name);
 
             /**
              * Overrides the use of the descendant operator.
@@ -197,7 +200,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            void    *getDescendants(void *name);
+            void        *getDescendants(void *name);
 
             /**
              * Allows enumeration of the proxied object's properties by index number. However, you cannot
@@ -272,7 +275,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            std::string nextName(int index);
+            std::string   nextName(int index);
 
             /**
              * Allows enumeration of the proxied object's properties by index number to
@@ -311,7 +314,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            void    *nextValue(int index);
+            void        *nextValue(int index);
 
             /**
              * Checks whether a supplied QName is also marked as an attribute.
@@ -322,7 +325,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */
-            bool     isAttribute(void *name);
+            bool  isAttribute(void *name);
         };
     }
 }

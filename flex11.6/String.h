@@ -104,6 +104,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class String : public Object
 {
@@ -133,7 +136,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    static std::string fromCharCode(...);
+    static std::string   fromCharCode(...);
 
     /**
      * Searches the string and returns the position of the first occurrence of val
@@ -147,7 +150,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    int      indexOf(std::string s=undefined, float i =0);
+    int      indexOf(std::string s=undefined, float i=0);
 
     /**
      * Searches the string from right to left and returns the index of the last occurrence
@@ -163,7 +166,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    int      lastIndexOf(std::string s=undefined, float i =2147483647);
+    int      lastIndexOf(std::string s=undefined, float i=2147483647);
 
     /**
      * Returns the character in the position specified by the index parameter.
@@ -181,7 +184,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string charAt(float i =0);
+    std::string   charAt(float i=0);
 
     /**
      * Returns the numeric Unicode character code of the character at the specified
@@ -201,7 +204,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    float    charCodeAt(float i =0);
+    float   charCodeAt(float i=0);
 
     /**
      * Appends the supplied arguments to the end of the String object, converting them to strings if
@@ -214,7 +217,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    std::string concat(...);
+    std::string   concat(...);
 
     /**
      * Compares the sort order of two or more strings and returns the result of the comparison as an integer. While this
@@ -289,7 +292,7 @@ public:
      *   // [[She,e],[she,e],[sho,o]]
      *   </code></pre>
      */
-    std::vector<void *> match(void *p=NULL);
+    std::vector<void *>    match(void *p=NULL);
 
     /**
      * Matches the specifed pattern against the string and returns a new string
@@ -404,7 +407,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string replace(void *p=NULL, void *repl=NULL);
+    std::string   replace(void *p=NULL, void *repl=NULL);
 
     /**
      * Searches for the specifed pattern and returns the index of
@@ -462,7 +465,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string slice(float start =0, float end =2147483647);
+    std::string   slice(float start=0, float end=2147483647);
 
     /**
      * Splits a String object into an array of substrings
@@ -510,7 +513,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::vector<void *> split(void *delim=NULL, void *limit=4294967295);
+    std::vector<void *>    split(void *delim=NULL, void *limit=4294967295);
 
     /**
      * Creates a new String object initialized to the specified string.
@@ -549,7 +552,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string substring(float start =0, float end =2147483647);
+    std::string   substring(float start=0, float end=2147483647);
 
     /**
      * Returns a substring consisting of the characters that start at the specified
@@ -568,7 +571,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string substr(float start =0, float len =2147483647);
+    std::string   substr(float start=0, float len=2147483647);
 
     /**
      * Returns a copy of this string, with all uppercase characters converted
@@ -589,7 +592,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string toLowerCase();
+    std::string   toLowerCase();
 
     /**
      * Returns a copy of this string, with all uppercase characters converted
@@ -602,7 +605,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string toLocaleLowerCase();
+    std::string   toLocaleLowerCase();
 
     /**
      * Returns a copy of this string, with all lowercase characters converted
@@ -623,7 +626,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string toUpperCase();
+    std::string   toUpperCase();
 
     /**
      * Returns a copy of this string, with all lowercase characters converted
@@ -636,9 +639,9 @@ public:
      * @playerversion   Flash 9
      * @playerversion   AIR 1.0
      */
-    std::string toLocaleUpperCase();
+    std::string   toLocaleUpperCase();
 
-    std::string toString();
+    std::string   toString();
 
     /**
      * Returns the primitive value of a String instance. This method is designed to
@@ -661,7 +664,7 @@ public:
      *   trace(value instanceof String); // false
      *   trace(str === value); // false</listing>
      */
-    std::string valueOf();
+    std::string   valueOf();
 };
 
 #endif // FLEX11_6_STRING_AS

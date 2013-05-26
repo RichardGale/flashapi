@@ -14,6 +14,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class URIError : public Error
 {
@@ -28,7 +31,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    URIError(void *message=(void *)"", void *id=0);
+    URIError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_URIERROR_AS

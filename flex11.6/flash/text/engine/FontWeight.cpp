@@ -21,7 +21,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontWeight::NORMAL="normal";
+        const std::string FontWeight::NORMAL   = "normal";
 
         /**
          * Used to indicate bold font weight.
@@ -30,7 +30,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontWeight::BOLD="bold";
+        const std::string FontWeight::BOLD   = "bold";
 
         FontWeight::FontWeight();
 }

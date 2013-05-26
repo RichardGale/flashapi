@@ -85,6 +85,9 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {

@@ -25,7 +25,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeStyle::CUSTOM="custom";
+        const std::string DateTimeStyle::CUSTOM   = "custom";
 
         /**
          * Specifies the long style of a date or time.
@@ -33,7 +33,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeStyle::LONG="long";
+        const std::string DateTimeStyle::LONG   = "long";
 
         /**
          * Specifies the medium style of a date or time.
@@ -41,7 +41,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeStyle::MEDIUM="medium";
+        const std::string DateTimeStyle::MEDIUM   = "medium";
 
         /**
          * Specifies the short style of a date or time.
@@ -49,7 +49,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeStyle::SHORT="short";
+        const std::string DateTimeStyle::SHORT   = "short";
 
         /**
          * Specifies that the date or time should not be included in the formatted string.
@@ -57,7 +57,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeStyle::NONE="none";
+        const std::string DateTimeStyle::NONE   = "none";
 
         DateTimeStyle::DateTimeStyle();
 }

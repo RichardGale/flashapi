@@ -33,7 +33,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR 2.6
          */
-        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_ACTIVATE="softKeyboardActivate";
+        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_ACTIVATE   = "softKeyboardActivate";
 
         /**
          * The SoftKeyboardEvent.SOFT_KEYBOARD_DEACTIVATE constant defines the value of the
@@ -46,7 +46,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR 2.6
          */
-        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_DEACTIVATE="softKeyboardDeactivate";
+        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_DEACTIVATE   = "softKeyboardDeactivate";
 
         /**
          * The SoftKeyboardEvent.SOFT_KEYBOARD_ACTIVATING constant defines the value of the 
@@ -60,7 +60,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR 2.6
          */
-        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_ACTIVATING="softKeyboardActivating";
+        const std::string SoftKeyboardEvent::SOFT_KEYBOARD_ACTIVATING   = "softKeyboardActivating";
 
         /**
          * Indicates whether the change in keyboard status has been triggered by

@@ -69,7 +69,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            JPEGLoaderContext(float deblockingFilter =0, bool checkPolicyFile   =false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
+            JPEGLoaderContext(float deblockingFilter=0, bool checkPolicyFile=false, ApplicationDomain *applicationDomain=NULL, SecurityDomain *securityDomain=NULL);
         };
     }
 }

@@ -287,7 +287,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                bool         applyNonLinearFontScaling();
+                bool      applyNonLinearFontScaling();
             public:
                 void         applyNonLinearFontScaling(bool value);
 
@@ -320,7 +320,7 @@ namespace flash
                  * @throws  ArgumentError The baselineFontSize specified is less than 0.
                  */
             public:
-                float        baselineFontSize();
+                float       baselineFontSize();
             public:
                 void         baselineFontSize(float value);
 
@@ -337,7 +337,7 @@ namespace flash
                  * @throws  ArgumentError If set to any value which is not a member of TextBaseline.
                  */
             public:
-                std::string  baselineZero();
+                std::string       baselineZero();
             public:
                 void         baselineZero(std::string value);
 
@@ -452,7 +452,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  textLineCreationResult();
+                std::string       textLineCreationResult();
 
                 /**
                  * Rotates the text lines in the text block as a unit. Call the createTextLine() method after
@@ -470,7 +470,7 @@ namespace flash
                  * @throws  ArgumentError If set to TextRotation.AUTO.
                  */
             public:
-                std::string  lineRotation();
+                std::string       lineRotation();
             public:
                 void         lineRotation(std::string value);
 
@@ -521,7 +521,7 @@ namespace flash
                  * @throws  ArgumentError The baselineFontSize specified is less than 0.
                  */
             public:
-                TextBlock(ContentElement *content=NULL, std::vector<flash::text::engine::TabStop *> tabStops=std::vector<void *>(), TextJustifier *textJustifier=NULL, std::string lineRotation="rotate0", std::string baselineZero="roman", int bidiLevel=0, bool applyNonLinearFontScaling   =true, FontDescription *baselineFontDescription=NULL, float baselineFontSize =12);
+                TextBlock(ContentElement *content=NULL, std::vector<flash::text::engine::TabStop *> tabStops=std::vector<void *>(), TextJustifier *textJustifier=NULL, std::string lineRotation="rotate0", std::string baselineZero="roman", int bidiLevel=0, bool applyNonLinearFontScaling=true, FontDescription *baselineFontDescription=NULL, float baselineFontSize=12);
 
                 /**
                  * Finds the index of the next atom boundary from the specified character index, not including the character at the specified index.
@@ -636,7 +636,7 @@ namespace flash
                  * @throws  IllegalOperationError If one or more elements in the content of the text block has a null ElementFormat.
                  */
             public:
-                flash::text::engine::TextLine *createTextLine(TextLine *previousLine=NULL, float width =1000000, float lineOffset =0, bool fitSomething   =false);
+                flash::text::engine::TextLine *createTextLine(TextLine *previousLine=NULL, float width=1000000, float lineOffset=0, bool fitSomething=false);
 
                 /**
                  * Instructs the text block to re-use an existing text line to create a line of text from its content, beginning at the point
@@ -685,7 +685,7 @@ namespace flash
                  * @throws  IllegalOperationError If one or more elements in the content of the text block has a null ElementFormat.
                  */
             public:
-                flash::text::engine::TextLine *recreateTextLine(TextLine *textLine, TextLine *previousLine=NULL, float width =1000000, float lineOffset =0, bool fitSomething   =false);
+                flash::text::engine::TextLine *recreateTextLine(TextLine *textLine, TextLine *previousLine=NULL, float width=1000000, float lineOffset=0, bool fitSomething=false);
 
                 /**
                  * Instructs the text block to release all the temporary data associated with the creation of text lines.
@@ -740,7 +740,7 @@ namespace flash
                  * @playerversion   AIR 1.5
                  */
             public:
-                std::string dump();
+                std::string   dump();
             };
         }
     }

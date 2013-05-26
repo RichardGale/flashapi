@@ -19,7 +19,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string ActivityEvent::ACTIVITY="activity";
+        const std::string ActivityEvent::ACTIVITY   = "activity";
 
         /**
          * Indicates whether the device is activating (true) or deactivating 

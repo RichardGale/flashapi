@@ -7,6 +7,20 @@
 //[Event(name="renderState",type="flash.events.StageVideoEvent")]
 
 
+
+
+
+
+
+
+
+
+
+
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace events
@@ -80,7 +94,7 @@ namespace flash
              * @playerversion   Flash 10.2
              */
         public:
-            std::string  status();
+            std::string       status();
 
             /**
              * The color space used by the video being displayed in the StageVideo object.
@@ -89,7 +103,7 @@ namespace flash
              * @playerversion   Flash 10.2
              */
         public:
-            std::string  colorSpace();
+            std::string       colorSpace();
 
             /**
              * Creates an Event object that contains information about StageVideo events.
@@ -104,7 +118,7 @@ namespace flash
              * @playerversion   Flash 10.2
              */
         public:
-            StageVideoEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string status="", std::string colorSpace="");
+            StageVideoEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string status="", std::string colorSpace="");
         };
     }
 }

@@ -150,7 +150,7 @@ namespace flash
         public:
             void         pan(Point *point);
         public:
-            Point       *pan();
+            Point        *pan();
 
             /**
              * The zoom setting of the video, specified as a Point object.
@@ -191,7 +191,7 @@ namespace flash
         public:
             void         zoom(Point *point);
         public:
-            Point       *zoom();
+            Point        *zoom();
 
             /**
              * The depth level of a StageVideo object relative to other StageVideo objects.

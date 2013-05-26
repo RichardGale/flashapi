@@ -20,7 +20,7 @@ namespace events {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string SampleDataEvent::SAMPLE_DATA="sampleData";
+        const std::string SampleDataEvent::SAMPLE_DATA   = "sampleData";
 
         /**
          * The position of the data in the audio stream.

@@ -20,7 +20,7 @@ namespace events {
          * @playerversion   Flash 10.1
          * @playerversion   Lite 4
          */
-        const std::string AccelerometerEvent::UPDATE="update";
+        const std::string AccelerometerEvent::UPDATE   = "update";
 
         /**
          * Acceleration along the x-axis, measured in Gs. (1 G is roughly 9.8 m/sec/sec.) The x-axis runs from the left to the right of the device 

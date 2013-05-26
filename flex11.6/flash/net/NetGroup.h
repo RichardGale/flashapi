@@ -344,7 +344,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  replicationStrategy();
+            std::string       replicationStrategy();
         public:
             void         replicationStrategy(std::string s);
 
@@ -357,7 +357,7 @@ namespace flash
              * @internal    Q for dev: why would someone use this instead of neighborcount? --brs
              */
         public:
-            float        estimatedMemberCount();
+            float       estimatedMemberCount();
 
             /**
              * Specifies the number of group members to which this node is directly connected.
@@ -366,7 +366,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        neighborCount();
+            float       neighborCount();
 
             /**
              * Specifies this node's routing receive mode as one of values in the NetGroupReceiveMode enum class.
@@ -375,7 +375,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  receiveMode();
+            std::string       receiveMode();
         public:
             void         receiveMode(std::string mode);
 
@@ -397,7 +397,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  localCoverageFrom();
+            std::string       localCoverageFrom();
 
             /**
              * Specifies the end of the range of group addresses for which this node is the "nearest" and responsible.
@@ -407,7 +407,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  localCoverageTo();
+            std::string       localCoverageTo();
 
             /**
              * Disconnect from the group and close this NetGroup. This NetGroup is not usable after calling this method.
@@ -568,7 +568,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string convertPeerIDToGroupAddress(std::string peerID);
+            std::string   convertPeerIDToGroupAddress(std::string peerID);
 
             /**
              * Sends a message to all members of a group. To call this method,
@@ -589,7 +589,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string post(Object *message);
+            std::string   post(Object *message);
 
             /**
              * Sends a message to the neighbor (or local node) nearest to the specified group address.
@@ -608,7 +608,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string sendToNearest(Object *message, std::string groupAddress);
+            std::string   sendToNearest(Object *message, std::string groupAddress);
 
             /**
              * Sends a message to the neighbor specified by the sendMode parameter.
@@ -626,7 +626,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string sendToNeighbor(Object *message, std::string sendMode);
+            std::string   sendToNeighbor(Object *message, std::string sendMode);
 
             /**
              * Sends a message to all neighbors.  Returns NetGroupSendResult.SENT if at least one neighbor was selected.
@@ -642,7 +642,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string sendToAllNeighbors(Object *message);
+            std::string   sendToAllNeighbors(Object *message);
 
             /**
              * Manually adds a neighbor by immediately connecting directly to the specified peerID, which must already be
@@ -654,7 +654,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool     addNeighbor(std::string peerID);
+            bool  addNeighbor(std::string peerID);
 
             /**
              * Manually adds a record specifying that peerID is a member of the group.
@@ -666,7 +666,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool     addMemberHint(std::string peerID);
+            bool  addMemberHint(std::string peerID);
         };
     }
 }

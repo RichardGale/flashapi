@@ -56,6 +56,9 @@
  * @playerversion   AIR 1.5
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -83,7 +86,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<void *> value();
+            std::vector<void *>        value();
         public:
             void         value(std::vector<void *> v);
 
@@ -96,7 +99,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  type();
+            std::string       type();
 
             /**
              * The zero-based index of the parameter.

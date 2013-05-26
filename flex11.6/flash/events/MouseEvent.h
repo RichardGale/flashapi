@@ -466,7 +466,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localX();
+            float       localX();
         public:
             void         localX(float value);
 
@@ -477,7 +477,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        localY();
+            float       localY();
         public:
             void         localY(float value);
 
@@ -505,7 +505,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         ctrlKey();
+            bool      ctrlKey();
         public:
             void         ctrlKey(bool value);
 
@@ -520,7 +520,7 @@ namespace flash
              *   only the Windows version is hooked up.
              */
         public:
-            bool         altKey();
+            bool      altKey();
         public:
             void         altKey(bool value);
 
@@ -532,7 +532,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         shiftKey();
+            bool      shiftKey();
         public:
             void         shiftKey(bool value);
 
@@ -543,7 +543,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         buttonDown();
+            bool      buttonDown();
         public:
             void         buttonDown(bool value);
 
@@ -571,7 +571,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageX();
+            float       stageX();
 
             /**
              * The vertical coordinate at which the event occurred in global Stage coordinates.
@@ -581,7 +581,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        stageY();
+            float       stageY();
 
             /**
              * If true, the relatedObject property is set to null for
@@ -596,17 +596,17 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         isRelatedObjectInaccessible();
+            bool      isRelatedObjectInaccessible();
         public:
             void         isRelatedObjectInaccessible(bool value);
 
         public:
-            float        movementX();
+            float       movementX();
         public:
             void         movementX(float value);
 
         public:
-            float        movementY();
+            float       movementY();
         public:
             void         movementY(float value);
 
@@ -648,7 +648,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            MouseEvent(std::string type, bool bubbles   =true, bool cancelable   =false, float localX =NULL, float localY =NULL, InteractiveObject *relatedObject=NULL, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false, bool buttonDown   =false, int delta=0);
+            MouseEvent(std::string type, bool bubbles=true, bool cancelable=false, float localX=NULL, float localY=NULL, InteractiveObject *relatedObject=NULL, bool ctrlKey=false, bool altKey=false, bool shiftKey=false, bool buttonDown=false, int delta=0);
 
             /**
              * Creates a copy of the MouseEvent object and sets the value of each property to match that of the original.
@@ -669,7 +669,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Instructs Flash Player or Adobe AIR to render after processing of this event completes, if the display list has been modified.

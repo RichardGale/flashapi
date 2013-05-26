@@ -31,7 +31,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  name();
+            std::string       name();
 
             /**
              * The frame number containing the label.

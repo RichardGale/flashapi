@@ -48,7 +48,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int uint::MIN_VALUE=0;
+        const unsigned int uint::MIN_VALUE   = 0;
 
         /**
          * The largest representable 32-bit unsigned integer, which is 4,294,967,295.
@@ -56,7 +56,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int uint::MAX_VALUE=4294967295;
+        const unsigned int uint::MAX_VALUE   = 4294967295;
         const int uint::length  ;
 
         /**

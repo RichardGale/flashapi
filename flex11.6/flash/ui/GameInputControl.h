@@ -29,16 +29,16 @@ namespace flash
             int          index();
 
         public:
-            bool         relative();
+            bool      relative();
 
         public:
-            std::string  type();
+            std::string       type();
 
         public:
-            std::string  hand();
+            std::string       hand();
 
         public:
-            std::string  finger();
+            std::string       finger();
 
         public:
             GameInputDevice *device();
@@ -47,7 +47,7 @@ namespace flash
             GameInputControl();
 
         public:
-            float    getValueAt(int index=0);
+            float   getValueAt(int index=0);
         };
     }
 }

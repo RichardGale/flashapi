@@ -26,7 +26,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextRotation::ROTATE_0="rotate0";
+        const std::string TextRotation::ROTATE_0   = "rotate0";
 
         /**
          * Specifies a 90 degree clockwise rotation.
@@ -35,7 +35,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextRotation::ROTATE_90="rotate90";
+        const std::string TextRotation::ROTATE_90   = "rotate90";
 
         /**
          * Specifies a 180 degree rotation.
@@ -44,7 +44,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextRotation::ROTATE_180="rotate180";
+        const std::string TextRotation::ROTATE_180   = "rotate180";
 
         /**
          * Specifies a 270 degree clockwise rotation.
@@ -53,7 +53,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextRotation::ROTATE_270="rotate270";
+        const std::string TextRotation::ROTATE_270   = "rotate270";
 
         /**
          * Specifies a 90 degree counter clockwise rotation for full width and wide glyphs only,
@@ -67,7 +67,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TextRotation::AUTO="auto";
+        const std::string TextRotation::AUTO   = "auto";
 
         TextRotation::TextRotation();
 }

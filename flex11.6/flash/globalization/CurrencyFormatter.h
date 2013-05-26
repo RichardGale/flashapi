@@ -142,7 +142,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  currencyISOCode();
+            std::string       currencyISOCode();
 
             /**
              * The currency symbol or string for the actual locale being used.
@@ -155,7 +155,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  currencySymbol();
+            std::string       currencySymbol();
 
             /**
              * The status of the most recent operation that this CurrencyFormatter object performed.
@@ -166,7 +166,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * The name of the requested locale ID that was passed to the constructor of this CurrencyFormatter object.
@@ -179,7 +179,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  requestedLocaleIDName();
+            std::string       requestedLocaleIDName();
 
             /**
              * The name of the actual locale ID used by this CurrencyFormatter object.
@@ -221,7 +221,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  actualLocaleIDName();
+            std::string       actualLocaleIDName();
 
             /**
              * The maximum number of digits that can appear after the decimal separator.
@@ -256,7 +256,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            bool         useGrouping();
+            bool      useGrouping();
         public:
             void         useGrouping(bool value);
 
@@ -287,7 +287,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  groupingPattern();
+            std::string       groupingPattern();
         public:
             void         groupingPattern(std::string value);
 
@@ -305,7 +305,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            unsigned int digitsType();
+            unsigned int         digitsType();
         public:
             void         digitsType(unsigned int value);
 
@@ -322,7 +322,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  decimalSeparator();
+            std::string       decimalSeparator();
         public:
             void         decimalSeparator(std::string value);
 
@@ -341,7 +341,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  groupingSeparator();
+            std::string       groupingSeparator();
         public:
             void         groupingSeparator(std::string value);
 
@@ -359,7 +359,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            std::string  negativeSymbol();
+            std::string       negativeSymbol();
         public:
             void         negativeSymbol(std::string value);
 
@@ -381,7 +381,7 @@ namespace flash
              * @throws  ArgumentError if the assigned value is not between 0 and 15.
              */
         public:
-            unsigned int negativeCurrencyFormat();
+            unsigned int         negativeCurrencyFormat();
         public:
             void         negativeCurrencyFormat(unsigned int value);
 
@@ -403,7 +403,7 @@ namespace flash
              * @throws  ArgumentError if the assigned value is not between 0 and 3.
              */
         public:
-            unsigned int positiveCurrencyFormat();
+            unsigned int         positiveCurrencyFormat();
         public:
             void         positiveCurrencyFormat(unsigned int value);
 
@@ -427,7 +427,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            bool         leadingZero();
+            bool      leadingZero();
         public:
             void         leadingZero(bool value);
 
@@ -450,7 +450,7 @@ namespace flash
              * @throws  TypeError if this property is assigned a null value.
              */
         public:
-            bool         trailingZeros();
+            bool      trailingZeros();
         public:
             void         trailingZeros(bool value);
 
@@ -535,7 +535,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string format(float value, bool withCurrencySymbol   =false);
+            std::string   format(float value, bool withCurrencySymbol=false);
 
             /**
              * Determines whether the currently specified currency symbol can be used when formatting currency amounts.
@@ -563,7 +563,7 @@ namespace flash
              * @throws  TypeError if the requestedISOCode parameter is null.
              */
         public:
-            bool     formattingWithCurrencySymbolIsSafe(std::string requestedISOCode);
+            bool  formattingWithCurrencySymbolIsSafe(std::string requestedISOCode);
 
             /**
              * Parses a string into a currency amount and a currency symbol.

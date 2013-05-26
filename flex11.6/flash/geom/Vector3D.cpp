@@ -37,7 +37,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const flash::geom::Vector3D* Vector3D::X_AXIS= unknown;
+        const flash::geom::Vector3D* Vector3D::X_AXIS   = unknown;
 
         /**
          * The y axis defined as a Vector3D object with coordinates (0,1,0).
@@ -45,7 +45,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const flash::geom::Vector3D* Vector3D::Y_AXIS= unknown;
+        const flash::geom::Vector3D* Vector3D::Y_AXIS   = unknown;
 
         /**
          * The z axis defined as a Vector3D object with coordinates (0,0,1).
@@ -53,7 +53,7 @@ namespace geom {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const flash::geom::Vector3D* Vector3D::Z_AXIS= unknown;
+        const flash::geom::Vector3D* Vector3D::Z_AXIS   = unknown;
 
         /**
          * The first element of a Vector3D object, such as

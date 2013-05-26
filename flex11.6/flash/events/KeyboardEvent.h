@@ -128,7 +128,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int charCode();
+            unsigned int         charCode();
         public:
             void         charCode(unsigned int value);
 
@@ -141,7 +141,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int keyCode();
+            unsigned int         keyCode();
         public:
             void         keyCode(unsigned int value);
 
@@ -157,7 +157,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int keyLocation();
+            unsigned int         keyLocation();
         public:
             void         keyLocation(unsigned int value);
 
@@ -168,7 +168,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         ctrlKey();
+            bool      ctrlKey();
         public:
             void         ctrlKey(bool value);
 
@@ -179,7 +179,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         altKey();
+            bool      altKey();
         public:
             void         altKey(bool value);
 
@@ -190,7 +190,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         shiftKey();
+            bool      shiftKey();
         public:
             void         shiftKey(bool value);
 
@@ -224,7 +224,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            KeyboardEvent(std::string type, bool bubbles   =true, bool cancelable   =false, unsigned int charCodeValue=0, unsigned int keyCodeValue=0, unsigned int keyLocationValue=0, bool ctrlKeyValue   =false, bool altKeyValue   =false, bool shiftKeyValue   =false);
+            KeyboardEvent(std::string type, bool bubbles=true, bool cancelable=false, unsigned int charCodeValue=0, unsigned int keyCodeValue=0, unsigned int keyLocationValue=0, bool ctrlKeyValue=false, bool altKeyValue=false, bool shiftKeyValue=false);
 
             /**
              * Returns a string that contains all the properties of the KeyboardEvent object. The string
@@ -236,7 +236,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Indicates that the display should be rendered after processing of this event completes, if the display

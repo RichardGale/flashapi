@@ -20,7 +20,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string ProgressEvent::PROGRESS="progress";
+        const std::string ProgressEvent::PROGRESS   = "progress";
 
         /**
          * Defines the value of the type property of a socketData event object.
@@ -30,7 +30,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string ProgressEvent::SOCKET_DATA="socketData";
+        const std::string ProgressEvent::SOCKET_DATA   = "socketData";
 
         /**
          * The number of items or bytes loaded when the listener processes the event.

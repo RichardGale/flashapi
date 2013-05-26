@@ -19,7 +19,7 @@ namespace ui {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string MouseCursor::AUTO="auto";
+        const std::string MouseCursor::AUTO   = "auto";
 
         /**
          * Used to specify that the arrow cursor should be used.
@@ -27,7 +27,7 @@ namespace ui {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string MouseCursor::ARROW="arrow";
+        const std::string MouseCursor::ARROW   = "arrow";
 
         /**
          * Used to specify that the button pressing hand cursor should be used.
@@ -35,7 +35,7 @@ namespace ui {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string MouseCursor::BUTTON="button";
+        const std::string MouseCursor::BUTTON   = "button";
 
         /**
          * Used to specify that the dragging hand cursor should be used.
@@ -43,7 +43,7 @@ namespace ui {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string MouseCursor::HAND="hand";
+        const std::string MouseCursor::HAND   = "hand";
 
         /**
          * Used to specify that the I-beam cursor should be used.
@@ -51,7 +51,7 @@ namespace ui {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string MouseCursor::IBEAM="ibeam";
+        const std::string MouseCursor::IBEAM   = "ibeam";
 
         MouseCursor::MouseCursor();
 }

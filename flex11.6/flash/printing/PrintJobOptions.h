@@ -11,6 +11,9 @@
  * @playerversion   Flash 9
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -56,7 +59,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            PrintJobOptions(bool printAsBitmap   =false);
+            PrintJobOptions(bool printAsBitmap=false);
         };
     }
 }

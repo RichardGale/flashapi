@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace media
@@ -11,13 +15,13 @@ namespace flash
         class H264VideoStreamSettings : public VideoStreamSettings
         {
         public:
-            std::string  codec();
+            std::string       codec();
 
         public:
-            std::string  profile();
+            std::string       profile();
 
         public:
-            std::string  level();
+            std::string       level();
 
         public:
             H264VideoStreamSettings();

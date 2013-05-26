@@ -165,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         alwaysShowSelection();
+            bool      alwaysShowSelection();
         public:
             void         alwaysShowSelection(bool value);
 
@@ -207,7 +207,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::string  antiAliasType();
+            std::string       antiAliasType();
         public:
             void         antiAliasType(std::string antiAliasType);
 
@@ -238,7 +238,7 @@ namespace flash
              * @throws  ArgumentError The autoSize specified is not a member of flash.text.TextFieldAutoSize.
              */
         public:
-            std::string  autoSize();
+            std::string       autoSize();
         public:
             void         autoSize(std::string value);
 
@@ -251,7 +251,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         background();
+            bool      background();
         public:
             void         background(bool value);
 
@@ -265,7 +265,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int backgroundColor();
+            unsigned int         backgroundColor();
         public:
             void         backgroundColor(unsigned int value);
 
@@ -278,7 +278,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         border();
+            bool      border();
         public:
             void         border(bool value);
 
@@ -292,7 +292,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int borderColor();
+            unsigned int         borderColor();
         public:
             void         borderColor(unsigned int value);
 
@@ -339,7 +339,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         condenseWhite();
+            bool      condenseWhite();
         public:
             void         condenseWhite(bool value);
 
@@ -384,7 +384,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         embedFonts();
+            bool      embedFonts();
         public:
             void         embedFonts(bool value);
 
@@ -439,7 +439,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::string  gridFitType();
+            std::string       gridFitType();
         public:
             void         gridFitType(std::string gridFitType);
 
@@ -614,7 +614,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  htmlText();
+            std::string       htmlText();
         public:
             void         htmlText(std::string value);
 
@@ -638,7 +638,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  textInteractionMode();
+            std::string       textInteractionMode();
 
             /**
              * The maximum number of characters that the text field can contain, as entered by a user.
@@ -681,7 +681,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         mouseWheelEnabled();
+            bool      mouseWheelEnabled();
         public:
             void         mouseWheelEnabled(bool value);
 
@@ -698,7 +698,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         multiline();
+            bool      multiline();
         public:
             void         multiline(bool value);
 
@@ -725,7 +725,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         displayAsPassword();
+            bool      displayAsPassword();
         public:
             void         displayAsPassword(bool value);
 
@@ -760,7 +760,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  restrict();
+            std::string       restrict();
         public:
             void         restrict(std::string value);
 
@@ -822,12 +822,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         selectable();
+            bool      selectable();
         public:
             void         selectable(bool value);
 
         public:
-            std::string  selectedText();
+            std::string       selectedText();
 
             /**
              * The zero-based character index value of the first character in the current selection.
@@ -895,7 +895,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        sharpness();
+            float       sharpness();
         public:
             void         sharpness(float value);
 
@@ -930,7 +930,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  text();
+            std::string       text();
         public:
             void         text(std::string value);
 
@@ -945,7 +945,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int textColor();
+            unsigned int         textColor();
         public:
             void         textColor(unsigned int value);
 
@@ -956,7 +956,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        textHeight();
+            float       textHeight();
 
             /**
              * The width of the text in pixels.
@@ -965,7 +965,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        textWidth();
+            float       textWidth();
 
             /**
              * The thickness of the glyph edges in this text field. This property applies only
@@ -1002,7 +1002,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        thickness();
+            float       thickness();
         public:
             void         thickness(float value);
 
@@ -1017,7 +1017,7 @@ namespace flash
              * @throws  ArgumentError The type specified is not a member of flash.text.TextFieldType.
              */
         public:
-            std::string  type();
+            std::string       type();
         public:
             void         type(std::string value);
 
@@ -1031,7 +1031,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         wordWrap();
+            bool      wordWrap();
         public:
             void         wordWrap(bool value);
 
@@ -1044,7 +1044,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         useRichTextClipboard();
+            bool      useRichTextClipboard();
         public:
             void         useRichTextClipboard(bool value);
 
@@ -1070,7 +1070,7 @@ namespace flash
              * @throws  ArgumentError The fontStyle specified is not a member of flash.text.FontStyle.
              */
         public:
-            static bool     isFontCompatible(std::string fontName, std::string fontStyle);
+            static bool  isFontCompatible(std::string fontName, std::string fontStyle);
 
             /**
              * Creates a new TextField instance. After you create the TextField instance, call the
@@ -1097,7 +1097,7 @@ namespace flash
         public:
             void     appendText(std::string newText);
 
-            std::string copyRichText();
+            std::string   copyRichText();
 
             /**
              * Returns a rectangle that is the bounding box of the character.
@@ -1216,7 +1216,7 @@ namespace flash
              * @throws  RangeError The line number specified is out of range.
              */
         public:
-            std::string getLineText(int lineIndex);
+            std::string   getLineText(int lineIndex);
 
             /**
              * Given a character index, returns the length of the paragraph containing the given character.
@@ -1263,18 +1263,18 @@ namespace flash
             flash::text::TextFormat *getTextFormat(int beginIndex=-1, int endIndex=-1);
 
         public:
-            std::vector<void *> getTextRuns(int beginIndex=0, int endIndex=2147483647);
+            std::vector<void *>    getTextRuns(int beginIndex=0, int endIndex=2147483647);
 
         public:
-            std::string getRawText();
+            std::string   getRawText();
 
         public:
-            std::string getXMLText(int beginIndex=0, int endIndex=2147483647);
+            std::string   getXMLText(int beginIndex=0, int endIndex=2147483647);
 
         public:
-            void     insertXMLText(int beginIndex, int endIndex, std::string richText, bool pasting   =false);
+            void     insertXMLText(int beginIndex, int endIndex, std::string richText, bool pasting=false);
 
-            bool     pasteRichText(std::string richText);
+            bool  pasteRichText(std::string richText);
 
             /**
              * Replaces the current selection with the contents of the value parameter.

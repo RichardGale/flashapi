@@ -138,7 +138,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         trackAsMenu();
+            bool      trackAsMenu();
         public:
             void         trackAsMenu(bool value);
 
@@ -150,7 +150,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> scenes();
+            std::vector<void *>        scenes();
 
             /**
              * The current scene in which the playhead is located in the timeline of the MovieClip instance.
@@ -171,7 +171,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  currentLabel();
+            std::string       currentLabel();
 
             /**
              * The label at the current frame in the timeline of the MovieClip instance.
@@ -182,7 +182,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  currentFrameLabel();
+            std::string       currentFrameLabel();
 
             /**
              * Returns an array of FrameLabel objects from the current scene. If the MovieClip instance does
@@ -192,7 +192,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> currentLabels();
+            std::vector<void *>        currentLabels();
 
             /**
              * A Boolean value that indicates whether a movie clip is enabled. The default value of enabled
@@ -210,12 +210,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         enabled();
+            bool      enabled();
         public:
             void         enabled(bool value);
 
         public:
-            bool         isPlaying();
+            bool      isPlaying();
 
             /**
              * Creates a new MovieClip instance. After creating the MovieClip, call the

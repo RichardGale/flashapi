@@ -23,7 +23,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetStreamAppendBytesAction::RESET_BEGIN="resetBegin";
+        const std::string NetStreamAppendBytesAction::RESET_BEGIN   = "resetBegin";
 
         /**
          * Indicates a timescale discontinuity. Flushes the FIFO (composed of an incomplete FLV tag) and resets the timescale to begin at the timestamp of the next appended message.
@@ -33,7 +33,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetStreamAppendBytesAction::RESET_SEEK="resetSeek";
+        const std::string NetStreamAppendBytesAction::RESET_SEEK   = "resetSeek";
 
         /**
          * Indicates that the media stream data is complete.  For some codecs, such as H.264, the byte parser waits for
@@ -43,7 +43,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetStreamAppendBytesAction::END_SEQUENCE="endSequence";
+        const std::string NetStreamAppendBytesAction::END_SEQUENCE   = "endSequence";
 
         NetStreamAppendBytesAction::NetStreamAppendBytesAction();
 }

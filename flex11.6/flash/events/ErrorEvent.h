@@ -125,7 +125,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ErrorEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string text="", int id=0);
+            ErrorEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string text="", int id=0);
 
             /**
              * Creates a copy of the ErrorEvent object and sets the value of each property to match that of the original.
@@ -150,7 +150,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

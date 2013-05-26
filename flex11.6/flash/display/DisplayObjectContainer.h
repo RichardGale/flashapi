@@ -143,7 +143,7 @@ namespace flash
              *   throws an exception. The Stage object does not implement this property.
              */
         public:
-            bool         tabChildren();
+            bool      tabChildren();
         public:
             void         tabChildren(bool enable);
 
@@ -165,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         mouseChildren();
+            bool      mouseChildren();
         public:
             void         mouseChildren(bool enable);
 
@@ -372,7 +372,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> getObjectsUnderPoint(Point *point);
+            std::vector<void *>    getObjectsUnderPoint(Point *point);
 
             /**
              * Indicates whether the security restrictions
@@ -396,7 +396,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     areInaccessibleObjectsUnderPoint(Point *point);
+            bool  areInaccessibleObjectsUnderPoint(Point *point);
 
             /**
              * Determines whether the specified display object is a child of the DisplayObjectContainer instance or
@@ -411,7 +411,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     contains(DisplayObject *child);
+            bool  contains(DisplayObject *child);
 
             /**
              * Swaps the z-order (front-to-back order) of the child objects at the two specified index positions in the

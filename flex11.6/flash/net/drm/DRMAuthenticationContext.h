@@ -23,7 +23,7 @@ namespace flash
             class DRMAuthenticationContext : public DRMManagerSession
             {
             public:
-                ByteArray   *authenticationToken();
+                ByteArray    *authenticationToken();
 
             public:
                 void     authenticate(std::string url, std::string domain, std::string username, std::string password);

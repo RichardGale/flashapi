@@ -4,13 +4,17 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 class UninitializedError : public Error
 {
 public:
     static const int length;
 
 public:
-    UninitializedError(void *message=(void *)"", void *id=0);
+    UninitializedError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_UNINITIALIZEDERROR_AS

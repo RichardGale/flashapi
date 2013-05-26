@@ -25,7 +25,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::CLICK="click";
+        const std::string MouseEvent::CLICK   = "click";
 
         /**
          * Defines the value of the type property of a doubleClick event object. The doubleClickEnabled property 
@@ -40,7 +40,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::DOUBLE_CLICK="doubleClick";
+        const std::string MouseEvent::DOUBLE_CLICK   = "doubleClick";
 
         /**
          * Defines the value of the type property of a mouseDown event object. 
@@ -53,7 +53,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MOUSE_DOWN="mouseDown";
+        const std::string MouseEvent::MOUSE_DOWN   = "mouseDown";
 
         /**
          * Defines the value of the type property of a mouseMove event object.
@@ -67,7 +67,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MOUSE_MOVE="mouseMove";
+        const std::string MouseEvent::MOUSE_MOVE   = "mouseMove";
 
         /**
          * Defines the value of the type property of a mouseOut event object.
@@ -81,7 +81,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MOUSE_OUT="mouseOut";
+        const std::string MouseEvent::MOUSE_OUT   = "mouseOut";
 
         /**
          * Defines the value of the type property of a mouseOver event object.
@@ -95,7 +95,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MOUSE_OVER="mouseOver";
+        const std::string MouseEvent::MOUSE_OVER   = "mouseOver";
 
         /**
          * Defines the value of the type property of a mouseUp event object.
@@ -109,8 +109,8 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MOUSE_UP="mouseUp";
-        const std::string MouseEvent::RELEASE_OUTSIDE;
+        const std::string MouseEvent::MOUSE_UP   = "mouseUp";
+        const std::string MouseEvent::RELEASE_OUTSIDE  ;
 
         /**
          * Defines the value of the type property of a mouseWheel event object.
@@ -123,7 +123,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string MouseEvent::MOUSE_WHEEL="mouseWheel";
+        const std::string MouseEvent::MOUSE_WHEEL   = "mouseWheel";
 
         /**
          * Defines the value of the type property of a rollOut event object.
@@ -137,7 +137,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::ROLL_OUT="rollOut";
+        const std::string MouseEvent::ROLL_OUT   = "rollOut";
 
         /**
          * Defines the value of the type property of a rollOver event object.
@@ -151,7 +151,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::ROLL_OVER="rollOver";
+        const std::string MouseEvent::ROLL_OVER   = "rollOver";
 
         /**
          * Defines the value of the type property of a middleClick event object.
@@ -165,7 +165,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MIDDLE_CLICK="middleClick";
+        const std::string MouseEvent::MIDDLE_CLICK   = "middleClick";
 
         /**
          * Defines the value of the type property of a middleMouseDown event object. 
@@ -178,7 +178,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MIDDLE_MOUSE_DOWN="middleMouseDown";
+        const std::string MouseEvent::MIDDLE_MOUSE_DOWN   = "middleMouseDown";
 
         /**
          * Defines the value of the type property of a middleMouseUp event object.
@@ -192,7 +192,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::MIDDLE_MOUSE_UP="middleMouseUp";
+        const std::string MouseEvent::MIDDLE_MOUSE_UP   = "middleMouseUp";
 
         /**
          * Defines the value of the type property of a rightClick event object.
@@ -206,7 +206,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::RIGHT_CLICK="rightClick";
+        const std::string MouseEvent::RIGHT_CLICK   = "rightClick";
 
         /**
          * Defines the value of the type property of a rightMouseDown event object. 
@@ -219,7 +219,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::RIGHT_MOUSE_DOWN="rightMouseDown";
+        const std::string MouseEvent::RIGHT_MOUSE_DOWN   = "rightMouseDown";
 
         /**
          * Defines the value of the type property of a rightMouseUp event object.
@@ -233,7 +233,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::RIGHT_MOUSE_UP="rightMouseUp";
+        const std::string MouseEvent::RIGHT_MOUSE_UP   = "rightMouseUp";
 
         /**
          * The MouseEvent.CONTEXT_MENU constant defines the value of the 
@@ -248,7 +248,7 @@ namespace events {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string MouseEvent::CONTEXT_MENU="contextMenu";
+        const std::string MouseEvent::CONTEXT_MENU   = "contextMenu";
 
         /**
          * The horizontal coordinate at which the event occurred relative to the containing sprite.

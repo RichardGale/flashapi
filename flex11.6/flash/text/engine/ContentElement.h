@@ -172,7 +172,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  rawText();
+                std::string       rawText();
 
                 /**
                  * A copy of the text in the element, not including any U+FDEF characters, which represent graphic elements in the String.
@@ -182,7 +182,7 @@ namespace flash
                  * @playerversion   Lite 4
                  */
             public:
-                std::string  text();
+                std::string       text();
 
                 /**
                  * The rotation to apply to the element as a unit. Use TextRotation
@@ -207,7 +207,7 @@ namespace flash
                  * @throws  ArgumentError If the operation would result in nested rotations within a GroupElement.
                  */
             public:
-                std::string  textRotation();
+                std::string       textRotation();
             public:
                 void         textRotation(std::string value);
 

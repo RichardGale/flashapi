@@ -23,16 +23,16 @@ namespace flash
         class ApplicationInstaller : public flash::events::EventDispatcher
         {
         public:
-            bool         isInstalled();
+            bool      isInstalled();
 
         public:
             ApplicationInstaller();
 
         public:
-            static std::string stringsDigest(XML *strings);
+            static std::string   stringsDigest(XML *strings);
 
         public:
-            static std::string iconDigest(ByteArray *icon);
+            static std::string   iconDigest(ByteArray *icon);
 
         public:
             void     install(std::string mode="install_with_shortcuts");

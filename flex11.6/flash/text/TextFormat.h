@@ -76,6 +76,9 @@
  * @internal    Insure the above example is correct and meets example standards
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -91,7 +94,7 @@ namespace flash
              * @throws  ArgumentError The align specified is not a member of flash.text.TextFormatAlign.
              */
         public:
-            std::string  align();
+            std::string       align();
         public:
             void         align(std::string value);
 
@@ -106,7 +109,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *blockIndent();
+            Object       *blockIndent();
         public:
             void         blockIndent(Object *value);
 
@@ -120,7 +123,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *bold();
+            Object       *bold();
         public:
             void         bold(Object *value);
 
@@ -134,7 +137,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *bullet();
+            Object       *bullet();
         public:
             void         bullet(Object *value);
 
@@ -147,12 +150,12 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *color();
+            Object       *color();
         public:
             void         color(Object *value);
 
         public:
-            std::string  display();
+            std::string       display();
         public:
             void         display(std::string value);
 
@@ -164,7 +167,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  font();
+            std::string       font();
         public:
             void         font(std::string value);
 
@@ -177,7 +180,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *indent();
+            Object       *indent();
         public:
             void         indent(Object *value);
 
@@ -189,7 +192,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *italic();
+            Object       *italic();
         public:
             void         italic(Object *value);
 
@@ -206,7 +209,7 @@ namespace flash
              * @internal    Add better description and example.
              */
         public:
-            Object      *kerning();
+            Object       *kerning();
         public:
             void         kerning(Object *value);
 
@@ -219,7 +222,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *leading();
+            Object       *leading();
         public:
             void         leading(Object *value);
 
@@ -231,7 +234,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *leftMargin();
+            Object       *leftMargin();
         public:
             void         leftMargin(Object *value);
 
@@ -245,7 +248,7 @@ namespace flash
              * @internal    Add better description and example.
              */
         public:
-            Object      *letterSpacing();
+            Object       *letterSpacing();
         public:
             void         letterSpacing(Object *value);
 
@@ -257,7 +260,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *rightMargin();
+            Object       *rightMargin();
         public:
             void         rightMargin(Object *value);
 
@@ -269,7 +272,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *size();
+            Object       *size();
         public:
             void         size(Object *value);
 
@@ -282,7 +285,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> tabStops();
+            std::vector<void *>        tabStops();
         public:
             void         tabStops(std::vector<void *> value);
 
@@ -299,7 +302,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  target();
+            std::string       target();
         public:
             void         target(std::string value);
 
@@ -314,7 +317,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *underline();
+            Object       *underline();
         public:
             void         underline(Object *value);
 
@@ -329,7 +332,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  url();
+            std::string       url();
         public:
             void         url(std::string value);
 

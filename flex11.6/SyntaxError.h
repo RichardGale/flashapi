@@ -12,6 +12,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class SyntaxError : public Error
 {
@@ -26,7 +29,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    SyntaxError(void *message=(void *)"", void *id=0);
+    SyntaxError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_SYNTAXERROR_AS

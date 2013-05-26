@@ -57,7 +57,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            bool         enabled();
+            bool      enabled();
         public:
             void         enabled(bool isSeparator);
 

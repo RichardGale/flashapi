@@ -108,6 +108,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Class : public Object
 {
@@ -115,7 +118,7 @@ public:
     static const int length;
 
 public:
-    void        *prototype();
+    void            *prototype();
 
 public:
     Class();

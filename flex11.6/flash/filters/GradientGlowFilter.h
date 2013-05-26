@@ -152,7 +152,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        angle();
+            float       angle();
         public:
             void         angle(float value);
 
@@ -210,7 +210,7 @@ namespace flash
              * @throws  TypeError The Array is null when being set
              */
         public:
-            std::vector<void *> alphas();
+            std::vector<void *>        alphas();
         public:
             void         alphas(std::vector<void *> value);
 
@@ -223,7 +223,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        blurX();
+            float       blurX();
         public:
             void         blurX(float value);
 
@@ -236,7 +236,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            float        blurY();
+            float       blurY();
         public:
             void         blurY(float value);
 
@@ -291,7 +291,7 @@ namespace flash
              * @throws  TypeError The Array is null when being set
              */
         public:
-            std::vector<void *> colors();
+            std::vector<void *>        colors();
         public:
             void         colors(std::vector<void *> value);
 
@@ -334,7 +334,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        distance();
+            float       distance();
         public:
             void         distance(float value);
 
@@ -381,7 +381,7 @@ namespace flash
              *     </listing>
              */
         public:
-            bool         knockout();
+            bool      knockout();
         public:
             void         knockout(bool value);
 
@@ -522,7 +522,7 @@ namespace flash
              * @throws  TypeError The Array is null when being set
              */
         public:
-            std::vector<void *> ratios();
+            std::vector<void *>        ratios();
         public:
             void         ratios(std::vector<void *> value);
 
@@ -567,7 +567,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        strength();
+            float       strength();
         public:
             void         strength(float value);
 
@@ -613,7 +613,7 @@ namespace flash
              * @throws  TypeError The string is null when being set
              */
         public:
-            std::string  type();
+            std::string       type();
         public:
             void         type(std::string value);
 
@@ -697,7 +697,7 @@ namespace flash
              *   </listing>
              */
         public:
-            GradientGlowFilter(float distance =4, float angle =45, std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), float blurX =4, float blurY =4, float strength =1, int quality=1, std::string type="inner", bool knockout   =false);
+            GradientGlowFilter(float distance=4, float angle=45, std::vector<void *> colors=std::vector<void *>(), std::vector<void *> alphas=std::vector<void *>(), std::vector<void *> ratios=std::vector<void *>(), float blurX=4, float blurY=4, float strength=1, int quality=1, std::string type="inner", bool knockout=false);
 
             /**
              * Returns a copy of this filter object.

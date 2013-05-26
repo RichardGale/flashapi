@@ -26,7 +26,7 @@ namespace events {
          * @playerversion   AIR 1.5
          * @playerversion   Flash 10.1
          */
-        const std::string DRMAuthenticationCompleteEvent::AUTHENTICATION_COMPLETE="authenticationComplete";
+        const std::string DRMAuthenticationCompleteEvent::AUTHENTICATION_COMPLETE   = "authenticationComplete";
 
         /**
          * The URL of the media rights server.

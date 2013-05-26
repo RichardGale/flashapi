@@ -13,6 +13,9 @@
  * @playerversion   AIR (unsupported)
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -66,7 +69,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            std::string  status();
+            std::string       status();
 
             /**
              * Constructor.
@@ -79,7 +82,7 @@ namespace flash
              * @playerversion   AIR (unsupported)
              */
         public:
-            VideoEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string status="");
+            VideoEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string status="");
         };
     }
 }

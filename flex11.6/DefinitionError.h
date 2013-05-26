@@ -14,6 +14,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class DefinitionError : public Error
 {
@@ -27,7 +30,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    DefinitionError(void *message=(void *)"", void *id=0);
+    DefinitionError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_DEFINITIONERROR_AS

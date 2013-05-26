@@ -13,6 +13,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -28,7 +31,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        postingSendDataBytesPerSecond();
+            float       postingSendDataBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is sending posting control overhead messages to peers, in bytes per second.
@@ -37,7 +40,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        postingSendControlBytesPerSecond();
+            float       postingSendControlBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving posting data from
@@ -47,7 +50,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        postingReceiveDataBytesPerSecond();
+            float       postingReceiveDataBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving posting control overhead messages from peers, in bytes per second.
@@ -56,7 +59,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        postingReceiveControlBytesPerSecond();
+            float       postingReceiveControlBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is sending directed routing messages to
@@ -66,7 +69,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        routingSendBytesPerSecond();
+            float       routingSendBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving directed routing messages
@@ -76,7 +79,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        routingReceiveBytesPerSecond();
+            float       routingReceiveBytesPerSecond();
 
             /**
              * Specifies the rate at which objects are being copied from the local node to peers
@@ -86,7 +89,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        objectReplicationSendBytesPerSecond();
+            float       objectReplicationSendBytesPerSecond();
 
             /**
              * Specifies the rate at which the local node is receiving objects from
@@ -96,7 +99,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            float        objectReplicationReceiveBytesPerSecond();
+            float       objectReplicationReceiveBytesPerSecond();
 
         public:
             NetGroupInfo(float postingSendDataBytesPerSecond, float postingSendControlBytesPerSecond, float postingReceiveDataBytesPerSecond, float postingReceiveControlBytesPerSecond, float routingSendBytesPerSecond, float routingReceiveBytesPerSecond, float objectReplicationSendBytesPerSecond, float objectReplicationReceiveBytesPerSecond);
@@ -109,7 +112,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

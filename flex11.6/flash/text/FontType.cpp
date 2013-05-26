@@ -28,7 +28,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FontType::EMBEDDED="embedded";
+        const std::string FontType::EMBEDDED   = "embedded";
 
         /**
          * Indicates that this is an embedded CFF font.
@@ -48,7 +48,7 @@ namespace text {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string FontType::EMBEDDED_CFF="embeddedCFF";
+        const std::string FontType::EMBEDDED_CFF   = "embeddedCFF";
 
         /**
          * Indicates that this is a device font.
@@ -66,7 +66,7 @@ namespace text {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string FontType::DEVICE="device";
+        const std::string FontType::DEVICE   = "device";
 
         FontType::FontType();
 }

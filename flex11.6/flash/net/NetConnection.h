@@ -154,7 +154,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            static unsigned int defaultObjectEncoding();
+            static unsigned int         defaultObjectEncoding();
         public:
             static void         defaultObjectEncoding(unsigned int version);
 
@@ -169,7 +169,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         connected();
+            bool      connected();
 
             /**
              * The URI passed to the NetConnection.connect() method.
@@ -182,7 +182,7 @@ namespace flash
              *   info is relevant for Flex servers, as well as Flash Media Server.
              */
         public:
-            std::string  uri();
+            std::string       uri();
 
             /**
              * Indicates the object on which callback methods are invoked. The default is
@@ -195,7 +195,7 @@ namespace flash
              * @throws  TypeError The client property must be set to a non-null object.
              */
         public:
-            Object      *client();
+            Object       *client();
         public:
             void         client(Object *object);
 
@@ -237,7 +237,7 @@ namespace flash
              *   or ObjectEncoding.AMF3.
              */
         public:
-            unsigned int objectEncoding();
+            unsigned int         objectEncoding();
         public:
             void         objectEncoding(unsigned int version);
 
@@ -263,7 +263,7 @@ namespace flash
              *   to other methods is used if necessary.
              */
         public:
-            std::string  proxyType();
+            std::string       proxyType();
         public:
             void         proxyType(std::string ptype);
 
@@ -280,7 +280,7 @@ namespace flash
              *   was not connected.
              */
         public:
-            std::string  connectedProxyType();
+            std::string       connectedProxyType();
 
             /**
              * Indicates whether a secure connection was made using native Transport Layer Security (TLS)
@@ -292,7 +292,7 @@ namespace flash
              *   was not connected.
              */
         public:
-            bool         usingTLS();
+            bool      usingTLS();
 
             /**
              * The protocol used to establish the connection. This property is relevant when using
@@ -305,7 +305,7 @@ namespace flash
              *   was not connected.
              */
         public:
-            std::string  protocol();
+            std::string       protocol();
 
             /**
              * The total number of inbound and outbound peer connections that this instance of Flash Player or Adobe AIR allows.
@@ -317,7 +317,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            unsigned int maxPeerConnections();
+            unsigned int         maxPeerConnections();
         public:
             void         maxPeerConnections(unsigned int maxPeers);
 
@@ -333,7 +333,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  nearID();
+            std::string       nearID();
 
             /**
              * The identifier of the Flash Media Server instance to which this Flash Player or Adobe AIR instance is connected.
@@ -343,7 +343,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  farID();
+            std::string       farID();
 
             /**
              * A value chosen substantially by this Flash Player or Adobe AIR instance, unique to this connection. This value appears to the server
@@ -353,7 +353,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  nearNonce();
+            std::string       nearNonce();
 
             /**
              * A value chosen substantially by Flash Media Server, unique to this connection. This value appears to the server
@@ -363,7 +363,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::string  farNonce();
+            std::string       farNonce();
 
             /**
              * An object that holds all of the peer subscriber NetStream objects that are not associated with publishing NetStream objects.
@@ -374,7 +374,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            std::vector<void *> unconnectedPeerStreams();
+            std::vector<void *>        unconnectedPeerStreams();
 
             /**
              * Creates a NetConnection object. Call the connect() method to make a connection.
@@ -440,7 +440,7 @@ namespace flash
              *   and Flex apps. It is also a server side method used by Flash Media Server apps.
              */
         public:
-            void     addHeader(std::string operation, bool mustUnderstand   =false, Object *param=NULL);
+            void     addHeader(std::string operation, bool mustUnderstand=false, Object *param=NULL);
 
             /**
              * Calls a command or method on Flash Media Server or on an application server running Flash Remoting.

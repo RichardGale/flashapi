@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace media
@@ -17,7 +21,7 @@ namespace flash
             int          height();
 
         public:
-            float        fps();
+            float       fps();
 
         public:
             int          quality();
@@ -29,7 +33,7 @@ namespace flash
             int          keyFrameInterval();
 
         public:
-            std::string  codec();
+            std::string       codec();
 
         public:
             void     setMode(int width, int height, float fps);

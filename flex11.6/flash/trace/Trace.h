@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace trace
@@ -26,13 +30,13 @@ namespace flash
             static const void *LISTENER;
 
         public:
-            static void    *setLevel(int l, int target=2);
+            static void        *setLevel(int l, int target=2);
 
         public:
             static int      getLevel(int target=2);
 
         public:
-            static void    *setListener(Function *f);
+            static void        *setListener(Function *f);
 
         public:
             static Function *getListener();

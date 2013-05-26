@@ -18,7 +18,7 @@ namespace printing {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string PrintJobOrientation::LANDSCAPE="landscape";
+        const std::string PrintJobOrientation::LANDSCAPE   = "landscape";
 
         /**
          * The portrait (vertical) image orientation for printing.
@@ -27,7 +27,7 @@ namespace printing {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string PrintJobOrientation::PORTRAIT="portrait";
+        const std::string PrintJobOrientation::PORTRAIT   = "portrait";
 
         PrintJobOrientation::PrintJobOrientation();
 }

@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace profiler
@@ -11,10 +15,10 @@ namespace flash
         class Telemetry : public Object
         {
         public:
-            static float        spanMarker();
+            static float       spanMarker();
 
         public:
-            static bool         connected();
+            static bool      connected();
 
         public:
             static void     sendMetric(std::string metric, void *value);
@@ -23,13 +27,13 @@ namespace flash
             static void     sendSpanMetric(std::string metric, float startSpanMarker, void *value=NULL);
 
         public:
-            static bool     registerCommandHandler(std::string commandName, Function *handler);
+            static bool  registerCommandHandler(std::string commandName, Function *handler);
 
         public:
             Telemetry();
 
         public:
-            static bool     unregisterCommandHandler(std::string commandName);
+            static bool  unregisterCommandHandler(std::string commandName);
         };
     }
 }

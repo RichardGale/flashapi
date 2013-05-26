@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TimerEvent::TIMER="timer";
+        const std::string TimerEvent::TIMER   = "timer";
 
         /**
          * Defines the value of the type property of a timerComplete event object.
@@ -29,7 +29,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TimerEvent::TIMER_COMPLETE="timerComplete";
+        const std::string TimerEvent::TIMER_COMPLETE   = "timerComplete";
 
         /**
          * Creates a copy of the TimerEvent object and sets each property's value to match that of the original.

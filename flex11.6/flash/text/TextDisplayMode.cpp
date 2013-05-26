@@ -17,7 +17,7 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string TextDisplayMode::LCD="lcd";
+        const std::string TextDisplayMode::LCD   = "lcd";
 
         /**
          * Forces Flash Player to display grayscale anti-aliasing. While this setting 
@@ -25,14 +25,14 @@ namespace text {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string TextDisplayMode::CRT="crt";
+        const std::string TextDisplayMode::CRT   = "crt";
 
         /**
          * Allows Flash Player to choose LCD or CRT mode.
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string TextDisplayMode::DEFAULT="default";
+        const std::string TextDisplayMode::DEFAULT   = "default";
 
         TextDisplayMode::TextDisplayMode();
 }

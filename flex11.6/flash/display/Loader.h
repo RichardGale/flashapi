@@ -462,7 +462,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            void     unloadAndStop(bool gc   =true);
+            void     unloadAndStop(bool gc=true);
 
         public:
             DisplayObject *addChild(DisplayObject *child);

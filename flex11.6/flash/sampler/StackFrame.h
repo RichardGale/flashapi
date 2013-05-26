@@ -10,6 +10,9 @@
  * @playerversion   Flash 9.0.115.0
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -59,7 +62,7 @@ namespace flash
              * @playerversion   Flash 9.0.115.0
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

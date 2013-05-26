@@ -215,7 +215,7 @@ namespace flash
              * @throws  TypeError The Array is null when being set
              */
         public:
-            std::vector<void *> matrix();
+            std::vector<void *>        matrix();
         public:
             void         matrix(std::vector<void *> value);
 
@@ -234,7 +234,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        matrixX();
+            float       matrixX();
         public:
             void         matrixX(float value);
 
@@ -253,7 +253,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        matrixY();
+            float       matrixY();
         public:
             void         matrixY(float value);
 
@@ -285,7 +285,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        divisor();
+            float       divisor();
         public:
             void         divisor(float value);
 
@@ -316,7 +316,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        bias();
+            float       bias();
         public:
             void         bias(float value);
 
@@ -351,7 +351,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool         preserveAlpha();
+            bool      preserveAlpha();
         public:
             void         preserveAlpha(bool value);
 
@@ -366,7 +366,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         clamp();
+            bool      clamp();
         public:
             void         clamp(bool value);
 
@@ -402,7 +402,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int color();
+            unsigned int         color();
         public:
             void         color(unsigned int value);
 
@@ -434,7 +434,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        alpha();
+            float       alpha();
         public:
             void         alpha(float value);
 
@@ -489,7 +489,7 @@ namespace flash
              *   </listing>
              */
         public:
-            ConvolutionFilter(float matrixX =0, float matrixY =0, std::vector<void *> matrix=std::vector<void *>(), float divisor =1, float bias =0, bool preserveAlpha   =true, bool clamp   =true, unsigned int color=0, float alpha =0);
+            ConvolutionFilter(float matrixX=0, float matrixY=0, std::vector<void *> matrix=std::vector<void *>(), float divisor=1, float bias=0, bool preserveAlpha=true, bool clamp=true, unsigned int color=0, float alpha=0);
 
             /**
              * Returns a copy of this filter object.

@@ -40,7 +40,7 @@
 
 
 
-        const float Number::Infinity    = 0/0;
+        const float Number::Infinity   = 0/0;
 
         const int Number::length  ;
 
@@ -50,7 +50,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Number::NaN   ;
+        const float Number::NaN  ;
 
         /**
          * Specifies the IEEE-754 value representing negative infinity. The value of this property 
@@ -63,7 +63,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Number::NEGATIVE_INFINITY   ;
+        const float Number::NEGATIVE_INFINITY  ;
 
         /**
          * Specifies the IEEE-754 value representing positive infinity. The value of this property 
@@ -75,7 +75,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Number::POSITIVE_INFINITY   ;
+        const float Number::POSITIVE_INFINITY  ;
 
         /**
          * The smallest representable non-negative, non-zero, number (double-precision IEEE-754). This number is 
@@ -84,7 +84,7 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Number::MIN_VALUE   ;
+        const float Number::MIN_VALUE  ;
 
         /**
          * The largest representable number (double-precision IEEE-754). This number is 
@@ -93,15 +93,15 @@
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const float Number::MAX_VALUE   ;
-        const float Number::E   ;
-        const float Number::LN10   ;
-        const float Number::LN2   ;
-        const float Number::LOG10E   ;
-        const float Number::LOG2E   ;
-        const float Number::PI   ;
-        const float Number::SQRT1_2   ;
-        const float Number::SQRT2   ;
+        const float Number::MAX_VALUE  ;
+        const float Number::E  ;
+        const float Number::LN10  ;
+        const float Number::LN2  ;
+        const float Number::LOG10E  ;
+        const float Number::LOG2E  ;
+        const float Number::PI  ;
+        const float Number::SQRT1_2  ;
+        const float Number::SQRT2  ;
 
         /**
          * Creates a Number object with the specified value. This constructor has the same effect

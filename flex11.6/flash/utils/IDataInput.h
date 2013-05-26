@@ -96,7 +96,7 @@ namespace flash
              * @playerversion   Flash 9
              * @playerversion   Lite 4
              */virtual
-            unsigned int bytesAvailable() = 0;
+            unsigned int         bytesAvailable() = 0;
 
             /**
              * Used to determine whether the AMF3 or AMF0 format is used when writing or reading binary data using the
@@ -106,7 +106,7 @@ namespace flash
              * @playerversion   Lite 4
              */
             virtual
-            unsigned int objectEncoding() = 0;
+            unsigned int         objectEncoding() = 0;
             virtual
             void         objectEncoding(unsigned int version) = 0;
 
@@ -118,7 +118,7 @@ namespace flash
              * @playerversion   Lite 4
              */
             virtual
-            std::string  endian() = 0;
+            std::string       endian() = 0;
             virtual
             void         endian(std::string type) = 0;
 
@@ -155,7 +155,7 @@ namespace flash
              *   to read.
              */
             virtual
-            bool     readBoolean() = 0;
+            bool  readBoolean() = 0;
 
             /**
              * Reads a signed byte from the file stream, byte stream, or byte array.
@@ -179,7 +179,7 @@ namespace flash
              *   to read.
              */
             virtual
-            unsigned int readUnsignedByte() = 0;
+            unsigned int     readUnsignedByte() = 0;
 
             /**
              * Reads a signed 16-bit integer from the file stream, byte stream, or byte array.
@@ -203,7 +203,7 @@ namespace flash
              *   to read.
              */
             virtual
-            unsigned int readUnsignedShort() = 0;
+            unsigned int     readUnsignedShort() = 0;
 
             /**
              * Reads a signed 32-bit integer from the file stream, byte stream, or byte array.
@@ -227,7 +227,7 @@ namespace flash
              *   to read.
              */
             virtual
-            unsigned int readUnsignedInt() = 0;
+            unsigned int     readUnsignedInt() = 0;
 
             /**
              * Reads an IEEE 754 single-precision floating point number from the file stream, byte stream, or byte array.
@@ -239,7 +239,7 @@ namespace flash
              *   to read.
              */
             virtual
-            float    readFloat() = 0;
+            float   readFloat() = 0;
 
             /**
              * Reads an IEEE 754 double-precision floating point number from the file stream, byte stream, or byte array.
@@ -251,7 +251,7 @@ namespace flash
              *   to read.
              */
             virtual
-            float    readDouble() = 0;
+            float   readDouble() = 0;
 
             /**
              * Reads a multibyte string of specified length from the file stream, byte stream, or byte array using the
@@ -278,7 +278,7 @@ namespace flash
              *   to read.
              */
             virtual
-            std::string readMultiByte(unsigned int length, std::string charSet) = 0;
+            std::string   readMultiByte(unsigned int length, std::string charSet) = 0;
 
             /**
              * Reads a UTF-8 string from the file stream, byte stream, or byte array.  The string
@@ -295,7 +295,7 @@ namespace flash
              *   to read.
              */
             virtual
-            std::string readUTF() = 0;
+            std::string   readUTF() = 0;
 
             /**
              * Reads a sequence of UTF-8 bytes from the byte stream or byte array and returns a string.
@@ -308,7 +308,7 @@ namespace flash
              *   to read.
              */
             virtual
-            std::string readUTFBytes(unsigned int length) = 0;
+            std::string   readUTFBytes(unsigned int length) = 0;
 
             /**
              * Reads an object from the file stream, byte stream, or byte array, encoded in AMF
@@ -321,7 +321,7 @@ namespace flash
              *   to read.
              */
             virtual
-            void    *readObject() = 0;
+            void        *readObject() = 0;
         };
     }
 }

@@ -18,7 +18,7 @@ namespace display {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string StageDisplayState::FULL_SCREEN="fullScreen";
+        const std::string StageDisplayState::FULL_SCREEN   = "fullScreen";
 
         /**
          * Specifies that the Stage is in full-screen mode with keyboard interactivity enabled. 
@@ -27,7 +27,7 @@ namespace display {
          * @playerversion   AIR 1.0
          * @playerversion   Lite 4
          */
-        const std::string StageDisplayState::FULL_SCREEN_INTERACTIVE="fullScreenInteractive";
+        const std::string StageDisplayState::FULL_SCREEN_INTERACTIVE   = "fullScreenInteractive";
 
         /**
          * Specifies that the Stage is in normal mode.
@@ -35,7 +35,7 @@ namespace display {
          * @playerversion   Flash 9.0.28.0
          * @playerversion   Lite 4
          */
-        const std::string StageDisplayState::NORMAL="normal";
+        const std::string StageDisplayState::NORMAL   = "normal";
 
         StageDisplayState::StageDisplayState();
 }

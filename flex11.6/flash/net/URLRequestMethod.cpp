@@ -91,7 +91,7 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string URLRequestMethod::POST="POST";
+        const std::string URLRequestMethod::POST   = "POST";
 
         /**
          * Specifies that the URLRequest object is a GET.
@@ -99,35 +99,35 @@ namespace net {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string URLRequestMethod::GET="GET";
+        const std::string URLRequestMethod::GET   = "GET";
 
         /**
          * Specifies that the URLRequest object is a PUT.
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string URLRequestMethod::PUT="PUT";
+        const std::string URLRequestMethod::PUT   = "PUT";
 
         /**
          * Specifies that the URLRequest object is a DELETE.
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string URLRequestMethod::DELETE="DELETE";
+        const std::string URLRequestMethod::DELETE   = "DELETE";
 
         /**
          * Specifies that the URLRequest object is a HEAD.
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string URLRequestMethod::HEAD="HEAD";
+        const std::string URLRequestMethod::HEAD   = "HEAD";
 
         /**
          * Specifies that the URLRequest object is OPTIONS.
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string URLRequestMethod::OPTIONS="OPTIONS";
+        const std::string URLRequestMethod::OPTIONS   = "OPTIONS";
 
         URLRequestMethod::URLRequestMethod();
 }

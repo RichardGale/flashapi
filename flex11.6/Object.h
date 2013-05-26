@@ -98,6 +98,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Object
 {
@@ -113,10 +116,10 @@ protected:
     static void     _dontEnumPrototype(Object *proto);
 
 public:
-    static void    *init();
+    static void        *init();
 
 public:
-    static void    *_init();
+    static void        *_init();
 
     /**
      * Indicates whether an instance of the Object class is in the prototype chain of the object specified
@@ -134,7 +137,7 @@ public:
      * @playerversion   AIR 1.0
      * @playerversion   Lite 4
      */
-    bool     isPrototypeOf(void *V=NULL);
+    bool  isPrototypeOf(void *V=NULL);
 
     /**
      * Indicates whether an object has a specified property defined. This method returns true if the target object has
@@ -156,7 +159,7 @@ public:
      * @playerversion   Lite 4
      * @category    Method
      */
-    bool     hasOwnProperty(void *V=NULL);
+    bool  hasOwnProperty(void *V=NULL);
 
     /**
      * Creates an Object object and stores a reference to the object's constructor method in the object's constructor property.
@@ -189,7 +192,7 @@ public:
      *   trace(myArray.propertyIsEnumerable("length")); // false
      *   </listing>
      */
-    bool     propertyIsEnumerable(void *V=NULL);
+    bool  propertyIsEnumerable(void *V=NULL);
 };
 
 #endif // FLEX11_6_OBJECT_AS

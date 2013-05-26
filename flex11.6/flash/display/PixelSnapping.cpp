@@ -20,7 +20,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string PixelSnapping::NEVER="never";
+        const std::string PixelSnapping::NEVER   = "never";
 
         /**
          * A constant value used in the pixelSnapping property of a Bitmap object 
@@ -30,7 +30,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string PixelSnapping::ALWAYS="always";
+        const std::string PixelSnapping::ALWAYS   = "always";
 
         /**
          * A constant value used in the pixelSnapping property of a Bitmap object 
@@ -42,7 +42,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string PixelSnapping::AUTO="auto";
+        const std::string PixelSnapping::AUTO   = "auto";
 
         PixelSnapping::PixelSnapping();
 }

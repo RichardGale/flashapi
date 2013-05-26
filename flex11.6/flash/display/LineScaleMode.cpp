@@ -18,7 +18,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string LineScaleMode::NORMAL="normal";
+        const std::string LineScaleMode::NORMAL   = "normal";
 
         /**
          * With this setting used as the scaleMode parameter of the lineStyle()
@@ -29,7 +29,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string LineScaleMode::VERTICAL="vertical";
+        const std::string LineScaleMode::VERTICAL   = "vertical";
 
         /**
          * With this setting used as the scaleMode parameter of the lineStyle()
@@ -40,7 +40,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string LineScaleMode::HORIZONTAL="horizontal";
+        const std::string LineScaleMode::HORIZONTAL   = "horizontal";
 
         /**
          * With this setting used as the scaleMode parameter of the lineStyle()
@@ -48,7 +48,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string LineScaleMode::NONE="none";
+        const std::string LineScaleMode::NONE   = "none";
 
         LineScaleMode::LineScaleMode();
 }

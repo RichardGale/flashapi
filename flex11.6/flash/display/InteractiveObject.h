@@ -871,7 +871,7 @@ namespace flash
              *   property.
              */
         public:
-            bool         tabEnabled();
+            bool      tabEnabled();
         public:
             void         tabEnabled(bool enabled);
 
@@ -922,7 +922,7 @@ namespace flash
              *   property.
              */
         public:
-            Object      *focusRect();
+            Object       *focusRect();
         public:
             void         focusRect(Object *focusRect);
 
@@ -941,7 +941,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         mouseEnabled();
+            bool      mouseEnabled();
         public:
             void         mouseEnabled(bool enabled);
 
@@ -960,7 +960,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            bool         doubleClickEnabled();
+            bool      doubleClickEnabled();
         public:
             void         doubleClickEnabled(bool enabled);
 
@@ -1010,7 +1010,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            bool         needsSoftKeyboard();
+            bool      needsSoftKeyboard();
         public:
             void         needsSoftKeyboard(bool value);
 
@@ -1058,7 +1058,7 @@ namespace flash
              * @playerversion   AIR 2.6
              */
         public:
-            bool     requestSoftKeyboard();
+            bool  requestSoftKeyboard();
         };
     }
 }

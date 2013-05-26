@@ -45,6 +45,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class ArgumentError : public Error
 {
@@ -59,7 +62,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    ArgumentError(void *message=(void *)"", void *id=0);
+    ArgumentError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_ARGUMENTERROR_AS

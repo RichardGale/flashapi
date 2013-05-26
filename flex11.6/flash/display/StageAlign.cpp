@@ -18,7 +18,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::TOP="T";
+        const std::string StageAlign::TOP   = "T";
 
         /**
          * Specifies that the Stage is aligned on the left.
@@ -26,7 +26,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::LEFT="L";
+        const std::string StageAlign::LEFT   = "L";
 
         /**
          * Specifies that the Stage is aligned at the bottom.
@@ -34,7 +34,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::BOTTOM="B";
+        const std::string StageAlign::BOTTOM   = "B";
 
         /**
          * Specifies that the Stage is aligned to the right.
@@ -42,7 +42,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::RIGHT="R";
+        const std::string StageAlign::RIGHT   = "R";
 
         /**
          * Specifies that the Stage is aligned in the top-left corner.
@@ -50,7 +50,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::TOP_LEFT="TL";
+        const std::string StageAlign::TOP_LEFT   = "TL";
 
         /**
          * Specifies that the Stage is aligned in the top-right corner.
@@ -58,7 +58,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::TOP_RIGHT="TR";
+        const std::string StageAlign::TOP_RIGHT   = "TR";
 
         /**
          * Specifies that the Stage is aligned in the bottom-left corner.
@@ -66,7 +66,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::BOTTOM_LEFT="BL";
+        const std::string StageAlign::BOTTOM_LEFT   = "BL";
 
         /**
          * Specifies that the Stage is aligned in the bottom-right corner.
@@ -74,7 +74,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string StageAlign::BOTTOM_RIGHT="BR";
+        const std::string StageAlign::BOTTOM_RIGHT   = "BR";
 
         StageAlign::StageAlign();
 }

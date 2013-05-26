@@ -32,16 +32,16 @@ namespace flash
         class Worker : public flash::events::EventDispatcher
         {
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
-            static Worker      *current();
+            static Worker       *current();
 
         public:
-            bool         isPrimordial();
+            bool      isPrimordial();
 
         public:
-            std::string  state();
+            std::string       state();
 
         public:
             MessageChannel *createMessageChannel(Worker *receiver);
@@ -53,16 +53,16 @@ namespace flash
             void     setSharedProperty(std::string key, void *value);
 
         public:
-            void    *getSharedProperty(std::string key);
+            void        *getSharedProperty(std::string key);
 
         public:
-            void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
+            void     addEventListener(std::string type, Function *listener, bool useCapture=false, int priority=0, bool useWeakReference=false);
 
         public:
-            void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
+            void     removeEventListener(std::string type, Function *listener, bool useCapture=false);
 
         public:
-            bool     terminate();
+            bool  terminate();
 
         public:
             Worker();

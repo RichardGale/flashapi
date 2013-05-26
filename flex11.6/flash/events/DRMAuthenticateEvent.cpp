@@ -22,7 +22,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string DRMAuthenticateEvent::DRM_AUTHENTICATE="drmAuthenticate";
+        const std::string DRMAuthenticateEvent::DRM_AUTHENTICATE   = "drmAuthenticate";
 
         /**
          * The DRMAuthenticateEvent.AUTHENTICATION_TYPE_DRM constant defines the value of the 
@@ -33,7 +33,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string DRMAuthenticateEvent::AUTHENTICATION_TYPE_DRM="drm";
+        const std::string DRMAuthenticateEvent::AUTHENTICATION_TYPE_DRM   = "drm";
 
         /**
          * The DRMAuthenticateEvent.AUTHENTICATION_TYPE_PROXY constant defines the value of the 
@@ -44,7 +44,7 @@ namespace events {
          * @langversion 3.0
          * @playerversion   AIR 1.0
          */
-        const std::string DRMAuthenticateEvent::AUTHENTICATION_TYPE_PROXY="proxy";
+        const std::string DRMAuthenticateEvent::AUTHENTICATION_TYPE_PROXY   = "proxy";
 
         /**
          * The encrypted content file header provided by the server. 

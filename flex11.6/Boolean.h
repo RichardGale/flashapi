@@ -46,6 +46,9 @@
  * @refpath Objects/Core/Boolean/
  */
 
+#include "flex11.6.h"
+
+
 
 class Boolean : public Object
 {
@@ -74,7 +77,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string toString();
+    std::string   toString();
 
     /**
      * Returns true if the value of the specified Boolean
@@ -84,7 +87,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    bool     valueOf();
+    bool  valueOf();
 };
 
 #endif // FLEX11_6_BOOLEAN_AS

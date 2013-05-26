@@ -23,5 +23,5 @@
          * @playerversion   Flash 9
          * @playerversion   AIR 1.0
          */
-        EvalError::EvalError(void* message, void* id);
+        EvalError::EvalError(std::string message, void* id);
 

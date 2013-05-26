@@ -211,7 +211,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::vector<void *> childNodes();
+            std::vector<void *>        childNodes();
 
             /**
              * An object containing all of the attributes of the specified XMLNode instance. The
@@ -228,7 +228,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *attributes();
+            Object       *attributes();
         public:
             void         attributes(Object *value);
 
@@ -247,7 +247,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  localName();
+            std::string       localName();
 
             /**
              * The prefix portion of the XML node name. For example, the node
@@ -262,7 +262,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  prefix();
+            std::string       prefix();
 
             /**
              * If the XML node has a prefix, namespaceURI is the value of the xmlns
@@ -282,7 +282,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  namespaceURI();
+            std::string       namespaceURI();
 
             /**
              * Indicates whether the specified XMLNode object has child nodes. This property is true if the
@@ -294,7 +294,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hasChildNodes();
+            bool  hasChildNodes();
 
             /**
              * Constructs and returns a new XML node of the same type, name, value, and attributes as the
@@ -371,7 +371,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Returns the namespace URI that is associated with the specified prefix for the node. To determine
@@ -390,7 +390,7 @@ namespace flash
              * @refpath
              */
         public:
-            std::string getNamespaceForPrefix(std::string prefix);
+            std::string   getNamespaceForPrefix(std::string prefix);
 
             /**
              * Returns the prefix that is associated with the specified namespace URI for the node. To determine
@@ -410,7 +410,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string getPrefixForNamespace(std::string ns);
+            std::string   getPrefixForNamespace(std::string ns);
 
             /**
              * Creates a new XMLNode object. You must use the constructor to create an XMLNode object before you

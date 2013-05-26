@@ -44,7 +44,7 @@ namespace ui {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string MultitouchInputMode::NONE="none";
+        const std::string MultitouchInputMode::NONE   = "none";
 
         /**
          * Specifies that TransformGestureEvent, PressAndTapGestureEvent, and GestureEvent events are dispatched for the related user interaction supported by the current environment,
@@ -54,7 +54,7 @@ namespace ui {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string MultitouchInputMode::GESTURE="gesture";
+        const std::string MultitouchInputMode::GESTURE   = "gesture";
 
         /**
          * Specifies that events are dispatched only for basic touch events, such as a single finger tap. When you use this setting,
@@ -64,7 +64,7 @@ namespace ui {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string MultitouchInputMode::TOUCH_POINT="touchPoint";
+        const std::string MultitouchInputMode::TOUCH_POINT   = "touchPoint";
 
         MultitouchInputMode::MultitouchInputMode();
 }

@@ -102,7 +102,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string CapsStyle::ROUND="round";
+        const std::string CapsStyle::ROUND   = "round";
 
         /**
          * Used to specify no caps in the caps parameter of the
@@ -110,7 +110,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string CapsStyle::NONE="none";
+        const std::string CapsStyle::NONE   = "none";
 
         /**
          * Used to specify square caps in the caps parameter of the
@@ -118,7 +118,7 @@ namespace display {
          * @langversion 3.0
          * @playerversion   Flash 9
          */
-        const std::string CapsStyle::SQUARE="square";
+        const std::string CapsStyle::SQUARE   = "square";
 
         CapsStyle::CapsStyle();
 }

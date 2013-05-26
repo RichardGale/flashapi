@@ -20,7 +20,7 @@ namespace events {
          * @playerversion   AIR 2.6
          * @playerversion   Flash 10.2
          */
-        const std::string SoftKeyboardTrigger::CONTENT_TRIGGERED="contentTriggered";
+        const std::string SoftKeyboardTrigger::CONTENT_TRIGGERED   = "contentTriggered";
 
         /**
          * A user action triggered the event. Typical user actions that can trigger this event include 
@@ -29,7 +29,7 @@ namespace events {
          * @playerversion   AIR 2.6
          * @playerversion   Flash 10.2
          */
-        const std::string SoftKeyboardTrigger::USER_TRIGGERED="userTriggered";
+        const std::string SoftKeyboardTrigger::USER_TRIGGERED   = "userTriggered";
 
         SoftKeyboardTrigger::SoftKeyboardTrigger();
 }

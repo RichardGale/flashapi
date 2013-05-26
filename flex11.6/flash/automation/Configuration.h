@@ -4,6 +4,10 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 namespace flash
 {
     namespace automation
@@ -11,12 +15,12 @@ namespace flash
         class Configuration : public Object
         {
         public:
-            static std::string  testAutomationConfiguration();
+            static std::string       testAutomationConfiguration();
 
         public:
             static void         deviceConfiguration(std::string configData);
         public:
-            static std::string  deviceConfiguration();
+            static std::string       deviceConfiguration();
 
         public:
             Configuration();

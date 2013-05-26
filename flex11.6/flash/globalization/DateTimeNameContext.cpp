@@ -23,7 +23,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeNameContext::FORMAT="format";
+        const std::string DateTimeNameContext::FORMAT   = "format";
 
         /**
          * Indicates that the date element name is used in a "stand alone" context, independent of other formats. 
@@ -32,7 +32,7 @@ namespace globalization {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string DateTimeNameContext::STANDALONE="standalone";
+        const std::string DateTimeNameContext::STANDALONE   = "standalone";
 
         DateTimeNameContext::DateTimeNameContext();
 }

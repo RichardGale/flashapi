@@ -4,13 +4,17 @@
 
 
 
+#include "flex11.6.h"
+
+
+
 class Walker : public Object
 {
 public:
     Function *reviver;
 
 public:
-    void    *walk(Object *holder, std::string name);
+    void        *walk(Object *holder, std::string name);
 
 public:
     Walker(Function *reviver);

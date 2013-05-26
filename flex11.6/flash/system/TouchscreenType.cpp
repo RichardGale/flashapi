@@ -53,7 +53,7 @@ namespace system {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string TouchscreenType::FINGER="finger";
+        const std::string TouchscreenType::FINGER   = "finger";
 
         /**
          * A touchscreen designed for use with a stylus.
@@ -61,7 +61,7 @@ namespace system {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string TouchscreenType::STYLUS="stylus";
+        const std::string TouchscreenType::STYLUS   = "stylus";
 
         /**
          * The computer or device does not have a supported touchscreen.
@@ -69,7 +69,7 @@ namespace system {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string TouchscreenType::NONE="none";
+        const std::string TouchscreenType::NONE   = "none";
 
         TouchscreenType::TouchscreenType();
 }

@@ -22,7 +22,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int ActionScriptVersion::ACTIONSCRIPT2=2;
+        const unsigned int ActionScriptVersion::ACTIONSCRIPT2   = 2;
 
         /**
          * ActionScript language version 3.0.
@@ -30,7 +30,7 @@ namespace display {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int ActionScriptVersion::ACTIONSCRIPT3=3;
+        const unsigned int ActionScriptVersion::ACTIONSCRIPT3   = 3;
 
         ActionScriptVersion::ActionScriptVersion();
 }

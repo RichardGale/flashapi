@@ -34,7 +34,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const unsigned int ContentElement::GRAPHIC_ELEMENT=0xFDEF;
+        const unsigned int ContentElement::GRAPHIC_ELEMENT   = 0xFDEF;
 
         /**
          * Provides a way for an application to associate arbitrary data with the element.

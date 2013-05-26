@@ -246,7 +246,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        scaleX();
+            float       scaleX();
         public:
             void         scaleX(float value);
 
@@ -258,7 +258,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        scaleY();
+            float       scaleY();
         public:
             void         scaleY(float value);
 
@@ -270,7 +270,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        rotation();
+            float       rotation();
         public:
             void         rotation(float value);
 
@@ -282,7 +282,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        offsetX();
+            float       offsetX();
         public:
             void         offsetX(float value);
 
@@ -294,7 +294,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        offsetY();
+            float       offsetY();
         public:
             void         offsetY(float value);
 
@@ -319,7 +319,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Creates an Event object that contains information about complex multi-touch events, such as
@@ -349,7 +349,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            TransformGestureEvent(std::string type, bool bubbles   =true, bool cancelable   =false, std::string phase="", float localX =0, float localY =0, float scaleX =1, float scaleY =1, float rotation =0, float offsetX =0, float offsetY =0, bool ctrlKey   =false, bool altKey   =false, bool shiftKey   =false);
+            TransformGestureEvent(std::string type, bool bubbles=true, bool cancelable=false, std::string phase="", float localX=0, float localY=0, float scaleX=1, float scaleY=1, float rotation=0, float offsetX=0, float offsetY=0, bool ctrlKey=false, bool altKey=false, bool shiftKey=false);
         };
     }
 }

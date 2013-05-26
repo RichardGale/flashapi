@@ -55,6 +55,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Error : public Object
 {
@@ -102,13 +105,13 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    Error(void *message=(void *)"", void *id=0);
+    Error(std::string message="", void *id=0);
 
 public:
-    static std::string getErrorMessage(int index);
+    static std::string   getErrorMessage(int index);
 
 public:
-    static void    *throwError(Class *type, unsigned int index, ...);
+    static void        *throwError(Class *type, unsigned int index, ...);
 
     /**
      * Returns the call stack for an error as a string at the time of the error's construction (for the debugger version
@@ -130,7 +133,7 @@ public:
      * @playerversion   Lite 4
      */
 public:
-    std::string getStackTrace();
+    std::string   getStackTrace();
 };
 
 #endif // FLEX11_6_ERROR_AS

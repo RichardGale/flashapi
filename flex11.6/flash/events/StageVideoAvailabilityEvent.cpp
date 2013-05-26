@@ -30,7 +30,7 @@ namespace events {
          * @playerversion   Flash 10.2
          * @playerversion   AIR (unsupported)
          */
-        const std::string StageVideoAvailabilityEvent::STAGE_VIDEO_AVAILABILITY="stageVideoAvailability";
+        const std::string StageVideoAvailabilityEvent::STAGE_VIDEO_AVAILABILITY   = "stageVideoAvailability";
 
         /**
          * Reports the current availability of stage video using a constant of the flash.media.StageVideoAvailability class.

@@ -19,7 +19,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupSendResult::ERROR="error";
+        const std::string NetGroupSendResult::ERROR   = "error";
 
         /**
          * Indicates no neighbor could be found to route the message toward its requested destination.
@@ -27,7 +27,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupSendResult::NO_ROUTE="no route";
+        const std::string NetGroupSendResult::NO_ROUTE   = "no route";
 
         /**
          * Indicates that a route was found for the message and it was forwarded toward its destination.
@@ -35,7 +35,7 @@ namespace net {
          * @playerversion   Flash 10.1
          * @playerversion   AIR 2
          */
-        const std::string NetGroupSendResult::SENT="sent";
+        const std::string NetGroupSendResult::SENT   = "sent";
 
         NetGroupSendResult::NetGroupSendResult();
 }

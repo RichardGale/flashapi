@@ -151,7 +151,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        bytesLoaded();
+            float       bytesLoaded();
         public:
             void         bytesLoaded(float value);
 
@@ -165,7 +165,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        bytesTotal();
+            float       bytesTotal();
         public:
             void         bytesTotal(float value);
 
@@ -183,7 +183,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            ProgressEvent(std::string type, bool bubbles   =false, bool cancelable   =false, float bytesLoaded =0, float bytesTotal =0);
+            ProgressEvent(std::string type, bool bubbles=false, bool cancelable=false, float bytesLoaded=0, float bytesTotal=0);
 
             /**
              * Creates a copy of the ProgressEvent object and sets each property's value to match that of the original.
@@ -204,7 +204,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

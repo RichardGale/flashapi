@@ -202,7 +202,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        left();
+            float       left();
         public:
             void         left(float value);
 
@@ -226,7 +226,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        right();
+            float       right();
         public:
             void         right(float value);
 
@@ -254,7 +254,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        top();
+            float       top();
         public:
             void         top(float value);
 
@@ -278,7 +278,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        bottom();
+            float       bottom();
         public:
             void         bottom(float value);
 
@@ -378,7 +378,7 @@ namespace flash
              *   </listing>
              */
         public:
-            Rectangle(float x =0, float y =0, float width =0, float height =0);
+            Rectangle(float x=0, float y=0, float width=0, float height=0);
 
             /**
              * Returns a new Rectangle object with the same values for the x, y,
@@ -423,7 +423,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     isEmpty();
+            bool  isEmpty();
 
             /**
              * Sets all of the Rectangle object's properties to 0. A Rectangle object is empty if its width or
@@ -590,7 +590,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     contains(float x, float y);
+            bool  contains(float x, float y);
 
             /**
              * Determines whether the specified point is contained within the rectangular region defined
@@ -616,7 +616,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     containsPoint(Point *point);
+            bool  containsPoint(Point *point);
 
             /**
              * Determines whether the Rectangle object specified by the rect parameter is contained
@@ -643,7 +643,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     containsRect(Rectangle *rect);
+            bool  containsRect(Rectangle *rect);
 
             /**
              * If the Rectangle object specified in the toIntersect parameter intersects with this Rectangle
@@ -701,7 +701,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     intersects(Rectangle *toIntersect);
+            bool  intersects(Rectangle *toIntersect);
 
             /**
              * Adds two rectangles together to create a new Rectangle object, by
@@ -756,7 +756,7 @@ namespace flash
              *   </listing>
              */
         public:
-            bool     equals(Rectangle *toCompare);
+            bool  equals(Rectangle *toCompare);
 
             /**
              * Builds and returns a string that lists the horizontal and vertical positions
@@ -776,7 +776,7 @@ namespace flash
              *   </listing>
              */
         public:
-            std::string toString();
+            std::string   toString();
 
         public:
             void     copyFrom(Rectangle *sourceRect);

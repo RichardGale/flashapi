@@ -26,7 +26,7 @@ namespace xml {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int XMLNodeType::ELEMENT_NODE=1;
+        const unsigned int XMLNodeType::ELEMENT_NODE   = 1;
 
         /**
          * Specifies that the node is a text node.
@@ -38,12 +38,12 @@ namespace xml {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const unsigned int XMLNodeType::TEXT_NODE=3;
-        const unsigned int XMLNodeType::CDATA_NODE;
-        const unsigned int XMLNodeType::PROCESSING_INSTRUCTION_NODE;
-        const unsigned int XMLNodeType::COMMENT_NODE;
-        const unsigned int XMLNodeType::DOCUMENT_TYPE_NODE;
-        const unsigned int XMLNodeType::XML_DECLARATION;
+        const unsigned int XMLNodeType::TEXT_NODE   = 3;
+        const unsigned int XMLNodeType::CDATA_NODE  ;
+        const unsigned int XMLNodeType::PROCESSING_INSTRUCTION_NODE  ;
+        const unsigned int XMLNodeType::COMMENT_NODE  ;
+        const unsigned int XMLNodeType::DOCUMENT_TYPE_NODE  ;
+        const unsigned int XMLNodeType::XML_DECLARATION  ;
 
         XMLNodeType::XMLNodeType();
 }

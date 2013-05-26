@@ -40,6 +40,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Number : public Object
 {
@@ -139,58 +142,58 @@ public:
     Number(void *value=0);
 
 public:
-    static float    abs(float x);
+    static float   abs(float x);
 
 public:
-    static float    acos(float x);
+    static float   acos(float x);
 
 public:
-    static float    asin(float x);
+    static float   asin(float x);
 
 public:
-    static float    atan(float x);
+    static float   atan(float x);
 
 public:
-    static float    ceil(float x);
+    static float   ceil(float x);
 
 public:
-    static float    cos(float x);
+    static float   cos(float x);
 
 public:
-    static float    exp(float x);
+    static float   exp(float x);
 
 public:
-    static float    floor(float x);
+    static float   floor(float x);
 
 public:
-    static float    log(float x);
+    static float   log(float x);
 
 public:
-    static float    round(float x);
+    static float   round(float x);
 
 public:
-    static float    sin(float x);
+    static float   sin(float x);
 
 public:
-    static float    sqrt(float x);
+    static float   sqrt(float x);
 
 public:
-    static float    tan(float x);
+    static float   tan(float x);
 
 public:
-    static float    atan2(float y, float x);
+    static float   atan2(float y, float x);
 
 public:
-    static float    pow(float x, float y);
+    static float   pow(float x, float y);
 
 public:
-    static float    max(float x =-Infinity, float y =-Infinity, ...);
+    static float   max(float x=-Infinity, float y=-Infinity, ...);
 
 public:
-    static float    min(float x =Infinity, float y =Infinity, ...);
+    static float   min(float x=Infinity, float y=Infinity, ...);
 
 public:
-    static float    random();
+    static float   random();
 
     /**
      * Returns the string representation of the specified Number object (myNumber).
@@ -204,7 +207,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    std::string toString(float radix =10);
+    std::string   toString(float radix=10);
 
     /**
      * Returns the primitive value type of the specified Number object.
@@ -213,7 +216,7 @@ public:
      * @playerversion   Flash 9
      * @playerversion   Lite 4
      */
-    float    valueOf();
+    float   valueOf();
 
     /**
      * Returns a string representation of the number in exponential notation. The string contains
@@ -226,7 +229,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toExponential(void *p=0);
+    std::string   toExponential(void *p=0);
 
     /**
      * Returns a string representation of the number either in exponential notation or in
@@ -239,7 +242,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the precision argument is outside the range 1 to 21.
      */
-    std::string toPrecision(void *p=0);
+    std::string   toPrecision(void *p=0);
 
     /**
      * Returns a string representation of the number in fixed-point notation.
@@ -254,7 +257,7 @@ public:
      * @playerversion   Lite 4
      * @throws  RangeError Throws an exception if the fractionDigits argument is outside the range 0 to 20.
      */
-    std::string toFixed(void *p=0);
+    std::string   toFixed(void *p=0);
 };
 
 #endif // FLEX11_6_NUMBER_AS

@@ -296,7 +296,7 @@ namespace flash
              *   placed on the timeline in the Flash authoring tool.
              */
         public:
-            std::string  name();
+            std::string       name();
         public:
             void         name(std::string value);
 
@@ -357,7 +357,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         visible();
+            bool      visible();
         public:
             void         visible(bool value);
 
@@ -373,7 +373,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        x();
+            float       x();
         public:
             void         x(float value);
 
@@ -389,7 +389,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        y();
+            float       y();
         public:
             void         y(float value);
 
@@ -410,7 +410,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        z();
+            float       z();
         public:
             void         z(float value);
 
@@ -425,7 +425,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        scaleX();
+            float       scaleX();
         public:
             void         scaleX(float value);
 
@@ -440,7 +440,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        scaleY();
+            float       scaleY();
         public:
             void         scaleY(float value);
 
@@ -455,7 +455,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            float        scaleZ();
+            float       scaleZ();
         public:
             void         scaleZ(float value);
 
@@ -469,7 +469,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        mouseX();
+            float       mouseX();
 
             /**
              * Indicates the y coordinate of the mouse or user input device position, in pixels.
@@ -481,7 +481,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        mouseY();
+            float       mouseY();
 
             /**
              * Indicates the rotation of the DisplayObject instance, in degrees, from its original orientation. Values from 0 to 180 represent
@@ -493,7 +493,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        rotation();
+            float       rotation();
         public:
             void         rotation(float value);
 
@@ -507,7 +507,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        rotationX();
+            float       rotationX();
         public:
             void         rotationX(float value);
 
@@ -521,7 +521,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        rotationY();
+            float       rotationY();
         public:
             void         rotationY(float value);
 
@@ -535,7 +535,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        rotationZ();
+            float       rotationZ();
         public:
             void         rotationZ(float value);
 
@@ -549,7 +549,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        alpha();
+            float       alpha();
         public:
             void         alpha(float value);
 
@@ -574,7 +574,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        width();
+            float       width();
         public:
             void         width(float value);
 
@@ -599,7 +599,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            float        height();
+            float       height();
         public:
             void         height(float value);
 
@@ -639,7 +639,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         cacheAsBitmap();
+            bool      cacheAsBitmap();
         public:
             void         cacheAsBitmap(bool value);
 
@@ -661,7 +661,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            Object      *opaqueBackground();
+            Object       *opaqueBackground();
         public:
             void         opaqueBackground(Object *value);
 
@@ -775,7 +775,7 @@ namespace flash
              *   property for more information.
              */
         public:
-            std::vector<void *> filters();
+            std::vector<void *>        filters();
         public:
             void         filters(std::vector<void *> value);
 
@@ -867,7 +867,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            std::string  blendMode();
+            std::string       blendMode();
         public:
             void         blendMode(std::string value);
 
@@ -1039,7 +1039,7 @@ namespace flash
             void         blendShader(Shader *value);
 
         public:
-            Object      *metaData();
+            Object       *metaData();
         public:
             void         metaData(Object *data);
 
@@ -1154,7 +1154,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hitTestObject(DisplayObject *obj);
+            bool  hitTestObject(DisplayObject *obj);
 
             /**
              * Evaluates the display object to see if it overlaps or intersects with the
@@ -1173,7 +1173,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool     hitTestPoint(float x, float y, bool shapeFlag   =false);
+            bool  hitTestPoint(float x, float y, bool shapeFlag=false);
 
             /**
              * Converts a two-dimensional point from the Stage (global) coordinates to a

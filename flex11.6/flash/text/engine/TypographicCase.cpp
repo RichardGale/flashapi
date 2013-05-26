@@ -23,7 +23,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::DEFAULT="default";
+        const std::string TypographicCase::DEFAULT   = "default";
 
         /**
          * Specifies that uppercase characters use title glyphs on output.
@@ -32,7 +32,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::TITLE="title";
+        const std::string TypographicCase::TITLE   = "title";
 
         /**
          * Specifies that spacing is adjusted for uppercase characters on output.
@@ -41,7 +41,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::CAPS="caps";
+        const std::string TypographicCase::CAPS   = "caps";
 
         /**
          * Specifies that uppercase characters use small-caps glyphs on output.
@@ -50,7 +50,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::SMALL_CAPS="smallCaps";
+        const std::string TypographicCase::SMALL_CAPS   = "smallCaps";
 
         /**
          * Specifies that all characters use uppercase glyphs on output.
@@ -59,7 +59,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::UPPERCASE="uppercase";
+        const std::string TypographicCase::UPPERCASE   = "uppercase";
 
         /**
          * Specifies that all characters use lowercase glyphs on output.
@@ -68,7 +68,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::LOWERCASE="lowercase";
+        const std::string TypographicCase::LOWERCASE   = "lowercase";
 
         /**
          * Specifies that all lowercase characters use small-caps glyphs on output.
@@ -77,7 +77,7 @@ namespace engine {
          * @playerversion   AIR 1.5
          * @playerversion   Lite 4
          */
-        const std::string TypographicCase::CAPS_AND_SMALL_CAPS="capsAndSmallCaps";
+        const std::string TypographicCase::CAPS_AND_SMALL_CAPS   = "capsAndSmallCaps";
 
         TypographicCase::TypographicCase();
 }

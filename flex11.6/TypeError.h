@@ -41,6 +41,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class TypeError : public Error
 {
@@ -55,7 +58,7 @@ public:
      * @playerversion   AIR 1.0
      */
 public:
-    TypeError(void *message=(void *)"", void *id=0);
+    TypeError(std::string message="", void *id=0);
 };
 
 #endif // FLEX11_6_TYPEERROR_AS

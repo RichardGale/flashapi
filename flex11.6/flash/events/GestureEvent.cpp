@@ -25,7 +25,7 @@ namespace events {
          * @playerversion   AIR 2
          * @playerversion   Lite 4
          */
-        const std::string GestureEvent::GESTURE_TWO_FINGER_TAP="gestureTwoFingerTap";
+        const std::string GestureEvent::GESTURE_TWO_FINGER_TAP   = "gestureTwoFingerTap";
 
         /**
          * The horizontal coordinate at which the event occurred relative to the containing sprite.

@@ -74,6 +74,9 @@
  * @internal    -- Class sample changed due to bug 193833
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -82,7 +85,7 @@ namespace flash
         class TextRenderer : public Object
         {
         public:
-            static std::string  antiAliasType();
+            static std::string       antiAliasType();
         public:
             static void         antiAliasType(std::string value);
 
@@ -131,7 +134,7 @@ namespace flash
              * @playerversion   Flash 9
              */
         public:
-            static std::string  displayMode();
+            static std::string       displayMode();
         public:
             static void         displayMode(std::string value);
 

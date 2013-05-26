@@ -34,7 +34,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         cut();
+            bool      cut();
         public:
             void         cut(bool val);
 
@@ -46,7 +46,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         copy();
+            bool      copy();
         public:
             void         copy(bool val);
 
@@ -58,7 +58,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         paste();
+            bool      paste();
         public:
             void         paste(bool val);
 
@@ -70,7 +70,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         clear();
+            bool      clear();
         public:
             void         clear(bool val);
 
@@ -83,7 +83,7 @@ namespace flash
              * @playerversion   AIR 1.5
              */
         public:
-            bool         selectAll();
+            bool      selectAll();
         public:
             void         selectAll(bool val);
 

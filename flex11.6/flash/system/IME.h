@@ -53,7 +53,7 @@ namespace flash
              * @throws  Error A set attempt was not successful.
              */
         public:
-            static bool         enabled();
+            static bool      enabled();
         public:
             static void         enabled(bool enabled);
 
@@ -66,7 +66,7 @@ namespace flash
              * @throws  Error A set attempt was not successful.
              */
         public:
-            static std::string  conversionMode();
+            static std::string       conversionMode();
         public:
             static void         conversionMode(std::string mode);
 
@@ -78,7 +78,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
             IME();

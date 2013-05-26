@@ -18,7 +18,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrectionSupport::UNSUPPORTED="unsupported";
+        const std::string ColorCorrectionSupport::UNSUPPORTED   = "unsupported";
 
         /**
          * Color correction is supported, and on by default.
@@ -26,7 +26,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrectionSupport::DEFAULT_ON="defaultOn";
+        const std::string ColorCorrectionSupport::DEFAULT_ON   = "defaultOn";
 
         /**
          * Color correction is supported, but off by default.
@@ -34,7 +34,7 @@ namespace display {
          * @playerversion   Flash 10
          * @playerversion   AIR 1.5
          */
-        const std::string ColorCorrectionSupport::DEFAULT_OFF="defaultOff";
+        const std::string ColorCorrectionSupport::DEFAULT_OFF   = "defaultOff";
 
         ColorCorrectionSupport::ColorCorrectionSupport();
 }

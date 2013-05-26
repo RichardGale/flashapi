@@ -107,7 +107,7 @@
 
 
 
-        const void* QName::length;
+        const void* QName::length  ;
 
         /**
          * The local name of the QName object.

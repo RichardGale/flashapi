@@ -264,6 +264,9 @@
  * @playerversion   Lite 4
  */
 
+#include "flex11.6.h"
+
+
 
 class Namespace : public Object
 {
@@ -276,7 +279,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    std::string  prefix();
+    std::string       prefix();
 
     /**
      * The Uniform Resource Identifier (URI) of the namespace.
@@ -284,7 +287,7 @@ public:
      * @playerversion   Flash 9
      */
 public:
-    std::string  uri();
+    std::string       uri();
 
 public:
     Namespace(void *prefix=NULL, void *uri=NULL);
@@ -295,7 +298,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string valueOf();
+    std::string   valueOf();
 
     /**
      * Equivalent to the Namespace.uri property.
@@ -303,7 +306,7 @@ public:
      * @langversion 3.0
      * @playerversion   Flash 9
      */
-    std::string toString();
+    std::string   toString();
 };
 
 #endif // FLEX11_6_NAMESPACE_AS

@@ -30,13 +30,13 @@ namespace flash
         class WorkerDomain : public Object
         {
         public:
-            static bool         isSupported();
+            static bool      isSupported();
 
         public:
             static WorkerDomain *current();
 
         public:
-            Worker  *createWorker(ByteArray *swf, bool giveAppPrivileges   =false);
+            Worker   *createWorker(ByteArray *swf, bool giveAppPrivileges=false);
 
         public:
             std::vector<Worker *> listWorkers();

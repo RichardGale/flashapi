@@ -144,6 +144,9 @@
  * @playerversion   AIR 2
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -160,7 +163,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  lastOperationStatus();
+            std::string       lastOperationStatus();
 
             /**
              * The name of the requested locale ID that was passed to the constructor of this DateTimeFormatter object.
@@ -173,7 +176,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  requestedLocaleIDName();
+            std::string       requestedLocaleIDName();
 
             /**
              * The name of the actual locale ID used by this DateTimeFormatter object.
@@ -215,7 +218,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string  actualLocaleIDName();
+            std::string       actualLocaleIDName();
 
             /**
              * Constructs a new DateTimeFormatter object to format dates and times according to the conventions of the
@@ -305,7 +308,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getTimeStyle();
+            std::string   getTimeStyle();
 
             /**
              * Gets the date style for this instance of the DateTimeFormatter. The date style is used to retrieve a
@@ -323,7 +326,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getDateStyle();
+            std::string   getDateStyle();
 
             /**
              * Formats a display string for a Date object that is interpreted as being in the user's local time
@@ -341,7 +344,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string format(Date *dateTime);
+            std::string   format(Date *dateTime);
 
             /**
              * Formats a display string for a Date object that is interpreted as being in UTC time
@@ -360,7 +363,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string formatUTC(Date *dateTime);
+            std::string   formatUTC(Date *dateTime);
 
             /**
              * Retrieves a list of localized strings containing the month names for the current calendar system.
@@ -435,7 +438,7 @@ namespace flash
              * @playerversion   AIR 2
              */
         public:
-            std::string getDateTimePattern();
+            std::string   getDateTimePattern();
 
             /**
              * Sets the pattern string used by this DateTimeFormatter object to format dates and times.

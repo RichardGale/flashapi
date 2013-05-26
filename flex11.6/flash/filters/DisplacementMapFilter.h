@@ -366,7 +366,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int componentX();
+            unsigned int         componentX();
         public:
             void         componentX(unsigned int value);
 
@@ -436,7 +436,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int componentY();
+            unsigned int         componentY();
         public:
             void         componentY(unsigned int value);
 
@@ -503,7 +503,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        scaleX();
+            float       scaleX();
         public:
             void         scaleX(float value);
 
@@ -570,7 +570,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        scaleY();
+            float       scaleY();
         public:
             void         scaleY(float value);
 
@@ -643,7 +643,7 @@ namespace flash
              * @throws  ArgumentError The mode string is not one of the valid types
              */
         public:
-            std::string  mode();
+            std::string       mode();
         public:
             void         mode(std::string value);
 
@@ -717,7 +717,7 @@ namespace flash
              *   </listing>
              */
         public:
-            unsigned int color();
+            unsigned int         color();
         public:
             void         color(unsigned int value);
 
@@ -790,7 +790,7 @@ namespace flash
              *   </listing>
              */
         public:
-            float        alpha();
+            float       alpha();
         public:
             void         alpha(float value);
 
@@ -818,7 +818,7 @@ namespace flash
              * @category    Constructor
              */
         public:
-            DisplacementMapFilter(BitmapData *mapBitmap=NULL, Point *mapPoint=NULL, unsigned int componentX=0, unsigned int componentY=0, float scaleX =0, float scaleY =0, std::string mode="wrap", unsigned int color=0, float alpha =0);
+            DisplacementMapFilter(BitmapData *mapBitmap=NULL, Point *mapPoint=NULL, unsigned int componentX=0, unsigned int componentY=0, float scaleX=0, float scaleY=0, std::string mode="wrap", unsigned int color=0, float alpha=0);
 
             /**
              * Returns a copy of this filter object.

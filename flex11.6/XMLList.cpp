@@ -60,8 +60,6 @@
 
 
 
-        const void* XMLList::length;
-
         /**
          * Returns a string representation of all the XML objects in an XMLList object. The rules for 
          * this conversion depend on whether the XML object has simple content or complex content:
@@ -261,7 +259,7 @@
          * @return  The string representation of the XML object.
          * @langversion 3.0
          * @playerversion   Flash 9
-         */std::string XMLList::toXMLString()         ;XML* XMLList::addNamespace(void* ns)      ;XML* XMLList::appendChild(void* child)      ;int XMLList::childIndex()      ;std::vector<void*> XMLList::inScopeNamespaces()        ;void* XMLList::insertChildAfter(void* child1, void* child2)    ;void* XMLList::insertChildBefore(void* child1, void* child2)    ;std::string XMLList::nodeKind()         ;void* XMLList::namespace(void* prefix)    ;Object* XMLList::localName()         ;std::vector<void*> XMLList::namespaceDeclarations()        ;XML* XMLList::prependChild(void* value)      ;XML* XMLList::removeNamespace(void* ns)      ;XML* XMLList::replace(void* propertyName, void* value)      ;XML* XMLList::setChildren(void* value)      ;void XMLList::setLocalName(void* name)       ;void XMLList::setName(void* name)       ;void XMLList::setNamespace(void* ns)       ;void* XMLList::toJSON(std::string k)    ;
+         */std::string XMLList::toXMLString()         ;XML* XMLList::addNamespace(void* ns)      ;XML* XMLList::appendChild(void* child)      ;int XMLList::childIndex()      ;std::vector<void*> XMLList::inScopeNamespaces()        ;void* XMLList::insertChildAfter(void* child1, void* child2)    ;void* XMLList::insertChildBefore(void* child1, void* child2)    ;std::string XMLList::nodeKind()         ;void* XMLList::NAMESPACE(void* prefix)    ;Object* XMLList::localName()         ;std::vector<void*> XMLList::namespaceDeclarations()        ;XML* XMLList::prependChild(void* value)      ;XML* XMLList::removeNamespace(void* ns)      ;XML* XMLList::replace(void* propertyName, void* value)      ;XML* XMLList::setChildren(void* value)      ;void XMLList::setLocalName(void* name)       ;void XMLList::setName(void* name)       ;void XMLList::setNamespace(void* ns)       ;void* XMLList::toJSON(std::string k)    ;
 
         /**
          * Creates a new XMLList object.

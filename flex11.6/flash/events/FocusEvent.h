@@ -250,7 +250,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         shiftKey();
+            bool      shiftKey();
         public:
             void         shiftKey(bool value);
 
@@ -261,7 +261,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            unsigned int keyCode();
+            unsigned int         keyCode();
         public:
             void         keyCode(unsigned int value);
 
@@ -278,7 +278,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            bool         isRelatedObjectInaccessible();
+            bool      isRelatedObjectInaccessible();
         public:
             void         isRelatedObjectInaccessible(bool value);
 
@@ -299,7 +299,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            FocusEvent(std::string type, bool bubbles   =true, bool cancelable   =false, InteractiveObject *relatedObject=NULL, bool shiftKey   =false, unsigned int keyCode=0);
+            FocusEvent(std::string type, bool bubbles=true, bool cancelable=false, InteractiveObject *relatedObject=NULL, bool shiftKey=false, unsigned int keyCode=0);
 
             /**
              * Creates a copy of the FocusEvent object and sets the value of each property to match that of the original.
@@ -320,7 +320,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

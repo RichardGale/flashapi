@@ -19,7 +19,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string NetStatusEvent::NET_STATUS="netStatus";
+        const std::string NetStatusEvent::NET_STATUS   = "netStatus";
 
         /**
          * An object with properties that describe the object's status or error condition.

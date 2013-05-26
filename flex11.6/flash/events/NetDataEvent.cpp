@@ -25,7 +25,7 @@ namespace events {
          * @playerversion   Flash 10.3
          * @playerversion   AIR 2.7
          */
-        const std::string NetDataEvent::MEDIA_TYPE_DATA="mediaTypeData";
+        const std::string NetDataEvent::MEDIA_TYPE_DATA   = "mediaTypeData";
 
         /**
          * The timestamp of the data message in the media stream.

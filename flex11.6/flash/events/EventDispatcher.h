@@ -119,7 +119,7 @@ namespace flash
             EventDispatcher(IEventDispatcher *target=NULL);
 
         public:
-            std::string toString();
+            std::string   toString();
 
             /**
              * Registers an event listener object with an EventDispatcher object so that the listener
@@ -184,7 +184,7 @@ namespace flash
              * @throws  ArgumentError The listener specified is not a function.
              */
         public:
-            virtual void     addEventListener(std::string type, Function *listener, bool useCapture   =false, int priority=0, bool useWeakReference   =false);
+            virtual void     addEventListener(std::string type, Function *listener, bool useCapture=false, int priority=0, bool useWeakReference=false);
 
             /**
              * Removes a listener from the EventDispatcher object. If there is no matching listener registered with the EventDispatcher object, a call to this method has no effect.
@@ -200,7 +200,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            virtual void     removeEventListener(std::string type, Function *listener, bool useCapture   =false);
+            virtual void     removeEventListener(std::string type, Function *listener, bool useCapture=false);
 
             /**
              * Dispatches an event into the event flow. The event target is the EventDispatcher
@@ -217,7 +217,7 @@ namespace flash
              * @throws  Error The event dispatch recursion limit has been reached.
              */
         public:
-            virtual bool     dispatchEvent(Event *event);
+            virtual bool  dispatchEvent(Event *event);
 
             /**
              * Checks whether the EventDispatcher object has any listeners registered for a specific type
@@ -240,7 +240,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            virtual bool     hasEventListener(std::string type);
+            virtual bool  hasEventListener(std::string type);
 
             /**
              * Checks whether an event listener is registered with this EventDispatcher object or any of
@@ -260,7 +260,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            virtual bool     willTrigger(std::string type);
+            virtual bool  willTrigger(std::string type);
         };
     }
 }

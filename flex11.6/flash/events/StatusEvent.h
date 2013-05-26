@@ -42,7 +42,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  code();
+            std::string       code();
         public:
             void         code(std::string value);
 
@@ -53,7 +53,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string  level();
+            std::string       level();
         public:
             void         level(std::string value);
 
@@ -80,7 +80,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            StatusEvent(std::string type, bool bubbles   =false, bool cancelable   =false, std::string code="", std::string level="");
+            StatusEvent(std::string type, bool bubbles=false, bool cancelable=false, std::string code="", std::string level="");
 
             /**
              * Returns a string that contains all the properties of the StatusEvent object. The string is in the following format:
@@ -91,7 +91,7 @@ namespace flash
              * @playerversion   Lite 4
              */
         public:
-            std::string toString();
+            std::string   toString();
         };
     }
 }

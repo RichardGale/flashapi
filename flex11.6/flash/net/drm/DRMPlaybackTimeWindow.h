@@ -14,6 +14,9 @@
  * @playerversion   Flash 10.1
  */
 
+#include "flex11.6.h"
+
+
 
 namespace flash
 {
@@ -31,7 +34,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                unsigned int period();
+                unsigned int         period();
 
                 /**
                  * The start date for the period of time during which a DRM voucher is valid
@@ -44,7 +47,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *startDate();
+                Date         *startDate();
 
                 /**
                  * The end date for the period of time during which a DRM voucher is valid
@@ -57,7 +60,7 @@ namespace flash
                  * @playerversion   Flash 10.1
                  */
             public:
-                Date        *endDate();
+                Date         *endDate();
 
             public:
                 DRMPlaybackTimeWindow();

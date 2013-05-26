@@ -24,7 +24,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextEvent::LINK="link";
+        const std::string TextEvent::LINK   = "link";
 
         /**
          * Defines the value of the type property of a textInput event object. 
@@ -38,7 +38,7 @@ namespace events {
          * @playerversion   Flash 9
          * @playerversion   Lite 4
          */
-        const std::string TextEvent::TEXT_INPUT="textInput";
+        const std::string TextEvent::TEXT_INPUT   = "textInput";
 
         /**
          * For a textInput event, the character or sequence of characters 

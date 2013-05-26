@@ -36,10 +36,10 @@ namespace flash
             class DRMVoucherDownloadContext : public DRMManagerSession
             {
             public:
-                DRMVoucher  *voucher();
+                DRMVoucher   *voucher();
 
             public:
-                void     download(DRMContentData *inMetadata, bool previewVoucher   =false);
+                void     download(DRMContentData *inMetadata, bool previewVoucher=false);
 
             public:
                 DRMVoucherDownloadContext();

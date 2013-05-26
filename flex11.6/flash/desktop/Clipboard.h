@@ -150,7 +150,7 @@ namespace flash
              * @playerversion   AIR 1.0
              */
         public:
-            std::vector<void *> formats();
+            std::vector<void *>        formats();
 
             /**
              * Creates an empty Clipboard object.
@@ -240,7 +240,7 @@ namespace flash
              * @throws  TypeError format or data is null.
              */
         public:
-            bool     setData(std::string format, Object *data, bool serializable   =true);
+            bool  setData(std::string format, Object *data, bool serializable=true);
 
             /**
              * Adds a reference to a handler function that produces the data to be transfered.
@@ -277,7 +277,7 @@ namespace flash
              *   application security sandbox.
              */
         public:
-            bool     setDataHandler(std::string format, Function *handler, bool serializable   =true);
+            bool  setDataHandler(std::string format, Function *handler, bool serializable=true);
 
             /**
              * Gets the clipboard data if data in the specified format is present.
@@ -308,7 +308,7 @@ namespace flash
              *   In AIR, this restriction only applies to content outside of the application security sandbox.
              */
         public:
-            Object  *getData(std::string format, std::string transferMode="originalPreferred");
+            Object   *getData(std::string format, std::string transferMode="originalPreferred");
 
             /**
              * Checks whether data in the specified format exists in this Clipboard object.
@@ -323,7 +323,7 @@ namespace flash
              * @throws  SecurityError Reading from or writing to the clipboard is not permitted in this context.
              */
         public:
-            bool     hasFormat(std::string format);
+            bool  hasFormat(std::string format);
         };
     }
 }
